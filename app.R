@@ -6,7 +6,7 @@ add_param <- function(previous_list, iten_to_add) {
 }
 
 
-updateFinalPage <- function(input, output, session) {
+update_final_page <- function(input, output, session) {
 
   summary = list(h1("Climate Narrative"))
 
@@ -50,7 +50,7 @@ QuestionTab <- R6Class(
           input[[paste0(self$id,"_next")]],
           {
             if(self$next_tab == 6) {
-              updateFinalPage(input, output, session)
+              update_final_page(input, output, session)
             }
             switch_page(self$next_tab)
           }
