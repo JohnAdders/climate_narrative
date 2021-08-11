@@ -79,6 +79,9 @@ QuestionTab <- R6Class(
 )
 
 bank_exposures <- read.csv("bank_exposures.csv", stringsAsFactors = FALSE)
+insurance_assets <- read.csv("insurance_assets.csv", stringsAsFactors = FALSE)
+insurance_liabilities <- read.csv("insurance_liabilities.csv", stringsAsFactors = FALSE)
+am_exposures <- read.csv("am_exposures.csv", stringsAsFactors = FALSE)
 
 
 exposure_grid_cell <- function(exposure_item, row_name) {
@@ -135,23 +138,27 @@ tab1_ui <- function () {
 }
 
 tab2_ui <- function () {
-  result = list(
-    h2("Bank Exposures")
-  )
+  result = list(h2("Bank Exposures"))
   result = c(result, exposure_grid(bank_exposures))
   return (result)
 }
 
 tab3_ui <- function () {
-  list(h2("Insurance Asset Exposures"))
+  result = list(h2("Insurance Asset Exposures"))
+  result = c(result, exposure_grid(insurance_assets))
+  return (result)
 }
 
 tab4_ui <- function () {
-  list(h2("Asset Manager Holdings"))
+  result = list(h2("Asset Manager Holdings"))
+  result = c(result, exposure_grid(am_exposures))
+  return (result)
 }
 
 tab5_ui <- function () {
-  list(h2("Insurance Liabilties"))
+  result = list(h2("Insurance Liabilities"))
+  result = c(result, exposure_grid(insurance_liabilities))
+  return (result)
 }
 
 tab6_ui <- function () {
