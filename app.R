@@ -81,7 +81,7 @@ QuestionTab <- R6Class(
 bank_exposures <- read.csv("bank_exposures.csv", stringsAsFactors = FALSE)
 
 
-exposure_grid_cell <- function(exposure_item) {
+exposure_grid_cell <- function(exposure_item, row_name) {
   if(exposure_item == "") {
     return (column(1, p("")))
   } else {
@@ -90,17 +90,24 @@ exposure_grid_cell <- function(exposure_item) {
 }
 
 exposure_grid_row <- function(exposures_row) {
-  return (do.call(fluidRow, lapply(exposures_row, exposure_grid_cell)))
+  return (
+    fluidRow(
+      c(
+        list(
+          column(1, p(exposures_row[1])),
+          lapply(exposures_row[-1], function(item) {exposure_grid_cell(item, p(exposures_row[1]))})
+        )
+      )
+    )
+  )
 }
 
 exposure_grid <- function(exposures) {
-  headings = colnames(exposures)
   rows = c(
     list(
-      do.call(
-        fluidRow,
+      fluidRow(
         lapply(
-          colnames(bank_exposures),
+          colnames(exposures),
           function(header) {
             column(1, h4(header))
           }
@@ -109,7 +116,6 @@ exposure_grid <- function(exposures) {
     ),
     apply(exposures, 1, exposure_grid_row)
   )
-  browser()
   return (rows)
 }
 
