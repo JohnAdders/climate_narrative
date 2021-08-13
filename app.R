@@ -8,13 +8,13 @@ add_param <- function(previous_list, iten_to_add) {
 
 update_final_page <- function(input, output, session) {
 
-  summary = list(h1("Climate Narrative"))
-
-  summary[[length(summary)+1]] <- p("Some Text.")
-
-  summary[[length(summary)+1]] <- p("Some more Text.")
-
-  summary[[length(summary)+1]] <- p("Yet more Text.")
+  summary = list(
+    h1("Climate Narrative"),
+    p("Some Text."),
+    p("Some more Text."),
+    p("Yet more Text."),
+    p(paste0("Equity exposure to gas sector is: ", input$gas_Equity))
+  )
 
   output$summary <- renderUI(summary)
 }
@@ -86,9 +86,10 @@ am_exposures <- read.csv("am_exposures.csv", stringsAsFactors = FALSE)
 
 exposure_grid_cell <- function(exposure_item, row_name) {
   if(exposure_item == "") {
-    return (column(1, p("")))
+    return (column(3, p("")))
   } else {
-    return (column(1, p("H/M/L")))
+    #return (column(1, p("H/M/L")))
+    return(column(3,selectInput(paste(exposure_item, row_name,sep='_'),'',list('H','M','L'))))
   }
 }
 
@@ -97,8 +98,9 @@ exposure_grid_row <- function(exposures_row) {
     fluidRow(
       c(
         list(
-          column(1, p(exposures_row[1])),
-          lapply(exposures_row[-1], function(item) {exposure_grid_cell(item, p(exposures_row[1]))})
+          column(3, p(exposures_row[1])),
+          #lapply(exposures_row[-1], function(item) {exposure_grid_cell(item, p(exposures_row[1]))})
+          lapply(exposures_row[-1], function(item) {exposure_grid_cell(item, exposures_row[1])})
         )
       )
     )
@@ -112,7 +114,7 @@ exposure_grid <- function(exposures) {
         lapply(
           colnames(exposures),
           function(header) {
-            column(1, h4(header))
+            column(3, h4(header))
           }
         )
       )
