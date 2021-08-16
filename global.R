@@ -1,6 +1,8 @@
+print("DEBUG: initialising all the prerequisites")
 source('QuestionTab.R') # the file with QuestionTab class
 source('table_functions.R') # some helper function that produce the required tables
 sapply(dir(pattern="tab*"),source) # specific tabs - both interface and server
+
 bank_exposures <- read.csv("bank_exposures.csv", stringsAsFactors = FALSE)
 insurance_assets <- read.csv("insurance_assets.csv", stringsAsFactors = FALSE)
 insurance_liabilities <- read.csv("insurance_liabilities.csv", stringsAsFactors = FALSE)
@@ -27,7 +29,7 @@ update_final_page <- function(input, output, session) {
     p("Some Text."),
     p("Some more Text."),
     p("Dummy output. The exact mechanics TBC, this should produce a text basing on the inputs, for instance: "),
-    p(paste0("Equity exposure to gas sector is: ", input$gas_Equity))
+    p(paste0("The type of undertaking is ",input$type,". Equity exposure to gas sector is ", input$gas_Equity,"."))
   )
   output$summary <- renderUI(summary)
 }

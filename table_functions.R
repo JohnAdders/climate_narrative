@@ -28,8 +28,6 @@ exposure_grid <- function(exposures,col_width=2) {
         lapply(
           colnames(exposures),
           function(header) {
-            print(header)
-            print(gsub("."," ",header,fixed=TRUE))
             column(col_width, h4(gsub("."," ",header,fixed=TRUE))) # when reading csv's R by default substitutes spaces with dots in the headers, here we reverse this for a nicer output
           }
         )
