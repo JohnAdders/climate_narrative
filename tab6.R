@@ -17,4 +17,3 @@ tab6_server <- function (input, output, session, tab) {
     }
   )
 }
-
