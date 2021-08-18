@@ -1,8 +1,9 @@
 library(R6)
+# QuestionTab class definition
+# instances are tabs of the questionnaire
+# this is a wrapper over any ui and server that handles switching to previous/next tab if relevant
+# (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic)
 QuestionTab <- R6Class(
-  # instances are tabs of the questionnaire
-  # this is a wrapper over any ui and server that handles switching to previous/next tab if relevant
-  # (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic)
   "QuestionTab",
   public = list(
     tab_ui = NULL,
@@ -19,12 +20,12 @@ QuestionTab <- R6Class(
       self$next_tab <- next_tab
       self$id <- paste0("page_", tab_number)
     },
+    # tab server function that combines:
+    # 1. any other server tab_server (if given in the constructor)
+    # 2. possibility of switch to previous/next tab (if applicable), using 'switch_page' function. 
     server = function(input, output, session, switch_page) {
-      # tab server function combines:
-      # 1. any other server tab_server (if given in the constructor)
-      # 2. possibility of switch to previous/next tab (if applicable), using 'switch_page' function. 
       
-      switch_page <- function(i) { # I moved this definition here from 'global' server to make the class more self-contained
+      switch_page <- function(i) {
         updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
       }
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
@@ -38,10 +39,10 @@ QuestionTab <- R6Class(
         )
       }
     },
+    # tab UI function combines:
+    # 1. any other tab_UI (if given in the constructor)
+    # 2. buttons that switch to previous/next tab (if applicable)
     ui = function() {
-      # tab UI function combines:
-      # 1. any other tab_UI (if given in the constructor)
-      # 2. buttons that switch to previous/next tab (if applicable)
       tabpanel_params <- list(self$id)
       if (!is.null(self$tab_ui)) tabpanel_params <- add_param(tabpanel_params, self$tab_ui())
       tabpanel_params = add_param(tabpanel_params, br())
