@@ -29,9 +29,26 @@ tabs <- list(
 update_final_page <- function(input, output, session) {
   summary = list(
     h1("Climate Narrative"),
-    p("Some Text."),
-    p("Some more Text."),
-    p("Dummy output. The exact mechanics TBC, this should produce a text basing on the aggregated inputs")
+    h2('CURRENT STAGE: Aggregated inputs (ordered by materiality)') ,
+    tableOutput("show_aggregated_inputs"),
+    h2("TO DO: implement the following mechanics"),
+    pre("
+      for scenario in (2.5,4)
+        for item in AggregatedTypeInputs
+          if(scenario==2.5)
+            text(item,physical,low,always)
+            if(item.materiality=='H')
+              text(item,physical,low,extra)
+            text(item,transition,high,always)
+            if(item.materiality=='H')
+              text(item,transition,high,extra)
+          else
+            text(item,physical,high)
+            if(item.materiality=='H')
+              text(item,physical,low,extra)"
+      ),
+      p('where ',code("text(item,physical/transition,low/high,always/extra)"),
+      ' are defined in some text files')
   )
   output$summary <- renderUI(summary)
 }
