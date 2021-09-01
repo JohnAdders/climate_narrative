@@ -1,5 +1,8 @@
 tab6_ui <- function () {
   list(
+    h3('INFO: Aggregated inputs (ordered by materiality)') ,
+    p('It will be used to derive the narrative'),
+    tableOutput("show_aggregated_inputs"),
     uiOutput("summary")
   )
 }

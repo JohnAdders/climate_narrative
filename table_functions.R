@@ -1,25 +1,34 @@
-exposure_grid_cell <- function(exposure_item, row_name, col_width) {
+exposure_grid_cell <- function(exposure_item, prefix, col_width) {
   if(exposure_item == "") {
     return (column(col_width, p("")))
   } else {
-    return(column(col_width,selectInput(paste(exposure_item, row_name,sep='_'),'',list('H','M','L'))))
+    return(column(col_width,selectInput(paste(prefix,exposure_item,sep='_'),'',list('L','M','H'))))
   }
 }
 
-exposure_grid_row <- function(exposures_row,col_width) {
+exposure_grid_row <- function(exposures_row, prefix, col_width) {
+  #items = exposures_row[-1]
+  items = paste(names(exposures_row)[-1],exposures_row[-1],sep="_")
+  items[exposures_row[-1]==""]=""
   return (
     fluidRow(
       c(
         list(
           column(col_width, p(exposures_row[1])),
-          lapply(exposures_row[-1], function(item) {exposure_grid_cell(item, exposures_row[1],col_width)})
+          lapply(items, function(item) {
+            #exposure_grid_cell(ifelse(item=="","",paste(names(item),unname(item),sep="_")), paste(prefix,exposures_row[1],sep="_"),col_width)
+            exposure_grid_cell(item, paste(prefix,exposures_row[1],sep="_"),col_width)
+            }
+            
+            #name=names(exposures_row[-1])),
         )
       )
     )
   )
+  )
 }
 
-exposure_grid <- function(exposures,col_width=2) {
+exposure_grid <- function(exposures, label, col_width=2) {
   rows = c(
     list(
       fluidRow(
@@ -30,7 +39,7 @@ exposure_grid <- function(exposures,col_width=2) {
         )
       )
     ),
-    apply(exposures, 1, exposure_grid_row,col_width=col_width)
+    apply(exposures, 1, exposure_grid_row, label, col_width=col_width)
   )
   return (rows)
 }

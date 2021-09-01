@@ -2,6 +2,8 @@
 source('QuestionTab.R') 
 # reading some helper functions that produce the required tables
 source('table_functions.R') 
+# reading the code for tabs UI and server
+sapply(dir(pattern='tab[0-9]'), source)
 # reading the questions from csv files
 bank_exposures <- read.csv("bank_exposures.csv", stringsAsFactors = FALSE)
 insurance_assets <- read.csv("insurance_assets.csv", stringsAsFactors = FALSE)
@@ -23,17 +25,13 @@ tabs <- list(
   QuestionTab$new(tab6_ui, tab6_server, 6, 2, NULL)
 )
 
-# reading the code for tabs UI and server
-sapply(tabs, function(tab) source(paste0('tab',tab$tab_number,'.R')))
-
 # defining the function that produces the ultimate description, depending on inputs
 update_final_page <- function(input, output, session) {
   summary = list(
     h1("Climate Narrative"),
     p("Some Text."),
     p("Some more Text."),
-    p("Dummy output. The exact mechanics TBC, this should produce a text basing on the inputs, for instance: "),
-    p(paste0("The type of undertaking is ",input$type,". Equity exposure to gas sector is ", input$gas_Equity,"."))
+    p("Dummy output. The exact mechanics TBC, this should produce a text basing on the aggregated inputs")
   )
   output$summary <- renderUI(summary)
 }
