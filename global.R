@@ -22,7 +22,7 @@ tabs <- list(
   QuestionTab$new(tab3_ui, NULL, 3, 1, 5),
   QuestionTab$new(tab4_ui, NULL, 4, 1, 6),
   QuestionTab$new(tab5_ui, NULL, 5, 3, 6),
-  QuestionTab$new(tab6_ui, tab6_server, 6, 2, NULL)
+  QuestionTab$new(tab6_ui, tab6_server, 6, 1, NULL)
 )
 
 # defining the function that produces the ultimate description, depending on inputs
