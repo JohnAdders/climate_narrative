@@ -6,7 +6,8 @@ server <- function(input, output, session) {
     x <- reactiveValuesToList(input)
     out <- data.frame(
       names = names(x),
-      values = unlist(x, use.names = FALSE)
+      values = unlist(x, use.names = FALSE),
+      stringsAsFactors=FALSE
     )
     out$type <- rep(NA,nrow(out))
     out$subtype <- rep(NA,nrow(out))

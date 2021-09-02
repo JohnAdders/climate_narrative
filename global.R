@@ -11,8 +11,8 @@ insurance_liabilities <- read.csv("insurance_liabilities.csv", stringsAsFactors 
 am_exposures <- read.csv("am_exposures.csv", stringsAsFactors = FALSE)
 
 # defining a shortcut to add element to the list
-add_param <- function(previous_list, iten_to_add) {
-  c(previous_list, list(iten_to_add))
+add_param <- function(previous_list, item_to_add) {
+  c(previous_list, list(item_to_add))
 }
 
 # defining the questionnaire using list of QuestionTab objects
@@ -48,7 +48,9 @@ update_final_page <- function(input, output, session) {
               text(item,physical,low,extra)"
       ),
       p('where ',code("text(item,physical/transition,low/high,always/extra)"),
-      ' are defined in some text files')
+      ' are defined in some text files'),
+      p('or maybe markdown files. Then it is possible to convert using markdown::markdownToHtml
+      or even R snippets directly using knitr::knit')
   )
   output$summary <- renderUI(summary)
 }

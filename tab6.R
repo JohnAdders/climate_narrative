@@ -11,8 +11,8 @@ tab6_server <- function (input, output, session, tab) {
       tab$previous_tab <- switch(
         input$type,
         insurance = 5,
-        asset = 3,
-        1
+        asset = 4,
+        2
       )
     }
   )
