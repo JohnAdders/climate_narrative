@@ -1,6 +1,7 @@
 tab6_ui <- function () {
   list(
-    uiOutput("summary")
+    #uiOutput("summary"),
+    uiOutput("renderedReport")
   )
 }
 

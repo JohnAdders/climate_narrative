@@ -1,0 +1,81 @@
+---
+title: "Climate"
+author: "KO"
+date: "02/09/2021"
+output: html_document
+---
+
+# Sample climate report
+
+## Introduction 
+bla bla
+```{r, results='asis', echo=FALSE}
+cat(paste0('\nShould it be type-specific for a ',input$type,'?\n'))
+```
+
+## Details
+See the following sections
+
+```{r, results='asis', echo=FALSE}
+agg <- AggregatedTypeInputs()
+for(scenario in c('2.5 degree','4 degree')){
+  cat(paste0('\n### Scenario: ',scenario,'\n'))
+  for(i in 1:nrow(agg)){
+    item <- agg$item[i]
+    material <- (agg$values[i]=='H')
+    cat(paste0('\n#### Item: ',item,'\n'))
+    if(scenario=='2.5 degree'){
+      cat(paste0('\nLow physical risk description\n'))
+      if(material) {
+        cat(paste0('\nExtra details for low physical risk, ',item,' is a high materiality item\n'))
+      }
+      cat(paste0('\nHigh transition risk description\n'))
+      if(material) {
+        cat(paste0('\nExtra details for high transition risk, ',item,' is a high materiality item\n'))
+      }
+    } else {
+      cat(paste0('\nHigh physical risk description\n'))
+      if(material) {
+        cat(paste0('\nExtra details for high physical risk, ',item, ' is a high materiality item\n'))
+      }
+    }
+  }
+}
+```
+
+## Appendix: working notes
+
+### Summary of inputs
+
+Aggregated inputs (ordered by materiality)
+```{r}
+print(AggregatedTypeInputs())
+```
+
+### Children
+
+Potentially useful possibility. The structure may be organised using child documents, for example:
+
+```{r, child='child.Rmd' }
+```
+
+### Further steps
+
+Decide on the best way to organise bespoke text descriptions. Options considered:
+- the simplest one. a table (eg. csv) with columns like scenario, item, materiality and text column.
+Appropriate if the descriptions are text only (markdown formatting like headers would be enforced in the main report.Rmd file)
+and not very long
+- the most sophisticated. one Rmd child file per description. This would be reasonable
+if the descriptions are long and are richer than pure text (headers, graphs, formulae etc.)
+- an intermediate option. a single Rmd file with headers indicating scenario/item/materiality.
+The engine in the report.Rmd would need to select and rearrange the sections. After some googling
+I am still not sure how to do this. Probably to convert a markdown to a table/list
+which can be manipulated easily
+
+#### For more distant future. 
+Better user experience by
+- Styling (CSS)
+- Documentation
+- Metadata (date, authors, version etc.)
+- Context help for particular inputs
+- Downloadable report (button in the end of the last tab)

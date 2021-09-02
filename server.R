@@ -35,7 +35,12 @@ server <- function(input, output, session) {
     temp[order(temp$values,decreasing=TRUE),]
   })
 
-  output$show_aggregated_inputs <- renderTable({
-    AggregatedTypeInputs()
-  })
+  # output$show_aggregated_inputs <- renderTable({
+  #   AggregatedTypeInputs()
+  # })
+
+  output$renderedReport <- renderUI({           
+	includeMarkdown(knitr::knit('markdown/report.Rmd'))
+
+})
 }

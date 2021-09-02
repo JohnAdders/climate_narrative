@@ -1,0 +1,3 @@
+#### Details from the child document
+
+Hi, there. I'm a child with as many details as necessary
