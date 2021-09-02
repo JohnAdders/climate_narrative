@@ -13,6 +13,9 @@ add_param <- function(previous_list, iten_to_add) {
   c(previous_list, list(iten_to_add))
 }
 
+# reading the code for tabs UI and server
+sapply(1:6, function(tab_number) source(paste0('tab',tab_number,'.R')))
+
 # defining the questionnaire using list of QuestionTab objects
 tabs <- list( 
   QuestionTab$new(tab1_ui, tab1_server, 1, NULL, 2),
@@ -22,9 +25,6 @@ tabs <- list(
   QuestionTab$new(tab5_ui, NULL, 5, 3, 6),
   QuestionTab$new(tab6_ui, tab6_server, 6, 2, NULL)
 )
-
-# reading the code for tabs UI and server
-sapply(tabs, function(tab) source(paste0('tab',tab$tab_number,'.R')))
 
 # defining the function that produces the ultimate description, depending on inputs
 update_final_page <- function(input, output, session) {
