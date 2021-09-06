@@ -5,7 +5,7 @@ source('R/QuestionTab.R')
 # reading some helper functions that produce the required tables
 source('R/table_functions.R') 
 # reading the code for tabs UI and server
-sapply(dir(pattern='R/tab[0-9]'), source)
+sapply(dir(path='R',pattern='tab[0-9]'), function(filename) source(paste0('R/',filename)))
 # reading the questions from csv files
 bank_exposures <- read.csv("csv/bank_exposures.csv", stringsAsFactors = FALSE)
 insurance_assets <- read.csv("csv/insurance_assets.csv", stringsAsFactors = FALSE)

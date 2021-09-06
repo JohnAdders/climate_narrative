@@ -10,7 +10,7 @@ output: html_document
 ## Introduction 
 bla bla
 ```{r, results='asis', echo=FALSE}
-cat(paste0('\nShould it be type-specific for a ',input$type,'?\n'))
+cat(paste0('\nShould it be type-specific (it is possible to give a specific description for a ',input$type,')\n'))
 ```
 
 ## Details
