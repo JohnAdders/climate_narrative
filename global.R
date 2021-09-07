@@ -1,4 +1,4 @@
-library(knitr)
+library(yaml)
 
 # reading the file with QuestionTab class
 source('R/QuestionTab.R') 
@@ -11,7 +11,8 @@ bank_exposures <- read.csv("csv/bank_exposures.csv", stringsAsFactors = FALSE)
 insurance_assets <- read.csv("csv/insurance_assets.csv", stringsAsFactors = FALSE)
 insurance_liabilities <- read.csv("csv/insurance_liabilities.csv", stringsAsFactors = FALSE)
 am_exposures <- read.csv("csv/am_exposures.csv", stringsAsFactors = FALSE)
-
+# reading the pieces from which the final report is combined
+report_pieces <- read_yaml('report.yml')
 # defining a shortcut to add element to the list
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
@@ -26,33 +27,3 @@ tabs <- list(
   QuestionTab$new(tab5_ui, NULL, 5, 3, 6),
   QuestionTab$new(tab6_ui, tab6_server, 6, 1, NULL)
 )
-
-# # defining the function that produces the ultimate description, depending on inputs
-# update_final_page <- function(input, output, session) {
-#   summary = list(
-#     h1("Climate Narrative"),
-#     h2('CURRENT STAGE: Aggregated inputs (ordered by materiality)') ,
-#     tableOutput("show_aggregated_inputs"),
-#     h2("TO DO: implement the following mechanics"),
-#     pre("
-#       for scenario in (2.5,4)
-#         for item in AggregatedTypeInputs
-#           if(scenario==2.5)
-#             text(item,physical,low,always)
-#             if(item.materiality=='H')
-#               text(item,physical,low,extra)
-#             text(item,transition,high,always)
-#             if(item.materiality=='H')
-#               text(item,transition,high,extra)
-#           else
-#             text(item,physical,high)
-#             if(item.materiality=='H')
-#               text(item,physical,low,extra)"
-#       ),
-#       p('where ',code("text(item,physical/transition,low/high,always/extra)"),
-#       ' are defined in some text files'),
-#       p('or maybe markdown files. Then it is possible to convert using markdown::markdownToHtml
-#       or even R snippets directly using knitr::knit')
-#   )
-#   output$summary <- renderUI(summary)
-# }

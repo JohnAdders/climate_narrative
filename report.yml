@@ -1,0 +1,49 @@
+---
+physical:
+ low:
+  always:
+   coal:
+    Text for coal low physical risk. Plain text only (displayed in HTML paragraph structure)
+   gas:
+    Text for gas low physical risk
+   property:
+    Text for property low physical risk
+  extra:
+   coal:
+    Additional text for coal low physical risk in case of high materiality
+   gas:
+    Additional text for gas low physical risk in case of high materiality
+   property:
+    Additional text for property low physical risk in case of high materiality
+ high:
+  always:
+   coal:
+    Text for coal high physical risk
+   gas:
+    Text for gas high physical risk
+   property:
+    Text for property high physical risk
+  extra:
+   coal:
+    Additional text for coal high physical risk in case of high materiality
+   gas:
+    Additional text for gas high physical risk in case of high materiality
+   property:
+    Additional text for property high physical risk in case of high materiality
+transition:
+ high:
+  always:
+   coal:
+    Text for coal high transition risk
+   gas:
+    Text for gas high transition risk
+   property:
+    Text for property high transition risk
+  extra:
+   coal:
+    Additional text for coal high transition risk in case of high materiality
+   gas:
+    Additional text for gas high transition risk in case of high materiality
+   property:
+    Additional text for property high transition risk in case of high materiality
+---
