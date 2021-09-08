@@ -1,5 +1,5 @@
 library(yaml)
-
+library(markdown)
 # reading the file with QuestionTab class
 source('R/QuestionTab.R') 
 # reading some helper functions that produce the required tables

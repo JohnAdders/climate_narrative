@@ -3,11 +3,21 @@ physical:
  low:
   always:
    coal:
-    Text for coal low physical risk. Plain text only (displayed in HTML paragraph structure)
-    abc def
+    Text for coal low physical risk. Single line breaks
+    like this
+    are ignored
+    
+    
+    Use two empty lines (three line breaks) to create a new paragraph
+    
+    
+    Some formatting is possible, e.g. list
 
-    gh
-    ijk
+    - bold **a**
+
+    - italics *b*
+
+
    gas:
     Text for gas low physical risk
    property:
