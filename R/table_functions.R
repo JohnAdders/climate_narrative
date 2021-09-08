@@ -8,8 +8,8 @@ exposure_grid_cell <- function(exposure_item, prefix, col_width) {
 
 exposure_grid_row <- function(exposures_row, prefix, col_width) {
   #items = exposures_row[-1]
-  items = paste(names(exposures_row)[-1],exposures_row[-1],sep="_")
-  items[exposures_row[-1]==""]=""
+  items = paste(names(exposures_row)[-(1:2)],exposures_row[-(1:2)],sep="_")
+  items[exposures_row[-(1:2)]==""]=""
   return (
     fluidRow(
       c(

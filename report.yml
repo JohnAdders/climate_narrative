@@ -4,6 +4,10 @@ physical:
   always:
    coal:
     Text for coal low physical risk. Plain text only (displayed in HTML paragraph structure)
+    abc def
+
+    gh
+    ijk
    gas:
     Text for gas low physical risk
    property:
