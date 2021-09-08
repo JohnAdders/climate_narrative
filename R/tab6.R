@@ -64,30 +64,35 @@ tab6_server <- function (input, output, session, tab) {
     return(out)
   }
   
-  get_scenario_descriptions <- function(aggregated_table, scenario_degree){
+  get_scenario_descriptions <- function(aggregated_table, name, description, transition, physical){
     out <- list()
-    if(scenario_degree==2.5){
-      out <- add_param(out, h1("Scenario 2.5 degree"))
-      out <- add_param(out, h2("low physical risk"))
-      out <- c(out, get_risk_descriptions(aggregated_table, "physical", "low"))
-      out <- add_param(out, h2("high transition risk"))
-      out <- c(out, get_risk_descriptions(aggregated_table, "transition", "high"))
-    } else if (scenario_degree==4){
-      out <- add_param(out, h1("Scenario 4 degree"))
-      out <- add_param(out, h2("high physical risk"))
-      out <- c(out, get_risk_descriptions(aggregated_table, "physical", "high"))
-    } else {
-      out <- list(h1('scenario not recognised!'))
-    }
+    out <- add_param(out, h1(name))
+    out <- add_param(out, p(description))
+    out <- add_param(out, h2(paste0(physical, " physical risk")))
+    out <- c(out, get_risk_descriptions(aggregated_table, "physical", physical))
+    out <- add_param(out, h2(paste0(transition, " transition risk")))
+    out <- c(out, get_risk_descriptions(aggregated_table, "transition", transition))
     return(out)
   }
 
   report_contents <- reactive({
     aggregated_table <- AggregatedTypeInputs()
-    out <- c(
-      get_scenario_descriptions(aggregated_table,2.5),
-      get_scenario_descriptions(aggregated_table,4)
-    )
+    out <- list()
+    for(i in 1:length(scenarios)){
+      out <- c(out, get_scenario_descriptions(
+        aggregated_table,
+        scenarios[[i]]$name,
+        scenarios[[i]]$description,
+        scenarios[[i]]$transition,
+        scenarios[[i]]$physical
+        ))
+    }
+    print(out)
+    out
+    #out <- c(
+    #  get_scenario_descriptions(aggregated_table,2.5),
+    #  get_scenario_descriptions(aggregated_table,4)
+    #)
   })
   
   output$show_aggregated_inputs <- renderTable({

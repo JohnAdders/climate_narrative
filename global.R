@@ -13,6 +13,7 @@ insurance_liabilities <- read.csv("csv/insurance_liabilities.csv", stringsAsFact
 am_exposures <- read.csv("csv/am_exposures.csv", stringsAsFactors = FALSE)
 # reading the pieces from which the final report is combined
 report_pieces <- read_yaml('report.yml')
+scenarios <- lapply(dir(path='scenario'),function(file) read_yaml(paste0('scenario/',file)))
 # defining a shortcut to add element to the list
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
