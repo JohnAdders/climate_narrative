@@ -52,32 +52,49 @@ tab6_server <- function (input, output, session, tab) {
     temp[order(temp$values,decreasing=TRUE),]
   })
 
-  get_risk_descriptions <- function(aggregated_table, physical_or_transition, high_or_low){
+  get_exposure_description <- function(item){
     out <- list()
-    for(i in 1:nrow(aggregated_table)){
-      out <- add_param(out, h3(aggregated_table$item[i]))
-      out <- add_param(out, p(report_pieces[[physical_or_transition]][[high_or_low]][['always']][[aggregated_table$item[i]]]))
-      if(aggregated_table$values[i]=='H') {
-        out <- add_param(out, p(report_pieces[[physical_or_transition]][[high_or_low]][['extra']][[aggregated_table$item[i]]]))
+    out <- add_param(out, h3(exposure_classes[[item]][['name']]))
+    out <- add_param(out, p(exposure_classes[[item]][['description']]))
+    # Your Exposures that gives this a table of name of row, expsoure 
+    # and product descrpition text
+  }
+
+  get_exposure_risk_descriptions <- function(item, materiality, physical_or_transition, high_or_low){
+    out <- list()
+    #for(i in 1:nrow(aggregated_table)){
+      #out <- add_param(out, h3(item))#aggregated_table$item[i]))
+      out <- add_param(out, p(report_pieces[[physical_or_transition]][[high_or_low]][['always']][[item]]))#aggregated_table$item[i]]]))
+      #if(aggregated_table$values[i]=='H') {
+      if(materiality=='H') {
+        out <- add_param(out, p(report_pieces[[physical_or_transition]][[high_or_low]][['extra']][[item]]))#[[aggregated_table$item[i]]]))
       }
-    }
+    #}
     return(out)
   }
   
   get_scenario_descriptions <- function(aggregated_table, name, description, transition, physical){
     out <- list()
-    out <- add_param(out, h1(name))
+    out <- add_param(out, h2(name))
     out <- add_param(out, p(description))
-    out <- add_param(out, h2(paste0(physical, " physical risk")))
-    out <- c(out, get_risk_descriptions(aggregated_table, "physical", physical))
-    out <- add_param(out, h2(paste0(transition, " transition risk")))
-    out <- c(out, get_risk_descriptions(aggregated_table, "transition", transition))
+    for(i in 1:nrow(aggregated_table)){
+      #out <- add_param(out, h3(paste0("Exposure class: ",aggregated_table$item[i])))
+      out <- c(out, get_exposure_description(aggregated_table$item[i]))
+      if(physical != 'none') {
+        out <- add_param(out, h4(paste0(physical, " physical risk")))
+        out <- c(out, get_exposure_risk_descriptions(aggregated_table$item[i], aggregated_table$values[i],"physical", physical))
+      }
+      if(transition != 'none') {
+        out <- add_param(out, h4(paste0(transition, " transition risk")))
+        out <- c(out, get_exposure_risk_descriptions(aggregated_table$item[i], aggregated_table$values[i], "transition", transition))
+      }
+    }
     return(out)
   }
 
   report_contents <- reactive({
     aggregated_table <- AggregatedTypeInputs()
-    out <- list()
+    out <- list(h1('Climate report'))
     for(i in 1:length(scenarios)){
       out <- c(out, get_scenario_descriptions(
         aggregated_table,

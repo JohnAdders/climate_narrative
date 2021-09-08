@@ -14,6 +14,8 @@ am_exposures <- read.csv("csv/am_exposures.csv", stringsAsFactors = FALSE)
 # reading the pieces from which the final report is combined
 report_pieces <- read_yaml('report.yml')
 scenarios <- lapply(dir(path='scenario'),function(file) read_yaml(paste0('scenario/',file)))
+exposure_classes <- lapply(dir(path='exposure_class'),function(file) read_yaml(paste0('exposure_class/',file)))
+names(exposure_classes) <- sapply(dir(path='exposure_class'),function(file) strsplit(file,'.',fixed=T)[[1]][1])
 # defining a shortcut to add element to the list
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
