@@ -33,10 +33,10 @@ QuestionTab <- R6Class(
         input[[paste0(self$id,"_previous")]], switch_page(self$previous_tab))
       if (!is.null(self$next_tab)) {
         observeEvent(input[[paste0(self$id,"_next")]],{
-            # the line below - moved to tab6 instead of hardcoding next_tab==6 here
-            # if(self$next_tab == 6) update_final_page(input, output, session)
-            switch_page(self$next_tab)
-          }
+          # the line below - moved to tab6 instead of hardcoding next_tab==6 here
+          # if(self$next_tab == 6) update_final_page(input, output, session)
+          switch_page(self$next_tab)
+        }
         )
       }
     },

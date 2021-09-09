@@ -1,6 +1,6 @@
 name: Gas pretty name
 
-description: What this is
+description: What gas is
 
 transition:
     high:
@@ -12,7 +12,7 @@ transition:
             the text for high transition that is shown if they have a high materilaity cell
             
         bond_like:
-            extra text for specific products
+            extra text for bond products
 
     low:
         always:
@@ -23,7 +23,7 @@ transition:
             the text for no transition that issown if they have a high materilaity cell
 
         equity_like:
-            extra text for specific products
+            extra text for equity products
     
 
 physical:

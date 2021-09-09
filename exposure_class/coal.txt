@@ -1,5 +1,5 @@
 name: Coal pretty name
-description: What this is
+description: What coal is
 transition:
     high:
         always:
@@ -10,7 +10,7 @@ transition:
             the text for high transition that is shown if they have a high materilaity cell
             
         bond_like:
-            extra text for specific products
+            extra text for bond products
     low:
         always:
             the text for low transition that is always shown
@@ -18,7 +18,7 @@ transition:
         high_materiality:
             the text for no transition that issown if they have a high materilaity cell
         equity_like:
-            extra text for specific products
+            extra text for equity products
 physical:
     high:
         always:
