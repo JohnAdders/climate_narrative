@@ -1,5 +1,5 @@
 tab2_ui <- function () {
   result = list(h2("Bank Exposures"))
-  result = c(result, exposure_grid(bank_exposures,"bank_A"))
+  result = c(result, exposure_grid(bank_exposures,"bank|A"))
   return (result)
 }

@@ -2,4 +2,3 @@ name: Hothouse
 transition: no
 physical: high
 description: This is the text that goes after the heading to decsribe the scenario
-    

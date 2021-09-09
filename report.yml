@@ -29,6 +29,8 @@ physical:
     Additional text for gas low physical risk in case of high materiality
    property:
     Additional text for property low physical risk in case of high materiality
+  equity_like:
+    low physical risk equity-like specific text
  high:
   always:
    coal:
