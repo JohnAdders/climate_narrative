@@ -1,26 +1,14 @@
 library(yaml)
 library(markdown)
-# reading the file with QuestionTab class
-source('R/QuestionTab.R') 
-# reading some helper functions that produce the required tables
-source('R/table_functions.R') 
-# reading the code for tabs UI and server
-sapply(dir(path='R',pattern='tab[0-9]'), function(filename) source(paste0('R/',filename)))
+# reading the R files (QuestionTab class, helper functions, code for tabs UI and server
+sapply(dir(path='R'), function(filename) source(paste0('R/',filename)))
 # reading the questions from csv files
-bank_exposures <- read.csv("csv/bank_exposures.csv", stringsAsFactors = FALSE)
-insurance_assets <- read.csv("csv/insurance_assets.csv", stringsAsFactors = FALSE)
-insurance_liabilities <- read.csv("csv/insurance_liabilities.csv", stringsAsFactors = FALSE)
-am_exposures <- read.csv("csv/am_exposures.csv", stringsAsFactors = FALSE)
-# reading the pieces from which the final report is combined
-report_pieces <- read_yaml('report.yml')
-scenarios <- lapply(dir(path='scenario'),function(file) read_yaml(paste0('scenario/',file)))
-exposure_classes <- lapply(dir(path='exposure_class'),function(file) read_yaml(paste0('exposure_class/',file)))
-names(exposure_classes) <- sapply(dir(path='exposure_class'),function(file) strsplit(file,'.',fixed=T)[[1]][1])
-# defining a shortcut to add element to the list
-add_param <- function(previous_list, item_to_add) {
-  c(previous_list, list(item_to_add))
-}
-
+exposures <- lapply(dir(path='exposure'), function(filename) read.csv(paste0('exposure/',filename), stringsAsFactors = FALSE))
+names(exposures) <- sapply(dir(path='exposure'), function(file) strsplit(file,'.',fixed=T)[[1]][1])
+# reading the user submitted yaml files
+scenarios <- read_yaml_dir('scenario')
+products <- read_yaml_dir('product')
+exposure_classes <- read_yaml_dir('exposure_class')
 # defining the questionnaire using list of QuestionTab objects
 tabs <- list( 
   QuestionTab$new(tab1_ui, tab1_server, 1, NULL, 2),
