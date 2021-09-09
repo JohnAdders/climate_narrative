@@ -3,25 +3,6 @@ add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
 
-# helper function to read all yaml files as a named R list
-read_yaml_dir <- function(directory){
-  list <- lapply(dir(path=directory),function(file) read_yaml(paste0(directory, '/', file)))
-  names(list) <- sapply(dir(path=directory), function(file) strsplit(file, '.', fixed=T)[[1]][1])
-  return(list)
-}
-
-# helper function to creat a markdown table from r object
-table_to_markdown <- function(table, additional_spaces=3){
-  collapsor <- paste0(paste(rep("&nbsp;",additional_spaces),collapse=" "), " | ")
-  out <- paste(colnames(table), collapse=collapsor)
-  out <- paste0(out, '\n', paste(rep('---', ncol(table)), collapse=" | "), '\n')
-  for(i in 1:nrow(table)){
-    out <- paste0(out, paste(table[i,], collapse=collapsor), "\n")
-  }
-  out <- paste0(out, '\n\n')
-  return(out)
-}
-
 # helper functions to produce the layout of tabs (cell, row, whole table)
 exposure_grid_cell <- function(exposure_item, prefix, col_width) {
   if (exposure_item == "") {
@@ -34,7 +15,7 @@ exposure_grid_cell <- function(exposure_item, prefix, col_width) {
       column(
         col_width,
         selectInput(
-          paste(prefix,exposure_item,sep='|'),
+          paste(prefix, exposure_item, sep='|'),
           '',
           list('L', 'M', 'H')
     )))
@@ -42,7 +23,10 @@ exposure_grid_cell <- function(exposure_item, prefix, col_width) {
 }
 
 exposure_grid_row <- function(exposures_row, prefix, col_width) {
-  items = paste(names(exposures_row)[-(1:2)], exposures_row[-(1:2)], sep="|")
+  items <- paste(
+    names(exposures_row)[-(1:2)],
+    exposures_row[-(1:2)],
+    sep="|")
   items[exposures_row[-(1:2)] == ""] <- ""
   return (
     fluidRow(
@@ -75,3 +59,99 @@ exposure_grid <- function(exposures, label, col_width=2) {
   )
   return (rows)
 }
+
+# helper function to produce a markdown report
+table_to_markdown <- function(table, additional_spaces=3){
+  collapsor <- paste0(
+    paste(
+      rep("&nbsp;",additional_spaces),
+      collapse=" "),
+    " | "
+  )
+  out <- paste(colnames(table), collapse=collapsor)
+  out <- paste0(
+    out,
+    '\n',
+    paste(
+      rep('---', ncol(table)),
+      collapse=" | "
+    ),
+    '\n'
+  )
+  for(i in 1:nrow(table)){
+    out <- paste0(
+      out, 
+      paste(table[i,], collapse=collapsor),
+      "\n"
+    )
+  }
+  out <- paste0(out, '\n\n')
+  return(out)
+}
+
+get_exposure_description <- function(item, type_item_inputs){
+    temp <- type_item_inputs[order(type_item_inputs$materiality), ]
+    # conversion from factor back to string to ensure proper printing below
+    temp$materiality <- as.character(temp$materiality)
+    out <- paste0(
+      '### ',
+      exposure_classes[[item]][['name']],
+      '\n\n',
+      exposure_classes[[item]][['description']],
+      '\n\nThe following rows contribute: \n\n',
+      table_to_markdown(temp[,c('rowname','materiality','product','product_text','product_description')]),
+      '\n\n'
+    )
+  }
+  
+  get_exposure_risk_description <- function(item, products, materiality, physical_or_transition, high_or_low){
+    if(high_or_low == FALSE) return("")
+    
+    out <-paste0(
+      "#### ",
+      high_or_low,
+      " ",
+      physical_or_transition, 
+      " risk\n\n",
+      exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['always']],
+      '\n\n'
+    )
+    if(materiality == 'H') {
+      out <- paste0(
+        out,
+        exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['high_materiality']],
+        '\n\n'
+      )
+    }
+    for(product in products){
+      out <- paste0(
+        out,
+        exposure_classes[[item]][[physical_or_transition]][[high_or_low]][[product]],
+        '\n\n'
+      )
+    }
+    return(out)
+  }
+  
+  get_scenario_descriptions <- function(aggregated_table, type_inputs, name, description, transition, physical){
+    out <- paste0(
+      '## ',
+      name,
+      '\n\n',
+      description,
+      '\n\n'
+    )
+    for(i in 1:nrow(aggregated_table)){
+      item <- aggregated_table$item[i]
+      materiality <- aggregated_table$materiality[i]
+      type_item_inputs <- type_inputs[type_inputs$item == item,] 
+      products <- unique(type_item_inputs$product)
+      out <- paste0(
+        out, 
+        get_exposure_description(item, type_item_inputs),
+        get_exposure_risk_description(item, products, materiality, "physical", physical),
+        get_exposure_risk_description(item, products, materiality, "transition", transition)
+      )
+    }
+    return(out)
+  }
