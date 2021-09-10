@@ -141,7 +141,7 @@ get_exposure_description <- function(item, type_item_inputs){
       description,
       '\n\n'
     )
-    for(i in 1:nrow(aggregated_table)){
+    for (i in 1:nrow(aggregated_table)){
       item <- aggregated_table$item[i]
       materiality <- aggregated_table$materiality[i]
       type_item_inputs <- type_inputs[type_inputs$item == item,] 

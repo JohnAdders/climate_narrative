@@ -5,18 +5,17 @@ read_dir <- function(directory, file_format='auto'){
   file_list <- dir(path=directory)
   file_format <- tolower(file_format)
   if (file_format == 'auto'){
-    file_format <- strsplit(file_list[1], '.', fixed=T)[[1]][2]
+    file_format <- tolower(strsplit(file_list[1], '.', fixed=T)[[1]][2])
   }
   list <- lapply(
     file_list,
     function(file) {
-      if (file_format=='yml') {
-        read_yaml(paste0(directory, '/', file))
-      } else if (file_format=='csv') {
-        read.csv(paste0(directory, '/', file), stringsAsFactors=FALSE)
-      } else if (file_format=='r'){
-        source(paste0(directory, '/', file))
-      }
+      switch(file_format,
+        yml=read_yaml(paste0(directory, '/', file)),
+        csv=read.csv(paste0(directory, '/', file), stringsAsFactors=FALSE),
+        r=source(paste0(directory, '/', file)),
+        stop('Error (function read_dir): file format ', file_format, ' not handled')
+      )
     }
   )
   names(list) <- sapply(
