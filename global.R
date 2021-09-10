@@ -27,7 +27,7 @@ read_dir <- function(directory, file_format='auto'){
   )
   return(list)
 }
-read_dir('R','r')
+read_dir('R')
 exposures <- read_dir('exposure')
 scenarios <- read_dir('scenario')
 products <- read_dir('product')

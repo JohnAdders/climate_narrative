@@ -2,6 +2,7 @@ tab6_ui <- function () {
   list(
     # uiOutput('test_output'), # uncomment for debugging
     # uiOutput("show_aggregated_inputs"), # uncomment for debugging
+    downloadButton("report", "TODO: Download the report as html (in future potentially pdf, but this may requires LaTeX)"),
     uiOutput("rendered_report")
   )
 }
