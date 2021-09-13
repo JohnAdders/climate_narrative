@@ -77,29 +77,21 @@ server <- function(input, output, session) {
     HTML(markdown::markdownToHTML(text=report_contents() ))
   })
   
-  # source: https://shiny.rstudio.com/articles/generating-reports.html
+  # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
-    # For PDF output, change this to "report.pdf"
-    filename <- "report.html",
-    content <- function(file) {
-      # Copy the report file to a temporary directory before processing it, in
-      # case we don't have write permissions to the current working dir (which
-      # can happen when deployed).
-      tempReport <- file.path(tempdir(), "report.md")     
-      # Knit the document, passing in the `params` list, and eval it in a
-      # child of the global environment (this isolates the code in the document
-      # from the code in this app).
-      #rmarkdown::render(tempReport, output_file = file,
-      #  params = params,
-      #  envir = new.env(parent = globalenv())
-      #)
-      
-      #### my code
+    filename = "report.rtf", # file extension defines the rendering process
+    content = function(file) {
+      # writing a report to (temporary) file first
+      tempReport <- file.path(tempdir(), "report.md")
       fileConn <- file(tempReport)
       writeLines(report_contents() , fileConn)
       close(fileConn)
-      markdownToHTML(tempReport, output=file)
-
+      
+      rmarkdown::render(
+        tempReport,
+        output_file = file,
+        envir = new.env(parent = globalenv())
+      )
     }
   )
 

@@ -1,10 +1,18 @@
 tab6_ui <- function () {
-  list(
+  if(!pandoc_available()){
+    warning('Pandoc (required to render rtf) not available, hiding download report button')
+    out <- list()
+  } else {
+    out <- list(
+      downloadButton("report", "Download the report as RTF")
+    )
+  }
+  out <- c(out, list(
     # uiOutput('test_output'), # uncomment for debugging
     # uiOutput("show_aggregated_inputs"), # uncomment for debugging
-    downloadButton("report", "Download the report as html (TODO: pdf, but this may requires LaTeX)"),
+    # uiOutput('show_all_inputs'), # uncomment for debugging
     uiOutput("rendered_report")
-  )
+  ))
 }
 
 tab6_server <- function (input, output, session, tab) {
