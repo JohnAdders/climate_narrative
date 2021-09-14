@@ -1,6 +1,6 @@
 tab1_ui <- function () {
   list(
-      radioButtons(
+    radioButtons(
       "type",
       "Type of Institution:",
       c(

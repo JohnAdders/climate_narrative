@@ -1,20 +1,37 @@
-# reading the file with QuestionTab class
-source('QuestionTab.R') 
-# reading some helper functions that produce the required tables
-source('table_functions.R') 
-# reading the questions from csv files
-bank_exposures <- read.csv("bank_exposures.csv", stringsAsFactors = FALSE)
-insurance_assets <- read.csv("insurance_assets.csv", stringsAsFactors = FALSE)
-insurance_liabilities <- read.csv("insurance_liabilities.csv", stringsAsFactors = FALSE)
-am_exposures <- read.csv("am_exposures.csv", stringsAsFactors = FALSE)
-
-# defining a shortcut to add element to the list
-add_param <- function(previous_list, iten_to_add) {
-  c(previous_list, list(iten_to_add))
+library(yaml)
+library(rmarkdown)
+# helper function to read all yaml/csv/R files from a directory as a named R list
+read_dir <- function(directory, file_format='auto'){
+  file_list <- dir(path=directory)
+  file_format <- tolower(file_format)
+  if (file_format == 'auto'){
+    file_format <- tolower(strsplit(file_list[1], '.', fixed=T)[[1]][2])
+  }
+  list <- lapply(
+    file_list,
+    function(file) {
+      switch(file_format,
+        yml=read_yaml(paste0(directory, '/', file)),
+        csv=read.csv(paste0(directory, '/', file), stringsAsFactors=FALSE),
+        r=source(paste0(directory, '/', file)),
+        stop('Error (function read_dir): file format ', file_format, ' not handled')
+      )
+    }
+  )
+  names(list) <- sapply(
+    dir(path=directory),
+    function(file) {
+      strsplit(file, '.', fixed=T)[[1]][1]
+    }
+  )
+  return(list)
 }
 
-# reading the code for tabs UI and server
-sapply(1:6, function(tab_number) source(paste0('tab',tab_number,'.R')))
+read_dir('R')
+exposures <- read_dir('exposure')
+scenarios <- read_dir('scenario')
+products <- read_dir('product')
+exposure_classes <- read_dir('exposure_class')
 
 # defining the questionnaire using list of QuestionTab objects
 tabs <- list( 
@@ -23,7 +40,7 @@ tabs <- list(
   QuestionTab$new(tab3_ui, NULL, 3, 1, 5),
   QuestionTab$new(tab4_ui, NULL, 4, 1, 6),
   QuestionTab$new(tab5_ui, NULL, 5, 3, 6),
-  QuestionTab$new(tab6_ui, tab6_server, 6, 2, NULL)
+  QuestionTab$new(tab6_ui, tab6_server, 6, 1, NULL)
 )
 
 # defining the function that produces the ultimate description, depending on inputs
