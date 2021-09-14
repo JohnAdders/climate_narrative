@@ -1,0 +1,4 @@
+Type,product,Electricity From Gas, Electricity From Coal,Property
+Bonds,bond_like,,coal,
+Equity,equity_like,gas,coal,property
+Commercial Paper,bond_like,,coal,
