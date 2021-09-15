@@ -1,11 +1,12 @@
-name: Oil and gas
+name: Telecommunications
 
 description: 
-    Oil and gas sector description
+    Telecoms description
 
-    - Fugitive emissions capture technology​ (O&G firms should use Leak Detection and Repair (LDAR) and Vapor Recovery Units (VRU) technology to abate fugitive emissions)
-    - Energy efficiency (e.g. drilling operations) & Gas compression
-    - Fuel switching (gas and hydrogen - hydrogen will be crucial to meet the 30-year target of bringing greenhouse gas emissions to net zero)
+    - Investment in, and roll out of, energy efficient technologies e.g. 5G & Fibre (balanced with expanding use cases driving energy consumption up)​
+    - Improved heating/cooling technologies across the network 
+    - EV engineering truck fleets
+    - Switching to 100% renewables and green PPAs for fixed and mobile networks
 
 
 transition:

@@ -1,12 +1,12 @@
-name: Oil and gas
+name: Consumer products
 
 description: 
-    Oil and gas sector description
+    Consumer product description
 
-    - Fugitive emissions capture technology​ (O&G firms should use Leak Detection and Repair (LDAR) and Vapor Recovery Units (VRU) technology to abate fugitive emissions)
-    - Energy efficiency (e.g. drilling operations) & Gas compression
-    - Fuel switching (gas and hydrogen - hydrogen will be crucial to meet the 30-year target of bringing greenhouse gas emissions to net zero)
-
+    - Electrification and potential hydrogen use (for high temperature processes and longer range, heavy vehicles)
+    - Replacing HFCs with low GWP refrigerants such as ammonia and CO2
+    - Improved monitoring & protection of forests, peat and savannahs
+    - Food waste reduction – with diversion to anaerobic digestion
 
 transition:
     high:

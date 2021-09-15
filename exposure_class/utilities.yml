@@ -1,12 +1,12 @@
-name: Oil and gas
+name: Utilities
 
 description: 
-    Oil and gas sector description
+    what utilities are
 
-    - Fugitive emissions capture technology​ (O&G firms should use Leak Detection and Repair (LDAR) and Vapor Recovery Units (VRU) technology to abate fugitive emissions)
-    - Energy efficiency (e.g. drilling operations) & Gas compression
-    - Fuel switching (gas and hydrogen - hydrogen will be crucial to meet the 30-year target of bringing greenhouse gas emissions to net zero)
 
+    - Divestment and/or closure of coal and fossil fuel power generation​ 
+    - Investment in renewable power generation
+    - Electrification of water production (e.g. reverse osmosis)
 
 transition:
     high:

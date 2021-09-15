@@ -33,7 +33,7 @@ server <- function(input, output, session) {
         out$product_text[i] <- products[[out$product[i]]]$text
       }
     }
-    out$materiality <- factor(out$values, levels=c('','low','medium','high'), ordered=T)
+    out$materiality <- factor(out$values, levels=c('','Low','Medium','High'), ordered=T)
     out
   })
   

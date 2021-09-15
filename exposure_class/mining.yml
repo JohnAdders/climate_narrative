@@ -1,11 +1,13 @@
-name: Oil and gas
+name: Mining
 
 description: 
-    Oil and gas sector description
+    Metals and mining
 
-    - Fugitive emissions capture technology​ (O&G firms should use Leak Detection and Repair (LDAR) and Vapor Recovery Units (VRU) technology to abate fugitive emissions)
-    - Energy efficiency (e.g. drilling operations) & Gas compression
-    - Fuel switching (gas and hydrogen - hydrogen will be crucial to meet the 30-year target of bringing greenhouse gas emissions to net zero)
+
+    - Divestment and/or closure of coal assets, and fossil fuel powered smelting and refining assets
+    - Investment in battery raw material mining (cobalt, lithium, nickel etc.)
+    - Fuel switching (e.g. hydrogen)
+    - Carbon capture for both combustion emissions and fugitive emissions
 
 
 transition:

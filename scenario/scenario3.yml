@@ -1,11 +1,12 @@
 name: Hothouse
 transition: no
 physical: high
-description: In the 'hothouse' scenario no further actions are undertaken beyond current policies.
+description: 
+  In the 'hothouse' scenario no further actions are undertaken beyond current policies.
 
 
-As a result, the global warming level significantly exceeds the 2 degrees target, reaching 3 degrees
-or even more.
+  As a result, the global warming level significantly exceeds the 2 degrees target, reaching 3 degrees
+  or even more.
 
 
-This leads to significant irreversible changes (e.g. sea level up) and severe physical risk.
+  This leads to significant irreversible changes (e.g. sea level up) and severe physical risk.

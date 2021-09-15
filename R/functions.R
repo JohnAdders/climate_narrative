@@ -17,7 +17,7 @@ exposure_grid_cell <- function(exposure_item, prefix, col_width) {
         selectInput(
           paste(prefix, exposure_item, sep='|'),
           '',
-          list('', 'low', 'medium', 'high'),
+          list('Low', 'Medium', 'High',''),
           ''
     )))
   }
@@ -62,14 +62,18 @@ exposure_grid <- function(exposures, label, col_width=2) {
 }
 
 # helper function to produce a markdown report
-table_to_markdown <- function(table, additional_spaces=3){
+table_to_markdown <- function(table, additional_spaces=3, dot_to_space=TRUE){
+  headers <- colnames(table)
+  if(dot_to_space){
+    headers <- gsub('.', '&nbsp;', headers, fixed=TRUE)
+  }
   collapsor <- paste0(
     paste(
       rep("&nbsp;",additional_spaces),
       collapse=""),
       " | "
   )
-  out <- paste(colnames(table), collapse=collapsor)
+  out <- paste(headers, collapse=collapsor)
   out <- paste0(
     out,
     '\n',
@@ -94,13 +98,13 @@ get_exposure_description <- function(item, type_item_inputs){
     temp <- type_item_inputs[order(type_item_inputs$materiality), ]
     # conversion from factor back to string to ensure proper printing below
     temp$materiality <- as.character(temp$materiality)
-    temp2 <- temp[,c('rowname','materiality')]#,'product','product_text','product_description')]
+    temp2 <- temp[,c('rowname','materiality')]
+    colnames(temp2) <- c('Exposure.row','Materiality')
     temp3 <- aggregate(
       temp2,
       by=list(
-        product=temp$product,
-        product_text=temp$product_text,
-        product_description=temp$product_description
+        Product.description=temp$product_description,
+        Product.text=temp$product_text
       ),
       FUN=function(texts) paste(
         gsub(" ", "&nbsp;", texts),
@@ -130,7 +134,7 @@ get_exposure_description <- function(item, type_item_inputs){
       exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['always']],
       '\n\n'
     )
-    if(materiality == 'high') {
+    if(materiality == 'High') {
       out <- paste0(
         out,
         exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['high_materiality']],

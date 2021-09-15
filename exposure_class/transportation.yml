@@ -1,11 +1,12 @@
-name: Oil and gas
+name: Transportation
 
 description: 
-    Oil and gas sector description
+    what transportation is
 
-    - Fugitive emissions capture technology​ (O&G firms should use Leak Detection and Repair (LDAR) and Vapor Recovery Units (VRU) technology to abate fugitive emissions)
-    - Energy efficiency (e.g. drilling operations) & Gas compression
-    - Fuel switching (gas and hydrogen - hydrogen will be crucial to meet the 30-year target of bringing greenhouse gas emissions to net zero)
+    - Electrification (regulation for road transport - ~20 countries have already placed future bans for ICE vehicles, which will increase over time)
+    - Creating propositions that are ‘green’
+    - Fuel switching (lighter fossil fuels such as biomass, hydrogen)
+    - Supplier selection and procurement policies
 
 
 transition:
