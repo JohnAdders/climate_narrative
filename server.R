@@ -85,10 +85,10 @@ server <- function(input, output, session) {
   
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
-    filename = "report.rtf", # file extension defines the rendering process
+    filename = "Climate Report.rtf", # file extension defines the rendering process
     content = function(file) {
       # writing a report to (temporary) file first
-      tempReport <- file.path(tempdir(), "report.md")
+      tempReport <- tempfile(fileext='.md')
       fileConn <- file(tempReport)
       writeLines(report_contents() , fileConn)
       close(fileConn)
