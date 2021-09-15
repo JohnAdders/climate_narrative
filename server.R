@@ -33,20 +33,26 @@ server <- function(input, output, session) {
         out$product_text[i] <- products[[out$product[i]]]$text
       }
     }
-    out$materiality <- factor(out$values, levels=c('L','M','H'), ordered=T)
+    out$materiality <- factor(out$values, levels=c('','low','medium','high'), ordered=T)
     out
   })
   
   type_inputs = reactive({
     out <- all_inputs()
-    out <- out[(which(out$type==input$type)), ]
+    out <- out[(which(out$type == input$type & out$materiality != '')), ]
     return(out)
   })
   
   aggregated_type_inputs <- reactive({
     temp <- type_inputs()
-    temp <- aggregate(materiality~item, FUN=max, data=temp)
-    temp[order(temp$materiality, decreasing=TRUE), ]
+    if(nrow(temp)){
+      temp <- aggregate(materiality ~ item, FUN=max, data=temp)
+      temp[order(temp$materiality, decreasing=TRUE), ]
+    } else {
+      # TODO decide what to show if all exposures are blank?
+      warning('All exposures are blank')
+      return(data.frame(item=c(),materiality=c()))
+    }
   })
 
   report_contents <- reactive({

@@ -17,7 +17,8 @@ exposure_grid_cell <- function(exposure_item, prefix, col_width) {
         selectInput(
           paste(prefix, exposure_item, sep='|'),
           '',
-          list('L', 'M', 'H')
+          list('', 'low', 'medium', 'high'),
+          ''
     )))
   }
 }
@@ -78,7 +79,7 @@ table_to_markdown <- function(table, additional_spaces=3){
     ),
     '\n'
   )
-  for(i in 1:nrow(table)){
+  if(nrow(table)) for(i in 1:nrow(table)){
     out <- paste0(
       out, 
       paste(table[i,], collapse=collapsor),
@@ -116,7 +117,7 @@ get_exposure_description <- function(item, type_item_inputs){
       exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['always']],
       '\n\n'
     )
-    if(materiality == 'H') {
+    if(materiality == 'high') {
       out <- paste0(
         out,
         exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['high_materiality']],
@@ -141,7 +142,7 @@ get_exposure_description <- function(item, type_item_inputs){
       description,
       '\n\n'
     )
-    for (i in 1:nrow(aggregated_table)){
+    if(nrow(aggregated_table)) for (i in 1:nrow(aggregated_table)){
       item <- aggregated_table$item[i]
       materiality <- aggregated_table$materiality[i]
       type_item_inputs <- type_inputs[type_inputs$item == item,] 
