@@ -66,8 +66,8 @@ table_to_markdown <- function(table, additional_spaces=3){
   collapsor <- paste0(
     paste(
       rep("&nbsp;",additional_spaces),
-      collapse=" "),
-    " | "
+      collapse=""),
+      " | "
   )
   out <- paste(colnames(table), collapse=collapsor)
   out <- paste0(
@@ -94,13 +94,26 @@ get_exposure_description <- function(item, type_item_inputs){
     temp <- type_item_inputs[order(type_item_inputs$materiality), ]
     # conversion from factor back to string to ensure proper printing below
     temp$materiality <- as.character(temp$materiality)
+    temp2 <- temp[,c('rowname','materiality')]#,'product','product_text','product_description')]
+    temp3 <- aggregate(
+      temp2,
+      by=list(
+        product=temp$product,
+        product_text=temp$product_text,
+        product_description=temp$product_description
+      ),
+      FUN=function(texts) paste(
+        gsub(" ", "&nbsp;", texts),
+        collapse='<br />'
+      )
+    )
     out <- paste0(
       '### ',
       exposure_classes[[item]][['name']],
       '\n\n',
       exposure_classes[[item]][['description']],
       '\n\nThe following rows contribute: \n\n',
-      table_to_markdown(temp[,c('rowname','materiality','product','product_text','product_description')]),
+      table_to_markdown(temp3),
       '\n\n'
     )
   }

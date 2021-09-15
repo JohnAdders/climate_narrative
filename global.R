@@ -43,14 +43,14 @@ tabs <- list(
   QuestionTab$new(tab6_ui, tab6_server, 6, 1, NULL)
 )
 
-# defining the function that produces the ultimate description, depending on inputs
-update_final_page <- function(input, output, session) {
-  summary = list(
-    h1("Climate Narrative"),
-    p("Some Text."),
-    p("Some more Text."),
-    p("Dummy output. The exact mechanics TBC, this should produce a text basing on the inputs, for instance: "),
-    p(paste0("The type of undertaking is ",input$type,". Equity exposure to gas sector is ", input$gas_Equity,"."))
-  )
-  output$summary <- renderUI(summary)
-}
+# # defining the function that produces the ultimate description, depending on inputs
+# update_final_page <- function(input, output, session) {
+#   summary = list(
+#     h1("Climate Narrative"),
+#     p("Some Text."),
+#     p("Some more Text."),
+#     p("Dummy output. The exact mechanics TBC, this should produce a text basing on the inputs, for instance: "),
+#     p(paste0("The type of undertaking is ",input$type,". Equity exposure to gas sector is ", input$gas_Equity,"."))
+#   )
+#   output$summary <- renderUI(summary)
+# }
