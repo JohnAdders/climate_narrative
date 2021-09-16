@@ -15,10 +15,12 @@ exposure_grid_cell <- function(exposure_item, prefix, col_width) {
       column(
         col_width,
         selectInput(
-          paste(prefix, exposure_item, sep='|'),
-          '',
-          list('Low', 'Medium', 'High',''),
-          ''
+          inputId=paste(prefix, exposure_item, sep='|'),
+          label='',
+          choices=c('', 'Low', 'Medium', 'High'),
+          selected='',
+          # to allow empty string as a valid option I do not use selectize
+          selectize=FALSE
     )))
   }
 }
