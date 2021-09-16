@@ -1,51 +1,28 @@
 name: Transportation
 
 description: 
-    what transportation is
-
-    - Electrification (regulation for road transport - ~20 countries have already placed future bans for ICE vehicles, which will increase over time)
-    - Creating propositions that are ‘green’
-    - Fuel switching (lighter fossil fuels such as biomass, hydrogen)
-    - Supplier selection and procurement policies
-
-
+    what transportation is.
 transition:
     high:
-        always:
-            the text for high transition that is always shown
-            which can on and on
-            
+        always: &transition
+            - Electrification (regulation for road transport - ~20 countries have already placed future bans for ICE vehicles, which will increase over time)
+            - Creating propositions that are ‘green’
+            - Fuel switching (lighter fossil fuels such as biomass, hydrogen)
+            - Supplier selection and procurement policies
         high_materiality:
-            the text for high transition that is shown if they have a high materilaity cell
-            
-        bond_like:
-            extra text for bond products
-
+            Note that this is a high materiality sector for your company.
     low:
-        always:
-            the text for low transition that is always shown
-            which can on and on
-            
+        always: *transition
         high_materiality:
-            the text for no transition that issown if they have a high materilaity cell
-
-        equity_like:
-            extra text for equity products
-    
-
+            Note that this is a high materiality sector for your company.
 physical:
     high:
         always:
-            the text for high physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for high physical that issown if they have a high materilaity cell
-
+            Note that this is a high materiality sector for your company.
     low:
         always:
-            the text for low physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for low physical that issown if they have a high materilaity cell
+            Note that this is a high materiality sector for your company.

@@ -1,7 +1,8 @@
 name: Consumer products
 
 description: 
-    Consumer product description
+    This sector covers a wide range of consumer products. The exact impact may vary,
+    some general points to consider are only given here.
 
     - Electrification and potential hydrogen use (for high temperature processes and longer range, heavy vehicles)
     - Replacing HFCs with low GWP refrigerants such as ammonia and CO2
@@ -11,40 +12,47 @@ description:
 transition:
     high:
         always:
-            the text for high transition that is always shown
-            which can on and on
+            In the consumer sector, rapid switch to low carbon economy may manifest as
+
+                - Use of electricity or hydrogen instead of fossil fuels for heavy vehicles as well as technological processes)
+                - Use of refrigirants without high global warming impact
+                - Protection of areas with carbon capture potential (forests, peat and savannahs)
+                - Food waste reduction
             
-        high_materiality:
-            the text for high transition that is shown if they have a high materilaity cell
-            
-        bond_like:
-            extra text for bond products
+        high_materiality: No
 
     low:
         always:
-            the text for low transition that is always shown
-            which can on and on
-            
-        high_materiality:
-            the text for no transition that issown if they have a high materilaity cell
+            In the consumer sector, a transition to low carbon economy may manifest as
 
-        equity_like:
-            extra text for equity products
-    
+                - Use of electricity or hydrogen instead of fossil fuels for heavy vehicles as well as technological processes)
+                - Use of refrigirants without high global warming impact
+                - Protection of areas with carbon capture potential (forests, peat and savannahs)
+                - Food waste reduction
+        high_materiality: No
 
 physical:
     high:
         always:
-            the text for high physical that is always shown
-            which can on and on
-            
-        high_materiality:
-            the text for high physical that issown if they have a high materilaity cell
+            In many part of the world the lifestyle of people will change. Generally, the 
+            customer disposable income will be hit by the climate change, potentially leading to 
+            fall in non-essential customer product demand.
+            Some areas may be even no longer livable (in particular due to extreme heat).
 
+
+            The high magnitude of physical risk will affect the supply side as well.
+            Large areas currently in commercial use may be no longer suitable.
+        high_materiality:
+            Note that this is a high materiality sector for your company.
     low:
         always:
-            the text for low physical that is always shown
-            which can on and on
-            
+            It is likely that in some part of the world the lifestyle of people will change. 
+            The customer disposable income may be hit by the climate change, potentially leading to 
+            fall in non-essential customer product demand.
+
+
+            The physical risk may affect the supply side as well.
+            Some areas currently in commercial use may be no longer suitable.
         high_materiality:
-            the text for low physical that issown if they have a high materilaity cell
+            Note that this is a high materiality sector for your company.
+

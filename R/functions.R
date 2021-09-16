@@ -44,7 +44,7 @@ exposure_grid_row <- function(exposures_row, prefix, col_width) {
   )
 }
 
-exposure_grid <- function(exposures, label, col_width=2) {
+exposure_grid <- function(exposures, label, col_width=floor(12/(ncol(exposures)-1))) {
   rows = c(
     list(
       fluidRow(

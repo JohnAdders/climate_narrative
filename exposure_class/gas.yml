@@ -1,50 +1,47 @@
 name: Oil and gas
 
 description: 
-    Oil and gas sector description
-
-    - Fugitive emissions capture technology​ (O&G firms should use Leak Detection and Repair (LDAR) and Vapor Recovery Units (VRU) technology to abate fugitive emissions)
-    - Energy efficiency (e.g. drilling operations) & Gas compression
-    - Fuel switching (gas and hydrogen - hydrogen will be crucial to meet the 30-year target of bringing greenhouse gas emissions to net zero)
-
-
+    The oil and gas sector are essential for current economy, but are unsustainable in its current shape
+    if the carbon emissions are to be massively reduced.
 transition:
     high:
         always:
-            the text for high transition that is always shown
-            which can on and on
-            
+            The transition to low carbon economy threatens the very existence of the companies focusing
+            on oil and/or gas. In the disorderly transition the companies will likely be severely hit.    
         high_materiality:
-            the text for high transition that is shown if they have a high materilaity cell
-            
+            High materiality exposure to this sector makes your company heavily exposed to the
+            transition risk as well.
         bond_like:
-            extra text for bond products
-
+            Debt issued by oil and gas companies may default.
     low:
         always:
-            the text for low transition that is always shown
-            which can on and on
+            The transition to low carbon economy threatens the very existence of the companies focusing
+            on oil and/or gas. Some possibilities of management actions however do exist, including
+
+
+            + fugitive emissions capture technology,
+
+            + energy efficiency,
             
+            + fuel switching (hydrogen)
+            
+            
+            It has to be noted that gas is relatively less carbon intensive than other carbon fuels,
+            therefore in shorter term transition may even be an opportunity to gas related companies.
         high_materiality:
-            the text for no transition that issown if they have a high materilaity cell
-
-        equity_like:
-            extra text for equity products
-    
-
+            High materiality exposure to this sector makes your company heavily exposed to the
+            transition risk as well.
 physical:
     high:
         always:
-            the text for high physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for high physical that issown if they have a high materilaity cell
+            Note that this is a high materiality sector for your company.
 
     low:
         always:
-            the text for low physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for low physical that issown if they have a high materilaity cell
+            Note that this is a high materiality sector for your company.
+
+

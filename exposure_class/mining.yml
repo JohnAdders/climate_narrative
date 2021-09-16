@@ -4,49 +4,36 @@ description:
     Metals and mining
 
 
-    - Divestment and/or closure of coal assets, and fossil fuel powered smelting and refining assets
-    - Investment in battery raw material mining (cobalt, lithium, nickel etc.)
-    - Fuel switching (e.g. hydrogen)
-    - Carbon capture for both combustion emissions and fugitive emissions
 
 
 transition:
     high:
-        always:
-            the text for high transition that is always shown
-            which can on and on
-            
-        high_materiality:
-            the text for high transition that is shown if they have a high materilaity cell
-            
-        bond_like:
-            extra text for bond products
+        always: &transition
+            Transition risk in this sector
 
+
+            Divestment and/or closure of fossil fuel powered smelting and refining assets
+            - Fuel switching (e.g. hydrogen)
+            - Carbon capture for both combustion emissions and fugitive emissions
+
+
+            There may be some opportunities as well
+            - Battery raw material mining (cobalt, lithium, nickel etc.)
+        high_materiality:
+            Note that this is a high materiality sector for your company.
     low:
-        always:
-            the text for low transition that is always shown
-            which can on and on
-            
+        always: *transition
         high_materiality:
-            the text for no transition that issown if they have a high materilaity cell
-
-        equity_like:
-            extra text for equity products
-    
+            Note that this is a high materiality sector for your company.
 
 physical:
     high:
         always:
-            the text for high physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for high physical that issown if they have a high materilaity cell
-
+            Note that this is a high materiality sector for your company.
     low:
         always:
-            the text for low physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for low physical that issown if they have a high materilaity cell
+            Note that this is a high materiality sector for your company.

@@ -3,49 +3,34 @@ name: Telecommunications
 description: 
     Telecoms description
 
-    - Investment in, and roll out of, energy efficient technologies e.g. 5G & Fibre (balanced with expanding use cases driving energy consumption up)​
-    - Improved heating/cooling technologies across the network 
-    - EV engineering truck fleets
-    - Switching to 100% renewables and green PPAs for fixed and mobile networks
+
 
 
 transition:
     high:
-        always:
-            the text for high transition that is always shown
-            which can on and on
-            
-        high_materiality:
-            the text for high transition that is shown if they have a high materilaity cell
-            
-        bond_like:
-            extra text for bond products
+        always: &transition
+            + Investment in, and roll out of, energy efficient technologies e.g. 5G & Fibre
 
+            + improved heating/cooling technologies across the network
+
+            + EV engneering truck fleets
+            
+            + Switching to 100% renewables and green PPAs for fixed and mobile networks
+        high_materiality:
+            Note that this is a high materiality sector for your company.        
     low:
-        always:
-            the text for low transition that is always shown
-            which can on and on
-            
+        always: *transition
         high_materiality:
-            the text for no transition that issown if they have a high materilaity cell
-
-        equity_like:
-            extra text for equity products
-    
-
+            Note that this is a high materiality sector for your company.
 physical:
     high:
         always:
-            the text for high physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for high physical that issown if they have a high materilaity cell
-
+            Note that this is a high materiality sector for your company.
     low:
         always:
-            the text for low physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for low physical that issown if they have a high materilaity cell
+            Note that this is a high materiality sector for your company.
+
