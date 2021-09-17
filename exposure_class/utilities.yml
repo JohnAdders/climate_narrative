@@ -1,15 +1,44 @@
-name: Utilities (ex coal?)
+name: Utilities
 
 description: 
-    what utilities are
+    The utility sector is relatively major source of emissions. 
+    It may overlap with 'coal' category, so for now consider the coal-based electricity generation
+    to be excluded from the category.
+
+
+    It has to be noted that this sector is usually strictly regulated, making it dependant on
+    the regulatory/government decisions if the existing business models needs changes.
 transition:
     high:
         always: &transition
-            + closure of fossil fuel power generation
+            The utility sector comprises several subsectors, all of which will be affected
+            by the transition.
 
-            + investment in renewable power generation
+
+            + Electricity. For sure the production from renewable sources will increase,
+            which may be challenging to the network due to instable (weather-dependent)
+            nature of the production.
+            Coal is only the first fuel to eliminate, subsequently also other fossil fuels
+            in particular gas may prove risky, although it is ambiguous.
+            On one hand it provides a practical way to balance the instability of the 
+            renewables, on the other hand it still contributes to CO<sub>2</sub> emission.
+            Nuclear energy constitutes a very low-carbon alternative, but it seems not
+            widely acceptable, especially after Fukushima incident the world tends to switch
+            off the nuclear plants rather than build new ones.
+
+
+            + Gas supply. The use of gas is common both in industry and households (heating).
+            Usage of natural gas will likely be limited. A potential opportunity, but still
+            technologically immature, is to mix natural gas with hydrogen or even totally 
+            switch the existing gas infrastructure to hydrogen use.
+
+
+            + Garbage. Storing waste is a source of greenhouse gases (methane), which can be used
+            as a biofuel
             
-            + electrification of water production
+
+            + Water and sewage. Energy efficiency and electrification of technology processes
+            will be required.
 
         high_materiality:
             Note that this is a high materiality sector for your company.
@@ -21,13 +50,26 @@ transition:
             extra text for equity products
 physical:
     high:
-        always:
-            The physical risk is not expected to affect the sector in a particular way.
+        always: &physical
+            For the energy and electricity industry, the direct consequence of chronic
+            changes will be gradual switch in the demand profile. Generally, as temperature
+            increases, more energy will be required for cooling and less for heating.
+            The particular impacts are location-dependent, 
+
+
+            Also the water industry is very likely to be affected and may require
+            material capital investment to continue providing water.
+            In some areas the water deficit may even require imposing use restrictions.
+
+
+            Also the acute physial risks will result in more strain to many type of utilities.
+            For example, heatwaves may be challenging for electricity grid and water supply.
+            Flooding may in principle affect any large physical facilities but the impact
+            will be severe if essential public servicies are interrupted.
         high_materiality:
             Note that this is a high materiality sector for your company.
     low:
-        always:
-            The physical risk is not expected to affect the sector in a particular way.
+        always: *physical
         high_materiality:
             Note that this is a high materiality sector for your company.
 

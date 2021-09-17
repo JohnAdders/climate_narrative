@@ -11,25 +11,24 @@ description:
 
 transition:
     high:
-        always:
-            In the consumer sector, rapid switch to low carbon economy may manifest as
+        always: &transition
+            In the consumer sector, a transition to low carbon economy may manifest as pressure to
 
-                - Use of electricity or hydrogen instead of fossil fuels for heavy vehicles as well as technological processes)
-                - Use of refrigirants without high global warming impact
-                - Protection of areas with carbon capture potential (forests, peat and savannahs)
-                - Food waste reduction
-            
-        high_materiality: No
+                + Use of electricity or hydrogen instead of fossil fuels for heavy vehicles as well as technological processes)
+
+                + Use of refrigirants without high global warming impact
+
+                + Protection of areas with carbon capture potential (forests, peat and savannahs)
+
+                + Food waste reduction
+        high_materiality:
+            No specific high materiality considerations
 
     low:
-        always:
-            In the consumer sector, a transition to low carbon economy may manifest as
-
-                - Use of electricity or hydrogen instead of fossil fuels for heavy vehicles as well as technological processes)
-                - Use of refrigirants without high global warming impact
-                - Protection of areas with carbon capture potential (forests, peat and savannahs)
-                - Food waste reduction
-        high_materiality: No
+        always: *transition
+            
+        high_materiality:
+            No specific high materiality considerations
 
 physical:
     high:

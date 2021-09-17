@@ -2,20 +2,19 @@ name: Telecommunications
 
 description: 
     Telecoms description
-
-
-
-
 transition:
     high:
         always: &transition
-            + Investment in, and roll out of, energy efficient technologies e.g. 5G & Fibre
+            The telecommunication industry is not what one would think of when considering
+            transition risk, but it will be impacted to some extent as well. 
+            Telecommunication companies, just like any others, will be forced to decrease
+            their carbon footpring. In this case the efforts will focus on
 
-            + improved heating/cooling technologies across the network
+            + Energy efficiency of the technologies, including cooling
 
-            + EV engneering truck fleets
-            
-            + Switching to 100% renewables and green PPAs for fixed and mobile networks
+            + Transition the fleet of trucks to electric vehicles
+
+            + Ensuring sufficient supply of renewable electric energy at acceptable cost
         high_materiality:
             Note that this is a high materiality sector for your company.        
     low:

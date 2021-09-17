@@ -5,10 +5,32 @@ description:
 transition:
     high:
         always: &transition
-            - Electrification (regulation for road transport - ~20 countries have already placed future bans for ICE vehicles, which will increase over time)
-            - Creating propositions that are ‘green’
-            - Fuel switching (lighter fossil fuels such as biomass, hydrogen)
-            - Supplier selection and procurement policies
+            The transportation sector is a major source of emission and is likely to be
+            heavily affected in the global transition towards low carbon economy.
+
+
+            As for road transport, some countries already announced future ban on
+            vehicles powered with combustion engines.
+            This is currently a challenge for the industry as electric vehicles
+            are still much more expensive to produce and not so convenient to the users.
+            Another possibility is use of hydrogen as an alternative fuel, but the technology
+            is even further to being able to comercially replace fuels based on crude oil.
+
+
+            It is not only road transport that will be affected, in a similar manner the
+            transition affects ships and airplanes. In those cases the technology is even
+            less developed for now and it will be more technologically challenging to
+            cut the emissions proportionally.
+
+
+            It must be noted that the transition may create new opportunities for the rail
+            transport. This is probably the lowest carbon option among currently (widely) used
+            means of transport, provided that the electricity comes from clean sources.
+            
+            
+            As in any industry, the transition will affect the whole value chain, not only
+            car manufacturers and their suppliers but also companies offering transport
+            of goods and passengers.
         high_materiality:
             Note that this is a high materiality sector for your company.
     low:
