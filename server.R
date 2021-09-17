@@ -80,7 +80,8 @@ server <- function(input, output, session) {
   })
   
   output$rendered_report <- renderUI({
-    HTML(markdown::markdownToHTML(text=report_contents() ))
+    print(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
+    HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
   })
   
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
@@ -92,12 +93,16 @@ server <- function(input, output, session) {
       fileConn <- file(tempReport)
       writeLines(report_contents() , fileConn)
       close(fileConn)
-      
+      fs <- file.size(tempReport)
       rmarkdown::render(
         tempReport,
         output_file = file,
         envir = new.env(parent = globalenv())
       )
+      # I found that in some cases the rendering silently overwrites the markdown file
+      # Cause unknown, maybe due to some weird blank characters instead of space?
+      # Therefore added a control to throw error if the file is truncated in the process
+      if(file.size(tempReport) != fs) stop('Rtf rendering issue - md file invisibly truncated!')
     }
   )
 
