@@ -80,7 +80,6 @@ server <- function(input, output, session) {
   })
   
   output$rendered_report <- renderUI({
-    print(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
     HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
   })
   
