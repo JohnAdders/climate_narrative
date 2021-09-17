@@ -35,7 +35,7 @@ exposure_grid_row <- function(exposures_row, prefix, col_width) {
     fluidRow(
       c(
         list(
-          column(col_width, p(exposures_row[1])),
+          column(col_width, h5(exposures_row[1])),
           lapply(items, function(item) {
             exposure_grid_cell(item, paste(prefix,exposures_row[1], exposures_row[2], sep="|"), col_width)
             }
@@ -129,10 +129,10 @@ get_exposure_description <- function(item, type_item_inputs){
     
     out <-paste0(
       "#### ",
+      paste0(toupper(substring(physical_or_transition, 1, 1)), substring(physical_or_transition, 2)), 
+      " risk (intensity: ",
       high_or_low,
-      " ",
-      physical_or_transition, 
-      " risk\n\n",
+      ")\n\n",
       exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['always']],
       '\n\n'
     )

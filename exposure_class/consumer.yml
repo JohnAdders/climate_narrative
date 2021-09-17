@@ -4,15 +4,11 @@ description:
     This sector covers a wide range of consumer products. The exact impact may vary,
     some general points to consider are only given here.
 
-    - Electrification and potential hydrogen use (for high temperature processes and longer range, heavy vehicles)
-    - Replacing HFCs with low GWP refrigerants such as ammonia and CO2
-    - Improved monitoring & protection of forests, peat and savannahs
-    - Food waste reduction – with diversion to anaerobic digestion
-
 transition:
     high:
         always: &transition
             In the consumer sector, a transition to low carbon economy may manifest as pressure to
+
 
                 + Use of electricity or hydrogen instead of fossil fuels for heavy vehicles as well as technological processes)
 
@@ -21,6 +17,7 @@ transition:
                 + Protection of areas with carbon capture potential (forests, peat and savannahs)
 
                 + Food waste reduction
+
         high_materiality:
             No specific high materiality considerations
 
