@@ -1,0 +1,52 @@
+name: Financial Services
+
+description:
+    Financials description
+
+transition:
+    high:
+        always:
+            There may be significant indirect exposure to transition risk (e.g. if an institution
+            provides capital to carbon intensive sectors, which will be significantly affected).
+
+
+
+            Apart from the indirect exposure to transition risk, there is a direct exposure as well.
+            The financial companies need to monitor the situation, consider climate related
+            metrics in their business decision and disclose the relevant metrics. This will likely
+            be analysed by their investors and counterparties. In the disorderly transition
+            this may prove challenging.
+        high_materiality:
+            As the exposure to financial sector is highly material, it is worth
+            to analyse the exposure on look through basis, using the available reports
+            from the companies to assess their resilience to transition risk.
+
+    low:
+        always:
+            Apart from the indirect exposure to transition risk, there is a direct exposure as well.
+            The financial companies need to monitor the situation, consider climate related
+            metrics in their business decision and disclose the relevant metrics. This will likely
+            be analysed by their investors and counterparties.
+            The process of transition will be relatively smooth, allowing the management of the financial
+            companies to avoid much of the large unexpected losses.
+        high_materiality:
+            Even for high materiality exposure to the financial sector the impact should not
+            threaten your company
+            (unless the portfolio is skewed towards specific, vulnerable exposures).
+physical:
+    high:
+        always:
+            The sector is expected to be largely affected, but mostly in an indirect way. The extent
+            may vary considerably depending on the climate policy of the particular company.
+        high_materiality:
+            As the exposure to financial sector is highly material, it is worth
+            to analyse the exposure on look through basis, using the available reports
+            from the companies to assess their resilience to physical risk.
+    low:
+        always:
+            The sector is expected to be affected to some extent,mostly in an indirect way.
+            The extent may vary depending on the climate policy of the particular company.
+        high_materiality:
+            Even for high materiality exposure to the financial sector the impact should not
+            threaten your company
+            (unless the portfolio is skewed towards specific, vulnerable exposures).

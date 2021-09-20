@@ -1,44 +1,40 @@
-name: Property pretty name
+name: Commercial Property
 
-description: What property is
-
+description: 
+    The sector of commercial property is likely to be affected by both transition and physical risks.
 transition:
     high:
-        always:
-            the text for high transition that is always shown
-            which can on and on
-            
-        high_materiality:
-            the text for high transition that is shown if they have a high materilaity cell
-            
-        bond_like:
-            extra text for bond products
+        always: &transition
+            The property sector will be challenged to improve energy efficiency of buildings.
+            For the new construction this probably means 'Net zero buildings'.
+            Lower carbon intensity construction technology investments are necessary.
 
+
+            But due to long period of property use (and inherent inertia) changes to existing
+            buildings may prove even more important.
+            Energy efficiency can be improved (e.g. insulation, triple glazing,
+            efficient heating/cooling, use of renewable energy), it may prove costly or unpractical
+            in some cases. As a result, some of the older buildings that fail to meet the standards
+            may become practically unusable and lose its economic value.
+
+        high_materiality: &transition_high
+            Property is a high materiality sector for your company. Therefore it is recommended
+            to proactively cooperate with the companies to find the optimal transition pathway
+            in advance, before it is enforced by law.
     low:
-        always:
-            the text for low transition that is always shown
-            which can on and on
-            
-        high_materiality:
-            the text for no transition that issown if they have a high materilaity cell
-
-        equity_like:
-            extra text for equity products
-    
-
+        always: *transition
+        high_materiality: *transition_high
 physical:
     high:
-        always:
-            the text for high physical that is always shown
-            which can on and on
-            
-        high_materiality:
-            the text for high physical that issown if they have a high materilaity cell
-
+        always: &physical
+            The property sector is likely to be one of the most adversely affected by the physical risk.
+            The existing buildings cannot be moved and will be directly exposed to both chronic
+            (changing long term climate conditions, leading to e.g. increased cooling capacity required)
+            and acute symptoms (including droughts and floods)
+        high_materiality: &physical_high
+            Property is a high materiality sector for your company. Therefore it is recommended
+            to proactively cooperate with the companies to identify and (where possible and practical)
+            mitigate the possible physical risk to the existing buildings.
     low:
-        always:
-            the text for low physical that is always shown
-            which can on and on
-            
-        high_materiality:
-            the text for low physical that issown if they have a high materilaity cell
+        always: *physical
+        high_materiality: *physical_high

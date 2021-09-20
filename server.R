@@ -33,20 +33,26 @@ server <- function(input, output, session) {
         out$product_text[i] <- products[[out$product[i]]]$text
       }
     }
-    out$materiality <- factor(out$values, levels=c('L','M','H'), ordered=T)
+    out$materiality <- factor(out$values, levels=c('','Low','Medium','High'), ordered=T)
     out
   })
   
   type_inputs = reactive({
     out <- all_inputs()
-    out <- out[(which(out$type==input$type)), ]
+    out <- out[(which(out$type == input$type & out$materiality != '')), ]
     return(out)
   })
   
   aggregated_type_inputs <- reactive({
     temp <- type_inputs()
-    temp <- aggregate(materiality~item, FUN=max, data=temp)
-    temp[order(temp$materiality, decreasing=TRUE), ]
+    if(nrow(temp)){
+      temp <- aggregate(materiality ~ item, FUN=max, data=temp)
+      temp[order(temp$materiality, decreasing=TRUE), ]
+    } else {
+      # TODO decide what to show if all exposures are blank?
+      warning('All exposures are blank')
+      return(data.frame(item=c(),materiality=c()))
+    }
   })
 
   report_contents <- reactive({
@@ -74,24 +80,28 @@ server <- function(input, output, session) {
   })
   
   output$rendered_report <- renderUI({
-    HTML(markdown::markdownToHTML(text=report_contents() ))
+    HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
   })
   
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
-    filename = "report.rtf", # file extension defines the rendering process
+    filename = "Climate Report.rtf", # file extension defines the rendering process
     content = function(file) {
       # writing a report to (temporary) file first
-      tempReport <- file.path(tempdir(), "report.md")
+      tempReport <- tempfile(fileext='.md')
       fileConn <- file(tempReport)
       writeLines(report_contents() , fileConn)
       close(fileConn)
-      
+      fs <- file.size(tempReport)
       rmarkdown::render(
         tempReport,
         output_file = file,
         envir = new.env(parent = globalenv())
       )
+      # I found that in some cases the rendering silently overwrites the markdown file
+      # Cause unknown, maybe due to some weird blank characters instead of space?
+      # Therefore added a control to throw error if the file is truncated in the process
+      if(file.size(tempReport) != fs) stop('Rtf rendering issue - md file invisibly truncated!')
     }
   )
 

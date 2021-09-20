@@ -1,39 +1,54 @@
-name: Coal pretty name
-description: What coal is
+name: Coal mining and coal electricity
+description: 
+    Coal burning is currently the primary source of energy in many countries.
+    At the same time it is a major source of CO<sub>2</sub> emission to the atmosphere.
 transition:
     high:
         always:
-            the text for high transition that is always shown
-            which can on and on
-            
+            The coal mines and energy plants must be shut down
+            in a relatively short period of time. This has direct adverse
+            consequences for companies operating in this sector. 
         high_materiality:
-            the text for high transition that is shown if they have a high materilaity cell
-            
+            The coal sector has been indicated as high materiality, therefore this scenario
+            is likely to put your company in danger.
+        equity_like:
+            Valuation of the companies operating in the coal sector will fall drastically,
+            reflecting loss of prospect for future economic activity.
+            The companies are likely to write off significant amounts of no longer usable PPE
+            Time for any management reaction is very limited.
         bond_like:
-            extra text for bond products
+            The shutdown of coal operations may even threaten the solvency of the companies
+            operating in the sector.
     low:
         always:
-            the text for low transition that is always shown
-            which can on and on
+            Unless efficient carbon capture technology is available,
+            the coal mines and energy plants must be shut down. The impact
+            of the companies in the sector is clearly adverse, but due to 
+            reasonable transition measures and transition period there is
+            some room for management reaction (e.g.
+            switch in company profile towards renewable energy, 
+            implementation of carbon capture technology,
+            orderly and gradual shut down where necessary).
         high_materiality:
-            the text for no transition that issown if they have a high materilaity cell
+            The coal sector has been indicated as high materiality, therefore this scenario
+            may significantly affect your company. 
         equity_like:
-            extra text for equity products
+            The valuation of coal companies is likely to fall. The extent
+            will depend on the detailed policy measures
+            taken (in particular the activity of government to support the sector in transition).
 physical:
     high:
         always:
-            the text for high physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for high physical that issown if they have a high materilaity cell
-
+            In case of high materiality exposure to the sector
+            it is recommended to review the underlying
+            exposures in detail to find whether any of them is specifically prone to some
+            aspect of transition risk (e.g. sea level rise, flooding, heatwaves).
     low:
         always:
-            the text for low physical that is always shown
-            which can on and on
-            
+            The physical risk is not expected to affect the sector in a particular way.
         high_materiality:
-            the text for low physical that issown if they have a high materilaity cell
+            Note that this is a high materiality sector for your company.
 
 

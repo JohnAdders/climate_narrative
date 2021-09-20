@@ -1,4 +1,4 @@
-Type,product,Electricity From Gas, Electricity From Coal,Property
-Bonds,bond_like,,coal,
-Equity,equity_like,gas,coal,property
-Commercial Paper,bond_like,,coal,
+Type,product,Coal mining and electricity,Gas and Oil,Property,Transportation and Auto,Financial Institutions,Consumer Products
+Bonds,bond_like,,gas,,transportation,financials,consumer
+Equity,equity_like,coal,gas,property,transportation,financials,consumer
+Commercial Paper,bond_like,,gas,,transportation,financials,consumer

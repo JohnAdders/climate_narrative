@@ -1,0 +1,40 @@
+name: Mining
+
+description: 
+    Metals and mining
+    I am not sure if this sector should cover coal mining or is it more appropriate
+    to separate it. For a moment consider this as 'mining ex coal' sector.
+transition:
+    high:
+        always: &transition
+            Transition risk affects this sector to a large extent, even if coal mining
+            (which will need to be phased out) is excluded from the scope of the sector.
+            Fossil fuels are used in variety of activities including smelting and refining.
+            Their contribution to the global warming needs to decrease by switching fuel 
+            (e.g. to hydrogen).
+
+
+            It may also be necessary to consider arbon capture, not only in combustion
+            processes but in fugitive emissions as well.
+
+
+            The transition may turn out to give opportunities to some companies in the sector as well.
+            As demand for batteries will grow so will demand for required raw materials
+            (cobalt, lithium, nickel), which may prove beneficial to companies mining these.
+        high_materiality:
+            Note that this is a high materiality sector for your company.
+    low:
+        always: *transition
+        high_materiality:
+            Note that this is a high materiality sector for your company.
+physical:
+    high:
+        always:
+            The physical risk is not expected to affect the sector in a particular way.
+        high_materiality:
+            Note that this is a high materiality sector for your company.
+    low:
+        always:
+            The physical risk is not expected to affect the sector in a particular way.
+        high_materiality:
+            Note that this is a high materiality sector for your company.

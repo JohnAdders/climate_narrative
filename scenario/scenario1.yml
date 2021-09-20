@@ -1,4 +1,12 @@
 name: Orderly
 transition: low
 physical: low
-description: This is the text that goes after the heading to decsribe the scenario
+description:
+  This scenario assumes that effective policy changes are introduced in a timely manner.
+
+
+  As a result, global net emission of CO<sub>2</sub> gradually decreases to zero and the global warming
+  extent is limited (likely below 2 degrees).
+
+
+  This is a relatively optimistic scenario as both transition and physical risks are manageable.

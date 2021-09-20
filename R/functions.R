@@ -15,9 +15,12 @@ exposure_grid_cell <- function(exposure_item, prefix, col_width) {
       column(
         col_width,
         selectInput(
-          paste(prefix, exposure_item, sep='|'),
-          '',
-          list('L', 'M', 'H')
+          inputId=paste(prefix, exposure_item, sep='|'),
+          label='',
+          choices=c('', 'Low', 'Medium', 'High'),
+          selected='',
+          # to allow empty string as a valid option I do not use selectize
+          selectize=FALSE
     )))
   }
 }
@@ -32,7 +35,7 @@ exposure_grid_row <- function(exposures_row, prefix, col_width) {
     fluidRow(
       c(
         list(
-          column(col_width, p(exposures_row[1])),
+          column(col_width, h5(exposures_row[1])),
           lapply(items, function(item) {
             exposure_grid_cell(item, paste(prefix,exposures_row[1], exposures_row[2], sep="|"), col_width)
             }
@@ -43,7 +46,7 @@ exposure_grid_row <- function(exposures_row, prefix, col_width) {
   )
 }
 
-exposure_grid <- function(exposures, label, col_width=2) {
+exposure_grid <- function(exposures, label, col_width=floor(12/(ncol(exposures)-1))) {
   rows = c(
     list(
       fluidRow(
@@ -61,14 +64,18 @@ exposure_grid <- function(exposures, label, col_width=2) {
 }
 
 # helper function to produce a markdown report
-table_to_markdown <- function(table, additional_spaces=3){
+table_to_markdown <- function(table, additional_spaces=3, dot_to_space=TRUE){
+  headers <- colnames(table)
+  if(dot_to_space){
+    headers <- gsub('.', '&nbsp;', headers, fixed=TRUE)
+  }
   collapsor <- paste0(
     paste(
       rep("&nbsp;",additional_spaces),
-      collapse=" "),
-    " | "
+      collapse=""),
+      " | "
   )
-  out <- paste(colnames(table), collapse=collapsor)
+  out <- paste(headers, collapse=collapsor)
   out <- paste0(
     out,
     '\n',
@@ -78,7 +85,7 @@ table_to_markdown <- function(table, additional_spaces=3){
     ),
     '\n'
   )
-  for(i in 1:nrow(table)){
+  if(nrow(table)) for(i in 1:nrow(table)){
     out <- paste0(
       out, 
       paste(table[i,], collapse=collapsor),
@@ -93,13 +100,26 @@ get_exposure_description <- function(item, type_item_inputs){
     temp <- type_item_inputs[order(type_item_inputs$materiality), ]
     # conversion from factor back to string to ensure proper printing below
     temp$materiality <- as.character(temp$materiality)
+    temp2 <- temp[,c('rowname','materiality')]
+    colnames(temp2) <- c('Exposure.row','Materiality')
+    temp3 <- aggregate(
+      temp2,
+      by=list(
+        Product.description=temp$product_description,
+        Product.text=temp$product_text
+      ),
+      FUN=function(texts) paste(
+        gsub(" ", "&nbsp;", texts),
+        collapse='<br />'
+      )
+    )
     out <- paste0(
       '### ',
       exposure_classes[[item]][['name']],
       '\n\n',
       exposure_classes[[item]][['description']],
       '\n\nThe following rows contribute: \n\n',
-      table_to_markdown(temp[,c('rowname','materiality','product','product_text','product_description')]),
+      table_to_markdown(temp3),
       '\n\n'
     )
   }
@@ -109,14 +129,14 @@ get_exposure_description <- function(item, type_item_inputs){
     
     out <-paste0(
       "#### ",
+      paste0(toupper(substring(physical_or_transition, 1, 1)), substring(physical_or_transition, 2)), 
+      " risk (intensity: ",
       high_or_low,
-      " ",
-      physical_or_transition, 
-      " risk\n\n",
+      ")\n\n",
       exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['always']],
       '\n\n'
     )
-    if(materiality == 'H') {
+    if(materiality == 'High') {
       out <- paste0(
         out,
         exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['high_materiality']],
@@ -141,7 +161,7 @@ get_exposure_description <- function(item, type_item_inputs){
       description,
       '\n\n'
     )
-    for (i in 1:nrow(aggregated_table)){
+    if(nrow(aggregated_table)) for (i in 1:nrow(aggregated_table)){
       item <- aggregated_table$item[i]
       materiality <- aggregated_table$materiality[i]
       type_item_inputs <- type_inputs[type_inputs$item == item,] 
