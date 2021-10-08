@@ -2,7 +2,7 @@ name: Orderly
 transition: low
 physical: low
 description:
-  This scenario assumes that effective policy changes are introduced in a timely manner.
+  "This scenario assumes that effective policy changes are introduced in a timely manner.
 
 
   As a result, global net emission of CO<sub>2</sub> gradually decreases to zero and the global warming
@@ -12,5 +12,9 @@ description:
   ![warming projections](www/WarmingProjectionsGraph.png)
 
 
+  source: Climate Action Tracker  
+  
+  
   The orderly transition scenario is a relatively optimistic scenario as 
   both transition and physical risks are manageable.
+  "
