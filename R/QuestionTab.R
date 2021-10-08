@@ -49,8 +49,8 @@ QuestionTab <- R6Class(
       tabpanel_params <- list(
         self$id,
         tag('header',list(
-            p('Climate Financial Risk Forum guide 2021'),
-            p('Scenario Analysis')
+            img(src='cfrf_logo.png', alt='CFRF logo',height=50),
+            p('Climate Financial Risk Forum, 2021')
           )),
         hr()
       )
@@ -65,6 +65,7 @@ QuestionTab <- R6Class(
         list(
           hr(),
           tag('footer',list(
+            img(src='aviva_logo.png', alt='Aviva logo',height=50),
             p('Developed in Aviva'),
             p('by John Adcock, Krzysztof Opalski')
           ))
