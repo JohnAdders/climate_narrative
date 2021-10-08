@@ -41,16 +41,35 @@ QuestionTab <- R6Class(
       }
     },
     # tab UI function combines:
+    # 0. a common header
     # 1. any other tab_UI (if given in the constructor)
     # 2. buttons that switch to previous/next tab (if applicable)
+    # 3. a common footer
     ui = function() {
-      tabpanel_params <- list(self$id)
+      tabpanel_params <- list(
+        self$id,
+        tag('header',list(
+            p('Climate Financial Risk Forum guide 2021'),
+            p('Scenario Analysis')
+          )),
+        hr()
+      )
       if (!is.null(self$tab_ui)) tabpanel_params <- add_param(tabpanel_params, self$tab_ui())
       tabpanel_params = add_param(tabpanel_params, br())
       if (!is.null(self$previous_tab)) tabpanel_params = add_param(
         tabpanel_params, actionButton(paste0(self$id,"_previous"), "prev"))
       if (!is.null(self$next_tab)) tabpanel_params = add_param(
         tabpanel_params, actionButton(paste0(self$id,"_next"), "next"))
+      tabpanel_params = c(
+        tabpanel_params,
+        list(
+          hr(),
+          tag('footer',list(
+            p('Developed in Aviva'),
+            p('by John Adcock, Krzysztof Opalski')
+          ))
+        )
+      )
       do.call(tabPanel, tabpanel_params)
     }
   )
