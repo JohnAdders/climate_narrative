@@ -35,12 +35,12 @@ exposure_classes <- read_dir('exposure_class')
 
 # defining the questionnaire using list of QuestionTab objects
 tabs <- list( 
-  QuestionTab$new(tab1_ui, tab1_server, 1, NULL, 2),
-  QuestionTab$new(tab2_ui, NULL, 2, 1, 6),
-  QuestionTab$new(tab3_ui, NULL, 3, 1, 5),
-  QuestionTab$new(tab4_ui, NULL, 4, 1, 6),
-  QuestionTab$new(tab5_ui, NULL, 5, 3, 6),
-  QuestionTab$new(tab6_ui, tab6_server, 6, 1, NULL)
+  QuestionTab$new(tab1_ui, NULL, tab1_server, 1, NULL, 2),
+  QuestionTab$new(tab2_ui, tab2_foot, NULL, 2, 1, 6),
+  QuestionTab$new(tab3_ui, NULL, NULL, 3, 1, 5),
+  QuestionTab$new(tab4_ui, NULL, NULL, 4, 1, 6),
+  QuestionTab$new(tab5_ui, NULL, NULL, 5, 3, 6),
+  QuestionTab$new(tab6_ui, NULL, tab6_server, 6, 1, NULL)
 )
 
 # # defining the function that produces the ultimate description, depending on inputs
