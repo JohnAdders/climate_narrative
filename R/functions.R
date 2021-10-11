@@ -21,7 +21,9 @@ exposure_grid_cell <- function(exposure_item, prefix, col_width) {
           selected='',
           # to allow empty string as a valid option I do not use selectize
           selectize=FALSE
-    )))
+        ),
+        helpText('Explanatory text or hyperlink')
+    ))
   }
 }
 
