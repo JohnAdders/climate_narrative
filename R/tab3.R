@@ -1,8 +1,12 @@
 tab3_ui <- function () {
-  result <- list(
+  list(
     h2("Insurance Asset Exposures"),
-    exposure_grid(exposures$insurance_assets, "insurance|A"),
+    exposure_grid(exposures$insurance_assets, "insurance|A")
+  )
+}
+
+tab3_foot <- function() {
+  list(
     helpText('A longer explanatory text may be put here')
   )
-  return (result)
 }
