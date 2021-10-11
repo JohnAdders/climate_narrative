@@ -54,7 +54,8 @@ exposure_grid_row <- function(exposures_row, tooltip_texts, prefix, col_width) {
   )
 }
 
-exposure_grid <- function(exposure_matrix, tooltip_matrix, label, col_width=floor(12/(ncol(exposure_matrix)-1))) {
+exposure_grid <- function(exposure_matrix, tooltip_matrix, label, col_width=NULL) {
+  if(is.null(col_width)) col_width <- floor(12/(ncol(exposure_matrix)-1))
   rows <- list(
       fluidRow(
         lapply(
@@ -76,13 +77,6 @@ exposure_grid <- function(exposure_matrix, tooltip_matrix, label, col_width=floo
       )
     )
   }
-    # apply(
-    #   exposures,
-    #   1,
-    #   exposure_grid_row,
-    #   label,col_width=col_width,
-    #   tooltip_texts=rep("Placeholder for explanation, help text, remarks regarding this particular input field", ncol(exposures)-2)
-    # )
   return (rows)
 }
 
