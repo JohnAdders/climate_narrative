@@ -37,9 +37,9 @@ exposure_classes <- read_dir('exposure_class')
 tabs <- list( 
   QuestionTab$new(tab1_ui, NULL, tab1_server, 1, NULL, 2),
   QuestionTab$new(tab2_ui, tab2_foot, NULL, 2, 1, 6),
-  QuestionTab$new(tab3_ui, NULL, NULL, 3, 1, 5),
-  QuestionTab$new(tab4_ui, NULL, NULL, 4, 1, 6),
-  QuestionTab$new(tab5_ui, NULL, NULL, 5, 3, 6),
+  QuestionTab$new(tab3_ui, tab3_foot, NULL, 3, 1, 5),
+  QuestionTab$new(tab4_ui, tab4_foot, NULL, 4, 1, 6),
+  QuestionTab$new(tab5_ui, tab5_foot, NULL, 5, 3, 6),
   QuestionTab$new(tab6_ui, NULL, tab6_server, 6, 1, NULL)
 )
 
