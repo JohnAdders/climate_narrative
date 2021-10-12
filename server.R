@@ -1,4 +1,22 @@
 server <- function(input, output, session) {
+  
+  show_app_basic <- eventReactive(input$show_app_button, {
+    # if this function returns TRUE main part of the app is unlocked
+    validate <- FALSE
+    if(input$show_app == 'pass') validate <- TRUE
+  })
+
+  output$display_content_basic <- renderUI({
+    # UI of the main app after positive validation
+    req(show_app_basic()) 
+    tabset_start <- list(
+       id = "wizard",
+       type = "hidden"
+    )
+    tabset_tabs <- lapply(tabs, function(tab) {tab$ui()})
+    do.call(tabsetPanel, c(tabset_start, tabset_tabs))
+  })
+
   # first, tab-specific server collation
   for (tab in tabs) {
     tab$server(input, output, session, switch_page)
