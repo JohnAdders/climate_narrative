@@ -7,13 +7,15 @@ QuestionTab <- R6Class(
   "QuestionTab",
   public = list(
     tab_ui = NULL,
+    tab_ui_foot = NULL,
     tab_server = NULL,
     tab_number = NULL,
     previous_tab = NULL,
     next_tab = NULL,
     id = NULL,
-    initialize = function(tab_ui, tab_server, tab_number, previous_tab, next_tab) {
+    initialize = function(tab_ui, tab_ui_foot, tab_server, tab_number, previous_tab, next_tab) {
       self$tab_ui <- tab_ui
+      self$tab_ui_foot <- tab_ui_foot
       self$tab_server <- tab_server
       self$tab_number <- tab_number
       self$previous_tab <- previous_tab
@@ -41,16 +43,38 @@ QuestionTab <- R6Class(
       }
     },
     # tab UI function combines:
+    # 0. a common header
     # 1. any other tab_UI (if given in the constructor)
     # 2. buttons that switch to previous/next tab (if applicable)
+    # 3. a tab-specific footer
+    # 4. a common footer
     ui = function() {
-      tabpanel_params <- list(self$id)
+      tabpanel_params <- list(
+        self$id,
+        tag('header',list(
+            img(src='cfrf_logo.png', alt='CFRF logo',height=50),
+            p('Climate Financial Risk Forum, 2021')
+          )),
+        hr()
+      )
       if (!is.null(self$tab_ui)) tabpanel_params <- add_param(tabpanel_params, self$tab_ui())
       tabpanel_params = add_param(tabpanel_params, br())
       if (!is.null(self$previous_tab)) tabpanel_params = add_param(
         tabpanel_params, actionButton(paste0(self$id,"_previous"), "prev"))
       if (!is.null(self$next_tab)) tabpanel_params = add_param(
         tabpanel_params, actionButton(paste0(self$id,"_next"), "next"))
+      if (!is.null(self$tab_ui_foot)) tabpanel_params <- add_param(tabpanel_params, self$tab_ui_foot())
+      tabpanel_params = c(
+        tabpanel_params,
+        list(
+          hr(),
+          tag('footer',list(
+            img(src='aviva_logo.png', alt='Aviva logo',height=50),
+            p('Developed in Aviva'),
+            p('by John Adcock, Krzysztof Opalski')
+          ))
+        )
+      )
       do.call(tabPanel, tabpanel_params)
     }
   )
