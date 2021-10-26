@@ -1,14 +1,9 @@
 server <- function(input, output, session) {
-  
-  show_app_basic <- eventReactive(input$show_app_button, {
-    # if this function returns TRUE main part of the app is unlocked
-    validate <- FALSE
-    if(input$show_app == 'pass') validate <- TRUE
-  })
+
+  session$userData$verification_code <- UUIDgenerate()
 
   output$display_content_basic <- renderUI({
     # UI of the main app after positive validation
-    req(show_app_basic()) 
     tabset_start <- list(
        id = "wizard",
        type = "hidden"
@@ -54,13 +49,13 @@ server <- function(input, output, session) {
     out$materiality <- factor(out$values, levels=c('','Low','Medium','High'), ordered=T)
     out
   })
-  
+
   type_inputs = reactive({
     out <- all_inputs()
     out <- out[(which(out$type == input$type & out$materiality != '')), ]
     return(out)
   })
-  
+
   aggregated_type_inputs <- reactive({
     temp <- type_inputs()
     if(nrow(temp)){
@@ -92,15 +87,15 @@ server <- function(input, output, session) {
   output$show_all_inputs <- renderTable({
     all_inputs()
   })
-  
+
   output$show_aggregated_inputs <- renderTable({
     aggregated_type_inputs()
   })
-  
+
   output$rendered_report <- renderUI({
     HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
   })
-  
+
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf", # file extension defines the rendering process

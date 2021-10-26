@@ -1,6 +1,9 @@
 library(yaml)
 library(rmarkdown)
 library(tippy)
+library(uuid)
+library(shinythemes)
+
 # helper function to read all yaml/csv/R files from a directory as a named R list
 read_dir <- function(directory, file_format='auto'){
   file_list <- dir(path=directory)
@@ -35,13 +38,12 @@ products <- read_dir('product')
 exposure_classes <- read_dir('exposure_class')
 
 # defining the questionnaire using list of QuestionTab objects
-tabs <- list( 
-  QuestionTab$new(tab1_ui, NULL, tab1_server, 1, NULL, 2),
-  QuestionTab$new(tab2_ui, tab2_foot, NULL, 2, 1, 6),
-  QuestionTab$new(tab3_ui, tab3_foot, NULL, 3, 1, 5),
-  QuestionTab$new(tab4_ui, tab4_foot, NULL, 4, 1, 6),
-  QuestionTab$new(tab5_ui, tab5_foot, NULL, 5, 3, 6),
-  QuestionTab$new(tab6_ui, NULL, tab6_server, 6, 1, NULL)
+tabs <- list(
+  QuestionTab$new(tab0_ui, NULL, tab0_server, 1, NULL, 1),
+  QuestionTab$new(tab1_ui, NULL, tab1_server, 2, 1, 3),
+  QuestionTab$new(tab2_ui, tab2_foot, NULL, 3, 2, 7),
+  QuestionTab$new(tab3_ui, tab3_foot, NULL, 4, 2, 6),
+  QuestionTab$new(tab4_ui, tab4_foot, NULL, 5, 2, 7),
+  QuestionTab$new(tab5_ui, tab5_foot, NULL, 6, 2, 7),
+  QuestionTab$new(tab6_ui, NULL, tab6_server, 7, 1, NULL)
 )
-
-

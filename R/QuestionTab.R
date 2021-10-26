@@ -24,9 +24,9 @@ QuestionTab <- R6Class(
     },
     # tab server function that combines:
     # 1. any other server tab_server (if given in the constructor)
-    # 2. possibility of switch to previous/next tab (if applicable), using 'switch_page' function. 
+    # 2. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
     server = function(input, output, session, switch_page) {
-      
+
       switch_page <- function(i) {
         updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
       }
