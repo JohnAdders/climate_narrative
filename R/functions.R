@@ -3,6 +3,9 @@ add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
 
+# helper function to get object by its name but return NULL (not error) if it does not exist
+get_or_null = function(name) if(exists(name)) return(get(name)) else return(NULL)
+
 # helper functions to produce the layout of tabs (cell, row, whole table)
 exposure_grid_cell <- function(exposure_item, prefix, col_width, tooltip_text=NULL) {
   if (exposure_item == "") {

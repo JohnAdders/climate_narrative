@@ -1,4 +1,4 @@
-tab4_ui <- function () {
+tab_am_ui <- function () {
   list(
     h2("Asset Manager Holdings"),
     exposure_grid(
@@ -10,7 +10,7 @@ tab4_ui <- function () {
   )
 }
 
-tab4_foot <- function() {
+tab_am_foot <- function() {
   list(
     helpText('A longer explanatory text regarding asset manager exposures may be put here')
   )

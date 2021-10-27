@@ -1,4 +1,4 @@
-tab5_ui <- function () {
+tab_ins_l_ui <- function () {
   list(
     h2("Insurance Liabilities"),
     exposure_grid(
@@ -9,7 +9,7 @@ tab5_ui <- function () {
   )
 }
 
-tab5_foot <- function(){
+tab_ins_l_foot <- function(){
   list(
     helpText('A longer explanatory text regarding insurance liability exposures may be put here')
   )

@@ -1,4 +1,4 @@
-tab6_ui <- function () {
+tab_report_ui <- function () {
   if(!pandoc_available()){
     warning('Pandoc (required to render rtf) not available, hiding download report button')
     out <- list()
@@ -15,7 +15,7 @@ tab6_ui <- function () {
   ))
 }
 
-tab6_server <- function (input, output, session, tab) {
+tab_report_server <- function (input, output, session, tab) {
   observeEvent(
     input$type,
     {
