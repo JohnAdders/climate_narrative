@@ -11,7 +11,7 @@ ui <- function() {
         ),
         useShinyjs(),
         GreCAPTCHAv3Ui(<your site key>,"homepage","responseReceived"),
-        uiOutput(outputId = "display_content_basic"),
+        do.call(tabsetPanel, c(tabset_start, tabset_tabs)),
         theme = shinytheme("sandstone")
     )
 }
