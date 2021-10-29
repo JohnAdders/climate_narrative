@@ -202,7 +202,6 @@ GreCAPTCHAv3Ui <- function(siteKey, action, fieldID) {
 tagList(tags$head(
   tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=",siteKey)),
   tags$script(
-
     paste0(" grecaptcha.ready(function () {
 		     grecaptcha.execute('",siteKey,"', { action: '",action,"' }).then(function (token) {
 			 Shiny.onInputChange('",fieldID,"',token);
@@ -213,13 +212,14 @@ tagList(tags$head(
 
 
 GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
-
-  gResponse <- POST("https://www.google.com/recaptcha/api/siteverify", body = list(
-    secret = secretKey,
-    response = reCaptchaResponse
-  ))
+  gResponse <- POST(
+    "https://www.google.com/recaptcha/api/siteverify", body = list(
+      secret = secretKey,
+      response = reCaptchaResponse
+    )
+  )
 
   if(gResponse$status_code==200){
     return(fromJSON(content(gResponse, "text")))
   }
-}  
+} 
