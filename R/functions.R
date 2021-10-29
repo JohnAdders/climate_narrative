@@ -3,6 +3,9 @@ add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
 
+# helper function to get object by its name but return NULL (not error) if it does not exist
+get_or_null = function(name) if(exists(name)) return(get(name)) else return(NULL)
+
 # helper functions to produce the layout of tabs (cell, row, whole table)
 exposure_grid_cell <- function(exposure_item, prefix, col_width, tooltip_text=NULL) {
   if (exposure_item == "") {
@@ -146,10 +149,10 @@ get_exposure_description <- function(item, type_item_inputs){
     
     out <-paste0(
       "#### ",
-      paste0(toupper(substring(physical_or_transition, 1, 1)), substring(physical_or_transition, 2)), 
-      " risk (intensity: ",
-      high_or_low,
-      ")\n\n",
+      paste0(toupper(substring(high_or_low, 1, 1)), substring(high_or_low, 2)), 
+      " ",
+      physical_or_transition,
+      " risk\n\n",
       exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['always']],
       '\n\n'
     )
@@ -186,8 +189,8 @@ get_exposure_description <- function(item, type_item_inputs){
       out <- paste0(
         out, 
         get_exposure_description(item, type_item_inputs),
-        get_exposure_risk_description(item, products, materiality, "physical", physical),
         get_exposure_risk_description(item, products, materiality, "transition", transition)
+        get_exposure_risk_description(item, products, materiality, "physical", physical),
       )
     }
     return(out)

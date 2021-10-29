@@ -1,7 +1,7 @@
 server <- function(input, output, session) {
 
   session$userData$verification_code <- UUIDgenerate()
-
+  
   output$display_content_basic <- renderUI({
     # UI of the main app after positive validation
     tabset_start <- list(
@@ -82,7 +82,7 @@ server <- function(input, output, session) {
     }
     out
   })
-
+  
   # outputs definition
   output$show_all_inputs <- renderTable({
     all_inputs()
@@ -92,36 +92,47 @@ server <- function(input, output, session) {
     aggregated_type_inputs()
   })
 
+  temp_report <- reactive({
+    # writing a report to (temporary) file first
+    if(!exists('tempf')) tempf <- tempfile(fileext='.md')
+    file_conn <- file(tempf)
+    writeLines(report_contents() , file_conn)
+    close(file_conn)
+    tempf
+  })
+
   output$rendered_report <- renderUI({
-    HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
+    # previous version, not supporting footnotes
+    # HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
+    tempf <- tempfile(fileext='.html')
+    includeHTML(rmarkdown::render(
+      input=temp_report(),
+      output_file=tempf,
+      output_format=html_document(self_contained=FALSE)
+    ))
+    includeHTML(tempf)
   })
 
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf", # file extension defines the rendering process
-    content = function(file) {
-      # writing a report to (temporary) file first
-      tempReport <- tempfile(fileext='.md')
-      fileConn <- file(tempReport)
-      writeLines(report_contents() , fileConn)
-      close(fileConn)
-      fs <- file.size(tempReport)
+    content = function(file, res_path=paste0(getwd(),'/www')) {
+      fs <- file.size(temp_report())
+      print(getwd())
       rmarkdown::render(
-        tempReport,
-        output_file = file,
-        envir = new.env(parent = globalenv())
+        input=temp_report(),
+        output_file=file,
+        output_format=rtf_document(
+          pandoc_args=c(
+            paste0('--resource-path=',res_path),
+            '--self-contained'
+          )
+        )
       )
       # I found that in some cases the rendering silently overwrites the markdown file
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
-      if(file.size(tempReport) != fs) stop('Rtf rendering issue - md file invisibly truncated!')
+      if(file.size(temp_report()) != fs) stop('Rtf rendering issue - md file invisibly truncated!')
     }
   )
-
-  output$test_output <- renderUI({
-    HTML(markdown::markdownToHTML(
-      #text=table_to_markdown(data.frame(name=letters[1:3],value=1:3)) )
-      text="test output\n\n# h1\n\n## h2\n\n### h3\n\n#### h4\n\n##### h5\n\nregular text\n"
-    ))
-  })
 }

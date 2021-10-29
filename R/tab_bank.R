@@ -1,4 +1,4 @@
-tab2_ui <- function () {
+tab_bank_ui <- function () {
   list(
     h2("Bank Exposures"),
     exposure_grid(
@@ -10,7 +10,7 @@ tab2_ui <- function () {
   )
 }
 
-tab2_foot <- function(){
+tab_bank_foot <- function(){
   list(
     helpText('A longer explanatory text regarding bank exposures may be put here')
   )

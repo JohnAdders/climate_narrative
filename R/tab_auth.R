@@ -1,4 +1,4 @@
-tab0_ui <- function () {
+tab_auth_ui <- function () {
   list(
     p('Enter your email address to receive the verification code'),
     p('(does nothing at the moment)'),
@@ -23,7 +23,7 @@ tab0_ui <- function () {
   )
 }
 
-tab0_server <- function (input, output, session, tab) {
+tab_auth_server <- function (input, output, session, tab) {
   observeEvent(
     input$send_code,
     {

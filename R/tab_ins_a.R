@@ -1,4 +1,4 @@
-tab3_ui <- function () {
+tab_ins_a_ui <- function () {
   list(
     h2("Insurance Asset Exposures"),
     exposure_grid(
@@ -9,7 +9,7 @@ tab3_ui <- function () {
   )
 }
 
-tab3_foot <- function() {
+tab_ins_a_foot <- function() {
   list(
     helpText('A longer explanatory text regarding insurance asset exposures may be put here')
   )
