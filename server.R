@@ -9,15 +9,6 @@ server <- function(input, output, session) {
     }
   })
 
-  output$display_content_basic <- renderUI({
-    # UI of the main app after positive validation
-    tabset_start <- list(
-       id = "wizard",
-       type = "hidden"
-    )
-    tabset_tabs <- lapply(tabs, function(tab) {tab$ui()})
-    do.call(tabsetPanel, c(tabset_start, tabset_tabs))
-  })
 
   # first, tab-specific server collation
   for (tab in tabs) {
