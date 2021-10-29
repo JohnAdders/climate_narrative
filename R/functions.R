@@ -189,8 +189,8 @@ get_exposure_description <- function(item, type_item_inputs){
       out <- paste0(
         out, 
         get_exposure_description(item, type_item_inputs),
-        get_exposure_risk_description(item, products, materiality, "transition", transition)
-        get_exposure_risk_description(item, products, materiality, "physical", physical),
+        get_exposure_risk_description(item, products, materiality, "transition", transition),
+        get_exposure_risk_description(item, products, materiality, "physical", physical)
       )
     }
     return(out)
