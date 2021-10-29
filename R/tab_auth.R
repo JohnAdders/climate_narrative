@@ -1,5 +1,18 @@
 tab_auth_ui <- function () {
   list(
+    p("Are you a human being?"),
+    testui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP"),
+    textInput(
+      inputId='secret',
+      label='recaptcha v3 secret code',
+      placeholder='temporary solution'
+    ),
+    actionButton(
+      inputId='captcha',
+      label='Yes, I am a human'
+    ),
+    textOutput('captcha_validation_result'),
+    hr(),
     p('Enter your email address to receive the verification code'),
     p('(does nothing at the moment)'),
     textInput(
@@ -25,9 +38,26 @@ tab_auth_ui <- function () {
 
 tab_auth_server <- function (input, output, session, tab) {
   observeEvent(
-    input$send_code,
+    input$captcha,
     {
+      # runjs('https://www.google.com/recaptcha/api.js?render=6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP')
+      # runjs(paste0("
+      #   grecaptcha.ready(function () {
+      #     grecaptcha.execute('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP', { action: 'homepage' }).then(function (token) {
+			#       Shiny.onInputChange('responseReceived',token);
+      # 		});
+	    #   });
+      # "))
+      GreCAPTCHAv3js('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP')
+    }
+  )
+
+  observeEvent(
+    input$send_code,
+    if(session$userData$captcha_validated) {
       output$verification_code <- renderText(session$userData$verification_code)
+    } else {
+      output$verification_code <- renderText("Prove that you are a human first")
     }
   )
 

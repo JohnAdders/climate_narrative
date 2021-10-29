@@ -223,3 +223,14 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
     return(fromJSON(content(gResponse, "text")))
   }
 } 
+
+GreCAPTCHAv3js <- function(siteKey) {
+  runjs(paste0('https://www.google.com/recaptcha/api.js?render=',siteKey))
+  runjs(paste0("
+        grecaptcha.ready(function () {
+          grecaptcha.execute('",siteKey,"', { action: 'homepage' }).then(function (token) {
+			      Shiny.onInputChange('responseReceived',token);
+      		});
+	      });
+      "))
+}

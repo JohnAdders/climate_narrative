@@ -1,11 +1,17 @@
 server <- function(input, output, session) {
 
   session$userData$verification_code <- UUIDgenerate()
+
+  session$userData$captcha_validated <- FALSE
   
-  observeEvent(input$responseReceived,{
-    result <- GreCAPTCHAv3Server(<your secret key>,input$responseReceived)  
+  observeEvent(input$responseReceived, {
+    result <- GreCAPTCHAv3Server(input$secret, input$responseReceived)
     if(result$success){
-      info(result)
+      #info(result)
+      session$userData$captcha_validated = TRUE
+      output$captcha_validation_result = renderText(paste(result,collapse='.'))#'OK')
+    } else {
+      output$captcha_validation_result = renderText(paste(result,collapse='.'))#'Try once again')
     }
   })
 
