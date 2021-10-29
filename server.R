@@ -2,6 +2,13 @@ server <- function(input, output, session) {
 
   session$userData$verification_code <- UUIDgenerate()
   
+  observeEvent(input$responseReceived,{
+    result <- GreCAPTCHAv3Server(<your secret key>,input$responseReceived)  
+    if(result$success){
+      info(result)
+    }
+  })
+
   output$display_content_basic <- renderUI({
     # UI of the main app after positive validation
     tabset_start <- list(
