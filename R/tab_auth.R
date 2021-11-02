@@ -1,7 +1,7 @@
 tab_auth_ui <- function () {
   list(
     p("Are you a human being?"),
-    testui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP"),
+    GreCAPTCHAv3Ui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP",'homepage','responseReceived'),
     textInput(
       inputId='secret',
       label='recaptcha v3 secret code',
@@ -51,6 +51,17 @@ tab_auth_server <- function (input, output, session, tab) {
       GreCAPTCHAv3js('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP')
     }
   )
+
+observeEvent(input$responseReceived, {
+    result <- GreCAPTCHAv3Server(input$secret, input$responseReceived)
+    if(result$success){
+      #info(result)
+      session$userData$captcha_validated = TRUE
+      output$captcha_validation_result = renderText(paste(result,collapse='.'))#'OK')
+    } else {
+      output$captcha_validation_result = renderText(paste(result,collapse='.'))#'Try once again')
+    }
+  })
 
   observeEvent(
     input$send_code,
