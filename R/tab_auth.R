@@ -1,7 +1,7 @@
 tab_auth_ui <- function () {
   list(
     p("Are you a human being?"),
-    GreCAPTCHAv3Ui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP",'homepage','responseReceived'),
+    GreCAPTCHAv3Ui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP"),
     textInput(
       inputId='secret',
       label='recaptcha v3 secret code',
@@ -39,17 +39,7 @@ tab_auth_ui <- function () {
 tab_auth_server <- function (input, output, session, tab) {
   observeEvent(
     input$captcha,
-    {
-      # runjs('https://www.google.com/recaptcha/api.js?render=6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP')
-      # runjs(paste0("
-      #   grecaptcha.ready(function () {
-      #     grecaptcha.execute('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP', { action: 'homepage' }).then(function (token) {
-			#       Shiny.onInputChange('responseReceived',token);
-      # 		});
-	    #   });
-      # "))
-      GreCAPTCHAv3js('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP')
-    }
+    GreCAPTCHAv3js('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP', 'homepage', 'responseReceived')
   )
 
 observeEvent(input$responseReceived, {

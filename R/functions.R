@@ -198,18 +198,21 @@ get_exposure_description <- function(item, type_item_inputs){
 
 ### captcha functions copied from https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 
-GreCAPTCHAv3Ui <- function(siteKey, action, fieldID) {
+GreCAPTCHAv3Ui <- function(siteKey) {
 tagList(tags$head(
   tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=",siteKey)),
-  tags$script(
-    paste0(" grecaptcha.ready(function () {
-		     grecaptcha.execute('",siteKey,"', { action: '",action,"' }).then(function (token) {
-			 Shiny.onInputChange('",fieldID,"',token);
-			 });
-			});"))
 ))
 }
 
+GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
+  runjs(paste0("
+        grecaptcha.ready(function () {
+          grecaptcha.execute('", siteKey, "', { action: '", action, "' }).then(function (token) {
+			      Shiny.onInputChange('", fieldID, "',token);
+      		});
+	      });
+      "))
+}
 
 GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   gResponse <- POST(
@@ -223,14 +226,3 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
     return(fromJSON(content(gResponse, "text")))
   }
 } 
-
-GreCAPTCHAv3js <- function(siteKey) {
-  runjs(paste0('https://www.google.com/recaptcha/api.js?render=',siteKey))
-  runjs(paste0("
-        grecaptcha.ready(function () {
-          grecaptcha.execute('",siteKey,"', { action: 'homepage' }).then(function (token) {
-			      Shiny.onInputChange('responseReceived',token);
-      		});
-	      });
-      "))
-}
