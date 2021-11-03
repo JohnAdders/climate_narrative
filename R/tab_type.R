@@ -1,4 +1,4 @@
-tab1_ui <- function () {
+tab_type_ui <- function () {
   list(
     radioButtons(
       "type",
@@ -12,15 +12,15 @@ tab1_ui <- function () {
   )
 }
 
-tab1_server <- function (input, output, session, tab) {
+tab_type_server <- function (input, output, session, tab) {
   observeEvent(
     input$type,
     {
       tab$next_tab <- switch(
         input$type,
-        insurance = 3,
-        asset = 4,
-        2
+        insurance = 4,
+        asset = 5,
+        3
       )
     }
   )

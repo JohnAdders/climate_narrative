@@ -1,9 +1,18 @@
 server <- function(input, output, session) {
+
+  session$userData$verification_code <- UUIDgenerate()
+  session$userData$captcha_validated <- FALSE
+  
+  if (file.exists('secret.yml')){
+    secret_pars <- read_yaml('secret.yml')
+    for(i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
+  }
+
   # first, tab-specific server collation
   for (tab in tabs) {
     tab$server(input, output, session, switch_page)
   }
-
+  
   # then the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
@@ -36,13 +45,13 @@ server <- function(input, output, session) {
     out$materiality <- factor(out$values, levels=c('','Low','Medium','High'), ordered=T)
     out
   })
-  
+
   type_inputs = reactive({
     out <- all_inputs()
     out <- out[(which(out$type == input$type & out$materiality != '')), ]
     return(out)
   })
-  
+
   aggregated_type_inputs <- reactive({
     temp <- type_inputs()
     if(nrow(temp)){
@@ -50,65 +59,70 @@ server <- function(input, output, session) {
       temp[order(temp$materiality, decreasing=TRUE), ]
     } else {
       # TODO decide what to show if all exposures are blank?
-      warning('All exposures are blank')
+      warning('All exposures are blank. Rendering the report contating scenario descriptions only')
       return(data.frame(item=c(),materiality=c()))
     }
   })
 
   report_contents <- reactive({
-    out <- '# Climate report\n\n'
+    out <- paste0('# Climate report\n\n', scenarios$introduction$description, '\n\n')
     for(i in 1:length(scenarios)){
-      out <- paste0(out, get_scenario_descriptions(
-        aggregated_type_inputs(),
-        type_inputs(),
-        scenarios[[i]]$name,
-        scenarios[[i]]$description,
-        scenarios[[i]]$transition,
-        scenarios[[i]]$physical
-      ))
+      if(names(scenarios)[i] != 'introduction'){
+        out <- paste0(out, get_scenario_descriptions(
+          aggregated_type_inputs(),
+          type_inputs(),
+          scenarios[[i]]$name,
+          scenarios[[i]]$description,
+          scenarios[[i]]$transition,
+          scenarios[[i]]$physical
+        ))
+      }
     }
     out
   })
 
-  # outputs definition
-  output$show_all_inputs <- renderTable({
-    all_inputs()
+  temp_report <- reactive({
+    # writing a report to (temporary) file first
+    if(!exists('tempf')) tempf <- tempfile(fileext='.md')
+    file_conn <- file(tempf)
+    writeLines(report_contents() , file_conn)
+    close(file_conn)
+    tempf
   })
-  
-  output$show_aggregated_inputs <- renderTable({
-    aggregated_type_inputs()
-  })
-  
+
   output$rendered_report <- renderUI({
-    HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
+    # previous version, not supporting footnotes:
+    # HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
+    # or alternatively in a simpler way:
+    # includeMarkdown(temp_report())
+    tempf <- tempfile(fileext='.html')
+    includeHTML(rmarkdown::render(
+      input=temp_report(),
+      output_file=tempf,
+      output_format=html_document(self_contained=FALSE)
+    ))
   })
-  
+
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf", # file extension defines the rendering process
-    content = function(file) {
-      # writing a report to (temporary) file first
-      tempReport <- tempfile(fileext='.md')
-      fileConn <- file(tempReport)
-      writeLines(report_contents() , fileConn)
-      close(fileConn)
-      fs <- file.size(tempReport)
+    content = function(file, res_path=paste0(getwd(),'/www')) {
+      print(res_path)
+      fs <- file.size(temp_report())
       rmarkdown::render(
-        tempReport,
-        output_file = file,
-        envir = new.env(parent = globalenv())
+        input=temp_report(),
+        output_file=file,
+        output_format=rtf_document(
+          pandoc_args=c(
+            paste0('--resource-path=',res_path),
+            '--self-contained'
+          )
+        )
       )
       # I found that in some cases the rendering silently overwrites the markdown file
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
-      if(file.size(tempReport) != fs) stop('Rtf rendering issue - md file invisibly truncated!')
+      if(file.size(temp_report()) != fs) stop('Rtf rendering issue - md file invisibly truncated!')
     }
   )
-
-  output$test_output <- renderUI({
-    HTML(markdown::markdownToHTML(
-      #text=table_to_markdown(data.frame(name=letters[1:3],value=1:3)) )
-      text="test output\n\n# h1\n\n## h2\n\n### h3\n\n#### h4\n\n##### h5\n\nregular text\n"
-    ))
-  })
 }
