@@ -1,14 +1,18 @@
 server <- function(input, output, session) {
 
   session$userData$verification_code <- UUIDgenerate()
-
   session$userData$captcha_validated <- FALSE
+  
+  if (file.exists('secret.yml')){
+    secret_pars <- read_yaml('secret.yml')
+    for(i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
+  }
 
   # first, tab-specific server collation
   for (tab in tabs) {
     tab$server(input, output, session, switch_page)
   }
-
+  
   # then the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
@@ -55,7 +59,7 @@ server <- function(input, output, session) {
       temp[order(temp$materiality, decreasing=TRUE), ]
     } else {
       # TODO decide what to show if all exposures are blank?
-      warning('All exposures are blank')
+      warning('All exposures are blank. Rendering the report contating scenario descriptions only')
       return(data.frame(item=c(),materiality=c()))
     }
   })
@@ -99,20 +103,19 @@ server <- function(input, output, session) {
     # previous version, not supporting footnotes
     # HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
     tempf <- tempfile(fileext='.html')
+    # Sys.sleep(2)
     includeHTML(rmarkdown::render(
       input=temp_report(),
       output_file=tempf,
       output_format=html_document(self_contained=FALSE)
     ))
-    includeHTML(tempf)
   })
-
+  
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf", # file extension defines the rendering process
     content = function(file, res_path=paste0(getwd(),'/www')) {
       fs <- file.size(temp_report())
-      print(getwd())
       rmarkdown::render(
         input=temp_report(),
         output_file=file,
