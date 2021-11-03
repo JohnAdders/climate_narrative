@@ -91,21 +91,23 @@ server <- function(input, output, session) {
   })
 
   output$rendered_report <- renderUI({
-    # previous version, not supporting footnotes
+    # previous version, not supporting footnotes:
     # HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
+    # or alternatively in a simpler way:
+    # includeMarkdown(temp_report())
     tempf <- tempfile(fileext='.html')
-    # Sys.sleep(2)
     includeHTML(rmarkdown::render(
       input=temp_report(),
       output_file=tempf,
       output_format=html_document(self_contained=FALSE)
     ))
   })
-  
+
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf", # file extension defines the rendering process
     content = function(file, res_path=paste0(getwd(),'/www')) {
+      print(res_path)
       fs <- file.size(temp_report())
       rmarkdown::render(
         input=temp_report(),
