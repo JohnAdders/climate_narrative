@@ -1,4 +1,4 @@
-Type,product,Coal mining and electricity,Gas and Oil,Property,Transportation and Auto,Financial Institutions,Consumer Products
-Bonds,bond_like,,gas,,transportation,financials,consumer
-Equity,equity_like,coal,gas,property,transportation,financials,consumer
-Commercial Paper,bond_like,,gas,,transportation,financials,consumer
+Type,product,Oil and Gas,Telecommunications
+Bonds,bond_like,oil and gas,telecoms
+Equity,equity_like,oil and gas,telecoms
+Commercial Paper,bond_like,oil and gas,telecoms

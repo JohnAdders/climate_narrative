@@ -1,0 +1,170 @@
+name: Oil and gas
+
+description: "
+The **oil and gas sector** comprises of three main activities - upstream (exploration and production), midstream (transportation and processing) and downstream (distribution and sale to end users/consumers). This sector includes companies that are, for example, involved in the following:
+
+
+1.	the exploration, development and/or the production of natural gas from wells in which the hydrocarbons will initially flow or can be produced using normal or enhanced drilling and extraction techniques
+
+
+2.	the production of crude petroleum from reservoirs in which the hydrocarbons are semisolids
+
+
+3.	the recovery of liquid hydrocarbons from oil and gas field gases. 
+
+
+4.	manufacturing machinery and equipment for the use in the oil and gas sector or for drilling water wells, including portable drilling rigs.
+
+
+5.	producing gasoline, kerosene, distillate fuel oils and residual fuel oils through refraction or straight distillation of crude oil, redistillation, cracking or other processes.
+
+
+6.	transmission, distribution and storage of natural gas for sale
+
+
+7.	operating oil and gas wells as well as those engaged in providing support services.
+"
+
+transition:
+    high:
+        All exposures: "
+            
+            
+            While oil and gas will continue to play a role in meeting global energy demand for the coming years, the changing patterns in energy consumption, driven by societal change, national energy strategies, and carbon legislation, are likely to have a long-term impact on demand for oil and gas, affecting profitability. Sectors or countries with high emissions, such as oil and gas sector, are the most vulnerable to transition pathways driven by either policy change, technology evolution, and shifts in consumer preferences.
+            
+            
+            The changes in carbon pricing, energy demand/mix and energy prices can result in one or more of the following financial impacts:
+            
+            
+            * **Reduced revenue** due to decline in fossil fuel demand as consumers switch to low-carbon/electrified alternatives for cars, heating etc; potentially impacting business models
+            
+            
+            * **Increased costs** from paying a price on carbon emissions
+            
+            
+            * **Readjusted capital expenditures** new investments required to pivot business model towards low-carbon fuels and renewable biofuels
+            
+            
+            * **Falling asset values** impairment of the economic value of company assets such as oil and gas reserves and existing infrastructure required for extraction
+            "
+ 
+        high_materiality: "
+            In high transitional risk scenarios total electricity capacity jumps markedly, but its energy sources change dramatically. In a high transition risk scenario, solar is the dominant technology representing 48% of electricity generation capacity by 2050, completely displacing coal (before 2030) and gas (between 2030 and 2035). 
+            
+            
+            ![Energy mix](Energy_Sources_Oil_and_Gas.png)
+            
+            
+            **Source:** [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario] (https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            Primary energy prices remain depressed throughout the scenario horizon, while secondary energy prices rise in line with the carbon price.    
+            
+            
+            ![Oil Price](Oil_Price_Change_Oil_and_Gas.png)
+            
+            
+            **Source:** [NGFS Scenario Data IAM.] (https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            The increasing carbon price in the high transition risk scenario can drive the following impacts for the oil and gas company: 
+            * Disruptive **increase in operating costs** as its carbon emissions face a rising price in the form a carbon tax or cap & trade clearing price 
+            * **Demand for fossil fuel commodities falls sharply** as end-user prices surge, which impacts on revenue due to declining volumes of sales in all regional energy markets
+            * **Asset valuation of company reserves will have to be re-priced** based on the re-adjusted expectations of much lower demand of fossil fuels in the future
+            * **Capex is also revised** in line with expectation of irreversible fall in oil and gas consumption
+            
+            
+            Under high transition risk scenarios, belated awareness by financial market participants of the scale and speed of the transition required may cause fossil fuel assets to undergo a fire-sale by investors, at the moment when they fully understand the real risk involved in holding these in their portfolios. This could lead to a race to the bottom, where investors try to get rid of these assets as quickly as possible. This loss would propagate across the real economy and could threaten entire industries that are dependent on fossil fuel income. 
+            
+            
+            Because the oil and gas sector is so diverse, there is no single solution, but rather a range of strategies based on the circumstances of each company that will need to be deployed in a high transition risk scenario to maintain revenues and minimise the long-term financial impact.
+            "
+        bond_like:
+            Debt issued by oil and gas companies may default.
+    low:
+        always: "
+            While oil and gas will continue to play a role in meeting global energy demand for the coming years, the changing patterns in energy consumption, driven by societal change, national energy strategies, and carbon legislation, are likely to have a long-term impact on demand for oil and gas, affecting profitability.
+            
+            
+            The changes in carbon pricing, energy demand/mix and energy prices could potentially result in one or more of the following financial impacts:
+            
+            
+            * **Reduced revenue** due to decline in fossil fuel demand as consumers switch to low-carbon/electrified alternatives for cars, heating etc; potentially impacting business models 
+            
+            
+            * **Increased costs** from paying a price on carbon emissions
+            
+            
+            * **Readjusted capital expenditures** new investments required to pivot business model towards low-carbon fuels and renewable biofuels
+            
+            
+            * **Falling asset values** impairment of the economic value of company assets such as oil and gas reserves and existing infrastructure required for extraction
+            "
+            
+        high_materiality: "
+            
+            
+            In a low transition risk scenario, demand for oil and gas decreases steadily and the share of renewables in the electricity generation mix increases to almost 70% by 2050. The share of electric vehicles on the roads steadily increases to almost 70% by 2050 and a large share of the remaining conventional vehicles use biofuels instead of petrol or diesel. 
+            
+            
+            ![Cumulative Energy Investment] (/Cumulative Energy Investment - Oil and Gas.png)
+            
+            
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND model.] (https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            A reduction in fossil fuel demand and prices leads to stranded fossil fuel assets. By 2050, renewables and biomass would cover 68% of global primary energy needs. Because the oil and gas sector is so diverse, there is no single solution, but rather a range of strategies based on the circumstances of each company that will need to be deployed in a low transition risk scenario to maintain revenues and minimise the long-term financial impact. 
+            
+            
+            ![Primary Energy Mix](Primary_Energy_Mix_Oil_and_Gas.png)
+            
+            
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.] (https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            "
+physical:
+    high:
+        always: "
+            The oil and gas sector is one of the most exposed to physical impacts of climate change, chronic effects (e.g. raised sea-levels) and acute effects due to drastic changes to frequency and heightened severity of weather events such as heatwaves, droughts, wildfires, tropical cyclones and flooding. Whilst the oil and gas industry is used to responding to and managing extreme weather conditions in the high physical risk scenario, climate change and global warming will increase weather variation significantly such as storms and droughts as well as the frequency and severity of such extreme weathers. This will lead to disruption to oil and gas production which could have a significant financial impact and reduce the profitability of these companies.
+            "
+        high_materiality: "
+            The following examples illustrate how the oil and gas sector could be impacted in a high physical risk scenario:
+            
+            
+            * **Cyclones or storms** are likely to have a significant effect on construction, offshore production, onshore processing and decommission phases of oil and gas projects resulting in major disruption to construction and production, as well as damage to facilities. The extreme conditions will very likely lead to major spills/leaks resulting in large clean-up costs. 
+            
+            
+            * **Flooding events** could pose serious risks to the oil and gas sector such as significant damage to facilities and refineries, loss of production, and increasing risks of dispersal of salt and chemicals from coal seam gas mines onto farming land.
+            
+            * **Drought** could lead to greater competition between oil and gas companies as they fight for scarce water resources. It will also likely lead to an expectation of increased environmental regulation focusing on protecting water supply and quality. This would incur hefty additional costs for water using industries. As methane is highly flammable, gas vented from leaks in compressors or pipelines can be ignited by sparks or embers from bushfires leading to devastating wildfires. 
+            
+            
+            * **Rising sea levels** could submerge oil refineries and potentially could cause closures. For example, hurricane Katrina caused the total shutdown of oil production in the Gulf of Mexico for 6 months. 
+            
+            
+            There are many mitigating actions companies can take against the physical risks mentioned above. For example, investing in more resilient offshore rigs, improved drainage systems and better equipment to be able to withstand stronger cyclones, a more robust design of infrastructure and stricter construction standards. To reduce the impact of rising sea levels, the position of new facilities should consider climate change to minimise the risk of total damage caused by flooding. 
+            "
+
+    low:
+        always: "
+            The oil and gas sector is one of the most exposed sectors to physical impacts of climate change, chronic effects (e.g. raised sea-levels) and acute effects due to changes to frequency and severity of weather events such as heatwaves, droughts, wildfires, tropical cyclones and flooding. Whilst the oil and gas industry is used to responding to and managing changing weather conditions, in the low physical risk scenario, climate change and global warming will increase weather variations. This will lead to increasing disruption to oil and gas production which could impact the profitability for these companies.
+            "
+        high_materiality: "
+            The following examples illustrate how the oil and gas sector could be impacted in a low physical risk scenario:
+            
+            
+            * **Cyclones or storms** could have an effect on the construction, offshore production, onshore processing and decommission phases of oil and gas projects resulting in either disruptions to construction and production, or damage to facilities. These conditions could also lead to spills/leaks resulting in additional clean-up costs.
+            
+            
+            * **Flooding events** could pose risks to the oil and gas sector such as damage to facilities, refineries, loss of production and increasing risks of dispersal of salt and chemicals from coal seam gas mines onto farming land.
+            
+            
+            * **Drought** could lead to competition between oil and gas companies for water resources. There is a slight chance that it could lead to increased environmental regulation focusing on protecting water supply and quality. This would add costs for water using industries. 
+            
+            
+            * **Rising sea levels** could cause disruption to oil refineries. For example, hurricane Katrina caused the total shutdown of oil production in the Gulf of Mexico for 6 months. 
+            
+            
+            There are many mitigating actions companies can take against the low physical risks mentioned above. For example, investing in more resilient offshore rigs, improved drainage systems and better equipment to be able to withstand cyclones, more robust design, and construction standards. To reduce the impact of rising sea levels, the position of new facilities should consider climate change to minimise the risk of damage caused by flooding. 
+            "
+            
+

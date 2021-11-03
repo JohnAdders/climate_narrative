@@ -107,7 +107,6 @@ server <- function(input, output, session) {
   output$report <- downloadHandler(
     filename = "Climate Report.rtf", # file extension defines the rendering process
     content = function(file, res_path=paste0(getwd(),'/www')) {
-      print(res_path)
       fs <- file.size(temp_report())
       rmarkdown::render(
         input=temp_report(),
