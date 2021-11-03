@@ -63,7 +63,7 @@ exposure_grid <- function(exposure_matrix, tooltip_matrix, label, col_width=NULL
       fluidRow(
         lapply(
           # do not show 'product' column
-          colnames(exposures)[-2],
+          colnames(exposure_matrix)[-2],
           # when reading csv's R by default substitutes spaces with dots in the headers, here we reverse this for a nicer output
           function(header) column(col_width, h4(gsub(".", " ", header, fixed=TRUE))) 
         )
