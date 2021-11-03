@@ -61,16 +61,18 @@ server <- function(input, output, session) {
   })
 
   report_contents <- reactive({
-    out <- '# Climate report\n\n'
+    out <- paste0('# Climate report\n\n', scenarios$introduction$description, '\n\n')
     for(i in 1:length(scenarios)){
-      out <- paste0(out, get_scenario_descriptions(
-        aggregated_type_inputs(),
-        type_inputs(),
-        scenarios[[i]]$name,
-        scenarios[[i]]$description,
-        scenarios[[i]]$transition,
-        scenarios[[i]]$physical
-      ))
+      if(names(scenarios)[i] != 'introduction'){
+        out <- paste0(out, get_scenario_descriptions(
+          aggregated_type_inputs(),
+          type_inputs(),
+          scenarios[[i]]$name,
+          scenarios[[i]]$description,
+          scenarios[[i]]$transition,
+          scenarios[[i]]$physical
+        ))
+      }
     }
     out
   })
