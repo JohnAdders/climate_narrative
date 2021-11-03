@@ -1,7 +1,4 @@
-p{
-    color:grey
-}
-
 img{
-    align-content: center;
+    display: block;
+    margin: auto;
 }
