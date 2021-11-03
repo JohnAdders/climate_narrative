@@ -1,5 +1,12 @@
 library(yaml)
 library(rmarkdown)
+library(tippy)
+library(uuid)
+library(shinythemes)
+library(shinyjs)
+library(httr)
+library(jsonlite)
+
 # helper function to read all yaml/csv/R files from a directory as a named R list
 read_dir <- function(directory, file_format='auto'){
   file_list <- dir(path=directory)
@@ -34,23 +41,15 @@ products <- read_dir('product')
 exposure_classes <- read_dir('exposure_class')
 
 # defining the questionnaire using list of QuestionTab objects
-tabs <- list( 
-  QuestionTab$new(tab1_ui, tab1_server, 1, NULL, 2),
-  QuestionTab$new(tab2_ui, NULL, 2, 1, 6),
-  QuestionTab$new(tab3_ui, NULL, 3, 1, 5),
-  QuestionTab$new(tab4_ui, NULL, 4, 1, 6),
-  QuestionTab$new(tab5_ui, NULL, 5, 3, 6),
-  QuestionTab$new(tab6_ui, tab6_server, 6, 1, NULL)
-)
+ordered_tabs <- c('auth','type','bank','ins_a','am','ins_l','report')
+#tab_mapping <- factor(1:length(ordered_tabs), levels=ordered_tabs)
 
-# # defining the function that produces the ultimate description, depending on inputs
-# update_final_page <- function(input, output, session) {
-#   summary = list(
-#     h1("Climate Narrative"),
-#     p("Some Text."),
-#     p("Some more Text."),
-#     p("Dummy output. The exact mechanics TBC, this should produce a text basing on the inputs, for instance: "),
-#     p(paste0("The type of undertaking is ",input$type,". Equity exposure to gas sector is ", input$gas_Equity,"."))
-#   )
-#   output$summary <- renderUI(summary)
-# }
+tabs <- list(
+  QuestionTab$new('auth', NULL, 'type'),
+  QuestionTab$new('type', NULL, 'ins_a'),
+  QuestionTab$new('bank', 'type', 'report'),
+  QuestionTab$new('ins_a', 'type', 'ins_l'),
+  QuestionTab$new('am', 'type','report'),
+  QuestionTab$new('ins_l', 'type', 'report'),
+  QuestionTab$new('report', 'type', NULL)
+)

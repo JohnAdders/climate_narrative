@@ -1,11 +1,20 @@
 name: Orderly
 transition: low
 physical: low
+<<<<<<< HEAD
 description: "
 These low transition and physical risk scenarios assume that effective policy changes are introduced in a timely manner.
 
 
 ![NGFS scenarios Framework] (/NGFS scenarios Framework - Orderly.png)
+=======
+description:
+  "This scenario assumes that effective policy changes are introduced in a timely manner.
+
+
+  As a result[^1], global net emission of CO<sub>2</sub> gradually decreases to zero and the global warming
+  extent is limited (likely below 2 degrees). See the graph below for possible pathways
+>>>>>>> e2b1dbc5525d195524b15f1efdb8a07ebd0bba80
 
  
 **Source:** [NGFS Climate Scenarios, June2021] (https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf)
@@ -73,3 +82,19 @@ Overall, these are relatively optimistic scenarios as both transition and physic
 **Source:** [NGFS Climate Scenarios, June2021] (https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf)
 "
 
+<<<<<<< HEAD
+=======
+  ![warming projections](WarmingProjectionsGraph.png)
+
+
+  source: Climate Action Tracker  
+  
+  
+  The orderly transition scenario is a relatively optimistic scenario as 
+  both transition and physical risks are manageable.
+
+  
+  [^1]: example footnote
+
+  "
+>>>>>>> e2b1dbc5525d195524b15f1efdb8a07ebd0bba80

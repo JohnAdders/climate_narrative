@@ -6,52 +6,72 @@ library(R6)
 QuestionTab <- R6Class(
   "QuestionTab",
   public = list(
+    tab_name = NULL,
     tab_ui = NULL,
+    tab_ui_foot = NULL,
     tab_server = NULL,
     tab_number = NULL,
     previous_tab = NULL,
     next_tab = NULL,
     id = NULL,
-    initialize = function(tab_ui, tab_server, tab_number, previous_tab, next_tab) {
-      self$tab_ui <- tab_ui
-      self$tab_server <- tab_server
-      self$tab_number <- tab_number
-      self$previous_tab <- previous_tab
-      self$next_tab <- next_tab
-      self$id <- paste0("page_", tab_number)
+    initialize = function(tab_name, previous_tab, next_tab) {
+      # the constructor automatically gets ui, server and foot 
+      # from the relevant functions (or makes it empty if the function does not exist)
+      self$tab_name <- tab_name
+      self$tab_ui <- get_or_null(paste0('tab_',tab_name,'_ui'))
+      self$tab_ui_foot <- get_or_null(paste0('tab_',tab_name,'_foot'))
+      self$tab_server <- get_or_null(paste0('tab_',tab_name,'_server'))
+      self$tab_number <- as.integer(factor(tab_name, ordered_tabs))
+      self$previous_tab <- as.integer(factor(previous_tab, ordered_tabs))
+      self$next_tab <- as.integer(factor(next_tab, ordered_tabs))
+      self$id <- paste0("page_", self$tab_number)
     },
     # tab server function that combines:
     # 1. any other server tab_server (if given in the constructor)
-    # 2. possibility of switch to previous/next tab (if applicable), using 'switch_page' function. 
+    # 2. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
     server = function(input, output, session, switch_page) {
-      
-      switch_page <- function(i) {
-        updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
-      }
+
+      switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
-      if (!is.null(self$previous_tab)) observeEvent(
-        input[[paste0(self$id,"_previous")]], switch_page(self$previous_tab))
-      if (!is.null(self$next_tab)) {
-        observeEvent(input[[paste0(self$id,"_next")]],{
-          # the line below - moved to tab6 instead of hardcoding next_tab==6 here
-          # if(self$next_tab == 6) update_final_page(input, output, session)
-          switch_page(self$next_tab)
-        }
-        )
-      }
+      if (length(self$previous_tab)) observeEvent(
+        input[[paste0(self$id,"_previous")]], switch_page(as.integer(self$previous_tab)))
+      if (length(self$next_tab)) observeEvent(
+        input[[paste0(self$id,"_next")]], switch_page(as.integer(self$next_tab)))
     },
     # tab UI function combines:
+    # 0. a common header
     # 1. any other tab_UI (if given in the constructor)
     # 2. buttons that switch to previous/next tab (if applicable)
+    # 3. a tab-specific footer
+    # 4. a common footer
     ui = function() {
-      tabpanel_params <- list(self$id)
+      tabpanel_params <- list(
+        self$id,
+        tag('header',list(
+            img(src='cfrf_logo.png', alt='CFRF logo',height=50),
+            p('Climate Financial Risk Forum, 2021')
+          )),
+        hr()
+      )
       if (!is.null(self$tab_ui)) tabpanel_params <- add_param(tabpanel_params, self$tab_ui())
       tabpanel_params = add_param(tabpanel_params, br())
       if (!is.null(self$previous_tab)) tabpanel_params = add_param(
         tabpanel_params, actionButton(paste0(self$id,"_previous"), "prev"))
       if (!is.null(self$next_tab)) tabpanel_params = add_param(
         tabpanel_params, actionButton(paste0(self$id,"_next"), "next"))
+      if (!is.null(self$tab_ui_foot)) tabpanel_params <- add_param(tabpanel_params, self$tab_ui_foot())
+      tabpanel_params = c(
+        tabpanel_params,
+        list(
+          hr(),
+          tag('footer',list(
+            img(src='aviva_logo.png', alt='Aviva logo',height=50),
+            p('Developed in Aviva'),
+            p('by Krzysztof Opalski, John Adcock')
+          ))
+        )
+      )
       do.call(tabPanel, tabpanel_params)
     }
-  )
+  ),
 )
