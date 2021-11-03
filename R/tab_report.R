@@ -1,16 +1,13 @@
 tab_report_ui <- function () {
+  out <- list(textOutput("rendering_info"))
   if(!pandoc_available()){
     warning('Pandoc (required to render rtf) not available, hiding download report button')
-    out <- list()
   } else {
-    out <- list(
+    out <- c(out, list(
       downloadButton("report", "Download the report as RTF")
-    )
+    ))
   }
   out <- c(out, list(
-    # uiOutput('test_output'), # uncomment for debugging
-    # uiOutput("show_aggregated_inputs"), # uncomment for debugging
-    # uiOutput('show_all_inputs'), # uncomment for debugging
     uiOutput("rendered_report")
   ))
 }

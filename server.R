@@ -80,15 +80,6 @@ server <- function(input, output, session) {
     }
     out
   })
-  
-  # outputs definition
-  output$show_all_inputs <- renderTable({
-    all_inputs()
-  })
-
-  output$show_aggregated_inputs <- renderTable({
-    aggregated_type_inputs()
-  })
 
   temp_report <- reactive({
     # writing a report to (temporary) file first
