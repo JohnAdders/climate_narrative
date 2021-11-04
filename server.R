@@ -65,7 +65,7 @@ server <- function(input, output, session) {
   })
 
   report_contents <- reactive({
-    out <- paste0('# Climate report\n\n', scenarios$introduction$description, '\n\n')
+    out <- paste0('% Climate report\n\n', scenarios$introduction$description, '\n\n')
     for(i in 1:length(scenarios)){
       if(names(scenarios)[i] != 'introduction'){
         out <- paste0(out, get_scenario_descriptions(
@@ -83,6 +83,7 @@ server <- function(input, output, session) {
 
   temp_report <- reactive({
     # writing a report to (temporary) file first
+    # this is necessary as markdown::render takes file as an argument
     if(!exists('tempf')) tempf <- tempfile(fileext='.md')
     file_conn <- file(tempf)
     writeLines(report_contents() , file_conn)
@@ -99,7 +100,12 @@ server <- function(input, output, session) {
     includeHTML(rmarkdown::render(
       input=temp_report(),
       output_file=tempf,
-      output_format=html_document(self_contained=FALSE)
+      output_format=html_document(
+        toc=TRUE,
+        number_sections=TRUE,
+        self_contained=FALSE,
+        title='aaa'
+      )
     ))
   })
 
@@ -112,8 +118,10 @@ server <- function(input, output, session) {
         input=temp_report(),
         output_file=file,
         output_format=rtf_document(
+          toc=TRUE,
+          number_sections=TRUE,
           pandoc_args=c(
-            paste0('--resource-path=',res_path),
+            paste0('--resource-path=', res_path),
             '--self-contained'
           )
         )

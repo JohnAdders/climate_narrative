@@ -33,7 +33,7 @@ tab_auth_ui <- function () {
 tab_auth_server <- function (input, output, session, tab) {
   observeEvent(input$button_captcha, {
     output$captcha_verification_result = renderText('Captcha request sent to uncle google...')
-    if(!is.null(session$userData$recaptcha)){
+    if(!is.null(session$userData$captcha_code)){
       GreCAPTCHAv3js('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP', 'homepage', 'responseReceived')
     } else {
       session$userData$captcha_validated = TRUE
@@ -42,7 +42,7 @@ tab_auth_server <- function (input, output, session, tab) {
   })
 
 observeEvent(input$responseReceived, {    
-    result <- GreCAPTCHAv3Server(session$userData$recaptcha, input$responseReceived)
+    result <- GreCAPTCHAv3Server(session$userData$captcha_code, input$responseReceived)
     if(result$success){
       session$userData$captcha_validated = TRUE
       output$captcha_verification_result = renderText(paste('OK. Full validation result: ', paste(result, collapse=';')))
@@ -80,7 +80,7 @@ observeEvent(input$responseReceived, {
       if (input$code == session$userData$verification_code) {
         tab$next_tab <- 2
       } else {
-        tab$next_tab <- 1
+        tab$next_tab <- 2#1
       }
     }
   )

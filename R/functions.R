@@ -134,7 +134,7 @@ get_exposure_description <- function(item, type_item_inputs){
       )
     )
     out <- paste0(
-      '### ',
+      '## ',
       exposure_classes[[item]][['name']],
       '\n\n',
       exposure_classes[[item]][['description']],
@@ -148,7 +148,7 @@ get_exposure_description <- function(item, type_item_inputs){
     if(high_or_low == FALSE) return("")
     
     out <-paste0(
-      "#### ",
+      "### ",
       paste0(toupper(substring(high_or_low, 1, 1)), substring(high_or_low, 2)), 
       " ",
       physical_or_transition,
@@ -175,7 +175,7 @@ get_exposure_description <- function(item, type_item_inputs){
   
   get_scenario_descriptions <- function(aggregated_table, type_inputs, name, description, transition, physical){
     out <- paste0(
-      '## ',
+      '# ',
       name,
       '\n\n',
       description,

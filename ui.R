@@ -5,6 +5,7 @@ ui <- function() {
     )
     tabset_tabs <- lapply(tabs, function(tab) {tab$ui()})
     fluidPage(
+        title='Climate narrative',
         useShinyjs(),
         tags$link(rel = "stylesheet", type = "text/css", href = "climate_narrative.css"),
         do.call(tabsetPanel, c(tabset_start, tabset_tabs)),
