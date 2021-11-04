@@ -196,6 +196,25 @@ get_exposure_description <- function(item, type_item_inputs){
     return(out)
   }
 
+# heartbeat function to prevent app closing due to inactivity
+heartbeat = function(input, output, session) {
+  beep <- reactiveTimer(55 * 1000)
+  output[["__heartbeat"]] <- renderText({
+    beep()
+    "Developed in Aviva by Krzysztof Opalski, John Adcock"
+  })
+}
+
+heartbeat_footer = function() {
+  list(
+    hr(),
+    tag('footer', list(
+      img(src='aviva_logo.png', alt='Aviva logo', height=50),
+      textOutput("__heartbeat")
+    ))
+  )
+}
+
 ### captcha functions copied from https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 
 GreCAPTCHAv3Ui <- function(siteKey) {

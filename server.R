@@ -1,5 +1,5 @@
 server <- function(input, output, session) {
-
+  heartbeat(input, output, session)
   session$userData$verification_code <- UUIDgenerate()
   session$userData$captcha_validated <- FALSE
   
