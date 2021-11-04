@@ -102,9 +102,9 @@ server <- function(input, output, session) {
       output_file=tempf,
       output_format=html_document(
         toc=TRUE,
-        number_sections=TRUE,
+        number_sections=FALSE,
         self_contained=FALSE,
-        title='aaa'
+        fig_caption=FALSE
       )
     ))
   })
@@ -119,7 +119,8 @@ server <- function(input, output, session) {
         output_file=file,
         output_format=rtf_document(
           toc=TRUE,
-          number_sections=TRUE,
+          #fig_caption=FALSE,
+          number_sections=FALSE,
           pandoc_args=c(
             paste0('--resource-path=', res_path),
             '--self-contained'
