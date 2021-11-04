@@ -30,7 +30,6 @@ QuestionTab <- R6Class(
     # 1. any other server tab_server (if given in the constructor)
     # 2. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
     server = function(input, output, session, switch_page) {
-
       switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
       if (length(self$previous_tab)) observeEvent(
@@ -43,34 +42,18 @@ QuestionTab <- R6Class(
     # 1. any other tab_UI (if given in the constructor)
     # 2. buttons that switch to previous/next tab (if applicable)
     # 3. a tab-specific footer
-    # 4. a common footer
     ui = function() {
-      tabpanel_params <- list(
-        self$id,
-        tag('header',list(
-            img(src='cfrf_logo.png', alt='CFRF logo',height=50),
-            p('Climate Financial Risk Forum, 2021')
-          )),
-        hr()
-      )
-      if (!is.null(self$tab_ui)) tabpanel_params <- add_param(tabpanel_params, self$tab_ui())
-      tabpanel_params = add_param(tabpanel_params, br())
-      if (!is.null(self$previous_tab)) tabpanel_params = add_param(
-        tabpanel_params, actionButton(paste0(self$id,"_previous"), "prev"))
-      if (!is.null(self$next_tab)) tabpanel_params = add_param(
-        tabpanel_params, actionButton(paste0(self$id,"_next"), "next"))
-      if (!is.null(self$tab_ui_foot)) tabpanel_params <- add_param(tabpanel_params, self$tab_ui_foot())
-      tabpanel_params = c(
-        tabpanel_params,
-        list(
-          hr(),
-          tag('footer',list(
-            img(src='aviva_logo.png', alt='Aviva logo',height=50),
-            p('Developed in Aviva'),
-            p('by Krzysztof Opalski, John Adcock')
-          ))
-        )
-      )
+      tabpanel_params <- list(self$id)
+      if (!is.null(self$tab_ui)) tabpanel_params <- add_param(
+        tabpanel_params, self$tab_ui())
+      tabpanel_params <- add_param(tabpanel_params, br())
+      if (length(self$previous_tab)) tabpanel_params = add_param(
+        tabpanel_params, actionButton(paste0(self$id, "_previous"), "prev"))
+      if (length(self$next_tab)) tabpanel_params = add_param(
+        tabpanel_params, actionButton(paste0(self$id, "_next"), "next"))
+      if (!is.null(self$tab_ui_foot)) tabpanel_params <- add_param(
+        tabpanel_params, self$tab_ui_foot())
+      
       do.call(tabPanel, tabpanel_params)
     }
   ),

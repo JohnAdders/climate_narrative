@@ -1,22 +1,18 @@
 server <- function(input, output, session) {
-
+  heartbeat(input, output, session)
   session$userData$verification_code <- UUIDgenerate()
+  session$userData$captcha_validated <- FALSE
   
-  output$display_content_basic <- renderUI({
-    # UI of the main app after positive validation
-    tabset_start <- list(
-       id = "wizard",
-       type = "hidden"
-    )
-    tabset_tabs <- lapply(tabs, function(tab) {tab$ui()})
-    do.call(tabsetPanel, c(tabset_start, tabset_tabs))
-  })
+  if (file.exists('secret.yml')){
+    secret_pars <- read_yaml('secret.yml')
+    for(i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
+  }
 
   # first, tab-specific server collation
   for (tab in tabs) {
     tab$server(input, output, session, switch_page)
   }
-
+  
   # then the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
@@ -63,37 +59,31 @@ server <- function(input, output, session) {
       temp[order(temp$materiality, decreasing=TRUE), ]
     } else {
       # TODO decide what to show if all exposures are blank?
-      warning('All exposures are blank')
+      warning('All exposures are blank. Rendering the report contating scenario descriptions only')
       return(data.frame(item=c(),materiality=c()))
     }
   })
 
   report_contents <- reactive({
-    out <- '# Climate report\n\n'
+    out <- paste0('% Climate report\n\n', scenarios$introduction$description, '\n\n')
     for(i in 1:length(scenarios)){
-      out <- paste0(out, get_scenario_descriptions(
-        aggregated_type_inputs(),
-        type_inputs(),
-        scenarios[[i]]$name,
-        scenarios[[i]]$description,
-        scenarios[[i]]$transition,
-        scenarios[[i]]$physical
-      ))
+      if(names(scenarios)[i] != 'introduction'){
+        out <- paste0(out, get_scenario_descriptions(
+          aggregated_type_inputs(),
+          type_inputs(),
+          scenarios[[i]]$name,
+          scenarios[[i]]$description,
+          scenarios[[i]]$transition,
+          scenarios[[i]]$physical
+        ))
+      }
     }
     out
-  })
-  
-  # outputs definition
-  output$show_all_inputs <- renderTable({
-    all_inputs()
-  })
-
-  output$show_aggregated_inputs <- renderTable({
-    aggregated_type_inputs()
   })
 
   temp_report <- reactive({
     # writing a report to (temporary) file first
+    # this is necessary as markdown::render takes file as an argument
     if(!exists('tempf')) tempf <- tempfile(fileext='.md')
     file_conn <- file(tempf)
     writeLines(report_contents() , file_conn)
@@ -102,15 +92,21 @@ server <- function(input, output, session) {
   })
 
   output$rendered_report <- renderUI({
-    # previous version, not supporting footnotes
+    # previous version, not supporting footnotes:
     # HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
+    # or alternatively in a simpler way:
+    # includeMarkdown(temp_report())
     tempf <- tempfile(fileext='.html')
     includeHTML(rmarkdown::render(
       input=temp_report(),
       output_file=tempf,
-      output_format=html_document(self_contained=FALSE)
+      output_format=html_document(
+        toc=TRUE,
+        number_sections=FALSE,
+        self_contained=FALSE,
+        fig_caption=FALSE
+      )
     ))
-    includeHTML(tempf)
   })
 
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
@@ -118,13 +114,15 @@ server <- function(input, output, session) {
     filename = "Climate Report.rtf", # file extension defines the rendering process
     content = function(file, res_path=paste0(getwd(),'/www')) {
       fs <- file.size(temp_report())
-      print(getwd())
       rmarkdown::render(
         input=temp_report(),
         output_file=file,
         output_format=rtf_document(
+          toc=TRUE,
+          #fig_caption=FALSE,
+          number_sections=FALSE,
           pandoc_args=c(
-            paste0('--resource-path=',res_path),
+            paste0('--resource-path=', res_path),
             '--self-contained'
           )
         )

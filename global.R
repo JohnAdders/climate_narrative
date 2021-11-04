@@ -3,6 +3,9 @@ library(rmarkdown)
 library(tippy)
 library(uuid)
 library(shinythemes)
+library(shinyjs)
+library(httr)
+library(jsonlite)
 
 # helper function to read all yaml/csv/R files from a directory as a named R list
 read_dir <- function(directory, file_format='auto'){
@@ -47,6 +50,6 @@ tabs <- list(
   QuestionTab$new('bank', 'type', 'report'),
   QuestionTab$new('ins_a', 'type', 'ins_l'),
   QuestionTab$new('am', 'type','report'),
-  QuestionTab$new('ins_l', 'type', 'report'),
+  QuestionTab$new('ins_l', 'ins_a', 'report'),
   QuestionTab$new('report', 'type', NULL)
 )

@@ -63,7 +63,7 @@ exposure_grid <- function(exposure_matrix, tooltip_matrix, label, col_width=NULL
       fluidRow(
         lapply(
           # do not show 'product' column
-          colnames(exposures)[-2],
+          colnames(exposure_matrix)[-2],
           # when reading csv's R by default substitutes spaces with dots in the headers, here we reverse this for a nicer output
           function(header) column(col_width, h4(gsub(".", " ", header, fixed=TRUE))) 
         )
@@ -134,7 +134,7 @@ get_exposure_description <- function(item, type_item_inputs){
       )
     )
     out <- paste0(
-      '### ',
+      '## ',
       exposure_classes[[item]][['name']],
       '\n\n',
       exposure_classes[[item]][['description']],
@@ -148,7 +148,7 @@ get_exposure_description <- function(item, type_item_inputs){
     if(high_or_low == FALSE) return("")
     
     out <-paste0(
-      "#### ",
+      "### ",
       paste0(toupper(substring(high_or_low, 1, 1)), substring(high_or_low, 2)), 
       " ",
       physical_or_transition,
@@ -175,7 +175,7 @@ get_exposure_description <- function(item, type_item_inputs){
   
   get_scenario_descriptions <- function(aggregated_table, type_inputs, name, description, transition, physical){
     out <- paste0(
-      '## ',
+      '# ',
       name,
       '\n\n',
       description,
@@ -195,3 +195,53 @@ get_exposure_description <- function(item, type_item_inputs){
     }
     return(out)
   }
+
+# heartbeat function to prevent app closing due to inactivity
+heartbeat = function(input, output, session) {
+  beep <- reactiveTimer(55 * 1000)
+  output[["__heartbeat"]] <- renderText({
+    beep()
+    "Developed in Aviva by Krzysztof Opalski, John Adcock"
+  })
+}
+
+heartbeat_footer = function() {
+  list(
+    hr(),
+    tag('footer', list(
+      img(src='aviva_logo.png', alt='Aviva logo', height=50),
+      textOutput("__heartbeat")
+    ))
+  )
+}
+
+### captcha functions copied from https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
+
+GreCAPTCHAv3Ui <- function(siteKey) {
+tagList(tags$head(
+  tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=",siteKey)),
+))
+}
+
+GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
+  runjs(paste0("
+        grecaptcha.ready(function () {
+          grecaptcha.execute('", siteKey, "', { action: '", action, "' }).then(function (token) {
+			      Shiny.onInputChange('", fieldID, "',token);
+      		});
+	      });
+      "))
+}
+
+GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
+  gResponse <- POST(
+    "https://www.google.com/recaptcha/api/siteverify", body = list(
+      secret = secretKey,
+      response = reCaptchaResponse
+    )
+  )
+
+  if(gResponse$status_code==200){
+    return(fromJSON(content(gResponse, "text")))
+  }
+} 
