@@ -2,3 +2,9 @@ img{
     display: block;
     margin: auto;
 }
+
+.verticalcenter {
+    display: table-cell;
+    height: 80px;
+    vertical-align: middle;
+}
