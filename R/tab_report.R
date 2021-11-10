@@ -19,19 +19,12 @@ tab_report_server <- function (input, output, session, tab) {
   observeEvent(
     input$type,
     {
-      tab$previous_tab <- switch(
+      tab$previous_tab <- as.integer(factor(switch(
         input$type,
-        insurance = 6,
-        asset = 5,
-        3
-      )
+        insurance = 'ins_l',
+        asset = 'am',
+        bank = 'bank'
+      ), ordered_tabs))
     }
   )
 }
-# the code below is currently not needed (the report is reactive).
-# but I keep it, it may be more efficient to produce report only here
-# (and not update it reactively if any input changes)
-#observeEvent(
-#  input$wizard,
-#  if(input$wizard=='page_6') update_final_page(input, output, session)
-#)

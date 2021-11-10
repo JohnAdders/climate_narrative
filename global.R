@@ -50,6 +50,6 @@ tabs <- list(
   QuestionTab$new('bank', 'type', 'report'),
   QuestionTab$new('ins_a', 'type', 'ins_l'),
   QuestionTab$new('am', 'type','report'),
-  QuestionTab$new('ins_l', 'type', 'report'),
+  QuestionTab$new('ins_l', 'ins_a', 'report'),
   QuestionTab$new('report', 'type', NULL)
 )

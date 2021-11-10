@@ -52,19 +52,19 @@ transition:
             In high transitional risk scenarios total electricity capacity jumps markedly, but its energy sources change dramatically. In a high transition risk scenario, solar is the dominant technology representing 48% of electricity generation capacity by 2050, completely displacing coal (before 2030) and gas (between 2030 and 2035). 
             
             
-            ![Energy mix] (/Energy Sources - Oil and Gas.png)
+            ![Energy mix](Energy_Sources_Oil_and_Gas.png)
             
             
-            **Source:** [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario] (https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            **Source:** [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
             
             
             Primary energy prices remain depressed throughout the scenario horizon, while secondary energy prices rise in line with the carbon price.    
             
             
-            ![Oil Price] (/Oil Price Change - Oil and Gas.png)
+            ![Oil Price](Oil_Price_Change_Oil_and_Gas.png)
             
             
-            **Source:** [NGFS Scenario Data IAM.] (https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            **Source:** [NGFS Scenario Data IAM.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
             
             
             The increasing carbon price in the high transition risk scenario can drive the following impacts for the oil and gas company: 
@@ -107,19 +107,19 @@ transition:
             In a low transition risk scenario, demand for oil and gas decreases steadily and the share of renewables in the electricity generation mix increases to almost 70% by 2050. The share of electric vehicles on the roads steadily increases to almost 70% by 2050 and a large share of the remaining conventional vehicles use biofuels instead of petrol or diesel. 
             
             
-            ![Cumulative Energy Investment] (/Cumulative Energy Investment - Oil and Gas.png)
+            ![Cumulative Energy Investment](Cumulative_Energy_Investment_Oil_and_Gas.png)
             
             
-            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND model.] (https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
             
             
             A reduction in fossil fuel demand and prices leads to stranded fossil fuel assets. By 2050, renewables and biomass would cover 68% of global primary energy needs. Because the oil and gas sector is so diverse, there is no single solution, but rather a range of strategies based on the circumstances of each company that will need to be deployed in a low transition risk scenario to maintain revenues and minimise the long-term financial impact. 
             
             
-            ![Primary Energy Mix] (/Primary Energy Mix - Oil and Gas.png)
+            ![Primary Energy Mix](Primary_Energy_Mix_Oil_and_Gas.png)
             
             
-            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.] (https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
             "
 physical:
     high:

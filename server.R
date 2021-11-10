@@ -1,5 +1,5 @@
 server <- function(input, output, session) {
-
+  heartbeat(input, output, session)
   session$userData$verification_code <- UUIDgenerate()
   session$userData$captcha_validated <- FALSE
   
@@ -65,7 +65,7 @@ server <- function(input, output, session) {
   })
 
   report_contents <- reactive({
-    out <- paste0('# Climate report\n\n', scenarios$introduction$description, '\n\n')
+    out <- paste0('% Climate report\n\n', scenarios$introduction$description, '\n\n')
     for(i in 1:length(scenarios)){
       if(names(scenarios)[i] != 'introduction'){
         out <- paste0(out, get_scenario_descriptions(
@@ -83,6 +83,7 @@ server <- function(input, output, session) {
 
   temp_report <- reactive({
     # writing a report to (temporary) file first
+    # this is necessary as markdown::render takes file as an argument
     if(!exists('tempf')) tempf <- tempfile(fileext='.md')
     file_conn <- file(tempf)
     writeLines(report_contents() , file_conn)
@@ -99,7 +100,12 @@ server <- function(input, output, session) {
     includeHTML(rmarkdown::render(
       input=temp_report(),
       output_file=tempf,
-      output_format=html_document(self_contained=FALSE)
+      output_format=html_document(
+        toc=TRUE,
+        number_sections=FALSE,
+        self_contained=FALSE,
+        fig_caption=FALSE
+      )
     ))
   })
 
@@ -107,14 +113,16 @@ server <- function(input, output, session) {
   output$report <- downloadHandler(
     filename = "Climate Report.rtf", # file extension defines the rendering process
     content = function(file, res_path=paste0(getwd(),'/www')) {
-      print(res_path)
       fs <- file.size(temp_report())
       rmarkdown::render(
         input=temp_report(),
         output_file=file,
         output_format=rtf_document(
+          toc=TRUE,
+          #fig_caption=FALSE,
+          number_sections=FALSE,
           pandoc_args=c(
-            paste0('--resource-path=',res_path),
+            paste0('--resource-path=', res_path),
             '--self-contained'
           )
         )

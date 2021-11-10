@@ -40,3 +40,4 @@ vignettes/*.pdf
 
 # rsconnect files
 rsconnect/
+/secret.yml
