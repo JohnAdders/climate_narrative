@@ -1,17 +1,19 @@
 tab_auth_ui <- function () {
   list(
-    p("This tool and its contents represent the output from the cross-industry
-    Scenario Analysis Working Group of the Prudential Regulation Authority
-    and Financial Conduct Authority’s Climate Financial Risk Forum (CFRF).
-    The tool aims to promote understanding, consistency, and comparability
-    by providing guidance on how to use scenario analysis to assess financial impacts
-    and inform strategy/business decisions."),
-    p("This tool has been written by industry, for industry. The recommendations in this tool
-    do not constitute financial or other professional advice and should not be relied upon as such.
-    The PRA and FCA have convened and facilitated CFRF discussions but do not accept liability
-    for the views expressed in this tool which do not necessarily represent the view
-    of the regulators and in any case do not constitute regulatory guidance."),
-    p(strong("Copyright 2021 The Climate Financial Risk Forum")),
+    div(class='disclaimer',
+      p("This tool and its contents represent the output from the cross-industry
+      Scenario Analysis Working Group of the Prudential Regulation Authority
+      and Financial Conduct Authority's Climate Financial Risk Forum (CFRF).
+      The tool aims to promote understanding, consistency, and comparability
+      by providing guidance on how to use scenario analysis to assess financial impacts
+      and inform strategy/business decisions."),
+      p("This tool has been written by industry, for industry. The recommendations in this tool
+      do not constitute financial or other professional advice and should not be relied upon as such.
+      The PRA and FCA have convened and facilitated CFRF discussions but do not accept liability
+      for the views expressed in this tool which do not necessarily represent the view
+      of the regulators and in any case do not constitute regulatory guidance."),
+      p(strong("Copyright 2021 The Climate Financial Risk Forum"))
+    ),
     hr(),
     GreCAPTCHAv3Ui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP"),
     fluidRow(column(6,
@@ -37,7 +39,7 @@ tab_auth_ui <- function () {
       ),
       actionButton(
         inputId='button_check_code',
-        label='Enter'
+        label='Validate the code'
       ),
       textOutput('code_verification_result')
     ))
@@ -87,7 +89,7 @@ observeEvent(input$responseReceived, {
         output$code_verification_result <- renderText('Code correct, please proceed')
       } else {
         tab$next_tab <- as.integer(factor('auth', ordered_tabs))
-        # tab$next_tab <- as.integer(factor('type', ordered_tabs)) to factilitate development
+        # tab$next_tab <- as.integer(factor('type', ordered_tabs)) # comment in production, uncomment to factilitate development
         output$code_verification_result <- renderText('Code incorrect, please double check')
       }
     }
