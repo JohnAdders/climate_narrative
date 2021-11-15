@@ -76,9 +76,9 @@ observeEvent(input$responseReceived, {
     input$code,
     {
       if (input$code == session$userData$verification_code) {
-        tab$next_tab <- 3
+        tab$next_tab <- as.integer(factor('type', ordered_tabs))
       } else {
-        tab$next_tab <- 2
+        tab$next_tab <- as.integer(factor('auth', ordered_tabs))
       }
     }
   )
