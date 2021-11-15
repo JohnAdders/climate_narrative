@@ -81,14 +81,42 @@ server <- function(input, output, session) {
     out
   })
 
+  report_subset_contents <- reactive({
+    if(input$report_selection==''){
+      out <- 'Please select a scenario'
+    } else {
+      i <- which(lapply(scenarios, function(x) x$name)==input$report_selection)
+      out <- paste0('% Climate report\n\n', scenarios$introduction$description, '\n\n')
+      out <- paste0(out, get_scenario_descriptions(
+        aggregated_type_inputs(),
+        type_inputs(),
+        scenarios[[i]]$name,
+        scenarios[[i]]$description,
+        scenarios[[i]]$transition,
+        scenarios[[i]]$physical
+      ))
+    }
+    out
+  })
+
   temp_report <- reactive({
     # writing a report to (temporary) file first
     # this is necessary as markdown::render takes file as an argument
-    if(!exists('tempf')) tempf <- tempfile(fileext='.md')
-    file_conn <- file(tempf)
+    if(!exists('temp_md')) tempf <- tempfile(fileext='.md')
+    file_conn <- file(temp_md)
     writeLines(report_contents() , file_conn)
     close(file_conn)
-    tempf
+    temp_md
+  })
+
+  temp_subset_report <- reactive({
+    # writing a report to (temporary) file first
+    # this is necessary as markdown::render takes file as an argument
+    if(!exists('temp_subset_md')) temp_subset_md <- tempfile(fileext='.md')
+    file_conn <- file(temp_subset_md)
+    writeLines(report_subset_contents() , file_conn)
+    close(file_conn)
+    temp_subset_md
   })
 
   output$rendered_report <- renderUI({
@@ -96,10 +124,10 @@ server <- function(input, output, session) {
     # HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
     # or alternatively in a simpler way:
     # includeMarkdown(temp_report())
-    tempf <- tempfile(fileext='.html')
+    temp_html <- tempfile(fileext='.html')
     includeHTML(rmarkdown::render(
-      input=temp_report(),
-      output_file=tempf,
+      input=temp_subset_report(),
+      output_file=temp_html,
       output_format=html_document(
         toc=TRUE,
         number_sections=FALSE,

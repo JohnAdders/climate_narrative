@@ -72,7 +72,7 @@ observeEvent(input$responseReceived, {
       if (input$code == session$userData$verification_code) {
         tab$next_tab <- 2
       } else {
-        tab$next_tab <- 1
+        tab$next_tab <- 2#1
       }
     }
   )
