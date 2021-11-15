@@ -5,6 +5,6 @@ img{
 
 .verticalcenter {
     display: table-cell;
-    height: 80px;
+    height: 7em;
     vertical-align: middle;
 }

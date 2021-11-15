@@ -14,7 +14,9 @@ QuestionTab <- R6Class(
     previous_tab = NULL,
     next_tab = NULL,
     id = NULL,
-    initialize = function(tab_name, previous_tab, next_tab) {
+    add_footer = NULL,
+    add_header = NULL,
+    initialize = function(tab_name, previous_tab, next_tab, add_header=TRUE, add_footer=TRUE) {
       # the constructor automatically gets ui, server and foot 
       # from the relevant functions (or makes it empty if the function does not exist)
       self$tab_name <- tab_name
@@ -25,6 +27,8 @@ QuestionTab <- R6Class(
       self$previous_tab <- as.integer(factor(previous_tab, ordered_tabs))
       self$next_tab <- as.integer(factor(next_tab, ordered_tabs))
       self$id <- paste0("page_", self$tab_number)
+      self$add_header <- add_header
+      self$add_footer <- add_footer
     },
     # tab server function that combines:
     # 1. any other server tab_server (if given in the constructor)
@@ -44,6 +48,12 @@ QuestionTab <- R6Class(
     # 3. a tab-specific footer
     ui = function() {
       tabpanel_params <- list(self$id)
+      # if(self$add_header) tabpanel_params <- add_param(
+      #   tabpanel_params,
+      #   tag('header',list(
+      #     img(src='cfrf_logo.png', alt='CFRF logo', height=50)
+      #   ))
+      # )
       if (!is.null(self$tab_ui)) tabpanel_params <- add_param(
         tabpanel_params, self$tab_ui())
       tabpanel_params <- add_param(tabpanel_params, br())
@@ -54,6 +64,9 @@ QuestionTab <- R6Class(
       if (!is.null(self$tab_ui_foot)) tabpanel_params <- add_param(
         tabpanel_params, self$tab_ui_foot())
       
+      # if(self$add_footer) tabpanel_params <- add_param(
+      #   tabpanel_params, heartbeat_footer()
+      # )
       do.call(tabPanel, tabpanel_params)
     }
   ),
