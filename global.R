@@ -45,7 +45,7 @@ ordered_tabs <- c('title','auth','type','bank','ins_a','am','ins_l','report')
 #tab_mapping <- factor(1:length(ordered_tabs), levels=ordered_tabs)
 
 tabs <- list(
-  QuestionTab$new('title', NULL, 'auth'),
+  QuestionTab$new('title', NULL, 'auth', FALSE, FALSE),
   QuestionTab$new('auth', 'title', 'type'),
   QuestionTab$new('type', NULL, 'ins_a'),
   QuestionTab$new('bank', 'type', 'report'),

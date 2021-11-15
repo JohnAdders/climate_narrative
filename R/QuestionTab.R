@@ -42,18 +42,19 @@ QuestionTab <- R6Class(
         input[[paste0(self$id,"_next")]], switch_page(as.integer(self$next_tab)))
     },
     # tab UI function combines:
-    # 0. a common header
+    # 0. a common header (unless FALSE)
     # 1. any other tab_UI (if given in the constructor)
     # 2. buttons that switch to previous/next tab (if applicable)
-    # 3. a tab-specific footer
+    # 3. a tab-specific text
+    # 4. a common footer (unless FALSE)
     ui = function() {
       tabpanel_params <- list(self$id)
-      # if(self$add_header) tabpanel_params <- add_param(
-      #   tabpanel_params,
-      #   tag('header',list(
-      #     img(src='cfrf_logo.png', alt='CFRF logo', height=50)
-      #   ))
-      # )
+      if(self$add_header) tabpanel_params <- add_param(
+        tabpanel_params,
+        tag('header',list(
+          img(src='cfrf_logo.png', alt='CFRF logo', height=50)
+        ))
+      )
       if (!is.null(self$tab_ui)) tabpanel_params <- add_param(
         tabpanel_params, self$tab_ui())
       tabpanel_params <- add_param(tabpanel_params, br())
@@ -64,9 +65,9 @@ QuestionTab <- R6Class(
       if (!is.null(self$tab_ui_foot)) tabpanel_params <- add_param(
         tabpanel_params, self$tab_ui_foot())
       
-      # if(self$add_footer) tabpanel_params <- add_param(
-      #   tabpanel_params, heartbeat_footer()
-      # )
+      if(self$add_footer) tabpanel_params <- add_param(
+        tabpanel_params, heartbeat_footer()
+      )
       do.call(tabPanel, tabpanel_params)
     }
   ),

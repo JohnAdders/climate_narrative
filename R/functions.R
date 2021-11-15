@@ -25,37 +25,9 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL) {
     if(!is.null(tooltip_text)){
       form <- with_tippy(form, tooltip_text)
     }  
-    
-    #column(
-    #  col_width,
-      form
-    #)
+    form
   }
 }
-
-# exposure_grid_row <- function(exposures_row, tooltip_texts, prefix, col_width) {
-#   items <- paste(
-#     names(exposures_row)[-(1:2)],
-#     exposures_row[-(1:2)],
-#     sep="|")
-#   items[exposures_row[-(1:2)] == ""] <- ""
-#   fluidRow(
-#     column(col_width, h5(exposures_row[1])),
-#     mapply(
-#       function(item, tooltip_text) {
-#         exposure_grid_cell(
-#           item,
-#           paste(prefix,exposures_row[1], exposures_row[2], sep="|"),
-#           col_width,
-#           tooltip_text
-#         )
-#       },
-#       items,
-#       tooltip_texts,
-#       SIMPLIFY=FALSE
-#     )
-#   )
-# }
 
 exposure_grid_ui <- function(label) {
   tableOutput(label)
@@ -89,32 +61,6 @@ exposure_grid_server <- function(
     sanitize.colnames.function=function(x) gsub('.', '&nbsp;', x, fixed=TRUE)
   ) 
 }
-
-# exposure_grid <- function(exposure_matrix, tooltip_matrix, label, col_width=NULL) {
-#   if(is.null(col_width)) col_width <- floor(12/(ncol(exposure_matrix)-1))
-#   rows <- list(
-#       fluidRow(
-#         lapply(
-#           # do not show 'product' column
-#           colnames(exposure_matrix)[-2],
-#           # when reading csv's R by default substitutes spaces with dots in the headers, here we reverse this for a nicer output
-#           function(header) column(col_width, h4(gsub(".", " ", header, fixed=TRUE))) 
-#         )
-#     )
-#   )
-#   for(i in 1:nrow(exposure_matrix)){
-#     rows <- add_param(
-#       rows,
-#       exposure_grid_row(
-#         exposure_matrix[i,],
-#         tooltip_texts=tooltip_matrix[i,],
-#         label,
-#         col_width=col_width
-#       )
-#     )
-#   }
-#   return (rows)
-# }
 
 # helper function to produce a markdown report
 table_to_markdown <- function(table, additional_spaces=3, dot_to_space=TRUE){
@@ -234,7 +180,7 @@ heartbeat = function(input, output, session) {
   beep <- reactiveTimer(55 * 1000)
   output[["__heartbeat"]] <- renderText({
     beep()
-    "Developed in Aviva by Krzysztof Opalski, John Adcock"
+    " "
   })
 }
 
@@ -243,7 +189,7 @@ heartbeat_footer = function() {
     hr(),
     tag('footer', list(
       img(src='aviva_logo.png', alt='Aviva logo', height=50),
-      textOutput("__heartbeat")
+      p("Developed in Aviva by Krzysztof Opalski, John Adcock")
     ))
   )
 }
