@@ -14,26 +14,33 @@ tab_auth_ui <- function () {
     p(strong("Copyright 2021 The Climate Financial Risk Forum")),
     hr(),
     GreCAPTCHAv3Ui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP"),
-    p('Enter your email address to receive the verification code'),
-    textInput(
-      inputId='email',
-      label=tagList(icon("user"),"Email"),
-      placeholder = 'Enter your email here'
+    fluidRow(column(6,
+      p('Enter your email address to receive the verification code'),
+      textInput(
+        inputId='email',
+        label=tagList(icon("user"),"Email"),
+        placeholder = 'Enter your email here'
+      ),
+      actionButton(
+        inputId='button_send_code',
+        label='Send the code'
+      ),
+      textOutput('captcha_verification_result'),
+      textOutput('code_send_result')
     ),
-    actionButton(
-      inputId='button_send_code',
-      label='Send the code '
-    ),
-    hr(),
-    textOutput('captcha_verification_result'),
-    textOutput('code_verification_result'),
-    p('Enter the verification code received in your email'),
-    textInput(
-      inputId='code',
-      label=tagList(icon("unlock-alt"), "Verification code") ,
-      placeholder = 'Enter your verification code'
-    ),
-    hr()
+    column(6,
+      p('Enter the verification code received in your email'),
+      textInput(
+        inputId='code',
+        label=tagList(icon("unlock-alt"), "Verification code") ,
+        placeholder = 'Enter your verification code'
+      ),
+      actionButton(
+        inputId='button_check_code',
+        label='Enter'
+      ),
+      textOutput('code_verification_result')
+    ))
   )
 }
 
@@ -47,10 +54,10 @@ tab_auth_server <- function (input, output, session, tab) {
       } else {
         session$userData$captcha_validated = TRUE
         output$captcha_verification_result = renderText('Development mode. No captcha required')
-        output$code_verification_result <- renderText(paste('Development mode, the code is: ', session$userData$verification_code))
+        output$code_send_result <- renderText(paste('Development mode, the code is: ', session$userData$verification_code))
       }
     } else {
-      output$code_verification_result <- renderText('Please provide a valid email')
+      output$code_send_result <- renderText('Please provide a valid email')
     }
   })
 
@@ -59,7 +66,7 @@ observeEvent(input$responseReceived, {
       if(result$success){
         session$userData$captcha_validated = TRUE
         output$captcha_verification_result = renderText(paste('OK. Full validation result: ', paste(result, collapse=';')))
-        output$code_verification_result <- renderText(paste(
+        output$code_send_result <- renderText(paste(
           'TODO: send the actual email from',
           session$userData$email_server,
           'to',
@@ -73,12 +80,15 @@ observeEvent(input$responseReceived, {
   })
 
   observeEvent(
-    input$code,
+    input$button_check_code,#input$code,
     {
       if (input$code == session$userData$verification_code) {
         tab$next_tab <- as.integer(factor('type', ordered_tabs))
+        output$code_verification_result <- renderText('Code correct, please proceed')
       } else {
         tab$next_tab <- as.integer(factor('auth', ordered_tabs))
+        # tab$next_tab <- as.integer(factor('type', ordered_tabs)) to factilitate development
+        output$code_verification_result <- renderText('Code incorrect, please double check')
       }
     }
   )
