@@ -152,15 +152,11 @@ get_exposure_description <- function(item, type_item_inputs){
     return(out)
   }
   
-  get_scenario_descriptions <- function(aggregated_table, type_inputs, name, description, transition, physical){
-    out <- paste0(
-      '# ',
-      name,
-      '\n\n',
-      description,
-      '\n\n'
-    )
-    if(nrow(aggregated_table)) for (i in 1:nrow(aggregated_table)){
+  get_scenario_descriptions <- function(aggregated_table, type_inputs, name, description, is_scenario, transition, physical){
+    out <- ''
+    if(!is.null(name)) out <- paste0('# ', name, '\n\n')
+    if(!is.null(description)) out <- paste0(out, description, '\n\n')
+    if(nrow(aggregated_table) & is_scenario) for (i in 1:nrow(aggregated_table)){
       item <- aggregated_table$item[i]
       materiality <- aggregated_table$materiality[i]
       type_item_inputs <- type_inputs[type_inputs$item == item,] 

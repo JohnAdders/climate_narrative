@@ -1,4 +1,6 @@
 name: Hothouse
+position: 3
+is_scenario: yes
 transition: no
 physical: high
 description: "

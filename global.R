@@ -40,6 +40,9 @@ scenarios <- read_dir('scenario')
 products <- read_dir('product')
 exposure_classes <- read_dir('exposure_class')
 
+# ordering the scenarios
+scenarios <- scenarios[order(sapply(scenarios, `[[`, i = "position"))]
+
 # defining the questionnaire using list of QuestionTab objects
 ordered_tabs <- c('title','auth','type','bank','ins_a','am','ins_l','report')
 #tab_mapping <- factor(1:length(ordered_tabs), levels=ordered_tabs)
