@@ -26,7 +26,7 @@ tab_type_server <- function (input, output, session, tab) {
   )
 }
 
-tab_ins_l_foot <- function(){
+tab_type_foot <- function(){
   list(
     helpText('A longer explanatory text regarding types of financial institutions may be put here')
   )

@@ -11,8 +11,10 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL, dev=FAL
   if (exposure_item == "") {
     form <- p("")
   } else {
+    id <- paste(prefix, gsub('_', '', exposure_item), sep='_')
+    #id <- gsub('[. ]', '', id) # remove characters causing trouble with tippy
     form <- selectInput(
-        inputId=paste(prefix, exposure_item, sep='_'),
+        inputId=id,
         label='',
         choices=c('', 'Low', 'Medium', 'High'),
         selected=ifelse(dev,'High',''),
@@ -20,9 +22,13 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL, dev=FAL
         selectize=FALSE
     )
     if(!is.null(tooltip_text)){
-      form <- with_tippy(form, tooltip_text)
-    }  
-    form
+      return(div(
+        form,
+        tippy_this(id, tooltip_text),
+      ))
+    } else { 
+      return(form)
+    }
   }
 }
 
