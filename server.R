@@ -6,6 +6,8 @@ server <- function(input, output, session) {
   if (file.exists('secret.yml')){
     secret_pars <- read_yaml('secret.yml')
     for(i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
+  } else {
+    session$userData$dev = TRUE
   }
 
   # first, tab-specific server collation
@@ -80,7 +82,6 @@ server <- function(input, output, session) {
         )
       )
     }
-    browser()
     out
   })
 
@@ -115,6 +116,8 @@ server <- function(input, output, session) {
     # this is necessary as markdown::render takes file as an argument
     if(!exists('temp_subset_md')) temp_subset_md <- tempfile(fileext='.md')
     file_conn <- file(temp_subset_md)
+    #browser()
+    #writeLines(report_contents() , file_conn)
     writeLines(report_subset_contents() , file_conn)
     close(file_conn)
     temp_subset_md

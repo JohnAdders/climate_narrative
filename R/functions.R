@@ -7,7 +7,7 @@ add_param <- function(previous_list, item_to_add) {
 get_or_null = function(name) if(exists(name)) return(get(name)) else return(NULL)
 
 # helper functions to produce the layout of tabs (cell, row, whole table)
-exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL) {
+exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL, dev=FALSE) {
   if (exposure_item == "") {
     #column(
     #  col_width,
@@ -18,7 +18,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL) {
         inputId=paste(prefix, exposure_item, sep='|'),
         label='',
         choices=c('', 'Low', 'Medium', 'High'),
-        selected='',
+        selected=ifelse(dev,'High',''),
         # to allow empty string as a valid option I do not use selectize
         selectize=FALSE
     )
@@ -38,7 +38,8 @@ exposure_grid_server <- function(
   output, 
   exposure_matrix,
   tooltip_matrix,
-  label
+  label,
+  dev=FALSE
 ) {
   layout <- matrix("", nrow=nrow(exposure_matrix),ncol=ncol(exposure_matrix)-1)
   colnames(layout) <- colnames(exposure_matrix)[-2] 
@@ -49,8 +50,8 @@ exposure_grid_server <- function(
         exposure_grid_cell(
           exposure_matrix[i,j+1],
           paste(label, exposure_matrix[i,1], exposure_matrix[i,2], colnames(exposure_matrix)[j+1], sep="|"),
-          #col_width, 
-          tooltip_matrix[i,j-1]
+          tooltip_matrix[i,j-1],
+          dev
         )
       )
     }

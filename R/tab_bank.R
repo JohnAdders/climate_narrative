@@ -8,7 +8,8 @@ tab_bank_server <- function(input, output, session, tab){
       nrow=nrow(exposures$bank_exposures),
       ncol=ncol(exposures$bank_exposures)-2
     ),
-    "bank|A"
+    "bank|A",
+    session$userData$dev
   )
 }
 

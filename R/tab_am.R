@@ -8,7 +8,8 @@ tab_am_server <- function(input, output, session, tab){
       nrow=nrow(exposures$am_exposures),
       ncol=ncol(exposures$am_exposures)-2
     ),
-    "asset|A"
+    "asset|A",
+    session$userData$dev
   )
 }
 

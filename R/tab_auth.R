@@ -55,8 +55,8 @@ tab_auth_server <- function (input, output, session, tab) {
         GreCAPTCHAv3js('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP', 'homepage', 'responseReceived')
       } else {
         session$userData$captcha_validated = TRUE
-        output$captcha_verification_result = renderText('Development mode. No captcha required')
-        output$code_send_result <- renderText(paste('Development mode, the code is: ', session$userData$verification_code))
+        output$captcha_verification_result = renderText('Captcha configuration unknown. No captcha required')
+        output$code_send_result <- renderText(paste('The code is: ', session$userData$verification_code))
       }
     } else {
       output$code_send_result <- renderText('Please provide a valid email')
@@ -84,7 +84,7 @@ observeEvent(input$responseReceived, {
   observeEvent(
     input$button_check_code,#input$code,
     {
-      if (input$code == session$userData$verification_code | session$userDat$dev ==TRUE) {
+      if (input$code == session$userData$verification_code | session$userData$dev ==TRUE) {
         tab$next_tab <- as.integer(factor('type', ordered_tabs))
         output$code_verification_result <- renderText('Code correct, please proceed')
       } else {

@@ -8,7 +8,8 @@ tab_ins_l_server <- function(input, output, session, tab){
       nrow=nrow(exposures$insurance_liabilities),
       ncol=ncol(exposures$insurance_liabilities)-2
     ),
-    "insurance|L"
+    "insurance|L",
+    session$userData$dev
   )
 }
 
