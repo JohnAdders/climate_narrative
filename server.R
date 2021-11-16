@@ -67,7 +67,7 @@ server <- function(input, output, session) {
   report_contents <- reactive({
     out <- '% Climate report\n\n'
     for(i in 1:length(scenarios)){
-      out <- paste0(
+      out <- c(
         out, 
         get_scenario_descriptions(
           aggregated_type_inputs(),
@@ -80,13 +80,11 @@ server <- function(input, output, session) {
         )
       )
     }
+    browser()
     out
   })
 
   report_subset_contents <- reactive({
-    if(input$report_selection==''){
-      out <- 'Please select a scenario'
-    } else {
       i <- which(lapply(scenarios, function(x) x$name)==input$report_selection)
       out <- paste0('% Climate report\n\n', scenarios$introduction$description, '\n\n')
       out <- paste0(out, get_scenario_descriptions(
@@ -99,7 +97,6 @@ server <- function(input, output, session) {
         scenarios[[i]]$physical
       ))
       out <- paste0(out, '\n\n# ', scenarios$ending$name, '\n\n ', scenarios$ending$description)
-    }
     out
   })
 
@@ -128,6 +125,8 @@ server <- function(input, output, session) {
     # HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
     # or alternatively in a simpler way:
     # includeMarkdown(temp_report())
+    if(input$report_selection=='') return(p('Please select a scenario'))
+
     temp_html <- tempfile(fileext='.html')
     includeHTML(rmarkdown::render(
       input=temp_subset_report(),
@@ -145,6 +144,13 @@ server <- function(input, output, session) {
   output$report <- downloadHandler(
     filename = "Climate Report.rtf", # file extension defines the rendering process
     content = function(file, res_path=paste0(getwd(),'/www')) {
+      showModal(
+        modalDialog(
+          'Report rendering in progress... when complete your download will start automatically',
+          title='Climate Report',
+          footer=NULL
+        )
+      )
       fs <- file.size(temp_report())
       rmarkdown::render(
         input=temp_report(),
@@ -163,6 +169,7 @@ server <- function(input, output, session) {
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
       if(file.size(temp_report()) != fs) stop('Rtf rendering issue - md file invisibly truncated!')
+      removeModal()
     }
   )
 }

@@ -1,11 +1,5 @@
 tab_report_ui <- function () {
-  out <- list(
-    conditionalPanel(
-      "$('html').hasClass('shiny-busy')", 
-        tags$div('Rendering the report...'),
-    ),
-    hr()
-  )
+  out <- list()
   if(!pandoc_available()){
     warning('Pandoc (required to render rtf) not available, hiding download report button')
   } else {
