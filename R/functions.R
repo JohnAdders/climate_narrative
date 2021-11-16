@@ -103,10 +103,8 @@ get_exposure_description <- function(item, type_item_inputs){
     ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
     # conversion from factor back to string to ensure proper printing below
     ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
-    ordered_type_item_inputs <- ordered_type_item_inputs[,c('rowname','materiality')]
-    colnames(ordered_type_item_inputs) <- c('Exposure.row','Materiality')
     ordered_aggregate_inputs <- aggregate(
-      ordered_type_item_inputs,
+      ordered_type_item_inputs[,c('rowname','materiality')],
       by=list(
         Product.description=ordered_type_item_inputs$product_description,
         Product.text=ordered_type_item_inputs$product_text
@@ -116,6 +114,7 @@ get_exposure_description <- function(item, type_item_inputs){
         collapse='<br />'
       )
     )
+    colnames(ordered_type_item_inputs)[3:4] <- c('Exposure.row','Materiality')
     out <- paste0(
       '## ',
       exposure_classes[[item]][['name']],
