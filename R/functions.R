@@ -108,8 +108,8 @@ get_exposure_description <- function(item, type_item_inputs){
     ordered_aggregate_inputs <- aggregate(
       ordered_type_item_inputs,
       by=list(
-        Product.description=temp$product_description,
-        Product.text=temp$product_text
+        Product.description=ordered_type_item_inputs$product_description,
+        Product.text=ordered_type_item_inputs$product_text
       ),
       FUN=function(texts) paste(
         gsub(" ", "&nbsp;", texts),
