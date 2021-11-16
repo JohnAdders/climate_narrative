@@ -15,13 +15,3 @@ img{
     padding: 2em;
     border: solid;
 }
-
-.shiny-notification {
-    height: 100px;
-    width: 800px;
-    position:fixed;
-    top: calc(50% - 50px);
-    left: calc(50% - 400px);
-    font-size: 250%;
-    text-align: center;
-    }
