@@ -12,7 +12,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL, dev=FAL
     form <- p("")
   } else {
     form <- selectInput(
-        inputId=paste(prefix, exposure_item, sep='|'),
+        inputId=paste(prefix, exposure_item, sep='_'),
         label='',
         choices=c('', 'Low', 'Medium', 'High'),
         selected=ifelse(dev,'High',''),
@@ -51,7 +51,7 @@ exposure_grid_server <- function(
             exposure_matrix[i,1],
             exposure_matrix[i,2],
             colnames(exposure_matrix)[j+1],
-            sep="|"
+            sep="_"
           ),
           tooltip_matrix[i,j-1],
           dev

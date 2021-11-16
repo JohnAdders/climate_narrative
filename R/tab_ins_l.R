@@ -8,7 +8,7 @@ tab_ins_l_server <- function(input, output, session, tab){
       nrow=nrow(exposures$insurance_liabilities),
       ncol=ncol(exposures$insurance_liabilities)-2
     ),
-    "insurance|L",
+    "insurance_L",
     session$userData$dev
   )
 }
@@ -16,7 +16,7 @@ tab_ins_l_server <- function(input, output, session, tab){
 tab_ins_l_ui <- function () {
   list(
     h2("Insurance Liability Exposures"),
-    exposure_grid_ui("insurance|L")
+    exposure_grid_ui("insurance_L")
   )
 }
 

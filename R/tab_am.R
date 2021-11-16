@@ -8,7 +8,7 @@ tab_am_server <- function(input, output, session, tab){
       nrow=nrow(exposures$am_exposures),
       ncol=ncol(exposures$am_exposures)-2
     ),
-    "asset|A",
+    "asset_A",
     session$userData$dev
   )
 }
@@ -16,7 +16,7 @@ tab_am_server <- function(input, output, session, tab){
 tab_am_ui <- function () {
   list(
     h2("Asset manager Exposures"),
-    exposure_grid_ui("asset|A")
+    exposure_grid_ui("asset_A")
   )
 }
 
