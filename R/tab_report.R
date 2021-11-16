@@ -7,12 +7,19 @@ tab_report_ui <- function () {
       downloadButton("report", "Download the full report as RTF")
     ))
   }
+  valid_options <- c('', unname(unlist(lapply(scenarios, function(x) {
+    if(x$is_scenario){
+      return(x$name)
+    } else {
+        return(NULL)
+    }
+  }))))
   out <- c(out, list(
-    hr(),
+    hr(), 
     selectInput(
       'report_selection',
       'Select the scenario to show',
-      c('', unname(unlist(lapply(scenarios, function(x) x$name)))),
+      valid_options,
       selectize=FALSE
     ),
     uiOutput("rendered_report")

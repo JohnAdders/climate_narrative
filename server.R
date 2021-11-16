@@ -85,22 +85,6 @@ server <- function(input, output, session) {
     out
   })
 
-  report_subset_contents <- reactive({
-      i <- which(lapply(scenarios, function(x) x$name)==input$report_selection)
-      out <- paste0('% Climate report\n\n', scenarios$introduction$description, '\n\n')
-      out <- paste0(out, get_scenario_descriptions(
-        aggregated_type_inputs(),
-        type_inputs(),
-        scenarios[[i]]$name,
-        scenarios[[i]]$description,
-        scenarios[[i]]$is_scenario,
-        scenarios[[i]]$transition,
-        scenarios[[i]]$physical
-      ))
-      out <- paste0(out, '\n\n# ', scenarios$ending$name, '\n\n ', scenarios$ending$description)
-    out
-  })
-
   temp_report <- reactive({
     # writing a report to (temporary) file first
     # this is necessary as markdown::render takes file as an argument
@@ -116,9 +100,12 @@ server <- function(input, output, session) {
     # this is necessary as markdown::render takes file as an argument
     if(!exists('temp_subset_md')) temp_subset_md <- tempfile(fileext='.md')
     file_conn <- file(temp_subset_md)
-    #browser()
-    #writeLines(report_contents() , file_conn)
-    writeLines(report_subset_contents() , file_conn)
+    writeLines(
+      report_contents()[
+        c(FALSE, sapply(scenarios, `[[`, i='name')==input$report_selection)
+      ],
+      file_conn
+    )
     close(file_conn)
     temp_subset_md
   })
