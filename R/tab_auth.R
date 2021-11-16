@@ -84,12 +84,11 @@ observeEvent(input$responseReceived, {
   observeEvent(
     input$button_check_code,#input$code,
     {
-      if (input$code == session$userData$verification_code) {
+      if (input$code == session$userData$verification_code | session$userDat$dev ==TRUE) {
         tab$next_tab <- as.integer(factor('type', ordered_tabs))
         output$code_verification_result <- renderText('Code correct, please proceed')
       } else {
         tab$next_tab <- as.integer(factor('auth', ordered_tabs))
-        # tab$next_tab <- as.integer(factor('type', ordered_tabs)) # comment in production, uncomment to factilitate development
         output$code_verification_result <- renderText('Code incorrect, please double check')
       }
     }

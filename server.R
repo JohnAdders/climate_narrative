@@ -67,7 +67,7 @@ server <- function(input, output, session) {
   report_contents <- reactive({
     out <- paste0('% Climate report\n\n', scenarios$introduction$description, '\n\n')
     for(i in 1:length(scenarios)){
-      if(names(scenarios)[i] != 'introduction'){
+      if(!names(scenarios)[i] %in% c('introduction', 'ending')){
         out <- paste0(out, get_scenario_descriptions(
           aggregated_type_inputs(),
           type_inputs(),
@@ -78,6 +78,7 @@ server <- function(input, output, session) {
         ))
       }
     }
+    out <- paste0(out, '\n\n', scenarios$ending$description)
     out
   })
 
@@ -95,6 +96,7 @@ server <- function(input, output, session) {
         scenarios[[i]]$transition,
         scenarios[[i]]$physical
       ))
+      out <- paste0(out, '\n\n# ', scenarios$ending$name, '\n\n ', scenarios$ending$description)
     }
     out
   })
@@ -102,7 +104,7 @@ server <- function(input, output, session) {
   temp_report <- reactive({
     # writing a report to (temporary) file first
     # this is necessary as markdown::render takes file as an argument
-    if(!exists('temp_md')) tempf <- tempfile(fileext='.md')
+    if(!exists('temp_md')) temp_md <- tempfile(fileext='.md')
     file_conn <- file(temp_md)
     writeLines(report_contents() , file_conn)
     close(file_conn)
