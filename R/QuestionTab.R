@@ -42,11 +42,11 @@ QuestionTab <- R6Class(
         input[[paste0(self$id,"_next")]], switch_page(as.integer(self$next_tab)))
     },
     # tab UI function combines:
-    # 0. a common header (unless FALSE)
+    # 0. a common header (unless add_header=FALSE)
     # 1. any other tab_UI (if given in the constructor)
     # 2. buttons that switch to previous/next tab (if applicable)
     # 3. a tab-specific text
-    # 4. a common footer (unless FALSE)
+    # 4. a common footer (unless add_footer=FALSE)
     ui = function() {
       tabpanel_params <- list(self$id)
       if(self$add_header) tabpanel_params <- add_param(

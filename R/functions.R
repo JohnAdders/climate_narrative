@@ -9,10 +9,7 @@ get_or_null = function(name) if(exists(name)) return(get(name)) else return(NULL
 # helper functions to produce the layout of tabs (cell, row, whole table)
 exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL, dev=FALSE) {
   if (exposure_item == "") {
-    #column(
-    #  col_width,
-      p("")
-    #)
+    form <- p("")
   } else {
     form <- selectInput(
         inputId=paste(prefix, exposure_item, sep='|'),
@@ -49,7 +46,13 @@ exposure_grid_server <- function(
       layout[i,j] <- as.character(
         exposure_grid_cell(
           exposure_matrix[i,j+1],
-          paste(label, exposure_matrix[i,1], exposure_matrix[i,2], colnames(exposure_matrix)[j+1], sep="|"),
+          paste(
+            label,
+            exposure_matrix[i,1],
+            exposure_matrix[i,2],
+            colnames(exposure_matrix)[j+1],
+            sep="|"
+          ),
           tooltip_matrix[i,j-1],
           dev
         )
@@ -97,13 +100,13 @@ table_to_markdown <- function(table, additional_spaces=3, dot_to_space=TRUE){
 }
 
 get_exposure_description <- function(item, type_item_inputs){
-    temp <- type_item_inputs[order(type_item_inputs$materiality), ]
+    ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
     # conversion from factor back to string to ensure proper printing below
-    temp$materiality <- as.character(temp$materiality)
-    temp2 <- temp[,c('rowname','materiality')]
-    colnames(temp2) <- c('Exposure.row','Materiality')
-    temp3 <- aggregate(
-      temp2,
+    ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
+    ordered_type_item_inputs <- ordered_type_item_inputs[,c('rowname','materiality')]
+    colnames(ordered_type_item_inputs) <- c('Exposure.row','Materiality')
+    ordered_aggregate_inputs <- aggregate(
+      ordered_type_item_inputs,
       by=list(
         Product.description=temp$product_description,
         Product.text=temp$product_text
@@ -119,7 +122,7 @@ get_exposure_description <- function(item, type_item_inputs){
       '\n\n',
       exposure_classes[[item]][['description']],
       '\n\nThe following rows contribute: \n\n',
-      table_to_markdown(temp3),
+      table_to_markdown(ordered_aggregate_inputs),
       '\n\n'
     )
   }
@@ -153,7 +156,12 @@ get_exposure_description <- function(item, type_item_inputs){
     return(out)
   }
   
-  get_scenario_descriptions <- function(aggregated_table, type_inputs, name, description, is_scenario, transition, physical){
+  get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario){
+    name <- scenario$name
+    description <- scenario$description
+    is_scenario <- scenario$is_scenario
+    transition <- scenario$transition
+    physical <- scenario$physical
     out <- ''
     if(!is.null(name)) out <- paste0('# ', name, '\n\n')
     if(!is.null(description)) out <- paste0(out, description, '\n\n')

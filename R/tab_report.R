@@ -11,7 +11,7 @@ tab_report_ui <- function () {
     if(x$is_scenario){
       return(x$name)
     } else {
-        return(NULL)
+      return(NULL)
     }
   }))))
   out <- c(out, list(

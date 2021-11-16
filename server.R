@@ -68,17 +68,13 @@ server <- function(input, output, session) {
 
   report_contents <- reactive({
     out <- '% Climate report\n\n'
-    for(i in 1:length(scenarios)){
+    for (scenario in scenarios){
       out <- c(
         out, 
         get_scenario_descriptions(
           aggregated_type_inputs(),
           type_inputs(),
-          scenarios[[i]]$name,
-          scenarios[[i]]$description,
-          scenarios[[i]]$is_scenario,
-          scenarios[[i]]$transition,
-          scenarios[[i]]$physical
+          scenario
         )
       )
     }
@@ -101,9 +97,7 @@ server <- function(input, output, session) {
     if(!exists('temp_subset_md')) temp_subset_md <- tempfile(fileext='.md')
     file_conn <- file(temp_subset_md)
     writeLines(
-      report_contents()[
-        c(FALSE, sapply(scenarios, `[[`, i='name')==input$report_selection)
-      ],
+      report_contents()[1 + which(sapply(scenarios, `[[`, i='name')==input$report_selection)],
       file_conn
     )
     close(file_conn)
@@ -116,7 +110,6 @@ server <- function(input, output, session) {
     # or alternatively in a simpler way:
     # includeMarkdown(temp_report())
     if(input$report_selection=='') return(p('Please select a scenario'))
-
     temp_html <- tempfile(fileext='.html')
     includeHTML(rmarkdown::render(
       input=temp_subset_report(),
