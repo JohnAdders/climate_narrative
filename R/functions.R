@@ -11,8 +11,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL, dev=FAL
   if (exposure_item == "") {
     form <- p("")
   } else {
-    id <- paste(prefix, gsub('_', '', exposure_item), sep='_')
-    #id <- gsub('[. ]', '', id) # remove characters causing trouble with tippy
+    id <- paste(prefix, remove_special_characters(exposure_item), sep='_')
     form <- selectInput(
         inputId=id,
         label='',
@@ -54,9 +53,12 @@ exposure_grid_server <- function(
           exposure_matrix[i,j+1],
           paste(
             label,
-            exposure_matrix[i,1],
-            exposure_matrix[i,2],
-            colnames(exposure_matrix)[j+1],
+            #exposure_matrix[i,1],
+            #exposure_matrix[i,2],
+            #colnames(exposure_matrix)[j+1],
+            remove_special_characters(exposure_matrix[i,1]),
+            remove_special_characters(exposure_matrix[i,2]),
+            remove_special_characters(colnames(exposure_matrix)[j+1]),
             sep="_"
           ),
           tooltip_matrix[i,j-1],
