@@ -8,7 +8,7 @@ library(httr)
 library(jsonlite)
 
 # helper function to remove special characters
-remove_special_characters = function(text) gsub('[. ]', '',text)
+remove_special_characters = function(text) gsub('[_. ]', '',text)
 
 # helper function to read all yaml/csv/R files from a directory as a named R list
 read_dir <- function(directory, file_format='auto', remove_special_characters_from_names=TRUE){

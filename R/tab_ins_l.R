@@ -2,11 +2,11 @@ tab_ins_l_server <- function(input, output, session, tab){
   exposure_grid_server(
     input,
     output,
-    exposures$insurance_liabilities,
+    exposures$insuranceliabilities,
     matrix(
       "Placeholder for explanation, help text, remarks regarding this particular input field",
-      nrow=nrow(exposures$insurance_liabilities),
-      ncol=ncol(exposures$insurance_liabilities)-2
+      nrow=nrow(exposures$insuranceliabilities),
+      ncol=ncol(exposures$insuranceliabilities)-2
     ),
     "insurance_L",
     session$userData$dev
