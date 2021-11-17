@@ -1,4 +1,6 @@
 name: Disorderly
+position: 2
+is_scenario: yes
 transition: high
 physical: low
 description: "

@@ -6,6 +6,8 @@ server <- function(input, output, session) {
   if (file.exists('secret.yml')){
     secret_pars <- read_yaml('secret.yml')
     for(i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
+  } else {
+    session$userData$dev = TRUE
   }
 
   # first, tab-specific server collation
@@ -29,7 +31,7 @@ server <- function(input, output, session) {
     out$colname <- rep(NA,nrow(out))
     out$product_description <- rep(NA,nrow(out))
     out$product_text <- rep(NA,nrow(out))
-    temp <- strsplit(out$names, "|", fixed=TRUE)
+    temp <- strsplit(out$names, "_", fixed=TRUE)
     for(i in 1:nrow(out)){
       if(length(temp[[i]]) == 6){
         out$type[i] <- temp[[i]][1]
@@ -40,6 +42,8 @@ server <- function(input, output, session) {
         out$item[i] <- temp[[i]][6]
         out$product_description[i] <- products[[out$product[i]]]$description
         out$product_text[i] <- products[[out$product[i]]]$text
+      } else if(length(temp[[i]]) > 6){
+        warning(paste0('unexpectedly large number of underscores in ',out$names[i]))
       }
     }
     out$materiality <- factor(out$values, levels=c('','Low','Medium','High'), ordered=T)
@@ -65,18 +69,16 @@ server <- function(input, output, session) {
   })
 
   report_contents <- reactive({
-    out <- paste0('% Climate report\n\n', scenarios$introduction$description, '\n\n')
-    for(i in 1:length(scenarios)){
-      if(names(scenarios)[i] != 'introduction'){
-        out <- paste0(out, get_scenario_descriptions(
+    out <- '% Climate report\n\n'
+    for (scenario in scenarios){
+      out <- c(
+        out, 
+        get_scenario_descriptions(
           aggregated_type_inputs(),
           type_inputs(),
-          scenarios[[i]]$name,
-          scenarios[[i]]$description,
-          scenarios[[i]]$transition,
-          scenarios[[i]]$physical
-        ))
-      }
+          scenario
+        )
+      )
     }
     out
   })
@@ -84,11 +86,24 @@ server <- function(input, output, session) {
   temp_report <- reactive({
     # writing a report to (temporary) file first
     # this is necessary as markdown::render takes file as an argument
-    if(!exists('tempf')) tempf <- tempfile(fileext='.md')
-    file_conn <- file(tempf)
+    if(!exists('temp_md')) temp_md <- tempfile(fileext='.md')
+    file_conn <- file(temp_md)
     writeLines(report_contents() , file_conn)
     close(file_conn)
-    tempf
+    temp_md
+  })
+
+  temp_subset_report <- reactive({
+    # writing a report to (temporary) file first
+    # this is necessary as markdown::render takes file as an argument
+    if(!exists('temp_subset_md')) temp_subset_md <- tempfile(fileext='.md')
+    file_conn <- file(temp_subset_md)
+    writeLines(
+      report_contents()[1 + which(sapply(scenarios, `[[`, i='name')==input$report_selection)],
+      file_conn
+    )
+    close(file_conn)
+    temp_subset_md
   })
 
   output$rendered_report <- renderUI({
@@ -96,10 +111,11 @@ server <- function(input, output, session) {
     # HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
     # or alternatively in a simpler way:
     # includeMarkdown(temp_report())
-    tempf <- tempfile(fileext='.html')
+    if(input$report_selection=='') return(p('Please select a scenario'))
+    temp_html <- tempfile(fileext='.html')
     includeHTML(rmarkdown::render(
-      input=temp_report(),
-      output_file=tempf,
+      input=temp_subset_report(),
+      output_file=temp_html,
       output_format=html_document(
         toc=TRUE,
         number_sections=FALSE,
@@ -113,6 +129,13 @@ server <- function(input, output, session) {
   output$report <- downloadHandler(
     filename = "Climate Report.rtf", # file extension defines the rendering process
     content = function(file, res_path=paste0(getwd(),'/www')) {
+      showModal(
+        modalDialog(
+          'Report rendering in progress... when complete your download will start automatically',
+          title='Climate Report',
+          footer=NULL
+        )
+      )
       fs <- file.size(temp_report())
       rmarkdown::render(
         input=temp_report(),
@@ -131,6 +154,7 @@ server <- function(input, output, session) {
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
       if(file.size(temp_report()) != fs) stop('Rtf rendering issue - md file invisibly truncated!')
+      removeModal()
     }
   )
 }

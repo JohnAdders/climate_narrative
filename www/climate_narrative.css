@@ -2,3 +2,16 @@ img{
     display: block;
     margin: auto;
 }
+
+.verticalcenter {
+    display: table-cell;
+    height: 7em;
+    vertical-align: middle;
+}
+
+.disclaimer {
+    background-color: greenyellow;
+    margin: 2em;
+    padding: 2em;
+    border: solid;
+}
