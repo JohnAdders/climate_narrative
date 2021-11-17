@@ -31,7 +31,7 @@ server <- function(input, output, session) {
     out$colname <- rep(NA,nrow(out))
     out$product_description <- rep(NA,nrow(out))
     out$product_text <- rep(NA,nrow(out))
-    temp <- strsplit(out$names, "|", fixed=TRUE)
+    temp <- strsplit(out$names, "_", fixed=TRUE)
     for(i in 1:nrow(out)){
       if(length(temp[[i]]) == 6){
         out$type[i] <- temp[[i]][1]
@@ -42,6 +42,8 @@ server <- function(input, output, session) {
         out$item[i] <- temp[[i]][6]
         out$product_description[i] <- products[[out$product[i]]]$description
         out$product_text[i] <- products[[out$product[i]]]$text
+      } else if(length(temp[[i]]) > 6){
+        warning(paste0('unexpectedly large number of underscores in ',out$names[i]))
       }
     }
     out$materiality <- factor(out$values, levels=c('','Low','Medium','High'), ordered=T)

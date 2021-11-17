@@ -30,12 +30,17 @@ tab_report_server <- function (input, output, session, tab) {
   observeEvent(
     input$type,
     {
-      tab$previous_tab <- as.integer(factor(switch(
-        input$type,
-        insurance = 'ins_l',
-        asset = 'am',
-        bank = 'bank'
-      ), ordered_tabs))
+      tab$previous_tab <- as.integer(
+        factor(
+          switch(
+            input$type,
+            insurance = 'ins_l',
+            asset = 'am',
+            bank = 'bank'
+          ),
+        ordered_tabs
+        )
+      )
     }
   )
 }

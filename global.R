@@ -7,8 +7,11 @@ library(shinyjs)
 library(httr)
 library(jsonlite)
 
+# helper function to remove special characters
+remove_special_characters = function(text) gsub('[_. ]', '',text)
+
 # helper function to read all yaml/csv/R files from a directory as a named R list
-read_dir <- function(directory, file_format='auto'){
+read_dir <- function(directory, file_format='auto', remove_special_characters_from_names=TRUE){
   file_list <- dir(path=directory)
   file_format <- tolower(file_format)
   if (file_format == 'auto'){
@@ -25,12 +28,14 @@ read_dir <- function(directory, file_format='auto'){
       )
     }
   )
-  names(list) <- sapply(
+  names_to_be <- sapply(
     dir(path=directory),
     function(file) {
       strsplit(file, '.', fixed=T)[[1]][1]
     }
   )
+  if(remove_special_characters_from_names) names_to_be <- remove_special_characters(names_to_be)
+  names(list) <- names_to_be
   return(list)
 }
 

@@ -1,6 +1,6 @@
 tab_auth_ui <- function () {
   list(
-    div(class='disclaimer',
+    div(class='disclaimer', id='disclaimer_1',
       p("This tool and its contents represent the output from the cross-industry
       Scenario Analysis Working Group of the Prudential Regulation Authority
       and Financial Conduct Authority's Climate Financial Risk Forum (CFRF).
@@ -14,6 +14,7 @@ tab_auth_ui <- function () {
       of the regulators and in any case do not constitute regulatory guidance."),
       p(strong("Copyright 2021 The Climate Financial Risk Forum"))
     ),
+
     hr(),
     GreCAPTCHAv3Ui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP"),
     fluidRow(column(6,
@@ -27,6 +28,7 @@ tab_auth_ui <- function () {
         inputId='button_send_code',
         label='Send the code'
       ),
+      tippy_this('button_send_code', 'Delivering the email may take several minutes, please also check your spam folder'),
       textOutput('captcha_verification_result'),
       textOutput('code_send_result')
     ),
@@ -41,6 +43,7 @@ tab_auth_ui <- function () {
         inputId='button_check_code',
         label='Validate the code'
       ),
+      tippy_this('button_check_code', 'If the code is correct the "Next" button above is unlocked'),
       textOutput('code_verification_result')
     ))
   )

@@ -2,13 +2,13 @@ tab_am_server <- function(input, output, session, tab){
   exposure_grid_server(
     input,
     output,
-    exposures$am_exposures,
+    exposures$amexposures,
     matrix(
       "Placeholder for explanation, help text, remarks regarding this particular input field",
-      nrow=nrow(exposures$am_exposures),
-      ncol=ncol(exposures$am_exposures)-2
+      nrow=nrow(exposures$amexposures),
+      ncol=ncol(exposures$amexposures)-2
     ),
-    "asset|A",
+    "asset_A",
     session$userData$dev
   )
 }
@@ -16,7 +16,7 @@ tab_am_server <- function(input, output, session, tab){
 tab_am_ui <- function () {
   list(
     h2("Asset manager Exposures"),
-    exposure_grid_ui("asset|A")
+    exposure_grid_ui("asset_A")
   )
 }
 
