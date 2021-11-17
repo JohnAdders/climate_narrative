@@ -50,7 +50,7 @@ tab_auth_ui <- function () {
 }
 
 tab_auth_server <- function (input, output, session, tab) {
-  
+
   observeEvent(input$button_send_code, {
     if(grepl('@', input$email, fixed=TRUE)){
       output$captcha_verification_result = renderText('Captcha request sent to uncle google...')
@@ -66,7 +66,7 @@ tab_auth_server <- function (input, output, session, tab) {
     }
   })
 
-observeEvent(input$responseReceived, {    
+observeEvent(input$responseReceived, {
       result <- GreCAPTCHAv3Server(session$userData$captcha_code, input$responseReceived)
       if(result$success){
         session$userData$captcha_validated = TRUE
@@ -87,11 +87,10 @@ observeEvent(input$responseReceived, {
   observeEvent(
     input$button_check_code,#input$code,
     {
-      if (input$code == session$userData$verification_code | session$userData$dev ==TRUE) {
-        tab$next_tab <- as.integer(factor('type', ordered_tabs))
-        output$code_verification_result <- renderText('Code correct, please proceed')
+      if (input$code == session$userData$verification_code || session$userData$dev == TRUE) {
+        next_tab <- as.integer(factor('type', ordered_tabs))
+        updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
       } else {
-        tab$next_tab <- as.integer(factor('auth', ordered_tabs))
         output$code_verification_result <- renderText('Code incorrect, please double check')
       }
     }

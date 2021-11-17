@@ -54,8 +54,8 @@ ordered_tabs <- c('title','auth','type','bank','ins_a','am','ins_l','report')
 
 tabs <- list(
   QuestionTab$new('title', NULL, 'auth', FALSE, FALSE),
-  QuestionTab$new('auth', 'title', 'type'),
-  QuestionTab$new('type', NULL, 'ins_a'),
+  QuestionTab$new('auth', 'title', NULL),
+  QuestionTab$new('type', 'auth', 'ins_a'),
   QuestionTab$new('bank', 'type', 'report'),
   QuestionTab$new('ins_a', 'type', 'ins_l'),
   QuestionTab$new('am', 'type','report'),
