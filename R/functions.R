@@ -7,80 +7,71 @@ add_param <- function(previous_list, item_to_add) {
 get_or_null = function(name) if(exists(name)) return(get(name)) else return(NULL)
 
 # helper functions to produce the layout of tabs (cell, row, whole table)
-exposure_grid_cell <- function(exposure_item, prefix, col_width, tooltip_text=NULL) {
+exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL, dev=FALSE) {
   if (exposure_item == "") {
-    column(
-      col_width,
-      p("")
-    )
+    form <- p("")
   } else {
+    id <- paste(prefix, remove_special_characters(exposure_item), sep='_')
     form <- selectInput(
-        inputId=paste(prefix, exposure_item, sep='|'),
+        inputId=id,
         label='',
         choices=c('', 'Low', 'Medium', 'High'),
-        selected='',
+        selected=ifelse(dev,'High',''),
         # to allow empty string as a valid option I do not use selectize
         selectize=FALSE
     )
     if(!is.null(tooltip_text)){
-      form <- with_tippy(form, tooltip_text)
-    }  
-    
-    column(
-      col_width,
-      form
-    )
+      return(div(
+        form,
+        tippy_this(id, tooltip_text),
+      ))
+    } else { 
+      return(form)
+    }
   }
 }
 
-exposure_grid_row <- function(exposures_row, tooltip_texts, prefix, col_width) {
-  items <- paste(
-    names(exposures_row)[-(1:2)],
-    exposures_row[-(1:2)],
-    sep="|")
-  items[exposures_row[-(1:2)] == ""] <- ""
-  fluidRow(
-    column(col_width, h5(exposures_row[1])),
-    mapply(
-      function(item, tooltip_text) {
+exposure_grid_ui <- function(label) {
+  tableOutput(label)
+}
+
+exposure_grid_server <- function(
+  input,
+  output, 
+  exposure_matrix,
+  tooltip_matrix,
+  label,
+  dev=FALSE
+) {
+  layout <- matrix("", nrow=nrow(exposure_matrix),ncol=ncol(exposure_matrix)-1)
+  colnames(layout) <- colnames(exposure_matrix)[-2] 
+  for(i in 1:nrow(layout)){
+    layout[i,1] <- as.character(div(exposure_matrix[i,1], class = "verticalcenter"))
+    for(j in 2:ncol(layout)){
+      layout[i,j] <- as.character(
         exposure_grid_cell(
-          item,
-          paste(prefix,exposures_row[1], exposures_row[2], sep="|"),
-          col_width,
-          tooltip_text
+          exposure_matrix[i,j+1],
+          paste(
+            label,
+            #exposure_matrix[i,1],
+            #exposure_matrix[i,2],
+            #colnames(exposure_matrix)[j+1],
+            remove_special_characters(exposure_matrix[i,1]),
+            remove_special_characters(exposure_matrix[i,2]),
+            remove_special_characters(colnames(exposure_matrix)[j+1]),
+            sep="_"
+          ),
+          tooltip_matrix[i,j-1],
+          dev
         )
-      },
-      items,
-      tooltip_texts,
-      SIMPLIFY=FALSE
-    )
-  )
-}
-
-exposure_grid <- function(exposure_matrix, tooltip_matrix, label, col_width=NULL) {
-  if(is.null(col_width)) col_width <- floor(12/(ncol(exposure_matrix)-1))
-  rows <- list(
-      fluidRow(
-        lapply(
-          # do not show 'product' column
-          colnames(exposure_matrix)[-2],
-          # when reading csv's R by default substitutes spaces with dots in the headers, here we reverse this for a nicer output
-          function(header) column(col_width, h4(gsub(".", " ", header, fixed=TRUE))) 
-        )
-    )
-  )
-  for(i in 1:nrow(exposure_matrix)){
-    rows <- add_param(
-      rows,
-      exposure_grid_row(
-        exposure_matrix[i,],
-        tooltip_texts=tooltip_matrix[i,],
-        label,
-        col_width=col_width
       )
-    )
-  }
-  return (rows)
+    }
+  }  
+  output[[label]] <- renderTable(
+    layout,
+    sanitize.text.function=function(x) x,
+    sanitize.colnames.function=function(x) gsub('.', '&nbsp;', x, fixed=TRUE)
+  ) 
 }
 
 # helper function to produce a markdown report
@@ -117,29 +108,28 @@ table_to_markdown <- function(table, additional_spaces=3, dot_to_space=TRUE){
 }
 
 get_exposure_description <- function(item, type_item_inputs){
-    temp <- type_item_inputs[order(type_item_inputs$materiality), ]
+    ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
     # conversion from factor back to string to ensure proper printing below
-    temp$materiality <- as.character(temp$materiality)
-    temp2 <- temp[,c('rowname','materiality')]
-    colnames(temp2) <- c('Exposure.row','Materiality')
-    temp3 <- aggregate(
-      temp2,
+    ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
+    ordered_aggregate_inputs <- aggregate(
+      ordered_type_item_inputs[,c('rowname','materiality')],
       by=list(
-        Product.description=temp$product_description,
-        Product.text=temp$product_text
+        Product.description=ordered_type_item_inputs$product_description,
+        Product.text=ordered_type_item_inputs$product_text
       ),
       FUN=function(texts) paste(
         gsub(" ", "&nbsp;", texts),
         collapse='<br />'
       )
     )
+    colnames(ordered_type_item_inputs)[3:4] <- c('Exposure.row','Materiality')
     out <- paste0(
       '## ',
       exposure_classes[[item]][['name']],
       '\n\n',
       exposure_classes[[item]][['description']],
       '\n\nThe following rows contribute: \n\n',
-      table_to_markdown(temp3),
+      table_to_markdown(ordered_aggregate_inputs),
       '\n\n'
     )
   }
@@ -173,15 +163,16 @@ get_exposure_description <- function(item, type_item_inputs){
     return(out)
   }
   
-  get_scenario_descriptions <- function(aggregated_table, type_inputs, name, description, transition, physical){
-    out <- paste0(
-      '# ',
-      name,
-      '\n\n',
-      description,
-      '\n\n'
-    )
-    if(nrow(aggregated_table)) for (i in 1:nrow(aggregated_table)){
+  get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario){
+    name <- scenario$name
+    description <- scenario$description
+    is_scenario <- scenario$is_scenario
+    transition <- scenario$transition
+    physical <- scenario$physical
+    out <- ''
+    if(!is.null(name)) out <- paste0('# ', name, '\n\n')
+    if(!is.null(description)) out <- paste0(out, description, '\n\n')
+    if(nrow(aggregated_table) & is_scenario) for (i in 1:nrow(aggregated_table)){
       item <- aggregated_table$item[i]
       materiality <- aggregated_table$materiality[i]
       type_item_inputs <- type_inputs[type_inputs$item == item,] 
@@ -201,7 +192,7 @@ heartbeat = function(input, output, session) {
   beep <- reactiveTimer(55 * 1000)
   output[["__heartbeat"]] <- renderText({
     beep()
-    "Developed in Aviva by Krzysztof Opalski, John Adcock"
+    " "
   })
 }
 
@@ -210,7 +201,7 @@ heartbeat_footer = function() {
     hr(),
     tag('footer', list(
       img(src='aviva_logo.png', alt='Aviva logo', height=50),
-      textOutput("__heartbeat")
+      p("Developed in Aviva by Krzysztof Opalski, John Adcock")
     ))
   )
 }
