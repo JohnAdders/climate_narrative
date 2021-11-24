@@ -1,7 +1,7 @@
-name: Aviation
+name: Construction
 
 description: "
-    The *construction sector* includes establishments primarily responsible for the construction of buildings. The work performed may include new work, additions, alterations, or maintenance and repairs. The onsite assembly of pre-cut, panelised, and prefabricated buildings and construction of temporary buildings are also included in this sector. Establishments in this sector are classified based on the types of buildings they construct. 
+    The **construction sector** includes establishments primarily responsible for the construction of buildings. The work performed may include new work, additions, alterations, or maintenance and repairs. The onsite assembly of pre-cut, panelised, and prefabricated buildings and construction of temporary buildings are also included in this sector. Establishments in this sector are classified based on the types of buildings they construct. 
     
     
     The construction sector includes companies that are, for example, involved in the following:
@@ -24,42 +24,60 @@ transition:
     high:
         always: "
             
-            Aviation sector will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO2 emissions increasing until 2030 and a decrease in CO2 after 2030 to compensate for the inaction beforehand, whereas the divergent scenario results in a gradual reduction in CO2 emissions. Policies and regulatory frameworks implemented at regional level rather than international level or evolving at a different speed depending on the region, could result in an un-level playing field for manufacturers and operators. Both these scenarios are likely to have an impact on the profitability of this sector and therefore on the associated insurance products pricing, terms and conditions, and coverage.
+            In high transition risk scenarios, the demand for construction is likely to increase. The construction sector was responsible for 13% of global GDP in 2020, and this share is expected to increase as the global population continues to rise. However, the high transition risk scenarios could also lead to a reduction in GDP growth. This could partially offset growth in demand for the construction sector.
             
             
-            The high transition risk scenario could also lead to a reduction in GDP growth. This could result in changes in the rate of growth in demand for the aviation sector.
+            While the construction sector will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO2 emissions increasing until 2030 before rapidly decreasing after 2030 as carbon prices are increased to compensate for the inaction beforehand. In the divergent scenario there is a more gradual reduction in CO2 emissions. Both these scenarios are likely to have a significant impact on the profitability of this sector; constructing assets such as buildings, roads, railways, tunnels and bridges involves emitting carbon, primarily through electricity use, fuel usage for vehicles and plant, and from the production of materials, such as steel and cement. As per Global Alliance for Buildings and Construction (Global ABC) report, in 2020, the Buildings and Construction sector accounted for 36% of global energy consumption. 
+
             "
             
         high_materiality: "
-            The changes carbon emission pricing or taxes and consumer preferences could potentially result in one or more of the following financial impacts:
+            The changes in carbon pricing, societal preference, energy prices and energy mix could potentially result in one or more of the following financial impacts:
             
             
-            * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The gradual but significant rise in carbon and energy prices could potentially result in financial impacts, as aviation firms carbon emissions face a rising price in the form a carbon tax or cap & trade clearing price, especially for airlines reliant on fossil-based aviation fuels. 
+            * **Reduced Revenues** Negative public sentiment around sustainability and climate change issues can affect all the value chain players leading to reduced demand for products and services. 
             
             
-            * **Change in regulations covering energy efficiency standards would lead to increasing compliance requirements.** Governments may conclude it impossible to decarbonise flying in line with national targets and so limit demand by raising the cost of air travel and limiting airport capacity and could lead to changes in the level and type of insurance coverage required.
+            * **Disruptive increase in costs** from paying a price on carbon emissions directly or indirectly through expensive conventional building material or non-renewable energy for its operations. Due to delayed actions, the emission intensity of construction processes will have a limited scope of improvement.
             
             
-            * **Asset valuations of aviation companies could be re-priced** based on the re-adjusted expectations of the use of low-carbon products and energy efficient technologies in the future. Higher fuel costs impose a risk that older and less efficient aircraft will have to be retired earlier than originally planned, resulting in an impairment of their residual value. 
+            * **Increased capital expenditures** New investments will be required to improve the energy efficiency of the construction process including but not limited to using fewer or different materials, employing different production techniques, using lower emission transportation, optimizing transportation routes, planning fewer journeys, minimising the use of non-renewable grid energy and recycling. 
             
             
-            * **Changing consumer preferences**, these could lead to changes in revenue due to lower customers numbers as a result of change in environmental expectations that could impact this underwriting class. Flight shame could also increase along with a modal shift to (high speed) rail, reducing demand for aviation. Slowed GDP growth could further impact demand for aviation through its effect on individuals disposable income.
+            * **Increased R&D investments**  will be needed to explore alternative construction processes and materials to improve the emission intensity.
             
             
-            The profitability of this sector will also depend on the relevant companies proactively investing in innovation and new technology. For example:
+            * **Falling asset values** impairment of the economic value of company assets such as outdated machinery and material transportation vehicles with poor energy efficiency.
             
             
-            * Alternative fuel sources (e.g. airlines could invest in Sustainable Aviation Fuels (SAF) in the short term whilst more complex solutions such as hydrogen and electric aircraft are developed)
+            In a high transition risk scenario, the construction sector is likely to be impacted by rapid decarbonization in building materials and its own operations. Likely reduction in the production of cement due to higher carbon tax amid increasing global demand will drive the price of cement more than 500% higher by 2050 in the Divergent Net Zero scenario and over 400% higher by 2050 in the Delayed transition scenario, leading to increased material cost for the construction industry.
             
             
-            * Energy efficient aircraft and infrastructure (e.g. more efficient lighting and heating in hangars and airports) 
+            ![Cement Price](Cement_Price_Disorderly_Consruction.png)
             
             
-            * Intelligent routing and smart technologies which support climate-optimized flying   
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
             
             
-            These actions could also lead to positive gains in commercial reputation and therefore magnify demand and overall revenue as consumers will proactively seek out businesses with an incorporated green strategy as well as potentially have knock-on impacts for insurance pricing, terms and conditions and coverage.
-     
+            The construction sector is also likely to be impacted by rapid decarbonization in energy mix. Increased carbon tax cost and new investment for renewables will increase the electricity cost for the construction industry in the short-to-medium term, however this will be below a 150% increase by 2050 in a Delayed transition scenario. 
+
+
+            ![Electricity Price](Electricity_Price_Disorderly_Consruction.png)
+            
+            
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            The construction sector is likely to be impacted by rapid decarbonization in transport. Within road freight vehicles, the portion of electric vehicles will increase between 30% and 75% in high transition scenarios.
+            
+            
+            ![Freight Vehicles](Electric_Freight_Vehicles_Disorderly_Construction.png)
+            
+            
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            The profitability of the construction sector, in the high transition risk scenario, will also depend on the relevant companies proactively investing in innovation and new technology. It is critical that energy efficiency improves in design and construction, as well as in the operations of buildings. It is estimated that the total GHG emissions from building material is largely concentrated in just 10 commonly used items: Cement, Steel, Limestone, Structural clay, Aluminium, etc.  Decarbonising steel and concrete production currently represent a significant challenge. The alternative is to substitute such materials, where possible, for lower-carbon intensity products, and increase recycling.
             "
     low:
         always: "
@@ -92,61 +110,116 @@ transition:
             The construction sector is likely to be impacted by steady decarbonization in building materials and its own operations. Among building materials, cement will incur the most impact due to its limited capacity to improve CO2 intensity and increasing carbon price. A sharper focus would be required for the cement industry to improve its clinker-to-cement ratio and deploy carbon storage technologies.
 
             
-            
-            ![Emissions mix](Emissions_Mix.png)
+            ![Emissions Mix](Emissions_Mix_Construction.png)
             
             
             **Source:** [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            Likely reduction in the production of cement due to higher carbon tax amid increasing global demand will drive the price of cement more than 350% higher by 2050 in the Net Zero 2050 scenario and over 250% higher by 2050 in the Below 2 degrees scenario, leading to increased material cost for the construction industry.
+            
+            
+            ![Cement Price](Cement_Price_Orderly_Consruction.png)
+            
+            
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            The construction sector is also likely to be impacted by steady decarbonization in energy mix. By 2050, renewables and biomass would cover 68% of global primary energy needs. The increased carbon tax cost and new investment for renewables will increase the electricity cost for the construction industry in the short-to-medium term, however this will be below a 150% increase by 2050.
+
+
+            ![Electricity Price](Electricity_Price_Orderly_Consruction.png)
+            
+            
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            By 2050, renewables and biomass would cover 68% of global primary energy needs. 
+            
+            
+            ![Primary Energy](Primary_Energy_Mix_Oil_and_Gas.png)
+            
+            
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            The construction sector is also likely to be impacted by steady decarbonization in transport. Within road freight vehicles, the portion of electric vehicles will increase by between 15% and 35% in low transition scenarios. 
+            
+            
+            ![Freight Vehicles](Electric_Freight_Vehicles_Orderly_Construction.png)
+            
+            
+            **Source:** [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+            
+            
+            The profitability of the construction sector, in the low transition risk scenario, will depend on the relevant companies proactively investing in innovation and new technology. It is critical that energy efficiency improves in design and construction, as well as in the operations of buildings. It is estimated that the total GHG emissions from building material is largely concentrated in just 10 commonly used items: Cement, Steel, Limestone, Structural clay, Aluminium, etc.  Decarbonising steel and concrete production currently represent a significant challenge. The alternative is to substitute such materials, where possible, for lower-carbon intensity products, and increase recycling.
             "
             
 physical:
     high:
         always: "
-            The aviation sector and its associated underwriting class are also exposed to physical risk. Chronic effects (e.g. raised sea-level and mean temperatures) and acute effects due to changes to frequency and severity of weather events such as heatwaves, wildfires, tropical cyclones, and flooding could severely affect aircraft performance, significantly disrupt operations through frequent re-routings and temporary closures of airspace and airports, as well as damage infrastructure and aircraft with detrimental effects on costs and earnings. Whilst the aviation sector is used to responding to and managing changing weather conditions, in the low physical risk scenario, climate change and global warming will increase weather variations. This will lead to increasing disruption to the aviation sector which could impact the profitability for these companies and therefore could impact the aviation underwriting class as the physical effects of climate change could result in increased claims and increased premiums potentially resulting in some of the aviation underwriting risks becoming either uninsurable or unaffordable.
+            The construction sector is one of the most exposed sectors to physical impacts of climate change, chronic effects (e.g. raised sea-levels) and acute effects due to changes to frequency and severity of weather events such as heatwaves, winds, storms and flooding. Whilst the construction industry is used to responding to and managing changing weather conditions, in high physical risk scenarios, global warming will increase the weather variations, and both the severity and frequency of physical risk events are expected to increase exponentially. This could lead to physical damages to buildings as well as disruption to the construction process, which may decrease profitability for the construction industry. 
             
             
-            Adverse impacts on world GDP from physical risks are assumed in the scenarios and these scale with the rise in temperatures in the scenarios over time. The high physical risk scenarios could therefore also lead to a significant GDP impact which could negatively impact demand for aviation products and services with knock-on impacts for sectors insurance needs.
+            Adverse impacts on world GDP from physical risks are assumed in the scenarios and these scale with the rise in temperatures in the scenarios over time. The high physical risk scenarios could therefore also lead to a significant GDP impact which could negatively impact demand for construction.
+
             "
             
         high_materiality: "
-            The following examples illustrate how the aviation sector could be impacted in a high physical risk scenario:
+            The following examples illustrate how the construction sector could be impacted in a high physical risk scenario:
             
             
-            * **Higher average temperatures** can decrease regulated take-off weight leading to lower passenger and cargo loads. Increased fuel uplift to cope with weather related rerouting will further reduce a flights payload. 
+            **Chronic Impacts**
             
             
-            * **Increased frequency of atmospheric turbulences, storms and heatwaves** can increase flight times, affect passenger comfort and safety, damage aircraft, and induce large scale rerouting or flight cancellations.
+            * **Rising Sea Levels** could cause disruption to the construction process and can also lead to reduced demand in particular markets and locations such as in coastal areas.
+
+
+            **Acute Impacts**
             
             
-            * **Flooding** can damage infrastructure and grounded aircraft.
+            * **Heatwaves** can stop work on construction projects for health and safety reasons while also potentially compromising the structural integrity of the materials, causing machinery malfunctions, and increasing fire risk.
             
             
-            With a large rise in global temperatures the physical effects of climate change could materially alter the existence, attractiveness or viability of some destinations, decreasing demand for some aviation services. For example, demand could decrease for airline routes serving destinations relying on climate conditions for attracting visitors (e.g. snow cover for skiing resorts) or destinations impacted by sea level inundation. Significantly slowed GDP growth could further impact demand for aviation through its effect on individuals disposable income.
+            * **High winds and storms** are known to be a risk to construction. Tropical cyclones are likely becoming more intense leading to construction timelines getting extended or disrupted.
             
             
-            There are a number of mitigating actions these companies can take against the high physical risks mentioned above to build resiliency into their operations against extreme weather events. For example, investing in more resilient solutions e.g. continuously review flight plans to ensure optimal routings, standby engineers to reduce technical fault repair time, and increase flood-mitigating construction standards.
+            * **Heavy precipitation and flooding** can cause significant damage to project sites with infrastructure collapsing and exposed materials getting damaged.
+
+            
+            Significantly slowed GDP growth could further impact demand for construction through its effect on individuals disposable income and government spending.
+            
+            
+            There are many mitigating actions companies can take against the physical risks mentioned above. For example, increasing the durability of materials against extreme weather conditions, improved drainage systems and better equipment to be able to withstand stronger cyclones, a more robust design of infrastructure and stricter construction standards. To reduce the impact of rising sea levels, the position of new facilities should consider climate change to minimise the risk of total damage caused by flooding. 
+     
             "
             
     low:
         always: "
-            The aviation sector and its associated underwriting class are also exposed to physical risk. Chronic effects (e.g. raised sea-levels and mean temperatures) and acute effects due to changes to frequency and severity of weather events such as heatwaves, wildfires, tropical cyclones, and flooding could affect aircraft performance, cause re-routings and temporary closure of airspace and airports as well as damage to infrastructure and aircraft with negative effects on costs and earnings.
-            
-            
-            Whilst the aviation sector is used to responding to and managing changing weather conditions, in the low physical risk scenario, climate change and global warming will increase weather variations. This will lead to increasing disruption to aviation sector which could impact the profitability for these companies and therefore could impact the aviation underwriting class as the physical effects of climate change could result in increased claims and increased premiums potentially resulting in some of the aviation underwriting risks becoming either uninsurable or unaffordable.
+            The construction sector is one of the most exposed sectors to physical impacts of climate change, chronic effects (e.g. raised sea-levels) and acute effects due to changes to frequency and severity of weather events such as heatwaves, winds, storms and flooding. Whilst the construction industry is used to responding to and managing changing weather conditions, in the low physical risk scenario, global warming will increase the weather variations. This could lead to physical damages to buildings as well as disruption to the construction process, which may decrease profitability for the construction industry.
             "
             
         high_materiality: "
-            The following examples illustrate how the aviation sector could be impacted in a low physical risk scenario:
+            The following examples illustrate how the construction sector could be impacted in a low physical risk scenario:
             
             
-            * **Higher average temperatures** can decrease regulated take-off weight leading to lower passenger and cargo loads. Increased fuel uplift to cope with weather related rerouting will further reduce a flights payload. 
+            **Chronic Impacts**
             
             
-            * **Increased frequency of atmospheric turbulences, storms and heatwaves** can increase flight times, affect passenger comfort and safety, damage aircraft, and induce large scale rerouting or flight cancellations.
+            * **Rising Sea Levels** could cause disruption to the construction process and can also lead to reduced demand in particular markets and locations such as in coastal areas.
+
+
+            **Acute Impacts**
             
             
-            * **Flooding** can damage infrastructure and grounded aircraft.
+            * **Heatwaves** can stop work on construction projects for health and safety reasons while also potentially compromising the structural integrity of the materials, causing machinery malfunctions, and increasing fire risk.
             
             
-            With a rise in global temperatures the physical effects of climate change could alter the existence, attractiveness or viability of some destinations, decreasing demand for some aviation services. For example, demand could decrease for airline routes serving destinations relying on climate conditions for attracting visitors (e.g. snow cover for skiing resorts) or destinations impacted by sea level inundation. There are a number of mitigating actions these companies can take against the low physical risks mentioned above to build resiliency into their operations against extreme weather events. For example, investing in more resilient solutions e.g. continuously review flight plans to ensure optimal routings, standby engineers to reduce technical fault repair time, and increase flood-mitigating construction standards.
+            * **High winds and storms** are known to be a risk to construction. Tropical cyclones are likely becoming more intense leading to construction timelines getting extended or disrupted.
+            
+            
+            * **Heavy precipitation and flooding** can cause significant damage to project sites with infrastructure collapsing and exposed materials getting damaged.
+
+            
+            There are many mitigating actions companies can take against the physical risks mentioned above. For example, increasing the durability of materials against extreme weather conditions, improved drainage systems and better equipment to be able to withstand stronger cyclones. To reduce the impact of rising sea levels, the position of new facilities should consider climate change to minimise the risk of total damage caused by flooding.             
             "
