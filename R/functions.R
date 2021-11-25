@@ -6,6 +6,12 @@ add_param <- function(previous_list, item_to_add) {
 # helper function to get object by its name but return NULL (not error) if it does not exist
 get_or_null = function(name) if(exists(name)) return(get(name)) else return(NULL)
 
+# helper function to make the first letter of a string upper case
+capitalize <- function(input_string) {
+  return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))
+}
+
+
 # helper functions to produce the layout of tabs (cell, row, whole table)
 exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL, dev=FALSE) {
   if (exposure_item == "") {
@@ -25,7 +31,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text=NULL, dev=FAL
         form,
         tippy_this(id, tooltip_text),
       ))
-    } else { 
+    } else {
       return(form)
     }
   }
@@ -37,14 +43,14 @@ exposure_grid_ui <- function(label) {
 
 exposure_grid_server <- function(
   input,
-  output, 
+  output,
   exposure_matrix,
   tooltip_matrix,
   label,
   dev=FALSE
 ) {
   layout <- matrix("", nrow=nrow(exposure_matrix),ncol=ncol(exposure_matrix)-1)
-  colnames(layout) <- colnames(exposure_matrix)[-2] 
+  colnames(layout) <- colnames(exposure_matrix)[-2]
   for(i in 1:nrow(layout)){
     layout[i,1] <- as.character(div(exposure_matrix[i,1], class = "verticalcenter"))
     for(j in 2:ncol(layout)){
@@ -66,12 +72,12 @@ exposure_grid_server <- function(
         )
       )
     }
-  }  
+  }
   output[[label]] <- renderTable(
     layout,
     sanitize.text.function=function(x) x,
     sanitize.colnames.function=function(x) gsub('.', '&nbsp;', x, fixed=TRUE)
-  ) 
+  )
 }
 
 # helper function to produce a markdown report
@@ -98,7 +104,7 @@ table_to_markdown <- function(table, additional_spaces=3, dot_to_space=TRUE){
   )
   if(nrow(table)) for(i in 1:nrow(table)){
     out <- paste0(
-      out, 
+      out,
       paste(table[i,], collapse=collapsor),
       "\n"
     )
@@ -133,15 +139,20 @@ get_exposure_description <- function(item, type_item_inputs){
       '\n\n'
     )
   }
-  
+
   get_exposure_risk_description <- function(item, products, materiality, physical_or_transition, high_or_low){
     if(high_or_low == FALSE) return("")
-    
+
+    # supress high/low for transition risk only
+    if(physical_or_transition == "transition") {
+      physical_or_transition_text <- physical_or_transition
+    } else {
+      physical_or_transition_text <- paste(high_or_low, physical_or_transition)
+    }
+
     out <-paste0(
       "### ",
-      paste0(toupper(substring(high_or_low, 1, 1)), substring(high_or_low, 2)), 
-      " ",
-      physical_or_transition,
+      capitalize(physical_or_transition_text),
       " risk\n\n",
       exposure_classes[[item]][[physical_or_transition]][[high_or_low]][['always']],
       '\n\n'
@@ -162,7 +173,7 @@ get_exposure_description <- function(item, type_item_inputs){
     }
     return(out)
   }
-  
+
   get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario){
     name <- scenario$name
     description <- scenario$description
@@ -175,10 +186,10 @@ get_exposure_description <- function(item, type_item_inputs){
     if(nrow(aggregated_table) & is_scenario) for (i in 1:nrow(aggregated_table)){
       item <- aggregated_table$item[i]
       materiality <- aggregated_table$materiality[i]
-      type_item_inputs <- type_inputs[type_inputs$item == item,] 
+      type_item_inputs <- type_inputs[type_inputs$item == item,]
       products <- unique(type_item_inputs$product)
       out <- paste0(
-        out, 
+        out,
         get_exposure_description(item, type_item_inputs),
         get_exposure_risk_description(item, products, materiality, "transition", transition),
         get_exposure_risk_description(item, products, materiality, "physical", physical)
@@ -235,4 +246,4 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   if(gResponse$status_code==200){
     return(fromJSON(content(gResponse, "text")))
   }
-} 
+}
