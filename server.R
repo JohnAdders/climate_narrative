@@ -112,8 +112,15 @@ server <- function(input, output, session) {
     # or alternatively in a simpler way:
     # includeMarkdown(temp_report())
     if(input$report_selection=='') return(p('Please select a scenario'))
+    showModal(
+      modalDialog(
+        'Report rendering in progress...',
+        title='Climate Report',
+        footer=NULL
+      )
+    )
     temp_html <- tempfile(fileext='.html')
-    includeHTML(rmarkdown::render(
+    result <- includeHTML(rmarkdown::render(
       input=temp_subset_report(),
       output_file=temp_html,
       output_format=html_document(
@@ -123,6 +130,8 @@ server <- function(input, output, session) {
         fig_caption=FALSE
       )
     ))
+    removeModal()
+    return(result)
   })
 
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
