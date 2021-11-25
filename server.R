@@ -1,8 +1,8 @@
 server <- function(input, output, session) {
   heartbeat(input, output, session)
-  session$userData$verification_code <- UUIDgenerate()
+  session$userData$verification_code <- substring(UUIDgenerate(), 1, 6)
   session$userData$captcha_validated <- FALSE
-  
+
   if (file.exists('secret.yml')){
     secret_pars <- read_yaml('secret.yml')
     for(i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
@@ -14,7 +14,7 @@ server <- function(input, output, session) {
   for (tab in tabs) {
     tab$server(input, output, session, switch_page)
   }
-  
+
   # then the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
@@ -72,7 +72,7 @@ server <- function(input, output, session) {
     out <- '% Climate report\n\n'
     for (scenario in scenarios){
       out <- c(
-        out, 
+        out,
         get_scenario_descriptions(
           aggregated_type_inputs(),
           type_inputs(),
