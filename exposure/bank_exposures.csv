@@ -1,4 +1,4 @@
-Type,product,Aviation,Construction,Manufacturing,Marine,Oil and Gas,Protection,Telecommunications,Utilities
-Corporate Lending,bond_like,aviation,construction,manufacturing,marine,oil and gas,protection,telecoms,utilities
-SME Lending,bond_like,aviation,construction,manufacturing,marine,oil and gas,protection,telecoms,utilities
-Equity,equity_like,aviation,construction,manufacturing,marine,oil and gas,protection,telecoms,utilities
+Type,product,Aviation,Construction,Manufacturing,Oil and Gas,Telecommunications,Utilities
+Corporate Lending,bond_like,aviation,construction,manufacturing,oil and gas,telecoms,utilities
+SME Lending,bond_like,aviation,construction,manufacturing,oil and gas,telecoms,utilities
+Equity,equity_like,aviation,construction,manufacturing,oil and gas,telecoms,utilities
