@@ -1,0 +1,162 @@
+name: Marine
+
+description: "
+    The **marine** underwriting class is one of the oldest classes of insurance business. It involves insuring companies engaging in economic activity relating to the oceans, rivers, and the Great Lakes. This includes traditional maritime activities such as designing, constructing, manufacturing, supplying, maintaining vessels or parts, operating and managing shipping lines, and crewing ships. It also includes engaging in maritime law, customs services, fishing operations, marine science, salvage operations and the operation of ports, shipyards, drydocks, and cruise lines.
+    
+    
+    Typical marine insurance policies provide cover for physical loss or damage, split across hull (covering damage to the vessel, propulsion machinery and equipment used for activities such as cargo handling), cargo (loss or damage to freight), fine art and specie (high-value goods), liability (including personal injuries, pollution and collision) and yacht insurance.
+    "
+    
+transition:
+    high:
+        always: "
+            
+            While the marine sector will continue to play a role in facilitating global trade and meeting customer demand for the coming years, the changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO2 emissions increasing until 2030 before rapidly decreasing after 2030 to compensate for the inaction beforehand. The Divergent Net Zero scenario results in CO2 emissions starting to be reduced earlier and, as a result, more gradually. Both these scenarios are likely to have an impact on the profitability of this sector and therefore on the associated insurance products pricing and coverage. 
+            
+            
+            The high transition risk scenario could also lead to a limited reduction in GDP growth. This could result in changes in the rate of growth in demand for the marine sector.
+            "
+            
+        high_materiality: "
+            In high transition risk scenarios, the impact on the marine underwriting class will depend on the increases in carbon and energy prices and how reliant the marine companys revenue mix is on low-carbon electricity and bunker fuel and how it compares to the sector average. For example:
+            
+            
+            * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The increase in carbon and energy prices could potentially result in financial impacts, as marine firms carbon emissions face a rising price in the form a carbon tax or cap & trade clearing price, particularly for shipping firms using fossil-based bunker fuel.
+            
+            
+            * Firms will have to keep up with the diverse or rapidly changing regulations across jurisdictions in which they operate, leading to **increasing compliance requirements.** These changes may require firms to adapt their service, potentially reducing sales (e.g. efficiency-based speed limits for Cruise ships leading to a less appealing service with reduced itinerary and more sea days) and could lead to changes in the level and type of insurance coverage required. 
+            
+            
+            * **Asset valuation of marine company reserves could be re-priced** based on the re-adjusted expectations of the use of low-carbon products and energy efficient technologies in the future. Failure to use low-carbon products and energy efficient technologies will affect the commercial reputation of the company and could lead to loss in customers and decrease in revenue.  
+            
+            
+            * **Changing consumer preferences**, these could lead to changes in sales due to lower customer demand as a result of change in environmental expectations that could impact this underwriting class. Consumers acceptance of firms products can also affect sales (e.g. planetary diets reducing demand for animal-based products, including fish).
+            
+            
+            There is also significant dependence of other sectors on the services of the marine sector, mainly in regard to transportation which plays a key role in other firms supply chains. This magnifies the importance of decarbonising the marine sector as companies who have a high carbon step in their supply chain could lose customers as consumer preferences change - without decarbonisation of the marine sector, consumers may prefer local alternative goods which rely less on international transportation. This could decrease demand for the marine sector.
+            
+            
+            The profitability of the marine sector and its associated underwriting class, in the high transition risk scenario, will also depend on the relevant companies proactively investing in innovation and new technology. For example:
+            
+            
+            * Efficiency increasing shipping methods (e.g. containerization) 
+            
+            
+            * Energy efficient vessels and vessel modifications (e.g. Silverstream air lubrication, sensor-controlled cabin lighting)
+            
+            
+            * Smart ports which enhance co-ordination between ship and port call activities to optimise voyage speeds
+            
+            
+            * Alternatives to fossil-based bunker fuels (e.g. biodiesel, methanol, lignin, and Ammonia)
+            
+            
+            These actions could also lead to positive gains in commercial reputation and therefore magnify demand and overall revenue as consumers will proactively seek out businesses with an incorporated green strategy. Disclosing comparable climate alignment metrics for marine insurance portfolios in accordance with a global framework, such as the Poseidon Principles, will allow consumers to easily identify firms making progress in alignment with their green strategy.
+
+            "
+    low:
+        always: "
+            The marine sector will continue to play a role in facilitating global trade and meeting customer demand for the coming years. The changing patterns in energy generation in a low transition scenario, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to a gradual reduction in CO2 emissions by 2050 and increase in the carbon price. These are likely to have an impact on the profitability of this sector and therefore on the associated insurance products pricing, terms and conditions and coverage. 
+            
+            
+            The low transition risk scenario could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in demand for the marine sector.
+        
+            "
+            
+        high_materiality: "
+            In the low transition risk scenario, the impact on the marine sector and the underwriting class will depend on how reliant the marine companys revenue mix is on low-carbon electricity and bunker fuel and how it compares to the sector average. For example: 
+            
+            
+            * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The gradual but significant rise in carbon and energy prices could potentially result in financial impacts, as marine firms carbon emissions face a rising price in the form of a carbon tax or cap & trade clearing price, particularly for shipping firms using fossil-based bunker fuel. 
+            
+            
+            * International cooperation will spur changes in maritime law leading to **increasing compliance requirements**. These changes may require firms to adapt their service, potentially reducing sales (e.g. efficiency-based speed limits for Cruise ships leading to a less appealing service with reduced itinerary and more sea days) and could lead to changes in the level and type of insurance coverage required. 
+            
+            
+            * **Asset valuation of marine company reserves could be re-priced based on the re-adjusted** expectations of the use of low-carbon products and energy efficient technologies in the future. Failure to use low-carbon products and energy efficient technologies will affect the commercial reputation of the company and could lead to loss in customers and decrease in revenue.
+            
+            
+            * **Changing consumer preferences**, these could lead to changes in sales due to lower customer demand as a result of change in environmental expectations that could impact this underwriting class. Consumers acceptance of firms products can also affect sales (e.g. planetary diets reducing demand for animal-based products, including fish).
+            
+            
+            There is also significant dependence of other sectors on the services of the marine sector, mainly in regard to transportation which plays a key role in other firms supply chains. This magnifies the importance of decarbonising the marine sector as companies who have a high carbon step in their supply chain could lose customers as consumer preferences change. Without decarbonisation of the marine sector, consumers may prefer local alternative goods which rely less on international transportation. This could decrease demand for the marine sector.
+            
+            
+            The profitability of the marine sector and its associated underwriting class, in the low transition risk scenario, will also depend on the relevant companies proactively investing in innovation and new technology. For example:
+            
+            
+            * Efficiency increasing shipping methods (e.g. containerization) 
+            
+            
+            * Energy efficient vessels and vessel modifications (e.g. Silverstream air lubrication, sensor-controlled cabin lighting)
+            
+            
+            * Smart ports which enhance co-ordination between ship and port call activities to optimise voyage speeds
+            
+            
+            * Alternatives to fossil-based bunker fuels (e.g. biodiesel, methanol, lignin, and Ammonia)
+            
+            
+            These actions could also lead to positive gains in commercial reputation and therefore magnify demand and overall revenue as consumers will proactively seek out businesses with an incorporated green strategy. Disclosing comparable climate alignment metrics for marine insurance portfolios in accordance with a global framework, such as the Poseidon Principles, will allow consumers to easily identify firms making progress in alignment with their green strategy.
+            "
+            
+physical:
+    high:
+        always: "
+            The marine sector and its associated underwriting class are exposed to physical risk. Chronic (e.g. raised sea-levels and global mean temperatures) and acute effects due to changes to frequency and severity of weather events such as flooding and tropical cyclones, which could cause significant disruption to services and damage to infrastructure, and lead to an increase in operating costs (as operations become largely reactive to remediate issues), a decrease in production capacity, and interruption of the supply chain. 
+            
+            
+            Physical risks could also impact employment as well as potentially lead to a decline in revenue due to rising transportation times and inability to meet customer demands. Whilst the marine sector is used to responding to and managing changing weather conditions, in the low physical risk scenario, climate change and global warming will increase weather variations. This will lead to increasing disruption to marine sector which could impact the profitability for these companies and therefore could impact the marine underwriting class as the physical effects of climate change could result in increased claims and increased premiums potentially resulting in some marine underwriting class risks becoming either uninsurable or unaffordable.
+            
+            
+            Adverse impacts on world GDP from physical risks are assumed in the scenarios and these scale with the rise in temperatures in the scenarios over time. The high physical risk scenarios could therefore also lead to a significant GDP impact which could negatively impact marine sector demand.
+
+            "
+            
+        high_materiality: "
+            The following examples illustrate how the marine sector and underwriting class could be impacted in a high physical risk scenario:
+            
+            
+            * **Cyclones, storms and strong winds** are likely to have a significant effect and can cause damage to infrastructure and cargo spills 
+            
+            
+            * **Extreme temperatures** are likely to reduce productivity of fish farms through its effect on harvest weight, harvest volume, mortality, and frequency of algae blooms. 
+            
+            
+            * **Sea level rise** can damage port infrastructure and in turn severely disrupt operations of marine firms who rely on port services. 
+            
+            
+            Significantly slowed GDP growth could impact marine sector demand through its effect on individuals disposable income, which results in lower spending on private boats and goods transported on water.
+            
+            
+            There are a number of mitigating actions these companies can take against the high physical risks mentioned above to build resiliency into their operations against extreme weather events. For example, set standards for rough sea conditions for cancellation of maritime navigation, coordinate with weather information providers and adhere to their navigation suggestions, increase the service life of containers and other infrastructure likely to be damaged in extreme weather, and consider sea water temperature profiles when planning new fish farm sites.
+            "
+            
+    low:
+        always: "
+            The marine sector and its associated underwriting class are exposed to physical risk. Chronic effects (e.g. raised sea-levels and global mean temperatures) and acute effects due to changes to frequency and severity of weather events such as flooding and tropical cyclones, could cause disruption to services and damage to infrastructure, and lead to an increase in operating costs, a decrease in production capacity, and interruption of the supply chain. 
+            
+            
+            Whilst the marine sector is used to responding to and managing changing weather conditions, in the low physical risk scenario, climate change and global warming will increase weather variations. This will lead to increasing disruption to marine sector which could impact the profitability for these companies and therefore could impact the marine underwriting class as the physical effects of climate change could result in increased claims and increased premiums potentially resulting in some of the marine underwriting class risks becoming either uninsurable or unaffordable.
+
+            "
+            
+        high_materiality: "
+            The following examples illustrate how the marine sector and underwriting class could be impacted in a low physical risk scenario:
+            
+            
+            * **Cyclones, storms and strong winds** are likely to have an effect and can cause damage to infrastructure and cargo spills 
+            
+            
+            * **Increased temperatures** may reduce productivity of fish farms through its effect on harvest weight, harvest volume, mortality, and frequency of algae blooms. 
+            
+            
+            * **Sea level rise** can damage port infrastructure and in turn disrupt operations of marine firms who rely on port services. 
+            
+            
+            There are a number of mitigating actions these companies can take against the low physical risks mentioned above to build resiliency into their operations against extreme weather events. For example, set standards for rough sea conditions for cancellation of maritime navigation, coordinate with weather information providers and adhere to their navigation suggestions, increase the service life of containers and other infrastructure likely to be damaged in extreme weather, and consider sea water temperature profiles when planning new fish farm sites.
+
+
+            "
+
+
