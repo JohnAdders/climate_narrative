@@ -6,6 +6,7 @@ server <- function(input, output, session) {
   if (file.exists("secret.yml")) {
     secret_pars <- read_yaml("secret.yml")
     for (i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
+    session$userData$dev <- FALSE
   } else {
     session$userData$dev <- TRUE
   }
@@ -93,18 +94,18 @@ server <- function(input, output, session) {
     temp_md
   })
 
-  temp_subset_report <- reactive({
+  temp_subset_report <- function(report_selection) {
     # writing a report to (temporary) file first
     # this is necessary as markdown::render takes file as an argument
     if (!exists("temp_subset_md")) temp_subset_md <- tempfile(fileext = ".md")
     file_conn <- file(temp_subset_md)
     writeLines(
-      report_contents()[1 + which(sapply(scenarios, `[[`, i = "name") == input$report_selection)],
+      report_contents()[1 + which(sapply(scenarios, `[[`, i = "name") == report_selection)],
       file_conn
     )
     close(file_conn)
     temp_subset_md
-  })
+  }
 
   output$rendered_report <- renderUI({
     # previous version, not supporting footnotes:
@@ -114,16 +115,9 @@ server <- function(input, output, session) {
     if (input$report_selection == "") {
       return(p("Please select a scenario"))
     }
-    showModal(
-      modalDialog(
-        "Report rendering in progress...",
-        title = "Climate Report",
-        footer = NULL
-      )
-    )
     temp_html <- tempfile(fileext = ".html")
     result <- includeHTML(rmarkdown::render(
-      input = temp_subset_report(),
+      input = temp_subset_report(input$report_selection),
       output_file = temp_html,
       output_format = html_document(
         toc = TRUE,
@@ -132,7 +126,6 @@ server <- function(input, output, session) {
         fig_caption = FALSE
       )
     ))
-    removeModal()
     return(result)
   })
 
