@@ -53,7 +53,7 @@ tab_auth_server <- function (input, output, session, tab) {
 
   observeEvent(input$button_send_code, {
     if(grepl('@', input$email, fixed=TRUE)){
-      output$captcha_verification_result = renderText('Captcha request sent to uncle google...')
+      output$captcha_verification_result = renderText('Captcha request sent to google...')
       if(!is.null(session$userData$captcha_code)){
         GreCAPTCHAv3js('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP', 'homepage', 'responseReceived')
       } else {
