@@ -68,7 +68,7 @@ exposure_grid_server <- function(input,
           ),
           # disable tooltips for now
           # tooltip_matrix[i,j-1],
-          FALSE,
+          NULL,
           dev
         )
       )
