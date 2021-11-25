@@ -49,16 +49,16 @@ exposure_classes <- read_dir('exposure_class')
 scenarios <- scenarios[order(sapply(scenarios, `[[`, i = "position"))]
 
 # defining the questionnaire using list of QuestionTab objects
-ordered_tabs <- c('title','auth','type','bank','ins_a','am','ins_l','report')
+ordered_tabs <- c('title','auth','type','bank','ins_l','am','ins_a','report')
 #tab_mapping <- factor(1:length(ordered_tabs), levels=ordered_tabs)
 
 tabs <- list(
   QuestionTab$new('title', NULL, 'auth', FALSE, FALSE),
   QuestionTab$new('auth', 'title', NULL),
-  QuestionTab$new('type', 'auth', 'ins_a'),
+  QuestionTab$new('type', 'auth', 'ins_l'),
   QuestionTab$new('bank', 'type', 'report'),
-  QuestionTab$new('ins_a', 'type', 'ins_l'),
+  QuestionTab$new('ins_l', 'type', 'ins_a'),
   QuestionTab$new('am', 'type','report'),
-  QuestionTab$new('ins_l', 'ins_a', 'report'),
+  QuestionTab$new('ins_a', 'ins_l', 'report'),
   QuestionTab$new('report', 'type', NULL)
 )
