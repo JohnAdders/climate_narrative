@@ -85,7 +85,7 @@ observeEvent(input$responseReceived, {
   })
 
   observeEvent(
-    input$button_check_code,#input$code,
+    input$button_check_code,
     {
       if (input$code == session$userData$verification_code || session$userData$dev == TRUE) {
         next_tab <- as.integer(factor('type', ordered_tabs))
