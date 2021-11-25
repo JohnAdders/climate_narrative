@@ -22,6 +22,6 @@ tab_bank_ui <- function () {
 
 tab_bank_foot <- function(){
   list(
-    helpText('A longer explanatory text regarding bank exposures may be put here')
+    helpText("Enter your firm's exposures by asset class and sector")
   )
 }

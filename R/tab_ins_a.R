@@ -22,6 +22,6 @@ tab_ins_a_ui <- function () {
 
 tab_ins_a_foot <- function() {
   list(
-    helpText('A longer explanatory text regarding insurance asset exposures may be put here')
+    helpText("Enter your firm's asset exposures by asset class and sector")
   )
 }

@@ -59,15 +59,14 @@ exposure_grid_server <- function(
           exposure_matrix[i,j+1],
           paste(
             label,
-            #exposure_matrix[i,1],
-            #exposure_matrix[i,2],
-            #colnames(exposure_matrix)[j+1],
             remove_special_characters(exposure_matrix[i,1]),
             remove_special_characters(exposure_matrix[i,2]),
             remove_special_characters(colnames(exposure_matrix)[j+1]),
             sep="_"
           ),
-          tooltip_matrix[i,j-1],
+          # disable tooltips for now
+          # tooltip_matrix[i,j-1],
+          NULL,
           dev
         )
       )

@@ -22,6 +22,6 @@ tab_ins_l_ui <- function () {
 
 tab_ins_l_foot <- function(){
   list(
-    helpText('A longer explanatory text regarding insurance liability exposures may be put here')
+    helpText("Enter your firm's liability exposures by type")
   )
 }
