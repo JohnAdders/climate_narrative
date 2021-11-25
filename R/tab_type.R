@@ -1,4 +1,4 @@
-tab_type_ui <- function () {
+tab_type_ui <- function() {
   list(
     radioButtons(
       "type",
@@ -12,22 +12,21 @@ tab_type_ui <- function () {
   )
 }
 
-tab_type_server <- function (input, output, session, tab) {
+tab_type_server <- function(input, output, session, tab) {
   observeEvent(
     input$type,
     {
-      tab$next_tab <- switch(
-        input$type,
-        insurance = as.integer(factor('ins_a', ordered_tabs)),
-        asset = as.integer(factor('am', ordered_tabs)),
-        bank = as.integer(factor('bank', ordered_tabs))
+      tab$next_tab <- switch(input$type,
+        insurance = as.integer(factor("ins_l", ordered_tabs)),
+        asset = as.integer(factor("am", ordered_tabs)),
+        bank = as.integer(factor("bank", ordered_tabs))
       )
     }
   )
 }
 
-tab_type_foot <- function(){
+tab_type_foot <- function() {
   list(
-    helpText('A longer explanatory text regarding types of financial institutions may be put here')
+    helpText("Please select you firm's type")
   )
 }
