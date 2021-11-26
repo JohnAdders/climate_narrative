@@ -90,7 +90,7 @@ tab_auth_server <- function(input, output, session, tab) {
   observeEvent(
     input$button_check_code,
     {
-      if (input$code == session$userData$verification_code || session$userData$dev == TRUE) {
+      if (input$code == session$userData$verification_code) {
         next_tab <- as.integer(factor("type", ordered_tabs))
         updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
       } else {
