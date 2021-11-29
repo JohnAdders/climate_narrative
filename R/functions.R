@@ -149,6 +149,22 @@ get_exposure_description <- function(item, type_item_inputs) {
   )
 }
 
+get_exposure_appendix <- function(item){
+  appendix <- exposure_classes[[item]][["appendix"]]
+  if(is.null(appendix)){
+    return (c())
+  } else {
+    return(
+      paste0(
+        "### Appendix",
+        "\n\n",
+        exposure_classes[[item]][["appendix"]],
+        "\n\n"
+      )
+    )
+  }
+}
+
 get_exposure_risk_description <- function(item, products, materiality, physical_or_transition, high_or_low) {
   if (high_or_low == FALSE) {
     return("")
@@ -204,7 +220,8 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
         out,
         get_exposure_description(item, type_item_inputs),
         get_exposure_risk_description(item, products, materiality, "transition", transition),
-        get_exposure_risk_description(item, products, materiality, "physical", physical)
+        get_exposure_risk_description(item, products, materiality, "physical", physical),
+        get_exposure_appendix(item)
       )
     }
   }
