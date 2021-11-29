@@ -9,7 +9,8 @@ tab_ins_a_server <- function(input, output, session, tab) {
       ncol = ncol(exposures$insuranceassets) - 2
     ),
     "insurance_A",
-    session$userData$dev
+    session$userData$dev,
+    width='6em'
   )
 }
 

@@ -17,18 +17,19 @@ capitalize <- function(input_string) {
 
 
 # helper functions to produce the layout of tabs (cell, row, whole table)
-exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = NULL, dev = FALSE) {
+exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = NULL, dev = FALSE, width=NULL) {
   if (exposure_item == "") {
     form <- p("")
   } else {
     id <- paste(prefix, remove_special_characters(exposure_item), sep = "_")
     form <- selectInput(
       inputId = id,
-      label = "",
+      label = NULL,
       choices = c("", "Low", "Medium", "High"),
       selected = ifelse(dev, "High", ""),
       # to allow empty string as a valid option I do not use selectize
-      selectize = FALSE
+      selectize = FALSE,
+      width = width
     )
     if (!is.null(tooltip_text)) {
       return(div(
@@ -50,7 +51,8 @@ exposure_grid_server <- function(input,
                                  exposure_matrix,
                                  tooltip_matrix,
                                  label,
-                                 dev = FALSE) {
+                                 dev = FALSE,
+                                 width = NULL) {
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-2]
   for (i in 1:nrow(layout)) {
@@ -69,7 +71,8 @@ exposure_grid_server <- function(input,
           # disable tooltips for now
           # tooltip_matrix[i,j-1],
           NULL,
-          dev
+          dev,
+          width
         )
       )
     }
@@ -77,7 +80,7 @@ exposure_grid_server <- function(input,
   output[[label]] <- renderTable(
     layout,
     sanitize.text.function = function(x) x,
-    sanitize.colnames.function = function(x) gsub(".", "&nbsp;", x, fixed = TRUE)
+    sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE)
   )
 }
 
