@@ -1,4 +1,3 @@
-Type,product,Oil and Gas,Telecommunications
-Bonds,bond_like,oil and gas,telecoms
-Equity,equity_like,oil and gas,telecoms
-Commercial Paper,bond_like,oil and gas,telecoms
+Type,product,Agriculture,Aviation,Commercial Real Estate,Construction,Consumer Products,Financial Services,Manufacturing,Mining,Oil and Gas,Telecommunications,Utilities
+Bonds,bond_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mining,oil and gas,telecoms,utilities
+Equity,equity_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mining,oil and gas,telecoms,utilities

@@ -1,6 +1,70 @@
-tab_auth_ui <- function () {
+passes_captcha <- function(input, session) {
+  result <- GreCAPTCHAv3Server(session$userData$captcha_code, input$responseReceived)
+  return(result$success && result$score > 0.5)
+}
+
+request_captcha <- function(output, session) {
+  if (!is.null(session$userData$captcha_code)) {
+    GreCAPTCHAv3js("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP", "homepage", "responseReceived")
+  } else {
+    output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
+  }
+}
+
+process_progress <- function(output, should_continue) {
+  if(should_continue) {
+    next_tab <- as.integer(factor("type", ordered_tabs))
+    updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
+  } else {
+    output$code_verification_result <- renderText("Code incorrect, please double check")
+  }
+}
+
+render_dynamic_auth_ui <- function(output, session) {
+  if(!is.null(session$userData$beta_code)) {
+    output$first_column <- renderUI({NULL})
+    output$auth_text <- renderUI({p("Enter the beta code you have been sent")})
+  } else {
+    output$first_column <- renderUI(
+      {
+        column(
+          6,
+          p("Enter your email address to receive the verification code"),
+          textInput(
+            inputId = "email",
+            label = tagList(icon("user"), "Email"),
+            placeholder = "Enter your email here"
+          ),
+          actionButton(
+            inputId = "button_send_code",
+            label = "Send the code"
+          ),
+          tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
+          textOutput("code_send_result")
+        )
+      }
+    )
+    output$auth_text <- renderUI({p("Enter the verification code received in your email")})
+  }
+}
+
+send_auth_code_email <- function(input, output, session) {
+  output$code_send_result <- renderText(
+    paste(
+      "TODO: send the actual email from",
+      session$userData$email_server,
+      "to",
+      input$email,
+      "containing the code:",
+      session$userData$verification_code
+    )
+  )
+}
+
+tab_auth_ui <- function() {
   list(
-    div(class='disclaimer', id='disclaimer_1',
+    div(
+      class = "disclaimer", id = "disclaimer_1",
       p("This tool and its contents represent the output from the cross-industry
       Scenario Analysis Working Group of the Prudential Regulation Authority
       and Financial Conduct Authority's Climate Financial Risk Forum (CFRF).
@@ -14,85 +78,71 @@ tab_auth_ui <- function () {
       of the regulators and in any case do not constitute regulatory guidance."),
       p(strong("Copyright 2021 The Climate Financial Risk Forum"))
     ),
-
     hr(),
     GreCAPTCHAv3Ui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP"),
-    fluidRow(column(6,
-      p('Enter your email address to receive the verification code'),
-      textInput(
-        inputId='email',
-        label=tagList(icon("user"),"Email"),
-        placeholder = 'Enter your email here'
-      ),
-      actionButton(
-        inputId='button_send_code',
-        label='Send the code'
-      ),
-      tippy_this('button_send_code', 'Delivering the email may take several minutes, please also check your spam folder'),
-      textOutput('captcha_verification_result'),
-      textOutput('code_send_result')
-    ),
-    column(6,
-      p('Enter the verification code received in your email'),
-      textInput(
-        inputId='code',
-        label=tagList(icon("unlock-alt"), "Verification code") ,
-        placeholder = 'Enter your verification code'
-      ),
-      actionButton(
-        inputId='button_check_code',
-        label='Validate the code'
-      ),
-      tippy_this('button_check_code', 'If the code is correct the "Next" button above is unlocked'),
-      textOutput('code_verification_result')
-    ))
+    fluidRow(
+      uiOutput("first_column"),
+      column(
+        6,
+        uiOutput("auth_text"),
+        textInput(
+          inputId = "code",
+          label = tagList(icon("unlock-alt"), "Verification code"),
+          placeholder = "Enter your verification code"
+        ),
+        actionButton(
+          inputId = "button_check_code",
+          label = "Validate the code"
+        ),
+        tippy_this("button_check_code", 'If the code is correct the "Next" button above is unlocked'),
+        textOutput("code_verification_result")
+      )
+    )
   )
 }
 
-tab_auth_server <- function (input, output, session, tab) {
-  
-  observeEvent(input$button_send_code, {
-    if(grepl('@', input$email, fixed=TRUE)){
-      output$captcha_verification_result = renderText('Captcha request sent to uncle google...')
-      if(!is.null(session$userData$captcha_code)){
-        GreCAPTCHAv3js('6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP', 'homepage', 'responseReceived')
+tab_auth_server <- function(input, output, session, tab) {
+  render_dynamic_auth_ui(output, session)
+  observeEvent(
+    input$button_send_code,
+    {
+      if (grepl("@", input$email, fixed = TRUE)) {
+        request_captcha(output, session)
       } else {
-        session$userData$captcha_validated = TRUE
-        output$captcha_verification_result = renderText('Captcha configuration unknown. No captcha required')
-        output$code_send_result <- renderText(paste('The code is: ', session$userData$verification_code))
+        output$code_send_result <- renderText("Please provide a valid email")
       }
-    } else {
-      output$code_send_result <- renderText('Please provide a valid email')
     }
-  })
-
-observeEvent(input$responseReceived, {    
-      result <- GreCAPTCHAv3Server(session$userData$captcha_code, input$responseReceived)
-      if(result$success){
-        session$userData$captcha_validated = TRUE
-        output$captcha_verification_result = renderText(paste('OK. Full validation result: ', paste(result, collapse=';')))
-        output$code_send_result <- renderText(paste(
-          'TODO: send the actual email from',
-          session$userData$email_server,
-          'to',
-          input$email,
-          'containing the code:',
-          session$userData$verification_code
-        ))
-      } else {
-        output$captcha_verification_result = renderText(paste('Try once again. Full validation result: ', paste(result, collapse=';')))
-      }
-  })
+  )
 
   observeEvent(
-    input$button_check_code,#input$code,
+    input$responseReceived,
     {
-      if (input$code == session$userData$verification_code | session$userData$dev ==TRUE) {
-        tab$next_tab <- as.integer(factor('type', ordered_tabs))
-        output$code_verification_result <- renderText('Code correct, please proceed')
+      if(session$userData$captcha_validated == FALSE) {
+        session$userData$captcha_validated <- passes_captcha(input, session)
+      }
+      if(session$userData$captcha_validated == TRUE) {
+        if(!is.null(session$userData$beta_code)) {
+          process_progress(output, input$code == session$userData$beta_code)
+        } else {
+          send_auth_code_email(input, output, session)
+        }
+      }
+    }
+  )
+
+  observeEvent(
+    input$button_check_code,
+    {
+      if(!is.null(session$userData$beta_code)) {
+        request_captcha(output, session)
       } else {
-        tab$next_tab <- as.integer(factor('auth', ordered_tabs))
-        output$code_verification_result <- renderText('Code incorrect, please double check')
+        process_progress(
+          output,
+          (
+            input$code == session$userData$verification_code &&
+            session$userData$captcha_validated == TRUE
+          )
+        )
       }
     }
   )

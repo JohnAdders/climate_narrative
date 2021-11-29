@@ -1,4 +1,8 @@
-Type,product,Oil and Gas,Telecommunications
-Bonds,bond_like,oil and gas,telecoms
-Equity,equity_like,oil and gas,telecoms
-Commercial Paper,bond_like,oil and gas,telecoms
+Type,product,Exposure
+Aviation,insurance,aviation
+Casualty,insurance,casualty
+Health,insurance,health
+Marine,insurance,marine
+Motor,insurance,motor
+Protection,insurance,protection
+Savings and Retirement,insurance,savings and retirement
