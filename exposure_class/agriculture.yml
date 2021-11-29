@@ -233,4 +233,19 @@ physical:
             "
 appendix: "
 Testing the exposure-level appendix functionality
+
+
+testing the special signs
+
+
+* double quote \" OK (remark: it is a straight apostrophe, do not use left/right)
+
+
+* single quote ' OK (remark: it is a straight apostrophe, do not use left/right)
+
+
+* dash - OK (remark: it may be interpreted differently if it is the first sign in the new line)
+
+
+it should be fine then
 "
