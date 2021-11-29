@@ -27,6 +27,6 @@ tab_type_server <- function(input, output, session, tab) {
 
 tab_type_foot <- function() {
   list(
-    helpText("Please select you firm's type")
+    helpText("Please select your firm's type")
   )
 }

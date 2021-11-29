@@ -94,7 +94,7 @@ tab_auth_ui <- function() {
           inputId = "button_check_code",
           label = "Validate the code"
         ),
-        tippy_this("button_check_code", 'If the code is correct the "Next" button above is unlocked'),
+        tippy_this("button_check_code", 'Click to proceed (if the code is correct)'),
         textOutput("code_verification_result")
       )
     )
