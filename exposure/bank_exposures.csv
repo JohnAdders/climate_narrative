@@ -1,4 +1,4 @@
-Type,product,Agriculture,Aviation,Commercial Real Estate,Construction,Consumer Products,Financial Services,Manufacturing,Mining,Oil and Gas,Telecommunications,Utilities
-Corporate Lending,bond_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mining,oil and gas,telecoms,utilities
-SME Lending,bond_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mining,oil and gas,telecoms,utilities
-Equity,equity_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mining,oil and gas,telecoms,utilities
+Type,product,Agriculture,Aviation,Commercial Real Estate,Construction,Consumer Products,Financial Services,Manufacturing,Mining,Mortgages,Oil and Gas,Property,Telecommunications,Utilities
+Corporate Lending,bond_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mining,mortgages,oil and gas,property,telecoms,utilities
+SME Lending,bond_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mining,mortgages,oil and gas,property,telecoms,utilities
+Equity,equity_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mining,mortgages,oil and gas,property,telecoms,utilities
