@@ -9,7 +9,8 @@ tab_am_server <- function(input, output, session, tab) {
       ncol = ncol(exposures$amexposures) - 2
     ),
     "asset_A",
-    session$userData$dev
+    session$userData$dev,
+    width='6em'
   )
 }
 

@@ -42,4 +42,8 @@ tab_report_server <- function(input, output, session, tab) {
       )
     }
   )
+  observeEvent(
+    input[[paste0("page_",  as.integer(factor("report", ordered_tabs)), "_previous")]],
+    updateSelectInput(session, "report_selection", selected = "")
+  )
 }
