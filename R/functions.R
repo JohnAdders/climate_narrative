@@ -81,7 +81,7 @@ exposure_grid_server <- function(input,
     layout,
     sanitize.text.function = function(x) x,
     sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE),
-    align='c'
+    align = 'c'
   )
 }
 
@@ -173,21 +173,31 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 
   # supress high/low for transition risk only
   if (physical_or_transition == "transition") {
-    physical_or_transition_text <- physical_or_transition
+    riskname <- switch(high_or_low, high='Disorderly transition', low='Orderly transition')
+    physical_or_transition_text <- paste0(item, " --- ", riskname, " --- Summary")
   } else {
-    physical_or_transition_text <- paste(high_or_low, physical_or_transition)
+    riskname <- switch(high_or_low, high='High physical risk', low='Low physical risk')
   }
-
+  physical_or_transition_text <- paste0(
+    exposure_classes[[item]][["name"]],
+    " --- ",
+    riskname
+  )
+  #[name of the sector] [dash] [(Dis)Orderly transition / High/low physical risk] [dash] [Summary/Details]
+  " --- Summary"
   out <- paste0(
     "### ",
     capitalize(physical_or_transition_text),
-    " risk\n\n",
+    " --- Summary\n\n",
     exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
     "\n\n"
   )
   if (materiality == "High") {
     out <- paste0(
       out,
+      "### ",
+      capitalize(physical_or_transition_text),
+      " --- Details\n\n",
       exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
       "\n\n"
     )
