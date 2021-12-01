@@ -1,7 +1,7 @@
 name: Marine
 
 description: "
-    The **marine** underwriting class is one of the oldest classes of insurance business. It involves insuring companies engaging in economic activity relating to the oceans, rivers, and the Great Lakes. This includes traditional maritime activities such as designing, constructing, manufacturing, supplying, maintaining vessels or parts, operating and managing shipping lines, and crewing ships. It also includes engaging in maritime law, customs services, fishing operations, marine science, salvage operations and the operation of ports, shipyards, drydocks, and cruise lines.
+    The **Marine** underwriting class is one of the oldest classes of insurance business. It involves insuring companies engaging in economic activity relating to the oceans, rivers, and the Great Lakes. This includes traditional maritime activities such as designing, constructing, manufacturing, supplying, maintaining vessels or parts, operating and managing shipping lines, and crewing ships. It also includes engaging in maritime law, customs services, fishing operations, marine science, salvage operations and the operation of ports, shipyards, drydocks, and cruise lines.
     
     
     Typical marine insurance policies provide cover for physical loss or damage, split across hull (covering damage to the vessel, propulsion machinery and equipment used for activities such as cargo handling), cargo (loss or damage to freight), fine art and specie (high-value goods), liability (including personal injuries, pollution and collision) and yacht insurance.
@@ -11,14 +11,14 @@ transition:
     high:
         always: "
             
-            While the marine sector will continue to play a role in facilitating global trade and meeting customer demand for the coming years, the changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO2 emissions increasing until 2030 before rapidly decreasing after 2030 to compensate for the inaction beforehand. The Divergent Net Zero scenario results in CO2 emissions starting to be reduced earlier and, as a result, more gradually. Both these scenarios are likely to have an impact on the profitability of this sector and therefore on the associated insurance products pricing and coverage. 
+            While the marine sector will continue to play a role in facilitating global trade and meeting customer demand for the coming years, the changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 before rapidly decreasing after 2030 to compensate for the inaction beforehand. The Divergent Net Zero scenario results in immediate but divergent CO<sub>2</sub> emissions reductions. Both these scenarios are likely to have an impact on the profitability of this sector and therefore on the associated insurance products pricing and coverage. 
             
             
-            The high transition risk scenario could also lead to a limited reduction in GDP growth. This could result in changes in the rate of growth in demand for the marine sector.
+            The Disorderly/Divergent transition risk scenarios could also lead to a limited reduction in GDP growth. This could result in changes in the rate of growth in demand for the marine sector.
             "
             
         high_materiality: "
-            In high transition risk scenarios, the impact on the marine underwriting class will depend on the increases in carbon and energy prices and how reliant the marine companys revenue mix is on low-carbon electricity and bunker fuel and how it compares to the sector average. For example:
+            In Disorderly/Divergent transition risk scenarios, the impact on the marine underwriting class will depend on the increases in carbon and energy prices and how reliant the marine companys revenue mix is on low-carbon electricity and bunker fuel and how it compares to the sector average. For example:
             
             
             * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The increase in carbon and energy prices could potentially result in financial impacts, as marine firms carbon emissions face a rising price in the form a carbon tax or cap & trade clearing price, particularly for shipping firms using fossil-based bunker fuel.
@@ -36,7 +36,7 @@ transition:
             There is also significant dependence of other sectors on the services of the marine sector, mainly in regard to transportation which plays a key role in other firms supply chains. This magnifies the importance of decarbonising the marine sector as companies who have a high carbon step in their supply chain could lose customers as consumer preferences change - without decarbonisation of the marine sector, consumers may prefer local alternative goods which rely less on international transportation. This could decrease demand for the marine sector.
             
             
-            The profitability of the marine sector and its associated underwriting class, in the high transition risk scenario, will also depend on the relevant companies proactively investing in innovation and new technology. For example:
+            The profitability of the marine sector and its associated underwriting class, in the Disorderly/Divergent transition risk scenarios, will also depend on the relevant companies proactively investing in innovation and new technology. For example:
             
             
             * Efficiency increasing shipping methods (e.g. containerization) 
@@ -56,18 +56,18 @@ transition:
             "
     low:
         always: "
-            The marine sector will continue to play a role in facilitating global trade and meeting customer demand for the coming years. The changing patterns in energy generation in a low transition scenario, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to a gradual reduction in CO2 emissions by 2050 and increase in the carbon price. These are likely to have an impact on the profitability of this sector and therefore on the associated insurance products pricing, terms and conditions and coverage. 
+            The marine sector will continue to play a role in facilitating global trade and meeting customer demand for the coming years. The changing patterns in energy generation in early/orderly transition scenarios, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to an immediate and smooth reduction in CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These are likely to have an impact on the profitability of this sector and therefore on the associated insurance products pricing, terms and conditions and coverage. 
             
             
-            The low transition risk scenario could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in demand for the marine sector.
+            The early/orderly transition risk scenarios could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in demand for the marine sector.
         
             "
             
         high_materiality: "
-            In the low transition risk scenario, the impact on the marine sector and the underwriting class will depend on how reliant the marine companys revenue mix is on low-carbon electricity and bunker fuel and how it compares to the sector average. For example: 
+            In the early/orderly transition risk scenarios, the impact on the marine sector and the underwriting class will depend on how reliant the marine companys revenue mix is on low-carbon electricity and bunker fuel and how it compares to the sector average. For example: 
             
             
-            * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The gradual but significant rise in carbon and energy prices could potentially result in financial impacts, as marine firms carbon emissions face a rising price in the form of a carbon tax or cap & trade clearing price, particularly for shipping firms using fossil-based bunker fuel. 
+            * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The significant rise in carbon and energy prices could potentially result in financial impacts, as marine firms carbon emissions face a rising price in the form of a carbon tax or cap & trade clearing price, particularly for shipping firms using fossil-based bunker fuel. 
             
             
             * International cooperation will spur changes in maritime law leading to **increasing compliance requirements**. These changes may require firms to adapt their service, potentially reducing sales (e.g. efficiency-based speed limits for Cruise ships leading to a less appealing service with reduced itinerary and more sea days) and could lead to changes in the level and type of insurance coverage required. 
@@ -82,7 +82,7 @@ transition:
             There is also significant dependence of other sectors on the services of the marine sector, mainly in regard to transportation which plays a key role in other firms supply chains. This magnifies the importance of decarbonising the marine sector as companies who have a high carbon step in their supply chain could lose customers as consumer preferences change. Without decarbonisation of the marine sector, consumers may prefer local alternative goods which rely less on international transportation. This could decrease demand for the marine sector.
             
             
-            The profitability of the marine sector and its associated underwriting class, in the low transition risk scenario, will also depend on the relevant companies proactively investing in innovation and new technology. For example:
+            The profitability of the marine sector and its associated underwriting class, in the early/orderly transition risk scenarios, will also depend on the relevant companies proactively investing in innovation and new technology. For example:
             
             
             * Efficiency increasing shipping methods (e.g. containerization) 

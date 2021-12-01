@@ -1,40 +1,40 @@
 name: Oil and gas
 
 description: "
-The **oil and gas sector** comprises of three main activities - upstream (exploration and production), midstream (transportation and processing) and downstream (distribution and sale to end users/consumers). This sector includes companies that are, for example, involved in the following:
+    The **oil and gas sector** comprises three main activities - upstream (exploration and production), midstream (transportation and processing) and downstream (distribution and sale to end users/consumers). This sector includes companies that are, for example, involved in the following:
 
 
-1.	the exploration, development and/or the production of natural gas from wells in which the hydrocarbons will initially flow or can be produced using normal or enhanced drilling and extraction techniques
+    * the exploration, development and/or the production of natural gas from wells in which the hydrocarbons will initially flow or can be produced using normal or enhanced drilling and extraction techniques
 
 
-2.	the production of crude petroleum from reservoirs in which the hydrocarbons are semisolids
+    * the production of crude petroleum from reservoirs in which the hydrocarbons are semisolids
 
 
-3.	the recovery of liquid hydrocarbons from oil and gas field gases. 
+    * the recovery of liquid hydrocarbons from oil and gas field gases. 
 
 
-4.	manufacturing machinery and equipment for the use in the oil and gas sector or for drilling water wells, including portable drilling rigs.
+    * manufacturing machinery and equipment for the use in the oil and gas sector or for drilling water wells, including portable drilling rigs.
 
 
-5.	producing gasoline, kerosene, distillate fuel oils and residual fuel oils through refraction or straight distillation of crude oil, redistillation, cracking or other processes.
+    * producing gasoline, kerosene, distillate fuel oils and residual fuel oils through refraction or straight distillation of crude oil, redistillation, cracking or other processes.
 
 
-6.	transmission, distribution and storage of natural gas for sale
+    * transmission, distribution and storage of natural gas for sale
 
 
-7.	operating oil and gas wells as well as those engaged in providing support services.
+    * operating oil and gas wells as well as those engaged in providing support services.
 "
 
 transition:
     high:
         always: "
-            By 2050, in a high transition risk scenario, fossil fuels represent only ~23% of global energy demand compared to ~83% in 2020. Carbon-intensive sectors such as oil and gas are consequently some of the most vulnerable to transition. In a delayed transition scenario, a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030, before decreasing sharply afterwards to compensate for the inaction to that date, whereas in the divergent scenario there is a more gradual reduction in CO<sub>2</sub> emissions.
+            By 2050, in Disorderly/Divergent transition risk scenarios, fossil fuels represent only ~23% of global energy demand compared to ~83% in 2020. Carbon-intensive sectors such as oil and gas are consequently some of the most vulnerable to transition. In a delayed transition scenario, a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030, before decreasing sharply afterwards to compensate for the inaction to that date, whereas in the divergent scenario there is a more immediate but divergent reduction in CO<sub>2</sub> emissions.
             
             
             While oil and gas will continue to play a role in meeting global energy demand in the short- and medium-term, the changing patterns in energy consumption, driven by societal change, national energy strategies, and carbon legislation, are likely to have a significant and long-term impact on demand for oil and gas, affecting profitability in both scenarios.
             
             
-            The high transition risk scenario could also lead to a reduction in GDP growth. This could result in changes in the rate of growth in demand for the oil and gas sector.
+            The Disorderly/Divergent transition risk scenarios could also lead to a reduction in GDP growth. This could result in changes in the rate of growth in demand for the oil and gas sector.
             "
  
         high_materiality: "
@@ -53,7 +53,7 @@ transition:
             * **Rapidly falling asset values** of oil and gas reserves and infrastructure required for extraction, based on re-adjusted expectations of much lower demand for fossil fuels in future
 
 
-            In a high transition risk scenario, the oil and gas sector is likely to be significantly impacted. Driven by increased electrification, total electricity capacity and generation jumps markedly, and the underlying sources change dramatically. Solar is the dominant technology representing around half of electricity generation capacity by 2050, completely displacing coal (before 2030) and gas (between 2030 and 2035). 
+            In Disorderly/Divergent transition risk scenarios, the oil and gas sector is likely to be significantly impacted. Driven by increased electrification, total electricity capacity and generation jumps markedly, and the underlying sources change dramatically. Solar is the dominant technology representing around half of electricity generation capacity by 2050, completely displacing coal (before 2030) and gas (between 2030 and 2035). 
             
             
             ![Energy Sources](Energy_Sources_Oil_and_Gas.png)
@@ -80,20 +80,20 @@ transition:
             **Source:** [NGFS Scenario Data IAM.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
             
             
-            Under high transition risk scenarios, belated awareness by financial market participants of the scale and speed of the transition required may cause fossil fuel assets to undergo a fire-sale by investors, at the moment when they fully understand the real risk involved in holding these in their portfolios. 
+            Under Disorderly/Divergent transition risk scenarios, belated awareness by financial market participants of the scale and speed of the transition required may cause fossil fuel assets to undergo a fire-sale by investors, at the moment when they fully understand the real risk involved in holding these in their portfolios. 
             
             
-            Because the oil and gas sector is so diverse, there is no single solution, but rather a range of strategies based on the circumstances of each company that will need to be deployed in a high transition risk scenario to maintain revenues and minimise the long-term financial impact. Examples include transitioning to become an integrated energy company providing renewable power generation or investing in carbon capture and storage (CCS) technologies.
+            Because the oil and gas sector is so diverse, there is no single solution, but rather a range of strategies based on the circumstances of each company that will need to be deployed in Disorderly/Divergent transition risk scenario to maintain revenues and minimise the long-term financial impact. Examples include transitioning to become an integrated energy company providing renewable power generation or investing in carbon capture and storage (CCS) technologies.
             "
     low:
         always: "
-            By 2050, in a low transition risk scenario, fossil fuels represent only ~27% of global energy demand compared to ~83% in 2020. Carbon-intensive sectors such as oil and gas are consequently some of the most vulnerable to transition.
+            By 2050, in early/orderly transition risk scenarios, fossil fuels represent only ~27% of global energy demand compared to ~83% in 2020. Carbon-intensive sectors such as oil and gas are consequently some of the most vulnerable to transition.
             
             
             While oil and gas will continue to play a role in meeting global energy demand in the short- to medium-term, the changing patterns in energy consumption, driven by societal change, national energy strategies, and carbon legislation, are likely to have a significant and long-term impact on demand for oil and gas, affecting profitability of individual companies and the sector overall. 
             
             
-            The low transition risk scenario could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in demand for the oil and gas sector.
+            The early/orderly transition risk scenarios could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in demand for the oil and gas sector.
 
             "
             
@@ -140,7 +140,7 @@ transition:
             **Source:** [NGFS Scenario Data IAM.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
             
 
-            By 2050, renewables and biomass would cover around three quarters of global primary energy needs, driving stranding of fossil fuel assets.  Because the oil and gas sector is so diverse, there is no single solution, but rather a range of strategies based on the circumstances of each company that will need to be deployed in a low transition risk scenario to maintain revenues and minimise the long-term financial impact. Examples include transitioning to become an integrated energy company providing renewable power generation, or investing in carbon capture and storage (CCS) technologies.
+            By 2050, renewables and biomass would cover around three quarters of global primary energy needs, driving stranding of fossil fuel assets.  Because the oil and gas sector is so diverse, there is no single solution, but rather a range of strategies based on the circumstances of each company that will need to be deployed in early/orderly transition risk scenarios to maintain revenues and minimise the long-term financial impact. Examples include transitioning to become an integrated energy company providing renewable power generation, or investing in carbon capture and storage (CCS) technologies.
            
             
             ![Primary Energy Mix](Primary_Energy_Mix_Oil_and_Gas.png)

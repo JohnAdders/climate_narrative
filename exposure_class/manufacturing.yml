@@ -1,46 +1,46 @@
 name: Manufacturing
 
 description: "
-    The **manufacturing** sector involves the transformation of (mainly) raw materials or substances into new products by way of mechanical, physical, or chemical processes. Manufactured products derived from the assembly of component parts also comprise the manufacturing sector unless otherwise specified. Manufacturing establishments are typically referred to as mills, factories or plants and tend to use power-driven machinery or handling equipment in the manufacturing process, however it is not unusual for some manufacturing activities to occur in a domestic setting.
+    The **Manufacturing** sector involves the transformation of (mainly) raw materials or substances into new products by way of mechanical, physical, or chemical processes. Manufactured products derived from the assembly of component parts also comprise the manufacturing sector unless otherwise specified. Manufacturing establishments are typically referred to as mills, factories or plants and tend to use power-driven machinery or handling equipment in the manufacturing process, however it is not unusual for some manufacturing activities to occur in a domestic setting.
     
     
     Although the boundaries between the manufacturing sector and others are not always obvious (Hence, the inclusion of miscellaneous manufacturing as the twelfth sub-sector), The North American Industrial Code (NAIC) system breaks down the manufacturing factor into the following sub-sectors:
     
     
-    1.	Food manufacturing.
+    * Food manufacturing.
     
     
-    2.	Beverage and tobacco product manufacturing.
+    * Beverage and tobacco product manufacturing.
     
     
-    3.	Textile manufacturing (including textile product mills, apparel manufacturing and leather and allied product manufacturing). 
+    * Textile manufacturing (including textile product mills, apparel manufacturing and leather and allied product manufacturing). 
     
     
-    4.	Wood product manufacturing (including paper manufacturing and printing and related support activities).
+    * Wood product manufacturing (including paper manufacturing and printing and related support activities).
     
     
-    5.	Petroleum and coal products manufacturing.
+    * Petroleum and coal products manufacturing.
     
     
-    6.	Chemical manufacturing (including plastics and rubber products manufacturing).
+    * Chemical manufacturing (including plastics and rubber products manufacturing).
     
     
-    7.	Non-metallic mineral product manufacturing.
+    * Non-metallic mineral product manufacturing.
     
     
-    8.	Primary metal manufacturing (including fabricated metal product manufacturing and machinery manufacturing). 
+    * Primary metal manufacturing (including fabricated metal product manufacturing and machinery manufacturing). 
     
     
-    9.	Computer and electronic product manufacturing (including electrical equipment, appliance, and component manufacturing).
+    * Computer and electronic product manufacturing (including electrical equipment, appliance, and component manufacturing).
     
     
-    10.	Transportation equipment manufacturing.
+    * Transportation equipment manufacturing.
     
     
-    11.	Furniture and related product manufacturing.
+    * Furniture and related product manufacturing.
     
     
-    12.	Miscellaneous manufacturing. 
+    * Miscellaneous manufacturing. 
 
     "
     
@@ -54,19 +54,19 @@ transition:
             In managing transition risks, each industry within the manufacturing sector must overcome one or more of the technical challenges and cost disadvantages associated with abatement. Some of these challenges include: 
 
             
-            1.	Mitigating the environmental impact of utilising high carbon footprint metals in potentially carbon-neutral manufacturing equipment and motors. 
+            * Mitigating the environmental impact of utilising high carbon footprint metals in potentially carbon-neutral manufacturing equipment and motors. 
             
             
-            2.	Integrating energy efficiency capital and processes into existing manufacturing processes in a way that considers whole-life carbon (to avoid capital-expensive rebuilds).
+            * Integrating energy efficiency capital and processes into existing manufacturing processes in a way that considers whole-life carbon (to avoid capital-expensive rebuilds).
             
             
-            3.	Revising business models to consider global supply chain emissions, particularly from raw material extraction and transportation. 
+            * Revising business models to consider global supply chain emissions, particularly from raw material extraction and transportation. 
             
             
-            4.	Reduce demand for high-temperature processes.
+            * Reduce demand for high-temperature processes.
             
             
-            5.	 Support the transition of large technical systems through long-term investment cycles.
+            * Support the transition of large technical systems through long-term investment cycles.
             "
             
         high_materiality: "
@@ -91,10 +91,10 @@ transition:
             * **Readjusted capital expenditures** new investments required to pivot business models towards low-carbon manufacturing processes and the integration of renewable energy sources in largescale manufacturing establishments. 
             
             
-            In a high transition risk scenario, the manufacturing sector will achieve long-term carbon neutrality through new manufacturing processes supported by clean energy sources, a circular economy which increases materials efficiency and widespread carbon capture storage (CCS) utilisation. 
+            In Disorderly/Divergent transition risk scenario, the manufacturing sector will achieve long-term carbon neutrality through new manufacturing processes supported by clean energy sources, a circular economy which increases materials efficiency and widespread carbon capture storage (CCS) utilisation. 
             
             
-            In a high transition risk scenario, the manufacturing sector is forced to significantly increase production of key commodities to support the global transition whilst simultaneously reducing its carbon footprint. This is likely to result in:
+            In Disorderly/Divergent transition risk scenarios, the manufacturing sector is forced to significantly increase production of key commodities to support the global transition whilst simultaneously reducing its carbon footprint. This is likely to result in:
 
 
             *	A sharp disruption to production (with asset damage).
@@ -109,7 +109,7 @@ transition:
             *	High risk of stranded assets.
             
             
-            Manufacturing industries that adopt a disorderly pathway to net zero emissions under a high transitional risk scenario may significantly **lose market value**. It is expected that those industries will face stranded assets as uncertainty about climate policies and unanticipated breakthroughs in renewable technologies collide with substantial intertemporal and intersectoral investment adjustment costs. Carbon-intensive manufacturing activities such as petroleum and coal products manufacturing, chemical manufacturing and primary metal manufacturing are at particularly high risk. The result is stranded assets and legal claims. Due to the breadth and complexity of the manufacturing sector, manufacturing industries will need to adopt a range of different strategies based on specific circumstances of each industry and company in order to reduce the impact of this scenario. 
+            Manufacturing industries that adopt a disorderly pathway to net zero emissions under Disorderly/Divergent transitional risk scenarios may significantly **lose market value**. It is expected that those industries will face stranded assets as uncertainty about climate policies and unanticipated breakthroughs in renewable technologies collide with substantial intertemporal and intersectoral investment adjustment costs. Carbon-intensive manufacturing activities such as petroleum and coal products manufacturing, chemical manufacturing and primary metal manufacturing are at particularly high risk. The result is stranded assets and legal claims. Due to the breadth and complexity of the manufacturing sector, manufacturing industries will need to adopt a range of different strategies based on specific circumstances of each industry and company in order to reduce the impact of this scenario. 
 
             
             "
@@ -121,19 +121,19 @@ transition:
             In managing transition risks, each industry within the manufacturing sector must overcome one or more of the technical challenges and cost disadvantages associated with abatement. Some of these challenges include: 
             
             
-            1.	Mitigating the environmental impact of utilising high carbon footprint metals in potentially carbon-neutral manufacturing equipment and motors. 
+            * Mitigating the environmental impact of utilising high carbon footprint metals in potentially carbon-neutral manufacturing equipment and motors. 
             
             
-            2.	Integrating energy efficiency capital and processes into existing manufacturing processes in a way that considers whole-life carbon (to avoid capital-expensive rebuilds).
+            * Integrating energy efficiency capital and processes into existing manufacturing processes in a way that considers whole-life carbon (to avoid capital-expensive rebuilds).
             
             
-            3.	Revising business models to consider global supply chain emissions, particularly from raw material extraction and transportation. 
+            * Revising business models to consider global supply chain emissions, particularly from raw material extraction and transportation. 
             
             
-            4.	Reduce demand for high-temperature processes.
+            * Reduce demand for high-temperature processes.
             
             
-            5.	 Support the transition of large technical systems through long-term investment cycles.
+            * Support the transition of large technical systems through long-term investment cycles.
         
             "
             
@@ -159,7 +159,7 @@ transition:
             * **Readjusted capital expenditures** new investments required to pivot business models towards low-carbon manufacturing processes and the integration of renewable energy sources in largescale manufacturing establishments. 
             
             
-            In a low transition risk scenario, the manufacturing sector will achieve long-term carbon neutrality through new manufacturing processes supported by clean energy sources, a circular economy which increases materials efficiency and widespread carbon capture storage (CCS) utilisation. A strong policy environment that supports manufacturers decarbonisation efforts will result in a gradual reduction of emissions. For example, in a low transition risk scenario, CO2 emissions are expected to reduce between 76% and 98% by 2050 from 2020 levels based on CCS utilisation, fuel-switching, and improvements to resource and energy efficiency. 
+            In early/orderly transition risk scenarios, the manufacturing sector will achieve long-term carbon neutrality through new manufacturing processes supported by clean energy sources, a circular economy which increases materials efficiency and widespread carbon capture storage (CCS) utilisation. A strong policy environment that supports manufacturers decarbonisation efforts will result in an immediate and smooth reduction of emissions. For example, in a low transition risk scenario, CO<sub>2</sub> emissions are expected to reduce between 76% and 98% by 2050 from 2020 levels based on CCS utilisation, fuel-switching, and improvements to resource and energy efficiency. 
             
             
             Due to the breadth and complexity of the manufacturing sector, manufacturing industries will need to adopt a range of different strategies based on specific circumstances of each industry and company in order to reduce the impact of this scenario.
@@ -176,7 +176,7 @@ physical:
             "
             
         high_materiality: "
-            The following examples illustrate how the manufacturing sector could be impacted in a low physical risk scenario:
+            The following examples illustrate how the manufacturing sector could be impacted in a high physical risk scenario:
             
             
             **Acute Impacts**

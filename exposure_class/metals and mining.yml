@@ -1,16 +1,19 @@
-name: Mining
+name: Metals and Mining
 
 description: "
-    Companies in the **mining** (except Oil and Gas) sector primarily engage in mining, mine site development, and beneficiating (i.e. preparing - crushing, screening, washing, sizing, concentrating, and flotation) metallic minerals and non-metallic minerals, including coal. The term mining is used in the broad sense to include ore extraction, quarrying, and beneficiating, customarily done at the mine site. 
+    Companies in the **Mining** sector (except Oil and Gas) sector primarily engage in mining, mine site development, and beneficiating (i.e. preparing - crushing, screening, washing, sizing, concentrating, and flotation) metallic minerals and non-metallic minerals, including coal. The term mining is used in the broad sense to include ore extraction, quarrying, and beneficiating, customarily done at the mine site. 
     
-    The mining sector includes companies that have complete responsibility for operating mines and quarries (except oil and gas wells) and those that operate mines and quarries (except oil and gas wells) for others on a contract or fee basis. Also included are companies engaged in providing support activities (except site preparation and related construction activities) on a contract or fee basis for the mining and quarrying of metallic minerals and for the extraction of metal ores. Exploration for these minerals is also included in this industry. Exploration (except geophysical surveying and mapping services) includes traditional prospecting methods, such as taking core samples and making geological observations at prospective sites.
+    The Mining sector includes companies that have complete responsibility for operating mines and quarries (except oil and gas wells) and those that operate mines and quarries (except oil and gas wells) for others on a contract or fee basis. Also included are companies engaged in providing support activities (except site preparation and related construction activities) on a contract or fee basis for the mining and quarrying of metallic minerals and for the extraction of metal ores. Exploration for these minerals is also included in this industry. Exploration (except geophysical surveying and mapping services) includes traditional prospecting methods, such as taking core samples and making geological observations at prospective sites.
     "
     
 transition:
     high:
         always: "
             
-            By 2050, in a high transition risk scenario, coal represents 0.47% (in the Delayed Transition scenario) or 0.63% (in the Divergent Net Zero scenario) of global energy demand, compared to 29% in 2020. Carbon-intensive sectors such as coal mining are consequently some of the most vulnerable to transition. Mining is a special case among its sectoral peers, the changing patterns in energy consumption, driven by societal change, national energy strategies, and carbon legislation, are likely to have a significant and long-term impact on demand for coal, or even lead to its total abandon, with no need for new coal mines or extensions of existing ones. The mining of minerals needed for clean energy transitions (e.g. copper, lithium and nickel) could increases very rapidly, and mining expertise is likely to be highly valued in this context. 
+            By 2050, in disorderly transition risk scenarios, coal represents 0.47% (in the Delayed Transition scenario) or 0.63% (in the Divergent Net Zero scenario) of global energy demand, compared to 29% in 2020. Carbon-intensive sectors such as coal mining are consequently some of the most vulnerable to transition. 
+            
+            
+            Coal Mining is a special case among its sectoral peers, the changing patterns in energy consumption, driven by societal change, national energy strategies, and carbon legislation, are likely to have a significant and long-term impact on demand for coal, or even lead to its total abandon, with no need for new coal mines or extensions of existing ones. The mining of minerals needed for clean energy transitions (e.g. copper, lithium and nickel) could increases very rapidly, and mining expertise is likely to be highly valued in this context. 
 
             "
             
@@ -27,7 +30,7 @@ transition:
             * **Increased costs** from paying a price on carbon emissions via tax or cap & trade clearing price as well as increase in mine site costs (labour, fuel, electricity cost at mine and mill). The increase in carbon price could lead to increases in operational costs. For example, gold mines in South Africa have the highest GHG intensity per unit of ore treated, and this intensity is 23 times higher than gold mines located in the US. According to S&P Global, US gold mines could face a 5% increase in operating costs, whilst South Africa could face a near 25% increase.
             
             
-            In a high transition risk scenario, the mining sector is likely to be impacted. Demand for coal decreases rapidly as the share of renewables in the electricity generation mix increases. This is driven by the increasing share of electric vehicles on the roads. 
+            In a disorderly transition risk scenario, the mining sector is likely to be impacted. Demand for coal decreases rapidly as the share of renewables in the electricity generation mix increases. This is driven by the increasing share of electric vehicles on the roads. 
             
             
             ![Primary Energy](Primary_Energy_Disorderly_Mining.png)
@@ -45,16 +48,16 @@ transition:
             **Source:** [NGFS Scenario Data IAM.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
             
             
-            By 2050, the contraction in coal demand, in a high transition risk scenario, could be offset by the need to increase mining of other raw minerals, including those vital to many clean energy technologies. Global demand for these critical minerals could rise rapidly. For example, lithium (used for batteries), platinum, palladium and other catalyst materials (used for hydrogen fuel cells and carbon capture), and rare earths (used for wind-turbine magnets), could all see a large increase in demand. More energy-efficient processing and widespread recycling, which are likely to put pressure on virgin-ore markets. Bauxite, copper, and iron ore could see growth from new decarbonization technologies at least partly offset by increased recycling rates.  Although these critical mineral resources are not always located in the same locations or countries as existing coal mines, the skills and experience of mining companies will be essential to ensure that the supply of these minerals is able to match demand at reasonable prices. Many new mining projects will have to be developed rapidly and sustainably to fuel the transition, which could be challenging from an operating perspective. 
+            By 2050, the contraction in coal demand, in a disorderly transition risk scenario, could be offset by the need to increase mining of other raw minerals, including those vital to many clean energy technologies. Global demand for these critical minerals could rise rapidly. For example, lithium (used for batteries), platinum, palladium and other catalyst materials (used for hydrogen fuel cells and carbon capture), and rare earths (used for wind-turbine magnets), could all see a large increase in demand. More energy-efficient processing and widespread recycling, which are likely to put pressure on virgin-ore markets. Bauxite, copper, and iron ore could see growth from new decarbonization technologies at least partly offset by increased recycling rates.  Although these critical mineral resources are not always located in the same locations or countries as existing coal mines, the skills and experience of mining companies will be essential to ensure that the supply of these minerals is able to match demand at reasonable prices. Many new mining projects will have to be developed rapidly and sustainably to fuel the transition, which could be challenging from an operating perspective. 
 
      
             "
     low:
         always: "
-            By 2050, in a low transition scenarios coal represents 0.86% (in the Below 2&deg;C scenario) or 0.65% (in the Net Zero 2050 scenario) of global energy demand, compared to 29% in 2020. Carbon-intensive sectors such as coal mining are consequently some of the most vulnerable to transition. 
+            By 2050, in orderly transition scenarios coal represents 0.86% (in the Below 2&deg;C scenario) or 0.65% (in the Net Zero 2050 scenario) of global energy demand, compared to 29% in 2020. Carbon-intensive sectors such as coal mining are consequently some of the most vulnerable to transition. 
             
             
-            Mining is a special case among its sectoral peers, the changing patterns in energy consumption, driven by societal change, national energy strategies, and carbon legislation, are likely to have a significant and long-term impact on demand for coal, or even lead to its total abandon, with no need for new coal mines or extensions of existing ones. The mining of minerals needed for clean energy transitions (e.g. copper, lithium and nickel) could increases very rapidly, and mining expertise is likely to be highly valued in this context. 
+            Coal Mining is a special case among its sectoral peers, the changing patterns in energy consumption, driven by societal change, national energy strategies, and carbon legislation, are likely to have a significant and long-term impact on demand for coal, or even lead to its total abandon, with no need for new coal mines or extensions of existing ones. The mining of minerals needed for clean energy transitions (e.g. copper, lithium and nickel) could increases very rapidly, and mining expertise is likely to be highly valued in this context. 
 
         
             "
@@ -72,7 +75,7 @@ transition:
             * **Increased costs** from paying a price on carbon emissions via tax or cap & trade clearing price as well as increase in mine site costs (labour, fuel, electricity cost at mine and mill). The increase in carbon price could lead to increases in operational costs. For example, gold mines in South Africa have the highest GHG intensity per unit of ore treated, and this intensity is 23 times higher than gold mines located in the US. According to S&P Global, US gold mines could face a 5% increase in operating costs, whilst South Africa could face a near 25% increase.
             
             
-            Overall, in the low transition risk scenarios, demand for coal decreases steadily as the share of renewables in the electricity generation mix increases. This is driven by the steadily increasing share of electric vehicles on roads.
+            Overall, in the orderly transition risk scenarios, demand for coal decreases steadily as the share of renewables in the electricity generation mix increases. This is driven by the steadily increasing share of electric vehicles on roads.
             
             
             ![Primary Energy](Primary_Energy_Orderly_Mining.png)
@@ -90,10 +93,7 @@ transition:
             **Source:** [NGFS Scenario Data IAM.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
             
             
-            By 2050, the contraction in coal demand, in a low transition risk scenario, could be offset by the need to increase mining of other raw minerals, including those vital to many clean energy technologies. Global demand for these critical minerals could rise rapidly. For example, lithium (used for batteries), platinum, palladium and other catalyst materials (used for hydrogen fuel cells and carbon capture), and rare earths (used for wind-turbine magnets), could all see a large increase in demand. More energy-efficient processing and widespread recycling, which are likely to put pressure on virgin-ore markets. Bauxite, copper, and iron ore could see growth from new decarbonization technologies at least partly offset by increased recycling rates. Although these critical mineral resources are not always located in the same locations or countries as existing coal mines, the skills and experience of mining companies will be essential to ensure that the supply of these minerals is able to match demand at reasonable prices. Many new mining projects will have to be developed rapidly and sustainably to fuel the transition, which could be challenging from an operating perspective.
-            
-            
-            The increase in carbon price could lead to increases in operational costs. For example, gold mines in South Africa have the highest GHG intensity per unit of ore treated, and this intensity is 23 times higher than gold mines located in the US. US gold mines could face an increase in 5% in operating costs, according to S&P Global, and in South Africa, this could lead to a near 25% increase.
+            By 2050, the contraction in coal demand, in orderly transition risk scenarios, could be offset by the need to increase mining of other raw minerals, including those vital to many clean energy technologies. Global demand for these critical minerals could rise rapidly. For example, lithium (used for batteries), platinum, palladium and other catalyst materials (used for hydrogen fuel cells and carbon capture), and rare earths (used for wind-turbine magnets), could all see a large increase in demand. More energy-efficient processing and widespread recycling, which are likely to put pressure on virgin-ore markets. Bauxite, copper, and iron ore could see growth from new decarbonization technologies at least partly offset by increased recycling rates. Although these critical mineral resources are not always located in the same locations or countries as existing coal mines, the skills and experience of mining companies will be essential to ensure that the supply of these minerals is able to match demand at reasonable prices. Many new mining projects will have to be developed rapidly and sustainably to fuel the transition, which could be challenging from an operating perspective.
 
             "
             
