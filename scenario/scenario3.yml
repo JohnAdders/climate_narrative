@@ -1,4 +1,4 @@
-name: Hothouse
+name: NGFS Hot House World Scenarios
 position: 3
 is_scenario: yes
 transition: no
@@ -45,9 +45,7 @@ Carbon price is a measure of overall policy intensity. Emission prices are sensi
 
 Observed climate change of 1.2&deg;C, compared to pre-industrial levels, has already
 more than doubled both the global land area and the global population annually exposed
-to river flood, crop failure, tropical cyclones, wildfire, drought and heatwaves.
-
-
+to river flood, crop failure, tropical cyclones, wildfire, drought and heatwaves. 
 In these scenarios global mean temperatures could increase across the world by 2.5&deg;C
 to 3&deg;C with land warming faster than oceans and high latitudes experiencing higher warming.
 

@@ -1,26 +1,26 @@
-name: Aviation
+name: Aviation Underwriting Class
 
 description: "
-    The **aviation** underwriting class involves insuring companies engaging in economic activity relating to aircrafts. This includes designing, manufacturing, supplying, maintaining and operating both manned and unmanned aircrafts or parts. It also includes activities related to aircraft supporting facilities such as airports and ticket distribution systems. 
+    The **Aviation** underwriting class involves insuring companies engaging in economic activity relating to aircrafts. This includes designing, manufacturing, supplying, maintaining and operating both manned and unmanned aircrafts or parts. It also includes activities related to aircraft supporting facilities such as airports and ticket distribution systems.   
     
-    Aviation is a complex sector, with long product development cycles and where change takes a long time to be implemented. Typical aviation insurance policies cover physical damage and loss split across public liability, passenger liability, grounded and in-flight hull (covering loss/ damage to the aircraft when not in use and when in use), and cargo.
+    Aviation is a complex sector, with long product development cycles and where change takes a long time to be implemented. Typical aviation insurance policies cover physical damage and loss split across public liability, passenger liability, grounded and in-flight hull (covering loss/ damage to the aircraft when not in use and when in use), and cargo. 
     "
     
 transition:
     high:
         always: "
             
-            Aviation sector will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO2 emissions increasing until 2030 and a decrease in CO2 after 2030 to compensate for the inaction beforehand, whereas the divergent scenario results in a gradual reduction in CO2 emissions. Policies and regulatory frameworks implemented at regional level rather than international level or evolving at a different speed depending on the region, could result in an un-level playing field for manufacturers and operators. Both these scenarios are likely to have an impact on the profitability of this sector and therefore on the associated insurance products pricing, terms and conditions, and coverage.
+            Aviation sector will continue to play a role in meeting customer demand for the coming years The changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 and a decrease in CO<sub>2</sub> after 2030 to compensate for the inaction beforehand, whereas the divergent scenario results in an immediate but divergent reduction in CO<sub>2</sub> emissions. Policies and regulatory frameworks implemented at regional level rather than international level or evolving at a different speed depending on the region, could result in an un-level playing field for manufacturers and operators. Both these scenarios are likely to have an impact on the profitability of this sector and therefore on the associated insurance products pricing, terms and conditions, and coverage.
             
             
-            The high transition risk scenario could also lead to a reduction in GDP growth. This could result in changes in the rate of growth in demand for the aviation sector.
+            The Disorderly/Divergent transition risk scenarios could also lead to a reduction in GDP growth. This could result in changes in the rate of growth in demand for the aviation sector.
             "
             
         high_materiality: "
-            The changes carbon emission pricing or taxes and consumer preferences could potentially result in one or more of the following financial impacts:
+            Changes carbon emission pricing or taxes and consumer preferences could potentially result in one or more of the following financial impacts:
             
             
-            * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The gradual but significant rise in carbon and energy prices could potentially result in financial impacts, as aviation firms carbon emissions face a rising price in the form a carbon tax or cap & trade clearing price, especially for airlines reliant on fossil-based aviation fuels. 
+            * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The significant rise in carbon and energy prices could potentially result in financial impacts, as aviation firms carbon emissions face a rising price in the form a carbon tax or cap & trade clearing price, especially for airlines reliant on fossil-based aviation fuels. 
             
             
             * **Change in regulations covering energy efficiency standards would lead to increasing compliance requirements.** Governments may conclude it impossible to decarbonise flying in line with national targets and so limit demand by raising the cost of air travel and limiting airport capacity and could lead to changes in the level and type of insurance coverage required.
@@ -32,7 +32,7 @@ transition:
             * **Changing consumer preferences**, these could lead to changes in revenue due to lower customers numbers as a result of change in environmental expectations that could impact this underwriting class. Flight shame could also increase along with a modal shift to (high speed) rail, reducing demand for aviation. Slowed GDP growth could further impact demand for aviation through its effect on individuals disposable income.
             
             
-            The profitability of this sector will also depend on the relevant companies proactively investing in innovation and new technology. For example:
+            The profitability of this sector, in the disorderly/divergent transition risk scenarios, will also depend on the relevant companies proactively investing in innovation and new technology. For example:
             
             
             * Alternative fuel sources (e.g. airlines could invest in Sustainable Aviation Fuels (SAF) in the short term whilst more complex solutions such as hydrogen and electric aircraft are developed)
@@ -49,17 +49,17 @@ transition:
             "
     low:
         always: "
-            Aviation sector will continue to play a role in meeting customer demand for the coming years. The changing patterns in energy generation in a low transition risk scenario, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to a gradual reduction in CO2 emissions by 2050 and increase in the carbon price. These are likely to have an impact on the profitability this sector, and therefore on the associated insurance products pricing, terms and conditions and coverage, and could generate fast-changing requirements and opportunities, as well as potential obstructions, to new product development pathways.
+           Aviation sector will continue to play a role in meeting customer demand for the coming years. The changing patterns in energy generation in early/orderly transition risk scenarios, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to an immediate and smooth reduction in CO<sub>2</sub> emissions by 2050 and increase in the carbon price. 
 
 
-            The low transition risk scenario could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in demand for the aviation sector.
+            These are likely to have an impact on the profitability this sector, and therefore on the associated insurance products pricing, terms and conditions and coverage, and could generate fast-changing requirements and opportunities, as well as potential obstructions, to new product development pathways. The early/orderly transition risk scenarios could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in demand for the aviation sector. 
             "
             
         high_materiality: "
             The changes in carbon pricing, energy demand/mix and energy prices could potentially result in one or more of the following financial impacts:
             
             
-            * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The gradual but significant rise in carbon and energy prices could potentially result in financial impacts, as aviation firms carbon emissions face a rising price in the form a carbon tax or cap & trade clearing price, especially for airlines reliant on fossil-based aviation fuels. 
+            * **Increased operating costs of the underlying companies to be insured could impact their demand for insurance.** The significant rise in carbon and energy prices could potentially result in financial impacts, as aviation firms carbon emissions face a rising price in the form a carbon tax or cap & trade clearing price, especially for airlines reliant on fossil-based aviation fuels. 
             
             
             * **Change in regulations covering energy efficiency standards would lead to increasing compliance requirements.** These changes may require firms to adapt their service, potentially reducing sales and could lead to changes in the level and type of insurance coverage required.
@@ -71,7 +71,7 @@ transition:
             * **Changing consumer preferences**, these could lead to changes in revenue due to lower customer numbers as a result of change in environmental expectations that could impact this underwriting class. Flight shame could also increase along with a modal shift to (high speed) rail, reducing demand for aviation. Slowed GDP growth could further impact demand for aviation through its effect on individuals disposable income.
             
             
-            The profitability of the aviation sector and its associated underwriting class, in the low transition risk scenario, will also depend on the relevant companies proactively investing in innovation and new technology. For example:
+            The profitability of the aviation sector and its associated underwriting class, in the early/orderly transition risk scenarios, will also depend on the relevant companies proactively investing in innovation and new technology. For example:
             
             
             * Alternative fuel sources (e.g. airlines could invest in Sustainable Aviation Fuels (SAF) in the short term whilst more complex solutions such as hydrogen and electric aircraft are developed)

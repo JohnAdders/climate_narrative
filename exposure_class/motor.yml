@@ -1,7 +1,7 @@
 name: Motor
 
 description: "
-    The **motor** underwriting class involves insuring cars, trucks, motorcycles, and other road vehicles. Motor insurance typically covers drivers for third party damage caused by their road vehicle such as damage to other vehicles or property and injuries to other people, damage to or loss of their road vehicle, and injury to the driver themselves. Cover is usually split across these separate expenses, with most countries requiring a minimum of third-party cover by law.
+    The **Motor** underwriting class involves insuring cars, trucks, motorcycles, and other road vehicles. Motor insurance typically covers drivers for third party damage caused by their road vehicle such as damage to other vehicles or property and injuries to other people, damage to or loss of their road vehicle, and injury to the driver themselves. Cover is usually split across these separate expenses, with most countries requiring a minimum of third-party cover by law.
     
     
     Motor insurance includes individual policies for private vehicle owners as well as fleet policies for companies that operate multiple vehicles as part of their business.
@@ -15,7 +15,7 @@ transition:
             While motor insurance will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 before rapidly decreasing after 2030 as carbon prices are increased to compensate for the inaction beforehand. 
             
             
-            In the Divergent Net Zero scenario, CO<sub>2</sub> emissions start to be reduced earlier and, as a result, more gradually. Policies and regulatory frameworks implemented at regional level rather than international level or evolving at a different speed depending on the region, could result in in an un-level playing field for motor sector.
+            In the Divergent Net Zero scenario, CO<sub>2</sub> emissions start to be reduced immediately but divergently. Policies and regulatory frameworks implemented at regional level rather than international level or evolving at a different speed depending on the region, could result in in an un-level playing field for motor sector.
             
             Both these scenarios are likely to have an impact on the profitability of the motor sector and the associated insurance products pricing, terms and conditions, and coverage. These scenarios could also lead to a reduction in GDP growth. This could result in changes in the rate of growth in demand for motor insurance.
 
@@ -23,15 +23,18 @@ transition:
             "
             
         high_materiality: "
+            In the disorderly/divergent transition risk scenarios, there are a number of potential impacts on the motor sector and the underwriting class. For example:
+            
+            
             * **Increased total claims cost due to an increase in the cost of repair**. A rapid increase in carbon price could have a significant impact on the supply chain of vehicles and affect the price of parts, particularly those made of steel or hydrocarbon derived plastics, which will increase claims costs significantly alongside increased costs to operate associated processes such as paint booths or waste disposal. In the disorderly/divergent transition risk scenarios there is a shift from internal combustion engine vehicles towards electric vehicles (and possibly hydrogen or other zero-carbon fuel types). This has impacts on replacement and repair costs, increasing costs of claims in the short term as repair networks adapt to deal with batteries and electric motors instead of internal combustion engines.
             
             * **Changing consumer preferences and revenue**. In the disorderly/divergent transition risk scenarios, internal combustion engine vehicle ownership could become significantly more expensive, causing many people to give up their vehicles and cancel cover, without being able to afford an electric replacement. There is potential for models of car ownership changing as transition to low a carbon economy will encourage more active travel (walking and cycling) and use of public transport which could lead to a rise in shared-ownership vehicles (such as zip car) and fewer personal cars. This could mean that the insurance model shifts from issuing policies to individuals and more to a fleet or business-to-business model, with manufacturers providing the insurance to companies as part of a wider package of services with the vehicle.
             
             
-            * Extremely high demand for new electric vehicles cannot be met leading to very long lead times. This will reduce the number of road vehicle owners along with demand for associated insurance products. Slowed GDP growth could further impact demand for road vehicles and their associated insurance products through its effect on individuals disposable income resulting in a reduction in growth of number of vehicle owners.
+            * Extremely high demand for new electric vehicles could also lead to very long lead times, reducing the number of road vehicle owners along with demand for associated insurance products. Slowed GDP growth could further impact demand for road vehicles and their associated insurance products through its effect on individuals disposable income resulting in a reduction in growth of number of vehicle owners.
             
             
-            * **Changing the motor sector due to new technologies**. Although autonomous vehicles are distinct from electric vehicles, many electric vehicles manufactures include autonomous driving features, and an increase in the number of electric vehicles is likely to increase the usage of these features. Firms may want to consider the potential change in insurance products as there could be a shift in accountability for collisions from drivers to manufacturers whilst autonomous driving software is active. An increase in the proportion of electric vehicles on the road may also be associated with cover expanding to include charging cables and chargers where owned by the vehicle owner.
+            * **Changes to motor sector due to new technologies**. Although autonomous vehicles are distinct from electric vehicles, many electric vehicles manufactures include autonomous driving features, and an increase in the number of electric vehicles is likely to increase the usage of these features. Firms may want to consider the potential change in insurance products as there could be a shift in accountability for collisions from drivers to manufacturers whilst autonomous driving software is active. An increase in the proportion of electric vehicles on the road may also be associated with cover expanding to include charging cables and chargers where owned by the vehicle owner.
             
             
             The profitability of the motor sector and its associated underwriting class, in the disorderly/divergent transition risk scenarios, will also depend on the relevant automotive companies proactively investing in innovation and new technology. For example, expansion of affordable low-carbon products and services, and electric vehicle charging networks. These actions could also lead to positive gains in commercial reputation and therefore magnify demand and overall revenue as consumers will proactively seek out businesses with an incorporated green strategy as well as potentially have knock-on impacts for insurance pricing, terms and conditions and coverage.
@@ -39,7 +42,10 @@ transition:
             "
     low:
         always: "
-            While motor insurance firms will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in early/orderly transition risk scenarios, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to a gradual reduction in CO<sub>2</sub> emissions by 2050 and increase in the carbon price due to for example a smooth transition away from Internal Combustion Engine vehicles towards electric vehicles (and possibly hydrogen or other zero-carbon fuel types). These are likely to have an impact on replacement and on repair costs, and increased costs of claims in the short term as repair networks adapt to deal with batteries and electric motors instead of engines. These could also impact the profitability of the motor sector, and therefore on the associated insurance products pricing, terms and conditions, and coverage. 
+            
+            
+            
+            While motor insurance firms will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in early/orderly transition risk scenarios, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to an immediate and smooth reduction in CO<sub>2</sub> emissions by 2050 and increase in the carbon price due to for example a smooth transition away from Internal Combustion Engine vehicles towards electric vehicles (and possibly hydrogen or other zero-carbon fuel types). These are likely to have an impact on replacement and on repair costs, and increased costs of claims in the short term as repair networks adapt to deal with batteries and electric motors instead of engines. These could also impact the profitability of the motor sector, and therefore on the associated insurance products pricing, terms and conditions, and coverage. 
             
             
             The early/orderly transition risk scenarios could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in demand for the motor insurance sector.
@@ -47,7 +53,7 @@ transition:
             "
             
         high_materiality: "
-            In the early/orderly transition risk scenarios, the impact on the motor sector and the underwriting class will depend on consumers revenue and preferences. For example:
+            In the early/orderly transition risk scenarios, there are a number of potential impacts on the motor sector and the underwriting class. For example:
             
             
             * **Increased total claims cost due to an increase in the cost of repair**. Rising carbon price could impact the supply chain of vehicles and affect the price of parts, particularly those made of steel or hydrocarbon derived plastics, which will increase claims costs alongside increased costs to operate associated processes such as paint booths or waste disposal. In the early/orderly transition risk scenarios there is a smooth transition away from Internal Combustion Engine (ICE) vehicles towards electric vehicles (and possibly hydrogen or other zero-carbon fuel types). This has impacts on claims types, replacement and repair costs, increasing costs of claims in the short term as repair networks adapt to deal with batteries and electric motors instead of internal combustion engines.
@@ -87,7 +93,7 @@ physical:
             
     low:
         always: "
-            In the low physical risk scenario, climate change is likely to result in increased disruption that could have an impact on the motor sector and its underwriting class. Chronic effects (such as raised mean temperatures) and acute effects due to changes to frequency and severity of weather events (such as floods, droughts, bushfires and extreme heat and cold) could impact frequency and size of the claims. This could result in future policyholders becoming more expensive to insure. However, the low physical risk scenario could have a low impact on motor insurance in the UK.
+            In the low physical risk scenario, climate change is likely to result in increased disruption that could have an impact on the motor sector and its underwriting class. Chronic effects (such as raised mean temperatures) and acute effects due to changes to frequency and severity of weather events (such as floods, droughts, bushfires and extreme heat and cold) could impact frequency and size of the claims. This could result in future policyholders becoming more expensive to insure. 
 
             "
             

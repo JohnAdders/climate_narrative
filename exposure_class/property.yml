@@ -1,11 +1,10 @@
 name: Property
 
 description: "
-    The non-life **property** underwriting class  covers a very wide range of asset types and coverages, with risk transfers flowing from the policyholders, through to insurers, reinsurers and retrocessional reinsurers, and with both simple (e.g. direct) and complex risk sharing arrangements between multiple parties, for example through bordereau and other aggregate risk products. 
+    The **Property** underwriting class  covers a very wide range of asset types and coverages, with risk transfers flowing from the policyholders, through to insurers, reinsurers and retrocessional reinsurers, and with both simple (e.g. direct) and complex risk sharing arrangements between multiple parties, for example through bordereau and other aggregate risk products. 
     
     
     Underwriting is the act of accepting liability up to a specified amount in an insurance policy, and generally, property insurance will be related to either fixed, immovable assets such as buildings or movable property, such as transport or goods in transit, in both personal (e.g. residential/domestic) and professional (e.g. landlords, commercial real estate, industrial real estate) settings.
-
 
     "
     
@@ -13,7 +12,7 @@ transition:
     high:
         always: "
             
-            While the Property underwriting class will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation, in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 before rapidly decreasing after 2030 as carbon prices are increased to compensate for the inaction beforehand. In the divergent scenario there is a more gradual reduction in CO<sub>2</sub> emissions. In both these scenarios, the increase in carbon price, along with a change to the demand in the quality of real estate (e.g. emissions from the construction and fabric of the building, energy efficiency performance and use of low carbon technology (especially heating and cooling)), is likely to influence property insurance products pricing, terms and conditions and coverage.
+            While the Property underwriting class will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation, in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 before rapidly decreasing after 2030 as carbon prices are increased to compensate for the inaction beforehand. In the divergent scenario there is a more immediate but divergent reduction in CO<sub>2</sub> emissions. In both these scenarios, the increase in carbon price, along with a change to the demand in the quality of real estate (e.g. emissions from the construction and fabric of the building, energy efficiency performance and use of low carbon technology (especially heating and cooling)), is likely to influence property insurance products pricing, terms and conditions and coverage.
             
             
             Under most transition scenarios, there is likely to be an increasing pressure on insurers to decline cover for high GHG emitting industrial or commercial activities, which in turn will influence the overall underwriting strategy employed within non-life property insurers. National and international legislative actions, for example in determining premium rates or coverage limitations, influenced by transition policies, may also affect future underwriting strategies but to an uncertain level. 
@@ -71,7 +70,7 @@ transition:
             "
     low:
         always: "
-            While the Property underwriting class will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in a low transition risk scenario, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to a gradual reduction in CO<sub>2</sub> emissions by 2050. The increase in carbon price along with a change to the demand in the quality of real estate (e.g. emissions from the construction and fabric of the building, energy efficiency performance and use of low carbon technology (especially heating and cooling)) are likely to influence insurance products pricing, terms and conditions and coverage.
+            While the Property underwriting class will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in an orderly transition risk scenario, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to an immediate but smooth reduction in CO<sub>2</sub> emissions by 2050. The increase in carbon price along with a change to the demand in the quality of real estate (e.g. emissions from the construction and fabric of the building, energy efficiency performance and use of low carbon technology (especially heating and cooling)) are likely to influence insurance products pricing, terms and conditions and coverage.
             
             
             Under most transition scenarios, there is likely to be an increasing pressure on insurers to decline cover for high GHG emitting industrial or commercial activities, which in turn will influence the overall underwriting strategy employed within non-life property insurers. National and international legislative actions, for example in determining premium rates or coverage limitations, influenced by transition policies, may also affect future underwriting strategies but to an uncertain level. 
@@ -272,5 +271,4 @@ physical:
             
             
             Commercial underwriting decisions related to price and capacity will be influenced by physical risk considerations, as these could either directly affect the selection and acceptance of risk (through the inclusion of conditions such as exclusions or retention in a specific policy) or influence aggregate limits and share and line sizes, as well as directly affect the premium rate set, whether technically and risk-aligned, or due to market, regulatory or consumer demand drivers. In addition, rating and shareholder drivers will also influence insurance underwriting decisions, either in determining limits on the level of risk acceptance, or in the setting of corporate risk appetite and capital.
-
             "
