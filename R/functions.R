@@ -19,24 +19,22 @@ produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
     nrow = nrow(exposure_matrix),
-    ncol = ncol(exposure_matrix) - 3
+    ncol = ncol(exposure_matrix) - 2
   )
   for(i in 1:nrow(out)){
-    row_tooltip <- exposure_matrix[i, 3]
-    # if the whole column of tooltips is missing there is NA, converting to empty string
-    if(is.na(row_tooltip)) row_tooltip <- ""
+    row_tooltip <- products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
     for(j in 1:ncol(out)){
-      exposure_class <- exposure_matrix[i, j + 3]
+      exposure_class <- exposure_matrix[i, j + 2]
       if(exposure_class != ""){
         exposure_class_tooltip <- exposure_classes[[exposure_class]][["tooltip"]]
         if(!is.null(exposure_class_tooltip)){
-          if(row_tooltip != "") {
+          if(!is.null(row_tooltip)) {
             out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
           } else {
             out[i, j] <- exposure_class_tooltip
           }
         } else {
-          if(length(row_tooltip)) {
+          if(!is.null(row_tooltip)) {
             out[i, j] <- row_tooltip
           }
         }
@@ -82,19 +80,19 @@ exposure_grid_server <- function(input,
                                  label,
                                  dev = FALSE,
                                  width = NULL) {
-  layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 2)
-  colnames(layout) <- colnames(exposure_matrix)[-(2:3)]
+  layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
+  colnames(layout) <- colnames(exposure_matrix)[-(2)]
   for (i in 1:nrow(layout)) {
     layout[i, 1] <- as.character(div(exposure_matrix[i, 1], class = "verticalcenter"))
     for (j in 2:ncol(layout)) {
       layout[i, j] <- as.character(
         exposure_grid_cell(
-          exposure_matrix[i, j + 2],
+          exposure_matrix[i, j + 1],
           paste(
             label,
             remove_special_characters(exposure_matrix[i, 1]),
             remove_special_characters(exposure_matrix[i, 2]),
-            remove_special_characters(colnames(exposure_matrix)[j + 2]),
+            remove_special_characters(colnames(exposure_matrix)[j + 1]),
             sep = "_"
           ),
           tooltip_matrix[i,j-1],
