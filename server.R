@@ -5,8 +5,8 @@ server <- function(input, output, session) {
 
   if (file.exists("secret.yml")) {
     secret_pars <- read_yaml("secret.yml")
-    for (i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
     session$userData$dev <- FALSE
+    for (i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
   } else {
     session$userData$dev <- TRUE
   }

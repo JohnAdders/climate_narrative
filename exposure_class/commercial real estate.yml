@@ -1,178 +1,274 @@
 name: Commercial Real Estate
 
-description: "
-    The Commercial Real Estate sector covers companies that are primarily engaged in renting or leasing real estate to others, managing real estate for others, selling or buying real estate for others, providing other real estate related services, such as appraisal services. 
-    
-    
-    This sector includes equity Real Estate Investment Trusts (REITs) that are primarily engaged in leasing buildings, dwellings, or other real estate property to others. This sector also includes firms involved in:
-    
-    
-    - Acting as lessors of buildings that are both used and not used as residences or dwellings, such as single-family homes, apartment buildings, and town homes.
-        
-        - Firms acting as lessors of buildings that are used as residences or dwellings are owner lessors and establishments renting real estate and then acting as lessors in subleasing it to others. 
-        
-        - Firms acting as lessors of buildings that are not used as residences or dwellings include:
-            
-            - owner-lessors of non-residential buildings
-            
-            - establishments renting real estate and then acting as lessors in subleasing it to others
-            
-            - establishments providing full-service office space, whether on a lease or service contract basis. 
-            
-            
-    - Renting or leasing space to others for self-storage. These establishments provide secure space (i.e., rooms, compartments, lockers, containers, or outdoor space) where clients can store and retrieve their goods.
-    
-    
-    - Acting as lessors of real estate (except buildings), such as manufactured home (i.e., mobile home) sites, vacant lots, and grazing land.
-    
-    
-    - Providing real estate services (except lessors of real estate and offices of real estate agents and brokers). Included in this industry group are establishments primarily engaged in activities, such as managing real estate for others and appraising real estate.
-    "
+description: |
+  The Commercial Real Estate sector covers companies that are primarily engaged
+  in renting or leasing real estate to others, managing real estate for others,
+  selling or buying real estate for others, providing other real estate related
+  services, such as appraisal services.
+
+  This sector includes equity Real Estate Investment Trusts (REITs) that are
+  primarily engaged in leasing buildings, dwellings, or other real estate
+  property to others. This sector also includes firms involved in:
+
+  - Acting as lessors of buildings that are both used and not used as residences
+    or dwellings, such as single-family homes, apartment buildings, and town
+    homes.
+
+  - Firms acting as lessors of buildings that are used as residences or
+    dwellings are owner lessors and establishments renting real estate and then
+    acting as lessors in subleasing it to others.
+
+  - Firms acting as lessors of buildings that are not used as residences or
+    dwellings include:
+
+    - owner-lessors of non-residential buildings
+    - establishments renting real estate and then acting as lessors in subleasing
+      it to others
+    - establishments providing full-service office space, whether on a lease or
+      service contract basis.
+    - Renting or leasing space to others for self-storage. These establishments
+      provide secure space (i.e., rooms, compartments, lockers, containers, or
+      outdoor space) where clients can store and retrieve their goods.
+
+  - Acting as lessors of real estate (except buildings), such as manufactured
+    home (i.e., mobile home) sites, vacant lots, and grazing land.
+
+  - Providing real estate services (except lessors of real estate and offices of
+    real estate agents and brokers). Included in this industry group are
+    establishments primarily engaged in activities, such as managing real estate
+    for others and appraising real estate.
 transition:
-    high:
-        always: "
-            In disorderly transition risk scenarios, the demand for Commercial Real Estate sector is likely to increase.
-            
-            While the Commercial Real Estate sector will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 before rapidly decreasing after 2030 as carbon prices are increased to compensate for the inaction beforehand. In the divergent scenario there is a more immediate but divergent reduction in CO<sub>2</sub> emissions. Both these scenarios are likely to have a significant impact on the profitability of this sector. The increase in the carbon price as well as a change to the demand in the quality of the real estate product (e.g. emissions from the construction and fabric of the building, energy efficiency performance and low carbon technology (especially heating and cooling)) are likely to influence the profitability of this sector. 
-            
-            
-            The disorederly transition risk scenarios could also lead to a relative reduction in GDP growth. This could partially offset growth in demand for the Commercial Real Estate sector.
-            "
+  high:
+    always: |
+      In disorderly transition risk scenarios, the demand for Commercial Real
+      Estate sector is likely to increase. While the Commercial Real Estate
+      sector will continue to play a role in meeting customer demand for the
+      coming years, the changing patterns in energy generation in the Delayed
+      transition scenario, driven by late policy action enabling a fossil
+      fuelled recovery out of the economic crisis brought about by COVID-19,
+      results in CO<sub>2</sub> emissions increasing until 2030 before rapidly
+      decreasing after 2030 as carbon prices are increased to compensate for the
+      inaction beforehand. In the divergent scenario there is a more immediate
+      but divergent reduction in CO<sub>2</sub> emissions. Both these scenarios
+      are likely to have a significant impact on the profitability of this
+      sector. The increase in the carbon price as well as a change to the demand
+      in the quality of the real estate product (e.g. emissions from the
+      construction and fabric of the building, energy efficiency performance and
+      low carbon technology (especially heating and cooling)) are likely to
+      influence the profitability of this sector.
+
+      The disorederly transition risk scenarios could also lead to a relative
+      reduction in GDP growth. This could partially offset growth in demand for
+      the Commercial Real Estate sector.
 
 
-        high_materiality: "
-            The transition changes will translate into financial impacts:
-            
-            
-            * **Increased revenues** for low carbon / green buildings meeting demand as companies have to decarbonise their own operations.
-            
-            
-            * **Decreased revenues from, and stranding of, assets** that fail to meet customer criteria and/or government regulations on energy efficiency, use and HVAC technologies.
-            
-            
-            * **Changes or disruption to revenues** due to changing customer base from transition exposure (can reduce or increase revenues depending upon net exposure) 
-            
-            
-            * **Increase in repair, refurbishment and operating costs** due to government regulations, taxation and meeting customer criteria. 
-            
-            
-            * **Increased revenues** from retrofits and conversions to low carbon / energy efficient buildings.
-            
-            
-            The materiality of the exposures is very granular dependent upon the attributes of the property and the vibrancy of both the local and global economies. Where local economies are particularly exposed to revenues (directly or indirectly) from high transition risk industries, such as coal, oil & gas extraction, then knock-on effects would be expected to revenues and occupancy. Mitigating steps can include: 
-            
-            
-            * diversification of client base 
-            
-            
-            * supporting local attempts to bring new business lines to the areas at high transition risk
-            
-            
-            * divestment of potentially stranded assets
-            "
 
-    low:
-        always: "
-            In early/orderly transition risk scenarios, the demand for Commercial Real Estate sector is likely to increase. 
-            
-            
-            While the Commercial Real Estate sector will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation in early/orderly transition risk scenarios, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to a an immediate and smooth reduction in CO<sub>2</sub> emissions by 2050. 
-            
-            
-            The increase in the carbon price as well as a change to the demand in the quality of the real estate product (e.g. emissions from the construction and fabric of the building, energy efficiency performance and use of low carbon technology (especially heating and cooling)) are likely to influence the profitability of this sector. The early/orderly transition risk scenarios could also lead to a limited relative reduction in GDP growth. This could partially offset growth in demand for the Commercial Real Estate sector.
-            "
-        high_materiality: "
-            The changes in carbon pricing, societal preference, energy prices and energy mix could potentially the commercial real estate sector as a result in one or more of the following impacts:
-            
-            
-            * **Increased revenues** for low carbon/green buildings meeting demand as companies have to decarbonise their own operations.
-            
-            
-            * **Decreased revenues** of assets that fail to meet customer criteria and/or government regulations on energy efficiency, use and HVAC technologies.
-            
-            
-            * **Changes or disruption to revenues** due to changing customer base from transition exposure (can reduce or increase revenues depending upon net exposure) 
-            
-            
-            * **Increase in repair and refurbishment costs** to meet government regulations, taxation and customer criteria. 
-            
-            
-            * **Increased revenues** from retrofits and conversions to low carbon / energy efficient buildings.
-            
-            
-            The materiality of the exposures is very granular dependent upon the attributes of the property and the vibrancy of both the local and global economies. Where local economies are particularly exposed to revenues (directly or indirectly) from high transition risk industries, such as coal, oil & gas extraction, then knock-on effects would be expected to revenues and occupancy. This is likely to be less severe in the short term under orderly transition risk scenarios and will occur more smoothly over time, albeit with certain regions where costs to extract are high likely to be impacted first
-            
-            
-            Mitigating steps can include:
-            
-            
-            * diversification of client base 
-            
-            
-            * supporting local attempts to bring new business lines to the areas at high transition risk 
-            
-            
-            * divestment of potentially stranded assets
-            "
+    high_materiality: |
+      The transition changes will translate into financial impacts:
+
+      - **Increased revenues** for low carbon / green buildings meeting demand
+        as companies have to decarbonise their own operations.
+
+      - **Decreased revenues from, and stranding of, assets** that fail to meet
+        customer criteria and/or government regulations on energy efficiency,
+        use and HVAC technologies.
+
+      - **Changes or disruption to revenues** due to changing customer base from
+        transition exposure (can reduce or increase revenues depending upon net
+        exposure)
+
+      - **Increase in repair, refurbishment and operating costs** due to
+        government regulations, taxation and meeting customer criteria.
+
+      - **Increased revenues** from retrofits and conversions to low carbon /
+        energy efficient buildings.
+
+      The materiality of the exposures is very granular dependent upon the
+      attributes of the property and the vibrancy of both the local and global
+      economies. Where local economies are particularly exposed to revenues
+      (directly or indirectly) from high transition risk industries, such as
+      coal, oil & gas extraction, then knock-on effects would be expected to
+      revenues and occupancy. Mitigating steps can include:
+
+      - diversification of client base
+
+      - supporting local attempts to bring new business lines to the areas at
+        high transition risk
+
+      - divestment of potentially stranded assets
+
+
+  low:
+    always: |
+      In early/orderly transition risk scenarios, the demand for Commercial Real
+      Estate sector is likely to increase.
+
+      While the Commercial Real Estate sector will continue to play a role in
+      meeting customer demand for the coming years, the changing patterns in
+      energy generation in early/orderly transition risk scenarios, driven by
+      immediate policy reaction, societal change, national energy strategies,
+      and carbon legislation, will lead to a an immediate and smooth reduction
+      in CO<sub>2</sub> emissions by 2050.
+
+      The increase in the carbon price as well as a change to the demand in the
+      quality of the real estate product (e.g. emissions from the construction
+      and fabric of the building, energy efficiency performance and use of low
+      carbon technology (especially heating and cooling)) are likely to
+      influence the profitability of this sector. The early/orderly transition
+      risk scenarios could also lead to a limited relative reduction in GDP
+      growth. This could partially offset growth in demand for the Commercial
+      Real Estate sector.
+    high_materiality: |
+      The changes in carbon pricing, societal preference, energy prices and
+      energy mix could potentially the commercial real estate sector as a result
+      in one or more of the following impacts:
+
+      - **Increased revenues** for low carbon/green buildings meeting demand as
+        companies have to decarbonise their own operations.
+
+      - **Decreased revenues** of assets that fail to meet customer criteria
+        and/or government regulations on energy efficiency, use and HVAC
+        technologies.
+
+      - **Changes or disruption to revenues** due to changing customer base from
+        transition exposure (can reduce or increase revenues depending upon net
+        exposure)
+
+      - **Increase in repair and refurbishment costs** to meet government
+        regulations, taxation and customer criteria.
+
+      - **Increased revenues** from retrofits and conversions to low carbon /
+        energy efficient buildings.
+
+      The materiality of the exposures is very granular dependent upon the
+      attributes of the property and the vibrancy of both the local and global
+      economies. Where local economies are particularly exposed to revenues
+      (directly or indirectly) from high transition risk industries, such as
+      coal, oil & gas extraction, then knock-on effects would be expected to
+      revenues and occupancy. This is likely to be less severe in the short term
+      under orderly transition risk scenarios and will occur more smoothly over
+      time, albeit with certain regions where costs to extract are high likely
+      to be impacted first
+
+      Mitigating steps can include:
+
+      - diversification of client base
+
+      - supporting local attempts to bring new business lines to the areas at
+        high transition risk
+
+      - divestment of potentially stranded assets
+
 
 physical:
-    high:
-        always: "
-            Since the sector is highly reliant on revenues attached to assets at fixed locations, the commercial real estate services sector is particularly exposed to the physical impacts of climate change: these include chronic effects (e.g. raised sea-levels) and acute effects due to changes to frequency and severity of weather events such as heatwaves, droughts, wildfires, tropical cyclones and flooding. 
-            
-            
-            Floods, storms and extreme temperatures damage buildings, with the former particularly acute for assets on flood plains or located in low-lying coastal areas. In addition to direct damage, extreme temperatures can materially impact the revenues of assets that are not adapted to these changes as this will potentially affect the productivity of assets and labour. 
-            "
+  high:
+    always: |
+      Since the sector is highly reliant on revenues attached to assets at fixed
+      locations, the commercial real estate services sector is particularly
+      exposed to the physical impacts of climate change: these include chronic
+      effects (e.g. raised sea-levels) and acute effects due to changes to
+      frequency and severity of weather events such as heatwaves, droughts,
+      wildfires, tropical cyclones and flooding.
 
-        high_materiality: "
-            Property values themselves may be impacted by the occurrence, or risk of occurrence, of climate-related events. This can manifest itself as:
-            
-            
-            1)	Property prices decline after climate events: historically the drop has generally been modest and short-lived in locations where there is strong awareness of, and experience with, extreme weather-related events (particularly flooding and exposure to hurricanes/cyclones), but there is a small body of recent evidence that certain events can lead to a long-lasting decline in prices or liquidity in geographies that have heretofore been relatively unexposed to extreme weather or climate events, or where intensity and frequency have appreciably increased. 
-            
-            
-            2)	Trading volumes or time on market may provide early signals of how markets are reacting to climate events and risks through lower liquidity that could ultimately feed into prices. 
-            
-            
-            3)	Commercial owners/investors in some geographies are placing a higher risk premium on all properties in metro areas affected by climate events, regardless of whether their individual properties have been directly affected. 
-            
-            
-            4)	For areas affected by wildfires, floods and storms, significant short-term value drops may, in part at least, be offset by amenity value. Further, the very limited number of commercial studies points to greater persistence of urban agglomeration benefits offsetting perceived climatic risks. 
-            
-            
-            5)	Access to information on risks and on mitigation measures is a contributing factor in value assessment and pricing. The evidence suggests that better information leads to greater awareness, belief acceptance and integration of climate impacts on prices achieved.
-            
-            
-            Valuation practices, which are largely driven by lagging indicators, suffer from a paucity of climate risk-related evidence and available data.
-            "
+      Floods, storms and extreme temperatures damage buildings, with the former
+      particularly acute for assets on flood plains or located in low-lying
+      coastal areas. In addition to direct damage, extreme temperatures can
+      materially impact the revenues of assets that are not adapted to these
+      changes as this will potentially affect the productivity of assets and
+      labour.
 
-    low:
-        always: "
-            Since the sector is highly reliant on revenues attached to assets at fixed locations, the commercial real estate services sector is particularly exposed to the physical impacts of climate change: these include chronic effects (e.g. raised sea-levels) and acute effects due to changes to frequency and severity of weather events such as heatwaves, droughts, wildfires, tropical cyclones and flooding.
-            
-            
-            Floods, storms and extreme temperatures damage buildings, with the former particularly acute for assets on flood plains or located in low-lying coastal areas. In addition to direct damage, extreme temperatures can materially impact the revenues of assets that are not adapted to these changes as this will potentially affect the productivity of assets and labour. In addition to direct damage, extreme temperatures can materially impact the revenues of assets that are not adapted to these changes as this will potentially affect the productivity of assets and labour. 
-            "
 
-        high_materiality: "
-            Property values themselves may be impacted by the occurrence, or risk of occurrence, of climate-related events. This can manifest itself as:
-            
-            
-            1) Property prices decline after climate events: historically the drop has generally been modest and short-lived in locations where there is strong awareness of, and experience with, extreme weather-related events (particularly flooding and exposure to hurricanes/cyclones), but there is a small body of recent evidence that certain events can lead to a long-lasting decline in prices or liquidity in geographies that have heretofore been relatively unexposed to extreme weather or climate events, or where intensity and frequency have appreciably increased. 
-            
-            
-            2) Trading volumes or time on market may provide early signals of how markets are reacting to climate events and risks through lower liquidity that could ultimately feed into prices. 
-            
-            
-            3) Commercial owners/investors in some geographies are placing a higher risk premium on all properties in metro areas affected by climate events, regardless of whether their individual properties have been directly affected.  
-            
-            
-            4) For areas affected by wildfires, floods and storms, significant short-term value drops may, in part at least, be offset by amenity value. Further, the very limited number of commercial studies points to greater persistence of urban agglomeration benefits offsetting perceived climatic risks. 
-            
-            
-            5) Access to information on risks and on mitigation measures is a contributing factor in value assessment and pricing. The evidence suggests that better information leads to greater awareness, belief acceptance and integration of climate impacts on prices achieved.
-            
-            
-            6) Valuation practices, which are largely driven by lagging indicators, suffer from a paucity of climate risk-related evidence and available data. 
-            "
+    high_materiality: |
+      Property values themselves may be impacted by the occurrence, or risk of
+      occurrence, of climate-related events. This can manifest itself as:
+
+      1. Property prices decline after climate events: historically the drop has
+         generally been modest and short-lived in locations where there is
+         strong awareness of, and experience with, extreme weather-related
+         events (particularly flooding and exposure to hurricanes/cyclones), but
+         there is a small body of recent evidence that certain events can lead
+         to a long-lasting decline in prices or liquidity in geographies that
+         have heretofore been relatively unexposed to extreme weather or climate
+         events, or where intensity and frequency have appreciably increased.
+
+      1. Trading volumes or time on market may provide early signals of how
+         markets are reacting to climate events and risks through lower
+         liquidity that could ultimately feed into prices.
+
+      1. Commercial owners/investors in some geographies are placing a higher
+         risk premium on all properties in metro areas affected by climate
+         events, regardless of whether their individual properties have been
+         directly affected.
+
+      1. For areas affected by wildfires, floods and storms, significant
+         short-term value drops may, in part at least, be offset by amenity
+         value. Further, the very limited number of commercial studies points to
+         greater persistence of urban agglomeration benefits offsetting
+         perceived climatic risks.
+
+      1. Access to information on risks and on mitigation measures is a
+         contributing factor in value assessment and pricing. The evidence
+         suggests that better information leads to greater awareness, belief
+         acceptance and integration of climate impacts on prices achieved.
+
+      Valuation practices, which are largely driven by lagging indicators,
+      suffer from a paucity of climate risk-related evidence and available data.
+
+
+  low:
+    always: |
+      Since the sector is highly reliant on revenues attached to assets at fixed
+      locations, the commercial real estate services sector is particularly
+      exposed to the physical impacts of climate change: these include chronic
+      effects (e.g. raised sea-levels) and acute effects due to changes to
+      frequency and severity of weather events such as heatwaves, droughts,
+      wildfires, tropical cyclones and flooding.
+
+      Floods, storms and extreme temperatures damage buildings, with the former
+      particularly acute for assets on flood plains or located in low-lying
+      coastal areas. In addition to direct damage, extreme temperatures can
+      materially impact the revenues of assets that are not adapted to these
+      changes as this will potentially affect the productivity of assets and
+      labour. In addition to direct damage, extreme temperatures can materially
+      impact the revenues of assets that are not adapted to these changes as
+      this will potentially affect the productivity of assets and labour.
+
+
+    high_materiality: |
+      Property values themselves may be impacted by the occurrence, or risk of
+      occurrence, of climate-related events. This can manifest itself as:
+
+      1. Property prices decline after climate events: historically the drop has
+         generally been modest and short-lived in locations where there is
+         strong awareness of, and experience with, extreme weather-related
+         events (particularly flooding and exposure to hurricanes/cyclones), but
+         there is a small body of recent evidence that certain events can lead
+         to a long-lasting decline in prices or liquidity in geographies that
+         have heretofore been relatively unexposed to extreme weather or climate
+         events, or where intensity and frequency have appreciably increased.
+
+      1. Trading volumes or time on market may provide early signals of how
+         markets are reacting to climate events and risks through lower
+         liquidity that could ultimately feed into prices.
+
+      1. Commercial owners/investors in some geographies are placing a higher
+         risk premium on all properties in metro areas affected by climate
+         events, regardless of whether their individual properties have been
+         directly affected.
+
+      1. For areas affected by wildfires, floods and storms, significant
+         short-term value drops may, in part at least, be offset by amenity
+         value. Further, the very limited number of commercial studies points to
+         greater persistence of urban agglomeration benefits offsetting
+         perceived climatic risks.
+
+      1. Access to information on risks and on mitigation measures is a
+         contributing factor in value assessment and pricing. The evidence
+         suggests that better information leads to greater awareness, belief
+         acceptance and integration of climate impacts on prices achieved.
+
+      1. Valuation practices, which are largely driven by lagging indicators,
+         suffer from a paucity of climate risk-related evidence and available
+         data.
+
 
