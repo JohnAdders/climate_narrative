@@ -1,5 +1,7 @@
 name: Agriculture
 
+tooltip: Placeholder for sector-level (agriculture) tooltip
+
 description: |
     The **agriculture** sector can be split into crop production and animal production.
     
