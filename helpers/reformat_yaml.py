@@ -22,6 +22,8 @@ def format_markdown(value, line_length):
     in this project are.
     """
     value = mdformat.text(value, options={"wrap": line_length})
+    # need to escape certain things as R reader doesn't like them
+    value = value.replace("°","&deg;")
     return preserve_literal(value)
 
 
@@ -52,13 +54,13 @@ def reformat_yaml(file_name, line_length):
     """
     yaml = YAML()
 
-    with open(file_name, "r") as fi:
+    with open(file_name, "r", encoding='utf-8') as fi:
         data = yaml.load(fi)
 
     walk_tree(data, line_length - TAB_LENGTH)
 
-    with open(file_name, "w") as fo:
-        yaml.dump(data, fo)
+    with open(file_name, "w", encoding='utf-8') as fo:
+        yaml.dump(data, fo)        
 
 
 def main():
