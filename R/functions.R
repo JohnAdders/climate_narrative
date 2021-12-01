@@ -15,9 +15,38 @@ capitalize <- function(input_string) {
   return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))
 }
 
-
+produce_tooltip_matrix <- function(exposure_matrix) {
+  out <- matrix(
+    "",
+    nrow = nrow(exposure_matrix),
+    ncol = ncol(exposure_matrix) - 3
+  )
+  for(i in 1:nrow(out)){
+    row_tooltip <- exposure_matrix[i, 3]
+    # if the whole column of tooltips is missing there is NA, converting to empty string
+    if(is.na(row_tooltip)) row_tooltip <- ""
+    for(j in 1:ncol(out)){
+      exposure_class <- exposure_matrix[i, j + 3]
+      if(exposure_class != ""){
+        exposure_class_tooltip <- exposure_classes[[exposure_class]][["tooltip"]]
+        if(!is.null(exposure_class_tooltip)){
+          if(row_tooltip != "") {
+            out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
+          } else {
+            out[i, j] <- exposure_class_tooltip
+          }
+        } else {
+          if(length(row_tooltip)) {
+            out[i, j] <- row_tooltip
+          }
+        }
+      }
+    }
+  }
+  out
+}
 # helper functions to produce the layout of tabs (cell, row, whole table)
-exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = NULL, dev = FALSE, width=NULL) {
+exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = FALSE, width = NULL) {
   if (exposure_item == "") {
     form <- p("")
   } else {
@@ -31,7 +60,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = NULL, dev =
       selectize = FALSE,
       width = width
     )
-    if (!is.null(tooltip_text)) {
+    if (tooltip_text != "") {
       return(div(
         form,
         tippy_this(id, tooltip_text),
@@ -53,24 +82,22 @@ exposure_grid_server <- function(input,
                                  label,
                                  dev = FALSE,
                                  width = NULL) {
-  layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
-  colnames(layout) <- colnames(exposure_matrix)[-2]
+  layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 2)
+  colnames(layout) <- colnames(exposure_matrix)[-(2:3)]
   for (i in 1:nrow(layout)) {
     layout[i, 1] <- as.character(div(exposure_matrix[i, 1], class = "verticalcenter"))
     for (j in 2:ncol(layout)) {
       layout[i, j] <- as.character(
         exposure_grid_cell(
-          exposure_matrix[i, j + 1],
+          exposure_matrix[i, j + 2],
           paste(
             label,
             remove_special_characters(exposure_matrix[i, 1]),
             remove_special_characters(exposure_matrix[i, 2]),
-            remove_special_characters(colnames(exposure_matrix)[j + 1]),
+            remove_special_characters(colnames(exposure_matrix)[j + 2]),
             sep = "_"
           ),
-          # disable tooltips for now
-          # tooltip_matrix[i,j-1],
-          NULL,
+          tooltip_matrix[i,j-1],
           dev,
           width
         )
@@ -173,17 +200,16 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 
   # supress high/low for transition risk only
   if (physical_or_transition == "transition") {
-    riskname <- switch(high_or_low, high='Disorderly transition', low='Orderly transition')
+    riskname <- switch(high_or_low, high = 'Disorderly transition', low = 'Orderly transition')
     physical_or_transition_text <- paste0(item, " --- ", riskname, " --- Summary")
   } else {
-    riskname <- switch(high_or_low, high='High physical risk', low='Low physical risk')
+    riskname <- switch(high_or_low, high = 'High physical risk', low = 'Low physical risk')
   }
   physical_or_transition_text <- paste0(
     exposure_classes[[item]][["name"]],
     " --- ",
     riskname
   )
-  #[name of the sector] [dash] [(Dis)Orderly transition / High/low physical risk] [dash] [Summary/Details]
   " --- Summary"
   out <- paste0(
     "### ",

@@ -3,11 +3,7 @@ tab_am_server <- function(input, output, session, tab) {
     input,
     output,
     exposures$amexposures,
-    matrix(
-      "Placeholder for explanation, help text, remarks regarding this particular input field",
-      nrow = nrow(exposures$amexposures),
-      ncol = ncol(exposures$amexposures) - 2
-    ),
+    produce_tooltip_matrix(exposures$amexposures),
     "asset_A",
     session$userData$dev,
     width='6em'
