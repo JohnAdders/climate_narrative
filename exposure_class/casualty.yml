@@ -1,130 +1,257 @@
 name: Casualty
 
-description: "
-    The **Casualty** underwriting class covers legal liabilities from a number of causes. Common product types include:
-    
-    
-    * Directors & Officers: cover for liability incurred as an officer of an organisation
-    
-    
-    * Product Liability: cover for losses sustained by users of the insureds products
-    
-    
-    * Public liability: cover for losses sustained by members of the public on the insureds premises
-    
-    
-    * Employers liability & workers compensation: cover for employers
-    
-    
-    * Financial lines
-    
-    
-    Liability risks are those that could arise for insurance firms from parties who have suffered loss and damage from climate change, and then seek to recover losses from others who they believe may have been responsible. Where such claims are successful, those parties against whom the claims are made may seek to pass on some or all of the cost to insurance firms under third-party liability contracts such as professional indemnity or directors and officers insurance. (Prudential Regulation Authority, 2015).
-    
-    
-    The PRA identify the following reasons for such liability risk: 
-    
-    
-    i.	**Failure to adapt**: If insured parties have not sufficiently accounted for climate change risk factors in their acts, omissions or decision-making. 
-    
-    
-    ii.	**Failure to disclose or comply**: If insured parties (or insurers themselves) have not sufficiently disclosed information relevant to climate change, have done so in a manner that is misleading, or have otherwise not complied with climate change-related legislation or regulation. 
-    
-    
-    iii.	**Failure to mitigate**: If insured parties are being held responsible for the physical impacts of climate change, such as through emissions of greenhouse gases. 
-    
-    
-    As the value of loss and damage arising from climate change grows, litigation risk is also likely to increase. For example, in New York City in January 2018, a lawsuit was announced against five major oil companies, seeking to collect billions of dollars in damages to pay for city efforts to cope with the effects of climate change. (Savage, 2019). There is a low chance of litigation on behalf of employees made redundant through the transition, or from shareholders and other stakeholders for mismanagement of firms.
+description: |
+  The **Casualty** underwriting class covers legal liabilities from a number of
+  causes. Common product types include:
 
-    "
-    
+  - Directors & Officers: cover for liability incurred as an officer of an
+    organisation
+
+  - Product Liability: cover for losses sustained by users of the insureds
+    products
+
+  - Public liability: cover for losses sustained by members of the public on the
+    insureds premises
+
+  - Employers liability & workers compensation: cover for employers
+
+  - Financial lines
+
+  Liability risks are those that could arise for insurance firms from parties
+  who have suffered loss and damage from climate change, and then seek to
+  recover losses from others who they believe may have been responsible. Where
+  such claims are successful, those parties against whom the claims are made may
+  seek to pass on some or all of the cost to insurance firms under third-party
+  liability contracts such as professional indemnity or directors and officers
+  insurance. (Prudential Regulation Authority, 2015).
+
+  The PRA identify the following reasons for such liability risk:
+
+  i. **Failure to adapt**: If insured parties have not sufficiently accounted
+  for climate change risk factors in their acts, omissions or decision-making.
+
+  ii. **Failure to disclose or comply**: If insured parties (or insurers
+  themselves) have not sufficiently disclosed information relevant to climate
+  change, have done so in a manner that is misleading, or have otherwise not
+  complied with climate change-related legislation or regulation.
+
+  iii. **Failure to mitigate**: If insured parties are being held responsible
+  for the physical impacts of climate change, such as through emissions of
+  greenhouse gases.
+
+  As the value of loss and damage arising from climate change grows, litigation
+  risk is also likely to increase. For example, in New York City in January
+  2018, a lawsuit was announced against five major oil companies, seeking to
+  collect billions of dollars in damages to pay for city efforts to cope with
+  the effects of climate change. (Savage, 2019). There is a low chance of
+  litigation on behalf of employees made redundant through the transition, or
+  from shareholders and other stakeholders for mismanagement of firms.
 transition:
-    high:
-        always: "
-            
-            Climate change risk management is a board-level governance issue and directors have to be actively involved in establishing and monitoring strategies to reduce wide-ranging climate-related carbon asset risk which are relevant for corporate risk or return. The failure to consider or adapt to climate change-related risk factors could become the subject of shareholder actions against corporations and their directors for breaches of statutory or fiduciary duties or for loss of share value (particularly as fossil fuel assets become devalued). There may be additional risks from large corporate customers that lose market share or their position in the market. There are risks that some types of business shrink in size through the transition, reducing premium income; while other sectors may see growth for new companies to fill the gaps.
-            
-            
-            While the shift away from carbon-intensive businesses may present some challenges, there are growing opportunities through technological innovations and commercialisation in areas such as carbon capture and storage, renewable energy generation and electrification of transportation, among others. Broadly speaking, businesses advancing these initiatives will require many of the same insurance coverages as carbon-intensive sectors and serve as potential underwriting and investment opportunities. Exposures to carbon-intensive industries are likely to be significantly affected and those markets could shrink significantly while also incurring large losses through the transition and in the years afterwards (as stakeholders continue to take legal action against Directors).
-            
-            
-            The sudden shift to a low-carbon economy could lead to wide-ranging changes in the nature and mix of businesses and can cause established customers to shrink rapidly while new companies grow to fill the gaps. This creates a big opportunity to gain new customers while customer retention is strained.
+  high:
+    always: |
+      Climate change risk management is a board-level governance issue and
+      directors have to be actively involved in establishing and monitoring
+      strategies to reduce wide-ranging climate-related carbon asset risk which
+      are relevant for corporate risk or return. The failure to consider or
+      adapt to climate change-related risk factors could become the subject of
+      shareholder actions against corporations and their directors for breaches
+      of statutory or fiduciary duties or for loss of share value (particularly
+      as fossil fuel assets become devalued). There may be additional risks from
+      large corporate customers that lose market share or their position in the
+      market. There are risks that some types of business shrink in size through
+      the transition, reducing premium income; while other sectors may see
+      growth for new companies to fill the gaps.
 
-            "
-            
-        high_materiality: "
-            In Disorderly/Divergent transition risk scenarios, immediate policy reaction, societal change, national energy strategies, carbon and other legislation will drive a fraught transition to a low carbon economy. The changing patterns in energy generation in the Delayed transition scenario, driven by late policy action enabling a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 before rapidly decreasing after 2030 to compensate for the inaction beforehand. The Divergent Net Zero scenario results in immediate but divergent reductions in CO<sub>2</sub> emissions. 
-            
-            
-            From a policy perspective, actions to reduce carbon emissions could change the scope and the pricing of Casualty policies. For example, the ability to offer some lines of business such as surety (insurer guarantees performance of a contractual obligation) and credit (insurer guarantees payment of credit extended to a party) to carbon-intensive sectors could be significantly affected if public policies curb carbon emissions dramatically.  There is also widespread impacts to carbon-intensive industries and sectors. There is a high chance of litigation on behalf of employees made redundant through the transition, or from shareholders and other stakeholders for mismanagement of firms. Defence costs are incurred for these cases, and with a wide range of litigation across different topics there is a higher chance of losing some of the cases.
-            
-            
-            The sudden shift to a low-carbon economy could lead to wide-ranging changes in the nature and mix of businesses and can cause established customers to shrink rapidly while new companies grow to fill the gaps. This creates a big opportunity to gain new customers while customer retention is strained.
-             
-            "
-    low:
-        always: "
-            Climate change risk management is a board-level governance issue and directors have to be actively involved in establishing and monitoring strategies to reduce wide-ranging climate-related carbon asset risk which are relevant for corporate risk or return. The failure to consider or adapt to climate change-related risk factors could become the subject of shareholder actions against corporations and their directors for breaches of statutory or fiduciary duties or for loss of share value (particularly as fossil fuel assets become devalued). There may be additional risks from large corporate customers that lose market share or their position in the market. There are risks that some types of business shrink in size through the transition, reducing premium income; while other sectors may see growth for new companies to fill the gaps.
-            
-            
-            While the shift away from carbon-intensive businesses may present some challenges, there are growing opportunities through technological innovations and commercialisation in areas such as carbon capture and storage, renewable energy generation and electrification of transportation, among others. Broadly speaking, businesses advancing these initiatives will require many of the same insurance coverages as carbon-intensive sectors and serve as potential underwriting and investment opportunities. There may be additional risks from large corporate customers that lose market share or their position in the market. In this case there is the risk of shareholder action against the Directors for failing to plan in sufficient time to ensure that the business is resilient to the transition. Defence costs could be incurred regardless of the success of litigation.
-            
-            
-            In recent years there has been an increase in climate related litigation claims being brought before the courts by property owners, municipalities, states, insurers, shareholders, and public interest organisations. 
-        
-            "
-            
-        high_materiality: "
-            In Early/Orderly transition risk scenarios, additional risks for Casualty insurance are fairly low as immediate policy reaction, societal change, national energy strategies, and carbon legislation will lead to a smooth transition to a low carbon economy and an immediate and smooth reduction in CO<sub>2</sub> emissions by 2050 and increase in the carbon price. From a policy perspective, actions to reduce carbon emissions could change the scope and the pricing of Casualty policies. For example, the ability to offer some lines of business such as surety (insurer guarantees performance of a contractual obligation) and credit (insurer guarantees payment of credit extended to a party) to carbon-intensive sectors could be significantly affected if public policies curb carbon emissions dramatically. There also are risks that some types of business shrink in size through the transition, reducing the top-line premium income; while other sectors may see growth. 
+      While the shift away from carbon-intensive businesses may present some
+      challenges, there are growing opportunities through technological
+      innovations and commercialisation in areas such as carbon capture and
+      storage, renewable energy generation and electrification of
+      transportation, among others. Broadly speaking, businesses advancing these
+      initiatives will require many of the same insurance coverages as
+      carbon-intensive sectors and serve as potential underwriting and
+      investment opportunities. Exposures to carbon-intensive industries are
+      likely to be significantly affected and those markets could shrink
+      significantly while also incurring large losses through the transition and
+      in the years afterwards (as stakeholders continue to take legal action
+      against Directors).
 
-            "
-            
+      The sudden shift to a low-carbon economy could lead to wide-ranging
+      changes in the nature and mix of businesses and can cause established
+      customers to shrink rapidly while new companies grow to fill the gaps.
+      This creates a big opportunity to gain new customers while customer
+      retention is strained.
+    high_materiality: |
+      In Disorderly/Divergent transition risk scenarios, immediate policy
+      reaction, societal change, national energy strategies, carbon and other
+      legislation will drive a fraught transition to a low carbon economy. The
+      changing patterns in energy generation in the Delayed transition scenario,
+      driven by late policy action enabling a fossil fuelled recovery out of the
+      economic crisis brought about by COVID-19, results in CO<sub>2</sub>
+      emissions increasing until 2030 before rapidly decreasing after 2030 to
+      compensate for the inaction beforehand. The Divergent Net Zero scenario
+      results in immediate but divergent reductions in CO<sub>2</sub> emissions.
+
+      From a policy perspective, actions to reduce carbon emissions could change
+      the scope and the pricing of Casualty policies. For example, the ability
+      to offer some lines of business such as surety (insurer guarantees
+      performance of a contractual obligation) and credit (insurer guarantees
+      payment of credit extended to a party) to carbon-intensive sectors could
+      be significantly affected if public policies curb carbon emissions
+      dramatically. There is also widespread impacts to carbon-intensive
+      industries and sectors. There is a high chance of litigation on behalf of
+      employees made redundant through the transition, or from shareholders and
+      other stakeholders for mismanagement of firms. Defence costs are incurred
+      for these cases, and with a wide range of litigation across different
+      topics there is a higher chance of losing some of the cases.
+
+      The sudden shift to a low-carbon economy could lead to wide-ranging
+      changes in the nature and mix of businesses and can cause established
+      customers to shrink rapidly while new companies grow to fill the gaps.
+      This creates a big opportunity to gain new customers while customer
+      retention is strained.
+  low:
+    always: |
+      Climate change risk management is a board-level governance issue and
+      directors have to be actively involved in establishing and monitoring
+      strategies to reduce wide-ranging climate-related carbon asset risk which
+      are relevant for corporate risk or return. The failure to consider or
+      adapt to climate change-related risk factors could become the subject of
+      shareholder actions against corporations and their directors for breaches
+      of statutory or fiduciary duties or for loss of share value (particularly
+      as fossil fuel assets become devalued). There may be additional risks from
+      large corporate customers that lose market share or their position in the
+      market. There are risks that some types of business shrink in size through
+      the transition, reducing premium income; while other sectors may see
+      growth for new companies to fill the gaps.
+
+      While the shift away from carbon-intensive businesses may present some
+      challenges, there are growing opportunities through technological
+      innovations and commercialisation in areas such as carbon capture and
+      storage, renewable energy generation and electrification of
+      transportation, among others. Broadly speaking, businesses advancing these
+      initiatives will require many of the same insurance coverages as
+      carbon-intensive sectors and serve as potential underwriting and
+      investment opportunities. There may be additional risks from large
+      corporate customers that lose market share or their position in the
+      market. In this case there is the risk of shareholder action against the
+      Directors for failing to plan in sufficient time to ensure that the
+      business is resilient to the transition. Defence costs could be incurred
+      regardless of the success of litigation.
+
+      In recent years there has been an increase in climate related litigation
+      claims being brought before the courts by property owners, municipalities,
+      states, insurers, shareholders, and public interest organisations.
+    high_materiality: |
+      In Early/Orderly transition risk scenarios, additional risks for Casualty
+      insurance are fairly low as immediate policy reaction, societal change,
+      national energy strategies, and carbon legislation will lead to a smooth
+      transition to a low carbon economy and an immediate and smooth reduction
+      in CO<sub>2</sub> emissions by 2050 and increase in the carbon price. From
+      a policy perspective, actions to reduce carbon emissions could change the
+      scope and the pricing of Casualty policies. For example, the ability to
+      offer some lines of business such as surety (insurer guarantees
+      performance of a contractual obligation) and credit (insurer guarantees
+      payment of credit extended to a party) to carbon-intensive sectors could
+      be significantly affected if public policies curb carbon emissions
+      dramatically. There also are risks that some types of business shrink in
+      size through the transition, reducing the top-line premium income; while
+      other sectors may see growth.
 physical:
-    high:
-        always: "
-            The casualty underwriting class are also exposed to physical risk. Chronic effects (e.g. raised sea-levels and mean temperatures) and acute effects due to changes to frequency and severity of weather events such as heatwaves, wildfires, tropical cyclones, and flooding will lead to increasing disruption for this underwriting class as a result of increased claims and premiums and could therefore impact the profitability of this underwriting class. 
-            "
-            
-        high_materiality: "
-            The following examples illustrate how the Casualty underwriting class could be impacted in a high physical risk scenario:
-            
-            
-            * **Increasing claims**. Under commercial general liability (CGL) policies, insurers typically cover damages such as bodily injury or property damage. Therefore, insurers are potentially vulnerable to a broad variety of liability claims for both personal injury and property damage as a result of climate change.
-            
-            
-            * **Increasing temperatures**, and rising likelihood of wet-bulb temperature events, could make working outdoors more dangerous and could increase claims for employers and public liability lines.
-            
-            
-            * An increase in the **severity of storms, higher water levels, and more severe droughts** will lead to even more insurance coverage litigation. Research could attribute losses due to climate change to emissions. This may lead to increasing legal action taken by groups that suffer from said losses against firms responsible for historic emissions. Defence costs for litigation are incurred with potential for claims to be successful.
-            
-            
-            For material exposures to employers liability and public liability, exposures that include significant amounts of outdoor activity (or more exposures in geographies that are already much hotter) are more likely to be affected by a high physical risk scenario.
-            
-            
-            For material exposures to carbon-intensive industries there is significant risk of increasing litigation against firms for their part in historic emissions which have caused damage to property or livelihoods.  For example, after Hurricane Harvey, lawsuits were filed against oil and gas operators in Houston for property damage that occurred in conjunction with petrochemical spills during the storm. The pressure created by litigation, regardless of its success or failure, has already affected the regulatory environment. Companies and insurers should hence consider this changing regulatory landscape.  They should prepare for a potential increase in climate change-related claims. Although most cases are dismissed by courts due to lack of causality or standing, the global trend is pushing boundaries, and claimants are bringing novel and creative legal arguments which courts might be willing to follow.
+  high:
+    always: |
+      The casualty underwriting class are also exposed to physical risk. Chronic
+      effects (e.g. raised sea-levels and mean temperatures) and acute effects
+      due to changes to frequency and severity of weather events such as
+      heatwaves, wildfires, tropical cyclones, and flooding will lead to
+      increasing disruption for this underwriting class as a result of increased
+      claims and premiums and could therefore impact the profitability of this
+      underwriting class.
+    high_materiality: |
+      The following examples illustrate how the Casualty underwriting class
+      could be impacted in a high physical risk scenario:
 
-            "
-            
-    low:
-        always: "
-            The casualty underwriting class are also exposed to physical risk. Chronic effects (e.g. raised sea-levels and mean temperatures) and acute effects due to changes to frequency and severity of weather events such as heatwaves, wildfires, tropical cyclones, and flooding will lead to increasing disruption to the casualty underwriting class as a result of increased claims and premiums and could therefore impact the profitability of this underwriting class. However, these risks are fairly low in the low physical risk scenario as small rises in temperatures are unlikely to lead to significant losses.
-            "
-            
-        high_materiality: "
-            The following examples illustrate how the Casualty underwriting class could be impacted in a low physical risk scenario:
-            
-            
-            * **Increasing claims**. Under commercial general liability (CGL) policies, insurers typically cover damages such as bodily injury or property damage. Therefore, insurers are potentially vulnerable to a broad variety of liability claims for both personal injury and property damage as a result of climate change.
-            
-            
-            * **Increasing temperatures**, and rising likelihood of wet-bulb temperature events, could make working outdoors more dangerous and could increase claims for employers and public liability lines.
-            
-            
-            * An increase in the **severity of storms, higher water levels, and more severe droughts** will lead to more insurance coverage litigation. Research could attribute losses due to climate change to emissions. This may lead to increasing legal action taken by groups that suffer from said losses against firms responsible for historic emissions. Defence costs for litigation are incurred with potential for claims to be successful.
-            
-            
-            For material exposures to carbon-intensive industries there is significant risk of increasing litigation against firms for their part in historic emissions which have caused damage to property or livelihoods. For example, after Hurricane Harvey, lawsuits were filed against oil and gas operators in Houston for property damage that occurred in conjunction with petrochemical spills during the storm. The pressure created by litigation, regardless of its success or failure, has already affected the regulatory environment. Companies and insurers should hence consider this changing regulatory landscape. They should prepare for a potential increase in climate change-related claims. Although most cases are dismissed by courts due to lack of causality or standing, the global trend is pushing boundaries, and claimants are bringing novel and creative legal arguments which courts might be willing to follow.
+      - **Increasing claims**. Under commercial general liability (CGL)
+        policies, insurers typically cover damages such as bodily injury or
+        property damage. Therefore, insurers are potentially vulnerable to a
+        broad variety of liability claims for both personal injury and property
+        damage as a result of climate change.
 
-            "
+      - **Increasing temperatures**, and rising likelihood of wet-bulb
+        temperature events, could make working outdoors more dangerous and could
+        increase claims for employers and public liability lines.
+
+      - An increase in the **severity of storms, higher water levels, and more
+        severe droughts** will lead to even more insurance coverage litigation.
+        Research could attribute losses due to climate change to emissions. This
+        may lead to increasing legal action taken by groups that suffer from
+        said losses against firms responsible for historic emissions. Defence
+        costs for litigation are incurred with potential for claims to be
+        successful.
+
+      For material exposures to employers liability and public liability,
+      exposures that include significant amounts of outdoor activity (or more
+      exposures in geographies that are already much hotter) are more likely to
+      be affected by a high physical risk scenario.
+
+      For material exposures to carbon-intensive industries there is significant
+      risk of increasing litigation against firms for their part in historic
+      emissions which have caused damage to property or livelihoods. For
+      example, after Hurricane Harvey, lawsuits were filed against oil and gas
+      operators in Houston for property damage that occurred in conjunction with
+      petrochemical spills during the storm. The pressure created by litigation,
+      regardless of its success or failure, has already affected the regulatory
+      environment. Companies and insurers should hence consider this changing
+      regulatory landscape. They should prepare for a potential increase in
+      climate change-related claims. Although most cases are dismissed by courts
+      due to lack of causality or standing, the global trend is pushing
+      boundaries, and claimants are bringing novel and creative legal arguments
+      which courts might be willing to follow.
+  low:
+    always: |
+      The casualty underwriting class are also exposed to physical risk. Chronic
+      effects (e.g. raised sea-levels and mean temperatures) and acute effects
+      due to changes to frequency and severity of weather events such as
+      heatwaves, wildfires, tropical cyclones, and flooding will lead to
+      increasing disruption to the casualty underwriting class as a result of
+      increased claims and premiums and could therefore impact the profitability
+      of this underwriting class. However, these risks are fairly low in the low
+      physical risk scenario as small rises in temperatures are unlikely to lead
+      to significant losses.
+    high_materiality: |
+      The following examples illustrate how the Casualty underwriting class
+      could be impacted in a low physical risk scenario:
+
+      - **Increasing claims**. Under commercial general liability (CGL)
+        policies, insurers typically cover damages such as bodily injury or
+        property damage. Therefore, insurers are potentially vulnerable to a
+        broad variety of liability claims for both personal injury and property
+        damage as a result of climate change.
+
+      - **Increasing temperatures**, and rising likelihood of wet-bulb
+        temperature events, could make working outdoors more dangerous and could
+        increase claims for employers and public liability lines.
+
+      - An increase in the **severity of storms, higher water levels, and more
+        severe droughts** will lead to more insurance coverage litigation.
+        Research could attribute losses due to climate change to emissions. This
+        may lead to increasing legal action taken by groups that suffer from
+        said losses against firms responsible for historic emissions. Defence
+        costs for litigation are incurred with potential for claims to be
+        successful.
+
+      For material exposures to carbon-intensive industries there is significant
+      risk of increasing litigation against firms for their part in historic
+      emissions which have caused damage to property or livelihoods. For
+      example, after Hurricane Harvey, lawsuits were filed against oil and gas
+      operators in Houston for property damage that occurred in conjunction with
+      petrochemical spills during the storm. The pressure created by litigation,
+      regardless of its success or failure, has already affected the regulatory
+      environment. Companies and insurers should hence consider this changing
+      regulatory landscape. They should prepare for a potential increase in
+      climate change-related claims. Although most cases are dismissed by courts
+      due to lack of causality or standing, the global trend is pushing
+      boundaries, and claimants are bringing novel and creative legal arguments
+      which courts might be willing to follow.
+
 
 
