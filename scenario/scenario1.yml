@@ -1,12 +1,12 @@
-name: Orderly
+name: NGFS Early/Orderly Scenarios
 position: 1
 is_scenario: yes
 transition: low
 physical: low
 
 description: "
-These low transition and physical risk scenarios assume that effective policy changes
-are introducedin a timely manner.
+These Early/Orderly transition risk scenarios assume that effective policy changes
+are introduced in a timely manner.
 
 
 ![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)
@@ -27,7 +27,7 @@ such as the US, EU and Japan reach Net Zero for all GHGs.
 giving a 67% chance of limiting global warming to below 2&deg;C.
 
 
-## Key transition and physical assumptions and parameters 
+## Key assumptions and parameters 
 
 In these scenarios the reduction in CO2 emissions occurs gradually.
 This is achieved by an immediate and smooth policy reaction decarbonising the energy supply,
@@ -47,7 +47,7 @@ The price of carbon is higher in a Net Zero 2050 scenario compared to a Below 2&
 this is due to more rigorous targets of limiting global warming to a maximum of 1.5&deg;C
 set in the Net Zero 2050 scenario. 
 In both the scenarios the gradual but significant rise in emission prices gives rise to 
-low transition risk.
+transition risk.
 
 
 ![Carbon price](Carbon_Price_Orderly.png)

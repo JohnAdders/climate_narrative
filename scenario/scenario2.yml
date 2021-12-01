@@ -1,10 +1,10 @@
-name: Disorderly
+name: NGFS Disorderly/Divergent Scenarios
 position: 2
 is_scenario: yes
 transition: high
 physical: low
 description: "
-These high transition risk scenarios assume the introduction of effective policy change is delayed or divergent across countries and sectors.
+These Disorderly/Divergent transition risk scenarios assume the introduction of effective policy change is delayed or divergent across countries and sectors.
 
 
 ![NGFS scenarios Framework](NGFS_scenarios_Framework_Disorderly.png)
@@ -26,7 +26,7 @@ Strong policies are needed to limit warming to below 2&deg;C by 2050. CO<sub>2</
 is limited.
 
 
-## Key transition and physical assumptions and parameters 
+## Key assumptions and parameters 
 
 
 In the Delayed transition scenario, late policy action enables a \"fossil recovery\"
@@ -47,7 +47,7 @@ out of the economic crisis, which delays the increase of carbon prices until 203
 compared to the Divergent Net Zero scenario where carbon prices rise at a smoother rate
 because while there are varied policies implemented across countries and sectors these measures
 have been put in place earlier. In both the scenarios disorderly policy action results in
-high transition risk.
+transition risk.
 
 
 ![Carbon price](Carbon_Price_Disorderly.png)
@@ -80,7 +80,7 @@ droughts, wildfires, tropical cyclones, and flooding.
 
 In these scenarios the GDP losses are estimated to be between -4.2% and -4.8% by 2050.
 World GDP losses from physical risks scale with the rise in temperatures in the scenarios over time.
-World GDP impacts from high transition risk are negative as the speed of the transition
+World GDP impacts from Disorderly/Divergent transition risks are negative as the speed of the transition
 combines with investment uncertainty and affects consumption and investment.
 In these scenarios, there is a large mix of physical and transition risks in 2050.
 
