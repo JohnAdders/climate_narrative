@@ -1,3 +1,3 @@
-Type,product,tooltip,Agriculture,Aviation,Commercial Real Estate,Construction,Consumer Products,Financial Services,Manufacturing,Mortgages,Oil and Gas,Property,Telecommunications,Utilities
-Bonds,bond_like,,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mortgages,oil and gas,property,telecoms,utilities
-Equity,equity_like,,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,mortgages,oil and gas,property,telecoms,utilities
+Type,product,tooltip,Agriculture,Aviation,Commercial Real Estate,Construction,Consumer Products,Financial Services,Manufacturing,Metals and Mining,Mortgages,Oil and Gas,Property,Telecommunications,Utilities
+Bonds,bond_like,,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,metals and mining,mortgages,oil and gas,property,telecoms,utilities
+Equity,equity_like,,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,metals and mining,mortgages,oil and gas,property,telecoms,utilities
