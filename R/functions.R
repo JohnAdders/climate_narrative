@@ -80,7 +80,8 @@ exposure_grid_server <- function(input,
   output[[label]] <- renderTable(
     layout,
     sanitize.text.function = function(x) x,
-    sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE)
+    sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE),
+    align='c'
   )
 }
 
