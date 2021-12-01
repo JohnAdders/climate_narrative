@@ -265,6 +265,34 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
   return(out)
 }
 
+get_references <- function(aggregated_table, type_inputs) {
+  out <- ""
+  if (nrow(aggregated_table)) {
+    out <- paste0(
+        out,
+        "# References\n\n"
+      )
+    for (i in 1:nrow(aggregated_table)) {
+      item <- aggregated_table$item[i]
+      print(item)
+      out <- paste0(
+        out,
+        exposure_classes[[item]][["references"]]
+      )
+      # materiality <- aggregated_table$materiality[i]
+      # type_item_inputs <- type_inputs[type_inputs$item == item, ]
+      # products <- unique(type_item_inputs$product)
+      # out <- paste0(
+      #   out,
+      #   get_exposure_description(item, type_item_inputs),
+      #   get_exposure_risk_description(item, products, materiality, "transition", transition),
+      #   get_exposure_risk_description(item, products, materiality, "physical", physical),
+      #   get_exposure_appendix(item)
+      # )
+    }
+  }
+  return(out)
+}
 # heartbeat function to prevent app closing due to inactivity
 heartbeat <- function(input, output, session) {
   beep <- reactiveTimer(55 * 1000)
