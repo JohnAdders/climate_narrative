@@ -24,7 +24,7 @@ transition:
             Lending on residential property remains a key focus and the UK housing market is a strategic cornerstone to continue to support the UK economy, with it being expected that supply will outstrip demand for the foreseeable future. The quality of residential stock will be the key challenge on the mortgage lending sector. 
             
             
-            In high transitional risk scenarios, the changes in energy prices are material as they impact every property and are applied throughout the period. These have the ability to account for the greatest proportion of losses, after the macroeconomic impact has been forecast. 
+            In disorderly transitional risk scenarios, the changes in energy prices are material as they impact every property and are applied throughout the period. These have the ability to account for the greatest proportion of losses, after the macroeconomic impact has been forecast. 
             
             
             Transition risk also has the ability to generate significant losses due to the cost of retrofitting (if not Government funded) and through properties that are unable to meet the minimum Efficiency Performance Certificate (EPC) standard and hence are classified as unmarketable (and unmortgageable). 
@@ -142,7 +142,7 @@ transition:
             * Influencing future policy -working with government and other parties to ensure a just transition to greener mortgages.
             
             
-            * New propositions: develop new products to support the financing and/or provision of retrofitting and physical risk reducing solutions, such as further advances or mortgage drawdown products linked directly to improvements in EPC ratings, interest rollup products to fund retrofitting and / or asset finance to support  retrofitting such as solar panels.
+            * New propositions: develop new products to support the financing and/or provision of retrofitting and physical risk reducing solutions, such as further advances or mortgage drawdown products linked directly to improvements in EPC ratings, interest rollup products to fund retrofitting and / or asset finance to support retrofitting such as solar panels.
             
             
             * Customer engagement: support the consumer in improving their environmental credentials.
@@ -191,7 +191,7 @@ transition:
             The introduction of the above legislation generates one or more of the below financial risks which need to be considered, especially if lenders are targeted with improving the energy performance of their book on an annual basis:
             
             
-            * The impact on the value of the property if it cant be retrofitted
+            * The impact on the value of the property if it can not be retrofitted
             
             
             * Cost of improving the property to EPC standard required (c70% of properties will need to be retrofitted to achieve EPC C)
@@ -340,7 +340,7 @@ physical:
             "
             
         high_materiality: "
-            The following examples illustrate how the mortgage sector could be impacted in a low physical risk scenario and potential  considerations at mortgage origination that firms might not review today:
+            The following examples illustrate how the mortgage sector could be impacted in a low physical risk scenario and potential considerations at mortgage origination that firms might not review today:
             
             
             * **Tropical cyclones or storms** should be considered when reviewing acceptable construction types and the nature of insurance that is available given the potential damage to property and impact on market value.
@@ -379,6 +379,6 @@ physical:
             * External factors such as FloodRe which if they change during the mortgage term could have a significant impact on the value of the property
             
             
-            * Does the lender have the internal expertise to be able to understand the physical risks and set appropriate polices and risk tolerances 
+            * Does the lender have the internal expertise to be able to understand the physical risks and set appropriate polices and risk tolerances? 
 
             "

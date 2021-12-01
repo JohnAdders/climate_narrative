@@ -1,7 +1,7 @@
 name: Health
 
 description: "
-    The **health** underwriting class covers personal, corporate and small to medium enterprise domestic health insurance predominantly in the UK market. Under the Solvency II definition of insurance lines of business these are reported under Medical Expense and Assistance.
+    The **Health** underwriting class covers personal, corporate and small to medium enterprise domestic health insurance predominantly in the UK market. Under the Solvency II definition of insurance lines of business these are reported under Medical Expense and Assistance.
     
     
     Heath underwriting risk refers to the potential deviation from the actuarial assumptions used for setting insurance premium rates which could lead to premium inadequacy. Heath underwriting risk should therefore consider both the setting of adequate premiums rates (pricing) and the management of claims (claims) for insurance policies.
@@ -12,7 +12,7 @@ transition:
     high:
         always: "
             
-            Health underwriting exposures could be impacted by the transition effects related to changes in pollution levels. In (disorderly) high transition risk scenarios, the delayed transition driven by a late policy action enables a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO2 emissions increasing until 2030 and a decrease in CO2 emissions after 2030 to compensate for the inaction beforehand. The divergent scenario results in reduction in CO2 emissions starts to occur earlier and as a result is more gradual. This will lead to a significant reduction in CO2 emissions by 2050, probably associated with a drive towards cleaner air (due to for example, an increase in electric vehicles replacing vehicles with internal combustion engines). This would cause a reduction in pollution which could in turn result into a reduction in cancer (especially lung), respiratory diseases, heart attack and stroke. The high transition risk scenario could also lead to a fall in GDP. This could result in changes in the rate of growth in healthcare spending.
+            Health underwriting exposures could be impacted by the transition effects related to changes in pollution levels. In disorderly transition risk scenarios, the delayed transition driven by a late policy action enables a fossil fuelled recovery out of the economic crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 and a decrease in CO<sub>2</sub> emissions after 2030 to compensate for the inaction beforehand. The divergent scenario results in immediate but divergent reductions in CO<sub>2</sub> emissions. This will lead to a significant reduction in CO<sub>2</sub> emissions by 2050, probably associated with a drive towards cleaner air (due to for example, an increase in electric vehicles replacing vehicles with internal combustion engines). This would cause a reduction in pollution which could in turn result into a reduction in cancer (especially lung), respiratory diseases, heart attack and stroke. The disorderly transition risk scenario could also lead to a fall in GDP. This could result in changes in the rate of growth in healthcare spending.
 
             "
             
@@ -20,7 +20,7 @@ transition:
             **Pollution effect**
             
             
-            It seems reasonable to assume that a general drive towards reducing greenhouse gases will probably be associated with a drive towards cleaner air, and therefore positive outcomes for health. However, it is important to differentiate between the production of greenhouse gases (such as CO2 and CH4) that lead to warming but do not directly impact health, with the production of pollutants (such as particulate matter and oxides of nitrogen) that are more directly harmful to health. 
+            It seems reasonable to assume that a general drive towards reducing greenhouse gases will probably be associated with a drive towards cleaner air, and therefore positive outcomes for health. However, it is important to differentiate between the production of greenhouse gases (such as CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not directly impact health, with the production of pollutants (such as particulate matter and oxides of nitrogen) that are more directly harmful to health. 
             
             
             Whilst it may be the case that advances in one are correlated with advancements in the other (for example if diesel cars are replaced with electric cars where the marginal electricity is generated from renewable sources), some climate outcomes may achieve one and not the other. For example:
@@ -35,7 +35,7 @@ transition:
             * If pollution and greenhouse gases are reduced locally (e.g. in the UK) but without global buy-in then this will also reduce the correlation.
             
             
-            In the high transition risk scenario, there is potential for fewer deaths and a positive outcome for health relating to air pollution. The reduction in pollution could result in a reduction of cancers (especially lung) and respiratory diseases (e.g. asthma, respiratory allergic disease, chronic obstructive pulmonary disease and respiratory tract infections), but also cardiovascular disease, although we note that this is very much dependent on the fuel mix generating electrical power for the grid. For example, whilst waste-to energy plants have similar particulate outputs to gas-fired power stations, biomass plants such as wood pellet fired facilities, for their many positives, produce significantly more particulates than gas-fired power stations (Hajat et al., 2014).
+            In the disorderly transition risk scenario, there is potential for fewer deaths and a positive outcome for health relating to air pollution. The reduction in pollution could result in a reduction of cancers (especially lung) and respiratory diseases (e.g. asthma, respiratory allergic disease, chronic obstructive pulmonary disease and respiratory tract infections), but also cardiovascular disease, although we note that this is very much dependent on the fuel mix generating electrical power for the grid. For example, whilst waste-to energy plants have similar particulate outputs to gas-fired power stations, biomass plants such as wood pellet fired facilities, for their many positives, produce significantly more particulates than gas-fired power stations (Hajat et al., 2014).
             
             
             **GDP growth effect**
@@ -44,7 +44,7 @@ transition:
             GDP growth impacts the ability of individuals and government to spend more on factors that can impact the nations health and thus indirectly levels of claims. The specific scenario would depend on how government and society chose to allocate any GDP growth.  
             
             
-            The high transition risk scenario could lead to a fall in GDP growth, A slower GDP growth would potentially constrain the growth in spending on NHS, public health, social care, medical research etc. this would have negative impacts on health underwriting exposure and could result in challenges to the ongoing affordability of health insurance products, which, given their discretionary nature within the UK, may result in decreased market penetration. This could be particularly true of corporate health insurance cover, particularly for companies significantly impacted by transition risks, who may look to reduce costs. This may result in changes to product design and the nature of cover provided to try to mitigate these impacts. 
+            The disorderly transition risk scenario could lead to a fall in GDP growth, A slower GDP growth would potentially constrain the growth in spending on NHS, public health, social care, medical research etc. this would have negative impacts on health underwriting exposure and could result in challenges to the ongoing affordability of health insurance products, which, given their discretionary nature within the UK, may result in decreased market penetration. This could be particularly true of corporate health insurance cover, particularly for companies significantly impacted by transition risks, who may look to reduce costs. This may result in changes to product design and the nature of cover provided to try to mitigate these impacts. 
             
             
             **Other effects**
@@ -55,24 +55,21 @@ transition:
             "
     low:
         always: "
-            Health underwriting exposures could be impacted by the transition effects related to changes in pollution levels. In (orderly) low transition risk scenario, immediate policy reaction, societal change, national energy strategies, and carbon legislation will lead to a gradual reduction in CO2 emissions by 2050, and this would probably be associated with a drive towards cleaner air (due to for example, an increase in electric vehicles replacing vehicles with internal combustion engines). This would cause a reduction in pollution which could in turn result into a reduction in cancer (especially lung), respiratory diseases, heart attack and stroke. 
+            Health underwriting exposures could be impacted by the transition effects related to changes in pollution levels. In early/orderly transition risk scenarios, immediate policy reaction, societal change, national energy strategies, and carbon legislation will lead to a an immediate and smooth reduction in CO<sub>2</sub> emissions by 2050, and this would probably be associated with a drive towards cleaner air (due to for example, an increase in electric vehicles replacing vehicles with internal combustion engines). 
             
             
-            The low transition risk scenario could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in healthcare spending.
-            
-            
-            These are likely to have an impact on health insurance products pricing, terms and conditions and 
+            This would cause a reduction in pollution which could in turn result into a reduction in cancer (especially lung), respiratory diseases, heart attack and stroke. The early/orderly transition risk scenarios could also lead to a limited relative reduction in GDP growth. This could result in changes in the rate of growth in healthcare spending. These are likely to have an impact on health insurance products pricing, terms and conditions and coverage.
         
             "
             
         high_materiality: "
-            In the low transition risk scenario, the impact on the health sector and its associated underwriting class will depend on the pollution and GDP effects. For example:
+            In the orderly transition risk scenarios, the impact on the health sector and its associated underwriting class will depend on the pollution and GDP effects. For example:
             
             
             **Pollution effect**
             
             
-            It seems reasonable to assume that a general drive towards reducing greenhouse gases will probably be associated with a drive towards cleaner air, and therefore positive outcomes for health. However, it is important to differentiate between the production of greenhouse gases (such as CO2 and CH4) that lead to warming but do not directly impact health, with the production of pollutants (such as particulate matter and oxides of nitrogen) that are more directly harmful to health. 
+            It seems reasonable to assume that a general drive towards reducing greenhouse gases will probably be associated with a drive towards cleaner air, and therefore positive outcomes for health. However, it is important to differentiate between the production of greenhouse gases (such as CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not directly impact health, with the production of pollutants (such as particulate matter and oxides of nitrogen) that are more directly harmful to health. 
             
             
             Whilst it may be the case that advances in one are correlated with advancements in the other (for example if diesel cars are replaced with electric cars where the marginal electricity is generated from renewable sources), some climate outcomes may achieve one and not the other. For example:
@@ -87,7 +84,7 @@ transition:
             * If pollution and greenhouse gases are reduced locally (e.g. in the UK) but without global buy-in then this will also reduce the correlation.
             
             
-            In the low transition risk scenario, there is potential for fewer deaths and a positive outcome for health relating to air pollution. The reduction in pollution could result in a reduction of cancers (especially lung) and respiratory diseases (e.g. asthma, respiratory allergic disease, chronic obstructive pulmonary disease and respiratory tract infections), but also cardiovascular disease, although we note that this is very much dependent on the fuel mix generating electrical power for the grid. For example, whilst waste-to-energy plants have similar particulate outputs to gas-fired power stations, biomass plants such as wood pellet fired facilities, for their many positives, produce significantly more particulates than gas-fired power stations (Hajat et al., 2014).
+            In an orderly transition risk scenario, there is potential for fewer deaths and a positive outcome for health relating to air pollution. The reduction in pollution could result in a reduction of cancers (especially lung) and respiratory diseases (e.g. asthma, respiratory allergic disease, chronic obstructive pulmonary disease and respiratory tract infections), but also cardiovascular disease, although we note that this is very much dependent on the fuel mix generating electrical power for the grid. For example, whilst waste-to-energy plants have similar particulate outputs to gas-fired power stations, biomass plants such as wood pellet fired facilities, for their many positives, produce significantly more particulates than gas-fired power stations (Hajat et al., 2014).
             
             
             **Other effects**

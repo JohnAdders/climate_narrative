@@ -1,22 +1,22 @@
 name: Telecommunications
 
 description: "
-    The **telecommunication** (telecom) sector is comprised of companies that provide telecommunications and services related to that activity (e.g. telephony, including Voice over Internet Protocol (VoIP); cable and satellite television distribution services; Internet access; telecommunications reselling services). This sector is also engaged in operating, and/or providing access to facilities for the transmission of voice, data, text, sound, and video. Transmission facilities may be based on a single technology or a combination of technologies.  
+    The **Telecommunication** (telecom) sector is comprised of companies that provide telecommunications and services related to that activity (e.g. telephony, including Voice over Internet Protocol (VoIP); cable and satellite television distribution services; Internet access; telecommunications reselling services). This sector is also engaged in operating, and/or providing access to facilities for the transmission of voice, data, text, sound, and video. Transmission facilities may be based on a single technology or a combination of technologies.  
     
     
-    This industry also comprises firms that are primarily engaged in:
+    This sector also includes firms that are primarily engaged in:
     
     
-    1.	purchasing access and network capacity from owners and operators of telecommunications networks and reselling wired and wireless telecommunications services (except satellite) to businesses and households
+    * purchasing access and network capacity from owners and operators of telecommunications networks and reselling wired and wireless telecommunications services (except satellite) to businesses and households
     
     
-    2.	providing specialised telecommunications services, such as satellite tracking, communications telemetry, and radar station operation
+    * providing specialised telecommunications services, such as satellite tracking, communications telemetry, and radar station operation
     
     
-    3.	providing satellite terminal stations and associated facilities connected with one or more terrestrial systems and capable of transmitting telecommunications to, and receiving telecommunications from, satellite systems; or 
+    * providing satellite terminal stations and associated facilities connected with one or more terrestrial systems and capable of transmitting telecommunications to, and receiving telecommunications from, satellite systems; or 
     
     
-    4.	providing Internet access services or Voice over Internet protocol (VoIP) services via client-supplied telecommunications connections. 
+    * providing Internet access services or Voice over Internet protocol (VoIP) services via client-supplied telecommunications connections. 
     
   
     "
@@ -29,19 +29,19 @@ transition:
             "
             
         high_materiality: "
-            In the high transition risk scenarios, the impacts will depend on how reliant the companys production/revenue mix is on low carbon electricity, the clients temperature alignment score and how this compares to the sector average. For example:
+            In the Disorderly/Divergent transition risk scenarios, the impacts will depend on how reliant the companys production/revenue mix is on low carbon electricity, the clients temperature alignment score and how this compares to the sector average. For example:
             
             
             * **Increased operating costs**, the increases in carbon and energy prices could potentially result in financial impacts, as firms carbon emissions face a rising price in the form of a carbon tax or cap and trade clearing price, particularly for copper and other lightweight materials commonly found in phones/ cables and network sites.
             
             
-            * **Asset valuation of company reserves will have to be re-priced** based on the re-adjusted expectations of the use of low-carbon products and energy efficient technologies in the future. Failure to provide low carbon emissions in telecom material will affect the commercial reputation of the company and could lead to loss of customers and a decrease in revenue.  
+            * **Asset valuation of company reserves could be re-priced** based on the re-adjusted expectations of the use of low-carbon products and energy efficient technologies in the future. Failure to provide low carbon emissions in telecom material will affect the commercial reputation of the company and could lead to loss of customers and a decrease in revenue.  
             
             
             * **Changing consumer preferences**, these could lead to changes in sales due to new/lost customers as a result of change in environmental performance.
             
             
-            The profitability of the telecom sector, in the high transition risk scenario, will also depend on the relevant companies proactively investing in innovation and new technology and their ability to mitigate transition risks. For example:
+            The profitability of the telecom sector, in the Disorderly/Divergent transition risk scenarios, will also depend on the relevant companies proactively investing in innovation and new technology and their ability to mitigate transition risks. For example:
             
             
             * invest in and roll out energy efficient technologies e.g. 5G & Fibre (balanced with expanding use cases driving energy consumption up), 
@@ -84,14 +84,14 @@ transition:
             "
     low:
         always: "
-            While the telecom sector will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, are likely to have an impact on this sector, affecting profitability and consumer preferences.         
+            While the telecom sector will continue to play a role in meeting customer demand for the coming years, the changing patterns in energy generation, in early/orderly transition risk scenarios, driven by immediate policy reaction, societal change, national energy strategies, and carbon legislation, will lead to an immediate and smooth reduction in CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These are likely to have an impact on this sector, affecting profitability and consumer preferences.         
             "
             
         high_materiality: "
-            In the low transition risk scenarios, the increases in carbon and energy prices could potentially result in financial impacts; the extent will depend on how reliant the companys production /revenue mix is on low-carbon electricity, the companys transition plans and how they compare to the sector average. For example:
+            In the early/orderly transition risk scenarios, the increases in carbon and energy prices could potentially result in financial impacts; the extent will depend on how reliant the companys production /revenue mix is on low-carbon electricity, the companys transition plans and how they compare to the sector average. For example:
             
             
-            * **Increased operating costs** resulting from the gradual but significant rises in electricity and the price of materials, particularly for copper and other lightweight materials commonly found in phones/cables and network sites. Change in regulations covering infrastructure efficiency would lead to increasing compliance requirements.
+            * **Increased operating costs** resulting from the smooth but significant rises in electricity and the price of materials, particularly for copper and other lightweight materials commonly found in phones/cables and network sites. Change in regulations covering infrastructure efficiency would lead to increasing compliance requirements.
             
             
             * **Asset valuation of company reserves will have to be re-priced** based on the re-adjusted expectations of the use of low-carbon products and energy efficient technologies in the future. Failure to use low-carbon products and energy efficient technologies will affect the commercial reputation of the company and could lead to loss of customers and a decrease in revenue.  
@@ -100,7 +100,7 @@ transition:
             * **Changing consumer preferences**, these could lead to changes in sales due to new/lost customers as a result of change in environmental expectations and changes in demand as a result of societal changes.
             
             
-            The profitability of the telecoms sector, in the low transition risk scenario, will depend on the relevant companies proactively investing in innovation and new technology and their ability to mitigate transition risks. For example, in particular whether firms:
+            The profitability of the telecoms sector, in the early/orderly transition risk scenario, will depend on the relevant companies proactively investing in innovation and new technology and their ability to mitigate transition risks. For example, in particular whether firms:
             
             
             * invest in and roll out energy efficient technologies e.g. 5G & Fibre (balanced with expanding use cases driving energy consumption up); 
@@ -170,7 +170,7 @@ physical:
             * **Extreme temperatures** causing overheating of equipment in base stations or street cabinets.
 
             
-            There are a number of mitigating actions these companies can take against the high physical risks mentioned above to build resiliency into the network against extreme weather events. For example, investing in more resilient solutions e.g. develop sustained requirement for heating/ cooling technologies across the network, invest in sustainable products and proposition development and invest in technologies which reduce the number of physical network sites needed (e.g. full fibre).
+            There are several mitigating actions these companies can take against the high physical risks mentioned above to build resiliency into the network against extreme weather events. For example, investing in more resilient solutions e.g. develop sustained requirement for heating/ cooling technologies across the network, invest in sustainable products and proposition development and invest in technologies which reduce the number of physical network sites needed (e.g. full fibre).
             "
             
     low:
