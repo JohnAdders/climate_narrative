@@ -63,8 +63,7 @@ server <- function(input, output, session) {
       temp <- aggregate(materiality ~ item, FUN = max, data = temp)
       temp[order(temp$materiality, decreasing = TRUE), ]
     } else {
-      # TODO decide what to show if all exposures are blank?
-      warning("All exposures are blank. Rendering the report contating scenario descriptions only")
+      warning("This should not happen, but all exposures are blank")
       return(data.frame(item = c(), materiality = c()))
     }
   })

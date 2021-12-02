@@ -16,7 +16,11 @@ QuestionTab <- R6Class(
     id = NULL,
     add_footer = NULL,
     add_header = NULL,
-    initialize = function(tab_name, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE) {
+    exposure = NULL,
+    type = NULL,
+    subtype = NULL,
+    initialize = function(tab_name, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE,
+                          exposure = NULL, type = NULL, subtype = NULL) {
       # the constructor automatically gets ui, server and foot
       # from the relevant functions (or makes it empty if the function does not exist)
       self$tab_name <- tab_name
@@ -29,12 +33,27 @@ QuestionTab <- R6Class(
       self$id <- paste0("page_", self$tab_number)
       self$add_header <- add_header
       self$add_footer <- add_footer
+      self$exposure <- exposure
+      self$type <- type
+      self$subtype <- subtype
     },
     # tab server function that combines:
-    # 1. any other server tab_server (if given in the constructor)
-    # 2. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
+    # 1. server side of exposure input table (if given in the constructor)
+    # 2. any other server tab_server (if given in the constructor)
+    # 3. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
     server = function(input, output, session, switch_page) {
       switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
+      if (!is.null(self$exposure)) {
+        exposure_grid_server(
+          input,
+          output,
+          self$exposure,
+          produce_tooltip_matrix(self$exposure),
+          paste(self$type, self$subtype, sep="_"),
+          session$userData$dev,
+          width='6em'
+        )
+      }
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
       if (length(self$previous_tab)) {
         observeEvent(
@@ -43,16 +62,29 @@ QuestionTab <- R6Class(
       }
       if (length(self$next_tab)) {
         observeEvent(
-          input[[paste0(self$id, "_next")]], switch_page(as.integer(self$next_tab))
+          input[[paste0(self$id, "_next")]], 
+          {
+            if(!is.null(self$exposure)) {
+              input_list <- reactiveValuesToList(input)
+              if(sum(unlist(input_list[startsWith(names(input_list), paste(self$type,self$subtype,sep="_"))])!="")){
+                switch_page(as.integer(self$next_tab))
+              } else {
+                output[[paste0(self$id, "_next_result")]] <- renderText("Please select at least one exposure")
+              }
+            } else {
+              switch_page(as.integer(self$next_tab))
+            }
+          }
         )
       }
     },
     # tab UI function combines:
     # 0. a common header (unless add_header=FALSE)
-    # 1. any other tab_UI (if given in the constructor)
-    # 2. buttons that switch to previous/next tab (if applicable)
-    # 3. a tab-specific text
-    # 4. a common footer (unless add_footer=FALSE)
+    # 1. exposure input table (if exposure table given in the constructore)
+    # 2. any other tab_UI (if given in the constructor)
+    # 3. buttons that switch to previous/next tab (if applicable)
+    # 4. a tab-specific text
+    # 5. a common footer (unless add_footer=FALSE)
     ui = function() {
       tabpanel_params <- list(self$id)
       if (self$add_header) {
@@ -68,6 +100,12 @@ QuestionTab <- R6Class(
           tabpanel_params, self$tab_ui()
         )
       }
+      if (!is.null(self$exposure)) {
+        tabpanel_params <- add_param(
+          tabpanel_params,
+          exposure_grid_ui(paste(self$type, self$subtype, sep="_"))
+        )
+      }
       tabpanel_params <- add_param(tabpanel_params, br())
       if (length(self$previous_tab)) {
         tabpanel_params <- add_param(
@@ -77,6 +115,9 @@ QuestionTab <- R6Class(
       if (length(self$next_tab)) {
         tabpanel_params <- add_param(
           tabpanel_params, actionButton(paste0(self$id, "_next"), "next")
+        )
+        tabpanel_params <- add_param(
+          tabpanel_params, textOutput(paste0(self$id, "_next_result"))
         )
       }
       if (!is.null(self$tab_ui_foot)) {
