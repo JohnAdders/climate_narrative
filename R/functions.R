@@ -15,6 +15,11 @@ capitalize <- function(input_string) {
   return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))
 }
 
+restore_spaces <- function(camelcase) {
+  s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
+  sub("^ ", "", s) # remove first space
+}
+
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
@@ -114,7 +119,7 @@ exposure_grid_server <- function(input,
 table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE) {
   headers <- colnames(table)
   if (dot_to_space) {
-    headers <- gsub(".", "&nbsp;", headers, fixed = TRUE)
+    headers <- gsub(".", " ", headers, fixed = TRUE)
   }
   collapsor <- paste0(
     paste(
@@ -158,12 +163,12 @@ get_exposure_description <- function(item, type_item_inputs) {
     ),
     FUN = function(texts) {
       paste(
-        gsub(" ", "&nbsp;", texts),
+        gsub(" ", "&nbsp;", restore_spaces(texts)),
         collapse = "<br />"
       )
     }
   )
-  colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")
+  colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")  
   out <- paste0(
     "## ",
     exposure_classes[[item]][["name"]],
