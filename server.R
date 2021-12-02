@@ -81,6 +81,7 @@ server <- function(input, output, session) {
         )
       )
     }
+    out <- c(out, get_references(aggregated_type_inputs(), type_inputs()))
     out
   })
 
@@ -99,8 +100,9 @@ server <- function(input, output, session) {
     # this is necessary as markdown::render takes file as an argument
     if (!exists("temp_subset_md")) temp_subset_md <- tempfile(fileext = ".md")
     file_conn <- file(temp_subset_md)
+    scenario_no <- which(sapply(scenarios, `[[`, i = "name") == report_selection)
     writeLines(
-      report_contents()[1 + which(sapply(scenarios, `[[`, i = "name") == report_selection)],
+      report_contents()[c(1 + scenario_no, length(report_contents()))],
       file_conn
     )
     close(file_conn)
