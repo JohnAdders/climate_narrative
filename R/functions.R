@@ -196,22 +196,20 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     return("")
   }
 
-  # supress high/low for transition risk only
+  # define header depending on physical/transition and low/high
   if (physical_or_transition == "transition") {
     riskname <- switch(high_or_low, high = 'Disorderly transition', low = 'Orderly transition')
-    physical_or_transition_text <- paste0(item, " --- ", riskname, " --- Summary")
   } else {
     riskname <- switch(high_or_low, high = 'High physical risk', low = 'Low physical risk')
   }
-  physical_or_transition_text <- paste0(
+  header_text <- paste0(
     exposure_classes[[item]][["name"]],
     " --- ",
     riskname
   )
-  " --- Summary"
   out <- paste0(
     "### ",
-    capitalize(physical_or_transition_text),
+    capitalize(header_text),
     " --- Summary\n\n",
     exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
     "\n\n"
@@ -220,7 +218,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     out <- paste0(
       out,
       "### ",
-      capitalize(physical_or_transition_text),
+      capitalize(header_text),
       " --- Details\n\n",
       exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
       "\n\n"
@@ -278,8 +276,13 @@ get_references <- function(aggregated_table, type_inputs) {
       )
     }
   }
+  # Do not show the section if there are no references
+  if(out == "# References\n\n"){
+    out = ""
+  }
   return(out)
 }
+
 # heartbeat function to prevent app closing due to inactivity
 heartbeat <- function(input, output, session) {
   beep <- reactiveTimer(55 * 1000)
