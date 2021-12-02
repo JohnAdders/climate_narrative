@@ -122,6 +122,7 @@ server <- function(input, output, session) {
       output_file = temp_html,
       output_format = html_document(
         toc = TRUE,
+        toc_depth = 2,
         number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
@@ -147,6 +148,7 @@ server <- function(input, output, session) {
         output_file = file,
         output_format = rtf_document(
           toc = TRUE,
+          toc_depth = 2,
           # fig_caption=FALSE,
           number_sections = FALSE,
           pandoc_args = c(
