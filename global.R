@@ -50,7 +50,6 @@ scenarios <- scenarios[order(sapply(scenarios, `[[`, i = "position"))]
 
 # defining the questionnaire using list of QuestionTab objects
 ordered_tabs <- c("title", "auth", "type", "bank", "ins_l", "am", "ins_a", "report")
-# tab_mapping <- factor(1:length(ordered_tabs), levels=ordered_tabs)
 
 tabs <- list(
   QuestionTab$new("title", NULL, "auth", FALSE, FALSE),

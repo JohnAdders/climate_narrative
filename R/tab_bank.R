@@ -3,11 +3,7 @@ tab_bank_server <- function(input, output, session, tab) {
     input,
     output,
     exposures$bankexposures,
-    matrix(
-      "Placeholder for explanation, help text, remarks regarding this particular input field",
-      nrow = nrow(exposures$bankexposures),
-      ncol = ncol(exposures$bankexposures) - 2
-    ),
+    produce_tooltip_matrix(exposures$bankexposures),
     "bank_A",
     session$userData$dev,
     width='6em'

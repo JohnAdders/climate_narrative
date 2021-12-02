@@ -15,9 +15,36 @@ capitalize <- function(input_string) {
   return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))
 }
 
-
+produce_tooltip_matrix <- function(exposure_matrix) {
+  out <- matrix(
+    "",
+    nrow = nrow(exposure_matrix),
+    ncol = ncol(exposure_matrix) - 2
+  )
+  for(i in 1:nrow(out)){
+    row_tooltip <- products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
+    for(j in 1:ncol(out)){
+      exposure_class <- exposure_matrix[i, j + 2]
+      if(exposure_class != ""){
+        exposure_class_tooltip <- exposure_classes[[exposure_class]][["tooltip"]]
+        if(!is.null(exposure_class_tooltip)){
+          if(!is.null(row_tooltip)) {
+            out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
+          } else {
+            out[i, j] <- exposure_class_tooltip
+          }
+        } else {
+          if(!is.null(row_tooltip)) {
+            out[i, j] <- row_tooltip
+          }
+        }
+      }
+    }
+  }
+  out
+}
 # helper functions to produce the layout of tabs (cell, row, whole table)
-exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = NULL, dev = FALSE, width=NULL) {
+exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = FALSE, width = NULL) {
   if (exposure_item == "") {
     form <- p("")
   } else {
@@ -31,7 +58,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = NULL, dev =
       selectize = FALSE,
       width = width
     )
-    if (!is.null(tooltip_text)) {
+    if (tooltip_text != "") {
       return(div(
         form,
         tippy_this(id, tooltip_text),
@@ -54,7 +81,7 @@ exposure_grid_server <- function(input,
                                  dev = FALSE,
                                  width = NULL) {
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
-  colnames(layout) <- colnames(exposure_matrix)[-2]
+  colnames(layout) <- colnames(exposure_matrix)[-(2)]
   for (i in 1:nrow(layout)) {
     layout[i, 1] <- as.character(div(exposure_matrix[i, 1], class = "verticalcenter"))
     for (j in 2:ncol(layout)) {
@@ -68,9 +95,7 @@ exposure_grid_server <- function(input,
             remove_special_characters(colnames(exposure_matrix)[j + 1]),
             sep = "_"
           ),
-          # disable tooltips for now
-          # tooltip_matrix[i,j-1],
-          NULL,
+          tooltip_matrix[i,j-1],
           dev,
           width
         )
@@ -80,7 +105,8 @@ exposure_grid_server <- function(input,
   output[[label]] <- renderTable(
     layout,
     sanitize.text.function = function(x) x,
-    sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE)
+    sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE),
+    align = 'c'
   )
 }
 
@@ -170,23 +196,30 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     return("")
   }
 
-  # supress high/low for transition risk only
+  # define header depending on physical/transition and low/high
   if (physical_or_transition == "transition") {
-    physical_or_transition_text <- physical_or_transition
+    riskname <- switch(high_or_low, high = 'Disorderly transition', low = 'Orderly transition')
   } else {
-    physical_or_transition_text <- paste(high_or_low, physical_or_transition)
+    riskname <- switch(high_or_low, high = 'High physical risk', low = 'Low physical risk')
   }
-
+  header_text <- paste0(
+    exposure_classes[[item]][["name"]],
+    " --- ",
+    riskname
+  )
   out <- paste0(
     "### ",
-    capitalize(physical_or_transition_text),
-    " risk\n\n",
+    capitalize(header_text),
+    " --- Summary\n\n",
     exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
     "\n\n"
   )
   if (materiality == "High") {
     out <- paste0(
       out,
+      "### ",
+      capitalize(header_text),
+      " --- Details\n\n",
       exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
       "\n\n"
     )
@@ -224,6 +257,28 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
         get_exposure_appendix(item)
       )
     }
+  }
+  return(out)
+}
+
+get_references <- function(aggregated_table, type_inputs) {
+  out <- ""
+  if (nrow(aggregated_table)) {
+    out <- paste0(
+        out,
+        "# References\n\n"
+      )
+    for (i in 1:nrow(aggregated_table)) {
+      item <- aggregated_table$item[i]
+      out <- paste0(
+        out,
+        exposure_classes[[item]][["references"]]
+      )
+    }
+  }
+  # Do not show the section if there are no references
+  if(out == "# References\n\n"){
+    out = ""
   }
   return(out)
 }
