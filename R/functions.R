@@ -115,7 +115,84 @@ exposure_grid_server <- function(input,
   )
 }
 
+string_replace_newline_with_spaces <- function(string, line_width, newline='<br>'){
+  out <- string
+  locations <- str_locate_all(out, newline) [[1]]
+  if(nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out) - nchar(newline) + 1,1]
+  if(length(locations)) {
+    out <- paste0("- ", out)
+    locations <- locations+2
+  }
+  while(length(locations)){
+    print(out)
+    print(locations)
+    out <- paste0(
+      substring(out, 1, locations[1] - 1),
+      paste(rep(" ", (-locations[1] - 2) %% line_width + 1), collapse=""),
+      "- ",
+      substring(out, locations[1] + nchar(newline))
+    )
+    locations <- str_locate_all(out, newline)[[1]]
+    if(nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out),1]
+  }
+  return(out)
+}
+
 # helper function to produce a markdown report
+table_to_markdown_multiline <- function(table, dot_to_space = TRUE) {
+  headers <- colnames(table)
+  col_lengths <- pmax(apply(table, 2, function(x) max(nchar(x))), nchar(headers)) + 4
+  if (dot_to_space) {
+    headers <- gsub(".", " ", headers, fixed = TRUE)
+  }
+  for(i in 1:ncol(table)) {
+    table[,i] <- as.character(table[,i])
+    table[,i] <- gsub("\n", " ", table[,i])
+    # table[,i] <- gsub("<br>", paste(rep(" ", max_width[i]), collapse=""), table[,i])
+    for (j in 1:nrow(table)) table[j,i] <- string_replace_newline_with_spaces(table[j,i], col_lengths[i])
+  }
+  
+  split_rows <- ceiling(c((max(nchar(headers)/col_lengths)), apply(table,1, function(x) max(nchar(x)/(col_lengths-2)))))
+  out <- matrix("", nrow=0,ncol=ncol(table))
+  emptyline <- rep("", ncol(table))
+  #sepline <- paste0("+", paste(paste0("+", rep("-",sum(col_lengths)), "+"), collapse = ""),"+")
+  sepline <- emptyline
+  for (i in 1:length(sepline)) {
+    sepline[i] <- paste0(paste(rep("-", col_lengths[i]), collapse=""),"+")
+  }
+  sepline[1] <- paste0("+", sepline[1])
+  rowsout <- matrix(emptyline, nrow=split_rows[1], ncol=length(emptyline), byrow=F)
+  for (i in 1:ncol(out)) {
+    temp <- headers[i]
+    temp2 <- paste0(temp, paste(rep(" ", (col_lengths[i]-2)*split_rows[1]-nchar(temp)), collapse=""))
+    for(k in 1:split_rows[1]){
+      rowsout[k,i] <- paste0(" ", substr(temp2, 1+(k-1)*(col_lengths[i]-2), (k)*(col_lengths[i]-2)), " |")
+      if(i==1) rowsout[k,i] <- paste0("|", rowsout[k,i])
+    }
+  }
+  out <- rbind(out, rowsout, gsub("-", "=", sepline))
+  for (j in 1:nrow(table)){
+    rowsout <- matrix(emptyline, nrow=split_rows[j+1], ncol=length(emptyline), byrow=F)
+    for (i in 1:ncol(out)) {        
+      temp <- table[j,i]
+      temp2 <- paste0(temp, paste(rep(" ", (col_lengths[i]-2)*split_rows[j+1]-nchar(temp)), collapse=""))
+      for (k in 1:split_rows[j+1]){
+        rowsout[k,i] <- paste0(" ", substr(temp2, 1+(k-1)*(col_lengths[i]-2), (k)*(col_lengths[i]-2)), " |")
+        if(i==1) rowsout[k,i] <- paste0("|", rowsout[k,i])
+      }
+    }
+    out <- rbind(out, rowsout, sepline)
+  }
+  
+  out2 <- paste0(
+    paste(sepline,collapse=""),
+    "\n",
+    paste(apply(out, 1, paste, collapse=""), collapse='\n'),
+    "\n"
+  )
+  return(out2)
+}
+
 table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE) {
   headers <- colnames(table)
   if (dot_to_space) {
@@ -163,19 +240,22 @@ get_exposure_description <- function(item, type_item_inputs) {
     ),
     FUN = function(texts) {
       paste(
-        gsub(" ", "&nbsp;", restore_spaces(texts)),
-        collapse = "<br />"
+        restore_spaces(texts),#gsub(" ", "&nbsp;", restore_spaces(texts)),
+        collapse = "<br>"
       )
     }
   )
   colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")  
+  #print(ordered_aggregate_inputs)
+  #print(table_to_markdown_multiline(ordered_aggregate_inputs))
+  #browser()
   out <- paste0(
     "## ",
     exposure_classes[[item]][["name"]],
     "\n\n",
     exposure_classes[[item]][["description"]],
     "\n\nThe following rows contribute: \n\n",
-    table_to_markdown(ordered_aggregate_inputs),
+    table_to_markdown_multiline(ordered_aggregate_inputs),
     "\n\n"
   )
 }
