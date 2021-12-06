@@ -6,6 +6,7 @@ library(shinythemes)
 library(shinyjs)
 library(httr)
 library(jsonlite)
+library(stringr)
 
 # helper function to remove special characters
 remove_special_characters <- function(text) gsub("[_. ]", "", text)
