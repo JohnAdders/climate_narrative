@@ -10,13 +10,8 @@ server <- function(input, output, session) {
   } else {
     session$userData$dev <- TRUE
   }
-  
-  # first, tab-specific server collation
-  for (tab in tabs) {
-    tab$server(input, output, session, switch_page, allow_report)
-  }
 
-  # then the reactive variables (ultimately - the climate report)
+  # the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
     out <- data.frame(
@@ -162,4 +157,17 @@ server <- function(input, output, session) {
       removeModal()
     }
   )
+
+  # finally, tab-specific server collation
+  report_tab_no <- as.integer(factor('report',levels=ordered_tabs))
+  for (tab in tabs) {
+    if (length(tab$next_tab)){
+      if (tab$next_tab==report_tab_no){
+        allow_next <- function() TRUE
+      } else {
+        allow_next <- allow_report
+      }
+  }
+    tab$server(input, output, session, switch_page, allow_next)
+  }
 }

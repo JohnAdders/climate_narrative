@@ -41,7 +41,7 @@ QuestionTab <- R6Class(
     # 1. server side of exposure input table (if given in the constructor)
     # 2. any other server tab_server (if given in the constructor)
     # 3. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
-    server = function(input, output, session, switch_page, allow_report) {
+    server = function(input, output, session, switch_page, allow_next) {
       switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
       if (!is.null(self$exposure)) {
         exposure_grid_server(
@@ -64,8 +64,7 @@ QuestionTab <- R6Class(
         observeEvent(
           input[[paste0(self$id, "_next")]], 
           {
-            report_tab_no <- as.integer(factor('report',levels=ordered_tabs))
-            if(self$next_tab != report_tab_no | allow_report()){
+            if(allow_next()){
               switch_page(as.integer(self$next_tab))
             }
           }
