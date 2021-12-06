@@ -41,10 +41,11 @@ server <- function(input, output, session) {
         out$product[i] <- temp[[i]][4]
         out$colname[i] <- temp[[i]][5]
         out$item[i] <- temp[[i]][6]
+        if(is.null(products[[out$product[i]]])) warning(paste('No product description for', out$products[i]))
         out$product_description[i] <- products[[out$product[i]]]$description
         out$product_text[i] <- products[[out$product[i]]]$text
       } else if (length(temp[[i]]) > 6) {
-        warning(paste0("unexpectedly large number of underscores in ", out$names[i]))
+        warning(paste0("Unexpectedly large number of underscores in ", out$names[i]))
       }
     }
     out$materiality <- factor(out$values, levels = c("", "Low", "Medium", "High"), ordered = T)
@@ -63,7 +64,7 @@ server <- function(input, output, session) {
       temp <- aggregate(materiality ~ item, FUN = max, data = temp)
       temp[order(temp$materiality, decreasing = TRUE), ]
     } else {
-      warning("This should not happen, but all exposures are blank")
+      warning("All exposures are blank - this should not happen")
       return(data.frame(item = c(), materiality = c()))
     }
   })

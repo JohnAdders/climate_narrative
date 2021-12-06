@@ -251,6 +251,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 }
 
 get_exposure_description <- function(item, type_item_inputs) {
+  if(is.null(exposure_classes[[item]])) warning(paste('No exposure class file for ', item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
@@ -339,6 +340,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 }
 
 get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
+  if(is.null(scenario)) warning(paste('No scenario file for ', scenario))
   name <- scenario$name
   description <- scenario$description
   is_scenario <- scenario$is_scenario
