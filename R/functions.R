@@ -137,7 +137,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
     for (i in 1:nrow(table)) {
       out <- paste0(
         out,
-        paste(table[i, ], collapse = collapsor),
+        gsub("\n", " ", paste(table[i, ], collapse = collapsor)),
         "\n"
       )
     }

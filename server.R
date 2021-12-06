@@ -63,8 +63,7 @@ server <- function(input, output, session) {
       temp <- aggregate(materiality ~ item, FUN = max, data = temp)
       temp[order(temp$materiality, decreasing = TRUE), ]
     } else {
-      # TODO decide what to show if all exposures are blank?
-      warning("All exposures are blank. Rendering the report contating scenario descriptions only")
+      warning("This should not happen, but all exposures are blank")
       return(data.frame(item = c(), materiality = c()))
     }
   })
@@ -123,6 +122,7 @@ server <- function(input, output, session) {
       output_file = temp_html,
       output_format = html_document(
         toc = TRUE,
+        toc_depth = 2,
         number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
@@ -148,6 +148,7 @@ server <- function(input, output, session) {
         output_file = file,
         output_format = rtf_document(
           toc = TRUE,
+          toc_depth = 2,
           # fig_caption=FALSE,
           number_sections = FALSE,
           pandoc_args = c(

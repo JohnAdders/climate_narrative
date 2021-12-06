@@ -55,9 +55,9 @@ tabs <- list(
   QuestionTab$new("title", NULL, "auth", FALSE, FALSE),
   QuestionTab$new("auth", "title", NULL),
   QuestionTab$new("type", "auth", "ins_l"),
-  QuestionTab$new("bank", "type", "report"),
-  QuestionTab$new("ins_l", "type", "ins_a"),
-  QuestionTab$new("am", "type", "report"),
-  QuestionTab$new("ins_a", "ins_l", "report"),
+  QuestionTab$new("bank", "type", "report", TRUE, TRUE, exposures$bankexposures, "bank", "A"),
+  QuestionTab$new("ins_l", "type", "ins_a", TRUE, TRUE, exposures$insuranceliabilities, "ins", "L"),
+  QuestionTab$new("am", "type", "report", TRUE, TRUE, exposures$amexposures, "am", "A"),
+  QuestionTab$new("ins_a", "ins_l", "report", TRUE, TRUE, exposures$insuranceassets, "ins", "A"),
   QuestionTab$new("report", "type", NULL)
 )

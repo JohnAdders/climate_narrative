@@ -1,4 +1,6 @@
 Type,product,Agriculture,Aviation,Commercial Real Estate,Construction,Consumer Products,Financial Services,Manufacturing,Metals and Mining,Mortgages,Oil and Gas,Property,Telecommunications,Utilities
-Corporate Lending,bond_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,metals and mining,mortgages,oil and gas,property,telecoms,utilities
-SME Lending,bond_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,metals and mining,mortgages,oil and gas,property,telecoms,utilities
-Equity,equity_like,agriculture,aviation,commercial real estate,construction,consumer products,financials,manufacturing,metals and mining,mortgages,oil and gas,property,telecoms,utilities
+General Exposures to (Non-SME) Corporates,bond_like,agriculture,aviation,commercial real estate,construction,consumer products,,manufacturing,metals and mining,mortgages,oil and gas,property,telecoms,utilities
+Retail Exposure to SMEs,bond_like,agriculture,aviation,commercial real estate,construction,consumer products,,manufacturing,metals and mining,mortgages,oil and gas,property,telecoms,utilities
+Bank Exposures,bond_like,,,,,,financials,,,,,,,
+Other Financial Institutions,bond_like,,,,,,financials,,,,,,,
+Subordinated Debt and Equity,equity_like,agriculture,aviation,commercial real estate,construction,consumer products,,manufacturing,metals and mining,mortgages,oil and gas,property,telecoms,utilities
