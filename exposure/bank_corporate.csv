@@ -1,0 +1,4 @@
+Type,product,Agriculture,Construction,Consumer Products,Financial Services,Manufacturing,Metals and Mining,Oil and Gas,Property,Telecommunications,Utilities
+Corporate Lending,bond_like,agriculture,construction,consumer products,financials,manufacturing,metals and mining,oil and gas,property,telecoms,utilities
+SME Lending,bond_like,agriculture,construction,consumer products,financials,manufacturing,metals and mining,oil and gas,property,telecoms,utilities
+Equity,equity_like,agriculture,construction,consumer products,financials,manufacturing,metals and mining,oil and gas,property,telecoms,utilities
