@@ -110,10 +110,6 @@ server <- function(input, output, session) {
   }
 
   output$rendered_report <- renderUI({
-    # previous version, not supporting footnotes:
-    # HTML(markdown::markdownToHTML(text=report_contents(), fragment.only=T))
-    # or alternatively in a simpler way:
-    # includeMarkdown(temp_report())
     if (input$report_selection == "") {
       return(p("Please select a scenario"))
     }
@@ -134,7 +130,7 @@ server <- function(input, output, session) {
 
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
-    filename = "Climate Report.rtf", # file extension defines the rendering process
+    filename = "Climate Report.rtf",
     content = function(file, res_path = paste0(getwd(), "/www")) {
       showModal(
         modalDialog(
@@ -143,14 +139,13 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      fs <- file.size(temp_report())
+      fs <- file.size(temp_subset_report(input$report_selection))
       rmarkdown::render(
-        input = temp_report(),
+        input = temp_subset_report(input$report_selection),
         output_file = file,
         output_format = rtf_document(
           toc = TRUE,
           toc_depth = 2,
-          # fig_caption=FALSE,
           number_sections = FALSE,
           pandoc_args = c(
             paste0("--resource-path=", res_path),
@@ -161,7 +156,7 @@ server <- function(input, output, session) {
       # I found that in some cases the rendering silently overwrites the markdown file
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(temp_report()) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+      if (file.size(temp_subset_report(input$report_selection)) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
       removeModal()
     }
   )
