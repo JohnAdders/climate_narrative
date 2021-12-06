@@ -10,10 +10,10 @@ server <- function(input, output, session) {
   } else {
     session$userData$dev <- TRUE
   }
-
+  
   # first, tab-specific server collation
   for (tab in tabs) {
-    tab$server(input, output, session, switch_page)
+    tab$server(input, output, session, switch_page, allow_report)
   }
 
   # then the reactive variables (ultimately - the climate report)
@@ -58,13 +58,15 @@ server <- function(input, output, session) {
     return(out)
   })
 
+  allow_report <- reactive({
+    return(nrow(type_inputs())>0)
+  })
+  
   aggregated_type_inputs <- reactive({
-    temp <- type_inputs()
-    if (nrow(temp)) {
+    if (allow_report()) {
       temp <- aggregate(materiality ~ item, FUN = max, data = temp)
       temp[order(temp$materiality, decreasing = TRUE), ]
     } else {
-      warning("All exposures are blank - this should not happen")
       return(data.frame(item = c(), materiality = c()))
     }
   })
