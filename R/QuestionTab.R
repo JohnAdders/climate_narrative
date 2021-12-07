@@ -44,6 +44,11 @@ QuestionTab <- R6Class(
     server = function(input, output, session, switch_page, allow_next) {
       switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
       if (!is.null(self$exposure)) {
+        if(ncol(self$exposure) < 5) {
+          width <- '12em'
+        } else {
+          width <- '6em'
+        }
         exposure_grid_server(
           input,
           output,
@@ -51,7 +56,7 @@ QuestionTab <- R6Class(
           produce_tooltip_matrix(self$exposure),
           paste(self$type, self$subtype, sep="_"),
           session$userData$dev,
-          width='6em'
+          width
         )
       }
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
