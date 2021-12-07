@@ -27,8 +27,6 @@ server <- function(input, output, session) {
       if (length(splitted_names[[i]]) == 6) {
         out[i, 3:8] <- splitted_names[[i]]
         if (is.null(products[[out$product[i]]])) {
-          print(out$names[i])
-          print(out[i,])
           warning(paste('No product description for', out$products[i]))
         } else {
           out$product_description[i] <- products[[out$product[i]]]$description
@@ -181,7 +179,7 @@ server <- function(input, output, session) {
     }
   )
 
-  # finally, tab-specific server collation
+  # finally, tab-specific server function collation
   report_tab_no <- as.integer(factor('report', levels=ordered_tabs))
   always_true <- function() TRUE
   for (tab in tabs) {

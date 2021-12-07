@@ -4,10 +4,12 @@ add_param <- function(previous_list, item_to_add) {
 }
 
 # helper function to get object by its name but return NULL (not error) if it does not exist
-get_or_null <- function(name) if (exists(name)) {
-  return(get(name))
-} else {
-  return(NULL)
+get_or_null <- function(name) {
+  if (exists(name)) {
+    return(get(name))
+  } else {
+    return(NULL)
+  }
 }
 
 # helper function to make the first letter of a string upper case
@@ -116,6 +118,8 @@ exposure_grid_server <- function(input,
 }
 
 string_add_spaces_to_make_equal_lines <- function(string, line_width){
+# this function adds spaces so that string can be split into blocks of exactly the same length
+# without breaking words
   out <- string
   locations <- str_locate_all(out, " ") [[1]][,1]
   i <- 1
@@ -133,23 +137,26 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width){
 }
 
 string_replace_newline_with_spaces <- function(string, line_width){
+# the function replaces "<br>" string with the number of spaces to fill the line to the end
   out <- string
   locations <- str_locate_all(out, "<br>") [[1]]
-  if(nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out) - 6 + 1,1]
-  while(length(locations)){
+  if (nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out) - 6 + 1,1]
+  while (length(locations)){
     out <- paste0(
       substring(out, 1, locations[1] - 1),
       paste(rep(" ", (1-locations[1]) %% line_width), collapse=""),
       substring(out, locations[1] + 4)
     )
     locations <- str_locate_all(out, "<br>")[[1]]
-    if(nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out),1]
+    if (nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out),1]
   }
-  return(out)
+  return (out)
 }
 
 string_format_lines <- function(string, col_width){
-  if(grepl("<br>", string)){
+# the function formats the string by appending spaces so it exactly fills the lines of given length
+# Additionally, if the string contains at least one "<br>" the function formats output as bulleted list
+  if (grepl("<br>", string)){
     out <- paste0("- ",gsub("<br>", "<br> - ", string))
   } else {
     out <- string
@@ -159,8 +166,13 @@ string_format_lines <- function(string, col_width){
   return(out)
 }
 
-# helper function to produce a markdown report
 table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=NULL) {
+# helper function to produce a markdown table out of R data frame
+# creates a markdown table, allowing multiline cell entries (lines need to be separated by <br>)
+# R table headers cannot contain spaces, to get space in the output use a dot
+# (it will be replaced with space if dot_to_space=T as in default)
+# function splits the text automatically and adds spaces to match the desired column width
+# without breaking words
   headers <- colnames(table)
   if(is.null(col_widths)){
     col_widths <- pmax(apply(table, 2, function(x) max(nchar(x))), nchar(headers)) + 4
@@ -215,6 +227,8 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
   return(out2)
 }
 
+# a simpler version of function to produce markdown tables from R table
+# does not handle multiline cells
 table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE) {
   headers <- colnames(table)
   if (dot_to_space) {
@@ -263,7 +277,7 @@ get_exposure_description <- function(item, type_item_inputs) {
     ),
     FUN = function(texts) {
       paste(
-        restore_spaces(texts),#gsub(" ", "&nbsp;", restore_spaces(texts)),
+        restore_spaces(texts),
         collapse = "<br>"
       )
     }
