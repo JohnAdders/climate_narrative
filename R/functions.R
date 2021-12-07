@@ -28,20 +28,20 @@ produce_tooltip_matrix <- function(exposure_matrix) {
     nrow = nrow(exposure_matrix),
     ncol = ncol(exposure_matrix) - 2
   )
-  for(i in 1:nrow(out)){
+  for (i in 1:nrow(out)){
     row_tooltip <- products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
-    for(j in 1:ncol(out)){
+    for (j in 1:ncol(out)){
       exposure_class <- exposure_matrix[i, j + 2]
-      if(exposure_class != ""){
+      if (exposure_class != ""){
         exposure_class_tooltip <- exposure_classes[[exposure_class]][["tooltip"]]
-        if(!is.null(exposure_class_tooltip)){
-          if(!is.null(row_tooltip)) {
+        if (!is.null(exposure_class_tooltip)){
+          if (!is.null(row_tooltip)) {
             out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
           } else {
             out[i, j] <- exposure_class_tooltip
           }
         } else {
-          if(!is.null(row_tooltip)) {
+          if (!is.null(row_tooltip)) {
             out[i, j] <- row_tooltip
           }
         }
@@ -113,7 +113,7 @@ exposure_grid_server <- function(input,
     layout,
     sanitize.text.function = function(x) x,
     sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE),
-    align = 'c'
+    align = "c"
   )
 }
 
@@ -126,12 +126,12 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width){
   while(i * line_width < nchar(out)){
     last_space <- max(locations[locations <= 1 + line_width*i])
     out <- paste0(
-      substring(out, 1, last_space-1),
-      paste(rep(" ", (1-last_space) %% line_width), collapse=""),
+      substring(out, 1, last_space - 1),
+      paste(rep(" ", (1 - last_space) %% line_width), collapse=""),
       substring(out, last_space + 1)
     )
     locations <- str_locate_all(out, " ") [[1]][,1]
-    i <- i+1
+    i <- i + 1
   }
   return(out)
 }
@@ -140,7 +140,9 @@ string_replace_newline_with_spaces <- function(string, line_width){
 # the function replaces "<br>" string with the number of spaces to fill the line to the end
   out <- string
   locations <- str_locate_all(out, "<br>") [[1]]
-  if (nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out) - 6 + 1,1]
+  if (nrow(locations)) {
+    locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out) - 6 + 1, 1]
+  }
   while (length(locations)){
     out <- paste0(
       substring(out, 1, locations[1] - 1),
@@ -187,7 +189,10 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
       table[j,i] <- string_format_lines(table[j,i], col_widths[i]-2)
     }
   }
-  split_rows <- ceiling(c((max(nchar(headers)/(col_widths-2))), apply(table,1, function(x) max(nchar(x)/(col_widths-2)))))
+  split_rows <- ceiling(c(
+    max(nchar(headers) / (col_widths - 2)), 
+    apply(table, 1, function(x) max(nchar(x)/(col_widths - 2)))
+  ))
   out <- matrix("", nrow=0,ncol=ncol(table))
   emptyline <- rep("", ncol(table))
   sepline <- emptyline
@@ -197,22 +202,36 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
   sepline[1] <- paste0("+", sepline[1])
   rowsout <- matrix(emptyline, nrow=split_rows[1], ncol=length(emptyline), byrow=F)
   for (i in 1:ncol(out)) {
-    temp <- string_format_lines(headers[i], col_widths[i]-2)
-    temp2 <- paste0(temp, paste(rep(" ", (col_widths[i]-2)*split_rows[1]-nchar(temp)), collapse=""))
+    cell_text <- string_format_lines(headers[i], col_widths[i]-2)
+    cell_text <- paste0(
+      cell_text,
+      paste(rep(" ", (col_widths[i] - 2) * split_rows[1] - nchar(cell_text)), collapse="")
+    )
     for(k in 1:split_rows[1]){
-      rowsout[k,i] <- paste0(" ", substr(temp2, 1+(k-1)*(col_widths[i]-2), (k)*(col_widths[i]-2)), " |")
-      if(i==1) rowsout[k,i] <- paste0("|", rowsout[k,i])
+      rowsout[k,i] <- paste0(
+        " ",
+        substr(cell_text, 1 + (k - 1) * (col_widths[i] - 2), k * (col_widths[i] - 2)),
+        " |"
+      )
+      if(i == 1) rowsout[k, i] <- paste0("|", rowsout[k, i])
     }
   }
   out <- rbind(out, rowsout, gsub("-", "=", sepline))
   for (j in 1:nrow(table)){
-    rowsout <- matrix(emptyline, nrow=split_rows[j+1], ncol=length(emptyline), byrow=F)
+    rowsout <- matrix(emptyline, nrow=split_rows[j + 1], ncol=length(emptyline), byrow=F)
     for (i in 1:ncol(out)) {        
-      temp <- table[j,i]
-      temp2 <- paste0(temp, paste(rep(" ", (col_widths[i]-2)*split_rows[j+1]-nchar(temp)), collapse=""))
+      cell_text<- table[j, i]
+      temp2 <- paste0(
+        cell_text,
+        paste(rep(" ", (col_widths[i] - 2) * split_rows[j + 1] - nchar(cell_text)), collapse="")
+      )
       for (k in 1:split_rows[j+1]){
-        rowsout[k,i] <- paste0(" ", substr(temp2, 1+(k-1)*(col_widths[i]-2), (k)*(col_widths[i]-2)), " |")
-        if(i==1) rowsout[k,i] <- paste0("|", rowsout[k,i])
+        rowsout[k,i] <- paste0(
+          " ",
+          substr(temp2, 1 + (k - 1)*(col_widths[i] - 2), k * (col_widths[i] - 2)),
+          " |"
+        )
+        if(i == 1) rowsout[k, i] <- paste0("|", rowsout[k, i])
       }
     }
     out <- rbind(out, rowsout, sepline)
@@ -221,7 +240,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
   out2 <- paste0(
     paste(sepline,collapse=""),
     "\n",
-    paste(apply(out, 1, paste, collapse=""), collapse='\n'),
+    paste(apply(out, 1, paste, collapse=""), collapse="\n"),
     "\n"
   )
   return(out2)
@@ -265,7 +284,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 }
 
 get_exposure_description <- function(item, type_item_inputs) {
-  if(is.null(exposure_classes[[item]])) warning(paste('No exposure class file for ', item))
+  if(is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
@@ -317,9 +336,9 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 
   # define header depending on physical/transition and low/high
   if (physical_or_transition == "transition") {
-    riskname <- switch(high_or_low, high = 'Disorderly transition', low = 'Orderly transition')
+    riskname <- switch(high_or_low, high = "Disorderly transition", low = "Orderly transition")
   } else {
-    riskname <- switch(high_or_low, high = 'High physical risk', low = 'Low physical risk')
+    riskname <- switch(high_or_low, high = "High physical risk", low = "Low physical risk")
   }
   header_text <- paste0(
     exposure_classes[[item]][["name"]],
@@ -354,7 +373,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 }
 
 get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
-  if(is.null(scenario)) warning(paste('No scenario file for ', scenario))
+  if(is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
   description <- scenario$description
   is_scenario <- scenario$is_scenario
