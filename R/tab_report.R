@@ -18,11 +18,11 @@ tab_report_ui <- function() {
   )
   if (!pandoc_available()) {
     warning("Pandoc (required to render rtf) not available, hiding download report button")
-    out <- c(out, list(uiOutput("rendered_report")))
+    out <- c(out, list(uiOutput("html_report")))
   } else {
     out <- c(out, list(
       downloadButton("report", "Download the selected scenario report as RTF"),
-      uiOutput("rendered_report")
+      uiOutput("html_report")
     ))
   }
 }
