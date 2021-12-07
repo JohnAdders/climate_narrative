@@ -1,10 +1,10 @@
-tab_am_ui <- function() {
+tab_bank_c_ui <- function() {
   list(
-    h2("Asset manager Exposures")
+    h2("Bank: Company Exposures")
   )
 }
 
-tab_am_foot <- function() {
+tab_bank_c_foot <- function() {
   list(
     helpText("Enter your firm's exposures by asset class and sector")
   )

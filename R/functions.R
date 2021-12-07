@@ -15,6 +15,11 @@ capitalize <- function(input_string) {
   return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))
 }
 
+restore_spaces <- function(camelcase) {
+  s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
+  sub("^ ", "", s) # remove first space
+}
+
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
@@ -110,11 +115,110 @@ exposure_grid_server <- function(input,
   )
 }
 
+string_add_spaces_to_make_equal_lines <- function(string, line_width){
+  out <- string
+  locations <- str_locate_all(out, " ") [[1]][,1]
+  i <- 1
+  while(i * line_width < nchar(out)){
+    last_space <- max(locations[locations <= 1 + line_width*i])
+    out <- paste0(
+      substring(out, 1, last_space-1),
+      paste(rep(" ", (1-last_space) %% line_width), collapse=""),
+      substring(out, last_space + 1)
+    )
+    locations <- str_locate_all(out, " ") [[1]][,1]
+    i <- i+1
+  }
+  return(out)
+}
+
+string_replace_newline_with_spaces <- function(string, line_width){
+  out <- string
+  locations <- str_locate_all(out, "<br>") [[1]]
+  if(nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out) - 6 + 1,1]
+  while(length(locations)){
+    out <- paste0(
+      substring(out, 1, locations[1] - 1),
+      paste(rep(" ", (1-locations[1]) %% line_width), collapse=""),
+      substring(out, locations[1] + 4)
+    )
+    locations <- str_locate_all(out, "<br>")[[1]]
+    if(nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out),1]
+  }
+  return(out)
+}
+
+string_format_lines <- function(string, col_width){
+  if(grepl("<br>", string)){
+    out <- paste0("- ",gsub("<br>", "<br> - ", string))
+  } else {
+    out <- string
+  }
+  out <- string_replace_newline_with_spaces(out, col_width)
+  out <- string_add_spaces_to_make_equal_lines(out, col_width)
+  return(out)
+}
+
 # helper function to produce a markdown report
+table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=NULL) {
+  headers <- colnames(table)
+  if(is.null(col_widths)){
+    col_widths <- pmax(apply(table, 2, function(x) max(nchar(x))), nchar(headers)) + 4
+  }
+  if (dot_to_space) {
+    headers <- gsub(".", " ", headers, fixed = TRUE)
+  }
+  for(i in 1:ncol(table)) {
+    table[,i] <- as.character(table[,i])
+    table[,i] <- gsub("\n", " ", table[,i])
+    for (j in 1:nrow(table)) {
+      table[j,i] <- string_format_lines(table[j,i], col_widths[i]-2)
+    }
+  }
+  split_rows <- ceiling(c((max(nchar(headers)/(col_widths-2))), apply(table,1, function(x) max(nchar(x)/(col_widths-2)))))
+  out <- matrix("", nrow=0,ncol=ncol(table))
+  emptyline <- rep("", ncol(table))
+  sepline <- emptyline
+  for (i in 1:length(sepline)) {
+    sepline[i] <- paste0(paste(rep("-", col_widths[i]), collapse=""),"+")
+  }
+  sepline[1] <- paste0("+", sepline[1])
+  rowsout <- matrix(emptyline, nrow=split_rows[1], ncol=length(emptyline), byrow=F)
+  for (i in 1:ncol(out)) {
+    temp <- string_format_lines(headers[i], col_widths[i]-2)
+    temp2 <- paste0(temp, paste(rep(" ", (col_widths[i]-2)*split_rows[1]-nchar(temp)), collapse=""))
+    for(k in 1:split_rows[1]){
+      rowsout[k,i] <- paste0(" ", substr(temp2, 1+(k-1)*(col_widths[i]-2), (k)*(col_widths[i]-2)), " |")
+      if(i==1) rowsout[k,i] <- paste0("|", rowsout[k,i])
+    }
+  }
+  out <- rbind(out, rowsout, gsub("-", "=", sepline))
+  for (j in 1:nrow(table)){
+    rowsout <- matrix(emptyline, nrow=split_rows[j+1], ncol=length(emptyline), byrow=F)
+    for (i in 1:ncol(out)) {        
+      temp <- table[j,i]
+      temp2 <- paste0(temp, paste(rep(" ", (col_widths[i]-2)*split_rows[j+1]-nchar(temp)), collapse=""))
+      for (k in 1:split_rows[j+1]){
+        rowsout[k,i] <- paste0(" ", substr(temp2, 1+(k-1)*(col_widths[i]-2), (k)*(col_widths[i]-2)), " |")
+        if(i==1) rowsout[k,i] <- paste0("|", rowsout[k,i])
+      }
+    }
+    out <- rbind(out, rowsout, sepline)
+  }
+  
+  out2 <- paste0(
+    paste(sepline,collapse=""),
+    "\n",
+    paste(apply(out, 1, paste, collapse=""), collapse='\n'),
+    "\n"
+  )
+  return(out2)
+}
+
 table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE) {
   headers <- colnames(table)
   if (dot_to_space) {
-    headers <- gsub(".", "&nbsp;", headers, fixed = TRUE)
+    headers <- gsub(".", " ", headers, fixed = TRUE)
   }
   collapsor <- paste0(
     paste(
@@ -147,6 +251,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 }
 
 get_exposure_description <- function(item, type_item_inputs) {
+  if(is.null(exposure_classes[[item]])) warning(paste('No exposure class file for ', item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
@@ -158,19 +263,19 @@ get_exposure_description <- function(item, type_item_inputs) {
     ),
     FUN = function(texts) {
       paste(
-        gsub(" ", "&nbsp;", texts),
-        collapse = "<br />"
+        restore_spaces(texts),#gsub(" ", "&nbsp;", restore_spaces(texts)),
+        collapse = "<br>"
       )
     }
   )
-  colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")
+  colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")  
   out <- paste0(
     "## ",
     exposure_classes[[item]][["name"]],
     "\n\n",
     exposure_classes[[item]][["description"]],
     "\n\nThe following rows contribute: \n\n",
-    table_to_markdown(ordered_aggregate_inputs),
+    table_to_markdown_multiline(ordered_aggregate_inputs, TRUE, c(15,30,20,15)),
     "\n\n"
   )
 }
@@ -235,6 +340,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 }
 
 get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
+  if(is.null(scenario)) warning(paste('No scenario file for ', scenario))
   name <- scenario$name
   description <- scenario$description
   is_scenario <- scenario$is_scenario

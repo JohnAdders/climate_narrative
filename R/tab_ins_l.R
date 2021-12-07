@@ -1,6 +1,6 @@
 tab_ins_l_ui <- function() {
   list(
-    h2("Insurance Liability Exposures")
+    h2("Insurance: Life and Health Lines of Business")
   )
 }
 
