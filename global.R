@@ -66,7 +66,7 @@ tabs <- list(
   QuestionTab$new("bank_c", "bank_re", "bank_sov", TRUE, TRUE, exposures$bankcorporate, "bank", "C"),
   QuestionTab$new("bank_sov", "bank_c", "report", TRUE, TRUE, exposures$sovereign, "bank", "S"),
   QuestionTab$new("ins_l", "type", "ins_nl", TRUE, TRUE, exposures$insurancelife, "insurance", "L"),
-  QuestionTab$new("ins_nl", "ins_a", "ins_c", TRUE, TRUE, exposures$insurancenonlife, "insurance", "N"),
+  QuestionTab$new("ins_nl", "ins_l", "ins_c", TRUE, TRUE, exposures$insurancenonlife, "insurance", "N"),
   QuestionTab$new("ins_c", "ins_nl", "ins_sov", TRUE, TRUE, exposures$insurancecorporate, "insurance", "C"),
   QuestionTab$new("ins_sov", "ins_c", "report", TRUE, TRUE, exposures$sovereign, "insurance", "S"),
   QuestionTab$new("am_c", "type", "am_sov", TRUE, TRUE, exposures$amcorporate, "asset", "C"),
