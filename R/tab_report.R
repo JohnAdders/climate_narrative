@@ -34,9 +34,9 @@ tab_report_server <- function(input, output, session, tab) {
       tab$previous_tab <- as.integer(
         factor(
           switch(input$type,
-            insurance = "ins_l",
-            asset = "am_c",
-            bank = "bank_re"
+            insurance = "ins_sov",
+            asset = "am_re",
+            bank = "bank_sov"
           ),
           ordered_tabs
         )
