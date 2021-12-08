@@ -29,20 +29,20 @@ description: |
 transition:
   high:
     always: |
-      While telecoms will continue to play a role in meeting customer demand for
+      While telecoms could continue to play a role in meeting customer demand for
       the coming years, the changing patterns in energy generation, driven by
       divergent or late policy reaction, societal change, national energy
       strategies, and carbon legislation, are likely to have a significant and
       long term impact on this sector, affecting profitability and consumer
       preferences.
     high_materiality: |
-      In the Disorderly/Divergent transition risk scenarios, the impacts will
-      depend on how reliant the companys production/revenue mix is on low carbon
-      electricity, the clients temperature alignment score and how this compares
+      In the Disorderly/Divergent transition risk scenarios, the impacts could
+      depend on how reliant the company's production/revenue mix is on low carbon
+      electricity, the client's 'temperature alignment' score and how this compares
       to the sector average. For example:
 
       - **Increased operating costs**, the increases in carbon and energy prices
-        could potentially result in financial impacts, as firms carbon emissions
+        could potentially result in financial impacts, as firms' carbon emissions
         face a rising price in the form of a carbon tax or cap and trade
         clearing price, particularly for copper and other lightweight materials
         commonly found in phones/ cables and network sites.
@@ -50,7 +50,7 @@ transition:
       - **Asset valuation of company reserves could be re-priced** based on the
         re-adjusted expectations of the use of low-carbon products and energy
         efficient technologies in the future. Failure to provide low carbon
-        emissions in telecom material will affect the commercial reputation of
+        emissions in telecom material could affect the commercial reputation of
         the company and could lead to loss of customers and a decrease in
         revenue.
 
@@ -59,7 +59,7 @@ transition:
         performance.
 
       The profitability of the telecom sector, in the Disorderly/Divergent
-      transition risk scenarios, will also depend on the relevant companies
+      transition risk scenarios, could also depend on the relevant companies
       proactively investing in innovation and new technology and their ability
       to mitigate transition risks. For example:
 
@@ -85,35 +85,35 @@ transition:
 
       - embed sustainable supply chain & partnership strategy;
 
-      - use Smart network components which shutdown/start up in line with demand
+      - use 'Smart' network components which shutdown/start up in line with demand
         and usage;
 
       - integrate E-Waste circular economy and smart recycling into consumer
         propositions (e.g. O2 Recycle);
 
-      - use Green Steel in construction of telecoms infrastructure;
+      - use 'Green Steel' in construction of telecoms infrastructure;
 
       - develop technology to foster, or directly work on, solutions that
-        minimise need for travel (e.g. BTs Remote Diagnostic Station).
+        minimise need for travel (e.g. BT's Remote Diagnostic Station).
 
       These actions could also lead to gain positive commercial reputation and
-      therefore magnify demand and overall revenue as consumers will proactively
+      therefore magnify demand and overall revenue as consumers could proactively
       shop at businesses with an incorporated green strategy.
   low:
     always: |
-      While the telecom sector will continue to play a role in meeting customer
+      While the telecom sector could continue to play a role in meeting customer
       demand for the coming years, the changing patterns in energy generation,
       in early/orderly transition risk scenarios, driven by immediate policy
       reaction, societal change, national energy strategies, and carbon
-      legislation, will lead to an immediate and smooth reduction in
+      legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
       are likely to have an impact on this sector, affecting profitability and
       consumer preferences.
     high_materiality: |
       In the early/orderly transition risk scenarios, the increases in carbon
       and energy prices could potentially result in financial impacts; the
-      extent will depend on how reliant the companys production /revenue mix is
-      on low-carbon electricity, the companys transition plans and how they
+      extent could depend on how reliant the company's production /revenue mix is
+      on low-carbon electricity, the company's transition plans and how they
       compare to the sector average. For example:
 
       - **Increased operating costs** resulting from the smooth but significant
@@ -122,10 +122,10 @@ transition:
         network sites. Change in regulations covering infrastructure efficiency
         would lead to increasing compliance requirements.
 
-      - **Asset valuation of company reserves will have to be re-priced** based
+      - **Asset valuation of company reserves could have to be re-priced** based
         on the re-adjusted expectations of the use of low-carbon products and
         energy efficient technologies in the future. Failure to use low-carbon
-        products and energy efficient technologies will affect the commercial
+        products and energy efficient technologies could affect the commercial
         reputation of the company and could lead to loss of customers and a
         decrease in revenue.
 
@@ -134,7 +134,7 @@ transition:
         expectations and changes in demand as a result of societal changes.
 
       The profitability of the telecoms sector, in the early/orderly transition
-      risk scenario, will depend on the relevant companies proactively investing
+      risk scenarios, could depend on the relevant companies proactively investing
       in innovation and new technology and their ability to mitigate transition
       risks. For example, in particular whether firms:
 
@@ -160,19 +160,19 @@ transition:
 
       - embed sustainable supply chain & partnership strategies;
 
-      - use Smart network components which shutdown/start up in line with demand
+      - use 'Smart' network components which shutdown/start up in line with demand
         and usage;
 
       - integrate E-Waste circular economy and smart recycling into consumer
         propositions (e.g. O2 Recycle);
 
-      - use Green Steel in construction of telecoms infrastructure;
+      - use 'Green Steel' in construction of telecoms infrastructure;
 
       - develop technology to foster, or directly work on, solutions that
-        minimise need for travel (e.g. BTs Remote Diagnostic Station).
+        minimise need for travel (e.g. BT's Remote Diagnostic Station).
 
       These actions could also lead to positive gains in commercial reputation
-      and therefore magnify demand and overall revenue as consumers will
+      and therefore magnify demand and overall revenue as consumers could
       proactively shop at businesses with an incorporated green strategy.
 physical:
   high:
@@ -234,7 +234,7 @@ physical:
       temperatures could cause service outages or degradation. Whilst the
       telecom industry is used to responding to and managing changing weather
       conditions, in the low physical risk scenario, climate change and global
-      warming will increase weather variations. This could lead to increasing
+      warming could increase weather variations. This could lead to increasing
       disruption to productivity in this sector which could impact the
       profitability and the infrastructure for these companies and could
       therefore result in an increase in the operational costs (as operations

@@ -16,7 +16,7 @@ description: |
   The NGFS have defined two orderly scenarios:
 
   - **Net Zero 2050** limits global warming to 1.5&deg;C through stringent climate
-    policies and innovation, reaching global Net Zero CO2 emissions around 2050.
+    policies and innovation, reaching global Net Zero CO<sub>2</sub> emissions around 2050.
     Some jurisdictions such as the US, EU and Japan reach Net Zero for all GHGs.
 
   - **Below 2&deg;C** gradually increases the stringency of climate policies, giving
@@ -24,7 +24,7 @@ description: |
 
   ## Key assumptions and parameters
 
-  In these scenarios the reduction in CO2 emissions occurs gradually. This is
+  In these scenarios the reduction in CO<sub>2</sub> emissions occurs gradually. This is
   achieved by an immediate and smooth policy reaction decarbonising the energy
   supply, accelerating electrification and switching to low-carbon fuels in
   industry, transport and buildings, deploying bioenergy with carbon capture and
@@ -49,12 +49,16 @@ description: |
   Observed climate change has already increased global mean temperatures above
   1.2&deg;C, compared to pre-industrial levels, and both the global land area and
   the global population annually exposed to river flood, crop failure, tropical
-  cyclones, wildfire, drought and heatwaves has more than doubled.
+  cyclones, wildfire, drought and heatwaves has more than doubled. (See Kaufman, 
+  D. et al. (2020)).
 
-  In these scenarios global mean temperatures could increase across the world by
-  1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels, with land warming faster
-  than oceans and high latitudes experiencing higher warming giving rise to low
-  physical risk.
+  The increasing concentrations of carbon dioxide, methane and nitrous oxide in the 
+  atmosphere are unprecedented in at least the last 800,000 years and are extremely 
+  likely to have been the dominant cause of warming since the mid-20th century. 
+  In early/orderly transition risk scenarios global mean temperatures are 
+  projected to increase across the world by 1.5&deg;C to 1.7&deg;C, compared to 
+  pre-industrial levels, with land warming faster than oceans and high latitudes 
+  experiencing higher warming giving rise to low physical risk.
 
   ![Global mean temp rise](Global_mean_temperature_Orderly.png)
 
@@ -71,22 +75,31 @@ description: |
   temperatures in the scenarios over time. GDP impacts from transition risk are
   slightly positive in the Net Zero 2050 scenario as negative impacts on demand
   from higher carbon prices and energy costs are more than offset by the
-  recycling of carbon revenues into government investment and lower employment
+  recycling of carbon tax revenues into government investment and lower employment
   taxes.
 
   ![GDP](GDP_Orderly.png)
 
   **Source:**
   [IIASA NGFS Scenario Explorer, NGFS Scenario Data NIGEM v2.0 NiGEM NGFS v1.21 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+  
+  Note GDP losses highlighted in the above graph were calculated based on the 
+  methodology set out in Kalkuhl and Wenz (2020) at the country level for the 
+  change in average temperature in each scenario compared to the previous year. 
+  The methodology does not include impacts related to extreme weather, sea-level 
+  rise or wider societal impacts from migration or conflict. For given countries 
+  these would likely strongly increase the physical risk. These estimates also do 
+  not fully capture adaptation, which would reduce impacts but require significant 
+  investment.
 
   Overall, these are relatively optimistic scenarios as both transition and
-  physical risks are low. Any policies that are either introduced or changed are
+  physical risks are limited. Any policies that are either introduced or changed are
   assumed to take place efficiently with little variation between countries and
   sectors. Similarly, the development and deployment of alternative technologies
   are expected to take place without significant difficulty. For example, the
   availability of Carbon dioxide removal technologies which involves removing
   carbon from the atmosphere through increasing forest cover and soil
-  sequestration or growing crops for bioenergy does not pose a significant
+  sequestration or growing crops for bioenergy doesn't pose a significant
   challenge in either orderly scenario.
 
   ![Orderly scenarios](Orderly_Scenarios.png)

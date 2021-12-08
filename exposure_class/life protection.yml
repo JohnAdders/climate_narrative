@@ -27,11 +27,11 @@ transition:
       Life Protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Disorderly/Divergent
       transition risk scenarios, the delayed transition driven by a late policy
-      action enables a fossil fuelled recovery out of the economic crisis
+      action enables a "fossil fuelled recovery" out of the economic crisis
       brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
       until 2030 and a decrease in CO<sub>2</sub> emissions after 2030 to
       compensate for the inaction beforehand. The divergent scenario results in
-      an immediate by divergent reduction in CO<sub>2</sub> emissions. This will
+      an immediate by divergent reduction in CO<sub>2</sub> emissions. This could
       lead to a significant reduction in CO<sub>2</sub> emissions by 2050,
       probably associated with a drive towards cleaner air (due to for example,
       an increase in electric vehicles replacing vehicles with internal
@@ -47,7 +47,7 @@ transition:
       **Pollution effect**
 
       It seems reasonable to assume that a general drive towards reducing
-      greenhouse gases will probably be associated with a drive towards cleaner
+      greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
       CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
@@ -62,16 +62,16 @@ transition:
       example:
 
       - If we replace diesel cars with electric cars but continue to rely on
-        fossil fuels to generate the electricity, then this will address the
+        fossil fuels to generate the electricity, then this could address the
         particulates but not the greenhouse effect.
 
       - If we increase biomass burning this may reduce greenhouse effect but
         actually contribute to local particulate pollution.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
-        but without global buy-in then this will also reduce the correlation.
+        but without global buy-in then this could also reduce the correlation.
 
-      In the Disorderly/Divergent scenarios, there is potential for fewer deaths
+      In the Disorderly/Divergent transition risk scenarios, there is potential for fewer deaths
       and a positive outcome for health relating to air pollution, the reduction
       of pollution could result into a reduction of cancers (especially lung)
       and respiratory diseases (e.g. asthma, respiratory allergic disease,
@@ -86,7 +86,7 @@ transition:
       **GDP growth effect**
 
       GDP growth impacts the ability of individuals and government to spend more
-      on factors that can impact the nations health and thus indirectly levels
+      on factors that can impact the nation's health and thus indirectly levels
       of mortality and morbidity claims. The specific scenario would depend on
       how government and society chose to allocate any GDP growth.
 
@@ -102,7 +102,7 @@ transition:
       there was a reduction in spending on musculoskeletal conditions, whilst
       critical illness would be more sensitive to trajectories in cancer
       diagnosis techniques), it may be more appropriate to view this at the
-      overall level rather than spuriously defining specific GDP allocation
+      "overall" level rather than spuriously defining specific GDP allocation
       scenarios.
 
       **Impact on pricing or product design**
@@ -130,7 +130,7 @@ transition:
       **Pollution effect**
 
       It seems reasonable to assume that a general drive towards reducing
-      greenhouse gases will probably be associated with a drive towards cleaner
+      greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
       CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
@@ -145,14 +145,14 @@ transition:
       example:
 
       - If we replace diesel cars with electric cars but continue to rely on
-        fossil fuels to generate the electricity, then this will address the
+        fossil fuels to generate the electricity, then this could address the
         particulates but not the greenhouse effect.
 
       - If we increase biomass burning this may reduce greenhouse effect but
         actually contribute to local particulate pollution.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
-        but without global buy-in then this will also reduce the correlation.
+        but without global buy-in then this could also reduce the correlation.
 
       In the early/orderly transition risk scenarios, there is potential for
       fewer deaths and a positive outcome for health relating to air pollution.
@@ -194,13 +194,13 @@ physical:
       **GDP growth effect**
 
       GDP growth impacts the ability of individuals and government to spend more
-      on factors that can impact the nations health and thus indirectly levels
+      on factors that can impact the nation's health and thus indirectly levels
       of mortality and morbidity claims. The specific scenario would depend on
       how government and society chose to allocate any GDP growth. However,
       higher GDP would give a bigger pot to potentially support higher spending
       on the NHS, public health, social care, medical research etc. and so it is
-      reasonable to assume the funding for these areas would be greater on
-      average if GDP is greater (without having to specifically predict how
+      reasonable to assume the funding for these areas would be greater "on
+      average" if GDP is greater (without having to specifically predict how
       spending is allocated by any future government). Similarly, a lower GDP
       would potentially constrain the growth in spending on these areas.
       Assuming that greater funding is correlated to some extent with mortality
@@ -212,7 +212,7 @@ physical:
       example, income protection claims experience might suffer more if there
       was a reduction in spending on musculoskeletal conditions, whilst critical
       illness would be more sensitive to trajectories in cancer diagnosis
-      techniques), it may be more appropriate to view this at the overall level
+      techniques), it may be more appropriate to view this at the "overall" level
       rather than spuriously defining specific GDP allocation scenarios.
 
       **Temperature and weather effect**
@@ -222,7 +222,7 @@ physical:
       challenges that in turn could impact the life protection underwriting
       class. For example:
 
-      - **Mortality**: A level increase in temperature in the UK will lead to a
+      - **Mortality**: A level increase in temperature in the UK could lead to a
         reduction in deaths since the reduction in excess deaths due to cold
         weather may outweigh any increase excess deaths due to warmer weather
         and the risk of prolonged heat waves. However, to the extent that any
@@ -276,13 +276,13 @@ physical:
       **GDP growth effect**
 
       GDP growth impacts the ability of individuals and government to spend more
-      on factors that can impact the nations health and thus indirectly levels
+      on factors that can impact the nation's health and thus indirectly levels
       of mortality and morbidity claims. The specific scenario would depend on
       how government and society chose to allocate any GDP growth. However,
       higher GDP would give a bigger pot to potentially support higher spending
       on the NHS, public health, social care, medical research etc. and so it is
-      reasonable to assume the funding for these areas would be greater on
-      average if GDP is greater (without having to specifically predict how
+      reasonable to assume the funding for these areas would be greater "on
+      average" if GDP is greater (without having to specifically predict how
       spending is allocated by any future government). Similarly, a lower GDP
       would potentially constrain the growth in spending on these areas.
       Assuming that greater funding is correlated to some extent with mortality
@@ -294,7 +294,7 @@ physical:
       example, income protection claims experience might suffer more if there
       was a reduction in spending on musculoskeletal conditions, whilst critical
       illness would be more sensitive to trajectories in cancer diagnosis
-      techniques), it may be more appropriate to view this at the overall level
+      techniques), it may be more appropriate to view this at the "overall" level
       rather than spuriously defining specific GDP allocation scenarios.
 
       **Temperature and weather effect**
@@ -304,7 +304,7 @@ physical:
       significant challenges that in turn could impact the life protection
       underwriting class. For example:
 
-      - **Mortality**: A level increase in temperature in the UK will lead to a
+      - **Mortality**: A level increase in temperature in the UK could lead to a
         reduction in deaths since the reduction in excess deaths due to cold
         weather may outweigh any increase excess deaths due to warmer weather
         and the risk of prolonged heat waves. However, to the extent that any
