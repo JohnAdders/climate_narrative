@@ -12,20 +12,23 @@ description: |
 
   - Acting as lessors of buildings that are both used and not used as residences
     or dwellings, such as single-family homes, apartment buildings, and town
-    homes.
+    homes:
 
-  - Firms acting as lessors of buildings that are used as residences or
+    - Firms acting as lessors of buildings that are used as residences or
     dwellings are owner lessors and establishments renting real estate and then
     acting as lessors in subleasing it to others.
 
-  - Firms acting as lessors of buildings that are not used as residences or
+    - Firms acting as lessors of buildings that are not used as residences or
     dwellings include:
 
-    - owner-lessors of non-residential buildings
-    - establishments renting real estate and then acting as lessors in subleasing
-      it to others
-    - establishments providing full-service office space, whether on a lease or
-      service contract basis.
+        - owner-lessors of non-residential buildings
+        
+        - establishments renting real estate and then acting as lessors in subleasing
+          it to others
+          
+        - establishments providing full-service office space, whether on a lease or
+          service contract basis.
+
     - Renting or leasing space to others for self-storage. These establishments
       provide secure space (i.e., rooms, compartments, lockers, containers, or
       outdoor space) where clients can store and retrieve their goods.
@@ -41,11 +44,13 @@ transition:
   high:
     always: |
       In disorderly transition risk scenarios, the demand for Commercial Real
-      Estate sector is likely to increase. While the Commercial Real Estate
-      sector will continue to play a role in meeting customer demand for the
+      Estate sector is likely to increase. 
+      
+      While the Commercial Real Estate
+      sector could continue to play a role in meeting customer demand for the
       coming years, the changing patterns in energy generation in the Delayed
-      transition scenario, driven by late policy action enabling a fossil
-      fuelled recovery out of the economic crisis brought about by COVID-19,
+      transition scenario, driven by late policy action enabling a "fossil
+      fuelled recovery" out of the economic crisis brought about by COVID-19,
       results in CO<sub>2</sub> emissions increasing until 2030 before rapidly
       decreasing after 2030 as carbon prices are increased to compensate for the
       inaction beforehand. In the divergent scenario there is a more immediate
@@ -57,16 +62,16 @@ transition:
       low carbon technology (especially heating and cooling)) are likely to
       influence the profitability of this sector.
 
-      The disorederly transition risk scenarios could also lead to a relative
+      The disorderly transition risk scenarios could also lead to a relative
       reduction in GDP growth. This could partially offset growth in demand for
       the Commercial Real Estate sector.
 
 
 
     high_materiality: |
-      The transition changes will translate into financial impacts:
+      The transition changes could translate into financial impacts:
 
-      - **Increased revenues** for low carbon / green buildings meeting demand
+      - **Increased revenues** for "low carbon / green" buildings meeting demand
         as companies have to decarbonise their own operations.
 
       - **Decreased revenues from, and stranding of, assets** that fail to meet
@@ -101,14 +106,12 @@ transition:
   low:
     always: |
       In early/orderly transition risk scenarios, the demand for Commercial Real
-      Estate sector is likely to increase.
-
-      While the Commercial Real Estate sector will continue to play a role in
-      meeting customer demand for the coming years, the changing patterns in
-      energy generation in early/orderly transition risk scenarios, driven by
-      immediate policy reaction, societal change, national energy strategies,
-      and carbon legislation, will lead to a an immediate and smooth reduction
-      in CO<sub>2</sub> emissions by 2050.
+      Estate sector is likely to increase. While the Commercial Real Estate sector 
+      could continue to play a role in meeting customer demand for the coming years, 
+      the changing patterns in energy generation in early/orderly transition risk 
+      scenarios, driven by immediate policy reaction, societal change, national 
+      energy strategies, and carbon legislation, could lead to an immediate and 
+      smooth reduction in CO<sub>2</sub> emissions by 2050.
 
       The increase in the carbon price as well as a change to the demand in the
       quality of the real estate product (e.g. emissions from the construction
@@ -123,7 +126,7 @@ transition:
       energy mix could potentially the commercial real estate sector as a result
       in one or more of the following impacts:
 
-      - **Increased revenues** for low carbon/green buildings meeting demand as
+      - **Increased revenues** for "low carbon/green" buildings meeting demand as
         companies have to decarbonise their own operations.
 
       - **Decreased revenues** of assets that fail to meet customer criteria
@@ -146,7 +149,7 @@ transition:
       (directly or indirectly) from high transition risk industries, such as
       coal, oil & gas extraction, then knock-on effects would be expected to
       revenues and occupancy. This is likely to be less severe in the short term
-      under orderly transition risk scenarios and will occur more smoothly over
+      under orderly transition risk scenarios and could occur more smoothly over
       time, albeit with certain regions where costs to extract are high likely
       to be impacted first
 
@@ -174,7 +177,7 @@ physical:
       particularly acute for assets on flood plains or located in low-lying
       coastal areas. In addition to direct damage, extreme temperatures can
       materially impact the revenues of assets that are not adapted to these
-      changes as this will potentially affect the productivity of assets and
+      changes as this could potentially affect the productivity of assets and
       labour.
 
 
@@ -228,10 +231,8 @@ physical:
       particularly acute for assets on flood plains or located in low-lying
       coastal areas. In addition to direct damage, extreme temperatures can
       materially impact the revenues of assets that are not adapted to these
-      changes as this will potentially affect the productivity of assets and
-      labour. In addition to direct damage, extreme temperatures can materially
-      impact the revenues of assets that are not adapted to these changes as
-      this will potentially affect the productivity of assets and labour.
+      changes as this could potentially affect the productivity of assets and
+      labour.
 
 
     high_materiality: |

@@ -41,19 +41,24 @@ description: |
   **Source:**
   [IIASA NGFS Scenario Explorer, REMIND model. Carbon prices are weighted global averages.](https://data.ene.iiasa.ac.at/ngfs/#/workspaces/82)
 
-  Observed climate change of 1.2&deg;C, compared to pre-industrial levels, has
-  already more than doubled both the global land area and the global population
-  annually exposed to river flood, crop failure, tropical cyclones, wildfire,
-  drought and heatwaves. In these scenarios global mean temperatures could
-  increase across the world by 2.5&deg;C to 3&deg;C with land warming faster than oceans
-  and high latitudes experiencing higher warming.
+  The increasing concentrations of carbon dioxide, methane and nitrous oxide 
+  in the atmosphere are unprecedented in at least the last 800,000 years and 
+  are extremely likely to have been the dominant cause of warming since the 
+  mid-20th century. Observed climate change of 1.2&deg;C, compared to 
+  pre-industrial levels, has already more than doubled both the global land area 
+  and the global population annually exposed to river flood, crop failure, 
+  tropical cyclones, wildfire, drought and heatwaves. In these scenarios global 
+  mean temperatures are projected to increase across the world by 2.5&deg;C to 
+  3&deg;C, or 3.7&deg;C to 4.8&deg;C at the 95th percentile (REMIND model), 
+  with land warming faster than oceans and high latitudes experiencing higher 
+  warming.
 
   ![Global mean temp rise](Global_mean_temperature_Hothouse.png)
 
   **Source:**
   [IIASA NGFS Scenario Explorer, NGFS Scenario Data IAM outputs v2.2 REMIND-MAgPIE 2.1-4.2 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
 
-  These changes will lead to chronic changes in living conditions affecting
+  These changes could lead to chronic changes in living conditions affecting
   health, labour productivity, agriculture, ecosystems, and sea-level rise. It
   can also change the frequency and severity of weather events such as
   heatwaves, droughts, wildfires, tropical cyclones, and flooding.
@@ -67,6 +72,15 @@ description: |
   **Source:**
   [IIASA NGFS Scenario Explorer, NGFS Scenario Data NIGEM v2.0 NiGEM NGFS v1.21 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
 
+  Note: GDP losses highlighted in the above graph were calculated based on the 
+  methodology set out in Kalkuhl and Wenz (2020) at the country level for the 
+  change in average temperature in each scenario compared to the previous year. 
+  The methodology does not include impacts related to extreme weather, sea-level 
+  rise or wider societal impacts from migration or conflict. For given countries 
+  these would likely strongly increase the physical risk. These estimates also do 
+  not fully capture adaptation, which would reduce impacts but require significant 
+  investment.
+  
   Selected climate variables can be explored through the NGFS CA Climate Impact
   Explorer hosted by Climate Analytics. Additional data are available via the
   ISIMIP project.

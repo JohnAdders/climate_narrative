@@ -19,12 +19,12 @@ transition:
   high:
     always: |
       In Disorderly/Divergent transition risk scenarios, driven by late policy
-      action, enables a fossil fuelled recovery out of the economic crisis
+      action, enables a "fossil fuelled recovery" out of the economic crisis
       brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
       until 2030 before rapidly decreasing after 2030 as carbon prices are
       increased to compensate for the inaction beforehand. In the Divergent Net
       Zero scenario CO<sub>2</sub> emissions start to be reduced immediately but
-      divergently. This will lead to a significant reduction in CO<sub>2</sub>
+      divergently. This could lead to a significant reduction in CO<sub>2</sub>
       emissions by 2050, probably associated with a drive towards cleaner air
       (due to for example, an increase in electric vehicles replacing vehicles
       with internal combustion engines). This could cause a reduction in
@@ -32,12 +32,12 @@ transition:
       could result in annuities being paid out for longer durations, which would
       negatively impact the profit margins of annuity providers. At the same
       time, better health in policyholders of other savings and retirement
-      products will improve mortality, leading to savings products becoming more
+      products could improve mortality, leading to savings products becoming more
       profitable from longer durations in force, and improved morbidity, leading
       to higher rates of savings and fewer lapses.
 
       These scenarios could also result in moderate to severe reduction in GDP
-      growth which in turn reduces household incomes and leads to lower savings
+      growth, which in turn reduces household incomes and leads to lower savings
       rates, or increased lapses, or both. These GDP impacts may be expected to
       last for the period of the transition, with GDP stabilising thereafter.
     high_materiality: |
@@ -65,7 +65,7 @@ transition:
       **Pollution effect**
 
       It seems reasonable to assume that a general drive towards reducing
-      greenhouse gases will probably be associated with a drive towards cleaner
+      greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
       CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
@@ -80,14 +80,14 @@ transition:
       example:
 
       - If we replace diesel cars with electric cars but continue to rely on
-        fossil fuels to generate the electricity, then this will address the
+        fossil fuels to generate the electricity, then this could address the
         particulates but not the greenhouse effect.
 
       - If we increase biomass burning, this may reduce the greenhouse effect
         but actually contribute to local particulate pollution.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
-        but without global buy-in, then this will also reduce the correlation.
+        but without global buy-in, then this could also reduce the correlation.
 
       In the disorderly transition risk scenario, there is potential for fewer
       deaths and a positive outcome for health relating to air pollution, the
@@ -119,17 +119,17 @@ transition:
       affect savings rates, as well as health outcomes, which affect mortality.
       Early/orderly transition risk scenarios, driven by immediate policy
       reaction, societal change, national energy strategies, and carbon
-      legislation, will lead to an immediate and smooth reduction in
+      legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 (due to for example, an increase in
       electric vehicles replacing vehicles with internal combustion engines)
-      which will lead to emissions reductions and cleaner air. This could result
+      which could lead to emission reductions and cleaner air. This could result
       in annuities being paid out for longer durations, which could negatively
       impact the profit margins of annuity providers. At the same time, better
       health could improve mortality, leading to savings and retirement products
       becoming more profitable from longer durations in force, and improved
       morbidity could lead to higher rates of savings and fewer lapses.
 
-      The early/orderly transition risk scenarios could lead to a limited
+      The early/orderly transition risk scenario could lead to a limited
       relative reduction in GDP growth. However, any negative impacts on GDP as
       a result of transition risk are likely to be smaller than in other
       scenarios. This could also result in reduced real household income,
@@ -142,7 +142,7 @@ transition:
 
       **GDP growth effect**
 
-      Also as a result of the expected mild impact on GDP, customers are likely
+      Also, as a result of the expected mild impact on GDP, customers are likely
       to experience correspondingly low impacts to incomes. They may therefore
       be able to maintain their savings rates. Lapses, and related impacts on
       asset flows may be expected to be correspondingly low.
@@ -153,7 +153,7 @@ transition:
       **Pollution effect**
 
       It seems reasonable to assume that a general drive towards reducing
-      greenhouse gases will probably be associated with a drive towards cleaner
+      greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
       CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
@@ -168,14 +168,14 @@ transition:
       example:
 
       - If we replace diesel cars with electric cars but continue to rely on
-        fossil fuels to generate the electricity, then this will address the
+        fossil fuels to generate the electricity, then this could address the
         particulates but not the greenhouse effect.
 
       - If we increase biomass burning this may reduce the greenhouse effect but
         actually contribute to local particulate pollution.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
-        but without global buy-in, then this will also reduce the correlation.
+        but without global buy-in, then this could also reduce the correlation.
 
       In orderly transition risk scenarios, there is potential for fewer deaths
       and a positive outcome for health relating to air pollution. The reduction
@@ -193,7 +193,7 @@ transition:
       **Impact on pricing or product design**
 
       To the extent that there is an impact on mortality, market and credit
-      risks, the orderly transition risk scenarios could have an impact on the
+      risks, orderly transition risk scenarios could have an impact on the
       pricing of saving and retirement products, although this is likely to be
       modest. Customers may also switch to sustainable investment products,
       increasing lapse rates for those organisations who do not have such
@@ -204,7 +204,7 @@ physical:
     always: |
       In the high physical risk scenario, climate change is likely to result in
       severe temperature increases and large increases in both the frequency and
-      severity if weather events that could have significant impact on the
+      severity of weather events that could have significant impact on the
       saving and retirement underwriting class. Chronic gradual impacts (such as
       higher average temperatures and rises in the spread of vector-borne
       diseases) and acute effects due to changes in the frequency and severity
@@ -227,8 +227,8 @@ physical:
 
       Higher GDP would give a bigger pot to potentially support higher spending
       on the NHS, public health, social care, medical research etc. and so it is
-      reasonable to assume the funding for these areas would be greater on
-      average if GDP is greater (without having to specifically predict how
+      reasonable to assume the funding for these areas would be greater "on
+      average" if GDP is greater (without having to specifically predict how
       spending is allocated by any future government). Similarly, a lower GDP
       would potentially constrain the growth in spending on these areas.
 
@@ -284,7 +284,7 @@ physical:
       negatively impact customer standards of living. Savings will therefore be
       expected to be accessed sooner, increasing lapse rates, as well as asset
       outflows. Inflows will also be correspondingly lower as savings rates
-      reduce, due to higher morbidity affecting policyholders capacity to earn
+      reduce, due to higher morbidity affecting policyholders' capacity to earn
       and save income. Any increase in lapse rates will drive up per policy
       expenses (as a fixed cost base is spread out over fewer policies). Severe
       physical risk impacts to company infrastructure (e.g. data centres and
@@ -318,8 +318,8 @@ physical:
 
       Higher GDP would give a bigger pot to potentially support higher spending
       on the NHS, public health, social care, medical research etc. and so it is
-      reasonable to assume the funding for these areas would be greater on
-      average if GDP is greater (without having to specifically predict how
+      reasonable to assume the funding for these areas would be greater "on
+      average" if GDP is greater (without having to specifically predict how
       spending is allocated by any future government). Similarly, a lower GDP
       would potentially constrain the growth in spending on these areas.
 
@@ -341,7 +341,7 @@ physical:
         even improve as a result of this factor, but depending on where the
         customers are located, this could be offset by an increase in mortality
         rates as a result of severe weather events. A level increase in
-        temperature in the UK will lead to a reduction in deaths since the
+        temperature in the UK could lead to a reduction in deaths since the
         reduction in excess deaths due to cold weather may outweigh any increase
         excess deaths due to warmer weather and the risk of prolonged heat
         waves. However, to the extent that any increase in temperatures comes
@@ -362,7 +362,7 @@ physical:
       To the extent that there is an impact on mortality, morbidity market and
       credit risks, the low physical risk scenario could have an impact on the
       pricing of saving and retirement products. Low physical risk also impacts
-      to company infrastructure will not put upward pressure on expenses, unless
+      to company infrastructure could not put upward pressure on expenses, unless
       the infrastructure is located in areas affected by severe weather events.
       Asset flows may also be little affected, as household income and savings
       rates are expected to remain largely unchanged.
