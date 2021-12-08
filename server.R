@@ -71,7 +71,6 @@ server <- function(input, output, session) {
         )
       )
     }
-    browser()
     out <- c(out, get_references(aggregated_type_inputs(), type_inputs()))
     out
   })
