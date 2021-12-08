@@ -71,6 +71,7 @@ server <- function(input, output, session) {
         )
       )
     }
+    browser()
     out <- c(out, get_references(aggregated_type_inputs(), type_inputs()))
     out
   })
@@ -98,7 +99,7 @@ server <- function(input, output, session) {
     file_conn <- file(temp_md_scenario)
     scenario_no <- c(
       which(sapply(scenarios, `[[`, i = "name") == report_selection),
-      which(sapply(scenarios, `[[`, i = "name") == "references")
+      length(report_contents()) - 1
     )
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
@@ -115,7 +116,8 @@ server <- function(input, output, session) {
     scenario_no <- sort(
       c(
         which(sapply(scenarios, `[[`, i = "name") == report_selection),
-        which(sapply(scenarios, function(sce) !sce$is_scenario))
+        which(sapply(scenarios, function(sce) !sce$is_scenario)),
+        length(report_contents()) - 1
       )
     )
     writeLines(
