@@ -5,7 +5,12 @@ tab_bank_c_ui <- function() {
 }
 
 tab_bank_c_foot <- function() {
-  list(
-    helpText("Enter your firm's exposures by asset class and sector")
+  p(
+      list("Enter your firm's exposures by asset class and sector using the following definitions:"),
+      tags$ul(
+        tags$li("\"High\": more than 10% of total assets"),
+        tags$li("\"Medium\": 5% - 10% of total assets"),
+        tags$li("\"Low\": below 5% of total assets")
+      )
   )
 }
