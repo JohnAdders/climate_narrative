@@ -409,10 +409,15 @@ get_references <- function(aggregated_table, type_inputs) {
       )
     for (i in 1:nrow(aggregated_table)) {
       item <- aggregated_table$item[i]
-      out <- paste0(
-        out,
-        exposure_classes[[item]][["references"]]
-      )
+      if (length(exposure_classes[[item]][["references"]])){
+        out <- paste0(
+          out,
+          "## ",
+          exposure_classes[[item]][["name"]],
+          "\n\n",
+          exposure_classes[[item]][["references"]]
+        )
+      }
     }
   }
   # Do not show the section if there are no references
