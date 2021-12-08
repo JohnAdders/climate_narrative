@@ -41,9 +41,15 @@ QuestionTab <- R6Class(
     # 1. server side of exposure input table (if given in the constructor)
     # 2. any other server tab_server (if given in the constructor)
     # 3. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
-    server = function(input, output, session, switch_page) {
-      switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
+    # additionally, a boolean function may be passed to allow going next only conditionally
+    # (by default the condition is always true)
+    server = function(input, output, session, switch_page, allow_next=function(){TRUE}) {
       if (!is.null(self$exposure)) {
+        if(ncol(self$exposure) < 5) {
+          width <- '12em'
+        } else {
+          width <- '6em'
+        }
         exposure_grid_server(
           input,
           output,
@@ -51,7 +57,7 @@ QuestionTab <- R6Class(
           produce_tooltip_matrix(self$exposure),
           paste(self$type, self$subtype, sep="_"),
           session$userData$dev,
-          width='6em'
+          width
         )
       }
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
@@ -64,14 +70,7 @@ QuestionTab <- R6Class(
         observeEvent(
           input[[paste0(self$id, "_next")]], 
           {
-            if(!is.null(self$exposure)) {
-              input_list <- reactiveValuesToList(input)
-              if(sum(unlist(input_list[startsWith(names(input_list), paste(self$type,self$subtype,sep="_"))])!="")){
-                switch_page(as.integer(self$next_tab))
-              } else {
-                output[[paste0(self$id, "_next_result")]] <- renderText("Please select at least one exposure")
-              }
-            } else {
+            if(allow_next()){
               switch_page(as.integer(self$next_tab))
             }
           }
