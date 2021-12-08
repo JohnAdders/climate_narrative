@@ -1,10 +1,10 @@
-tab_ins_l_ui <- function() {
+tab_ins_nl_ui <- function() {
   list(
-    h2("Insurance: Life and Health Lines of Business")
+    h2("Insurance: Property and Casualty Lines of Business")
   )
 }
 
-tab_ins_l_foot <- function() {
+tab_ins_nl_foot <- function() {
   p(
     list("Enter your firm's exposures by asset class and sector using the following definitions:",
       tags$ul(

@@ -1,0 +1,26 @@
+name: UK sovereign
+
+description: |
+  TBC
+transition:
+  high:
+    always: |
+      TBC
+    high_materiality: |
+      TBC
+  low:
+    always: |
+      TBC
+    high_materiality: |
+      TBC
+physical:
+  high:
+    always: |
+      TBC
+    high_materiality: |
+      TBC
+  low:
+    always: |
+      TBC
+    high_materiality: |
+      TBC

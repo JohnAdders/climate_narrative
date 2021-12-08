@@ -1,7 +1,5 @@
 name: Agriculture Sector
 
-tooltip: Placeholder for sector-level (agriculture) tooltip
-
 description: |
   The **Agriculture** sector can be split into crop production and animal
   production.
@@ -341,9 +339,3 @@ physical:
       adapted to change by introducing new genotypes, varieties, breeds and
       management practices. In a low physical risk scenario, there could be a
       need for more anticipatory adaptation measures.
-
-references: |
-  * link 1
-  * link 2 
-  * publication 1
-  * etc.

@@ -6,6 +6,7 @@ library(shinythemes)
 library(shinyjs)
 library(httr)
 library(jsonlite)
+library(stringr)
 
 # helper function to remove special characters
 remove_special_characters <- function(text) gsub("[_. ]", "", text)
@@ -49,15 +50,27 @@ exposure_classes <- read_dir("exposure_class")
 scenarios <- scenarios[order(sapply(scenarios, `[[`, i = "position"))]
 
 # defining the questionnaire using list of QuestionTab objects
-ordered_tabs <- c("title", "auth", "type", "bank", "ins_l", "am", "ins_a", "report")
+ordered_tabs <- c(
+  "title", "auth", "type",
+  "bank_re", "bank_c", "bank_sov",
+  "ins_l", "ins_nl", "ins_c", "ins_sov",
+  "am_c", "am_sov", "am_re",
+  "report"
+)
 
 tabs <- list(
   QuestionTab$new("title", NULL, "auth", FALSE, FALSE),
   QuestionTab$new("auth", "title", NULL),
   QuestionTab$new("type", "auth", "ins_l"),
-  QuestionTab$new("bank", "type", "report"),
-  QuestionTab$new("ins_l", "type", "ins_a"),
-  QuestionTab$new("am", "type", "report"),
-  QuestionTab$new("ins_a", "ins_l", "report"),
+  QuestionTab$new("bank_re", "type", "bank_c", TRUE, TRUE, exposures$bankre, "bank", "R"),
+  QuestionTab$new("bank_c", "bank_re", "bank_sov", TRUE, TRUE, exposures$bankcorporate, "bank", "C"),
+  QuestionTab$new("bank_sov", "bank_c", "report", TRUE, TRUE, exposures$sovereign, "bank", "S"),
+  QuestionTab$new("ins_l", "type", "ins_nl", TRUE, TRUE, exposures$insurancelife, "insurance", "L"),
+  QuestionTab$new("ins_nl", "ins_l", "ins_c", TRUE, TRUE, exposures$insurancenonlife, "insurance", "N"),
+  QuestionTab$new("ins_c", "ins_nl", "ins_sov", TRUE, TRUE, exposures$insurancecorporate, "insurance", "C"),
+  QuestionTab$new("ins_sov", "ins_c", "report", TRUE, TRUE, exposures$sovereign, "insurance", "S"),
+  QuestionTab$new("am_c", "type", "am_sov", TRUE, TRUE, exposures$amcorporate, "asset", "C"),
+  QuestionTab$new("am_sov", "am_c", "am_re", TRUE, TRUE, exposures$sovereign, "asset", "S"),
+  QuestionTab$new("am_re", "am_sov", "report", TRUE, TRUE, exposures$amre, "asset", "R"),
   QuestionTab$new("report", "type", NULL)
 )
