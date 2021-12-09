@@ -2,3 +2,12 @@ position: 0
 is_scenario: no
 description: |
   ![CFRF logo](title.png)
+  
+  ## Disclaimer 
+  
+  This on-line tool/report is currently under development and is only being made available
+  for internal testing purposes. It has not been endorsed or approved by the PRA, FCA,
+  the Climate Financial Risk Forum or any of its members, and no reliance should be placed
+  on the originality, accuracy and/or completeness, of any information herein. The Information
+  should not be reproduced or redisseminated in any form and may not be used as a basis for
+  any purpose other than for internal testing of the on-line tool/report itself.
