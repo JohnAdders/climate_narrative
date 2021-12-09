@@ -214,7 +214,7 @@ physical:
       such as heatwaves, droughts, wildfires, tropical cyclones and flooding.
       Whilst the utilities sector is used to responding to and managing changing
       weather conditions, in the high physical risk scenario, climate change and
-      global warming will increase weather variations. This could lead to
+      global warming could increase weather variations. This could lead to
       increasing disruption to the utilities sector and impact the profitability
       of these companies.
     high_materiality: |
@@ -225,7 +225,7 @@ physical:
 
       - **Higher average temperatures** could reduce demand for energy used for
         heating, particularly natural gas. Performance of combined-cycle power
-        stations will decrease with an increase in temperature.
+        stations could decrease with an increase in temperature.
 
       **Acute Impacts**:
 
@@ -285,6 +285,12 @@ physical:
       from power lines), and increase contribution of electricity businesses vs
       gas businesses.
 
+references: |
+    - 	https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/documents/sustainability/en/tcfd/EON_2021_On_course_for_net_zero.pdf
+    
+    - https://www.naturgy.com/files/Informe_de_Sostenibilidad_y_EINF_ING.pdf 
+    
+    - https://www.severntrent.com/content/dam/stw-plc/investors-02/capital-markets-day/tcfd-report.pdf
 
 
 

@@ -233,20 +233,13 @@ physical:
       would potentially constrain the growth in spending on these areas.
 
       In a high physical risk scenario, the significant reductions in GDP growth
-      will reduce health and social care spending, causing mortality rates to
+      could reduce health and social care spending, causing mortality rates to
       rise.
 
       Significant GDP growth reductions could lead to reductions in NHS funding
       which, assuming that funding is correlated to some extent with morbidity
       outcomes, would have negative impacts on household incomes and savings
-      rates. Savings will therefore be expected to be accessed sooner,
-      increasing lapse rates, as well as asset outflows. Inflows will also be
-      correspondingly lower as savings rates reduce, due to higher morbidity
-      affecting policyholders capacity to earn and save income. Any increase in
-      lapse rates will drive up per policy expenses (as a fixed cost base is
-      spread out over fewer policies). Severe physical risk impacts to company
-      infrastructure (e.g. data centres and offices) will drive up unit costs.
-      The cost of ensuring redundancy and resiliency will also increase.
+      rates.
 
       **Temperature and weather effect**
 
@@ -257,7 +250,7 @@ physical:
 
       - **Mortality**: Due to the increased incidence in catastrophes, mortality
         rates for certain customer segments (depending on location) may also be
-        expected to rise. A level increase in temperature in the UK will lead to
+        expected to rise. A level increase in temperature in the UK could lead to
         a reduction in deaths since the reduction in excess deaths due to cold
         weather may outweigh any increase excess deaths due to warmer weather
         and the risk of prolonged heat waves. However, to the extent that any
@@ -281,15 +274,15 @@ physical:
       pricing of saving and retirement products.
 
       Greater prevalence and severity of physical risk events may be expected to
-      negatively impact customer standards of living. Savings will therefore be
+      negatively impact customer standards of living. Savings could therefore be
       expected to be accessed sooner, increasing lapse rates, as well as asset
-      outflows. Inflows will also be correspondingly lower as savings rates
+      outflows. Inflows could also be correspondingly lower as savings rates
       reduce, due to higher morbidity affecting policyholders' capacity to earn
-      and save income. Any increase in lapse rates will drive up per policy
+      and save income. Any increase in lapse rates could drive up per policy
       expenses (as a fixed cost base is spread out over fewer policies). Severe
       physical risk impacts to company infrastructure (e.g. data centres and
-      offices) will drive up unit costs. The cost of ensuring redundancy and
-      resiliency will also increase.
+      offices) could drive up unit costs. The cost of ensuring redundancy and
+      resiliency could also increase.
   low:
     always: |
       In the low physical risk scenario, it may be expected that climate change

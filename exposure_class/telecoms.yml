@@ -183,7 +183,7 @@ physical:
       temperatures could cause significant network damage or service impacts.
       Whilst the telecom industry is used to responding to and managing changing
       weather conditions, in the high physical risk scenario, climate change and
-      global warming will increase weather variations. This could lead to
+      global warming could increase weather variations. This could lead to
       increasing disruption to productivity in this sector which could
       significantly impact the profitability and the infrastructure for these
       companies and could therefore result in an increase in the operational
@@ -278,5 +278,9 @@ physical:
       proposition development and invest in technologies which reduce the number
       of physical network sites needed (e.g. full fibre).
 
-
-
+references: |
+    -  https://www.bt.com/bt-plc/assets/documents/investors/financial-reporting-and-news/annual-reports/2021/bt-annual-report.pdf
+    
+    - https://investors.vodafone.com/sites/vodafone-ir/files/2021-05/vodafone-tcfd-report-2021.pdf
+    
+    - https://assets.lloyds.com/media/706fda85-f5df-437e-9722-db633df23a18/Lloyd%27s_climate%20action%20discussion_green%20paper_oct.pdf 
