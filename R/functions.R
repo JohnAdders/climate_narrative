@@ -412,7 +412,7 @@ get_references <- function(aggregated_table, type_inputs) {
       if (length(exposure_classes[[item]][["references"]])){
         out <- paste0(
           out,
-          "## ",
+          "\n\n## ",
           exposure_classes[[item]][["name"]],
           "\n\n",
           exposure_classes[[item]][["references"]]
