@@ -19,7 +19,17 @@ capitalize <- function(input_string) {
 
 restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
-  sub("^ ", "", s) # remove first space
+  s <- sub("^ ", "", s) # remove first space
+  s <- capitalize(s)
+  # manually substitute texts with where simple capitalisation rule fails
+  substitutions <- data.frame(
+    from=c("Sme", "Smes", "Uk", "Us", "And", "To(non-sme)"),
+    to=c("SME", "SMEs", "UK", "US", "and", "To (non-SME)")
+  )
+  for(i in 1:nrow(substitutions)){
+    s <- gsub(substitutions$from[i], substitutions$to[i], s, fixed = TRUE)
+  }
+  s
 }
 
 produce_tooltip_matrix <- function(exposure_matrix) {
@@ -117,42 +127,31 @@ exposure_grid_server <- function(input,
   )
 }
 
+string_break_line_with_spaces <- function(string, line_width, location, n_char=1){
+  paste0(
+    substring(string, 1, location - 1),
+    paste(rep(" ", (1-location) %% line_width), collapse=""),
+    substring(string, location + n_char)
+  )
+}
+
 string_add_spaces_to_make_equal_lines <- function(string, line_width){
 # this function adds spaces so that string can be split into blocks of exactly the same length
 # without breaking words
   out <- string
-  locations <- str_locate_all(out, " ") [[1]][,1]
+  newline_locations <- na.omit(stri_locate_all(out, fixed = "<br>")[[1]][,1])
   i <- 1
   while(i * line_width < nchar(out)){
-    last_space <- max(locations[locations <= 1 + line_width*i])
-    out <- paste0(
-      substring(out, 1, last_space - 1),
-      paste(rep(" ", (1 - last_space) %% line_width), collapse=""),
-      substring(out, last_space + 1)
-    )
-    locations <- str_locate_all(out, " ") [[1]][,1]
+    for(loc in newline_locations[newline_locations <= 1 + i * line_width]){
+      out <- string_break_line_with_spaces(out, line_width, loc, 4)
+    }
+    space_locations <- stri_locate_all(out, fixed = " ") [[1]][,1]
+    last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
+    if(length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
+    newline_locations <- na.omit(stri_locate_all(out, fixed="<br>")[[1]][,1])
     i <- i + 1
   }
   return(out)
-}
-
-string_replace_newline_with_spaces <- function(string, line_width){
-# the function replaces "<br>" string with the number of spaces to fill the line to the end
-  out <- string
-  locations <- str_locate_all(out, "<br>") [[1]]
-  if (nrow(locations)) {
-    locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out) - 6 + 1, 1]
-  }
-  while (length(locations)){
-    out <- paste0(
-      substring(out, 1, locations[1] - 1),
-      paste(rep(" ", (1-locations[1]) %% line_width), collapse=""),
-      substring(out, locations[1] + 4)
-    )
-    locations <- str_locate_all(out, "<br>")[[1]]
-    if (nrow(locations)) locations <- locations[locations[,1] > 1 & locations[,1] < nchar(out),1]
-  }
-  return (out)
 }
 
 string_format_lines <- function(string, col_width){
@@ -163,7 +162,6 @@ string_format_lines <- function(string, col_width){
   } else {
     out <- string
   }
-  out <- string_replace_newline_with_spaces(out, col_width)
   out <- string_add_spaces_to_make_equal_lines(out, col_width)
   return(out)
 }
@@ -186,7 +184,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
     table[,i] <- as.character(table[,i])
     table[,i] <- gsub("\n", " ", table[,i])
     for (j in 1:nrow(table)) {
-      table[j,i] <- string_format_lines(table[j,i], col_widths[i]-2)
+      table[j,i] <- string_format_lines(table[j,i], col_widths[i] - 2)
     }
   }
   split_rows <- ceiling(c(
@@ -197,12 +195,12 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
   emptyline <- rep("", ncol(table))
   sepline <- emptyline
   for (i in 1:length(sepline)) {
-    sepline[i] <- paste0(paste(rep("-", col_widths[i]), collapse=""),"+")
+    sepline[i] <- paste0(paste(rep("-", col_widths[i]), collapse=""), "+")
   }
   sepline[1] <- paste0("+", sepline[1])
   rowsout <- matrix(emptyline, nrow=split_rows[1], ncol=length(emptyline), byrow=F)
   for (i in 1:ncol(out)) {
-    cell_text <- string_format_lines(headers[i], col_widths[i]-2)
+    cell_text <- string_format_lines(headers[i], col_widths[i] - 2)
     cell_text <- paste0(
       cell_text,
       paste(rep(" ", (col_widths[i] - 2) * split_rows[1] - nchar(cell_text)), collapse="")
@@ -308,7 +306,7 @@ get_exposure_description <- function(item, type_item_inputs) {
     "\n\n",
     exposure_classes[[item]][["description"]],
     "\n\nThe following rows contribute: \n\n",
-    table_to_markdown_multiline(ordered_aggregate_inputs, TRUE, c(15,30,20,15)),
+    table_to_markdown_multiline(ordered_aggregate_inputs, TRUE, c(15,30,25,15)),
     "\n\n"
   )
 }
@@ -412,7 +410,7 @@ get_references <- function(aggregated_table, type_inputs) {
       if (length(exposure_classes[[item]][["references"]])){
         out <- paste0(
           out,
-          "## ",
+          "\n\n## ",
           exposure_classes[[item]][["name"]],
           "\n\n",
           exposure_classes[[item]][["references"]]
