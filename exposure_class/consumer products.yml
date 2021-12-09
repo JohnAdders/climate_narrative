@@ -68,6 +68,8 @@ description: |
   01. Eating and Drinking Places
 
   01. Miscellaneous Retail
+  
+  North American Industry Classification System, 2018, Available online at: https://www.naics.com/sic-codes-counts-division/?div=G. These may be cross-referenced to the UK Standard Industrial Classification of economic activities codes (SIC) https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic (or other classification systems) via online tools.
 transition:
   high:
     always: |
@@ -579,6 +581,8 @@ physical:
 
 references: |
     - https://www.naics.com/sic-codes-counts-division/?div=G
+    
+    -  https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic
     
     - https://globescan.com/2020/10/07/people-want-healthy-sustainable-living-choices-2020/
     
