@@ -61,7 +61,13 @@ server <- function(input, output, session) {
   })
 
   report_contents <- reactive({
-    out <- "% Climate report\n\n"
+    out <- paste0(
+      "---\n",
+      "title: |\n",
+      "  Climate report\n\n",
+      "  ![](title.png)\n\n",
+      "---\n\n"
+    )
     for (scenario in scenarios) {
       out <- c(
         out,
@@ -122,7 +128,7 @@ server <- function(input, output, session) {
     )
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
-      report_contents()[c(1 + scenario_no)],
+      report_contents()[c(1, 1 + scenario_no)],
       file_conn
     )
     close(file_conn)
