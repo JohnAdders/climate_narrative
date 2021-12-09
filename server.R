@@ -27,7 +27,8 @@ server <- function(input, output, session) {
       if (length(splitted_names[[i]]) == 6) {
         out[i, 3:8] <- splitted_names[[i]]
         if (is.null(products[[out$product[i]]])) {
-          warning(paste('No product description for', out$products[i]))
+          print(out[i,])
+          warning(paste('No product description for', out$product[i]))
         } else {
           out$product_description[i] <- products[[out$product[i]]]$description
           out$product_text[i] <- products[[out$product[i]]]$text
