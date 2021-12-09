@@ -10,7 +10,8 @@ tab_ins_c_foot <- function() {
       tags$ul(
         tags$li("\"High\": more than 10% of total assets"),
         tags$li("\"Medium\": 5% - 10% of total assets"),
-        tags$li("\"Low\": below 5% of total assets")
+        tags$li("\"Low\": below 5% of total assets"),
+        tags$li("blank: no exposure")
       )
     )
   )

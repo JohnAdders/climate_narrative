@@ -10,7 +10,8 @@ tab_ins_nl_foot <- function() {
       tags$ul(
         tags$li("\"High\": more than 10% of total premium income"),
         tags$li("\"Medium\": 5% - 10% of total premium income"),
-        tags$li("\"Low\": below 5% of total premium income")
+        tags$li("\"Low\": below 5% of total premium income"),
+        tags$li("blank: no exposure")
       )
     )
   )
