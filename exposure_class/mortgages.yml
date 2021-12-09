@@ -1,9 +1,9 @@
-name: Mortgages
+name: Mortgage Lending Exposure
 
 description: |
   **Mortgages** are a lending exposure type based upon a legal agreement by
   which a bank, building society or other regulated organisation lends money at
-  interest in exchange for taking title of the customers property, with the
+  interest in exchange for taking title of the customer's property, with the
   condition that the conveyance of title becomes void upon the payment of the
   debt. Thus, it is a secured loan against the title of a residential property.
 
@@ -23,8 +23,8 @@ transition:
     always: |
       Lending on residential property remains a key focus and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
-      with it being expected that supply will outstrip demand for the
-      foreseeable future. The quality of residential stock will be the key
+      with it being expected that supply could outstrip demand for the
+      foreseeable future. The quality of residential stock could be the key
       challenge on the mortgage lending sector.
 
       In disorderly transitional risk scenarios, the changes in energy prices
@@ -41,13 +41,13 @@ transition:
       **Abrupt and steep phase in of carbon/ emissions prices**
 
       Increasing energy prices, due to the Government carbon taxes or elevated
-      energy costs, impacts both homeowners and renters ability to repay debt
+      energy costs, impacts both homeowners' and renters' ability to repay debt
       over an extended period of time. The potentially enduring nature of this
       shock (as oppose to the one-off costs associated with, say, retrofitting),
       and the broader impact (i.e. it affects nearly all to some extent) leads
       to a greater effect than that experienced as a result of retrofitting. The
       reduced ability to pay, as a result of more income being spent on energy
-      bills, will increase probabilities of default.
+      bills, could increase probabilities of default.
 
       **Uncertainty about implementation of transition policies**
 
@@ -64,8 +64,8 @@ transition:
 
       Given that all mortgage lending is linked to properties, any legislation
       that impacts them or requires change can have an impact on the market and
-      the value. The EPC changes that will be required in a transition scenario
-      will impact Probability of Default (PD), Loss Given Default (LGD) and
+      the value. The EPC changes that could be required in a transition scenario
+      could impact Probability of Default (PD), Loss Given Default (LGD) and
       property value.
 
       Currently proposed legislation is:
@@ -84,16 +84,16 @@ transition:
       below financial risks, especially if lenders are targeted with improving
       the energy performance of their book on an annual basis:
 
-      - The impact on the value of the property if it can not be retrofitted
+      - The impact on the value of the property if it can't be retrofitted
 
       - Cost of improving the property to EPC standard required (c70% of
-        properties will need to be retrofitted to achieve EPC C)
+        properties could need to be retrofitted to achieve EPC C)
 
       - Increased impairments and arrears: increased voids in tenancy/landlord
         fines
 
       - Landlords exiting the buy to let market in certain locations where the
-        rental yield does not justify the cost of retrofitting
+        rental yield doesn't justify the cost of retrofitting
 
       - Credit worthiness of customers: potential mortgage prisoners
 
@@ -136,7 +136,7 @@ transition:
       acknowledgement from Government that the EPC methodology needs to be
       updated to reflect carbon emissions and not just cost.
 
-      Lenders with material exposures to mortgages will need to address any data
+      Lenders with material exposures to mortgages could need to address any data
       gaps through the development of models using artificial intelligence and
       machine learning algorithms, and the characteristics of a property that
       does not have an EPC, to estimate its EPC rating and other factors.
@@ -186,8 +186,8 @@ transition:
     always: |
       Lending on residential property remains a key focus, and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
-      with it being expected that supply will outstrip demand for the
-      foreseeable future. The quality of residential stock will be the key
+      with it being expected that supply could outstrip demand for the
+      foreseeable future. The quality of residential stock could be the key
       challenge for the mortgage lending sector over the next 15 years, as
       transitional legislation is implemented.
 
@@ -201,8 +201,8 @@ transition:
 
       Given that all mortgage lending is linked to properties, any legislation
       that impacts them or requires change can have an impact on the market and
-      the future values. The EPC changes that will be required in a transition
-      scenario will impact Probability of Default (PD), Loss Given Default (LGD)
+      the future values. The EPC changes that could be required in a transition
+      scenario could impact Probability of Default (PD), Loss Given Default (LGD)
       and property value.
 
       Currently proposed legislation is:
@@ -222,16 +222,16 @@ transition:
       are targeted with improving the energy performance of their book on an
       annual basis:
 
-      - The impact on the value of the property if it can not be retrofitted
+      - The impact on the value of the property if it can't be retrofitted
 
       - Cost of improving the property to EPC standard required (c70% of
-        properties will need to be retrofitted to achieve EPC C)
+        properties could need to be retrofitted to achieve EPC C)
 
       - Increased impairments and arrears: increased voids in tenancy/landlord
         fines
 
       - Landlords exiting the buy to let market in certain locations where the
-        rental yield does not justify the cost of retrofitting
+        rental yield doesn't justify the cost of retrofitting
 
       - Credit worthiness of customers: potential mortgage prisoners
 
@@ -274,7 +274,7 @@ transition:
       acknowledgement from Government that the EPC methodology needs to be
       updated to reflect carbon emissions and not just cost.
 
-      Lenders with material exposures to mortgages will need to address any data
+      Lenders with material exposures to mortgages could need to address any data
       gaps through the development of models using artificial intelligence and
       machine learning algorithms, and the characteristics of a property that
       does not have an EPC, to estimate its EPC rating and other factors.
@@ -307,13 +307,13 @@ physical:
       and severity of weather events such as coastal erosion, subsidence,
       tropical cyclones and flooding.
 
-      The mortgage market does not have the experience of responding to and
+      The mortgage market doesn't have the experience of responding to and
       managing changing weather conditions (as this is often covered by if a
       property is insurable), in the high physical risk scenario, climate change
-      and global warming will increase weather variations.
+      and global warming could increase weather variations.
 
-      If high physical risks become a common factor, there will be a skew of
-      lending towards properties less prone to physical risks and will result in
+      If high physical risks become a common factor, there could be a skew of
+      lending towards properties less prone to physical risks and could result in
       certain segments in the property market being blighted given their risk
       profile.
 
@@ -337,7 +337,7 @@ physical:
         issue. The number of times a property floods is a key consideration.
 
       - **Subsidence** is currently an issue that is covered by insurance but if
-        it becomes more prevalent it will impact property values due to the cost
+        it becomes more prevalent it could impact property values due to the cost
         of remediation. The age, construction and location of the property needs
         to be considered when reviewing risks.
 
@@ -388,13 +388,13 @@ physical:
       and severity of weather events such as coastal erosion, subsidence,
       tropical cyclones and flooding.
 
-      The mortgage market does not have the experience of responding to and
+      The mortgage market doesn't have the experience of responding to and
       managing changing weather conditions (as this is often covered by if a
       property is insurable), in the low physical risk scenario, climate change
-      and global warming will increase weather variations.
+      and global warming could increase weather variations.
 
-      As the industrys awareness of, and ability to assess, physical risks
-      increases, there could be a skew of lending towards properties less prone
+      As the industry's awareness of, and ability to assess physical risks
+      increase, there could be a skew of lending towards properties less prone
       to physical risks. This could result in certain properties being blighted
       given their risk profile, but it is expected the number of impacted
       properties to be relatively few. There could exist opportunities for those
@@ -417,7 +417,7 @@ physical:
         issue. The number of times a property floods is a key consideration.
 
       - **Subsidence** is currently an issue that is covered by insurance but if
-        it becomes more prevalent it will impact property values due to the cost
+        it becomes more prevalent it could impact property values due to the cost
         of remediation. The age, construction and location of the property needs
         to be considered when reviewing risks.
 

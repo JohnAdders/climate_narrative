@@ -41,8 +41,9 @@ QuestionTab <- R6Class(
     # 1. server side of exposure input table (if given in the constructor)
     # 2. any other server tab_server (if given in the constructor)
     # 3. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
-    server = function(input, output, session, switch_page, allow_next) {
-      switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
+    # additionally, a boolean function may be passed to allow going next only conditionally
+    # (by default the condition is always true)
+    server = function(input, output, session, switch_page, allow_next=function(){TRUE}) {
       if (!is.null(self$exposure)) {
         if(ncol(self$exposure) < 5) {
           width <- '12em'

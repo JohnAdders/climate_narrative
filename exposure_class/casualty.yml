@@ -7,13 +7,13 @@ description: |
   - Directors & Officers: cover for liability incurred as an officer of an
     organisation
 
-  - Product Liability: cover for losses sustained by users of the insureds
+  - Product Liability: cover for losses sustained by users of the insured's
     products
 
   - Public liability: cover for losses sustained by members of the public on the
-    insureds premises
+    insured's premises
 
-  - Employers liability & workers compensation: cover for employers
+  - Employers' liability & workers compensation: cover for employers
 
   - Financial lines
 
@@ -22,7 +22,7 @@ description: |
   recover losses from others who they believe may have been responsible. Where
   such claims are successful, those parties against whom the claims are made may
   seek to pass on some or all of the cost to insurance firms under third-party
-  liability contracts such as professional indemnity or directors and officers
+  liability contracts such as professional indemnity or directors' and officers'
   insurance. (Prudential Regulation Authority, 2015).
 
   The PRA identify the following reasons for such liability risk:
@@ -67,7 +67,7 @@ transition:
       innovations and commercialisation in areas such as carbon capture and
       storage, renewable energy generation and electrification of
       transportation, among others. Broadly speaking, businesses advancing these
-      initiatives will require many of the same insurance coverages as
+      initiatives could require many of the same insurance coverages as
       carbon-intensive sectors and serve as potential underwriting and
       investment opportunities. Exposures to carbon-intensive industries are
       likely to be significantly affected and those markets could shrink
@@ -75,17 +75,15 @@ transition:
       in the years afterwards (as stakeholders continue to take legal action
       against Directors).
 
-      The sudden shift to a low-carbon economy could lead to wide-ranging
-      changes in the nature and mix of businesses and can cause established
-      customers to shrink rapidly while new companies grow to fill the gaps.
-      This creates a big opportunity to gain new customers while customer
-      retention is strained.
+      In recent years there has been an increase in climate related litigation
+      claims being brought before the courts by property owners, municipalities,
+      states, insurers, shareholders, and public interest organisations.
     high_materiality: |
       In Disorderly/Divergent transition risk scenarios, immediate policy
       reaction, societal change, national energy strategies, carbon and other
-      legislation will drive a fraught transition to a low carbon economy. The
+      legislation could drive a fraught transition to a low carbon economy. The
       changing patterns in energy generation in the Delayed transition scenario,
-      driven by late policy action enabling a fossil fuelled recovery out of the
+      driven by late policy action enabling a "fossil fuelled recovery" out of the
       economic crisis brought about by COVID-19, results in CO<sub>2</sub>
       emissions increasing until 2030 before rapidly decreasing after 2030 to
       compensate for the inaction beforehand. The Divergent Net Zero scenario
@@ -162,7 +160,7 @@ physical:
       The casualty underwriting class are also exposed to physical risk. Chronic
       effects (e.g. raised sea-levels and mean temperatures) and acute effects
       due to changes to frequency and severity of weather events such as
-      heatwaves, wildfires, tropical cyclones, and flooding will lead to
+      heatwaves, wildfires, tropical cyclones, and flooding could lead to
       increasing disruption for this underwriting class as a result of increased
       claims and premiums and could therefore impact the profitability of this
       underwriting class.
@@ -181,14 +179,14 @@ physical:
         increase claims for employers and public liability lines.
 
       - An increase in the **severity of storms, higher water levels, and more
-        severe droughts** will lead to even more insurance coverage litigation.
+        severe droughts** could lead to even more insurance coverage litigation.
         Research could attribute losses due to climate change to emissions. This
         may lead to increasing legal action taken by groups that suffer from
         said losses against firms responsible for historic emissions. Defence
         costs for litigation are incurred with potential for claims to be
         successful.
 
-      For material exposures to employers liability and public liability,
+      For material exposures to employer's liability and public liability,
       exposures that include significant amounts of outdoor activity (or more
       exposures in geographies that are already much hotter) are more likely to
       be affected by a high physical risk scenario.
@@ -211,7 +209,7 @@ physical:
       The casualty underwriting class are also exposed to physical risk. Chronic
       effects (e.g. raised sea-levels and mean temperatures) and acute effects
       due to changes to frequency and severity of weather events such as
-      heatwaves, wildfires, tropical cyclones, and flooding will lead to
+      heatwaves, wildfires, tropical cyclones, and flooding could lead to
       increasing disruption to the casualty underwriting class as a result of
       increased claims and premiums and could therefore impact the profitability
       of this underwriting class. However, these risks are fairly low in the low
@@ -232,7 +230,7 @@ physical:
         increase claims for employers and public liability lines.
 
       - An increase in the **severity of storms, higher water levels, and more
-        severe droughts** will lead to more insurance coverage litigation.
+        severe droughts** could lead to more insurance coverage litigation.
         Research could attribute losses due to climate change to emissions. This
         may lead to increasing legal action taken by groups that suffer from
         said losses against firms responsible for historic emissions. Defence
@@ -253,5 +251,15 @@ physical:
       boundaries, and claimants are bringing novel and creative legal arguments
       which courts might be willing to follow.
 
+references: |
+    - 	https://kennedyslaw.com/thought-leadership/article/insurers-must-consider-the-do-implications-of-climate-change/ 
+    
+    - https://www.actuaries.org.uk/system/files/field/document/Practical%20Guide%20to%20Climate%20Change%20for%20GI%20Practitioners_1.pdf 
+    
+    - https://www.markel.com/insurance/insights-and-resources/climate-change-risk 
+    
+    - https://www.hdi.global/infocenter/insights/2021/climate-change-litigation/ 
+    
+    - https://www.genevaassociation.org/sites/default/files/research-topics-document-type/pdf_public/climate_risk_web_final_250221.pdf 
 
 

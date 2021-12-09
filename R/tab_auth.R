@@ -12,7 +12,7 @@ request_captcha <- function(output, session) {
 }
 
 process_progress <- function(output, should_continue) {
-  if(should_continue) {
+  if (should_continue) {
     next_tab <- as.integer(factor("type", ordered_tabs))
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
   } else {
@@ -21,7 +21,7 @@ process_progress <- function(output, should_continue) {
 }
 
 render_dynamic_auth_ui <- function(output, session) {
-  if(!is.null(session$userData$beta_code)) {
+  if (!is.null(session$userData$beta_code)) {
     output$first_column <- renderUI({NULL})
     output$auth_text <- renderUI({p("Enter the beta code you have been sent")})
   } else {

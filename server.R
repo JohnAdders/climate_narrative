@@ -27,9 +27,8 @@ server <- function(input, output, session) {
       if (length(splitted_names[[i]]) == 6) {
         out[i, 3:8] <- splitted_names[[i]]
         if (is.null(products[[out$product[i]]])) {
-          print(out$names[i])
           print(out[i,])
-          warning(paste('No product description for', out$products[i]))
+          warning(paste('No product description for', out$product[i]))
         } else {
           out$product_description[i] <- products[[out$product[i]]]$description
           out$product_text[i] <- products[[out$product[i]]]$text
@@ -62,7 +61,13 @@ server <- function(input, output, session) {
   })
 
   report_contents <- reactive({
-    out <- "% Climate report\n\n"
+    out <- paste0(
+      "---\n",
+      "title: |\n",
+      "  Climate report\n\n",
+      "  ![](title.png)\n\n",
+      "---\n\n"
+    )
     for (scenario in scenarios) {
       out <- c(
         out,
@@ -77,29 +82,57 @@ server <- function(input, output, session) {
     out
   })
 
-  temp_full_report <- reactive({
+  # The functions below are writing a report to (temporary) file first
+  # this is necessary as markdown::render takes file as an argument
+  # there are 3 versions of the report, in each separate temp file:
+  #    full report for email RTF,
+  #    single scenario for HTML
+  #    single scenario with common sectors (e.g. introduction) for button RTF
+    
+  temp_report_full <- reactive({
     # writing a full report to (temporary) file first
     # this is necessary as markdown::render takes file as an argument
     # not used at the moment, but do not delete - will be sent by email probably
-    if (!exists("temp_md")) temp_md <- tempfile(fileext = ".md")
-    file_conn <- file(temp_md)
+    if (!exists("temp_md_full")) temp_md_full <- tempfile(fileext = ".md")
+    file_conn <- file(temp_md_full)
     writeLines(report_contents(), file_conn)
     close(file_conn)
-    temp_md
+    temp_md_full
   })
 
-  temp_scenario_report <- function(report_selection) {
-    # writing a report to (temporary) file first
-    # this is necessary as markdown::render takes file as an argument
-    if (!exists("temp_scenario_md")) temp_scenario_md <- tempfile(fileext = ".md")
-    file_conn <- file(temp_scenario_md)
-    scenario_no <- which(sapply(scenarios, `[[`, i = "name") == report_selection)
+  temp_report_scenario <- function(report_selection) {
+    if (!exists("temp_md_scenario")) temp_md_scenario <- tempfile(fileext = ".md")
+    file_conn <- file(temp_md_scenario)
+    scenario_no <- c(
+      which(sapply(scenarios, `[[`, i = "name") == report_selection),
+      length(report_contents()) - 1
+    )
     writeLines(
-      report_contents()[c(1 + scenario_no, length(report_contents()))],
+      # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
+      report_contents()[c(1 + scenario_no)],
       file_conn
     )
     close(file_conn)
-    temp_scenario_md
+    temp_md_scenario
+  }
+
+  temp_report_scenario_and_commons <- function(report_selection) {
+    if (!exists("temp_md_scenario_and_commons")) temp_md_scenario_and_commons <- tempfile(fileext = ".md")
+    file_conn <- file(temp_md_scenario_and_commons)
+    scenario_no <- sort(
+      c(
+        which(sapply(scenarios, `[[`, i = "name") == report_selection),
+        which(sapply(scenarios, function(sce) !sce$is_scenario)),
+        length(report_contents()) - 1
+      )
+    )
+    writeLines(
+      # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
+      report_contents()[c(1, 1 + scenario_no)],
+      file_conn
+    )
+    close(file_conn)
+    temp_md_scenario_and_commons
   }
 
   output$html_report <- renderUI({
@@ -108,7 +141,7 @@ server <- function(input, output, session) {
     }
     temp_html <- tempfile(fileext = ".html")
     result <- includeHTML(rmarkdown::render(
-      input = temp_scenario_report(input$report_selection),
+      input = temp_report_scenario(input$report_selection),
       output_file = temp_html,
       output_format = html_document(
         toc = TRUE,
@@ -132,9 +165,9 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      fs <- file.size(temp_scenario_report(input$report_selection))
+      fs <- file.size(temp_report_scenario_and_commons(input$report_selection))
       rmarkdown::render(
-        input = temp_scenario_report(input$report_selection),
+        input = temp_report_scenario_and_commons(input$report_selection),
         output_file = file,
         output_format = rtf_document(
           toc = TRUE,
@@ -149,23 +182,20 @@ server <- function(input, output, session) {
       # I found that in some cases the rendering silently overwrites the markdown file
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(temp_scenario_report(input$report_selection)) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+      if (file.size(temp_report_scenario_and_commons(input$report_selection)) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
       removeModal()
     }
   )
 
-  # finally, tab-specific server collation
+  # finally, tab-specific server function collation
+  switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
   report_tab_no <- as.integer(factor('report', levels=ordered_tabs))
-  always_true <- function() TRUE
   for (tab in tabs) {
-    if (length(tab$next_tab)){
-      if (tab$next_tab != report_tab_no){
-        tab$server(input, output, session, switch_page, always_true)
-      } else {
-        tab$server(input, output, session, switch_page, allow_report)
-      }
+    # "sum" below is a trick to include NULL case as sum(NULL)=0
+    if (sum(tab$next_tab) == report_tab_no){
+      tab$server(input, output, session, switch_page, allow_report)
     } else {
-      tab$server(input, output, session, switch_page, NULL)
+      tab$server(input, output, session, switch_page)
     }
   }
 }

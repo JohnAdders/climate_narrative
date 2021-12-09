@@ -6,10 +6,17 @@ library(shinythemes)
 library(shinyjs)
 library(httr)
 library(jsonlite)
-library(stringr)
+library(stringi)
 
 # helper function to remove special characters
-remove_special_characters <- function(text) gsub("[_. ]", "", text)
+remove_special_characters <- function(text, camelcase=TRUE) {
+  out <- text
+  if(camelcase){
+    out <- gsub('\\ (\\w?)', '\\U\\1', tolower(out), perl=TRUE)
+    out <- gsub('\\_(\\w?)', '\\U\\1', out, perl=TRUE)
+  }
+  gsub("[_. ]", "", out)
+}
 
 # helper function to read all yaml/csv/R files from a directory as a named R list
 read_dir <- function(directory, file_format = "auto", remove_special_characters_from_names = TRUE) {
@@ -62,15 +69,15 @@ tabs <- list(
   QuestionTab$new("title", NULL, "auth", FALSE, FALSE),
   QuestionTab$new("auth", "title", NULL),
   QuestionTab$new("type", "auth", "ins_l"),
-  QuestionTab$new("bank_re", "type", "bank_c", TRUE, TRUE, exposures$bankre, "bank", "R"),
-  QuestionTab$new("bank_c", "bank_re", "bank_sov", TRUE, TRUE, exposures$bankcorporate, "bank", "C"),
+  QuestionTab$new("bank_re", "type", "bank_c", TRUE, TRUE, exposures$bankRe, "bank", "R"),
+  QuestionTab$new("bank_c", "bank_re", "bank_sov", TRUE, TRUE, exposures$bankCorporate, "bank", "C"),
   QuestionTab$new("bank_sov", "bank_c", "report", TRUE, TRUE, exposures$sovereign, "bank", "S"),
-  QuestionTab$new("ins_l", "type", "ins_nl", TRUE, TRUE, exposures$insurancelife, "insurance", "L"),
-  QuestionTab$new("ins_nl", "ins_l", "ins_c", TRUE, TRUE, exposures$insurancenonlife, "insurance", "N"),
-  QuestionTab$new("ins_c", "ins_nl", "ins_sov", TRUE, TRUE, exposures$insurancecorporate, "insurance", "C"),
+  QuestionTab$new("ins_l", "type", "ins_nl", TRUE, TRUE, exposures$insuranceLife, "insurance", "L"),
+  QuestionTab$new("ins_nl", "ins_l", "ins_c", TRUE, TRUE, exposures$insuranceNonlife, "insurance", "N"),
+  QuestionTab$new("ins_c", "ins_nl", "ins_sov", TRUE, TRUE, exposures$insuranceCorporate, "insurance", "C"),
   QuestionTab$new("ins_sov", "ins_c", "report", TRUE, TRUE, exposures$sovereign, "insurance", "S"),
-  QuestionTab$new("am_c", "type", "am_sov", TRUE, TRUE, exposures$amcorporate, "asset", "C"),
+  QuestionTab$new("am_c", "type", "am_sov", TRUE, TRUE, exposures$amCorporate, "asset", "C"),
   QuestionTab$new("am_sov", "am_c", "am_re", TRUE, TRUE, exposures$sovereign, "asset", "S"),
-  QuestionTab$new("am_re", "am_sov", "report", TRUE, TRUE, exposures$amre, "asset", "R"),
+  QuestionTab$new("am_re", "am_sov", "report", TRUE, TRUE, exposures$amRe, "asset", "R"),
   QuestionTab$new("report", "type", NULL)
 )

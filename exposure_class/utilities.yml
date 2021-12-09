@@ -1,7 +1,7 @@
 name: Utilities
 
 description: |
-  The utilities sector comprises of companies which provide basic amenities such
+  The **Utilities** sector comprises of companies which provide basic amenities such
   as water, sewage services, electricity, and gas. The sector includes companies
   that:
 
@@ -29,10 +29,10 @@ description: |
 transition:
   high:
     always: |
-      Whilst the utilities sector will continue to play a critical role in
+      Whilst the utilities sector could continue to play a critical role in
       meeting customer demand for the coming years, the changing patterns in
       energy generation in the Delayed transition scenario, driven by late
-      policy action enabling a fossil fuelled recovery out of the economic
+      policy action enabling a "fossil fuelled recovery" out of the economic
       crisis brought about by COVID-19, results in CO<sub>2</sub> emissions
       increasing until 2030 before rapidly decreasing after 2030 to compensate
       for the inaction beforehand. The Divergent Net Zero scenario results in
@@ -44,9 +44,9 @@ transition:
     high_materiality: |
       In a disorderly transition scenario, the utilities sector is likely to be
       impacted. The changes in carbon pricing, energy demand/mix and energy
-      prices could potentially result in financial impacts; the extent will
-      depend on how reliant the companys production /revenue mix is on
-      low-carbon electricity and gas, the clients transition plans and how this
+      prices could potentially result in financial impacts; the extent could
+      depend on how reliant the company's production /revenue mix is on
+      low-carbon electricity and gas, the client's transition plans and how this
       compares to the sector average. For example:
 
       - **Reduced revenue** for carbon intensive utilities as consumers switch
@@ -75,7 +75,7 @@ transition:
       [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
 
       Nevertheless, in a disorderly transition scenario one has to be careful
-      about also expecting valuation uplifts in firms that act as pure plays on
+      about also expecting valuation uplifts in firms that act as 'pure plays' on
       an accelerated energy transition, like Renewable Electricity Companies.
       That is because valuations for that subset of firms are already high and
       arguably pricing in more aggressive transition and decarbonisation
@@ -95,7 +95,7 @@ transition:
 
       The important role of technology should also be noted. Forecasting
       technology pathways is just as difficult as forecasting policy pathways.
-      Even in disorderly transition scenarios, the zero and low carbon winners
+      Even in disorderly transition scenarios, the zero and low carbon 'winners'
       cannot be predicted with uncertainty. The relative cost reductions and
       growth rates of solar and wind technologies, government nuclear investment
       plans, and the viability of biomass, hydrogen and carbon capture and
@@ -114,7 +114,7 @@ transition:
 
       Because the utilities sector is so diverse, there is no single solution,
       but rather a range of strategies based on the circumstances of each
-      company will need to be deployed in a disorderly transition risk scenario
+      company could need to be deployed in a disorderly transition risk scenario
       to maintain revenues and minimise the long-term financial impact. Examples
       include expanding renewable energy development, investing in more
       efficient thermal power generation and retiring low-efficient coal thermal
@@ -122,19 +122,19 @@ transition:
       natural gas, and increasing the weight of electricity in their portfolio.
   low:
     always: |
-      Whilst the utilities sector will continue to play a critical role in
+      Whilst the utilities sector could continue to play a critical role in
       meeting customer demand for the coming years, the changing patterns in
       energy generation in early/orderly transition risk scenarios, driven by
       immediate policy reaction, societal change, national energy strategies,
-      and carbon legislation, will lead to an immediate and smooth reduction in
+      and carbon legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
       are likely to have an impact on the sector, affecting profitability of
       individual companies and the sector overall.
     high_materiality: |
       The changes in carbon pricing, energy demand/mix and energy prices could
-      potentially result in financial impacts; the extent will depend on how
-      reliant the companys production /revenue mix is on low-carbon electricity
-      and gas, the clients transition plans and how this compares to the sector
+      potentially result in financial impacts; the extent could depend on how
+      reliant the company's production /revenue mix is on low-carbon electricity
+      and gas, the client's transition plans and how this compares to the sector
       average. For example:
 
       - **Reduced revenue** for carbon intensive utilities as consumers switch
@@ -160,7 +160,7 @@ transition:
       [IIASA NGFS Climate Scenarios Database, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
 
       Nevertheless, in orderly transition scenarios, one has to be careful about
-      also expecting valuation uplifts in firms that act as pure plays on an
+      also expecting valuation uplifts in firms that act as 'pure plays' on an
       accelerated energy transition, like Renewable Electricity Companies. That
       is because valuations for that subset of firms are already high and
       arguably pricing in more aggressive transition and decarbonisation
@@ -178,7 +178,7 @@ transition:
 
       The important role of technology should also be noted. Forecasting
       technology pathways is just as difficult as forecasting policy pathways.
-      Even in orderly transition scenarios, the zero and low carbon winners
+      Even in orderly transition scenarios, the zero and low carbon 'winners'
       cannot be predicted with uncertainty. The relative cost reductions and
       growth rates of solar and wind technologies, government nuclear investment
       plans, and the viability of biomass, hydrogen and carbon capture and
@@ -197,7 +197,7 @@ transition:
 
       Because the utilities sector is so diverse, there is no single solution,
       but rather a range of strategies based on the circumstances of each
-      company will need to be deployed in an orderly transition risk scenario to
+      company could need to be deployed in an orderly transition risk scenario to
       maintain revenues and minimise the long-term financial impact. Examples
       include expanding renewable energy development, investing in more
       efficient thermal power generation and retiring low-efficient coal thermal
@@ -213,8 +213,8 @@ physical:
       effects due to changes in the frequency and severity of weather events
       such as heatwaves, droughts, wildfires, tropical cyclones and flooding.
       Whilst the utilities sector is used to responding to and managing changing
-      weather conditions, in the low physical risk scenario, climate change and
-      global warming will increase weather variations. This could lead to
+      weather conditions, in the high physical risk scenario, climate change and
+      global warming could increase weather variations. This could lead to
       increasing disruption to the utilities sector and impact the profitability
       of these companies.
     high_materiality: |
@@ -225,7 +225,7 @@ physical:
 
       - **Higher average temperatures** could reduce demand for energy used for
         heating, particularly natural gas. Performance of combined-cycle power
-        stations will decrease with an increase in temperature.
+        stations could decrease with an increase in temperature.
 
       **Acute Impacts**:
 
@@ -254,7 +254,7 @@ physical:
       such as heatwaves, droughts, wildfires, tropical cyclones and flooding.
       Whilst the utilities sector is used to responding to and managing changing
       weather conditions, in the low physical risk scenario, climate change and
-      global warming will increase weather variations. This could lead to
+      global warming could increase weather variations. This could lead to
       increasing disruption to the utilities sector and impact the profitability
       of these companies.
     high_materiality: |
@@ -265,7 +265,7 @@ physical:
 
       - **Higher average temperatures** could reduce demand for energy used for
         heating, particularly natural gas demand. Performance of combined-cycle
-        power stations will decrease with an increase in temperature.
+        power stations could decrease with an increase in temperature.
 
       **Acute Impacts**:
 
@@ -285,6 +285,12 @@ physical:
       from power lines), and increase contribution of electricity businesses vs
       gas businesses.
 
+references: |
+    - 	https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/documents/sustainability/en/tcfd/EON_2021_On_course_for_net_zero.pdf
+    
+    - https://www.naturgy.com/files/Informe_de_Sostenibilidad_y_EINF_ING.pdf 
+    
+    - https://www.severntrent.com/content/dam/stw-plc/investors-02/capital-markets-day/tcfd-report.pdf
 
 
 

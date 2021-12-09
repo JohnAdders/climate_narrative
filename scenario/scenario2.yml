@@ -16,8 +16,8 @@ description: |
   The NGFS have provided two disorderly scenarios:
 
   - **Divergent Net Zero** reaches net zero globally around 2050 but with higher
-    costs in the short-term due to substitute technology and divergent policies
-    being adopted across sectors leading to a quicker phase out of oil use.
+    costs in the short-term due to divergent policies being adopted across sectors 
+    leading to inefficiencies and a quicker phase out of oil use.
 
   - **Delayed transition** assumes annual emissions do not decrease until 2030.
     Strong policies are needed to limit warming to below 2&deg;C by 2050.
@@ -53,11 +53,14 @@ description: |
   Observed climate change on 1.2&deg;C, compared to pre-industrial levels, has
   already more than doubled both the global land area and the global population
   annually exposed to river flood, crop failure, tropical cyclones, wildfire,
-  drought and heatwaves.
+  drought and heatwaves. (See Kaufman, D. et al. (2020)).
 
-  In these scenarios global mean temperatures could increase across the world by
-  1.5&deg;C to 1.8&deg;C with land warming faster than oceans and high latitudes
-  experiencing higher warming.
+  The increasing concentrations of carbon dioxide, methane and nitrous oxide
+  in the atmosphere are unprecedented in at least the last 800,000 years and are
+  extremely likely to have been the dominant cause of warming since the mid-20th
+  century. In Disorderly transition risk scenarios global mean temperatures are 
+  projected to increase across the world by 1.5&deg;C to 1.8&deg;C with land 
+  warming faster than oceans and high latitudes experiencing higher warming.
 
   ![Global mean temp rise](Global_mean_temperature_Disorderly.png)
 
@@ -70,18 +73,33 @@ description: |
   heatwaves, droughts, wildfires, tropical cyclones, and flooding.
 
   In these scenarios the GDP losses are estimated to be between -4.2% and -4.8%
-  by 2050. World GDP losses from physical risks scale with the rise in
-  temperatures in the scenarios over time. World GDP impacts from
-  Disorderly/Divergent transition risks are negative as the speed of the
-  transition combines with investment uncertainty and affects consumption and
-  investment. In these scenarios, there is a large mix of physical and
-  transition risks in 2050.
+  by 2050. GDP losses were calculated based on the methodology set out in Kalkuhl 
+  and Wenz (2020) at the country level for the change in average temperature in 
+  each scenario compared to the previous year. The methodology does not include 
+  impacts related to extreme weather, sea-level rise or wider societal impacts from 
+  migration or conflict. For given countries these would likely strongly increase 
+  the physical risk. These estimates also do not fully capture adaptation, which 
+  would reduce impacts but require significant investment. World GDP losses from 
+  physical risks scale with the rise in temperatures in the scenarios over time. 
+  World GDP impacts from Disorderly/Divergent transition risks are negative as 
+  the speed of the transition combines with investment uncertainty and affects 
+  consumption and investment. In these scenarios, there is a large mix of 
+  physical and transition risks in 2050.
 
   ![GDP](GDP_Disorderly.png)
 
   **Source:**
   [IIASA NGFS Scenario Explorer, NGFS Scenario Data NIGEM v2.0 NiGEM NGFS v1.21 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
 
+  Note GDP losses highlighted in the above graph were calculated based on the 
+  methodology set out in Kalkuhl and Wenz (2020) at the country level for the 
+  change in average temperature in each scenario compared to the previous year. 
+  The methodology does not include impacts related to extreme weather, sea-level 
+  rise or wider societal impacts from migration or conflict. For given countries 
+  these would likely strongly increase the physical risk. These estimates also 
+  do not fully capture adaptation, which would reduce impacts but require 
+  significant investment.
+  
   Overall, the Delayed transition scenario creates a risk of leaving very little
   or no time to develop and deploy counter measures. This leaves a limited
   timeframe for companies and the population to adapt to these changes. In a
