@@ -1,5 +1,5 @@
 tab_report_ui <- function() {
-  valid_options <- c("", unname(unlist(lapply(scenarios, function(x) {
+  valid_options <- c("", unname(unlist(lapply(global$scenarios, function(x) {
     if (x$is_scenario) {
       return(x$name)
     } else {
@@ -29,7 +29,7 @@ tab_report_ui <- function() {
 
 tab_report_server <- function(input, output, session, tab) {
   if (session$userData$dev == TRUE){
-    updateSelectInput(session, "report_selection", selected = scenarios[[2]]$name)
+    updateSelectInput(session, "report_selection", selected = global$scenarios[[2]]$name)
   }
   observeEvent(
     input$type,
@@ -41,13 +41,13 @@ tab_report_server <- function(input, output, session, tab) {
             asset = "am_re",
             bank = "bank_sov"
           ),
-          ordered_tabs
+          global$ordered_tabs
         )
       )
     }
   )
   observeEvent(
-    input[[paste0("page_",  as.integer(factor("report", ordered_tabs)), "_previous")]],
+    input[[paste0("page_",  as.integer(factor("report", global$ordered_tabs)), "_previous")]],
     updateSelectInput(session, "report_selection", selected = "")
   )
 }

@@ -3,7 +3,7 @@ ui <- function() {
     id = "wizard",
     type = "hidden"
   )
-  tabset_tabs <- lapply(tabs, function(tab) {
+  tabset_tabs <- lapply(global$tabs, function(tab) {
     tab$ui()
   })
   fluidPage(

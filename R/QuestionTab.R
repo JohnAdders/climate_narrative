@@ -27,9 +27,9 @@ QuestionTab <- R6Class(
       self$tab_ui <- get_or_null(paste0("tab_", tab_name, "_ui"))
       self$tab_ui_foot <- get_or_null(paste0("tab_", tab_name, "_foot"))
       self$tab_server <- get_or_null(paste0("tab_", tab_name, "_server"))
-      self$tab_number <- as.integer(factor(tab_name, ordered_tabs))
-      self$previous_tab <- as.integer(factor(previous_tab, ordered_tabs))
-      self$next_tab <- as.integer(factor(next_tab, ordered_tabs))
+      self$tab_number <- as.integer(factor(tab_name, global$ordered_tabs))
+      self$previous_tab <- as.integer(factor(previous_tab, global$ordered_tabs))
+      self$next_tab <- as.integer(factor(next_tab, global$ordered_tabs))
       self$id <- paste0("page_", self$tab_number)
       self$add_header <- add_header
       self$add_footer <- add_footer
@@ -90,7 +90,7 @@ QuestionTab <- R6Class(
         tabpanel_params <- add_param(
           tabpanel_params,
           tag("header", list(
-            img(src = "cfrf_logo.png", alt = "CFRF logo", height = 50)
+            img(src = "/climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
           ))
         )
       }

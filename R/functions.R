@@ -1,3 +1,42 @@
+# helper function to remove special characters
+remove_special_characters <- function(text, camelcase=TRUE) {
+  out <- text
+  if(camelcase){
+    out <- gsub('\\ (\\w?)', '\\U\\1', tolower(out), perl=TRUE)
+    out <- gsub('\\_(\\w?)', '\\U\\1', out, perl=TRUE)
+  }
+  gsub("[_. ]", "", out)
+}
+
+# helper function to read all yaml/csv/R files from a directory as a named R list
+read_dir <- function(directory, file_format = "auto", remove_special_characters_from_names = TRUE) {
+  file_list <- dir(path = directory)
+  file_format <- tolower(file_format)
+  if (file_format == "auto") {
+    file_format <- tolower(strsplit(file_list[1], ".", fixed = T)[[1]][2])
+  }
+  list <- lapply(
+    file_list,
+    function(file) {
+      switch(file_format,
+        yml = read_yaml(paste0(directory, "/", file)),
+        csv = read.csv(paste0(directory, "/", file), stringsAsFactors = FALSE),
+        r = source(paste0(directory, "/", file)),
+        stop("Error (function read_dir): file format ", file_format, " not handled")
+      )
+    }
+  )
+  names_to_be <- sapply(
+    dir(path = directory),
+    function(file) {
+      strsplit(file, ".", fixed = T)[[1]][1]
+    }
+  )
+  if (remove_special_characters_from_names) names_to_be <- remove_special_characters(names_to_be)
+  names(list) <- names_to_be
+  return(list)
+}
+
 # helper function - a shortcut function to add element to the list
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
@@ -39,11 +78,11 @@ produce_tooltip_matrix <- function(exposure_matrix) {
     ncol = ncol(exposure_matrix) - 2
   )
   for (i in 1:nrow(out)){
-    row_tooltip <- products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
+    row_tooltip <- global$products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
     for (j in 1:ncol(out)){
       exposure_class <- exposure_matrix[i, j + 2]
       if (exposure_class != ""){
-        exposure_class_tooltip <- exposure_classes[[exposure_class]][["tooltip"]]
+        exposure_class_tooltip <- global$exposure_classes[[exposure_class]][["tooltip"]]
         if (!is.null(exposure_class_tooltip)){
           if (!is.null(row_tooltip)) {
             out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
@@ -282,7 +321,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 }
 
 get_exposure_description <- function(item, type_item_inputs) {
-  if(is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
+  if(is.null(global$exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
@@ -302,9 +341,9 @@ get_exposure_description <- function(item, type_item_inputs) {
   colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")
   out <- paste0(
     "## ",
-    exposure_classes[[item]][["name"]],
+    global$exposure_classes[[item]][["name"]],
     "\n\n",
-    exposure_classes[[item]][["description"]],
+    global$exposure_classes[[item]][["description"]],
     "\n\nThe following rows contribute: \n\n",
     table_to_markdown_multiline(ordered_aggregate_inputs, TRUE, c(15,30,25,15)),
     "\n\n"
@@ -312,7 +351,7 @@ get_exposure_description <- function(item, type_item_inputs) {
 }
 
 get_exposure_appendix <- function(item){
-  appendix <- exposure_classes[[item]][["appendix"]]
+  appendix <- global$exposure_classes[[item]][["appendix"]]
   if(is.null(appendix)){
     return (c())
   } else {
@@ -320,7 +359,7 @@ get_exposure_appendix <- function(item){
       paste0(
         "### Appendix",
         "\n\n",
-        exposure_classes[[item]][["appendix"]],
+        global$exposure_classes[[item]][["appendix"]],
         "\n\n"
       )
     )
@@ -339,7 +378,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     riskname <- switch(high_or_low, high = "High physical risk", low = "Low physical risk")
   }
   header_text <- paste0(
-    exposure_classes[[item]][["name"]],
+    global$exposure_classes[[item]][["name"]],
     " --- ",
     riskname
   )
@@ -347,7 +386,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     "### ",
     capitalize(header_text),
     " --- Summary\n\n",
-    exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
+    global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
     "\n\n"
   )
   if (materiality == "High") {
@@ -356,14 +395,14 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
       "### ",
       capitalize(header_text),
       " --- Details\n\n",
-      exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
+      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
       "\n\n"
     )
   }
   for (product in products) {
     out <- paste0(
       out,
-      exposure_classes[[item]][[physical_or_transition]][[high_or_low]][[product]],
+      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][[product]],
       "\n\n"
     )
   }
@@ -407,13 +446,13 @@ get_references <- function(aggregated_table, type_inputs) {
       )
     for (i in 1:nrow(aggregated_table)) {
       item <- aggregated_table$item[i]
-      if (length(exposure_classes[[item]][["references"]])){
+      if (length(global$exposure_classes[[item]][["references"]])){
         out <- paste0(
           out,
           "\n\n## ",
-          exposure_classes[[item]][["name"]],
+          global$exposure_classes[[item]][["name"]],
           "\n\n",
-          exposure_classes[[item]][["references"]]
+          global$exposure_classes[[item]][["references"]]
         )
       }
     }
