@@ -103,8 +103,8 @@ transition:
         integration of renewable energy sources in largescale manufacturing
         establishments.
 
-      In Disorderly/Divergent transition risk scenarios, the manufacturing sector
-      could achieve long-term carbon neutrality through new manufacturing
+      In Disorderly/Divergent transition risk scenarios, the manufacturing
+      sector could achieve long-term carbon neutrality through new manufacturing
       processes supported by clean energy sources, a circular economy which
       increases materials efficiency and widespread carbon capture storage (CCS)
       utilisation.
@@ -215,15 +215,15 @@ physical:
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
       and dependence on global supply chains, such that disruptions in one
-      region can quickly result in world-wide shortages (In 2011, excessive flooding
-      in Thailand resulted in a reduction in global industrial output by 2.5 percent
-      and damages cost the world's top three non-life insurance companies $5.3 billion
-      in claims, which is greater than the cost of Japan's earthquake and tsunami
-      earlier the same year). For example, food manufactures, who rely on rice and
-      wheat crops, already experience a reduction in the availability of raw
-      materials as empirical analyses demonstrate a link between an annual decrease
-      of 0.3-0.9% in rice and wheat yields as a result of climate-related
-      weather effects.
+      region can quickly result in world-wide shortages (In 2011, excessive
+      flooding in Thailand resulted in a reduction in global industrial output
+      by 2.5 percent and damages cost the world's top three non-life insurance
+      companies $5.3 billion in claims, which is greater than the cost of
+      Japan's earthquake and tsunami earlier the same year). For example, food
+      manufactures, who rely on rice and wheat crops, already experience a
+      reduction in the availability of raw materials as empirical analyses
+      demonstrate a link between an annual decrease of 0.3-0.9% in rice and
+      wheat yields as a result of climate-related weather effects.
 
       Without adequate adaptation strategies, continued exposure to changing
       weather conditions could significantly affect specific areas of
@@ -300,14 +300,15 @@ physical:
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
       and dependence on global supply chains, such that disruptions in one
-      region can quickly result in world-wide shortages (In 2011, excessive flooding
-      in Thailand resulted in a reduction in global industrial output by 2.5 percent
-      and damages cost the world's top three non-life insurance companies $5.3 billion
-      in claims, which is greater than the cost of Japan's earthquake and tsunami
-      earlier the same year). For example, food manufactures, who rely on rice and
-      wheat crops, already experience a reduction in the availability of raw materials
-      as empirical analyses demonstrate a link between an annual decrease of 0.3-0.9%
-      in rice and wheat yields as a result of climate-related weather effects.
+      region can quickly result in world-wide shortages (In 2011, excessive
+      flooding in Thailand resulted in a reduction in global industrial output
+      by 2.5 percent and damages cost the world's top three non-life insurance
+      companies $5.3 billion in claims, which is greater than the cost of
+      Japan's earthquake and tsunami earlier the same year). For example, food
+      manufactures, who rely on rice and wheat crops, already experience a
+      reduction in the availability of raw materials as empirical analyses
+      demonstrate a link between an annual decrease of 0.3-0.9% in rice and
+      wheat yields as a result of climate-related weather effects.
 
       Without adequate adaptation strategies, continued exposure to changing
       weather conditions could significantly affect specific areas of
@@ -377,20 +378,20 @@ physical:
         when faced with disaster.
 
 references: |
-    - [NAICS Code Description](https://www.naics.com/naics-code-description/?code=31-33){target="_blank"}
+  - [NAICS Code Description](https://www.naics.com/naics-code-description/?code=31-33){target="\_blank"}
 
-    - [Sustainability sells: Why consumers and clothing brands alike are turning to sustainability as a guiding light - Business Insider, April 2020](https://www.businessinsider.com/sustainability-as-a-value-is-changing-how-consumers-shop?r=US&IR=T){target="_blank"}
+  - [Sustainability sells: Why consumers and clothing brands alike are turning to sustainability as a guiding light - Business Insider, April 2020](https://www.businessinsider.com/sustainability-as-a-value-is-changing-how-consumers-shop?r=US&IR=T){target="\_blank"}
 
-    - [Carbon Border Adjustment Mechanism: Questions and Answers - European Commission, July 2021](https://ec.europa.eu/commission/presscorner/detail/en/qanda_21_3661){target="_blank"}
+  - [Carbon Border Adjustment Mechanism: Questions and Answers - European Commission, July 2021](https://ec.europa.eu/commission/presscorner/detail/en/qanda_21_3661){target="\_blank"}
 
-    - [Industrial Transformation 2050: Pathways to Net-Zero from EU Heavy Industry - 2019](https://www.cisl.cam.ac.uk/system/files/documents/material-economics-industrial-transformation-2050.pdf){target="_blank"}
+  - [Industrial Transformation 2050: Pathways to Net-Zero from EU Heavy Industry - 2019](https://www.cisl.cam.ac.uk/system/files/documents/material-economics-industrial-transformation-2050.pdf){target="\_blank"}
 
-    - [Industrial Water: Our Essential Guide To Pollution, Treatment & Solutions - Aqua Tech, May 2019](https://www.aquatechtrade.com/news/industrial-water/industrial-water-essential-guide/){target="_blank"}
+  - [Industrial Water: Our Essential Guide To Pollution, Treatment & Solutions - Aqua Tech, May 2019](https://www.aquatechtrade.com/news/industrial-water/industrial-water-essential-guide/){target="\_blank"}
 
-    - [Working to overcome the global impact of neglected tropical diseases - World Health Organisation](http://apps.who.int/iris/bitstream/handle/10665/44440/9789241564090_eng.pdf;jsessionid=6C033CE30008D5A4FCDD32B9690DE436?sequence=1){target="_blank"}
+  - [Working to overcome the global impact of neglected tropical diseases - World Health Organisation](http://apps.who.int/iris/bitstream/handle/10665/44440/9789241564090_eng.pdf;jsessionid=6C033CE30008D5A4FCDD32B9690DE436?sequence=1){target="\_blank"}
 
-    - [Rubber trees are under threat. Here are the reasons why - Manila Bulletin, April 2021](https://mb.com.ph/2021/04/17/rubber-trees-are-under-threat-here-are-the-reasons-why/){target="_blank"}
+  - [Rubber trees are under threat. Here are the reasons why - Manila Bulletin, April 2021](https://mb.com.ph/2021/04/17/rubber-trees-are-under-threat-here-are-the-reasons-why/){target="\_blank"}
 
-    - [Climate change is affecting crop yields and reducing global food supplies - The Conversation, July 2019](https://theconversation.com/climate-change-is-affecting-crop-yields-and-reducing-global-food-supplies-118897){target="_blank"}
+  - [Climate change is affecting crop yields and reducing global food supplies - The Conversation, July 2019](https://theconversation.com/climate-change-is-affecting-crop-yields-and-reducing-global-food-supplies-118897){target="\_blank"}
 
-    - [Floods, Companies and Supply Chain Risk - Columbia Climate School, November 2014](https://news.climate.columbia.edu/2014/11/17/floods-companies-and-supply-chain-risk/){target="_blank"}
+  - [Floods, Companies and Supply Chain Risk - Columbia Climate School, November 2014](https://news.climate.columbia.edu/2014/11/17/floods-companies-and-supply-chain-risk/){target="\_blank"}

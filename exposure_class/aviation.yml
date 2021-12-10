@@ -14,9 +14,9 @@ description: |
 transition:
   high:
     always: |
-      The aviation sector could continue to play a role in meeting customer demand
-      for the coming years The changing patterns in energy generation in the
-      Delayed transition scenario, driven by late policy action enabling a
+      The aviation sector could continue to play a role in meeting customer
+      demand for the coming years The changing patterns in energy generation in
+      the Delayed transition scenario, driven by late policy action enabling a
       "fossil fuelled recovery" out of the economic crisis brought about by
       COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 and a
       decrease in CO<sub>2</sub> after 2030 to compensate for the inaction
@@ -86,8 +86,8 @@ transition:
       conditions and coverage.
   low:
     always: |
-      The aviation sector could continue to play a role in meeting customer demand
-      for the coming years. The changing patterns in energy generation in
+      The aviation sector could continue to play a role in meeting customer
+      demand for the coming years. The changing patterns in energy generation in
       early/orderly transition risk scenarios, driven by immediate policy
       reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
@@ -132,8 +132,8 @@ transition:
         disposable income.
 
       The profitability of the aviation sector and its associated underwriting
-      class, in the early/orderly transition risk scenarios, could also depend on
-      the relevant companies proactively investing in innovation and new
+      class, in the early/orderly transition risk scenarios, could also depend
+      on the relevant companies proactively investing in innovation and new
       technology. For example:
 
       - Alternative fuel sources (e.g. airlines could invest in Sustainable
@@ -254,10 +254,10 @@ physical:
       increase flood-mitigating construction standards.
 
 references: |
-    - [Lufthansa Group Taskforce on Climate-Related Financial Disclosures (TCFD) Report 2020](https://www.lufthansagroup.com/media/downloads/en/responsibility/LH-TCFD-Report-2020.pdf){target="_blank"}
+  - [Lufthansa Group Taskforce on Climate-Related Financial Disclosures (TCFD) Report 2020](https://www.lufthansagroup.com/media/downloads/en/responsibility/LH-TCFD-Report-2020.pdf){target="\_blank"}
 
-    - [EasyJet plc Annual Report and Accounts 2020](https://corporate.easyjet.com/~/media/Files/E/Easyjet/pdf/investors/agm/agm-dec-2020/annual-report-2020.pdf){target="_blank"}
+  - [EasyJet plc Annual Report and Accounts 2020](https://corporate.easyjet.com/~/media/Files/E/Easyjet/pdf/investors/agm/agm-dec-2020/annual-report-2020.pdf){target="\_blank"}
 
-    - [Airbus SE Annual Report 2020](https://www.airbus.com/content/dam/corporate-topics/financial-and-company-information/Full%20-Report-Airbus-SE-Annual-Report-2020.pdf){target="_blank"}
+  - [Airbus SE Annual Report 2020](https://www.airbus.com/content/dam/corporate-topics/financial-and-company-information/Full%20-Report-Airbus-SE-Annual-Report-2020.pdf){target="\_blank"}
 
-    - [Heathrow Airport Limited Annual Report and Financial Statements 2020](https://www.heathrow.com/content/dam/heathrow/web/common/documents/company/investor/reports-and-presentations/annual-accounts/airport-ltd/Heathrow-Airport-Limited-31-Dec-2020.pdf){target="_blank"}
+  - [Heathrow Airport Limited Annual Report and Financial Statements 2020](https://www.heathrow.com/content/dam/heathrow/web/common/documents/company/investor/reports-and-presentations/annual-accounts/airport-ltd/Heathrow-Airport-Limited-31-Dec-2020.pdf){target="\_blank"}
