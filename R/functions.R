@@ -188,7 +188,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
     }
   }
   split_rows <- ceiling(c(
-    max(nchar(headers) / (col_widths - 2)), 
+    max(nchar(headers) / (col_widths - 2)),
     apply(table, 1, function(x) max(nchar(x)/(col_widths - 2)))
   ))
   out <- matrix("", nrow=0,ncol=ncol(table))
@@ -217,7 +217,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
   out <- rbind(out, rowsout, gsub("-", "=", sepline))
   for (j in 1:nrow(table)){
     rowsout <- matrix(emptyline, nrow=split_rows[j + 1], ncol=length(emptyline), byrow=F)
-    for (i in 1:ncol(out)) {        
+    for (i in 1:ncol(out)) {
       cell_text<- table[j, i]
       temp2 <- paste0(
         cell_text,
@@ -234,7 +234,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
     }
     out <- rbind(out, rowsout, sepline)
   }
-  
+
   out2 <- paste0(
     paste(sepline,collapse=""),
     "\n",
@@ -299,7 +299,7 @@ get_exposure_description <- function(item, type_item_inputs) {
       )
     }
   )
-  colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")  
+  colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")
   out <- paste0(
     "## ",
     exposure_classes[[item]][["name"]],
@@ -437,10 +437,20 @@ heartbeat <- function(input, output, session) {
 heartbeat_footer <- function() {
   list(
     hr(),
-    tag("footer", list(
-      img(src = "aviva_logo.png", alt = "Aviva logo", height = 50),
-      p("Developed in Aviva by Krzysztof Opalski, John Adcock")
-    ))
+    tag("footer",
+      list(
+        p("Copyright 2021 The Climate Financial Risk Forum"),
+        p(
+          a(href="https://github.com/JohnAdders/climate_narrative", "Source Code"),
+          " | ",
+          a(href="mailto:john.adcock@aviva.com?subject=Climate%20Narrative%20support%20request", "Beta Support"),
+          " | ",
+          a(href="https://github.com/JohnAdders/climate_narrative/issues", "Known Issues"),
+          " | ",
+          a(href="https://github.com/JohnAdders/climate_narrative/wiki/Contributors", "Contributors")
+        )
+      )
+    )
   )
 }
 
@@ -474,4 +484,35 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   if (gResponse$status_code == 200) {
     return(fromJSON(content(gResponse, "text")))
   }
+}
+
+generic_asset_footer <- function(is_asset_mananger = FALSE) {
+  if (is_asset_mananger) {
+    asset_text = "assets under management"
+  } else {
+    asset_text = "assets"
+  }
+  p(
+    list("Enter your firm's exposures by asset class and sector using the following definitions:",
+      tags$ul(
+        tags$li(paste("\"High\": One of your top 5 exposures or more than 10% of total", asset_text)),
+        tags$li(paste("\"Medium\": 5% - 10% of total", asset_text)),
+        tags$li(paste("\"Low\": below 5% of total", asset_text)),
+        tags$li(paste("blank: immaterial or no exposure"))
+      )
+    )
+  )
+}
+
+generic_liability_footer <- function() {
+  p(
+    list("Enter your firm's exposures by liability class using the following definitions:",
+      tags$ul(
+        tags$li("\"High\": One of your top 5 exposures or more than 10% of total premium income"),
+        tags$li("\"Medium\": 5% - 10% of total premium income"),
+        tags$li("\"Low\": below 5% of total premium income"),
+        tags$li("blank: immaterial or no exposure")
+      )
+    )
+  )
 }
