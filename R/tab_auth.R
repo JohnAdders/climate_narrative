@@ -1,11 +1,11 @@
 passes_captcha <- function(input, session) {
-  result <- GreCAPTCHAv3Server(session$userData$captcha_code, input$responseReceived)
+  result <- GreCAPTCHAv3Server(session$userData$captcha_secret, input$responseReceived)
   return(result$success && result$score > 0.5)
 }
 
 request_captcha <- function(output, session) {
-  if (!is.null(session$userData$captcha_code)) {
-    GreCAPTCHAv3js("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP", "homepage", "responseReceived")
+  if (!is.null(session$userData$captcha_code) && !is.null(session$userData$captcha_secret)) {
+    GreCAPTCHAv3js(session$userData$captcha_code, "homepage", "responseReceived")
   } else {
     output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
   }
