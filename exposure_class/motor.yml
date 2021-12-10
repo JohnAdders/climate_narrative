@@ -27,12 +27,12 @@ transition:
       reduced immediately but divergently. Policies and regulatory frameworks
       implemented at regional level rather than international level or evolving
       at a different speed depending on the region, could result in in an
-      un-level playing field for motor sector. 
-      
-      Both these scenarios are likely to have an impact on the profitability 
-      of the motor sector and the associated insurance products' pricing, 
-      terms and conditions, and coverage. These scenarios could also lead 
-      to a reduction in GDP growth. This could result in changes in the rate 
+      un-level playing field for motor sector.
+
+      Both these scenarios are likely to have an impact on the profitability
+      of the motor sector and the associated insurance products' pricing,
+      terms and conditions, and coverage. These scenarios could also lead
+      to a reduction in GDP growth. This could result in changes in the rate
       of growth in demand for motor insurance.
     high_materiality: |
       In the disorderly/divergent transition risk scenarios, there are a number
@@ -237,10 +237,8 @@ physical:
       business.
 
 references: |
-    - [Driverless vehicles and the future of motor insurance - Zurich, February 2020](https://www.zurich.co.uk/news-and-insight/driverless-vehicles-and-the-future-of-motor-insurance)
-    
-    - [Admiral Group plc Annual Report and Accounts 2020](https://admiralgroup.co.uk/sites/default/files_public/annual-report/2021/03/2020-full-year-results-annual-report.pdf)
-    
-    - [Honda Sustainability Report 2020](https://global.honda/content/dam/site/global/about/cq_img/sustainability/report/pdf/2020/Honda-SR-2020-en-053-079.pdf)
+    - [Driverless vehicles and the future of motor insurance - Zurich, February 2020](https://www.zurich.co.uk/news-and-insight/driverless-vehicles-and-the-future-of-motor-insurance){target="_blank"}
 
+    - [Admiral Group plc Annual Report and Accounts 2020](https://admiralgroup.co.uk/sites/default/files_public/annual-report/2021/03/2020-full-year-results-annual-report.pdf){target="_blank"}
 
+    - [Honda Sustainability Report 2020](https://global.honda/content/dam/site/global/about/cq_img/sustainability/report/pdf/2020/Honda-SR-2020-en-053-079.pdf){target="_blank"}

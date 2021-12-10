@@ -68,12 +68,16 @@ description: |
   01. Eating and Drinking Places
 
   01. Miscellaneous Retail
-  
-  North American Industry Classification System, 2018, Available online at: https://www.naics.com/sic-codes-counts-division/?div=G. These may be cross-referenced to the UK Standard Industrial Classification of economic activities codes (SIC) https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic (or other classification systems) via online tools.
+
+  North American Industry Classification System, 2018, Available online at:
+  (https://www.naics.com/sic-codes-counts-division/?div=G){target="_blank"}. These
+  may be cross-referenced to the UK Standard Industrial Classification of economic
+  activities codes (SIC) (https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic){target="_blank"}
+  (or other classification systems) via online tools.
 transition:
   high:
     always: |
-      As the Consumer Products sector sits between the end-consumers, it is 
+      As the Consumer Products sector sits between the end-consumers, it is
       subject to the considerations of both the products it
       purchases (or receives) as suppliers react to a top-down policy
       environment that results in a rapid reduction of emissions, as well as the
@@ -186,14 +190,14 @@ transition:
 
       Furthermore, there is likely to be significant wide economic disruption
       that could lead to falls in equity prices and reduced customer spending
-      levels. In these scenarios, the consumer products sector could deliver 
+      levels. In these scenarios, the consumer products sector could deliver
       longer-term carbon reduction initiatives by shifting to lower carbon intensive
       supplies, reducing the carbon intensity of their physical stores or sales
       platforms, and using clean energy sources. The drive for change arises
       through retailers being sandwiched between a combination of shift in
       end-consumer preferences from the buy side and a similar shift on the sell
       side as manufacturers and suppliers react to a top-down policy environment
-      that results in a rapid reduction of emissions. This could lead to 
+      that results in a rapid reduction of emissions. This could lead to
       sudden limited-to-zero supply of carbon intensive goods could mean
       retailers that specialise in such markets in a monoline, or concentrated
       strategy may find their business models no longer viable (for example,
@@ -368,7 +372,7 @@ physical:
       significant GDP impact which could negatively impact demand for consumer
       products.
 
-      
+
     high_materiality: |
       Consideration should be given to the following hazards when considering
       physical risk for retailers:
@@ -580,29 +584,26 @@ physical:
       proliferated since the second world war).
 
 references: |
-    - [NAICS Code Description](https://www.naics.com/sic-codes-counts-division/?div=G)
-    
-    - [Standard industrial classification of economic activities (SIC) - Gov.uk](https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic)
-    
-    - [People Want to Make Healthy and Sustainable Living Choices but Do Not Know Where to Start - Globe Scan, October 2020](https://globescan.com/2020/10/07/people-want-healthy-sustainable-living-choices-2020/)
-    
-    - [Climate and Supply Chain: The Business Case for Action - BSR, September 2018](https://www.bsr.org/reports/BSR_Climate_and_Supply_Chain_Management.pdf)
-    
-    - [Facts for Features: Katrina Impact - The Data Center, August 2016](https://www.datacenterresearch.org/data-resources/katrina/facts-for-impact/)
-    
-    - [The Great Acceleration - Future Earth, January 2015](https://futureearth.org/2015/01/16/the-great-acceleration/)
-    
-    - [The UK Retial Industry and Climate Change - BRC](https://brc.org.uk/climate-roadmap/section-1-context/15-the-uk-retail-industry-and-climate-change/#:~:text=In%20the%20UK%2C%20climate%20change,retail%20buildings%2C%20logistics%20and%20infrastructure.&text=Climate%2Drelated%20economic%20disruption%20has,on%20impacts%20on%20consumer%20spending)
-    
-    - [How companies can adapt to climate change - McKinsey & Company, July 2015](https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Sustainability/Our%20Insights/How%20companies%20can%20adapt%20to%20climate%20change/How%20companies%20can%20adapt%20to%20climate%20change.pdf)
-    
-    - [Assessing the environmental impacts of UK supply chains - JNCC, November 2021](https://jncc.gov.uk/our-work/environmental-impacts-of-uk-supply-chains/)
-    
-    - [Retailers tackle climate change - National Retail Federation, September 2021](https://nrf.com/blog/retailers-tackle-climate-change)
-    
-    - [Letter from Andrew Griffity MP to retail sector, August 2021](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1012159/tfop-letter-retail.pdf)
-    
-    - [The Governance of Corporate Responses to Climate Change: An International Comparison - Business Strategy and the Environment, May 2016](https://www.researchgate.net/publication/309145941_The_Governance_of_Corporate_Responses_to_Climate_Change_An_International_Comparison_Governance_of_Corporations_and_Climate_Change)
+    - [NAICS Code Description](https://www.naics.com/sic-codes-counts-division/?div=G){target="_blank"}
 
+    - [Standard industrial classification of economic activities (SIC) - Gov.uk](https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic){target="_blank"}
 
+    - [People Want to Make Healthy and Sustainable Living Choices but Do Not Know Where to Start - Globe Scan, October 2020](https://globescan.com/2020/10/07/people-want-healthy-sustainable-living-choices-2020/){target="_blank"}
 
+    - [Climate and Supply Chain: The Business Case for Action - BSR, September 2018](https://www.bsr.org/reports/BSR_Climate_and_Supply_Chain_Management.pdf){target="_blank"}
+
+    - [Facts for Features: Katrina Impact - The Data Center, August 2016](https://www.datacenterresearch.org/data-resources/katrina/facts-for-impact/){target="_blank"}
+
+    - [The Great Acceleration - Future Earth, January 2015](https://futureearth.org/2015/01/16/the-great-acceleration/){target="_blank"}
+
+    - [The UK Retial Industry and Climate Change - BRC](https://brc.org.uk/climate-roadmap/section-1-context/15-the-uk-retail-industry-and-climate-change/#:~:text=In%20the%20UK%2C%20climate%20change,retail%20buildings%2C%20logistics%20and%20infrastructure.&text=Climate%2Drelated%20economic%20disruption%20has,on%20impacts%20on%20consumer%20spending){target="_blank"}
+
+    - [How companies can adapt to climate change - McKinsey & Company, July 2015](https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Sustainability/Our%20Insights/How%20companies%20can%20adapt%20to%20climate%20change/How%20companies%20can%20adapt%20to%20climate%20change.pdf){target="_blank"}
+
+    - [Assessing the environmental impacts of UK supply chains - JNCC, November 2021](https://jncc.gov.uk/our-work/environmental-impacts-of-uk-supply-chains/){target="_blank"}
+
+    - [Retailers tackle climate change - National Retail Federation, September 2021](https://nrf.com/blog/retailers-tackle-climate-change){target="_blank"}
+
+    - [Letter from Andrew Griffity MP to retail sector, August 2021](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1012159/tfop-letter-retail.pdf){target="_blank"}
+
+    - [The Governance of Corporate Responses to Climate Change: An International Comparison - Business Strategy and the Environment, May 2016](https://www.researchgate.net/publication/309145941_The_Governance_of_Corporate_Responses_to_Climate_Change_An_International_Comparison_Governance_of_Corporations_and_Climate_Change){target="_blank"}

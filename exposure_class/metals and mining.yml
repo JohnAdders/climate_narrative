@@ -62,7 +62,7 @@ transition:
       ![Primary Energy](Primary_Energy_Disorderly_Mining.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       Primary energy prices (i.e. the spot price at the global market) could also
       decrease compared to 2020 levels (more significantly in the divergent
@@ -71,7 +71,7 @@ transition:
       ![Coal Price](Primary_Energy_Price_Coal_Disorderly_Mining.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       By 2050, the contraction in coal demand, in a disorderly transition risk
       scenario, could be offset by the need to increase mining of other raw
@@ -133,7 +133,7 @@ transition:
       ![Primary Energy](Primary_Energy_Orderly_Mining.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       Primary energy prices (i.e. the spot price at the global market) could also
       decrease compared to 2020 levels.
@@ -141,7 +141,7 @@ transition:
       ![Coal Price](Primary_Energy_Price_Coal_Orderly_Mining.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       By 2050, the contraction in coal demand, in orderly transition risk
       scenarios, could be offset by the need to increase mining of other raw
@@ -201,7 +201,7 @@ physical:
       ![Water Stress](Water_Stress_Mining.png)
 
       **Source:**
-      [McKinsey & Company, Climate risk and decarbonization: What every mining CEO needs to know, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know)
+      [McKinsey & Company, Climate risk and decarbonization: What every mining CEO needs to know, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know){target="_blank"}
 
       **Acute Impacts**
 
@@ -263,7 +263,7 @@ physical:
       ![Water Stress](Water_Stress_Mining.png)
 
       **Source:**
-      [McKinsey & Company, Climate risk and decarbonization: What every mining CEO needs to know, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know)
+      [McKinsey & Company, Climate risk and decarbonization: What every mining CEO needs to know, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know){target="_blank"}
 
       **Acute Impacts**
 
@@ -288,15 +288,14 @@ physical:
       resilience to extreme weather events and define alternative routes.
 
 references: |
-    - [The Governance of Corporate Responses to Climate Change: An International Comparison - Business Strategy and the Environment, May 2016](https://www.researchgate.net/publication/309145941_The_Governance_of_Corporate_Responses_to_Climate_Change_An_International_Comparison_Governance_of_Corporations_and_Climate_Change)
-    
-    - [Fortescue Metals Group Ltd Climate Change Report FY21](https://www.fmgl.com.au/docs/default-source/announcements/fy21-climate-change-report.pdf?sfvrsn=b26e27f9_4) 
-    
-    - [Newmont Climate Strategy Report 2020](https://s24.q4cdn.com/382246808/files/doc_downloads/sustainability/2020-report/Newmont-Climate-Strategy-Report.pdf)
-    
-    - [Climate Related Considerations In The Metals And Mining Sector - S&P Global, July 2020](https://www.spglobal.com/marketintelligence/en/news-insights/blog/climate-related-considerations-in-the-metals-and-mining-sector)
-    
-    - [Climate risk and decarbonization: What every mining CEO needs to know - McKinsey, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know)
-    
-    - [Net Zero by 2050: A Roadmap for the Global Energy Sector - IEA, May 2021](https://www.iea.org/reports/net-zero-by-2050)
+    - [The Governance of Corporate Responses to Climate Change: An International Comparison - Business Strategy and the Environment, May 2016](https://www.researchgate.net/publication/309145941_The_Governance_of_Corporate_Responses_to_Climate_Change_An_International_Comparison_Governance_of_Corporations_and_Climate_Change){target="_blank"}
 
+    - [Fortescue Metals Group Ltd Climate Change Report FY21](https://www.fmgl.com.au/docs/default-source/announcements/fy21-climate-change-report.pdf?sfvrsn=b26e27f9_4){target="_blank"}
+
+    - [Newmont Climate Strategy Report 2020](https://s24.q4cdn.com/382246808/files/doc_downloads/sustainability/2020-report/Newmont-Climate-Strategy-Report.pdf){target="_blank"}
+
+    - [Climate Related Considerations In The Metals And Mining Sector - S&P Global, July 2020](https://www.spglobal.com/marketintelligence/en/news-insights/blog/climate-related-considerations-in-the-metals-and-mining-sector){target="_blank"}
+
+    - [Climate risk and decarbonization: What every mining CEO needs to know - McKinsey, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know){target="_blank"}
+
+    - [Net Zero by 2050: A Roadmap for the Global Energy Sector - IEA, May 2021](https://www.iea.org/reports/net-zero-by-2050){target="_blank"}

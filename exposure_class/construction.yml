@@ -93,7 +93,7 @@ transition:
       ![Cement Price](Cement_Price_Disorderly_Consruction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The construction sector is also likely to be impacted by rapid
       decarbonization in energy mix. Increased carbon tax cost and new
@@ -104,7 +104,7 @@ transition:
       ![Electricity Price](Electricity_Price_Disorderly_Consruction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The construction sector is likely to be impacted by rapid decarbonization
       in transport. Within road freight vehicles, the portion of electric
@@ -114,7 +114,7 @@ transition:
       ![Freight Vehicles](Electric_Freight_Vehicles_Disorderly_Construction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The profitability of the construction sector, in the Disorderly/Divergent
       transition risk scenarios, could also depend on the relevant companies
@@ -186,7 +186,7 @@ transition:
       ![Emissions Mix](Emissions_Mix_Construction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       Likely reduction in the production of cement due to higher carbon tax amid
       increasing global demand could drive the price of cement more than 350%
@@ -197,7 +197,7 @@ transition:
       ![Cement Price](Cement_Price_Orderly_Consruction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The construction sector is also likely to be impacted by steady
       decarbonization in energy mix. By 2050, renewables and biomass would cover
@@ -209,7 +209,7 @@ transition:
       ![Electricity Price](Electricity_Price_Orderly_Consruction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       By 2050, renewables and biomass would cover 68% of global primary energy
       needs.
@@ -217,7 +217,7 @@ transition:
       ![Primary Energy](Primary_Energy_Mix_Oil_and_Gas.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The construction sector is also likely to be impacted by steady
       decarbonization in transport. Within road freight vehicles, the portion of
@@ -227,7 +227,7 @@ transition:
       ![Freight Vehicles](Electric_Freight_Vehicles_Orderly_Construction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The profitability of the construction sector, in early/orderly
       transition risk scenarios, could depend on the relevant companies
@@ -338,11 +338,10 @@ physical:
       equipment to be able to withstand stronger cyclones. To reduce the impact
       of rising sea levels, the position of new facilities should consider
       climate change to minimise the risk of total damage caused by flooding.
-      
-references: |
-    - [GlobalABC Roadmap for Buildings and Construction 2020-2050, July 2020](https://www.iea.org/reports/globalabc-roadmap-for-buildings-and-construction-2020-2050)
-    
-    - [Construction and Building Materials TCFD Preparer Forum - wbcsd, July 2020](https://docs.wbcsd.org/2020/06/WBCSD_TCFD_Construction%20Sector.pdf)
-    
-    - [A circular built environment: from principles to practices - RICS World Built Environment Forum, May 2019](https://www.rics.org/uk/wbef/megatrends/natural-environment/a-circular-built-environment-from-principles-to-practices/)
 
+references: |
+    - [GlobalABC Roadmap for Buildings and Construction 2020-2050, July 2020](https://www.iea.org/reports/globalabc-roadmap-for-buildings-and-construction-2020-2050){target="_blank"}
+
+    - [Construction and Building Materials TCFD Preparer Forum - wbcsd, July 2020](https://docs.wbcsd.org/2020/06/WBCSD_TCFD_Construction%20Sector.pdf){target="_blank"}
+
+    - [A circular built environment: from principles to practices - RICS World Built Environment Forum, May 2019](https://www.rics.org/uk/wbef/megatrends/natural-environment/a-circular-built-environment-from-principles-to-practices/){target="_blank"}

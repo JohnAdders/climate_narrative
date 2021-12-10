@@ -72,7 +72,7 @@ transition:
       ![Energy Capacity](Energy_Sources_Oil_and_Gas.png)
 
       **Source:**
-      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       Nevertheless, in a disorderly transition scenario one has to be careful
       about also expecting valuation uplifts in firms that act as 'pure plays' on
@@ -91,7 +91,7 @@ transition:
       ![Secondary Energy](Secondary_Energy_Disorderly_Utilities.png)
 
       **Source:**
-      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The important role of technology should also be noted. Forecasting
       technology pathways is just as difficult as forecasting policy pathways.
@@ -110,7 +110,7 @@ transition:
       ![Primary Energy Price Price](Primary_Energy_Price_Disorderly_Utilities.png)
 
       **Source:**
-      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       Because the utilities sector is so diverse, there is no single solution,
       but rather a range of strategies based on the circumstances of each
@@ -157,7 +157,7 @@ transition:
       ![Cumulative Energy Investment](Cumulative_Energy_Investment_Oil_and_Gas.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [IIASA NGFS Climate Scenarios Database, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       Nevertheless, in orderly transition scenarios, one has to be careful about
       also expecting valuation uplifts in firms that act as 'pure plays' on an
@@ -174,7 +174,7 @@ transition:
       ![Secondary Energy](Secondary_Energy_Electricity_Orderly_Utilities.png)
 
       **Source:**
-      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The important role of technology should also be noted. Forecasting
       technology pathways is just as difficult as forecasting policy pathways.
@@ -193,7 +193,7 @@ transition:
       ![Primary Energy Price Price](Primary_Energy_Price_Orderly_Utilities.png)
 
       **Source:**
-      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       Because the utilities sector is so diverse, there is no single solution,
       but rather a range of strategies based on the circumstances of each
@@ -286,11 +286,8 @@ physical:
       gas businesses.
 
 references: |
-    - [On Course for Net Zero: Supporting Paper for E.ON's Decarbonisation Strategy and Climate-Related Disclosures - E.ON, March 2021](https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/documents/sustainability/en/tcfd/EON_2021_On_course_for_net_zero.pdf)
-    
-    - [Naturgy Sustainability Report and Non-Financial Information Statement 2020](https://www.naturgy.com/files/Informe_de_Sostenibilidad_y_EINF_ING.pdf)
-    
-    - [Severn Trent Task Force on Climate-related Financial Disclosures, September 2021](https://www.severntrent.com/content/dam/stw-plc/investors-02/capital-markets-day/tcfd-report.pdf)
+    - [On Course for Net Zero: Supporting Paper for E.ON's Decarbonisation Strategy and Climate-Related Disclosures - E.ON, March 2021](https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/documents/sustainability/en/tcfd/EON_2021_On_course_for_net_zero.pdf){target="_blank"}
 
+    - [Naturgy Sustainability Report and Non-Financial Information Statement 2020](https://www.naturgy.com/files/Informe_de_Sostenibilidad_y_EINF_ING.pdf){target="_blank"}
 
-
+    - [Severn Trent Task Force on Climate-related Financial Disclosures, September 2021](https://www.severntrent.com/content/dam/stw-plc/investors-02/capital-markets-day/tcfd-report.pdf){target="_blank"}

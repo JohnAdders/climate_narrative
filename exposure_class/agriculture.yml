@@ -14,7 +14,7 @@ description: |
 
   The production process is typically completed when the raw product or
   commodity grown reaches the "farm gate" for market, that is, at the point of
-  first sale or price determination. Within the subsector, the NAICS classifies 
+  first sale or price determination. Within the subsector, the NAICS classifies
   establishments to a specific industry when a product or industry family of
   products (i.e., oilseed and grain farming, vegetable and melon farming, fruit
   and tree nut farming) account for one-half or more of the establishment's
@@ -39,22 +39,22 @@ description: |
 transition:
   high:
     always: |
-      The agriculture sector continues to expand to feed and supply agriculturial 
-      energy products to growing global population. It contributes to 23% of 
-      anthropogenic emissions, exposing its producers and financiers to 
-      emerging climate related transition risks through public policies, 
+      The agriculture sector continues to expand to feed and supply agriculturial
+      energy products to growing global population. It contributes to 23% of
+      anthropogenic emissions, exposing its producers and financiers to
+      emerging climate related transition risks through public policies,
       consumer demand shifts and technological evolutions.
 
-      By 2050, in the Delayed transition scenario, late policy action enables 
-      a "fossil fuelled recovery" out of the economic crisis brought about by 
-      COVID-19. CO<sub>2</sub> emissions increase until 2030, before sharply 
-      decreasing after 2030 to compensate for the inaction beforehand. In the 
-      divergent net zero scenario there is a more immediate but divergent 
-      reduction in CO<sub>2</sub> emissions starts. These scenarios are likely 
-      to have a significant impact on agriculture sector. Agricultural value 
-      chains face material climate transition risk exposure due to their emissions 
-      intensity and reliance on land. Under Disorderly transitional 
-      risk scenarios, the expansion of land protection policies and carbon payments 
+      By 2050, in the Delayed transition scenario, late policy action enables
+      a "fossil fuelled recovery" out of the economic crisis brought about by
+      COVID-19. CO<sub>2</sub> emissions increase until 2030, before sharply
+      decreasing after 2030 to compensate for the inaction beforehand. In the
+      divergent net zero scenario there is a more immediate but divergent
+      reduction in CO<sub>2</sub> emissions starts. These scenarios are likely
+      to have a significant impact on agriculture sector. Agricultural value
+      chains face material climate transition risk exposure due to their emissions
+      intensity and reliance on land. Under Disorderly transitional
+      risk scenarios, the expansion of land protection policies and carbon payments
       made to preserve and expand forests could reduce land available for agriculture.
 
       The Disorderly transition risk scenarios could also lead to a
@@ -90,28 +90,28 @@ transition:
       growth in demand for food production is limited.
 
       ![Total Agriculture Demand](Agriculture_Demand_Total_Disorderly.png)
-      
+
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
-      
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
       ![Food Agriculture Demand](Agriculture_Demand_Food_Disorderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       As the use of bioenergy increases, by 2050, just over 40% of total
       agricultural production (in both Delayed Transition and Divergent Net Zero
       scenarios) are consumed for energy generation.
 
       ![Total Agriculture Production](Agriculture_Production_Total_Disorderly.png)
-      
+
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
-      
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
       ![Energy Agriculture Production](Agriculture_Production_Energy_Disorderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       Agricultural sector is key driver of forest loss, and due to forest
       conservation and preservation policies, availability of agricultural land
@@ -125,12 +125,12 @@ transition:
       ![Agriculture Land Cover](Agriculture_Land_Cover_Disorderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       ![Forest Land Cover](Forest_Land_Cover_Disorderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The operational and production costs of firms could increase as they need
       to make necessary investments for technological upgrades and increase in
@@ -145,7 +145,8 @@ transition:
       see their net value and profitability rise under transitions.
   low:
     always: |
-      The agriculture sector continues to expand to feed and supply agricultural energy products to a growing global population. It contributes to 23% of anthropogenic
+      The agriculture sector continues to expand to feed and supply agricultural energy
+      products to a growing global population. It contributes to 23% of anthropogenic
       emissions, exposing its producers and financiers to emerging climate
       related transition risks through public policies, consumer demand shifts
       and technological evolutions.
@@ -154,7 +155,7 @@ transition:
       change, national energy strategies, and carbon legislation, are likely to
       have a significant impact on the agriculture sector. Agricultural value chains
       face material climate transition risk exposure due to their emissions
-      intensity and reliance on land. A potential expansion of land protection policies 
+      intensity and reliance on land. A potential expansion of land protection policies
       and carbon payments made to preserve and expand forests could reduce land available for
       agriculture.
 
@@ -191,28 +192,28 @@ transition:
       demand for food production is limited.
 
       ![Total Agriculture Demand](Agriculture_Demand_Total_Orderly.png)
-      
+
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
-      
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
       ![Food Agriculture Demand](Agriculture_Demand_Food_Orderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       As the use of bioenergy increases, by 2050, approx. 30% of total
       agricultural production in the Net Zero 2050 scenario and around 12% in
       the Below 2 degrees scenario could be consumed for energy generation.
 
       ![Total Agriculture Production](Agriculture_Production_Total_Orderly.png)
-      
+
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
-      
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
       ![Energy Agriculture Production](Agriculture_Production_Energy_Orderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       Agricultural sector is key driver of forest loss, and due to forest
       conservation and preservation policies, availability of agricultural land
@@ -227,12 +228,12 @@ transition:
       ![Agriculture Land Cover](Agriculture_Land_Cover_Orderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       ![Forest Land Cover](Forest_Land_Cover_Orderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
 
       The operational and production costs of firms could increase as they need
       to make necessary investments for technological upgrades and due to increases in
@@ -254,9 +255,9 @@ physical:
       tropical cyclones, and flooding are adding to pressures on global
       agricultural and food systems and could lead to severe disruption to
       agricultural production which could impact the profitability for the
-      companies in long-run. In the high physical risk scenario, climate 
-      change and global warming could increase weather variations. This could 
-      lead to increasing disruption to agriculture sector which could impact 
+      companies in long-run. In the high physical risk scenario, climate
+      change and global warming could increase weather variations. This could
+      lead to increasing disruption to agriculture sector which could impact
       profitability.
 
       Adverse impacts on world GDP from physical risks are assumed in the
@@ -278,8 +279,8 @@ physical:
 
       - **Higher average temperatures** could have an impact on production, this
         could vary across the regions. Warmer, drier climate in already arid regions,
-        such as North Africa, may have a negative impact on production whereas 
-        production in colder and wetter areas, such as Northern and Western regions 
+        such as North Africa, may have a negative impact on production whereas
+        production in colder and wetter areas, such as Northern and Western regions
         in the UK, may benefit from warm conditions.
 
       **Acute Impacts**
@@ -319,8 +320,8 @@ physical:
       to agricultural production which could impact the profitability for the
       companies in long-run.
 
-      In the low physical risk scenario, climate change and global warming 
-      could increase weather variations. This could lead to increasing 
+      In the low physical risk scenario, climate change and global warming
+      could increase weather variations. This could lead to increasing
       disruption to agriculture sector which could impact profitability.
     high_materiality: |
       The following examples illustrate how the agriculture sector could be
@@ -334,8 +335,8 @@ physical:
         threaten agricultural production by adversely affecting crop yields.
 
       - **Higher average temperatures** could have an impact on production, this
-        could vary across the regions. Warmer, drier climate in already arid regions, 
-        such as North Africa, may have a negative impact on production, whereas 
+        could vary across the regions. Warmer, drier climate in already arid regions,
+        such as North Africa, may have a negative impact on production, whereas
         production in colder and wetter areas, such as Northern and Western UK,
         may benefit from warm conditions.
 
@@ -361,9 +362,6 @@ physical:
       need for more anticipatory adaptation measures.
 
 references: |
-    -  [How will African farmers adjust to changing patterns of precipitation? - McKinsey, May 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/how-will-african-farmers-adjust-to-changing-patterns-of-precipitation)
-    
-    - [Agriculture and Forestry Climate Change Impacts - Living With Environmental Change, Report Card 2016](https://nerc.ukri.org/research/partnerships/ride/lwec/report-cards/agriculture/)
+  - [How will African farmers adjust to changing patterns of precipitation? - McKinsey, May 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/how-will-african-farmers-adjust-to-changing-patterns-of-precipitation){target="_blank"}
 
-    
-    
+  - [Agriculture and Forestry Climate Change Impacts - Living With Environmental Change, Report Card 2016](https://nerc.ukri.org/research/partnerships/ride/lwec/report-cards/agriculture/){target="_blank"}
