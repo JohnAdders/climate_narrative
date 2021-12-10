@@ -1,0 +1,367 @@
+name: Agriculture Sector
+
+description: |
+  The **Agriculture** sector can be split into crop production and animal
+  production.
+
+  Industries in the Crop Production subsector grow crops mainly for food and
+  fibre. This subsector comprises establishments, such as farms, orchards,
+  groves, greenhouses, and nurseries, primarily engaged in growing crops,
+  plants, vines, or trees and their seeds. The industries in this subsector are
+  grouped by similarity of production activity, the length of growing season,
+  degree of crop rotation, extent of input specialization, labour requirements
+  and capital demands.
+
+  The production process is typically completed when the raw product or
+  commodity grown reaches the "farm gate" for market, that is, at the point of
+  first sale or price determination. Within the subsector, the NAICS classifies
+  establishments to a specific industry when a product or industry family of
+  products (i.e., oilseed and grain farming, vegetable and melon farming, fruit
+  and tree nut farming) account for one-half or more of the establishment's
+  agricultural production.
+
+  Industries in the Animal Production and Aquaculture subsector raise or fatten
+  animals for the sale of animals or animal products and/or raise aquatic plants
+  and animals in controlled or selected aquatic environments for the sale of
+  aquatic plants, animals, or their products. The subsector includes
+  establishments, such as ranches, farms, and feedlots primarily engaged in
+  keeping, grazing, breeding, or feeding animals. These animals are kept for the
+  products they produce or for eventual sale. The industries in this subsector
+  are grouped by important factors, such as suitable grazing or pastureland,
+  specialized buildings, type of equipment and the amount and types of labour
+  required.
+
+  Establishments are classified to the Animal Production and Aquaculture
+  subsector when animal production (i.e., value of animals for market) accounts
+  for one-half or more of the establishment's total agricultural production.
+
+
+transition:
+  high:
+    always: |
+      The agriculture sector continues to expand to feed and supply agriculturial
+      energy products to growing global population. It contributes to 23% of
+      anthropogenic emissions, exposing its producers and financiers to
+      emerging climate related transition risks through public policies,
+      consumer demand shifts and technological evolutions.
+
+      By 2050, in the Delayed transition scenario, late policy action enables
+      a "fossil fuelled recovery" out of the economic crisis brought about by
+      COVID-19. CO<sub>2</sub> emissions increase until 2030, before sharply
+      decreasing after 2030 to compensate for the inaction beforehand. In the
+      divergent net zero scenario there is a more immediate but divergent
+      reduction in CO<sub>2</sub> emissions starts. These scenarios are likely
+      to have a significant impact on agriculture sector. Agricultural value
+      chains face material climate transition risk exposure due to their emissions
+      intensity and reliance on land. Under Disorderly transitional
+      risk scenarios, the expansion of land protection policies and carbon payments
+      made to preserve and expand forests could reduce land available for agriculture.
+
+      The Disorderly transition risk scenarios could also lead to a
+      reduction in GDP growth. This could result in changes in the rate of
+      growth in demand for the agriculture sector, although the impact is likely
+      to be limited due to inelastic demand for food products.
+    high_materiality: |
+      The changes in food and bioenergy demand, emission pricing or taxes,
+      consumer preferences and land use restrictions could potentially result in
+      one or more of the following financial impacts:
+
+      - **Revenues growth** due to rising global demand and commodity prices.
+
+      - **Rising production costs** due to higher input costs and GHG emissions
+        costs
+
+      - **Increase in capital expenditures** as farms need to invest in research
+        and development and deployment of new technologies necessary for
+        long-term productivity growth
+
+      - **More write-offs of assets** as expansion of land protection policies
+        to preserve and expand forests could reduce land available for
+        agriculture.
+
+      Agricultural producers can benefit from expanding markets but face greater
+      risks of stranded assets, geographic growth constraints, and rising
+      production costs in the face of new emissions costs, land use
+      restrictions, and necessary productivity improvements.
+
+      The sector has very high GHG emissions as farm and livestock productions
+      and activities are emission intensive. The total demand could continue to
+      increase in the Disorderly/Divergent transition risk scenarios, however
+      growth in demand for food production is limited.
+
+      ![Total Agriculture Demand](Agriculture_Demand_Total_Disorderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      ![Food Agriculture Demand](Agriculture_Demand_Food_Disorderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      As the use of bioenergy increases, by 2050, just over 40% of total
+      agricultural production (in both Delayed Transition and Divergent Net Zero
+      scenarios) are consumed for energy generation.
+
+      ![Total Agriculture Production](Agriculture_Production_Total_Disorderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      ![Energy Agriculture Production](Agriculture_Production_Energy_Disorderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      Agricultural sector is key driver of forest loss, and due to forest
+      conservation and preservation policies, availability of agricultural land
+      reduces, limiting the growth of agricultural land cover. However,
+      technological innovations in yields and productivity increase land use
+      efficiency, allowing agriculture production to continue to increase with
+      the rising demand of food and energy due to population growth. By 2050,
+      agricultural land could increase by around 45 to 70 million hectares and
+      forest cover could increase by around 160 million hectares.
+
+      ![Agriculture Land Cover](Agriculture_Land_Cover_Disorderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      ![Forest Land Cover](Forest_Land_Cover_Disorderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      The operational and production costs of firms could increase as they need
+      to make necessary investments for technological upgrades and increase in
+      carbon taxes. But producers should be able to pass the higher input costs
+      to consumers due to inelastic demand of food and increasing usage of clean
+      bioenergy and biofuels.
+
+      Despite these material risks, agricultural companies and investors can
+      also derive significant opportunities from climate transitions. By
+      investing in sustainable intensification, regenerative agriculture, and
+      diversifying revenue streams, forward-looking agricultural companies could
+      see their net value and profitability rise under transitions.
+  low:
+    always: |
+      The agriculture sector continues to expand to feed and supply agricultural energy
+      products to a growing global population. It contributes to 23% of anthropogenic
+      emissions, exposing its producers and financiers to emerging climate
+      related transition risks through public policies, consumer demand shifts
+      and technological evolutions.
+
+      By 2050, the early/orderly transition risk scenarios driven by societal
+      change, national energy strategies, and carbon legislation, are likely to
+      have a significant impact on the agriculture sector. Agricultural value chains
+      face material climate transition risk exposure due to their emissions
+      intensity and reliance on land. A potential expansion of land protection policies
+      and carbon payments made to preserve and expand forests could reduce land available for
+      agriculture.
+
+      The early/orderly transition risk scenarios could also lead to a limited
+      relative reduction in GDP growth and could result in changes in the rate
+      of growth in demand for the agriculture sector, although the impact is
+      likely to be limited due to inelastic demand for food products.
+    high_materiality: |
+      The changes in food and bioenergy demand, emission pricing or taxes,
+      consumer preferences and land use restrictions could potentially result in
+      one or more of the following financial impacts, for example:
+
+      - **Revenues growth** in line with global demand and commodity prices.
+
+      - **Rising production costs** due to higher input costs and GHG emissions
+        costs.
+
+      - **Increase in capital expenditures** as farms need to invest in research
+        and development and deployment of new technologies and farming
+        approaches necessary for long-term productivity growth
+
+      - **More write-offs of assets** as expansion of land protection policies
+        to preserve and expand forests could reduce land available for
+        agriculture.
+
+      Agricultural producers can benefit from expanding markets but face greater
+      risks of stranded assets, geographic growth constraints, and rising
+      production costs in the face of new emissions costs, land use
+      restrictions, and necessary productivity improvements.
+
+      The sector has very high GHG emissions as farm and livestock productions
+      and activities are emission intensive. The total demand could continue to
+      increase in the early/orderly transition risk scenarios, however growth in
+      demand for food production is limited.
+
+      ![Total Agriculture Demand](Agriculture_Demand_Total_Orderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      ![Food Agriculture Demand](Agriculture_Demand_Food_Orderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      As the use of bioenergy increases, by 2050, approx. 30% of total
+      agricultural production in the Net Zero 2050 scenario and around 12% in
+      the Below 2 degrees scenario could be consumed for energy generation.
+
+      ![Total Agriculture Production](Agriculture_Production_Total_Orderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      ![Energy Agriculture Production](Agriculture_Production_Energy_Orderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      Agricultural sector is key driver of forest loss, and due to forest
+      conservation and preservation policies, availability of agricultural land
+      reduces, limiting the growth of agricultural land cover. However,
+      technological innovations in yields and productivity increase land use
+      efficiency, allowing agriculture production to continue to increase with
+      the rising demand of food and energy due to population growth. By 2050,
+      agricultural land could increase by around 60 to 100 million hectares and
+      forest cover could increase by around 160 million hectares in the Net Zero
+      scenario and could remain unchanged in the Below 2 degrees scenario.
+
+      ![Agriculture Land Cover](Agriculture_Land_Cover_Orderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      ![Forest Land Cover](Forest_Land_Cover_Orderly.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      The operational and production costs of firms could increase as they need
+      to make necessary investments for technological upgrades and due to increases in
+      carbon taxes. But producers should be able to pass the higher input costs
+      to consumers due to inelastic demand of food and increasing usage of clean
+      bioenergy and biofuels.
+
+      Despite these material risks, agricultural companies and investors can
+      also derive significant opportunities from climate transitions. By
+      investing in sustainable intensification, regenerative agriculture, and
+      diversifying revenue streams, forward-looking agricultural companies could
+      see their net value and profitability rise under transitions.
+physical:
+  high:
+    always: |
+      The agriculture sector is also exposed to physical risk. Chronic
+      effects (e.g. raised sea-levels) and acute effects due to changes to
+      frequency and severity of weather events such as heatwaves, wildfires,
+      tropical cyclones, and flooding are adding to pressures on global
+      agricultural and food systems and could lead to severe disruption to
+      agricultural production which could impact the profitability for the
+      companies in long-run. In the high physical risk scenario, climate
+      change and global warming could increase weather variations. This could
+      lead to increasing disruption to agriculture sector which could impact
+      profitability.
+
+      Adverse impacts on world GDP from physical risks are assumed in the
+      scenarios and these scale with the rise in temperatures in the scenarios
+      over time. The high physical risk scenarios could therefore also lead to a
+      significant GDP impact which could negatively impact demand for
+      agriculture, although the impact is likely to be limited due to inelastic
+      demand for food products.
+    high_materiality: |
+      The following examples illustrate how the Agriculture sector could be
+      impacted in a high physical risk scenario:
+
+      **Chronic Impacts**
+
+      - **Increase in sea-level rise**, may lead to substantial losses in crop
+        and livestock production in low-lying agricultural areas and may
+        contribute to waterlogging and soil erosion. Wetter weather could
+        threaten agricultural production by adversely affecting crop yields.
+
+      - **Higher average temperatures** could have an impact on production, this
+        could vary across the regions. Warmer, drier climate in already arid regions,
+        such as North Africa, may have a negative impact on production whereas
+        production in colder and wetter areas, such as Northern and Western regions
+        in the UK, may benefit from warm conditions.
+
+      **Acute Impacts**
+
+      - **Changing rainfall patterns**, reduced availability of water for
+        irrigation could threaten agricultural production, particularly in areas
+        where water supplies are already under pressure. Drier soil conditions
+        could reduce growth of crops, pasture and trees. Extended or repeated
+        period of droughts may cause death of younger tress reducing forest
+        productivity.
+
+      - **Increased frequency and intensity of Wildfires, Cyclones or Storms**
+        could cause significant damage to forests and disrupts the natural
+        ecosystems that has been developed around the forests.
+
+      Significantly slowed GDP growth could impact demand for agriculture
+      through its effect on individuals' disposable income. The impact on food
+      products is likely to be low due to inelastic demand, but demand for
+      bioenergy could see growth partially offset.
+
+      Physical risks could affect the range and quality of the ecosystem services
+      that agriculture and forestry not only provide, but also rely on. These
+      include climate control, flood regulation, biodiversity, pollination and
+      nutrient cycling. The agriculture and forestry sectors have already
+      adapted to change by introducing new genotypes, varieties, breeds and
+      management practices. In a high physical risk scenario, there could be a
+      need for more anticipatory adaptation measures.
+
+
+  low:
+    always: |
+      The agriculture sector is also exposed to physical risk. Chronic effects
+      (e.g. raised sea-levels and mean temperatures) and acute effects due to
+      changes to frequency and severity of weather events such as heatwaves,
+      wildfires, tropical cyclones, and flooding are adding to pressures on
+      global agricultural and food systems and could lead to severe disruption
+      to agricultural production which could impact the profitability for the
+      companies in long-run.
+
+      In the low physical risk scenario, climate change and global warming
+      could increase weather variations. This could lead to increasing
+      disruption to agriculture sector which could impact profitability.
+    high_materiality: |
+      The following examples illustrate how the agriculture sector could be
+      impacted In a low physical risk scenario:
+
+      **Chronic Impacts**
+
+      - **Increase in sea-level rise and flooding**, may lead to substantial
+        losses in crop and livestock production in low-lying agricultural areas
+        and may contribute to waterlogging and soil erosion. Wetter weather could
+        threaten agricultural production by adversely affecting crop yields.
+
+      - **Higher average temperatures** could have an impact on production, this
+        could vary across the regions. Warmer, drier climate in already arid regions,
+        such as North Africa, may have a negative impact on production, whereas
+        production in colder and wetter areas, such as Northern and Western UK,
+        may benefit from warm conditions.
+
+      **Acute Impacts**
+
+      - **Changing rainfall patterns**, reduced availability of water for
+        irrigation could threaten agricultural production, particularly in areas
+        where water supplies are already under pressure. Drier soil conditions
+        could reduce growth of crops, pasture and trees. Extended or repeated
+        period of droughts may cause death of younger tress reducing forest
+        productivity.
+
+      - **Increased frequency and intensity of Wildfires, Cyclones or Storms**
+        could cause significant damage to forests and disrupts the natural
+        ecosystems that has been developed around the forests.
+
+      Physical risks could affect the range and quality of the ecosystem services
+      that agriculture and forestry not only provide, but also rely on. These
+      include climate control, flood regulation, biodiversity, pollination and
+      nutrient cycling. The agriculture and forestry sectors have already
+      adapted to change by introducing new genotypes, varieties, breeds and
+      management practices. In a low physical risk scenario, there could be a
+      need for more anticipatory adaptation measures.
+
+references: |
+  - [How will African farmers adjust to changing patterns of precipitation? - McKinsey, May 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/how-will-african-farmers-adjust-to-changing-patterns-of-precipitation){target="_blank"}
+
+  - [Agriculture and Forestry Climate Change Impacts - Living With Environmental Change, Report Card 2016](https://nerc.ukri.org/research/partnerships/ride/lwec/report-cards/agriculture/){target="_blank"}

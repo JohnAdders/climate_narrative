@@ -1,0 +1,35 @@
+img{
+    display: block;
+    margin: auto;
+}
+
+.verticalcenter {
+    display: table-cell;
+    height: 3em;
+    vertical-align: middle;
+}
+
+.disclaimer {
+    background-color: greenyellow;
+    margin: 2em;
+    padding: 2em;
+    border: solid;
+}
+
+.shiny-input-container {
+    margin-bottom: 0px;
+    padding: 0px;
+    line-height: 1;
+}
+
+.form-control {
+    padding: 5px;
+}
+
+a {
+    color: blue;
+}
+
+table td, table th {
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}

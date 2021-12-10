@@ -1,0 +1,293 @@
+name: Utilities
+
+description: |
+  The **Utilities** sector comprises of companies which provide basic amenities such
+  as water, sewage services, electricity, and gas. The sector includes companies
+  that:
+
+  - Produce or distribute electricity (Electric Utilities)
+
+  - Distribute and transmit natural and manufactured gas (Gas Utilities)
+
+  - Purchase and redistribute water to the end consumer (Water Utilities)
+
+  - Have diversified activities in addition to core electric utility, gas
+    utility or water utility operations (Multi-Utilities)
+
+  - Operate as Independent Power Producers (IPPs), Gas and Power Marketing and
+    Trading Specialists and Integrated Energy Merchants
+
+  - Generate and distribute electricity using renewable sources (Renewable
+    Electricity Companies)
+
+  Note that this sector excludes companies that are primarily involved in gas
+  exploration or production; storage and/or transportation of oil, gas and
+  refined products; and manufacture of capital equipment used to generate
+  electricity from renewable and non-renewable sources.
+
+
+transition:
+  high:
+    always: |
+      Whilst the utilities sector could continue to play a critical role in
+      meeting customer demand for the coming years, the changing patterns in
+      energy generation in the Delayed transition scenario, driven by late
+      policy action enabling a "fossil fuelled recovery" out of the economic
+      crisis brought about by COVID-19, results in CO<sub>2</sub> emissions
+      increasing until 2030 before rapidly decreasing after 2030 to compensate
+      for the inaction beforehand. The Divergent Net Zero scenario results in
+      immediate but divergent CO<sub>2</sub> emissions reductions. Both these
+      scenarios are likely to have an impact on the profitability of individual
+      companies and the sector overall.
+
+
+    high_materiality: |
+      In a disorderly transition scenario, the utilities sector is likely to be
+      impacted. The changes in carbon pricing, energy demand/mix and energy
+      prices could potentially result in financial impacts; the extent could
+      depend on how reliant the company's production /revenue mix is on
+      low-carbon electricity and gas, the client's transition plans and how this
+      compares to the sector average. For example:
+
+      - **Reduced revenue** for carbon intensive utilities as consumers switch
+        to low carbon/electrified alternatives for heating and become more
+        energy autonomous.
+
+      - **Increased costs** from paying a price on carbon emissions via tax or
+        cap & trade clearing price.
+
+      - **Readjusted capital expenditures** including new investments required
+        to pivot business model towards renewable electricity generation.
+
+      In a disorderly transition risk scenario, the utilities sector is likely
+      to be significantly impacted. Risks are heavily concentrated in carbon
+      intensive utilities that do not have adequate transition plans, whilst
+      opportunities exist for utilities drawing most heavily on zero and low
+      carbon activities. Driven by increased electrification, total electricity
+      capacity and generation jumps markedly, and the underlying sources change
+      dramatically. Solar is the dominant technology representing around half of
+      electricity generation capacity by 2050, completely displacing coal
+      (before 2030) and gas (between 2030 and 2035).
+
+      ![Energy Capacity](Energy_Sources_Oil_and_Gas.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      Nevertheless, in a disorderly transition scenario one has to be careful
+      about also expecting valuation uplifts in firms that act as 'pure plays' on
+      an accelerated energy transition, like Renewable Electricity Companies.
+      That is because valuations for that subset of firms are already high and
+      arguably pricing in more aggressive transition and decarbonisation
+      scenarios. However, this is less of a constraint in the Divergent Net Zero
+      scenario because a transition of that significance and rapidity is not in
+      the price, in our judgement.
+
+      Overall, electricity generation through carbon intensive primary energy
+      sources (i.e. those that can be used directly as they appear in the
+      natural environment) decreases as the share of low carbon primary energy
+      sources in the generation mix increases.
+
+      ![Secondary Energy](Secondary_Energy_Disorderly_Utilities.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      The important role of technology should also be noted. Forecasting
+      technology pathways is just as difficult as forecasting policy pathways.
+      Even in disorderly transition scenarios, the zero and low carbon 'winners'
+      cannot be predicted with uncertainty. The relative cost reductions and
+      growth rates of solar and wind technologies, government nuclear investment
+      plans, and the viability of biomass, hydrogen and carbon capture and
+      storage technologies at greater scale are all uncertain.
+
+      Primary energy prices (i.e. the spot price at the global market) for gas
+      rises, for biomass rises significantly, whilst primary energy prices for
+      coal fall before returning to 2020 levels. Secondary energy price (i.e.
+      paid by large scale consumers) for electricity rises initially before
+      returning to 2020 levels.
+
+      ![Primary Energy Price Price](Primary_Energy_Price_Disorderly_Utilities.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      Because the utilities sector is so diverse, there is no single solution,
+      but rather a range of strategies based on the circumstances of each
+      company could need to be deployed in a disorderly transition risk scenario
+      to maintain revenues and minimise the long-term financial impact. Examples
+      include expanding renewable energy development, investing in more
+      efficient thermal power generation and retiring low-efficient coal thermal
+      power generation, supporting the development of low carbon alternates to
+      natural gas, and increasing the weight of electricity in their portfolio.
+  low:
+    always: |
+      Whilst the utilities sector could continue to play a critical role in
+      meeting customer demand for the coming years, the changing patterns in
+      energy generation in early/orderly transition risk scenarios, driven by
+      immediate policy reaction, societal change, national energy strategies,
+      and carbon legislation, could lead to an immediate and smooth reduction in
+      CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
+      are likely to have an impact on the sector, affecting profitability of
+      individual companies and the sector overall.
+    high_materiality: |
+      The changes in carbon pricing, energy demand/mix and energy prices could
+      potentially result in financial impacts; the extent could depend on how
+      reliant the company's production /revenue mix is on low-carbon electricity
+      and gas, the client's transition plans and how this compares to the sector
+      average. For example:
+
+      - **Reduced revenue** for carbon intensive utilities as consumers switch
+        to low carbon/electrified alternatives for heating and become more
+        energy autonomous.
+
+      - **Increased costs** from paying a price on carbon emissions via tax or
+        cap & trade clearing price.
+
+      - **Readjusted capital expenditures** including new investments required
+        to pivot business model towards renewable electricity generation.
+
+      In orderly transition risk scenarios, the utilities sector is likely to be
+      impacted. Risks are heavily concentrated in carbon intensive utilities
+      that do not have adequate transition plans, whilst opportunities exist for
+      utilities drawing most heavily on zero and low carbon activities. Capital
+      investments into fossil electricity significantly lag investment into
+      green electricity and storage.
+
+      ![Cumulative Energy Investment](Cumulative_Energy_Investment_Oil_and_Gas.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      Nevertheless, in orderly transition scenarios, one has to be careful about
+      also expecting valuation uplifts in firms that act as 'pure plays' on an
+      accelerated energy transition, like Renewable Electricity Companies. That
+      is because valuations for that subset of firms are already high and
+      arguably pricing in more aggressive transition and decarbonisation
+      scenarios. However, this is less of a constraint in the NZ2050 scenario
+      because a transition of that significance and rapidity is not in the
+      price, in our judgement. Overall, electricity generation through carbon
+      intensive primary energy sources (i.e. those that can be used directly as
+      they appear in the natural environment) decreases as the share of low
+      carbon primary energy sources in the generation mix increases.
+
+      ![Secondary Energy](Secondary_Energy_Electricity_Orderly_Utilities.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      The important role of technology should also be noted. Forecasting
+      technology pathways is just as difficult as forecasting policy pathways.
+      Even in orderly transition scenarios, the zero and low carbon 'winners'
+      cannot be predicted with uncertainty. The relative cost reductions and
+      growth rates of solar and wind technologies, government nuclear investment
+      plans, and the viability of biomass, hydrogen and carbon capture and
+      storage technologies at greater scale are all uncertain.
+
+      Primary energy price (i.e. the spot price at the global market) for gas
+      rises and for biomass rises significantly, whilst primary energy prices
+      for coal fall before returning to 2020 levels. Secondary energy price
+      (i.e. paid by large scale consumers) for electricity rises initially
+      before returning to 2020 levels.
+
+      ![Primary Energy Price Price](Primary_Energy_Price_Orderly_Utilities.png)
+
+      **Source:**
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+
+      Because the utilities sector is so diverse, there is no single solution,
+      but rather a range of strategies based on the circumstances of each
+      company could need to be deployed in an orderly transition risk scenario to
+      maintain revenues and minimise the long-term financial impact. Examples
+      include expanding renewable energy development, investing in more
+      efficient thermal power generation and retiring low-efficient coal thermal
+      power generation, supporting the development of low carbon alternates to
+      natural gas, and increasing the weight of electricity in their portfolio.
+
+
+physical:
+  high:
+    always: |
+      The utilities sector is exposed to the physical impacts of climate change
+      including both the chronic effects (e.g. raised sea-levels) and acute
+      effects due to changes in the frequency and severity of weather events
+      such as heatwaves, droughts, wildfires, tropical cyclones and flooding.
+      Whilst the utilities sector is used to responding to and managing changing
+      weather conditions, in the high physical risk scenario, climate change and
+      global warming could increase weather variations. This could lead to
+      increasing disruption to the utilities sector and impact the profitability
+      of these companies.
+    high_materiality: |
+      The following examples illustrate how the utilities sector could be
+      impacted in a high physical risk scenario:
+
+      **Chronic Impacts**:
+
+      - **Higher average temperatures** could reduce demand for energy used for
+        heating, particularly natural gas. Performance of combined-cycle power
+        stations could decrease with an increase in temperature.
+
+      **Acute Impacts**:
+
+      - **Flooding, wildfires, and other extreme weather events** can cause
+        water contamination, damage overhead powerlines and other
+        infrastructure, and disrupt operations. The utilities sector in
+        particular is especially susceptible to these events; a lot of
+        generating infrastructure is located in areas exposed to increased
+        flooding risk as well as tropical cyclone effects, and a large
+        proportion of the value of most utilities is comprised of tangible
+        (physical) capital.
+
+      There are many mitigating actions that companies can take against the low
+      physical risks mentioned above. For example, investing in resilient
+      solutions e.g. underground power line networks, disaster prevention
+      systems (e.g. vegetation management to keep tree limbs a safe distance
+      from power lines), and increase contribution of electricity businesses vs
+      gas businesses.
+
+
+  low:
+    always: |
+      The utilities sector is exposed to the physical impacts of climate change
+      including both the chronic effects (e.g. raised sea-levels) and acute
+      effects due to changes in the frequency and severity of weather events
+      such as heatwaves, droughts, wildfires, tropical cyclones and flooding.
+      Whilst the utilities sector is used to responding to and managing changing
+      weather conditions, in the low physical risk scenario, climate change and
+      global warming could increase weather variations. This could lead to
+      increasing disruption to the utilities sector and impact the profitability
+      of these companies.
+    high_materiality: |
+      The following examples illustrate how the utilities sector could be
+      impacted in a low physical risk scenario:
+
+      **Chronic Impacts**:
+
+      - **Higher average temperatures** could reduce demand for energy used for
+        heating, particularly natural gas demand. Performance of combined-cycle
+        power stations could decrease with an increase in temperature.
+
+      **Acute Impacts**:
+
+      - **Flooding, wildfires, and other extreme weather events** can cause
+        water contamination, damage overhead powerlines and other
+        infrastructure, and disrupt operations. The utilities sector in
+        particular is especially susceptible to these events; a lot of
+        generating infrastructure is located in areas exposed to increased
+        flooding risk as well as tropical cyclone effects, and a large
+        proportion of the value of most utilities is comprised of tangible
+        (physical) capital.
+
+      There are many mitigating actions that companies can take against the low
+      physical risks mentioned above. For example, investing in resilient
+      solutions e.g. underground power line networks, disaster prevention
+      systems (e.g. vegetation management to keep tree limbs a safe distance
+      from power lines), and increase contribution of electricity businesses vs
+      gas businesses.
+
+references: |
+    - [On Course for Net Zero: Supporting Paper for E.ON's Decarbonisation Strategy and Climate-Related Disclosures - E.ON, March 2021](https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/documents/sustainability/en/tcfd/EON_2021_On_course_for_net_zero.pdf){target="_blank"}
+
+    - [Naturgy Sustainability Report and Non-Financial Information Statement 2020](https://www.naturgy.com/files/Informe_de_Sostenibilidad_y_EINF_ING.pdf){target="_blank"}
+
+    - [Severn Trent Task Force on Climate-related Financial Disclosures, September 2021](https://www.severntrent.com/content/dam/stw-plc/investors-02/capital-markets-day/tcfd-report.pdf){target="_blank"}
