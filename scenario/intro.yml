@@ -1,22 +1,6 @@
 position: 0
 is_scenario: no
 description: |
-  ---
-  title: |
-    Climate report
-    
-    ![](title.png)
-    
-
-    ```{=rtf}
-      \page
-    ```
-
-  ---
-
-  ```{=rtf}
-  \page
-  ```
   ## Disclaimer 
   
     This on-line tool/report is currently under development and is only being made available
@@ -25,6 +9,3 @@ description: |
     on the originality, accuracy and/or completeness, of any information herein. The Information
     should not be reproduced or redisseminated in any form and may not be used as a basis for
     any purpose other than for internal testing of the on-line tool/report itself.
-  ```{=rtf}
-    \page
-  ```
