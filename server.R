@@ -61,13 +61,7 @@ server <- function(input, output, session) {
   })
 
   report_contents <- reactive({
-    out <- paste0(
-      "---\n",
-      "title: |\n",
-      "  Climate report\n\n",
-      "  ![](title.png)\n\n",
-      "---\n\n"
-    )
+    out <- ""
     for (scenario in scenarios) {
       out <- c(
         out,
