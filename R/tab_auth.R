@@ -1,15 +1,12 @@
 passes_captcha <- function(input, session) {
   result <- GreCAPTCHAv3Server(session$userData$captcha_secret, input$responseReceived)
-  browser()
   return(result$success && result$score > 0.5)
 }
 
 request_captcha <- function(output, session) {
-  browser()
   if (!is.null(session$userData$captcha_code) && !is.null(session$userData$captcha_secret)) {
     GreCAPTCHAv3js(session$userData$captcha_code, "homepage", "responseReceived")
   } else {
-    browser()
     output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
   }
 }
