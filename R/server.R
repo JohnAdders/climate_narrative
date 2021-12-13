@@ -108,9 +108,9 @@ server <- function(input, output, session) {
       length(report_contents()) - 1
     )
     tempfun=function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", getwd(),"/www/", "\\1\\2"), x,perl=T)
-    xmpl="![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)"
-    print(xmpl)
-    print(tempfun(xmpl))
+    #xmpl="![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)"
+    #print(xmpl)
+    #print(tempfun(xmpl))
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
       tempfun(report_contents()[c(1 + scenario_no)]),
@@ -150,18 +150,30 @@ server <- function(input, output, session) {
       return(p("Please select a scenario"))
     }
     temp_html <- tempfile(fileext = ".html")
-    result <- includeHTML(rmarkdown::render(
+    rmarkdown::render(
       input = temp_report_scenario(input$report_selection),
       output_file = temp_html,
       output_format = html_document(
-        toc = TRUE,
-        toc_depth = 2,
         number_sections = FALSE,
         self_contained = FALSE,
-        fig_caption = FALSE,
-        pandoc_args = paste0("--resource-path=", paste0(getwd(), "/www"))
+        fig_caption = FALSE
+      )
+    )
+    # replace back the images links
+    file_conn <- file(temp_html)
+    temp <- readLines(file_conn)
+    writeLines(
+      gsub(
+        paste0(getwd(), "/www"),
+        "/climate_narrative",
+        temp
       ),
-    ))
+      file_conn
+    )
+    close(file_conn)
+
+    result <- includeHTML(temp_html)
+    
     return(result)
   })
 
