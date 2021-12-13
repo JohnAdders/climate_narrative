@@ -4,4 +4,6 @@ tab_bank_sov_ui <- function() {
   )
 }
 
-tab_bank_sov_foot <- generic_asset_footer
+tab_bank_sov_foot <- function() {
+  generic_footer("asset")
+}

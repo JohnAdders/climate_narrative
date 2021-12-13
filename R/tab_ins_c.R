@@ -4,4 +4,6 @@ tab_ins_c_ui <- function() {
   )
 }
 
-tab_ins_c_foot <- generic_asset_footer
+tab_ins_c_foot <- function() {
+  generic_footer("asset")
+}

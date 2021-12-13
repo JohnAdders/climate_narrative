@@ -5,5 +5,5 @@ tab_am_sov_ui <- function() {
 }
 
 tab_am_sov_foot <- function() {
-  generic_asset_footer(TRUE)
+  generic_footer("asset", TRUE)
 }

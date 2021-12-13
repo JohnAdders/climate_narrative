@@ -1,9 +1,48 @@
-# helper function - a shortcut function to add element to the list
+#' Remove special characters (in particular spaces) from a string and optionally make it camelcase
+remove_special_characters <- function(text, camelcase=TRUE) {
+  out <- text
+  if(camelcase){
+    out <- gsub('\\ (\\w?)', '\\U\\1', tolower(out), perl=TRUE)
+    out <- gsub('\\_(\\w?)', '\\U\\1', out, perl=TRUE)
+  }
+  gsub("[_. ]", "", out)
+}
+
+#' Read all files from a directory as a named R list (handles yaml/csv/R files)
+read_dir <- function(directory, file_format = "auto", remove_special_characters_from_names = TRUE) {
+  file_list <- dir(path = directory)
+  file_format <- tolower(file_format)
+  if (file_format == "auto") {
+    file_format <- tolower(strsplit(file_list[1], ".", fixed = T)[[1]][2])
+  }
+  list <- lapply(
+    file_list,
+    function(file) {
+      switch(file_format,
+        yml = read_yaml(paste0(directory, "/", file)),
+        csv = read.csv(paste0(directory, "/", file), stringsAsFactors = FALSE),
+        r = source(paste0(directory, "/", file)),
+        stop("Error (function read_dir): file format ", file_format, " not handled")
+      )
+    }
+  )
+  names_to_be <- sapply(
+    dir(path = directory),
+    function(file) {
+      strsplit(file, ".", fixed = T)[[1]][1]
+    }
+  )
+  if (remove_special_characters_from_names) names_to_be <- remove_special_characters(names_to_be)
+  names(list) <- names_to_be
+  return(list)
+}
+
+#' Add element to the list (shortcue)
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
 
-# helper function to get object by its name but return NULL (not error) if it does not exist
+#' Get object by its name but return NULL (not error) if it does not exist
 get_or_null <- function(name) {
   if (exists(name)) {
     return(get(name))
@@ -12,11 +51,12 @@ get_or_null <- function(name) {
   }
 }
 
-# helper function to make the first letter of a string upper case
+#' Make the first letter of a string upper case
 capitalize <- function(input_string) {
   return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))
 }
 
+#' Format (camelcase) string in order to look better in final output (spaces, capitalisation)
 restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
   s <- sub("^ ", "", s) # remove first space
@@ -32,6 +72,8 @@ restore_spaces <- function(camelcase) {
   s
 }
 
+#' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
+#' and product-specific text (if any)
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
@@ -60,7 +102,8 @@ produce_tooltip_matrix <- function(exposure_matrix) {
   }
   out
 }
-# helper functions to produce the layout of tabs (cell, row, whole table)
+
+#' Produce the layout of questionnaire tabs (cell, row, whole table)
 exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = FALSE, width = NULL) {
   if (exposure_item == "") {
     form <- p("")
@@ -70,7 +113,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = F
       inputId = id,
       label = NULL,
       choices = c("", "Low", "Medium", "High"),
-      selected = ifelse(dev, "High", ""),
+      #selected = ifelse(dev, "High", ""),
       # to allow empty string as a valid option I do not use selectize
       selectize = FALSE,
       width = width
@@ -86,10 +129,12 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = F
   }
 }
 
+#' Grid table of inputs (everything happens in matching server function)
 exposure_grid_ui <- function(label) {
   tableOutput(label)
 }
 
+#' Produce a table of inputs with selectInput fields
 exposure_grid_server <- function(input,
                                  output,
                                  exposure_matrix,
@@ -127,6 +172,7 @@ exposure_grid_server <- function(input,
   )
 }
 
+#' Insert spaces to the string so that line has exactly given number of characters
 string_break_line_with_spaces <- function(string, line_width, location, n_char=1){
   paste0(
     substring(string, 1, location - 1),
@@ -135,9 +181,9 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char=1
   )
 }
 
+#' Add spaces to a string so that it can be split into blocks of exactly the same length
+#' without breaking words
 string_add_spaces_to_make_equal_lines <- function(string, line_width){
-# this function adds spaces so that string can be split into blocks of exactly the same length
-# without breaking words
   out <- string
   newline_locations <- na.omit(stri_locate_all(out, fixed = "<br>")[[1]][,1])
   i <- 1
@@ -154,9 +200,9 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width){
   return(out)
 }
 
+#' Format the string by appending spaces so it exactly fills the lines of given length
+#' additionally, if the string contains at least one "<br>" format output as a bulleted list
 string_format_lines <- function(string, col_width){
-# the function formats the string by appending spaces so it exactly fills the lines of given length
-# Additionally, if the string contains at least one "<br>" the function formats output as bulleted list
   if (grepl("<br>", string)){
     out <- paste0("- ",gsub("<br>", "<br> - ", string))
   } else {
@@ -166,13 +212,14 @@ string_format_lines <- function(string, col_width){
   return(out)
 }
 
+#' Produce a markdown table out of R data frame
+#' 
+#' Create a markdown table, allowing multiline cell entries (lines need to be separated by <br>)
+#' R table headers cannot contain spaces, to get space in the output use a dot
+#' (it will be replaced with space if dot_to_space=T as in default)
+#' The function splits the text automatically and adds spaces to match the desired column width
+#' without breaking words
 table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=NULL) {
-# helper function to produce a markdown table out of R data frame
-# creates a markdown table, allowing multiline cell entries (lines need to be separated by <br>)
-# R table headers cannot contain spaces, to get space in the output use a dot
-# (it will be replaced with space if dot_to_space=T as in default)
-# function splits the text automatically and adds spaces to match the desired column width
-# without breaking words
   headers <- colnames(table)
   if(is.null(col_widths)){
     col_widths <- pmax(apply(table, 2, function(x) max(nchar(x))), nchar(headers)) + 4
@@ -244,8 +291,8 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
   return(out2)
 }
 
-# a simpler version of function to produce markdown tables from R table
-# does not handle multiline cells
+#' A simple version of function to produce markdown tables from R table
+#' (does not handle multiline cells)
 table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE) {
   headers <- colnames(table)
   if (dot_to_space) {
@@ -281,12 +328,16 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
   return(out)
 }
 
+#' Produce report content for a given item
+#' @param item name of item for which a report is to be produced
+#' @param type_item_inputs table of (disaggregated) inputs to produce a table of contributing rows
+#' @return markdown-formatted report section (h2)
 get_exposure_description <- function(item, type_item_inputs) {
   if(is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
-  ordered_aggregate_inputs <- aggregate(
+  ordered_aggregate_inputs_text <- aggregate(
     ordered_type_item_inputs[, c("rowname", "materiality")],
     by = list(
       Product.description = ordered_type_item_inputs$product_description,
@@ -299,18 +350,37 @@ get_exposure_description <- function(item, type_item_inputs) {
       )
     }
   )
-  colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")
+  ordered_aggregate_inputs_num <- aggregate(
+    ordered_type_item_inputs[, c("materiality_num")],
+    by = list(
+      Product.description = ordered_type_item_inputs$product_description,
+      Product.text = ordered_type_item_inputs$product_text
+    ),
+    FUN = function(x) {
+      cut(
+        sum(x), 
+        breaks = c(0, 4.5, 9.5, 100),
+        labels = c("Low", "Medium", "High")
+      )
+    }
+  )
+  ordered_aggregate_inputs <- merge(ordered_aggregate_inputs_text, ordered_aggregate_inputs_num)
+  colnames(ordered_aggregate_inputs)[3:5] <- c("Exposure.row", "Materiality", "Product materiality")
+  print(ordered_aggregate_inputs)
   out <- paste0(
     "## ",
     exposure_classes[[item]][["name"]],
     "\n\n",
     exposure_classes[[item]][["description"]],
     "\n\nThe following rows contribute: \n\n",
-    table_to_markdown_multiline(ordered_aggregate_inputs, TRUE, c(15,30,25,15)),
+    table_to_markdown_multiline(ordered_aggregate_inputs[, 1:4], TRUE, c(15, 30, 25, 15)),
     "\n\n"
   )
 }
 
+#' Produce appendix for a given item
+#' @param item name of item for which appendix is to be produced
+#' @return markdown-formatted appendix section (h3)
 get_exposure_appendix <- function(item){
   appendix <- exposure_classes[[item]][["appendix"]]
   if(is.null(appendix)){
@@ -327,6 +397,7 @@ get_exposure_appendix <- function(item){
   }
 }
 
+#' Lower level report helper function responsible for single risk (transition/physical) description
 get_exposure_risk_description <- function(item, products, materiality, physical_or_transition, high_or_low) {
   if (high_or_low == FALSE) {
     return("")
@@ -370,6 +441,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
   return(out)
 }
 
+#' Lower level report helper function responsible for single scenario description
 get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
   if(is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
@@ -383,7 +455,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
   if (nrow(aggregated_table) & is_scenario) {
     for (i in 1:nrow(aggregated_table)) {
       item <- aggregated_table$item[i]
-      materiality <- aggregated_table$materiality[i]
+      materiality <- aggregated_table$materiality_num[i]
       type_item_inputs <- type_inputs[type_inputs$item == item, ]
       products <- unique(type_item_inputs$product)
       out <- paste0(
@@ -398,6 +470,10 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
   return(out)
 }
 
+#' Function to produce references section (for all items)
+#' @param aggregated_table aggregated inputs
+#' @param type_inputs disaggregated inputs
+#' @return markdown-formatted references section (h2)
 get_references <- function(aggregated_table, type_inputs) {
   out <- ""
   if (nrow(aggregated_table)) {
@@ -425,7 +501,7 @@ get_references <- function(aggregated_table, type_inputs) {
   return(out)
 }
 
-# heartbeat function to prevent app closing due to inactivity
+#' Heartbeat function (server part) to prevent app closing due to inactivity
 heartbeat <- function(input, output, session) {
   beep <- reactiveTimer(55 * 1000)
   output[["__heartbeat"]] <- renderText({
@@ -434,6 +510,7 @@ heartbeat <- function(input, output, session) {
   })
 }
 
+#' Heartbeat function (ui part) to prevent app closing due to inactivity
 heartbeat_footer <- function() {
   list(
     hr(),
@@ -454,14 +531,20 @@ heartbeat_footer <- function() {
   )
 }
 
-### captcha functions copied from https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
-
+#' Google captcha function (UI part)
+#' 
+#' based on
+#' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 GreCAPTCHAv3Ui <- function(siteKey) {
   tagList(tags$head(
     tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=", siteKey)),
   ))
 }
 
+#' Google captcha function (actual javascript call)
+#' 
+#' based on
+#' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
   runjs(paste0("
         grecaptcha.ready(function () {
@@ -472,6 +555,10 @@ GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
       "))
 }
 
+#' Google captcha function (server part)
+#' 
+#' based on
+#' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   gResponse <- POST(
     "https://www.google.com/recaptcha/api/siteverify",
@@ -486,6 +573,31 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   }
 }
 
+#' Produce a footer HTML text explaining materiality levels
+generic_footer <- function(asset_or_liability = c("asset","liability"), is_asset_mananger = FALSE){
+  if(asset_or_liability == "asset"){
+    case_name <- "asset class and sector"
+    if (is_asset_mananger) {
+      total_name <- "assets under management"
+    } else {
+      total_name <- "assets"
+    }
+  } else {
+    case_name <- "liability class"
+    total_name <- "premium income"
+  }
+  p(
+    list(
+      paste0("Enter your firm's exposures by", case_name, "using the following definitions:"),
+      tags$ul(
+        tags$li(paste("\"High\": One of your top 5 exposures or more than 10% of total", total_name)),
+        tags$li(paste("\"Medium\": 5% - 10% of total", total_name)),
+        tags$li(paste("\"Low\": below 5% of total", total_name)),
+        tags$li(paste("blank: immaterial or no exposure"))
+      )
+    )
+  )
+}
 generic_asset_footer <- function(is_asset_mananger = FALSE) {
   if (is_asset_mananger) {
     asset_text = "assets under management"
@@ -504,6 +616,7 @@ generic_asset_footer <- function(is_asset_mananger = FALSE) {
   )
 }
 
+#' Produce a footer HTML text explaining materiality levels (liabilities)
 generic_liability_footer <- function() {
   p(
     list("Enter your firm's exposures by liability class using the following definitions:",

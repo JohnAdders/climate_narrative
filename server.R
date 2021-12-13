@@ -38,6 +38,7 @@ server <- function(input, output, session) {
       }
     }
     out$materiality <- factor(out$values, levels = c("", "Low", "Medium", "High"), ordered = T)
+    out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
     out
   })
 
@@ -53,8 +54,18 @@ server <- function(input, output, session) {
 
   aggregated_type_inputs <- reactive({
     if (allow_report()) {
-      aggregated_inputs <- aggregate(materiality ~ item, FUN = max, data = type_inputs())
-      aggregated_inputs[order(aggregated_inputs$materiality, decreasing = TRUE), ]
+      aggregated_inputs_factor <- aggregate(materiality ~ item, FUN = max, data = type_inputs())
+      aggregated_inputs_numeric <- aggregate(
+        materiality_num ~ item,
+        FUN = function(x) cut(
+          sum(x), 
+          breaks = c(0, 4.5, 9.5, 100),
+          labels = c("Low", "Medium", "High")
+        ),
+        data = type_inputs()
+      )
+      aggregated_inputs <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
+      aggregated_inputs[order(aggregated_inputs$materiality, aggregated_inputs$materiality_num, decreasing = TRUE), ]
     } else {
       return(data.frame(item = c(), materiality = c()))
     }

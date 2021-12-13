@@ -1,3 +1,4 @@
+library(R6)
 library(yaml)
 library(rmarkdown)
 library(tippy)
