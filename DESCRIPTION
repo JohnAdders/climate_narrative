@@ -1,12 +1,16 @@
 Package: climate.narrative
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Interactive Tool to Help Financial Institutions Manage Climate Risk
+Version: 0.9 (beta)
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    c(
+        person("John", "Adcock", email = "john.adcock@aviva.com", role = c("cre")),
+        person("Krzysztof", "Opalski", email = "krzysztof.opalski2@aviva.com", role = c("aut")),
+    )
+URL: https://github.com/JohnAdders/climate_narrative
+Description: Shiny interactive tool that produced a detailed and well referenced
+    narrative basing on user supplied description of exposure. Designed for various
+    types of financial institutions (banks, insurers, asset managers).
+License: use_mit_license()
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
