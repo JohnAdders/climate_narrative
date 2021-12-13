@@ -81,11 +81,11 @@ produce_tooltip_matrix <- function(exposure_matrix) {
     ncol = ncol(exposure_matrix) - 2
   )
   for (i in 1:nrow(out)){
-    row_tooltip <- global$products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
+    row_tooltip <- products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
     for (j in 1:ncol(out)){
       exposure_class <- exposure_matrix[i, j + 2]
       if (exposure_class != ""){
-        exposure_class_tooltip <- global$exposure_classes[[exposure_class]][["tooltip"]]
+        exposure_class_tooltip <- exposure_classes[[exposure_class]][["tooltip"]]
         if (!is.null(exposure_class_tooltip)){
           if (!is.null(row_tooltip)) {
             out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
@@ -333,7 +333,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 #' @param type_item_inputs table of (disaggregated) inputs to produce a table of contributing rows
 #' @return markdown-formatted report section (h2)
 get_exposure_description <- function(item, type_item_inputs) {
-  if(is.null(global$exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
+  if(is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
@@ -353,9 +353,9 @@ get_exposure_description <- function(item, type_item_inputs) {
   colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")
   out <- paste0(
     "## ",
-    global$exposure_classes[[item]][["name"]],
+    exposure_classes[[item]][["name"]],
     "\n\n",
-    global$exposure_classes[[item]][["description"]],
+    exposure_classes[[item]][["description"]],
     "\n\nThe following rows contribute: \n\n",
     table_to_markdown_multiline(ordered_aggregate_inputs, TRUE, c(15,30,25,15)),
     "\n\n"
@@ -366,7 +366,7 @@ get_exposure_description <- function(item, type_item_inputs) {
 #' @param item name of item for which appendix is to be produced
 #' @return markdown-formatted appendix section (h3)
 get_exposure_appendix <- function(item){
-  appendix <- global$exposure_classes[[item]][["appendix"]]
+  appendix <- exposure_classes[[item]][["appendix"]]
   if(is.null(appendix)){
     return (c())
   } else {
@@ -374,7 +374,7 @@ get_exposure_appendix <- function(item){
       paste0(
         "### Appendix",
         "\n\n",
-        global$exposure_classes[[item]][["appendix"]],
+        exposure_classes[[item]][["appendix"]],
         "\n\n"
       )
     )
@@ -394,7 +394,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     riskname <- switch(high_or_low, high = "High physical risk", low = "Low physical risk")
   }
   header_text <- paste0(
-    global$exposure_classes[[item]][["name"]],
+    exposure_classes[[item]][["name"]],
     " --- ",
     riskname
   )
@@ -402,7 +402,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     "### ",
     capitalize(header_text),
     " --- Summary\n\n",
-    global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
+    exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
     "\n\n"
   )
   if (materiality == "High") {
@@ -411,14 +411,14 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
       "### ",
       capitalize(header_text),
       " --- Details\n\n",
-      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
+      exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
       "\n\n"
     )
   }
   for (product in products) {
     out <- paste0(
       out,
-      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][[product]],
+      exposure_classes[[item]][[physical_or_transition]][[high_or_low]][[product]],
       "\n\n"
     )
   }
@@ -467,13 +467,13 @@ get_references <- function(aggregated_table, type_inputs) {
       )
     for (i in 1:nrow(aggregated_table)) {
       item <- aggregated_table$item[i]
-      if (length(global$exposure_classes[[item]][["references"]])){
+      if (length(exposure_classes[[item]][["references"]])){
         out <- paste0(
           out,
           "\n\n## ",
-          global$exposure_classes[[item]][["name"]],
+          exposure_classes[[item]][["name"]],
           "\n\n",
-          global$exposure_classes[[item]][["references"]]
+          exposure_classes[[item]][["references"]]
         )
       }
     }
