@@ -20,4 +20,5 @@ Imports:
     stringi,
     tippy,
     uuid,
-    yaml
+    yaml,
+    R6

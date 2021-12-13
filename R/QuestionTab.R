@@ -1,4 +1,3 @@
-library(R6)
 # QuestionTab class definition
 # instances are tabs of the questionnaire
 # this is a wrapper over any ui and server that handles switching to previous/next tab if relevant
