@@ -29,23 +29,23 @@ description: |
 transition:
   high:
     always: |
-      While telecoms could continue to play a role in meeting customer demand for
-      the coming years, the changing patterns in energy generation, driven by
-      divergent or late policy reaction, societal change, national energy
+      While telecoms could continue to play a role in meeting customer demand
+      for the coming years, the changing patterns in energy generation, driven
+      by divergent or late policy reaction, societal change, national energy
       strategies, and carbon legislation, are likely to have a significant and
       long term impact on this sector, affecting profitability and consumer
       preferences.
     high_materiality: |
       In the Disorderly/Divergent transition risk scenarios, the impacts could
-      depend on how reliant the company's production/revenue mix is on low carbon
-      electricity, the client's 'temperature alignment' score and how this compares
-      to the sector average. For example:
+      depend on how reliant the company's production/revenue mix is on low
+      carbon electricity, the client's 'temperature alignment' score and how
+      this compares to the sector average. For example:
 
       - **Increased operating costs**, the increases in carbon and energy prices
-        could potentially result in financial impacts, as firms' carbon emissions
-        face a rising price in the form of a carbon tax or cap and trade
-        clearing price, particularly for copper and other lightweight materials
-        commonly found in phones/ cables and network sites.
+        could potentially result in financial impacts, as firms' carbon
+        emissions face a rising price in the form of a carbon tax or cap and
+        trade clearing price, particularly for copper and other lightweight
+        materials commonly found in phones/ cables and network sites.
 
       - **Asset valuation of company reserves could be re-priced** based on the
         re-adjusted expectations of the use of low-carbon products and energy
@@ -85,8 +85,8 @@ transition:
 
       - embed sustainable supply chain & partnership strategy;
 
-      - use 'Smart' network components which shutdown/start up in line with demand
-        and usage;
+      - use 'Smart' network components which shutdown/start up in line with
+        demand and usage;
 
       - integrate E-Waste circular economy and smart recycling into consumer
         propositions (e.g. O2 Recycle);
@@ -97,8 +97,8 @@ transition:
         minimise need for travel (e.g. BT's Remote Diagnostic Station).
 
       These actions could also lead to gain positive commercial reputation and
-      therefore magnify demand and overall revenue as consumers could proactively
-      shop at businesses with an incorporated green strategy.
+      therefore magnify demand and overall revenue as consumers could
+      proactively shop at businesses with an incorporated green strategy.
   low:
     always: |
       While the telecom sector could continue to play a role in meeting customer
@@ -112,8 +112,8 @@ transition:
     high_materiality: |
       In the early/orderly transition risk scenarios, the increases in carbon
       and energy prices could potentially result in financial impacts; the
-      extent could depend on how reliant the company's production /revenue mix is
-      on low-carbon electricity, the company's transition plans and how they
+      extent could depend on how reliant the company's production /revenue mix
+      is on low-carbon electricity, the company's transition plans and how they
       compare to the sector average. For example:
 
       - **Increased operating costs** resulting from the smooth but significant
@@ -134,9 +134,9 @@ transition:
         expectations and changes in demand as a result of societal changes.
 
       The profitability of the telecoms sector, in the early/orderly transition
-      risk scenarios, could depend on the relevant companies proactively investing
-      in innovation and new technology and their ability to mitigate transition
-      risks. For example, in particular whether firms:
+      risk scenarios, could depend on the relevant companies proactively
+      investing in innovation and new technology and their ability to mitigate
+      transition risks. For example, in particular whether firms:
 
       - invest in and roll out energy efficient technologies e.g. 5G & Fibre
         (balanced with expanding use cases driving energy consumption up);
@@ -160,8 +160,8 @@ transition:
 
       - embed sustainable supply chain & partnership strategies;
 
-      - use 'Smart' network components which shutdown/start up in line with demand
-        and usage;
+      - use 'Smart' network components which shutdown/start up in line with
+        demand and usage;
 
       - integrate E-Waste circular economy and smart recycling into consumer
         propositions (e.g. O2 Recycle);
@@ -279,8 +279,8 @@ physical:
       of physical network sites needed (e.g. full fibre).
 
 references: |
-    - [BT Group plc Annual Report 2021]( https://www.bt.com/bt-plc/assets/documents/investors/financial-reporting-and-news/annual-reports/2021/bt-annual-report.pdf){target="_blank"}
+  - [BT Group plc Annual Report 2021](https://www.bt.com/bt-plc/assets/documents/investors/financial-reporting-and-news/annual-reports/2021/bt-annual-report.pdf){target="\_blank"}
 
-    - [Vodafone Group plc Task Force on Climate-Related Financial Disclosures (TCFD) Report 2021](https://investors.vodafone.com/sites/vodafone-ir/files/2021-05/vodafone-tcfd-report-2021.pdf){target="_blank"}
+  - [Vodafone Group plc Task Force on Climate-Related Financial Disclosures (TCFD) Report 2021](https://investors.vodafone.com/sites/vodafone-ir/files/2021-05/vodafone-tcfd-report-2021.pdf){target="\_blank"}
 
-    - [Insuring a sustainable, greener future. A Roadmap for climate action - LLoyd's](https://assets.lloyds.com/media/706fda85-f5df-437e-9722-db633df23a18/Lloyd%27s_climate%20action%20discussion_green%20paper_oct.pdf){target="_blank"}
+  - [Insuring a sustainable, greener future. A Roadmap for climate action - LLoyd's](https://assets.lloyds.com/media/706fda85-f5df-437e-9722-db633df23a18/Lloyd%27s_climate%20action%20discussion_green%20paper_oct.pdf){target="\_blank"}

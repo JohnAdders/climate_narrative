@@ -85,15 +85,15 @@ transition:
       In Disorderly/Divergent transition risk scenarios, the construction sector
       is likely to be impacted by rapid decarbonization in building materials
       and its own operations. Likely reduction in the production of cement due
-      to higher carbon tax amid increasing global demand could drive the price of
-      cement more than 500% higher by 2050 in the Divergent Net Zero scenario
+      to higher carbon tax amid increasing global demand could drive the price
+      of cement more than 500% higher by 2050 in the Divergent Net Zero scenario
       and over 400% higher by 2050 in the Delayed transition scenario, leading
       to increased material cost for the construction industry.
 
       ![Cement Price](Cement_Price_Disorderly_Consruction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The construction sector is also likely to be impacted by rapid
       decarbonization in energy mix. Increased carbon tax cost and new
@@ -104,7 +104,7 @@ transition:
       ![Electricity Price](Electricity_Price_Disorderly_Consruction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The construction sector is likely to be impacted by rapid decarbonization
       in transport. Within road freight vehicles, the portion of electric
@@ -114,7 +114,7 @@ transition:
       ![Freight Vehicles](Electric_Freight_Vehicles_Disorderly_Construction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The profitability of the construction sector, in the Disorderly/Divergent
       transition risk scenarios, could also depend on the relevant companies
@@ -138,9 +138,9 @@ transition:
 
       While the construction sector could continue to play a role in meeting
       customer demand for the coming years, the changing patterns in energy
-      generation in early/orderly transition risk scenarios, driven by
-      immediate policy reaction, societal change, national energy strategies,
-      and carbon legislation, could lead to an immediate and smooth reduction in
+      generation in early/orderly transition risk scenarios, driven by immediate
+      policy reaction, societal change, national energy strategies, and carbon
+      legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
       are likely to have an impact on the profitability this sector;
       constructing assets such as buildings, roads, railways, tunnels and
@@ -179,14 +179,14 @@ transition:
       The construction sector is likely to be impacted by steady decarbonization
       in building materials and its own operations. Among building materials,
       cement could incur the most impact due to its limited capacity to improve
-      CO<sub>2</sub> intensity and increasing carbon price. A sharper focus would be
-      required for the cement industry to improve its clinker-to-cement ratio
-      and deploy carbon storage technologies.
+      CO<sub>2</sub> intensity and increasing carbon price. A sharper focus
+      would be required for the cement industry to improve its clinker-to-cement
+      ratio and deploy carbon storage technologies.
 
       ![Emissions Mix](Emissions_Mix_Construction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       Likely reduction in the production of cement due to higher carbon tax amid
       increasing global demand could drive the price of cement more than 350%
@@ -197,7 +197,7 @@ transition:
       ![Cement Price](Cement_Price_Orderly_Consruction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The construction sector is also likely to be impacted by steady
       decarbonization in energy mix. By 2050, renewables and biomass would cover
@@ -209,7 +209,7 @@ transition:
       ![Electricity Price](Electricity_Price_Orderly_Consruction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       By 2050, renewables and biomass would cover 68% of global primary energy
       needs.
@@ -217,7 +217,7 @@ transition:
       ![Primary Energy](Primary_Energy_Mix_Oil_and_Gas.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+      [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The construction sector is also likely to be impacted by steady
       decarbonization in transport. Within road freight vehicles, the portion of
@@ -227,19 +227,18 @@ transition:
       ![Freight Vehicles](Electric_Freight_Vehicles_Orderly_Construction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="_blank"}
+      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      The profitability of the construction sector, in early/orderly
-      transition risk scenarios, could depend on the relevant companies
-      proactively investing in innovation and new technology. It is critical
-      that energy efficiency improves in design and construction, as well as in
-      the operations of buildings. It is estimated that the total GHG emissions
-      from building material is largely concentrated in just 10 commonly used
-      items: Cement, Steel, Limestone, Structural clay, Aluminium, etc.
-      Decarbonising steel and concrete production currently represent a
-      significant challenge. The alternative is to substitute such materials,
-      where possible, for lower-carbon intensity products, and increase
-      recycling.
+      The profitability of the construction sector, in early/orderly transition
+      risk scenarios, could depend on the relevant companies proactively
+      investing in innovation and new technology. It is critical that energy
+      efficiency improves in design and construction, as well as in the
+      operations of buildings. It is estimated that the total GHG emissions from
+      building material is largely concentrated in just 10 commonly used items:
+      Cement, Steel, Limestone, Structural clay, Aluminium, etc. Decarbonising
+      steel and concrete production currently represent a significant challenge.
+      The alternative is to substitute such materials, where possible, for
+      lower-carbon intensity products, and increase recycling.
 physical:
   high:
     always: |
@@ -340,8 +339,8 @@ physical:
       climate change to minimise the risk of total damage caused by flooding.
 
 references: |
-    - [GlobalABC Roadmap for Buildings and Construction 2020-2050, July 2020](https://www.iea.org/reports/globalabc-roadmap-for-buildings-and-construction-2020-2050){target="_blank"}
+  - [GlobalABC Roadmap for Buildings and Construction 2020-2050, July 2020](https://www.iea.org/reports/globalabc-roadmap-for-buildings-and-construction-2020-2050){target="\_blank"}
 
-    - [Construction and Building Materials TCFD Preparer Forum - wbcsd, July 2020](https://docs.wbcsd.org/2020/06/WBCSD_TCFD_Construction%20Sector.pdf){target="_blank"}
+  - [Construction and Building Materials TCFD Preparer Forum - wbcsd, July 2020](https://docs.wbcsd.org/2020/06/WBCSD_TCFD_Construction%20Sector.pdf){target="\_blank"}
 
-    - [A circular built environment: from principles to practices - RICS World Built Environment Forum, May 2019](https://www.rics.org/uk/wbef/megatrends/natural-environment/a-circular-built-environment-from-principles-to-practices/){target="_blank"}
+  - [A circular built environment: from principles to practices - RICS World Built Environment Forum, May 2019](https://www.rics.org/uk/wbef/megatrends/natural-environment/a-circular-built-environment-from-principles-to-practices/){target="\_blank"}

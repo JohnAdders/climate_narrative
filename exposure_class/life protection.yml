@@ -31,8 +31,8 @@ transition:
       brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
       until 2030 and a decrease in CO<sub>2</sub> emissions after 2030 to
       compensate for the inaction beforehand. The divergent scenario results in
-      an immediate by divergent reduction in CO<sub>2</sub> emissions. This could
-      lead to a significant reduction in CO<sub>2</sub> emissions by 2050,
+      an immediate by divergent reduction in CO<sub>2</sub> emissions. This
+      could lead to a significant reduction in CO<sub>2</sub> emissions by 2050,
       probably associated with a drive towards cleaner air (due to for example,
       an increase in electric vehicles replacing vehicles with internal
       combustion engines). This would cause a reduction in pollution which could
@@ -71,17 +71,18 @@ transition:
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
         but without global buy-in then this could also reduce the correlation.
 
-      In the Disorderly/Divergent transition risk scenarios, there is potential for fewer deaths
-      and a positive outcome for health relating to air pollution, the reduction
-      of pollution could result into a reduction of cancers (especially lung)
-      and respiratory diseases (e.g. asthma, respiratory allergic disease,
-      chronic obstructive pulmonary disease and respiratory tract infections,
-      but also cardiovascular disease ), although we note that this is very much
-      dependent on the fuel mix generating electrical power for the grid. For
-      example, whilst waste-to-energy plants have similar particulate outputs to
-      gas-fired power stations, biomass plants such as wood pellet fired
-      facilities, for their many positives, produce significantly more
-      particulates than gas-fired power stations (Hajat et al., 2014).
+      In the Disorderly/Divergent transition risk scenarios, there is potential
+      for fewer deaths and a positive outcome for health relating to air
+      pollution, the reduction of pollution could result into a reduction of
+      cancers (especially lung) and respiratory diseases (e.g. asthma,
+      respiratory allergic disease, chronic obstructive pulmonary disease and
+      respiratory tract infections, but also cardiovascular disease ), although
+      we note that this is very much dependent on the fuel mix generating
+      electrical power for the grid. For example, whilst waste-to-energy plants
+      have similar particulate outputs to gas-fired power stations, biomass
+      plants such as wood pellet fired facilities, for their many positives,
+      produce significantly more particulates than gas-fired power stations
+      (Hajat et al., 2014).
 
       **GDP growth effect**
 
@@ -212,8 +213,8 @@ physical:
       example, income protection claims experience might suffer more if there
       was a reduction in spending on musculoskeletal conditions, whilst critical
       illness would be more sensitive to trajectories in cancer diagnosis
-      techniques), it may be more appropriate to view this at the "overall" level
-      rather than spuriously defining specific GDP allocation scenarios.
+      techniques), it may be more appropriate to view this at the "overall"
+      level rather than spuriously defining specific GDP allocation scenarios.
 
       **Temperature and weather effect**
 
@@ -294,8 +295,8 @@ physical:
       example, income protection claims experience might suffer more if there
       was a reduction in spending on musculoskeletal conditions, whilst critical
       illness would be more sensitive to trajectories in cancer diagnosis
-      techniques), it may be more appropriate to view this at the "overall" level
-      rather than spuriously defining specific GDP allocation scenarios.
+      techniques), it may be more appropriate to view this at the "overall"
+      level rather than spuriously defining specific GDP allocation scenarios.
 
       **Temperature and weather effect**
 
@@ -340,16 +341,16 @@ physical:
       the face of climate change driven emergencies and extreme weather events.
 
 references: |
-    - [Importance of Climate-Related Risks for Actuaries - International Actuarial Association, June 2020](https://www.actuaries.org/IAA/Documents/CMTE_EXEC/Meetings/2020_23_07/CRTF_ImportanceOfClimateRelatedRisksforActuaries_15July2020_clean.pdf){target="_blank"}
+  - [Importance of Climate-Related Risks for Actuaries - International Actuarial Association, June 2020](https://www.actuaries.org/IAA/Documents/CMTE_EXEC/Meetings/2020_23_07/CRTF_ImportanceOfClimateRelatedRisksforActuaries_15July2020_clean.pdf){target="\_blank"}
 
-    - [The impact of climate change on mortality and retirement incomes in Australia - Actuaries Institute, September 2019](https://actuaries.asn.au/Library/Opinion/2019/TheDialogue10ClimateWEBLres.pdf){target="_blank"}
+  - [The impact of climate change on mortality and retirement incomes in Australia - Actuaries Institute, September 2019](https://actuaries.asn.au/Library/Opinion/2019/TheDialogue10ClimateWEBLres.pdf){target="\_blank"}
 
-    - [Aviva's Climate-Related Financial Disclosure 2020](https://www.aviva.com/sustainability/reporting/climate-related-financial-disclosure/){target="_blank"}
+  - [Aviva's Climate-Related Financial Disclosure 2020](https://www.aviva.com/sustainability/reporting/climate-related-financial-disclosure/){target="\_blank"}
 
-    - [Aviva Adviser: Life Insurance+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/life-insurance-plus/){target="_blank"}
+  - [Aviva Adviser: Life Insurance+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/life-insurance-plus/){target="\_blank"}
 
-    - [Aviva Adviser: Critical illness+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/critical-illness-plus/){target="_blank"}
+  - [Aviva Adviser: Critical illness+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/critical-illness-plus/){target="\_blank"}
 
-    - [Aviva Adviser: Income Protection+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/income-protection-plus/){target="_blank"}
+  - [Aviva Adviser: Income Protection+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/income-protection-plus/){target="\_blank"}
 
-    - [Case Studies of Environmental Risk Analysis Methodologies - NGFS, September 2020](https://www.ngfs.net/sites/default/files/medias/documents/case_studies_of_environmental_risk_analysis_methodologies.pdf){target="_blank"}
+  - [Case Studies of Environmental Risk Analysis Methodologies - NGFS, September 2020](https://www.ngfs.net/sites/default/files/medias/documents/case_studies_of_environmental_risk_analysis_methodologies.pdf){target="\_blank"}

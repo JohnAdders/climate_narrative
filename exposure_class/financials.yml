@@ -44,13 +44,13 @@ description: |
 transition:
   high:
     always: |
-      The risks from climate change could largely depend on the business model of
-      the financial firm and the regions in which it operates. Because they have
-      relatively low greenhouse gas emissions, the main financial risk for most
-      financial institutions is from the impact of transition (and physical)
-      risks on their counterparties (that is, firms they lend to, invest in
-      and/or insure such as corporates and households) and/or the assets they
-      manage.
+      The risks from climate change could largely depend on the business model
+      of the financial firm and the regions in which it operates. Because they
+      have relatively low greenhouse gas emissions, the main financial risk for
+      most financial institutions is from the impact of transition (and
+      physical) risks on their counterparties (that is, firms they lend to,
+      invest in and/or insure such as corporates and households) and/or the
+      assets they manage.
 
       Where the increases in carbon and energy prices in a disorderly transition
       risk scenario could potentially result in financial impacts; the extent
@@ -97,24 +97,24 @@ transition:
       threatened by the transition, for example, Internal Combustion Engines in
       the Automobile sector).
 
-      Firms could need to identity whether their portfolio has exposures to these
-      types of industries and engage with these counterparties to aid their
-      transition to a low carbon economy or, where this is not possible (e.g.
-      when the portfolio must be adjusted quickly), divest. Failure to do this
-      could result in further transition risks, such as a reduced social licence
-      to operate as the firm suffers reputational damage. Asset managers must
-      also consider reputational transition risks and avoid 'leakage' by ensuring
-      their repriced carbon intensive assets are retired or modified, rather
-      than sold on and used elsewhere.
+      Firms could need to identity whether their portfolio has exposures to
+      these types of industries and engage with these counterparties to aid
+      their transition to a low carbon economy or, where this is not possible
+      (e.g. when the portfolio must be adjusted quickly), divest. Failure to do
+      this could result in further transition risks, such as a reduced social
+      licence to operate as the firm suffers reputational damage. Asset managers
+      must also consider reputational transition risks and avoid 'leakage' by
+      ensuring their repriced carbon intensive assets are retired or modified,
+      rather than sold on and used elsewhere.
   low:
     always: |
-      The risks from climate change could largely depend on the business model of
-      the financial firm and the regions in which it operates. Because they have
-      relatively low greenhouse gas emissions, the main financial risk for most
-      financial institutions is from the impact of transition (and physical)
-      risks on their counterparties (that is, firms they lend to, invest in
-      and/or insure such as corporates and households) and/or the assets they
-      manage.
+      The risks from climate change could largely depend on the business model
+      of the financial firm and the regions in which it operates. Because they
+      have relatively low greenhouse gas emissions, the main financial risk for
+      most financial institutions is from the impact of transition (and
+      physical) risks on their counterparties (that is, firms they lend to,
+      invest in and/or insure such as corporates and households) and/or the
+      assets they manage.
 
       Where the increases in carbon and energy prices in the early/orderly
       transition risk scenarios could potentially result in financial impacts,
@@ -122,12 +122,11 @@ transition:
       underlying exposures. To determine the nature of the transition risks for
       financial firms, it is necessary to examine the industries/sectors of
       their underlying exposures. In early/orderly transition risk scenarios, we
-      expect to see a change in regulation, laws, consumer behaviour
-      and/or technological development. Sectors that are most vulnerable to this
-      steady change could tend to be in the carbon intensive sectors or have
-      limited ability to pass price increases to customers. Hence,
-      concentrations of lending or underwriting to these sectors could be more
-      highly exposed.
+      expect to see a change in regulation, laws, consumer behaviour and/or
+      technological development. Sectors that are most vulnerable to this steady
+      change could tend to be in the carbon intensive sectors or have limited
+      ability to pass price increases to customers. Hence, concentrations of
+      lending or underwriting to these sectors could be more highly exposed.
     high_materiality: |
       Material exposures for financial institutions in orderly transition risk
       scenarios could tend to occur where there are concentrations of lending,
@@ -169,13 +168,13 @@ transition:
 physical:
   high:
     always: |
-      The risks from climate change could largely depend on the business model of
-      the financial firm and the regions in which it operates. Because they have
-      relatively low greenhouse gas emissions, the main financial risk for most
-      financial institutions is from the impact of physical (and transition)
-      risks on their counterparties (that is, firms they lend to, invest in
-      and/or insure such as corporates and households) and/or the assets they
-      manage.
+      The risks from climate change could largely depend on the business model
+      of the financial firm and the regions in which it operates. Because they
+      have relatively low greenhouse gas emissions, the main financial risk for
+      most financial institutions is from the impact of physical (and
+      transition) risks on their counterparties (that is, firms they lend to,
+      invest in and/or insure such as corporates and households) and/or the
+      assets they manage.
 
       To determine the nature of physical risks requires information on the
       geographic location of assets. Assessing the risks to these assets
@@ -190,8 +189,8 @@ physical:
       firms could need to consider how to adapt their physical operations to
       ensure the safety of their staff and more general business continuity
       concerns. But their main financial fisk could arise from the impact on
-      their counterparties, which could be largely a function of their geographic
-      location.
+      their counterparties, which could be largely a function of their
+      geographic location.
     high_materiality: |
       All financial institutions with physical operations, such as offices, data
       centres, branch networks, could be exposed to physical risks. This could
@@ -227,25 +226,25 @@ physical:
         water supply and quality. This would incur hefty additional costs for
         water using industries.
 
-      - **Temperature** increases in some regions could be substantial, affecting
-        everything from agriculture, to transport, to medical care.
+      - **Temperature** increases in some regions could be substantial,
+        affecting everything from agriculture, to transport, to medical care.
 
       In high physical risk scenarios, it may be that certain risks become
       uninsurable. That could have knock on consequences for other companies in
       the financial system. Counterparties' supply chains may also be vulnerable
       to physical impacts, affecting their sales, profit and loss, and balance
       sheets. Firms could need to identity whether their portfolio has exposures
-      to these types of climate impacts. Firms could need to assess the extent to
-      which there are local defences, which reduce the risk.
+      to these types of climate impacts. Firms could need to assess the extent
+      to which there are local defences, which reduce the risk.
   low:
     always: |
-      The risks from climate change could largely depend on the business model of
-      the financial firm and the regions in which it operates. Because they have
-      relatively low greenhouse gas emissions, the main financial risk for most
-      financial institutions is from the impact of physical (and transition)
-      risks on their counterparties (that is, firms they lend to, invest in
-      and/or insure such as corporates and households) and/or the assets they
-      manage.
+      The risks from climate change could largely depend on the business model
+      of the financial firm and the regions in which it operates. Because they
+      have relatively low greenhouse gas emissions, the main financial risk for
+      most financial institutions is from the impact of physical (and
+      transition) risks on their counterparties (that is, firms they lend to,
+      invest in and/or insure such as corporates and households) and/or the
+      assets they manage.
 
       To determine the nature of physical risks requires information on the
       geographic location of assets. Assessing the risks to these assets
@@ -298,16 +297,17 @@ physical:
         water supply and quality. This would incur hefty additional costs for
         water using industries.
 
-      - **Temperature** increases in some regions could be substantial, affecting
-        everything from agriculture, to transport, to medical care.
+      - **Temperature** increases in some regions could be substantial,
+        affecting everything from agriculture, to transport, to medical care.
 
       In a low physical risk scenario, it may be possible that certain risks
       become uninsurable. That could have knock on consequences for other
       companies in the financial system. Counterparties' supply chains may also
       be vulnerable to physical impacts, affecting their sales, profit and loss,
       and balance sheets. Firms could need to identity whether their portfolio
-      has exposures to these types of climate impacts. Firms could need to assess
-      the extent to which there are local defences, which reduce the risk.
+      has exposures to these types of climate impacts. Firms could need to
+      assess the extent to which there are local defences, which reduce the
+      risk.
 
 
 
