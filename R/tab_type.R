@@ -1,5 +1,3 @@
-#' some comment
-#' @export
 tab_type_ui <- function() {
   list(
     radioButtons(
