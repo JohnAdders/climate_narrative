@@ -23,7 +23,7 @@ restore_spaces <- function(camelcase) {
   s <- capitalize(s)
   # manually substitute texts with where simple capitalisation rule fails
   substitutions <- data.frame(
-    from=c("Sme", "Smes", "Uk", "Us", "And", "To", "To(non-sme)"),
+    from=c("Sme", "Smes", "Uk", "Us", "And", "To", "to(non-sme)"),
     to=c("SME", "SMEs", "UK", "US", "and", "to", "to (non-SME)")
   )
   for(i in 1:nrow(substitutions)){
