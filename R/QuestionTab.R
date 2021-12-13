@@ -1,8 +1,8 @@
-library(R6)
-# QuestionTab class definition
-# instances are tabs of the questionnaire
-# this is a wrapper over any ui and server that handles switching to previous/next tab if relevant
-# (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic)
+#' QuestionTab class definition
+#' 
+#' Instances are tabs of the questionnaire.
+#' This is a wrapper over any ui and server that handles switching to previous/next tab if relevant
+#' (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).
 QuestionTab <- R6Class(
   "QuestionTab",
   public = list(
