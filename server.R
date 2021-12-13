@@ -51,7 +51,7 @@ server <- function(input, output, session) {
   allow_report <- reactive({
     return(nrow(type_inputs())>0)
   })
-  
+
   aggregated_type_inputs <- reactive({
     if (allow_report()) {
       aggregated_inputs_factor <- aggregate(materiality ~ item, FUN = max, data = type_inputs())
@@ -77,6 +77,9 @@ server <- function(input, output, session) {
       "title: |\n",
       "  Climate report\n\n",
       "  ![](title.png)\n\n",
+      "  ```{=rtf}\n",
+      "  \\page\n",
+      "  ```\n\n",
       "---\n\n"
     )
     for (scenario in scenarios) {
@@ -99,7 +102,7 @@ server <- function(input, output, session) {
   #    full report for email RTF,
   #    single scenario for HTML
   #    single scenario with common sectors (e.g. introduction) for button RTF
-    
+
   temp_report_full <- reactive({
     # writing a full report to (temporary) file first
     # this is necessary as markdown::render takes file as an argument

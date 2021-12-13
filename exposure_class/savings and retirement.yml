@@ -32,9 +32,9 @@ transition:
       could result in annuities being paid out for longer durations, which would
       negatively impact the profit margins of annuity providers. At the same
       time, better health in policyholders of other savings and retirement
-      products could improve mortality, leading to savings products becoming more
-      profitable from longer durations in force, and improved morbidity, leading
-      to higher rates of savings and fewer lapses.
+      products could improve mortality, leading to savings products becoming
+      more profitable from longer durations in force, and improved morbidity,
+      leading to higher rates of savings and fewer lapses.
 
       These scenarios could also result in moderate to severe reduction in GDP
       growth, which in turn reduces household incomes and leads to lower savings
@@ -250,13 +250,13 @@ physical:
 
       - **Mortality**: Due to the increased incidence in catastrophes, mortality
         rates for certain customer segments (depending on location) may also be
-        expected to rise. A level increase in temperature in the UK could lead to
-        a reduction in deaths since the reduction in excess deaths due to cold
-        weather may outweigh any increase excess deaths due to warmer weather
-        and the risk of prolonged heat waves. However, to the extent that any
-        increase in temperatures comes with an increase in the variability of
-        temperatures, we could see an increase in both Winter and Summer excess
-        mortality.
+        expected to rise. A level increase in temperature in the UK could lead
+        to a reduction in deaths since the reduction in excess deaths due to
+        cold weather may outweigh any increase excess deaths due to warmer
+        weather and the risk of prolonged heat waves. However, to the extent
+        that any increase in temperatures comes with an increase in the
+        variability of temperatures, we could see an increase in both Winter and
+        Summer excess mortality.
 
       - **Morbidity**: A rise in temperatures could lead to an increase in the
         incidence rates of skin cancer. The prevalence of skin cancer is
@@ -355,10 +355,10 @@ physical:
       To the extent that there is an impact on mortality, morbidity market and
       credit risks, the low physical risk scenario could have an impact on the
       pricing of saving and retirement products. Low physical risk also impacts
-      to company infrastructure could not put upward pressure on expenses, unless
-      the infrastructure is located in areas affected by severe weather events.
-      Asset flows may also be little affected, as household income and savings
-      rates are expected to remain largely unchanged.
+      to company infrastructure could not put upward pressure on expenses,
+      unless the infrastructure is located in areas affected by severe weather
+      events. Asset flows may also be little affected, as household income and
+      savings rates are expected to remain largely unchanged.
 
 
 

@@ -1,11 +1,29 @@
 position: 0
 is_scenario: no
 description: |
-  ## Disclaimer 
-  
-    This on-line tool/report is currently under development and is only being made available
-    for internal testing purposes. It has not been endorsed or approved by the PRA, FCA,
-    the Climate Financial Risk Forum or any of its members, and no reliance should be placed
-    on the originality, accuracy and/or completeness, of any information herein. The Information
-    should not be reproduced or redisseminated in any form and may not be used as a basis for
-    any purpose other than for internal testing of the on-line tool/report itself.
+  ```{=rtf}
+    \page
+  ```
+
+  ## Disclaimer
+
+  This report is currently under development and is only being made available to
+  selected users for testing purposes.
+
+  It has not been endorsed or approved by the PRA, FCA, the Climate Financial
+  Risk Forum or any of its members, and no reliance should be placed on the
+  accuracy or completeness of any information herein.
+
+  The information contained in any reports can be reproduced or redisseminated
+  in any form as long as this disclaimer is not removed, the source is
+  identified as the Climate Financial Risk Forum's Climate Narrative Tool and
+  any changes from the original text are clearly marked.
+
+  The report is provided "as is" without warranty of any kind, express or
+  implied, including but not limited to the warranties or merchantability,
+  fitness for a particular purpose and noninfringement. In no event shall the
+  authors or copyright holders be liable for any claim, damages or other
+  liability, whether in an action of contract, tort or otherwise arising from,
+  out of or in connection with the report.
+
+  **Copyright 2021 The Climate Financial Risk Forum**
