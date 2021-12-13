@@ -38,6 +38,7 @@ server <- function(input, output, session) {
       }
     }
     out$materiality <- factor(out$values, levels = c("", "Low", "Medium", "High"), ordered = T)
+    out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
     out
   })
 
@@ -50,11 +51,21 @@ server <- function(input, output, session) {
   allow_report <- reactive({
     return(nrow(type_inputs())>0)
   })
-  
+
   aggregated_type_inputs <- reactive({
     if (allow_report()) {
-      aggregated_inputs <- aggregate(materiality ~ item, FUN = max, data = type_inputs())
-      aggregated_inputs[order(aggregated_inputs$materiality, decreasing = TRUE), ]
+      aggregated_inputs_factor <- aggregate(materiality ~ item, FUN = max, data = type_inputs())
+      aggregated_inputs_numeric <- aggregate(
+        materiality_num ~ item,
+        FUN = function(x) cut(
+          sum(x), 
+          breaks = c(0, 4.5, 9.5, 100),
+          labels = c("Low", "Medium", "High")
+        ),
+        data = type_inputs()
+      )
+      aggregated_inputs <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
+      aggregated_inputs[order(aggregated_inputs$materiality, aggregated_inputs$materiality_num, decreasing = TRUE), ]
     } else {
       return(data.frame(item = c(), materiality = c()))
     }
@@ -66,6 +77,9 @@ server <- function(input, output, session) {
       "title: |\n",
       "  Climate report\n\n",
       "  ![](title.png)\n\n",
+      "  ```{=rtf}\n",
+      "  \\page\n",
+      "  ```\n\n",
       "---\n\n"
     )
     for (scenario in global$scenarios) {
@@ -88,7 +102,7 @@ server <- function(input, output, session) {
   #    full report for email RTF,
   #    single scenario for HTML
   #    single scenario with common sectors (e.g. introduction) for button RTF
-    
+
   temp_report_full <- reactive({
     # writing a full report to (temporary) file first
     # this is necessary as markdown::render takes file as an argument

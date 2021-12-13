@@ -113,7 +113,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = F
       inputId = id,
       label = NULL,
       choices = c("", "Low", "Medium", "High"),
-      selected = ifelse(dev, "High", ""),
+      #selected = ifelse(dev, "High", ""),
       # to allow empty string as a valid option I do not use selectize
       selectize = FALSE,
       width = width
@@ -337,7 +337,7 @@ get_exposure_description <- function(item, type_item_inputs) {
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
-  ordered_aggregate_inputs <- aggregate(
+  ordered_aggregate_inputs_text <- aggregate(
     ordered_type_item_inputs[, c("rowname", "materiality")],
     by = list(
       Product.description = ordered_type_item_inputs$product_description,
@@ -350,14 +350,30 @@ get_exposure_description <- function(item, type_item_inputs) {
       )
     }
   )
-  colnames(ordered_aggregate_inputs)[3:4] <- c("Exposure.row", "Materiality")
+  ordered_aggregate_inputs_num <- aggregate(
+    ordered_type_item_inputs[, c("materiality_num")],
+    by = list(
+      Product.description = ordered_type_item_inputs$product_description,
+      Product.text = ordered_type_item_inputs$product_text
+    ),
+    FUN = function(x) {
+      cut(
+        sum(x), 
+        breaks = c(0, 4.5, 9.5, 100),
+        labels = c("Low", "Medium", "High")
+      )
+    }
+  )
+  ordered_aggregate_inputs <- merge(ordered_aggregate_inputs_text, ordered_aggregate_inputs_num)
+  colnames(ordered_aggregate_inputs)[3:5] <- c("Exposure.row", "Materiality", "Product materiality")
+  print(ordered_aggregate_inputs)
   out <- paste0(
     "## ",
     global$exposure_classes[[item]][["name"]],
     "\n\n",
     global$exposure_classes[[item]][["description"]],
     "\n\nThe following rows contribute: \n\n",
-    table_to_markdown_multiline(ordered_aggregate_inputs, TRUE, c(15,30,25,15)),
+    table_to_markdown_multiline(ordered_aggregate_inputs[, 1:4], TRUE, c(15, 30, 25, 15)),
     "\n\n"
   )
 }
@@ -439,7 +455,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
   if (nrow(aggregated_table) & is_scenario) {
     for (i in 1:nrow(aggregated_table)) {
       item <- aggregated_table$item[i]
-      materiality <- aggregated_table$materiality[i]
+      materiality <- aggregated_table$materiality_num[i]
       type_item_inputs <- type_inputs[type_inputs$item == item, ]
       products <- unique(type_item_inputs$product)
       out <- paste0(
@@ -502,13 +518,13 @@ heartbeat_footer <- function() {
       list(
         p("Copyright 2021 The Climate Financial Risk Forum"),
         p(
-          a(href="https://github.com/JohnAdders/climate_narrative", "Source Code"),
+          a(href="https://github.com/JohnAdders/climate_narrative", "Source Code", target="_blank"),
           " | ",
           a(href="mailto:john.adcock@aviva.com?subject=Climate%20Narrative%20support%20request", "Beta Support"),
           " | ",
-          a(href="https://github.com/JohnAdders/climate_narrative/issues?q=is%3Aissue+is%3Aopen+label%3Abug", "Known Issues"),
+          a(href="https://github.com/JohnAdders/climate_narrative/issues?q=is%3Aissue+is%3Aopen+label%3Abug", "Known Issues", target="_blank"),
           " | ",
-          a(href="https://github.com/JohnAdders/climate_narrative/wiki/Contributors", "Contributors")
+          a(href="https://github.com/JohnAdders/climate_narrative/wiki/Contributors", "Contributors", target="_blank")
         )
       )
     )
@@ -557,7 +573,32 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   }
 }
 
-#' Produce a footer HTML text explaining materiality levels (assets)
+#' Produce a footer HTML text explaining materiality levels
+generic_footer <- function(asset_or_liability = c("asset","liability"), is_asset_mananger = FALSE){
+  if(asset_or_liability == "asset"){
+    case_name <- "asset class and sector"
+    if (is_asset_mananger) {
+      total_name <- "assets under management"
+    } else {
+      total_name <- "assets"
+    }
+  } else {
+    case_name <- "liability class"
+    total_name <- "premium income"
+  }
+  p(
+    list(
+      paste0("Enter your firm's exposures by", case_name, "using the following definitions:"),
+      tags$ul(
+        tags$li(paste("\"High\": One of your top 5 exposures or more than 10% of total", total_name)),
+        tags$li(paste("\"Medium\": 5% - 10% of total", total_name)),
+        tags$li(paste("\"Low\": below 5% of total", total_name)),
+        tags$li(paste("blank: immaterial or no exposure"))
+      )
+    )
+  )
+}
+
 generic_asset_footer <- function(is_asset_mananger = FALSE) {
   if (is_asset_mananger) {
     asset_text = "assets under management"

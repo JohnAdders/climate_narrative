@@ -4,4 +4,6 @@ tab_ins_l_ui <- function() {
   )
 }
 
-tab_ins_l_foot <- generic_liability_footer
+tab_ins_l_foot <- function() {
+  generic_footer("liability")
+}

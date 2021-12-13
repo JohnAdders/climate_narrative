@@ -71,11 +71,15 @@ tab_auth_ui <- function() {
       The tool aims to promote understanding, consistency, and comparability
       by providing guidance on how to use scenario analysis to assess financial impacts
       and inform strategy/business decisions."),
-      p("This tool has been written by industry, for industry. The recommendations in this tool
-      do not constitute financial or other professional advice and should not be relied upon as such.
-      The PRA and FCA have convened and facilitated CFRF discussions but do not accept liability
-      for the views expressed in this tool which do not necessarily represent the view
-      of the regulators and in any case do not constitute regulatory guidance."),
+      p("The tool has not been endorsed or approved by the PRA, FCA, the Climate Financial Risk Forum
+      or any of its members, and no reliance should be placed on the accuracy or
+      completeness of any information herein."),
+      p("The software is provided \"as is\" without warranty of any kind, express or
+      implied, including but not limited to the warranties or merchantability, fitness
+      for a particular purpose and noninfringement.  In no event shall the authors
+      or copyright holders be liable for any claim, damages or other liability,
+      whether in an action of contract, tort or otherwise arising from, out of or in
+      connection with the software or the use or other dealings in the software."),
       p(strong("Copyright 2021 The Climate Financial Risk Forum"))
     ),
     hr(),
