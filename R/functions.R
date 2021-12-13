@@ -557,7 +557,31 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   }
 }
 
-#' Produce a footer HTML text explaining materiality levels (assets)
+#' Produce a footer HTML text explaining materiality levels
+generic_footer <- function(asset_or_liability = c("asset","liability"), is_asset_mananger = FALSE){
+  if(asset_or_liability == "asset"){
+    case_name <- "asset class and sector"
+    if (is_asset_mananger) {
+      total_name <- "assets under management"
+    } else {
+      total_name <- "assets"
+    }
+  } else {
+    case_name <- "liability class"
+    total_name <- "premium income"
+  }
+  p(
+    list(
+      paste0("Enter your firm's exposures by", case_name, "using the following definitions:"),
+      tags$ul(
+        tags$li(paste("\"High\": One of your top 5 exposures or more than 10% of total", total_name)),
+        tags$li(paste("\"Medium\": 5% - 10% of total", total_name)),
+        tags$li(paste("\"Low\": below 5% of total", total_name)),
+        tags$li(paste("blank: immaterial or no exposure"))
+      )
+    )
+  )
+}
 generic_asset_footer <- function(is_asset_mananger = FALSE) {
   if (is_asset_mananger) {
     asset_text = "assets under management"
