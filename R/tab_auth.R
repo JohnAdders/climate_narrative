@@ -61,7 +61,7 @@ send_auth_code_email <- function(input, output, session) {
   )
 }
 
-tab_auth_ui <- function() {
+tab_auth_ui <- function(captcha_code) {
   list(
     div(
       class = "disclaimer", id = "disclaimer_1",
@@ -83,7 +83,7 @@ tab_auth_ui <- function() {
       p(strong("Copyright 2021 The Climate Financial Risk Forum"))
     ),
     hr(),
-    GreCAPTCHAv3Ui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP"),
+    GreCAPTCHAv3Ui(captcha_code),
     fluidRow(
       uiOutput("first_column"),
       column(

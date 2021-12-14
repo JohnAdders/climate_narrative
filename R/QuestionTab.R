@@ -19,8 +19,9 @@ QuestionTab <- R6Class(
     exposure = NULL,
     type = NULL,
     subtype = NULL,
+    ui_pars = NULL,
     initialize = function(tab_name, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE,
-                          exposure = NULL, type = NULL, subtype = NULL) {
+                          exposure = NULL, type = NULL, subtype = NULL, ui_pars = list()) {
       # the constructor automatically gets ui, server and foot
       # from the relevant functions (or makes it empty if the function does not exist)
       self$tab_name <- tab_name
@@ -36,6 +37,7 @@ QuestionTab <- R6Class(
       self$exposure <- exposure
       self$type <- type
       self$subtype <- subtype
+      self$ui_pars <- ui_pars
     },
     # tab server function that combines:
     # 1. server side of exposure input table (if given in the constructor)
@@ -96,7 +98,7 @@ QuestionTab <- R6Class(
       }
       if (!is.null(self$tab_ui)) {
         tabpanel_params <- add_param(
-          tabpanel_params, self$tab_ui()
+          tabpanel_params, do.call(self$tab_ui, self$ui_pars)
         )
       }
       if (!is.null(self$exposure)) {
