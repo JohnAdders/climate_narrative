@@ -114,7 +114,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = F
       inputId = id,
       label = NULL,
       choices = c("", "Low", "Medium", "High"),
-      #selected = ifelse(dev, "High", ""),
+      selected = ifelse(dev, "High", ""),
       # to allow empty string as a valid option I do not use selectize
       selectize = FALSE,
       width = width
