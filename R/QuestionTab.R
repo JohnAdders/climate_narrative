@@ -12,13 +12,13 @@ QuestionTab <- R6::R6Class(
     tab_ui = NULL,
     #' @field tab_ui_foot specific UI function to be used in footer (without arguments)
     tab_ui_foot = NULL,
-    #' @field tab_ui specific server function
+    #' @field tab_server specific server function
     tab_server = NULL,
     #' @field tab_number number assigned automatically based on 'ordered_tabs' vector of names
     tab_number = NULL,
     #' @field previous_tab name of previous tab (optional)
     previous_tab = NULL,
-    #' @field previous_tab name of previous tab (optional)
+    #' @field next_tab name of previous tab (optional)
     next_tab = NULL,
     #' @field id component id in shiny, assigned automatically based on tab number
     id = NULL,
@@ -37,6 +37,15 @@ QuestionTab <- R6::R6Class(
     #' @description the constructor fills the slots with values given
     #' it also automatically gets ui, server and foot
     #' from the relevant functions (or makes it empty if the function does not exist)
+    #' @param tab_name name of the tab
+    #' @param previous_tab name of the previous tab
+    #' @param next_tab name of the next tab
+    #' @param add_header whether to add a standard header
+    #' @param add_footer whether to add a standard footer
+    #' @param exposure (optional) table of exposure to construct grid of inputs
+    #' @param type type of issuers for which the inputs are applicable
+    #' @param subtype unique reference of tab within a type of issuers
+    #' @param ui_pars (optional) list of arguments to pass to tab_ui
     initialize = function(tab_name, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE,
                           exposure = NULL, type = NULL, subtype = NULL, ui_pars = list()) {
       self$tab_name <- tab_name
@@ -60,6 +69,12 @@ QuestionTab <- R6::R6Class(
     #' 3. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
     #' additionally, a boolean function may be passed to allow going next only conditionally
     #' (by default the condition is always true)
+    #' @param input regular shiny parameter
+    #' @param output regular shiny parameter
+    #' @param session regular shiny parameter
+    #' @param switch_page function to be passed that changes the active tab
+    #' (used in prev/next buttons)
+    #' @param allow_next (optional) additional condition to be checked before going to next tab
     server = function(input, output, session, switch_page, allow_next=function(){TRUE}) {
       if (!is.null(self$exposure)) {
         if(ncol(self$exposure) < 5) {
@@ -94,7 +109,7 @@ QuestionTab <- R6::R6Class(
         )
       }
     },
-    #' @description tab UI function combines:
+    #' @description tab UI function that combines:
     #' 0. a common header (unless add_header=FALSE)
     #' 1. exposure input table (if exposure table given in the constructore)
     #' 2. any other tab_UI (if given in the constructor)
