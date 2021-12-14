@@ -380,7 +380,6 @@ get_exposure_description <- function(item, type_item_inputs) {
   )
   ordered_aggregate_inputs <- merge(ordered_aggregate_inputs_text, ordered_aggregate_inputs_num)
   colnames(ordered_aggregate_inputs)[3:5] <- c("Exposure.row", "Materiality", "Product materiality")
-  print(ordered_aggregate_inputs)
   out <- paste0(
     "## ",
     exposure_classes[[item]][["name"]],
