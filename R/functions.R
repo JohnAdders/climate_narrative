@@ -61,11 +61,13 @@ capitalize <- function(input_string) {
 restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
   s <- sub("^ ", "", s) # remove first space
+  # ensure no space after opening parenthesis "("
+  s <- gsub("( ", "(", s, fixed = TRUE) 
   s <- capitalize(s)
   # manually substitute texts with where simple capitalisation rule fails
   substitutions <- data.frame(
-    from=c("Sme", "Smes", "Uk", "Us", "And", "To", "To(non-sme)"),
-    to=c("SME", "SMEs", "UK", "US", "and", "to", "to (non-SME)")
+    from = c("Sme", "Smes", "Uk", "Us", "And", "To", "To(non-sme)", "to(non-sme)"),
+    to = c("SME", "SMEs", "UK", "US", "and", "to", "to (non-SME)", "to (non-SME)")
   )
   for(i in 1:nrow(substitutions)){
     s <- gsub(substitutions$from[i], substitutions$to[i], s, fixed = TRUE)
@@ -345,7 +347,7 @@ get_exposure_description <- function(item, type_item_inputs) {
     ordered_type_item_inputs$rowname_unique[i] <- paste0(
       ordered_type_item_inputs$rowname[i],
       " (",
-      ordered_type_item_inputs$colname[i],
+      capitalize(ordered_type_item_inputs$colname[i]),
       ")"
     )
   }
