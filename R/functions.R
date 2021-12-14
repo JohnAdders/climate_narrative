@@ -1,9 +1,10 @@
 #' Remove special characters (in particular spaces) from a string and optionally make it camelcase
-remove_special_characters <- function(text, camelcase=TRUE) {
+remove_special_characters <- function(text, make_camelcase=TRUE) {
   out <- text
-  if(camelcase){
+  if(make_camelcase){
     out <- gsub('\\ (\\w?)', '\\U\\1', tolower(out), perl=TRUE)
     out <- gsub('\\_(\\w?)', '\\U\\1', out, perl=TRUE)
+    out <- gsub('\\.(\\w?)', '\\U\\1', out, perl=TRUE)
   }
   gsub("[_. ]", "", out)
 }
@@ -333,12 +334,23 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 #' @param type_item_inputs table of (disaggregated) inputs to produce a table of contributing rows
 #' @return markdown-formatted report section (h2)
 get_exposure_description <- function(item, type_item_inputs) {
-  if(is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
+  if (is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
+  # add unique identifier if rownames are not unique (i.e. the same item in multiple columns)
+  ordered_type_item_inputs$rowname_unique <- ordered_type_item_inputs$rowname
+  duplicates <- which(duplicated(ordered_type_item_inputs$rowname)|duplicated(ordered_type_item_inputs$rowname, fromLast = TRUE))
+  for (i in duplicates){
+    ordered_type_item_inputs$rowname_unique[i] <- paste0(
+      ordered_type_item_inputs$rowname[i],
+      " (",
+      ordered_type_item_inputs$colname[i],
+      ")"
+    )
+  }
   ordered_aggregate_inputs_text <- aggregate(
-    ordered_type_item_inputs[, c("rowname", "materiality")],
+    ordered_type_item_inputs[, c("rowname_unique", "materiality")],
     by = list(
       Product.description = ordered_type_item_inputs$product_description,
       Product.text = ordered_type_item_inputs$product_text
