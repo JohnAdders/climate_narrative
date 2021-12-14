@@ -39,7 +39,7 @@ render_dynamic_auth_ui <- function(output, session) {
             inputId = "button_send_code",
             label = "Send the code"
           ),
-          tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
+          tippy::tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
           textOutput("code_send_result")
         )
       }
@@ -98,7 +98,7 @@ tab_auth_ui <- function(captcha_code) {
           inputId = "button_check_code",
           label = "Validate the code"
         ),
-        tippy_this("button_check_code", 'Click to proceed (if the code is correct)'),
+        tippy::tippy_this("button_check_code", 'Click to proceed (if the code is correct)'),
         textOutput("code_verification_result")
       )
     )

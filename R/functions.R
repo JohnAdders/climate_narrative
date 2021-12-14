@@ -20,7 +20,7 @@ read_dir <- function(directory, file_format = "auto", remove_special_characters_
     file_list,
     function(file) {
       switch(file_format,
-        yml = read_yaml(paste0(directory, "/", file)),
+        yml = yaml::read_yaml(paste0(directory, "/", file)),
         csv = read.csv(paste0(directory, "/", file), stringsAsFactors = FALSE),
         r = source(paste0(directory, "/", file)),
         stop("Error (function read_dir): file format ", file_format, " not handled")
@@ -124,7 +124,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = F
     if (tooltip_text != "") {
       return(div(
         form,
-        tippy_this(id, tooltip_text),
+        tippy::tippy_this(id, tooltip_text),
       ))
     } else {
       return(form)
@@ -188,16 +188,16 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char=1
 #' without breaking words
 string_add_spaces_to_make_equal_lines <- function(string, line_width){
   out <- string
-  newline_locations <- na.omit(stri_locate_all(out, fixed = "<br>")[[1]][,1])
+  newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][,1])
   i <- 1
   while(i * line_width < nchar(out)){
     for(loc in newline_locations[newline_locations <= 1 + i * line_width]){
       out <- string_break_line_with_spaces(out, line_width, loc, 4)
     }
-    space_locations <- stri_locate_all(out, fixed = " ") [[1]][,1]
+    space_locations <- stringi::stri_locate_all(out, fixed = " ") [[1]][,1]
     last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
     if(length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
-    newline_locations <- na.omit(stri_locate_all(out, fixed="<br>")[[1]][,1])
+    newline_locations <- na.omit(stringi::stri_locate_all(out, fixed="<br>")[[1]][,1])
     i <- i + 1
   }
   return(out)
@@ -559,7 +559,7 @@ GreCAPTCHAv3Ui <- function(siteKey) {
 #' based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
-  runjs(paste0("
+  shinyjs::runjs(paste0("
         grecaptcha.ready(function () {
           grecaptcha.execute('", siteKey, "', { action: '", action, "' }).then(function (token) {
 			      Shiny.onInputChange('", fieldID, "',token);
@@ -573,7 +573,7 @@ GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
 #' based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
-  gResponse <- POST(
+  gResponse <- httr::POST(
     "https://www.google.com/recaptcha/api/siteverify",
     body = list(
       secret = secretKey,
@@ -582,7 +582,7 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   )
 
   if (gResponse$status_code == 200) {
-    return(fromJSON(content(gResponse, "text")))
+    return(jsonlite::fromJSON(httr::content(gResponse, "text")))
   }
 }
 

@@ -1,10 +1,10 @@
 server <- function(input, output, session) {
   heartbeat(input, output, session)
-  session$userData$verification_code <- substring(UUIDgenerate(), 1, 6)
+  session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
   session$userData$captcha_validated <- FALSE
 
   if (file.exists("secret.yml")) {
-    secret_pars <- read_yaml("secret.yml")
+    secret_pars <- yaml::read_yaml("secret.yml")
     session$userData$dev <- FALSE
     for (i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
   } else {
@@ -167,7 +167,7 @@ server <- function(input, output, session) {
     rmarkdown::render(
       input = temp_report_scenario(input$report_selection),
       output_file = temp_html,
-      output_format = html_document(
+      output_format = rmarkdown::html_document(
         number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
@@ -206,7 +206,7 @@ server <- function(input, output, session) {
       rmarkdown::render(
         input = temp_report_scenario_and_commons(input$report_selection),
         output_file = file,
-        output_format = rtf_document(
+        output_format = rmarkdown::rtf_document(
           toc = TRUE,
           toc_depth = 2,
           number_sections = FALSE,

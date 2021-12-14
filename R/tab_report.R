@@ -16,7 +16,7 @@ tab_report_ui <- function() {
     ),
     hr()
   )
-  if (!pandoc_available()) {
+  if (!rmarkdown::pandoc_available()) {
     warning("Pandoc (required to render rtf) not available, hiding download report button")
     out <- c(out, list(uiOutput("html_report")))
   } else {
