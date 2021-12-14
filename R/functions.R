@@ -10,7 +10,8 @@ remove_special_characters <- function(text, make_camelcase=TRUE) {
 }
 
 #' Read all files from a directory as a named R list (handles yaml/csv/R files)
-read_dir <- function(directory, file_format = "auto", remove_special_characters_from_names = TRUE) {
+read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_special_characters_from_names = TRUE) {
+  if (in_package) directory <- system.file(directory, package = "climate.narrative") 
   file_list <- dir(path = directory)
   file_format <- tolower(file_format)
   if (file_format == "auto") {

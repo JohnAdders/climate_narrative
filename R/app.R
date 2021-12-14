@@ -8,7 +8,7 @@ climate_narrative <- function(...){
   )
   global$tabs <- list(
     QuestionTab$new("title", NULL, "auth", FALSE, FALSE),
-    QuestionTab$new("auth", "title", NULL, ui_pars = list(captcha_code=yaml::read_yaml('secret.yml')$captcha_code)),
+    QuestionTab$new("auth", "title", NULL, ui_pars = list(captcha_code=yaml::read_yaml(system.file("secret.yml", package = "climate.narrative"))$captcha_code)),
     QuestionTab$new("type", "auth", "ins_l"),
     QuestionTab$new("bank_re", "type", "bank_c", TRUE, TRUE, global$exposures$bankRe, "bank", "R"),
     QuestionTab$new("bank_c", "bank_re", "bank_sov", TRUE, TRUE, global$exposures$bankCorporate, "bank", "C"),
