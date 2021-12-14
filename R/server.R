@@ -3,8 +3,8 @@ server <- function(input, output, session) {
   session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
   session$userData$captcha_validated <- FALSE
 
-  if (file.exists("secret.yml")) {
-    secret_pars <- yaml::read_yaml("secret.yml")
+  if (file.exists(system.file("secret.yml", package = "climate.narrative"))) {
+    secret_pars <- yaml::read_yaml(system.file("secret.yml", package = "climate.narrative"))
     session$userData$dev <- FALSE
     for (i in 1:length(secret_pars)) session$userData[[names(secret_pars)[i]]] <- secret_pars[[i]]
   } else {
