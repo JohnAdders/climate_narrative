@@ -32,8 +32,8 @@ QuestionTab <- R6Class(
     type = NULL,
     #' @field subtype subtype of tab within a type of institution (to group the inputs from all tabs)
     subtype = NULL,
-    #' @field ui_pars optional list of parameter to pass to ui function
-    ui_pars = NULL,
+    #' @field ui_settings optional list of parameters to pass to ui function
+    ui_settings = NULL,
     #' @description the constructor fills the slots with values given
     #' it also automatically gets ui, server and foot
     #' from the relevant functions (or makes it empty if the function does not exist)
@@ -45,9 +45,9 @@ QuestionTab <- R6Class(
     #' @param exposure (optional) table of exposure to construct grid of inputs
     #' @param type type of issuers for which the inputs are applicable
     #' @param subtype unique reference of tab within a type of issuers
-    #' @param ui_pars (optional) list of arguments to pass to tab_ui
+    #' @param ui_settings (optional) list of arguments to pass to tab_ui
     initialize = function(tab_name, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE,
-                          exposure = NULL, type = NULL, subtype = NULL, ui_pars = list()) {
+                          exposure = NULL, type = NULL, subtype = NULL, ui_settings = list()) {
       self$tab_name <- tab_name
       self$tab_ui <- get_or_null(paste0("tab_", tab_name, "_ui"))
       self$tab_ui_foot <- get_or_null(paste0("tab_", tab_name, "_foot"))
@@ -61,7 +61,7 @@ QuestionTab <- R6Class(
       self$exposure <- exposure
       self$type <- type
       self$subtype <- subtype
-      self$ui_pars <- ui_pars
+      self$ui_settings <- ui_settings
     },
     #' @description Tab server function that combines:
     #' 1. server side of exposure input table (if given in the constructor)
@@ -128,7 +128,7 @@ QuestionTab <- R6Class(
       }
       if (!is.null(self$tab_ui)) {
         tabpanel_params <- add_param(
-          tabpanel_params, do.call(self$tab_ui, self$ui_pars)
+          tabpanel_params, do.call(self$tab_ui, self$ui_settings)
         )
       }
       if (!is.null(self$exposure)) {
