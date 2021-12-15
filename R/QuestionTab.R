@@ -88,7 +88,7 @@ QuestionTab <- R6::R6Class(
           self$exposure,
           produce_tooltip_matrix(self$exposure),
           paste(self$type, self$subtype, sep="_"),
-          session$userData$dev,
+          userData$dev,
           width
         )
       }

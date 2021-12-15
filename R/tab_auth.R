@@ -1,11 +1,11 @@
 passes_captcha <- function(input, session) {
-  result <- GreCAPTCHAv3Server(session$userData$captcha_secret, input$responseReceived)
+  result <- GreCAPTCHAv3Server(userData$captcha_secret, input$responseReceived)
   return(result$success && result$score > 0.5)
 }
 
 request_captcha <- function(output, session) {
-  if (!is.null(session$userData$captcha_code) && !is.null(session$userData$captcha_secret)) {
-    GreCAPTCHAv3js(session$userData$captcha_code, "homepage", "responseReceived")
+  if (!is.null(userData$captcha_code) && !is.null(userData$captcha_secret)) {
+    GreCAPTCHAv3js(userData$captcha_code, "homepage", "responseReceived")
   } else {
     output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
   }
@@ -21,7 +21,7 @@ process_progress <- function(output, should_continue) {
 }
 
 render_dynamic_auth_ui <- function(output, session) {
-  if (!is.null(session$userData$beta_code)) {
+  if (!is.null(userData$beta_code)) {
     output$first_column <- renderUI({NULL})
     output$auth_text <- renderUI({p("Enter the beta code you have been sent")})
   } else {
@@ -52,11 +52,11 @@ send_auth_code_email <- function(input, output, session) {
   output$code_send_result <- renderText(
     paste(
       "TODO: send the actual email from",
-      session$userData$email_server,
+      userData$email_server,
       "to",
       input$email,
       "containing the code:",
-      session$userData$verification_code
+      userData$verification_code
     )
   )
 }
@@ -125,8 +125,8 @@ tab_auth_server <- function(input, output, session, tab) {
         session$userData$captcha_validated <- passes_captcha(input, session)
       }
       if(session$userData$captcha_validated == TRUE) {
-        if(!is.null(session$userData$beta_code)) {
-          process_progress(output, input$code == session$userData$beta_code)
+        if(!is.null(userData$beta_code)) {
+          process_progress(output, input$code == userData$beta_code)
         } else {
           send_auth_code_email(input, output, session)
         }
@@ -137,13 +137,13 @@ tab_auth_server <- function(input, output, session, tab) {
   observeEvent(
     input$button_check_code,
     {
-      if(!is.null(session$userData$beta_code)) {
+      if(!is.null(userData$beta_code)) {
         request_captcha(output, session)
       } else {
         process_progress(
           output,
           (
-            input$code == session$userData$verification_code &&
+            input$code == userData$verification_code &&
             session$userData$captcha_validated == TRUE
           )
         )
