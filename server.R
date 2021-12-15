@@ -63,6 +63,15 @@ server <- function(input, output, session) {
     }
   })
 
+  # update the available sectors, only after tab switch
+  observeEvent(
+    input$wizard,
+    {
+      updateSelectInput(session, "sector_selection", choices=c("", aggregated_type_inputs()$item))
+    }
+  )
+  
+
   report_contents <- reactive({
     out <- paste0(
       "---\n",

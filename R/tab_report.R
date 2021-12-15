@@ -14,6 +14,12 @@ tab_report_ui <- function() {
       valid_options,
       selectize = FALSE
     ),
+    selectInput(
+      "sector_selection",
+      "Select the sector to show",
+      c(""),
+      selectize = FALSE
+    ),
     hr()
   )
   if (!pandoc_available()) {
