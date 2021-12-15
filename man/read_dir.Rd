@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{read_dir}
 \alias{read_dir}
-\title{Read all files from a directory as a named R list (handles yaml/csv/R files)}
+\title{Read all files from a directory as a named R list}
 \usage{
 read_dir(
   directory,
@@ -12,5 +12,5 @@ read_dir(
 )
 }
 \description{
-Read all files from a directory as a named R list (handles yaml/csv/R files)
+Handles yaml/csv/R files.
 }

@@ -7,5 +7,5 @@
 get_scenario_descriptions(aggregated_table, type_inputs, scenario)
 }
 \description{
-Lower level report helper function responsible for single scenario description
+(none)
 }

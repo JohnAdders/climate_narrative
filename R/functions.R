@@ -1,4 +1,6 @@
-#' Remove special characters (in particular spaces) from a string and optionally make it camelcase
+#' Remove special characters (in particular spaces) from a string 
+#' 
+#' Additionally (optionally) make it camelcase.
 remove_special_characters <- function(text, make_camelcase=TRUE) {
   out <- text
   if(make_camelcase){
@@ -9,7 +11,9 @@ remove_special_characters <- function(text, make_camelcase=TRUE) {
   gsub("[_. ]", "", out)
 }
 
-#' Read all files from a directory as a named R list (handles yaml/csv/R files)
+#' Read all files from a directory as a named R list
+#' 
+#' Handles yaml/csv/R files.
 read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_special_characters_from_names = TRUE) {
   if (in_package) directory <- system.file(directory, package = "climate.narrative") 
   file_list <- dir(path = directory)
@@ -39,7 +43,7 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
   return(list)
 }
 
-#' Add element to the list (shortcue)
+#' Add element to the list (shortcut)
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
@@ -77,6 +81,7 @@ restore_spaces <- function(camelcase) {
 }
 
 #' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
+#' 
 #' and product-specific text (if any)
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
@@ -186,6 +191,7 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char=1
 }
 
 #' Add spaces to a string so that it can be split into blocks of exactly the same length
+#' 
 #' without breaking words
 string_add_spaces_to_make_equal_lines <- function(string, line_width){
   out <- string
@@ -205,7 +211,9 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width){
 }
 
 #' Format the string by appending spaces so it exactly fills the lines of given length
-#' additionally, if the string contains at least one "<br>" format output as a bulleted list
+#' 
+#' additionally, if the string contains at least one "br" tag
+#' format output as a bulleted list
 string_format_lines <- function(string, col_width){
   if (grepl("<br>", string)){
     out <- paste0("- ",gsub("<br>", "<br> - ", string))
@@ -218,7 +226,7 @@ string_format_lines <- function(string, col_width){
 
 #' Produce a markdown table out of R data frame
 #' 
-#' Create a markdown table, allowing multiline cell entries (lines need to be separated by <br>)
+#' Create a markdown table, allowing multiline cell entries (lines need to be separated by br tag)
 #' R table headers cannot contain spaces, to get space in the output use a dot
 #' (it will be replaced with space if dot_to_space=T as in default)
 #' The function splits the text automatically and adds spaces to match the desired column width
@@ -296,7 +304,8 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
 }
 
 #' A simple version of function to produce markdown tables from R table
-#' (does not handle multiline cells)
+#' 
+#' It does not handle multiline cells
 table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE) {
   headers <- colnames(table)
   if (dot_to_space) {
@@ -333,6 +342,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 }
 
 #' Produce report content for a given item
+#' 
 #' @param item name of item for which a report is to be produced
 #' @param type_item_inputs table of (disaggregated) inputs to produce a table of contributing rows
 #' @return markdown-formatted report section (h2)
@@ -393,6 +403,7 @@ get_exposure_description <- function(item, type_item_inputs) {
 }
 
 #' Produce appendix for a given item
+#' 
 #' @param item name of item for which appendix is to be produced
 #' @return markdown-formatted appendix section (h3)
 get_exposure_appendix <- function(item){
@@ -485,6 +496,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
 }
 
 #' Function to produce references section (for all items)
+#' 
 #' @param aggregated_table aggregated inputs
 #' @param type_inputs disaggregated inputs
 #' @return markdown-formatted references section (h2)
@@ -631,7 +643,6 @@ generic_asset_footer <- function(is_asset_mananger = FALSE) {
   )
 }
 
-#' Produce a footer HTML text explaining materiality levels (liabilities)
 generic_liability_footer <- function() {
   p(
     list("Enter your firm's exposures by liability class using the following definitions:",

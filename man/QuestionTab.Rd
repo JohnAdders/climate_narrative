@@ -42,7 +42,7 @@ This is a wrapper over any ui and server that handles switching to previous/next
 
 \item{\code{subtype}}{subtype of tab within a type of institution (to group the inputs from all tabs)}
 
-\item{\code{ui_pars}}{optional list of parameter to pass to ui function}
+\item{\code{ui_settings}}{optional list of parameters to pass to ui function}
 }
 \if{html}{\out{</div>}}
 }
@@ -72,7 +72,7 @@ from the relevant functions (or makes it empty if the function does not exist)
   exposure = NULL,
   type = NULL,
   subtype = NULL,
-  ui_pars = list()
+  ui_settings = list()
 )}\if{html}{\out{</div>}}
 }
 
@@ -95,7 +95,7 @@ from the relevant functions (or makes it empty if the function does not exist)
 
 \item{\code{subtype}}{unique reference of tab within a type of issuers}
 
-\item{\code{ui_pars}}{(optional) list of arguments to pass to tab_ui}
+\item{\code{ui_settings}}{(optional) list of arguments to pass to tab_ui}
 }
 \if{html}{\out{</div>}}
 }

@@ -2,12 +2,10 @@
 % Please edit documentation in R/functions.R
 \name{produce_tooltip_matrix}
 \alias{produce_tooltip_matrix}
-\title{Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
-and product-specific text (if any)}
+\title{Produce a matrix of tooltips (strings) by concatenating column-specific (if any)}
 \usage{
 produce_tooltip_matrix(exposure_matrix)
 }
 \description{
-Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
 and product-specific text (if any)
 }

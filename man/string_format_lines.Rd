@@ -2,12 +2,11 @@
 % Please edit documentation in R/functions.R
 \name{string_format_lines}
 \alias{string_format_lines}
-\title{Format the string by appending spaces so it exactly fills the lines of given length
-additionally, if the string contains at least one "<br>" format output as a bulleted list}
+\title{Format the string by appending spaces so it exactly fills the lines of given length}
 \usage{
 string_format_lines(string, col_width)
 }
 \description{
-Format the string by appending spaces so it exactly fills the lines of given length
-additionally, if the string contains at least one "<br>" format output as a bulleted list
+additionally, if the string contains at least one "br" tag
+format output as a bulleted list
 }

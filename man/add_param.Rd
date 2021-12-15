@@ -2,10 +2,10 @@
 % Please edit documentation in R/functions.R
 \name{add_param}
 \alias{add_param}
-\title{Add element to the list (shortcue)}
+\title{Add element to the list (shortcut)}
 \usage{
 add_param(previous_list, item_to_add)
 }
 \description{
-Add element to the list (shortcue)
+Add element to the list (shortcut)
 }

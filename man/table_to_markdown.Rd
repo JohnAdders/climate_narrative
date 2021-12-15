@@ -2,12 +2,10 @@
 % Please edit documentation in R/functions.R
 \name{table_to_markdown}
 \alias{table_to_markdown}
-\title{A simple version of function to produce markdown tables from R table
-(does not handle multiline cells)}
+\title{A simple version of function to produce markdown tables from R table}
 \usage{
 table_to_markdown(table, additional_spaces = 3, dot_to_space = TRUE)
 }
 \description{
-A simple version of function to produce markdown tables from R table
-(does not handle multiline cells)
+It does not handle multiline cells
 }

@@ -7,7 +7,7 @@
 table_to_markdown_multiline(table, dot_to_space = TRUE, col_widths = NULL)
 }
 \description{
-Create a markdown table, allowing multiline cell entries (lines need to be separated by <br>)
+Create a markdown table, allowing multiline cell entries (lines need to be separated by br tag)
 R table headers cannot contain spaces, to get space in the output use a dot
 (it will be replaced with space if dot_to_space=T as in default)
 The function splits the text automatically and adds spaces to match the desired column width
