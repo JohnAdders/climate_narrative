@@ -5,6 +5,7 @@ Authors@R:
     c(
         person("John", "Adcock", email = "john.adcock@aviva.com", role = c("cre")),
         person("Krzysztof", "Opalski", email = "krzysztof.opalski2@aviva.com", role = c("aut")),
+        person("Karnan", "Narendrakumar", email = "karnan.narendrakumar@aviva.com", role = c("aut"))
     )
 URL: https://github.com/JohnAdders/climate_narrative
 Description: Shiny interactive tool that produced a detailed and well referenced

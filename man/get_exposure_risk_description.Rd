@@ -13,5 +13,5 @@ get_exposure_risk_description(
 )
 }
 \description{
-(none)
+Lower level report helper function responsible for single risk (transition/physical) description
 }
