@@ -9,13 +9,13 @@ tab_report_ui <- function() {
 
   out <- list(
     selectInput(
-      "report_selection",
+      "report_scenario_selection",
       "Select the scenario to show",
       valid_options,
       selectize = FALSE
     ),
     selectInput(
-      "sector_selection",
+      "report_sector_selection",
       "Select the sector to show",
       c(""),
       selectize = FALSE
@@ -35,7 +35,7 @@ tab_report_ui <- function() {
 
 tab_report_server <- function(input, output, session, tab) {
   if (userData$dev == TRUE){
-    updateSelectInput(session, "report_selection", selected = scenarios[[2]]$name)
+    updateSelectInput(session, "report_scenario_selection", selected = scenarios[[2]]$name)
   }
   observeEvent(
     input$type,
@@ -54,6 +54,7 @@ tab_report_server <- function(input, output, session, tab) {
   )
   observeEvent(
     input[[paste0("page_",  as.integer(factor("report", ordered_tabs)), "_previous")]],
-    updateSelectInput(session, "report_selection", selected = "")
+    updateSelectInput(session, "report_scenario_selection", selected = "")
+    updateSelectInput(session, "report_sector_selection", selected = "")
   )
 }

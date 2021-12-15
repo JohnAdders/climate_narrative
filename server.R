@@ -63,6 +63,15 @@ server <- function(input, output, session) {
     }
   })
 
+  aggregated_type_inputs_subset <- reactive({
+    if (input$sector_selection == ""){
+      return (aggregated_type_inputs())
+    } else {
+      out <- aggregated_type_inputs()
+      return(out[out$item == input$sector_selection,])
+    }
+  })
+  
   # update the available sectors, only after tab switch
   observeEvent(
     input$wizard,
@@ -87,13 +96,13 @@ server <- function(input, output, session) {
       out <- c(
         out,
         get_scenario_descriptions(
-          aggregated_type_inputs(),
+          aggregated_type_inputs_subset(),
           type_inputs(),
           scenario
         )
       )
     }
-    out <- c(out, get_references(aggregated_type_inputs(), type_inputs()))
+    out <- c(out, get_references(aggregated_type_inputs_subset(), type_inputs()))
     out
   })
 
@@ -115,11 +124,12 @@ server <- function(input, output, session) {
     temp_md_full
   })
 
-  temp_report_scenario <- function(report_selection) {
+  temp_report_scenario <- function(report_scenario_selection, report_sector_selection) {
+    # TO DO: handle multiple scenario one sector case
     if (!exists("temp_md_scenario")) temp_md_scenario <- tempfile(fileext = ".md")
     file_conn <- file(temp_md_scenario)
     scenario_no <- c(
-      which(sapply(scenarios, `[[`, i = "name") == report_selection),
+      which(sapply(scenarios, `[[`, i = "name") == report_scenario_selection),
       length(report_contents()) - 1
     )
     writeLines(
@@ -131,12 +141,13 @@ server <- function(input, output, session) {
     temp_md_scenario
   }
 
-  temp_report_scenario_and_commons <- function(report_selection) {
+  temp_report_scenario_and_commons <- function(report_scenario_selection, report_sector_selection) {
+    # TO DO: handle multiple scenario one sector case
     if (!exists("temp_md_scenario_and_commons")) temp_md_scenario_and_commons <- tempfile(fileext = ".md")
     file_conn <- file(temp_md_scenario_and_commons)
     scenario_no <- sort(
       c(
-        which(sapply(scenarios, `[[`, i = "name") == report_selection),
+        which(sapply(scenarios, `[[`, i = "name") == report_scenario_selection),
         which(sapply(scenarios, function(sce) !sce$is_scenario)),
         length(report_contents()) - 1
       )
@@ -151,12 +162,13 @@ server <- function(input, output, session) {
   }
 
   output$html_report <- renderUI({
-    if (input$report_selection == "") {
+    # TODO: handle one sector multi scenario
+    if (input$report_scenario_selection == "") {
       return(p("Please select a scenario"))
     }
     temp_html <- tempfile(fileext = ".html")
     result <- includeHTML(rmarkdown::render(
-      input = temp_report_scenario(input$report_selection),
+      input = temp_report_scenario(input$report_scenario_selection, input$report_sector_selection),
       output_file = temp_html,
       output_format = html_document(
         toc = TRUE,
@@ -180,9 +192,9 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      fs <- file.size(temp_report_scenario_and_commons(input$report_selection))
+      fs <- file.size(temp_report_scenario_and_commons(input$report_scenario_selection, input$report_sector_selection))
       rmarkdown::render(
-        input = temp_report_scenario_and_commons(input$report_selection),
+        input = temp_report_scenario_and_commons(input$report_scenario_selection, input$report_sector_selection),
         output_file = file,
         output_format = rtf_document(
           toc = TRUE,
@@ -197,7 +209,7 @@ server <- function(input, output, session) {
       # I found that in some cases the rendering silently overwrites the markdown file
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(temp_report_scenario_and_commons(input$report_selection)) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+      if (file.size(temp_report_scenario_and_commons(input$report_scenario_selection, input$report_sector_selection)) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
       removeModal()
     }
   )
