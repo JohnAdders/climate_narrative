@@ -10,7 +10,7 @@ ui <- function() {
     title = "Climate narrative",
     theme = shinythemes::shinytheme("sandstone"),
     shinyjs::useShinyjs(),
-    tags$link(rel = "stylesheet", type = "text/css", href = "climate_narrative.css"),
+    tags$link(rel = "stylesheet", type = "text/css", href = "/climate_narrative/climate_narrative.css"),
     do.call(tabsetPanel, c(tabset_start, tabset_tabs)),
     textOutput("__heartbeat")
   )
