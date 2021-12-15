@@ -28,7 +28,7 @@ tab_report_ui <- function() {
 }
 
 tab_report_server <- function(input, output, session, tab) {
-  if (session$userData$dev == TRUE){
+  if (userData$dev == TRUE){
     updateSelectInput(session, "report_selection", selected = scenarios[[2]]$name)
   }
   observeEvent(

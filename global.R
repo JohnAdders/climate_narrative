@@ -66,9 +66,18 @@ ordered_tabs <- c(
   "report"
 )
 
+userData <- list()
+if (file.exists("secret.yml")) {
+  secret_settings <- read_yaml("secret.yml")
+  userData$dev <- FALSE
+  for (i in 1:length(secret_settings)) userData[[names(secret_settings)[i]]] <- secret_settings[[i]]
+} else {
+  userData$dev <- TRUE
+}
+
 tabs <- list(
   QuestionTab$new("title", NULL, "auth", FALSE, FALSE),
-  QuestionTab$new("auth", "title", NULL),
+  QuestionTab$new("auth", "title", NULL, ui_settings = list(captcha_code=userData$captcha_code)),
   QuestionTab$new("type", "auth", "ins_l"),
   QuestionTab$new("bank_re", "type", "bank_c", TRUE, TRUE, exposures$bankRe, "bank", "R"),
   QuestionTab$new("bank_c", "bank_re", "bank_sov", TRUE, TRUE, exposures$bankCorporate, "bank", "C"),
