@@ -17,3 +17,11 @@ global$ordered_tabs <- c(
   "am_c", "am_sov", "am_re",
   "report"
 )
+
+if (file.exists("secret.yml")) {
+  secret_pars <- read_yaml("secret.yml")
+  global$dev <- FALSE
+  for (i in 1:length(secret_pars)) global[[names(secret_pars)[i]]] <- secret_pars[[i]]
+} else {
+  global$dev <- TRUE
+}
