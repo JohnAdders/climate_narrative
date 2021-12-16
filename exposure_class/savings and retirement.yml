@@ -43,7 +43,7 @@ transition:
     high_materiality: |
       **GDP growth effect**
 
-      In the Disorderly/Divergent transition risk scenarios moderate to severe
+      In disorderly/divergent transition risk scenarios, moderate to severe
       reduction in GDP growth are likely, with equally severe repercussions on
       the levels of health and social care spending. A slower GDP growth would
       potentially constrain the growth in spending on NHS, public health, social
@@ -68,7 +68,7 @@ transition:
       greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
-      CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
+      CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, and the production of pollutants (such as
       particulate matter and oxides of nitrogen) that are more directly harmful
       to health.
@@ -156,7 +156,7 @@ transition:
       greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
-      CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
+      CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, and the production of pollutants (such as
       particulate matter and oxides of nitrogen) that are more directly harmful
       to health.

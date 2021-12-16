@@ -32,7 +32,7 @@ transition:
   high:
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in 
-      Disorderly/Divergent transition risk scenarios, fossil fuels
+      a Disorderly/Divergent transition risk scenario, fossil fuels
       represent only ~23% of global energy demand compared to ~83% in 2020.
       Carbon-intensive sectors such as oil and gas are consequently some of the
       most vulnerable to the transition. In a delayed transition scenario, 
@@ -197,7 +197,7 @@ transition:
       company that could need to be deployed in early/orderly transition risk
       scenarios to maintain revenues and minimise the long-term financial
       impact. Examples include transitioning to become an integrated energy
-      company providing renewable power generation, or investing in carbon
+      company providing renewable power generation or investing in carbon
       capture and storage (CCS) technologies.
 
       ![Primary Energy Mix](Primary_Energy_Mix_Oil_and_Gas.png)

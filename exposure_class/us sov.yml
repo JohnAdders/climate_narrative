@@ -38,8 +38,12 @@ description: |
   climate change, including changes to fiscal revenues, higher government spending, 
   changes in GDP growth and potential downgrades in credit rating. In this paper we 
   use a '20-notch' sovereign bond rating scale translated from S&P's alphabetical 
-  standardized rating scale (see Appendix A) to outline changes to sovereign bond 
+  standardized rating scale to outline changes to sovereign bond 
   ratings, as is common in surrounding literature.
+  
+  ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
+
+  **Source:**: 20 Notch Rating Scale
 transition:
   high:
     always: |
@@ -85,7 +89,7 @@ transition:
       country's size of fossil fuel or renewable energy sectors, green policies, such 
       as carbon taxes would impact, positively or negatively, firms' profitability, 
       which would, in turn, impact fiscal revenues (for more detail see [How could 
-      climate change impact sovereign risk FINAL.pdf (ftserussell.com)](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf)).
+      climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf)).
       
       The US is significantly more dependent on fossil fuel sectors and consequently 
       has a lower share of renewable energy compared to the UK or its European 
@@ -167,7 +171,7 @@ transition:
       the respective country's size of fossil fuel or renewable energy sectors, 
       green policies, such as carbon taxes would impact positively or negatively 
       firms' profitability, which would, in turn, impact fiscal revenues 
-      (for more detail see [How could climate change impact sovereign risk FINAL.pdf (ftserussell.com)](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf)). 
+      (for more detail see [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf)). 
       
       The US is significantly more dependent on fossil fuel sectors and consequently 
       has a lower share of renewable energy compared to the UK or its European 
@@ -190,7 +194,7 @@ transition:
       prices and energy costs are more than offset by the recycling of carbon tax 
       revenues into government investment and lower employment taxes. Based on the 
       IIASA NGFS Scenario Explorer v2.0, the expected impact of the orderly net 
-      zero scenario on US GDP compared to 2012 would be non-significant, ranging 
+      zero scenario on US GDP compared to 2012 would be significant, ranging 
       from -2.6% to -3.2% by 2050.
       
       **Downgrading of credit ratings**

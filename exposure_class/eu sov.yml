@@ -38,8 +38,12 @@ description: |
   climate change, including changes to fiscal revenues, higher government spending, 
   changes in GDP growth and potential downgrades in credit rating. In this paper we 
   use a '20-notch' sovereign bond rating scale translated from S&P's alphabetical 
-  standardized rating scale (see Appendix A) to outline changes to sovereign bond 
+  standardized rating scale to outline changes to sovereign bond 
   ratings, as is common in surrounding literature.
+  
+  ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
+
+  **Source:**: 20 Notch Rating Scale
 
 transition:
   high:
@@ -82,7 +86,7 @@ transition:
       country's size of fossil fuel or renewable energy sectors, green policies, such 
       as carbon taxes would impact, positively or negatively, firms' profitability, 
       which would, in turn, impact fiscal revenues (for more detail see [How could 
-      climate change impact sovereign risk FINAL.pdf (ftserussell.com)](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf)).
+      climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf)).
       
       The EU's emissions have reduced by over 34% between 1990 and 2020. In 2020, 
       the share of renewables in the EU27 power sector increased to 39% (almost 4% 
@@ -167,7 +171,7 @@ transition:
       the respective country's size of fossil fuel or renewable energy sectors, 
       green policies, such as carbon taxes would impact positively or negatively 
       firms' profitability, which would, in turn, impact fiscal revenues 
-      (for more detail see [How could climate change impact sovereign risk FINAL.pdf (ftserussell.com)](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf)). 
+      (for more detail see [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf)). 
       
       The EU's emissions have reduced by over 34% between 1990 and 2020. In 2020, the share of renewables in the EU27 power sector increased to 39% (almost 4% above the 2019 level), exceeding the share of electricity from fossil fuels. On average, 15% of electricity in the EU in 2020 came from wind energy, exceeding the share of coal in Q4 of 2020. In 2020, electricity generation from coal decreased by 22% and its share in electricity generation fell to 13% (4% below the 2019 level).
       
@@ -185,7 +189,7 @@ transition:
       limit GDP losses. The world GDP losses are estimated to be between -1.5% 
       and -2.5% by 2050. GDP impacts from transition risk are slightly positive 
       in the Net Zero 2050 scenario as negative impacts on demand from higher carbon 
-      prices and energy costs are more than offset by the recycling of carbon tax 
+      prices and energy costs are more than offset by the recycling of carbon 
       revenues into government investment and lower employment taxes. Based on the 
       IIASA NGFS Scenario Explorer v2.0, the expected impact of the orderly net 
       zero scenario on EU GDP compared to 2015 would be non-significant, ranging 

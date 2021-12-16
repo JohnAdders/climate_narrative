@@ -69,7 +69,7 @@ description: |
 
   01. Miscellaneous Retail
   
-  North American Industry Classification System, 2018, Available online at: https://www.naics.com/sic-codes-counts-division/?div=G. These may be cross-referenced to the UK Standard Industrial Classification of economic activities codes (SIC) https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic (or other classification systems) via online tools.
+  Note: the description above can be found at the North American Industry Classification System, 2018, Available online at: https://www.naics.com/sic-codes-counts-division/?div=G. These may be cross-referenced to the UK Standard Industrial Classification of economic activities codes (SIC) https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic (or other classification systems) via online tools.
 transition:
   high:
     always: |
