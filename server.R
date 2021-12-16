@@ -68,7 +68,7 @@ server <- function(input, output, session) {
       return (aggregated_type_inputs())
     } else {
       out <- aggregated_type_inputs()
-      return(out[out$item == input$sector_selection, ])
+      return(out[out$item == input$report_sector_selection, ])
     }
   })
   
@@ -164,7 +164,7 @@ server <- function(input, output, session) {
   output$html_report <- renderUI({
     # TODO: handle one sector multi scenario
     if (input$report_scenario_selection == "") {
-      return(p("Please select a scenario"))
+      return(p("Please select a scenario or a sector"))
     }
     temp_html <- tempfile(fileext = ".html")
     result <- includeHTML(rmarkdown::render(
