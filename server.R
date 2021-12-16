@@ -76,7 +76,7 @@ server <- function(input, output, session) {
   observeEvent(
     input$wizard,
     {
-      updateSelectInput(session, "sector_selection", choices=c("", aggregated_type_inputs()$item))
+      updateSelectInput(session, "report_sector_selection", choices=c("", aggregated_type_inputs()$item))
     }
   )
   
