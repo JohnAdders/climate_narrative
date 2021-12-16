@@ -64,11 +64,11 @@ server <- function(input, output, session) {
   })
 
   aggregated_type_inputs_subset <- reactive({
-    if (input$sector_selection == ""){
+    if (input$report_sector_selection == ""){
       return (aggregated_type_inputs())
     } else {
       out <- aggregated_type_inputs()
-      return(out[out$item == input$sector_selection,])
+      return(out[out$item == input$sector_selection, ])
     }
   })
   

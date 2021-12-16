@@ -34,9 +34,6 @@ tab_report_ui <- function() {
 }
 
 tab_report_server <- function(input, output, session, tab) {
-  if (userData$dev == TRUE){
-    updateSelectInput(session, "report_scenario_selection", selected = scenarios[[2]]$name)
-  }
   observeEvent(
     input$type,
     {
@@ -54,7 +51,9 @@ tab_report_server <- function(input, output, session, tab) {
   )
   observeEvent(
     input[[paste0("page_",  as.integer(factor("report", ordered_tabs)), "_previous")]],
-    updateSelectInput(session, "report_scenario_selection", selected = "")
-    updateSelectInput(session, "report_sector_selection", selected = "")
+    {
+      updateSelectInput(session, "report_scenario_selection", selected = "")
+      updateSelectInput(session, "report_sector_selection", selected = "")
+    }
   )
 }
