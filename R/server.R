@@ -113,19 +113,10 @@ server <- function(input, output, session) {
       which(sapply(global$scenarios, `[[`, i = "name") == report_selection),
       length(report_contents()) - 1
     )
-    tempfun=function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", getwd(),"/www/", "\\1\\2"), x,perl=T)
-    #xmpl="![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)"
-    #print(xmpl)
-    #print(tempfun(xmpl))
+    add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", getwd(),"/www/", "\\1\\2"), x, perl=T)
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
-      tempfun(report_contents()[c(1 + scenario_no)]),
-      # gsub(
-      #   "\\(([[:graph:]]*)(.png)",
-      #   paste0("(", getwd(), "/www", "\\\\1\\\\2"),
-      #   report_contents()[c(1 + scenario_no)],
-      #   perl=T
-      # ),
+      add_path_to_graphs(report_contents()[c(1 + scenario_no)]),
       file_conn
     )
     close(file_conn)
