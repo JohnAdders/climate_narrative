@@ -27,7 +27,7 @@ tab_report_ui <- function() {
     out <- c(out, list(uiOutput("html_report")))
   } else {
     out <- c(out, list(
-      downloadButton("report", "Download the selected scenario report as RTF"),
+      downloadButton("report", "Download the selected scenario/sector report as RTF"),
       uiOutput("html_report")
     ))
   }

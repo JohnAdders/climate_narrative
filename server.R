@@ -125,16 +125,18 @@ server <- function(input, output, session) {
   })
 
   temp_report_scenario <- function(report_scenario_selection, report_sector_selection) {
-    # TO DO: handle multiple scenario one sector case
+    if(report_scenario_selection == ""){
+      scenario_no <- which(sapply(scenarios, function(sce) !is.null(sce$name))) 
+    } else {
+      scenario_no <- which(sapply(scenarios, `[[`, i = "name") == report_scenario_selection)
+    }
+    
     if (!exists("temp_md_scenario")) temp_md_scenario <- tempfile(fileext = ".md")
     file_conn <- file(temp_md_scenario)
-    scenario_no <- c(
-      which(sapply(scenarios, `[[`, i = "name") == report_scenario_selection),
-      length(report_contents()) - 1
-    )
+    
     writeLines(
-      # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
-      report_contents()[c(1 + scenario_no)],
+      # plus one is for the metadata, not included in 'scenarios' but included in 'report_contents'
+      report_contents()[c(1 + scenario_no, length(report_contents()))],
       file_conn
     )
     close(file_conn)
@@ -142,19 +144,21 @@ server <- function(input, output, session) {
   }
 
   temp_report_scenario_and_commons <- function(report_scenario_selection, report_sector_selection) {
-    # TO DO: handle multiple scenario one sector case
+    if(report_scenario_selection == ""){
+      scenario_no <- which(sapply(scenarios, function(sce) !is.null(sce$name))) 
+    } else {
+      scenario_no <- which(sapply(scenarios, `[[`, i = "name") == report_scenario_selection)
+    }
+
     if (!exists("temp_md_scenario_and_commons")) temp_md_scenario_and_commons <- tempfile(fileext = ".md")
     file_conn <- file(temp_md_scenario_and_commons)
+
     scenario_no <- sort(
-      c(
-        which(sapply(scenarios, `[[`, i = "name") == report_scenario_selection),
-        which(sapply(scenarios, function(sce) !sce$is_scenario)),
-        length(report_contents()) - 1
-      )
+      c(scenario_no, which(sapply(scenarios, function(sce) !sce$is_scenario)))
     )
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
-      report_contents()[c(1, 1 + scenario_no)],
+      report_contents()[c(1, 1 + scenario_no, length(report_contents()))],
       file_conn
     )
     close(file_conn)
@@ -162,8 +166,7 @@ server <- function(input, output, session) {
   }
 
   output$html_report <- renderUI({
-    # TODO: handle one sector multi scenario
-    if (input$report_scenario_selection == "") {
+    if (input$report_scenario_selection == "" & input$report_sector_selection == "") {
       return(p("Please select a scenario or a sector"))
     }
     temp_html <- tempfile(fileext = ".html")
