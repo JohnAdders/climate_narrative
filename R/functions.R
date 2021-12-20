@@ -611,34 +611,3 @@ generic_footer <- function(asset_or_liability = c("asset","liability"), is_asset
     )
   )
 }
-generic_asset_footer <- function(is_asset_mananger = FALSE) {
-  if (is_asset_mananger) {
-    asset_text = "assets under management"
-  } else {
-    asset_text = "assets"
-  }
-  p(
-    list("Enter your firm's exposures by asset class and sector using the following definitions:",
-      tags$ul(
-        tags$li(paste("\"High\": One of your top 5 exposures or more than 10% of total", asset_text)),
-        tags$li(paste("\"Medium\": 5% - 10% of total", asset_text)),
-        tags$li(paste("\"Low\": below 5% of total", asset_text)),
-        tags$li(paste("blank: immaterial or no exposure"))
-      )
-    )
-  )
-}
-
-#' Produce a footer HTML text explaining materiality levels (liabilities)
-generic_liability_footer <- function() {
-  p(
-    list("Enter your firm's exposures by liability class using the following definitions:",
-      tags$ul(
-        tags$li("\"High\": One of your top 5 exposures or more than 10% of total premium income"),
-        tags$li("\"Medium\": 5% - 10% of total premium income"),
-        tags$li("\"Low\": below 5% of total premium income"),
-        tags$li("blank: immaterial or no exposure")
-      )
-    )
-  )
-}
