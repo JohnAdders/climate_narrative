@@ -155,7 +155,6 @@ server <- function(input, output, session) {
         markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
       }
     }
-    #browser()
     writeLines(markdown, file_conn)
     close(file_conn)
     return(NULL)
