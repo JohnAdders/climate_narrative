@@ -11,3 +11,4 @@
 ^secret\.yml$
 ^rsconnect$
 ^\.github$
+^helpers$
