@@ -1,11 +1,13 @@
-#' Main funtion that runs the shiny app
+#' Main function that runs the shiny app.
 #'
+#' @param secrets_file Location of yaml file containing secrets
 #' @param ... Additional parameters to shiny server function
 #'
 #' @import shiny
 #' @import R6
 #' @export
-climate_narrative <- function(...) {
+run_shiny_app <- function(secrets_file="secret.yml", ...) {
+  load_secrets(secrets_file)
   addResourcePath(
     "climate_narrative",
     system.file("www", package = "climate.narrative")
@@ -27,4 +29,14 @@ climate_narrative <- function(...) {
     QuestionTab$new("report", "type", NULL)
   )
   shinyApp(ui = ui(), server = server, ...)
+}
+
+load_secrets <- function(secrets_file="secret.yml") {
+  if (file.exists(secrets_file)) {
+    secret_pars <- yaml::read_yaml(secrets_file)
+    global$dev <- FALSE
+    for (i in 1:length(secret_pars)) global[[names(secret_pars)[i]]] <- secret_pars[[i]]
+  } else {
+    global$dev <- TRUE
+  }
 }
