@@ -173,7 +173,7 @@ server <- function(input, output, session) {
     writeLines(
       gsub(
         paste0(getwd(), "/www"),
-        "/climate_narrative",
+        "climate_narrative",
         temp
       ),
       file_conn

@@ -124,7 +124,7 @@ QuestionTab <- R6Class(
         tabpanel_params <- add_param(
           tabpanel_params,
           tag("header", list(
-            img(src = "/climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
+            img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
           ))
         )
       }
