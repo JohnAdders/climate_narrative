@@ -665,7 +665,7 @@ heartbeat_footer <- function() {
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 #'
 #' @param site_key Site key from google
-GreCAPTCHAv3Ui <- function(site_key) {
+recaptcha_ui <- function(site_key) {
   tagList(tags$head(
     tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=", site_key)),
   ))
@@ -681,7 +681,7 @@ GreCAPTCHAv3Ui <- function(site_key) {
 #' @param field_id Field to trigger
 #'
 #' @importFrom shinyjs runjs
-GreCAPTCHAv3js <- function(site_key, action, field_id) {
+recaptcha_js <- function(site_key, action, field_id) {
   runjs(paste0("
         grecaptcha.ready(function () {
           grecaptcha.execute('", site_key, "', { action: '", action, "' }).then(function (token) {
@@ -698,7 +698,7 @@ GreCAPTCHAv3js <- function(site_key, action, field_id) {
 #'
 #' @param secret_key Secret key from google
 #' @param recaptcha_response Response from google
-GreCAPTCHAv3Server <- function(secret_key, recaptcha_response) {
+recaptcha_server <- function(secret_key, recaptcha_response) {
   response <- httr::POST(
     "https://www.google.com/recaptcha/api/siteverify",
     body = list(

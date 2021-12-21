@@ -1,11 +1,11 @@
 passes_captcha <- function(input, session) {
-  result <- GreCAPTCHAv3Server(global$captcha_secret, input$responseReceived)
+  result <- recaptcha_server(global$captcha_secret, input$responseReceived)
   return(result$success && result$score > 0.5)
 }
 
 request_captcha <- function(output, session) {
   if (!is.null(global$captcha_code) && !is.null(global$captcha_secret)) {
-    GreCAPTCHAv3js(global$captcha_code, "homepage", "responseReceived")
+    recaptcha_js(global$captcha_code, "homepage", "responseReceived")
   } else {
     output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
   }
@@ -87,7 +87,7 @@ tab_auth_ui <- function(captcha_code) {
       p(strong("Copyright 2021 The Climate Financial Risk Forum"))
     ),
     hr(),
-    GreCAPTCHAv3Ui(captcha_code),
+    recaptcha_ui(captcha_code),
     fluidRow(
       uiOutput("first_column"),
       column(
