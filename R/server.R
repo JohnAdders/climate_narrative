@@ -76,6 +76,7 @@ server <- function(input, output, session) {
   observeEvent(
     input$wizard,
     {
+      browser()
       updateSelectInput(session, "report_sector_selection", choices=c("", aggregated_type_inputs()$item))
     }
   )
@@ -125,7 +126,6 @@ server <- function(input, output, session) {
   })
 
   temp_report_scenario <- function(report_scenario_selection, report_sector_selection) {
-    print(2)
     if(report_scenario_selection == ""){
       scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
     } else {
