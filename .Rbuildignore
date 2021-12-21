@@ -10,4 +10,4 @@
 ^.*\.tar\.gz$
 ^secret\.yml$
 ^rsconnect$
-
+^\.github$
