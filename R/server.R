@@ -125,18 +125,15 @@ server <- function(input, output, session) {
   })
 
   temp_report_scenario <- function(report_scenario_selection, report_sector_selection) {
+    print(2)
     if(report_scenario_selection == ""){
-      scenario_no <- which(sapply(scenarios, function(sce) !is.null(sce$name))) 
+      scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
     } else {
-      scenario_no <- which(sapply(scenarios, `[[`, i = "name") == report_scenario_selection)
+      scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
     }
-    
     if (!exists("temp_md_scenario")) temp_md_scenario <- tempfile(fileext = ".md")
     file_conn <- file(temp_md_scenario)
-    scenario_no <- c(
-      which(sapply(global$scenarios, `[[`, i = "name") == report_selection),
-    )
-    add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", getwd(),"/www/", "\\1\\2"), x, perl=T)
+    add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", system.file("www", package = "climate.narrative"), "/", "\\1\\2"), x, perl=T)
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
       add_path_to_graphs(report_contents()[c(1 + scenario_no, length(report_contents()))]),
@@ -148,24 +145,16 @@ server <- function(input, output, session) {
 
   temp_report_scenario_and_commons <- function(report_scenario_selection, report_sector_selection) {
     if(report_scenario_selection == ""){
-      scenario_no <- which(sapply(scenarios, function(sce) !is.null(sce$name))) 
+      scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
     } else {
-      scenario_no <- which(sapply(scenarios, `[[`, i = "name") == report_scenario_selection)
+      scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
     }
 
     if (!exists("temp_md_scenario_and_commons")) temp_md_scenario_and_commons <- tempfile(fileext = ".md")
     file_conn <- file(temp_md_scenario_and_commons)
 
     scenario_no <- sort(
-<<<<<<< HEAD:R/server.R
-      c(
-        which(sapply(global$scenarios, `[[`, i = "name") == report_selection),
-        which(sapply(global$scenarios, function(sce) !sce$is_scenario)),
-        length(report_contents()) - 1
-      )
-=======
-      c(scenario_no, which(sapply(scenarios, function(sce) !sce$is_scenario)))
->>>>>>> feature/sectorfilter:server.R
+      c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
     )
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
@@ -183,7 +172,7 @@ server <- function(input, output, session) {
     graph_lines <- grep("^!\\[",markdown) 
     for (i in graph_lines){
       image_name <- substring(stringi::stri_match(markdown[i], regex="\\([[:graph:]]*.png"),2)
-      image_attributes <- attributes(png::readPNG(paste0(getwd(), "/www/", image_name), info=TRUE))$info
+      image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
       if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
       if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
         print(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
@@ -200,13 +189,8 @@ server <- function(input, output, session) {
       return(p("Please select a scenario or a sector"))
     }
     temp_html <- tempfile(fileext = ".html")
-<<<<<<< HEAD:R/server.R
     rmarkdown::render(
-      input = temp_report_scenario(input$report_selection),
-=======
-    result <- includeHTML(rmarkdown::render(
       input = temp_report_scenario(input$report_scenario_selection, input$report_sector_selection),
->>>>>>> feature/sectorfilter:server.R
       output_file = temp_html,
       output_format = rmarkdown::html_document(
         number_sections = FALSE,
@@ -219,7 +203,7 @@ server <- function(input, output, session) {
     temp <- readLines(file_conn)
     writeLines(
       gsub(
-        paste0(getwd(), "/www"),
+        system.file("www", package = "climate.narrative"),
         "/climate_narrative",
         temp
       ),
@@ -235,7 +219,7 @@ server <- function(input, output, session) {
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
-    content = function(file, res_path = paste0(getwd(), "/www")) {
+    content = function(file, res_path = system.file("www", package = "climate.narrative")) {
       showModal(
         modalDialog(
           "Report rendering in progress... when complete your download will start automatically",

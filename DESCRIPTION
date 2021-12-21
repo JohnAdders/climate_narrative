@@ -28,4 +28,5 @@ Imports:
     tippy,
     uuid,
     yaml,
-    R6
+    R6,
+    png
