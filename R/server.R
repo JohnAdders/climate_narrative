@@ -2,6 +2,9 @@ server <- function(input, output, session) {
   heartbeat(input, output, session)
   session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
   session$userData$captcha_validated <- FALSE
+  session$userData$temp_md_full <- tempfile(fileext = ".md")
+  session$userData$temp_md_scenario <- tempfile(fileext = ".md")
+  session$userData$temp_md_scenario_and_commons <- tempfile(fileext = ".md")
 
   # the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
@@ -125,27 +128,32 @@ server <- function(input, output, session) {
   #    single scenario for HTML
   #    single scenario with common sectors (e.g. introduction) for button RTF
 
-  temp_report_full <- reactive({
-    # writing a full report to (temporary) file first
-    # this is necessary as markdown::render takes file as an argument
-    # not used at the moment, but do not delete - will be sent by email probably
-    if (!exists("temp_md_full")) temp_md_full <- tempfile(fileext = ".md")
+  #' Function that writes a full report to (temporary) file
+  #'
+  #' this is necessary as markdown::render takes file as an argument
+  #' not used at the moment, but do not delete - will be sent by email probably
+  produce_full_report <- function(tempfile){
     file_conn <- file(temp_md_full)
     writeLines(report_contents(), file_conn)
     close(file_conn)
-    temp_md_full
-  })
-
-  temp_report_scenario <- function(report_scenario_selection, report_sector_selection) {
-    # TODO: unused second argument - remove?
-    # TODO: deduplicate with the next function
-    if(report_scenario_selection == ""){
+    return(NULL)
+  }
+  
+  #' Function that writes a full report to (temporary) file
+  #'
+  #' this is necessary as markdown::render takes file as an argument
+  produce_selective_report <- function(report_scenario_selection, include_common_sections, tempfile){
+    if (report_scenario_selection == ""){
       scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
     } else {
       scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
     }
-    if (!exists("temp_md_scenario")) temp_md_scenario <- tempfile(fileext = ".md")
-    file_conn <- file(temp_md_scenario)
+    if (include_common_sections){
+      scenario_no <- sort(
+        c(0, scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
+      )
+    }
+    file_conn <- file(tempfile)
     add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", system.file("www", package = "climate.narrative"), "/", "\\1\\2"), x, perl=T)
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
@@ -153,30 +161,7 @@ server <- function(input, output, session) {
       file_conn
     )
     close(file_conn)
-    temp_md_scenario
-  }
-
-  temp_report_scenario_and_commons <- function(report_scenario_selection, report_sector_selection) {
-    if(report_scenario_selection == ""){
-      scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
-    } else {
-      scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
-    }
-
-    if (!exists("temp_md_scenario_and_commons")) temp_md_scenario_and_commons <- tempfile(fileext = ".md")
-    file_conn <- file(temp_md_scenario_and_commons)
-
-    scenario_no <- sort(
-      c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
-    )
-    writeLines(
-      # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
-      report_contents()[c(1, 1 + scenario_no, length(report_contents()))],
-      file_conn
-    )
-    close(file_conn)
-    ensure_images_fit_page(temp_md_scenario_and_commons)
-    temp_md_scenario_and_commons
+    return(NULL) 
   }
 
   ensure_images_fit_page <- function(filename, max_width_inch=7){
@@ -202,8 +187,9 @@ server <- function(input, output, session) {
       return(p("Please select a scenario or a sector"))
     }
     temp_html <- tempfile(fileext = ".html")
+    produce_selective_report(input$report_scenario_selection, FALSE, session$userData$temp_md_scenario)
     rmarkdown::render(
-      input = temp_report_scenario(input$report_scenario_selection, input$report_sector_selection),
+      input = session$userData$temp_md_scenario,
       output_file = temp_html,
       output_format = rmarkdown::html_document(
         number_sections = FALSE,
@@ -240,9 +226,10 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      fs <- file.size(temp_report_scenario_and_commons(input$report_scenario_selection, input$report_sector_selection))
+      produce_selective_report(input$report_scenario_selection, TRUE, session$userData$temp_md_scenario_and_commons)
+      fs <- file.size(session$userData$temp_md_scenario_and_commons)
       rmarkdown::render(
-        input = temp_report_scenario_and_commons(input$report_scenario_selection, input$report_sector_selection),
+        input = session$userData$temp_md_scenario_and_commons,
         output_file = file,
         output_format = rmarkdown::rtf_document(
           toc = TRUE,
@@ -257,7 +244,7 @@ server <- function(input, output, session) {
       # I found that in some cases the rendering silently overwrites the markdown file
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(temp_report_scenario_and_commons(input$report_scenario_selection, input$report_sector_selection)) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+      if (file.size(session$userData$temp_md_scenario_and_commons) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
       removeModal()
     }
   )
