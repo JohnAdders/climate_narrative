@@ -4,12 +4,12 @@
 #' @param text Text to process
 #' @param make_camelcase Should we make text camel case
 #'
-remove_special_characters <- function(text, make_camelcase=TRUE) {
+remove_special_characters <- function(text, make_camelcase = TRUE) {
   out <- text
-  if(make_camelcase){
-    out <- gsub('\\ (\\w?)', '\\U\\1', tolower(out), perl=TRUE)
-    out <- gsub('\\_(\\w?)', '\\U\\1', out, perl=TRUE)
-    out <- gsub('\\.(\\w?)', '\\U\\1', out, perl=TRUE)
+  if (make_camelcase) {
+    out <- gsub("\\ (\\w?)", "\\U\\1", tolower(out), perl = TRUE)
+    out <- gsub("\\_(\\w?)", "\\U\\1", out, perl = TRUE)
+    out <- gsub("\\.(\\w?)", "\\U\\1", out, perl = TRUE)
   }
   gsub("[_. ]", "", out)
 }
@@ -98,7 +98,7 @@ restore_spaces <- function(camelcase) {
     from = c("Sme", "Smes", "Uk", "Us", "And", "To", "To(non-sme)", "to(non-sme)"),
     to = c("SME", "SMEs", "UK", "US", "and", "to", "to (non-SME)", "to (non-SME)")
   )
-  for(i in 1:nrow(substitutions)){
+  for (i in 1:nrow(substitutions)) {
     s <- gsub(substitutions$from[i], substitutions$to[i], s, fixed = TRUE)
   }
   s
@@ -115,13 +115,13 @@ produce_tooltip_matrix <- function(exposure_matrix) {
     nrow = nrow(exposure_matrix),
     ncol = ncol(exposure_matrix) - 2
   )
-  for (i in 1:nrow(out)){
+  for (i in 1:nrow(out)) {
     row_tooltip <- global$products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
-    for (j in 1:ncol(out)){
+    for (j in 1:ncol(out)) {
       exposure_class <- exposure_matrix[i, j + 2]
-      if (exposure_class != ""){
+      if (exposure_class != "") {
         exposure_class_tooltip <- global$exposure_classes[[exposure_class]][["tooltip"]]
-        if (!is.null(exposure_class_tooltip)){
+        if (!is.null(exposure_class_tooltip)) {
           if (!is.null(row_tooltip)) {
             out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
           } else {
@@ -213,7 +213,7 @@ exposure_grid_server <- function(input,
             remove_special_characters(colnames(exposure_matrix)[j + 1]),
             sep = "_"
           ),
-          tooltip_matrix[i,j-1],
+          tooltip_matrix[i, j - 1],
           dev,
           width
         )
@@ -235,10 +235,10 @@ exposure_grid_server <- function(input,
 #' @param location starting column
 #' @param n_char Number of characters
 #'
-string_break_line_with_spaces <- function(string, line_width, location, n_char=1){
+string_break_line_with_spaces <- function(string, line_width, location, n_char = 1) {
   paste0(
     substring(string, 1, location - 1),
-    paste(rep(" ", (1-location) %% line_width), collapse=""),
+    paste(rep(" ", (1 - location) %% line_width), collapse = ""),
     substring(string, location + n_char)
   )
 }
@@ -251,18 +251,18 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char=1
 #'
 #' @importFrom stats na.omit
 #'
-string_add_spaces_to_make_equal_lines <- function(string, line_width){
+string_add_spaces_to_make_equal_lines <- function(string, line_width) {
   out <- string
-  newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][,1])
+  newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
   i <- 1
-  while(i * line_width < nchar(out)){
-    for(loc in newline_locations[newline_locations <= 1 + i * line_width]){
+  while (i * line_width < nchar(out)) {
+    for (loc in newline_locations[newline_locations <= 1 + i * line_width]) {
       out <- string_break_line_with_spaces(out, line_width, loc, 4)
     }
-    space_locations <- stringi::stri_locate_all(out, fixed = " ") [[1]][,1]
+    space_locations <- stringi::stri_locate_all(out, fixed = " ")[[1]][, 1]
     last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
-    if(length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
-    newline_locations <- na.omit(stringi::stri_locate_all(out, fixed="<br>")[[1]][,1])
+    if (length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
+    newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
     i <- i + 1
   }
   return(out)
@@ -276,9 +276,9 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width){
 #' @param string String to Format
 #' @param col_width Width of column
 #'
-string_format_lines <- function(string, col_width){
-  if (grepl("<br>", string)){
-    out <- paste0("- ",gsub("<br>", "<br> - ", string))
+string_format_lines <- function(string, col_width) {
+  if (grepl("<br>", string)) {
+    out <- paste0("- ", gsub("<br>", "<br> - ", string))
   } else {
     out <- string
   }
@@ -298,73 +298,73 @@ string_format_lines <- function(string, col_width){
 #' @param dot_to_space Convert dots in headings to spaces
 #' @param col_widths Width of columns
 #'
-table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=NULL) {
+table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths = NULL) {
   headers <- colnames(table)
-  if(is.null(col_widths)){
+  if (is.null(col_widths)) {
     col_widths <- pmax(apply(table, 2, function(x) max(nchar(x))), nchar(headers)) + 4
   }
   if (dot_to_space) {
     headers <- gsub(".", " ", headers, fixed = TRUE)
   }
-  for(i in 1:ncol(table)) {
-    table[,i] <- as.character(table[,i])
-    table[,i] <- gsub("\n", " ", table[,i])
+  for (i in 1:ncol(table)) {
+    table[, i] <- as.character(table[, i])
+    table[, i] <- gsub("\n", " ", table[, i])
     for (j in 1:nrow(table)) {
-      table[j,i] <- string_format_lines(table[j,i], col_widths[i] - 2)
+      table[j, i] <- string_format_lines(table[j, i], col_widths[i] - 2)
     }
   }
   split_rows <- ceiling(c(
     max(nchar(headers) / (col_widths - 2)),
-    apply(table, 1, function(x) max(nchar(x)/(col_widths - 2)))
+    apply(table, 1, function(x) max(nchar(x) / (col_widths - 2)))
   ))
-  out <- matrix("", nrow=0,ncol=ncol(table))
+  out <- matrix("", nrow = 0, ncol = ncol(table))
   emptyline <- rep("", ncol(table))
   sepline <- emptyline
   for (i in 1:length(sepline)) {
-    sepline[i] <- paste0(paste(rep("-", col_widths[i]), collapse=""), "+")
+    sepline[i] <- paste0(paste(rep("-", col_widths[i]), collapse = ""), "+")
   }
   sepline[1] <- paste0("+", sepline[1])
-  rowsout <- matrix(emptyline, nrow=split_rows[1], ncol=length(emptyline), byrow=F)
+  rowsout <- matrix(emptyline, nrow = split_rows[1], ncol = length(emptyline), byrow = F)
   for (i in 1:ncol(out)) {
     cell_text <- string_format_lines(headers[i], col_widths[i] - 2)
     cell_text <- paste0(
       cell_text,
-      paste(rep(" ", (col_widths[i] - 2) * split_rows[1] - nchar(cell_text)), collapse="")
+      paste(rep(" ", (col_widths[i] - 2) * split_rows[1] - nchar(cell_text)), collapse = "")
     )
-    for(k in 1:split_rows[1]){
-      rowsout[k,i] <- paste0(
+    for (k in 1:split_rows[1]) {
+      rowsout[k, i] <- paste0(
         " ",
         substr(cell_text, 1 + (k - 1) * (col_widths[i] - 2), k * (col_widths[i] - 2)),
         " |"
       )
-      if(i == 1) rowsout[k, i] <- paste0("|", rowsout[k, i])
+      if (i == 1) rowsout[k, i] <- paste0("|", rowsout[k, i])
     }
   }
   out <- rbind(out, rowsout, gsub("-", "=", sepline))
-  for (j in 1:nrow(table)){
-    rowsout <- matrix(emptyline, nrow=split_rows[j + 1], ncol=length(emptyline), byrow=F)
+  for (j in 1:nrow(table)) {
+    rowsout <- matrix(emptyline, nrow = split_rows[j + 1], ncol = length(emptyline), byrow = F)
     for (i in 1:ncol(out)) {
-      cell_text<- table[j, i]
+      cell_text <- table[j, i]
       temp2 <- paste0(
         cell_text,
-        paste(rep(" ", (col_widths[i] - 2) * split_rows[j + 1] - nchar(cell_text)), collapse="")
+        paste(rep(" ", (col_widths[i] - 2) * split_rows[j + 1] - nchar(cell_text)), collapse = "")
       )
-      for (k in 1:split_rows[j+1]){
-        rowsout[k,i] <- paste0(
+      for (k in 1:split_rows[j + 1]) {
+        rowsout[k, i] <- paste0(
           " ",
-          substr(temp2, 1 + (k - 1)*(col_widths[i] - 2), k * (col_widths[i] - 2)),
+          substr(temp2, 1 + (k - 1) * (col_widths[i] - 2), k * (col_widths[i] - 2)),
           " |"
         )
-        if(i == 1) rowsout[k, i] <- paste0("|", rowsout[k, i])
+        if (i == 1) rowsout[k, i] <- paste0("|", rowsout[k, i])
       }
     }
     out <- rbind(out, rowsout, sepline)
   }
 
   out2 <- paste0(
-    paste(sepline,collapse=""),
+    paste(sepline, collapse = ""),
     "\n",
-    paste(apply(out, 1, paste, collapse=""), collapse="\n"),
+    paste(apply(out, 1, paste, collapse = ""), collapse = "\n"),
     "\n"
   )
   return(out2)
@@ -428,8 +428,8 @@ get_exposure_description <- function(item, type_item_inputs) {
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
   # add unique identifier if rownames are not unique (i.e. the same item in multiple columns)
   ordered_type_item_inputs$rowname_unique <- ordered_type_item_inputs$rowname
-  duplicates <- which(duplicated(ordered_type_item_inputs$rowname)|duplicated(ordered_type_item_inputs$rowname, fromLast = TRUE))
-  for (i in duplicates){
+  duplicates <- which(duplicated(ordered_type_item_inputs$rowname) | duplicated(ordered_type_item_inputs$rowname, fromLast = TRUE))
+  for (i in duplicates) {
     ordered_type_item_inputs$rowname_unique[i] <- paste0(
       ordered_type_item_inputs$rowname[i],
       " (",
@@ -482,10 +482,10 @@ get_exposure_description <- function(item, type_item_inputs) {
 #' @param item name of item for which appendix is to be produced
 #' @return markdown-formatted appendix section (h3)
 #'
-get_exposure_appendix <- function(item){
+get_exposure_appendix <- function(item) {
   appendix <- global$exposure_classes[[item]][["appendix"]]
-  if(is.null(appendix)){
-    return (c())
+  if (is.null(appendix)) {
+    return(c())
   } else {
     return(
       paste0(
@@ -513,9 +513,15 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 
   # define header depending on physical/transition and low/high
   if (physical_or_transition == "transition") {
-    riskname <- switch(high_or_low, high = "Disorderly transition", low = "Orderly transition")
+    riskname <- switch(high_or_low,
+      high = "Disorderly transition",
+      low = "Orderly transition"
+    )
   } else {
-    riskname <- switch(high_or_low, high = "High physical risk", low = "Low physical risk")
+    riskname <- switch(high_or_low,
+      high = "High physical risk",
+      low = "Low physical risk"
+    )
   }
   header_text <- paste0(
     global$exposure_classes[[item]][["name"]],
@@ -556,7 +562,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 #' @param scenario Scenario name
 #'
 get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
-  if(is.null(scenario)) warning(paste("No scenario file for ", scenario))
+  if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
   description <- scenario$description
   is_scenario <- scenario$is_scenario
@@ -593,12 +599,12 @@ get_references <- function(aggregated_table, type_inputs) {
   out <- ""
   if (nrow(aggregated_table)) {
     out <- paste0(
-        out,
-        "# References\n\n"
-      )
+      out,
+      "# References\n\n"
+    )
     for (i in 1:nrow(aggregated_table)) {
       item <- aggregated_table$item[i]
-      if (length(global$exposure_classes[[item]][["references"]])){
+      if (length(global$exposure_classes[[item]][["references"]])) {
         out <- paste0(
           out,
           "\n\n## ",
@@ -610,8 +616,8 @@ get_references <- function(aggregated_table, type_inputs) {
     }
   }
   # Do not show the section if there are no references
-  if(out == "# References\n\n"){
-    out = ""
+  if (out == "# References\n\n") {
+    out <- ""
   }
   return(out)
 }
@@ -635,17 +641,18 @@ heartbeat <- function(input, output, session) {
 heartbeat_footer <- function() {
   list(
     hr(),
-    tag("footer",
+    tag(
+      "footer",
       list(
         p("Copyright 2021 The Climate Financial Risk Forum"),
         p(
-          a(href="https://github.com/JohnAdders/climate_narrative", "Source Code", target="_blank"),
+          a(href = "https://github.com/JohnAdders/climate_narrative", "Source Code", target = "_blank"),
           " | ",
-          a(href="mailto:john.adcock@aviva.com?subject=Climate%20Narrative%20support%20request", "Beta Support"),
+          a(href = "mailto:john.adcock@aviva.com?subject=Climate%20Narrative%20support%20request", "Beta Support"),
           " | ",
-          a(href="https://github.com/JohnAdders/climate_narrative/issues?q=is%3Aissue+is%3Aopen+label%3Abug", "Known Issues", target="_blank"),
+          a(href = "https://github.com/JohnAdders/climate_narrative/issues?q=is%3Aissue+is%3Aopen+label%3Abug", "Known Issues", target = "_blank"),
           " | ",
-          a(href="https://github.com/JohnAdders/climate_narrative/wiki/Contributors", "Contributors", target="_blank")
+          a(href = "https://github.com/JohnAdders/climate_narrative/wiki/Contributors", "Contributors", target = "_blank")
         )
       )
     )
@@ -710,8 +717,8 @@ GreCAPTCHAv3Server <- function(secret_key, recaptcha_response) {
 #' @param asset_or_liability A string with the type of exposure page
 #' @param is_asset_mananger Is this display for an asset manager
 #'
-generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE){
-  if(asset_or_liability == "asset"){
+generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
+  if (asset_or_liability == "asset") {
     case_name <- "asset class and sector"
     if (is_asset_mananger) {
       total_name <- "assets under management"

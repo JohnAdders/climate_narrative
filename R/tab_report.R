@@ -28,7 +28,7 @@ tab_report_ui <- function() {
 }
 
 tab_report_server <- function(input, output, session, tab) {
-  if (global$dev == TRUE){
+  if (global$dev == TRUE) {
     updateSelectInput(session, "report_selection", selected = global$scenarios[[2]]$name)
   }
   observeEvent(
@@ -47,7 +47,7 @@ tab_report_server <- function(input, output, session, tab) {
     }
   )
   observeEvent(
-    input[[paste0("page_",  as.integer(factor("report", global$ordered_tabs)), "_previous")]],
+    input[[paste0("page_", as.integer(factor("report", global$ordered_tabs)), "_previous")]],
     updateSelectInput(session, "report_selection", selected = "")
   )
 }

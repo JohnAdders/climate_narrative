@@ -20,16 +20,16 @@ server <- function(input, output, session) {
       values = unlist(x, use.names = FALSE),
       stringsAsFactors = FALSE
     )
-    new_col_names <- c("type", "subtype", "rowname", "product", "colname", "item", "product_description","product_text")
-    out <- cbind(out, matrix(NA,nrow=nrow(out),ncol=length(new_col_names)))
+    new_col_names <- c("type", "subtype", "rowname", "product", "colname", "item", "product_description", "product_text")
+    out <- cbind(out, matrix(NA, nrow = nrow(out), ncol = length(new_col_names)))
     colnames(out) <- c("names", "values", new_col_names)
     splitted_names <- strsplit(out$names, "_", fixed = TRUE)
     for (i in 1:nrow(out)) {
       if (length(splitted_names[[i]]) == 6) {
         out[i, 3:8] <- splitted_names[[i]]
         if (is.null(global$products[[out$product[i]]])) {
-          print(out[i,])
-          warning(paste('No product description for', out$product[i]))
+          print(out[i, ])
+          warning(paste("No product description for", out$product[i]))
         } else {
           out$product_description[i] <- global$products[[out$product[i]]]$description
           out$product_text[i] <- global$products[[out$product[i]]]$text
@@ -50,7 +50,7 @@ server <- function(input, output, session) {
   })
 
   allow_report <- reactive({
-    return(nrow(type_inputs())>0)
+    return(nrow(type_inputs()) > 0)
   })
 
   aggregated_type_inputs <- reactive({
@@ -58,11 +58,13 @@ server <- function(input, output, session) {
       aggregated_inputs_factor <- aggregate(materiality ~ item, FUN = max, data = type_inputs())
       aggregated_inputs_numeric <- aggregate(
         materiality_num ~ item,
-        FUN = function(x) cut(
-          sum(x),
-          breaks = c(0, 4.5, 9.5, 100),
-          labels = c("Low", "Medium", "High")
-        ),
+        FUN = function(x) {
+          cut(
+            sum(x),
+            breaks = c(0, 4.5, 9.5, 100),
+            labels = c("Low", "Medium", "High")
+          )
+        },
         data = type_inputs()
       )
       aggregated_inputs <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
@@ -122,7 +124,7 @@ server <- function(input, output, session) {
       which(sapply(global$scenarios, `[[`, i = "name") == report_selection),
       length(report_contents()) - 1
     )
-    add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", getwd(),"/www/", "\\1\\2"), x, perl=T)
+    add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", getwd(), "/www/", "\\1\\2"), x, perl = T)
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
       add_path_to_graphs(report_contents()[c(1 + scenario_no)]),
@@ -218,10 +220,10 @@ server <- function(input, output, session) {
 
   # finally, tab-specific server function collation
   switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
-  report_tab_no <- as.integer(factor('report', levels=global$ordered_tabs))
+  report_tab_no <- as.integer(factor("report", levels = global$ordered_tabs))
   for (tab in global$tabs) {
     # "sum" below is a trick to include NULL case as sum(NULL)=0
-    if (sum(tab$next_tab) == report_tab_no){
+    if (sum(tab$next_tab) == report_tab_no) {
       tab$server(input, output, session, switch_page, allow_report)
     } else {
       tab$server(input, output, session, switch_page)

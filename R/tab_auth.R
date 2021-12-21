@@ -22,29 +22,33 @@ process_progress <- function(output, should_continue) {
 
 render_dynamic_auth_ui <- function(output, session) {
   if (!is.null(global$beta_code)) {
-    output$first_column <- renderUI({NULL})
-    output$auth_text <- renderUI({p("Enter the beta code you have been sent")})
+    output$first_column <- renderUI({
+      NULL
+    })
+    output$auth_text <- renderUI({
+      p("Enter the beta code you have been sent")
+    })
   } else {
-    output$first_column <- renderUI(
-      {
-        column(
-          6,
-          p("Enter your email address to receive the verification code"),
-          textInput(
-            inputId = "email",
-            label = tagList(icon("user"), "Email"),
-            placeholder = "Enter your email here"
-          ),
-          actionButton(
-            inputId = "button_send_code",
-            label = "Send the code"
-          ),
-          tippy::tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
-          textOutput("code_send_result")
-        )
-      }
-    )
-    output$auth_text <- renderUI({p("Enter the verification code received in your email")})
+    output$first_column <- renderUI({
+      column(
+        6,
+        p("Enter your email address to receive the verification code"),
+        textInput(
+          inputId = "email",
+          label = tagList(icon("user"), "Email"),
+          placeholder = "Enter your email here"
+        ),
+        actionButton(
+          inputId = "button_send_code",
+          label = "Send the code"
+        ),
+        tippy::tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
+        textOutput("code_send_result")
+      )
+    })
+    output$auth_text <- renderUI({
+      p("Enter the verification code received in your email")
+    })
   }
 }
 
@@ -98,7 +102,7 @@ tab_auth_ui <- function(captcha_code) {
           inputId = "button_check_code",
           label = "Validate the code"
         ),
-        tippy::tippy_this("button_check_code", 'Click to proceed (if the code is correct)'),
+        tippy::tippy_this("button_check_code", "Click to proceed (if the code is correct)"),
         textOutput("code_verification_result")
       )
     )
@@ -121,11 +125,11 @@ tab_auth_server <- function(input, output, session, tab) {
   observeEvent(
     input$responseReceived,
     {
-      if(session$userData$captcha_validated == FALSE) {
+      if (session$userData$captcha_validated == FALSE) {
         session$userData$captcha_validated <- passes_captcha(input, session)
       }
-      if(session$userData$captcha_validated == TRUE) {
-        if(!is.null(global$beta_code)) {
+      if (session$userData$captcha_validated == TRUE) {
+        if (!is.null(global$beta_code)) {
           process_progress(output, input$code == global$beta_code)
         } else {
           send_auth_code_email(input, output, session)
@@ -137,14 +141,14 @@ tab_auth_server <- function(input, output, session, tab) {
   observeEvent(
     input$button_check_code,
     {
-      if(!is.null(global$beta_code)) {
+      if (!is.null(global$beta_code)) {
         request_captcha(output, session)
       } else {
         process_progress(
           output,
           (
             input$code == global$verification_code &&
-            session$userData$captcha_validated == TRUE
+              session$userData$captcha_validated == TRUE
           )
         )
       }

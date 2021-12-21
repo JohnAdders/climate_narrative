@@ -5,7 +5,7 @@ tab_title_ui <- function() {
 }
 
 tab_title_server <- function(input, output, session, tab) {
-  if (global$dev == TRUE){
+  if (global$dev == TRUE) {
     tab$next_tab <- as.integer(factor("type", global$ordered_tabs))
   }
 }

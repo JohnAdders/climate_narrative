@@ -75,19 +75,21 @@ QuestionTab <- R6Class(
     #' @param switch_page function to be passed that changes the active tab
     #' (used in prev/next buttons)
     #' @param allow_next (optional) additional condition to be checked before going to next tab
-    server = function(input, output, session, switch_page, allow_next=function(){TRUE}) {
+    server = function(input, output, session, switch_page, allow_next = function() {
+                        TRUE
+                      }) {
       if (!is.null(self$exposure)) {
-        if(ncol(self$exposure) < 5) {
-          width <- '12em'
+        if (ncol(self$exposure) < 5) {
+          width <- "12em"
         } else {
-          width <- '6em'
+          width <- "6em"
         }
         exposure_grid_server(
           input,
           output,
           self$exposure,
           produce_tooltip_matrix(self$exposure),
-          paste(self$type, self$subtype, sep="_"),
+          paste(self$type, self$subtype, sep = "_"),
           global$dev,
           width
         )
@@ -102,7 +104,7 @@ QuestionTab <- R6Class(
         observeEvent(
           input[[paste0(self$id, "_next")]],
           {
-            if(allow_next()){
+            if (allow_next()) {
               switch_page(as.integer(self$next_tab))
             }
           }
@@ -134,7 +136,7 @@ QuestionTab <- R6Class(
       if (!is.null(self$exposure)) {
         tabpanel_params <- add_param(
           tabpanel_params,
-          exposure_grid_ui(paste(self$type, self$subtype, sep="_"))
+          exposure_grid_ui(paste(self$type, self$subtype, sep = "_"))
         )
       }
       tabpanel_params <- add_param(tabpanel_params, br())

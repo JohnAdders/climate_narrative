@@ -5,14 +5,14 @@
 #' @import shiny
 #' @import R6
 #' @export
-climate_narrative <- function(...){
+climate_narrative <- function(...) {
   addResourcePath(
     "climate_narrative",
     system.file("www", package = "climate.narrative")
   )
   global$tabs <- list(
     QuestionTab$new("title", NULL, "auth", FALSE, FALSE),
-    QuestionTab$new("auth", "title", NULL, ui_settings = list(captcha_code=global$captcha_code)),
+    QuestionTab$new("auth", "title", NULL, ui_settings = list(captcha_code = global$captcha_code)),
     QuestionTab$new("type", "auth", "ins_l"),
     QuestionTab$new("bank_re", "type", "bank_c", TRUE, TRUE, global$exposures$bankRe, "bank", "R"),
     QuestionTab$new("bank_c", "bank_re", "bank_sov", TRUE, TRUE, global$exposures$bankCorporate, "bank", "C"),
@@ -26,5 +26,5 @@ climate_narrative <- function(...){
     QuestionTab$new("am_re", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
     QuestionTab$new("report", "type", NULL)
   )
-  shinyApp(ui=ui(), server=server, ...)
+  shinyApp(ui = ui(), server = server, ...)
 }
