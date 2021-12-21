@@ -68,7 +68,10 @@ server <- function(input, output, session) {
       return (aggregated_type_inputs())
     } else {
       out <- aggregated_type_inputs()
-      return(out[out$item == input$report_sector_selection, ])
+      selected_item <- names(
+        which(sapply(global$exposure_classes, `[[`, i = "name") == input$report_sector_selection)
+      )
+      return(out[out$item == selected_item, ])
     }
   })
   
@@ -76,8 +79,16 @@ server <- function(input, output, session) {
   observeEvent(
     input$wizard,
     {
-      browser()
-      updateSelectInput(session, "report_sector_selection", choices=c("", aggregated_type_inputs()$item))
+      updateSelectInput(
+        session,
+        "report_sector_selection",
+        choices=c(
+          "",
+          unname(sapply(global$exposure_classes, `[[`, i = "name"))[
+            names(global$exposure_classes) %in% aggregated_type_inputs()$item
+          ]
+        )
+      )
     }
   )
   
@@ -126,6 +137,8 @@ server <- function(input, output, session) {
   })
 
   temp_report_scenario <- function(report_scenario_selection, report_sector_selection) {
+    # TODO: unused second argument - remove?
+    # TODO: deduplicate with the next function
     if(report_scenario_selection == ""){
       scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
     } else {
