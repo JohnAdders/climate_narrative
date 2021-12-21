@@ -148,7 +148,7 @@ server <- function(input, output, session) {
     graph_lines <- grep("^!\\[",markdown) 
     for (i in graph_lines){
       image_name <- substring(stringi::stri_match(markdown[i], regex="\\([[:graph:]]*.png"),2)
-      image_attributes <- attributes(png::readPNG(paste0(res_path, "/", image_name), info=TRUE))$info
+      image_attributes <- attributes(png::readPNG(paste0(getwd(), "/www/", image_name), info=TRUE))$info
       if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
       if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
         print(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
