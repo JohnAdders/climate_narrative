@@ -173,7 +173,26 @@ server <- function(input, output, session) {
       file_conn
     )
     close(file_conn)
+    ensure_images_fit_page(temp_md_scenario_and_commons)
     temp_md_scenario_and_commons
+  }
+
+  ensure_images_fit_page <- function(filename, max_width_inch=7){
+    file_conn <- file(filename)
+    markdown <- readLines(file_conn)
+    graph_lines <- grep("^!\\[",markdown) 
+    for (i in graph_lines){
+      image_name <- substring(stringi::stri_match(markdown[i], regex="\\([[:graph:]]*.png"),2)
+      image_attributes <- attributes(png::readPNG(paste0(getwd(), "/www/", image_name), info=TRUE))$info
+      if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
+      if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
+        print(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
+        markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
+      }
+    }
+    writeLines(markdown, file_conn)
+    close(file_conn)
+    return(NULL)
   }
 
   output$html_report <- renderUI({
