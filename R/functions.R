@@ -1,6 +1,8 @@
 #' Remove special characters (in particular spaces) from a string 
 #' 
 #' Additionally (optionally) make it camelcase.
+#' @param text string to convert
+#' @param make_camelcase bool. If true (the default), the output will be CamelCase
 remove_special_characters <- function(text, make_camelcase=TRUE) {
   out <- text
   if(make_camelcase){
@@ -14,6 +16,12 @@ remove_special_characters <- function(text, make_camelcase=TRUE) {
 #' Read all files from a directory as a named R list
 #' 
 #' Handles yaml/csv/R files.
+#' @param directory directory to parse
+#' @param file_format format of the files to determine the correct parser.
+#' If "auto" (the default) the format will be guessed by extension of the first file
+#' @param inpackage bool. If true (the default) the directory will be looked for in the package directory
+#' @param remove_special_characters_from_names bool. If true (the default) the name of the resulting list will be stripped
+#' of special characters (in particular underscores)
 read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_special_characters_from_names = TRUE) {
   if (in_package) directory <- system.file(directory, package = "climate.narrative") 
   file_list <- dir(path = directory)
@@ -44,22 +52,31 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
 }
 
 #' Helper function to enable using names to refer tabs instead of numbers
+#' 
+#' @param tab_name name of the tab to convert
 tab_name_to_number <- function(tab_name){
   as.integer(factor(tab_name, global$ordered_tabs))
 }
 
 
 #' Add element to the list (shortcut)
+#' 
+#' @param previous_list the list
+#' @param item_to_add the new element
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
 
 #' Make the first letter of a string upper case
-capitalize <- function(input_string) {
-  return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))
+#' 
+#' @param string the string to convert
+capitalize <- function(string) {
+  return(paste0(toupper(substring(string, 1, 1)), substring(string, 2)))
 }
 
 #' Format (camelcase) string in order to look better in final output (spaces, capitalisation)
+#' 
+#' @param camelcase the string to convert
 restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
   s <- sub("^ ", "", s) # remove first space
@@ -80,6 +97,8 @@ restore_spaces <- function(camelcase) {
 #' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
 #' 
 #' and product-specific text (if any)
+#' @param exposure_matrix the matrix of exposures in the specific format
+#' Its first column is name, second is product, the others contain exposure names or blank cells
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
@@ -110,6 +129,13 @@ produce_tooltip_matrix <- function(exposure_matrix) {
 }
 
 #' Produce the layout of questionnaire tabs (cell, row, whole table)
+#' 
+#' @param exposure_item, 
+#' @param prefix prefix that will be used for inputs id (to ensure they are unique)
+#' @param tooltip_text text of the tooltip (blank by default)
+#' @param dev development mode (default is FALSE and means "" option is initially selected 
+#' if set to TRUE then all options are selected as High to facilitate debugging
+#' @param width passed to selectInput
 exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = FALSE, width = NULL) {
   if (exposure_item == "") {
     form <- p("")
@@ -136,11 +162,22 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = F
 }
 
 #' Grid table of inputs (everything happens in matching server function)
+#' 
+#' @param label the name of output table to look for
 exposure_grid_ui <- function(label) {
   tableOutput(label)
 }
 
 #' Produce a table of inputs with selectInput fields
+#' 
+#' @param input standard shiny server parameter
+#' @param output standard shiny server parameter
+#' @param exposure_matrix matrix of exposures in the specific format
+#' @param tooltip_matrix matrix of tooltips (where empty no tooltip will appear) corresponding to
+#' exposure_matrix
+#' @param label used as a prefix to all input names
+#' @param dev passed to lower level function, if TRUE initially selected values are all "High"
+#' @param width passed to lower level function (ultimately selectInput)
 exposure_grid_server <- function(input,
                                  output,
                                  exposure_matrix,
@@ -179,6 +216,12 @@ exposure_grid_server <- function(input,
 }
 
 #' Insert spaces to the string so that line has exactly given number of characters
+#' 
+#' @param string the string to convert
+#' @param line_width the desired number of characters per line
+#' @param location the location of linebreak (i.e. characters before this position will stay in one line
+#' padded with spaces and everything after this location will be moved to next line)
+#' @param nchar size of linebreak (by default 1) i.e. the number of characters skipped
 string_break_line_with_spaces <- function(string, line_width, location, n_char=1){
   paste0(
     substring(string, 1, location - 1),
@@ -190,6 +233,8 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char=1
 #' Add spaces to a string so that it can be split into blocks of exactly the same length
 #' 
 #' without breaking words
+#' @param string the string to convert
+#' @param line_width the desired number of characters per line
 string_add_spaces_to_make_equal_lines <- function(string, line_width){
   out <- string
   newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][,1])
@@ -211,23 +256,30 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width){
 #' 
 #' additionally, if the string contains at least one "br" tag
 #' format output as a bulleted list
-string_format_lines <- function(string, col_width){
+#' 
+#' @param string the string to convert
+#' @param line_width the desired number of characters per line
+string_format_lines <- function(string, line_width){
   if (grepl("<br>", string)){
     out <- paste0("- ",gsub("<br>", "<br> - ", string))
   } else {
     out <- string
   }
-  out <- string_add_spaces_to_make_equal_lines(out, col_width)
+  out <- string_add_spaces_to_make_equal_lines(out, line_width)
   return(out)
 }
 
 #' Produce a markdown table out of R data frame
 #' 
 #' Create a markdown table, allowing multiline cell entries (lines need to be separated by br tag)
-#' R table headers cannot contain spaces, to get space in the output use a dot
-#' (it will be replaced with space if dot_to_space=T as in default)
+
 #' The function splits the text automatically and adds spaces to match the desired column width
 #' without breaking words
+#' @param table
+#' @param dot_to_space if TRUE (the default) the dots in table headers 
+#' will be replaced with space (useful as R table headers cannot contain spaces)
+#' @param col_widths desired width of columns in the markdown file.
+#' Note: it should translate roughly proportionately to column widths in the rendered doc
 table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=NULL) {
   headers <- colnames(table)
   if(is.null(col_widths)){
@@ -298,44 +350,6 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
     "\n"
   )
   return(out2)
-}
-
-#' A simple version of function to produce markdown tables from R table
-#' 
-#' It does not handle multiline cells
-table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE) {
-  headers <- colnames(table)
-  if (dot_to_space) {
-    headers <- gsub(".", " ", headers, fixed = TRUE)
-  }
-  collapsor <- paste0(
-    paste(
-      rep("&nbsp;", additional_spaces),
-      collapse = ""
-    ),
-    " | "
-  )
-  out <- paste(headers, collapse = collapsor)
-  out <- paste0(
-    out,
-    "\n",
-    paste(
-      rep("---", ncol(table)),
-      collapse = " | "
-    ),
-    "\n"
-  )
-  if (nrow(table)) {
-    for (i in 1:nrow(table)) {
-      out <- paste0(
-        out,
-        gsub("\n", " ", paste(table[i, ], collapse = collapsor)),
-        "\n"
-      )
-    }
-  }
-  out <- paste0(out, "\n\n")
-  return(out)
 }
 
 #' Produce report content for a given item
@@ -525,6 +539,10 @@ get_references <- function(aggregated_table, type_inputs) {
 }
 
 #' Heartbeat function (server part) to prevent app closing due to inactivity
+#' 
+#' @param input standard shiny server parameter
+#' @param output standard shiny server parameter
+#' @param session standard shiny server parameter
 heartbeat <- function(input, output, session) {
   beep <- reactiveTimer(55 * 1000)
   output[["__heartbeat"]] <- renderText({
