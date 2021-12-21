@@ -2,14 +2,21 @@
 % Please edit documentation in R/functions.R
 \name{table_to_markdown_multiline}
 \alias{table_to_markdown_multiline}
-\title{Produce a markdown table out of R data frame}
+\title{Produce a markdown table out of R data frame.}
 \usage{
 table_to_markdown_multiline(table, dot_to_space = TRUE, col_widths = NULL)
+}
+\arguments{
+\item{table}{R data frame with data to display}
+
+\item{dot_to_space}{Convert dots in headings to spaces}
+
+\item{col_widths}{Width of columns}
 }
 \description{
 Create a markdown table, allowing multiline cell entries (lines need to be separated by br tag)
 R table headers cannot contain spaces, to get space in the output use a dot
 (it will be replaced with space if dot_to_space=T as in default)
 The function splits the text automatically and adds spaces to match the desired column width
-without breaking words
+without breaking words.
 }

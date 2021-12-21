@@ -6,6 +6,9 @@
 \usage{
 capitalize(input_string)
 }
+\arguments{
+\item{input_string}{String to process}
+}
 \description{
 Make the first letter of a string upper case
 }

@@ -6,6 +6,13 @@
 \usage{
 get_scenario_descriptions(aggregated_table, type_inputs, scenario)
 }
+\arguments{
+\item{aggregated_table}{Table of all possible items}
+
+\item{type_inputs}{Drop box items}
+
+\item{scenario}{Scenario name}
+}
 \description{
 Lower level report helper function responsible for single scenario description
 }

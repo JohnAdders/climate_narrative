@@ -1,6 +1,9 @@
-#' Remove special characters (in particular spaces) from a string 
-#' 
-#' Additionally (optionally) make it camelcase.
+#' Remove special characters (in particular spaces) from a string
+#' and optionally make it camelcase.
+#'
+#' @param text Text to process
+#' @param make_camelcase Should we make text camel case
+#'
 remove_special_characters <- function(text, make_camelcase=TRUE) {
   out <- text
   if(make_camelcase){
@@ -11,11 +14,19 @@ remove_special_characters <- function(text, make_camelcase=TRUE) {
   gsub("[_. ]", "", out)
 }
 
-#' Read all files from a directory as a named R list
-#' 
+#' Read all files from a directory as a named R list.
 #' Handles yaml/csv/R files.
+#'
+#' @param directory Directory to process
+#' @param file_format File format to interpret files as. One of yml, csv, r or auto
+#' @param in_package Is the directory in a package
+#' @param remove_special_characters_from_names Should we remove special characters
+#'
+#' @importFrom utils read.csv
+#' @importFrom yaml read_yaml
+#'
 read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_special_characters_from_names = TRUE) {
-  if (in_package) directory <- system.file(directory, package = "climate.narrative") 
+  if (in_package) directory <- system.file(directory, package = "climate.narrative")
   file_list <- dir(path = directory)
   file_format <- tolower(file_format)
   if (file_format == "auto") {
@@ -25,7 +36,7 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
     file_list,
     function(file) {
       switch(file_format,
-        yml = yaml::read_yaml(paste0(directory, "/", file)),
+        yml = read_yaml(paste0(directory, "/", file)),
         csv = read.csv(paste0(directory, "/", file), stringsAsFactors = FALSE),
         r = source(paste0(directory, "/", file)),
         stop("Error (function read_dir): file format ", file_format, " not handled")
@@ -44,11 +55,18 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
 }
 
 #' Add element to the list (shortcut)
+#'
+#' @param previous_list List to add items to
+#' @param item_to_add Item to add to list
+#'
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
 
 #' Get object by its name but return NULL (not error) if it does not exist
+#'
+#' @param name Name of variable to try and access
+#'
 get_or_null <- function(name) {
   if (exists(name)) {
     return(get(name))
@@ -58,16 +76,22 @@ get_or_null <- function(name) {
 }
 
 #' Make the first letter of a string upper case
+#'
+#' @param input_string String to process
+#'
 capitalize <- function(input_string) {
   return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))
 }
 
 #' Format (camelcase) string in order to look better in final output (spaces, capitalisation)
+#'
+#' @param camelcase String to process.
+#'
 restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
   s <- sub("^ ", "", s) # remove first space
   # ensure no space after opening parenthesis "("
-  s <- gsub("( ", "(", s, fixed = TRUE) 
+  s <- gsub("( ", "(", s, fixed = TRUE)
   s <- capitalize(s)
   # manually substitute texts with where simple capitalisation rule fails
   substitutions <- data.frame(
@@ -81,8 +105,10 @@ restore_spaces <- function(camelcase) {
 }
 
 #' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
-#' 
 #' and product-specific text (if any)
+#'
+#' @param exposure_matrix Exposure matrix
+#'
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
@@ -113,6 +139,15 @@ produce_tooltip_matrix <- function(exposure_matrix) {
 }
 
 #' Produce the layout of questionnaire tabs (cell, row, whole table)
+#'
+#' @param exposure_item Name of exposure item or blank for empty
+#' @param prefix Prefix to apply to name
+#' @param tooltip_text Tooltip text to show
+#' @param dev Are we in development mode
+#' @param width Width of dropdown
+#'
+#' @importFrom tippy tippy_this
+#'
 exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = FALSE, width = NULL) {
   if (exposure_item == "") {
     form <- p("")
@@ -130,7 +165,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = F
     if (tooltip_text != "") {
       return(div(
         form,
-        tippy::tippy_this(id, tooltip_text),
+        tippy_this(id, tooltip_text),
       ))
     } else {
       return(form)
@@ -139,11 +174,23 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = F
 }
 
 #' Grid table of inputs (everything happens in matching server function)
+#'
+#' @param label Label for UI component
+#'
 exposure_grid_ui <- function(label) {
   tableOutput(label)
 }
 
 #' Produce a table of inputs with selectInput fields
+#'
+#' @param input Shiny inputs
+#' @param output Shiny outputs
+#' @param exposure_matrix Exposure matrix to show
+#' @param tooltip_matrix Matrix of tooltips
+#' @param label Label for grid
+#' @param dev Are we in developement mode
+#' @param width Width of each dropdown
+#'
 exposure_grid_server <- function(input,
                                  output,
                                  exposure_matrix,
@@ -181,7 +228,13 @@ exposure_grid_server <- function(input,
   )
 }
 
-#' Insert spaces to the string so that line has exactly given number of characters
+#' Insert spaces to the string so that line has exactly given number of characters.
+#'
+#' @param string String to break
+#' @param line_width Width of line
+#' @param location starting column
+#' @param n_char Number of characters
+#'
 string_break_line_with_spaces <- function(string, line_width, location, n_char=1){
   paste0(
     substring(string, 1, location - 1),
@@ -191,8 +244,13 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char=1
 }
 
 #' Add spaces to a string so that it can be split into blocks of exactly the same length
-#' 
-#' without breaking words
+#' without breaking words.
+#'
+#' @param string String to break
+#' @param line_width Width of a line
+#'
+#' @importFrom stats na.omit
+#'
 string_add_spaces_to_make_equal_lines <- function(string, line_width){
   out <- string
   newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][,1])
@@ -210,10 +268,14 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width){
   return(out)
 }
 
-#' Format the string by appending spaces so it exactly fills the lines of given length
-#' 
-#' additionally, if the string contains at least one "br" tag
-#' format output as a bulleted list
+#' Format the string by appending spaces so it exactly fills the lines of given length.
+#'
+#' Additionally, if the string contains at least one "br" tag
+#' format output as a bulleted list.
+#'
+#' @param string String to Format
+#' @param col_width Width of column
+#'
 string_format_lines <- function(string, col_width){
   if (grepl("<br>", string)){
     out <- paste0("- ",gsub("<br>", "<br> - ", string))
@@ -224,13 +286,18 @@ string_format_lines <- function(string, col_width){
   return(out)
 }
 
-#' Produce a markdown table out of R data frame
-#' 
+#' Produce a markdown table out of R data frame.
+#'
 #' Create a markdown table, allowing multiline cell entries (lines need to be separated by br tag)
 #' R table headers cannot contain spaces, to get space in the output use a dot
 #' (it will be replaced with space if dot_to_space=T as in default)
 #' The function splits the text automatically and adds spaces to match the desired column width
-#' without breaking words
+#' without breaking words.
+#'
+#' @param table R data frame with data to display
+#' @param dot_to_space Convert dots in headings to spaces
+#' @param col_widths Width of columns
+#'
 table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=NULL) {
   headers <- colnames(table)
   if(is.null(col_widths)){
@@ -304,8 +371,13 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
 }
 
 #' A simple version of function to produce markdown tables from R table
-#' 
-#' It does not handle multiline cells
+#'
+#' It does not handle multiline cells.
+#'
+#' @param table R data frame
+#' @param additional_spaces Additional space to add
+#' @param dot_to_space Convert dots in titles to spaces
+#'
 table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE) {
   headers <- colnames(table)
   if (dot_to_space) {
@@ -342,10 +414,13 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 }
 
 #' Produce report content for a given item
-#' 
+#'
 #' @param item name of item for which a report is to be produced
 #' @param type_item_inputs table of (disaggregated) inputs to produce a table of contributing rows
 #' @return markdown-formatted report section (h2)
+#'
+#' @importFrom stats aggregate
+#'
 get_exposure_description <- function(item, type_item_inputs) {
   if (is.null(global$exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
@@ -383,7 +458,7 @@ get_exposure_description <- function(item, type_item_inputs) {
     ),
     FUN = function(x) {
       cut(
-        sum(x), 
+        sum(x),
         breaks = c(0, 4.5, 9.5, 100),
         labels = c("Low", "Medium", "High")
       )
@@ -403,9 +478,10 @@ get_exposure_description <- function(item, type_item_inputs) {
 }
 
 #' Produce appendix for a given item
-#' 
+#'
 #' @param item name of item for which appendix is to be produced
 #' @return markdown-formatted appendix section (h3)
+#'
 get_exposure_appendix <- function(item){
   appendix <- global$exposure_classes[[item]][["appendix"]]
   if(is.null(appendix)){
@@ -422,7 +498,14 @@ get_exposure_appendix <- function(item){
   }
 }
 
-#' Lower level report helper function responsible for single risk (transition/physical) description
+#' Lower level report helper function responsible for single risk
+#' (transition/physical) description.
+#'
+#' @param item Exposure class name
+#' @param products Product name
+#' @param materiality Materiality of item
+#' @param physical_or_transition Type of scenario
+#' @param high_or_low Is scenario high or low
 get_exposure_risk_description <- function(item, products, materiality, physical_or_transition, high_or_low) {
   if (high_or_low == FALSE) {
     return("")
@@ -467,6 +550,11 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 }
 
 #' Lower level report helper function responsible for single scenario description
+#'
+#' @param aggregated_table Table of all possible items
+#' @param type_inputs Drop box items
+#' @param scenario Scenario name
+#'
 get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
   if(is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
@@ -496,10 +584,11 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
 }
 
 #' Function to produce references section (for all items)
-#' 
+#'
 #' @param aggregated_table aggregated inputs
 #' @param type_inputs disaggregated inputs
 #' @return markdown-formatted references section (h2)
+#'
 get_references <- function(aggregated_table, type_inputs) {
   out <- ""
   if (nrow(aggregated_table)) {
@@ -528,6 +617,11 @@ get_references <- function(aggregated_table, type_inputs) {
 }
 
 #' Heartbeat function (server part) to prevent app closing due to inactivity
+#'
+#' @param input Shiny input
+#' @param output Shiny output
+#' @param session  Shiny session
+#'
 heartbeat <- function(input, output, session) {
   beep <- reactiveTimer(55 * 1000)
   output[["__heartbeat"]] <- renderText({
@@ -537,6 +631,7 @@ heartbeat <- function(input, output, session) {
 }
 
 #' Heartbeat function (ui part) to prevent app closing due to inactivity
+#'
 heartbeat_footer <- function() {
   list(
     hr(),
@@ -557,50 +652,65 @@ heartbeat_footer <- function() {
   )
 }
 
-#' Google captcha function (UI part)
-#' 
+#' Google captcha function, UI part.
+#'
 #' based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
-GreCAPTCHAv3Ui <- function(siteKey) {
+#'
+#' @param site_key Site key from google
+GreCAPTCHAv3Ui <- function(site_key) {
   tagList(tags$head(
-    tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=", siteKey)),
+    tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=", site_key)),
   ))
 }
 
-#' Google captcha function (actual javascript call)
-#' 
-#' based on
+#' Google captcha function, actual javascript call.
+#'
+#' Based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
-GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
-  shinyjs::runjs(paste0("
+#'
+#' @param site_key, Site key from google
+#' @param action Name of action to test
+#' @param field_id Field to trigger
+#'
+#' @importFrom shinyjs runjs
+GreCAPTCHAv3js <- function(site_key, action, field_id) {
+  runjs(paste0("
         grecaptcha.ready(function () {
-          grecaptcha.execute('", siteKey, "', { action: '", action, "' }).then(function (token) {
-			      Shiny.onInputChange('", fieldID, "',token);
-      		});
-	      });
+          grecaptcha.execute('", site_key, "', { action: '", action, "' }).then(function (token) {
+            Shiny.onInputChange('", field_id, "',token);
+          });
+        });
       "))
 }
 
-#' Google captcha function (server part)
-#' 
-#' based on
+#' Google captcha function, server part.
+#'
+#' Based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
-GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
-  gResponse <- httr::POST(
+#'
+#' @param secret_key Secret key from google
+#' @param recaptcha_response Response from google
+GreCAPTCHAv3Server <- function(secret_key, recaptcha_response) {
+  response <- httr::POST(
     "https://www.google.com/recaptcha/api/siteverify",
     body = list(
-      secret = secretKey,
-      response = reCaptchaResponse
+      secret = secret_key,
+      response = recaptcha_response
     )
   )
 
-  if (gResponse$status_code == 200) {
-    return(jsonlite::fromJSON(httr::content(gResponse, "text")))
+  if (response$status_code == 200) {
+    return(jsonlite::fromJSON(httr::content(response, "text")))
   }
 }
 
-#' Produce a footer HTML text explaining materiality levels
-generic_footer <- function(asset_or_liability = c("asset","liability"), is_asset_mananger = FALSE){
+#' Produce a footer HTML text explaining materiality levels.
+#'
+#' @param asset_or_liability A string with the type of exposure page
+#' @param is_asset_mananger Is this display for an asset manager
+#'
+generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE){
   if(asset_or_liability == "asset"){
     case_name <- "asset class and sector"
     if (is_asset_mananger) {
@@ -620,37 +730,6 @@ generic_footer <- function(asset_or_liability = c("asset","liability"), is_asset
         tags$li(paste("\"Medium\": 5% - 10% of total", total_name)),
         tags$li(paste("\"Low\": below 5% of total", total_name)),
         tags$li(paste("blank: immaterial or no exposure"))
-      )
-    )
-  )
-}
-
-generic_asset_footer <- function(is_asset_mananger = FALSE) {
-  if (is_asset_mananger) {
-    asset_text = "assets under management"
-  } else {
-    asset_text = "assets"
-  }
-  p(
-    list("Enter your firm's exposures by asset class and sector using the following definitions:",
-      tags$ul(
-        tags$li(paste("\"High\": One of your top 5 exposures or more than 10% of total", asset_text)),
-        tags$li(paste("\"Medium\": 5% - 10% of total", asset_text)),
-        tags$li(paste("\"Low\": below 5% of total", asset_text)),
-        tags$li(paste("blank: immaterial or no exposure"))
-      )
-    )
-  )
-}
-
-generic_liability_footer <- function() {
-  p(
-    list("Enter your firm's exposures by liability class using the following definitions:",
-      tags$ul(
-        tags$li("\"High\": One of your top 5 exposures or more than 10% of total premium income"),
-        tags$li("\"Medium\": 5% - 10% of total premium income"),
-        tags$li("\"Low\": below 5% of total premium income"),
-        tags$li("blank: immaterial or no exposure")
       )
     )
   )

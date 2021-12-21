@@ -6,6 +6,9 @@
 \usage{
 climate_narrative(...)
 }
+\arguments{
+\item{...}{Additional parameters to shiny server function}
+}
 \description{
 Main funtion that runs the shiny app
 }

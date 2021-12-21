@@ -6,6 +6,9 @@
 \usage{
 exposure_grid_ui(label)
 }
+\arguments{
+\item{label}{Label for UI component}
+}
 \description{
 Grid table of inputs (everything happens in matching server function)
 }

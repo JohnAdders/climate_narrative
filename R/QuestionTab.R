@@ -1,9 +1,9 @@
 #' QuestionTab class definition
-#' 
+#'
 #' Instances are tabs of the questionnaire.
 #' This is a wrapper over any ui and server that handles switching to previous/next tab if relevant
 #' (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).
-QuestionTab <- R6::R6Class(
+QuestionTab <- R6Class(
   "QuestionTab",
   public = list(
     #' @field tab_name name of the tab
@@ -100,7 +100,7 @@ QuestionTab <- R6::R6Class(
       }
       if (length(self$next_tab)) {
         observeEvent(
-          input[[paste0(self$id, "_next")]], 
+          input[[paste0(self$id, "_next")]],
           {
             if(allow_next()){
               switch_page(as.integer(self$next_tab))

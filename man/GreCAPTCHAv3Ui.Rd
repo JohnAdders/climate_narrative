@@ -2,9 +2,12 @@
 % Please edit documentation in R/functions.R
 \name{GreCAPTCHAv3Ui}
 \alias{GreCAPTCHAv3Ui}
-\title{Google captcha function (UI part)}
+\title{Google captcha function, UI part.}
 \usage{
-GreCAPTCHAv3Ui(siteKey)
+GreCAPTCHAv3Ui(site_key)
+}
+\arguments{
+\item{site_key}{Site key from google}
 }
 \description{
 based on

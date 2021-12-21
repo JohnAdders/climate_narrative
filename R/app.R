@@ -1,5 +1,9 @@
 #' Main funtion that runs the shiny app
+#'
+#' @param ... Additional parameters to shiny server function
+#'
 #' @import shiny
+#' @import R6
 #' @export
 climate_narrative <- function(...){
   addResourcePath(

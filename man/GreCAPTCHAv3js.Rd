@@ -2,11 +2,18 @@
 % Please edit documentation in R/functions.R
 \name{GreCAPTCHAv3js}
 \alias{GreCAPTCHAv3js}
-\title{Google captcha function (actual javascript call)}
+\title{Google captcha function, actual javascript call.}
 \usage{
-GreCAPTCHAv3js(siteKey, action, fieldID)
+GreCAPTCHAv3js(site_key, action, field_id)
+}
+\arguments{
+\item{site_key, }{Site key from google}
+
+\item{action}{Name of action to test}
+
+\item{field_id}{Field to trigger}
 }
 \description{
-based on
+Based on
 https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 }

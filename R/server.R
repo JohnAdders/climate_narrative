@@ -1,3 +1,12 @@
+#' Main Shiny server function
+#'
+#' @param input Shiny input
+#' @param output Shiny output
+#' @param session Shiny session
+#'
+#' @importFrom stats aggregate
+#' @export
+#'
 server <- function(input, output, session) {
   heartbeat(input, output, session)
   session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
@@ -50,7 +59,7 @@ server <- function(input, output, session) {
       aggregated_inputs_numeric <- aggregate(
         materiality_num ~ item,
         FUN = function(x) cut(
-          sum(x), 
+          sum(x),
           breaks = c(0, 4.5, 9.5, 100),
           labels = c("Low", "Medium", "High")
         ),
@@ -170,7 +179,7 @@ server <- function(input, output, session) {
     close(file_conn)
 
     result <- includeHTML(temp_html)
-    
+
     return(result)
   })
 

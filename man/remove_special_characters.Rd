@@ -2,10 +2,17 @@
 % Please edit documentation in R/functions.R
 \name{remove_special_characters}
 \alias{remove_special_characters}
-\title{Remove special characters (in particular spaces) from a string}
+\title{Remove special characters (in particular spaces) from a string
+and optionally make it camelcase.}
 \usage{
 remove_special_characters(text, make_camelcase = TRUE)
 }
+\arguments{
+\item{text}{Text to process}
+
+\item{make_camelcase}{Should we make text camel case}
+}
 \description{
-Additionally (optionally) make it camelcase.
+Remove special characters (in particular spaces) from a string
+and optionally make it camelcase.
 }

@@ -6,6 +6,9 @@
 \usage{
 get_or_null(name)
 }
+\arguments{
+\item{name}{Name of variable to try and access}
+}
 \description{
 Get object by its name but return NULL (not error) if it does not exist
 }

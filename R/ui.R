@@ -1,3 +1,7 @@
+#' Main Shiny User Interface function
+#'
+#' @export
+#'
 ui <- function() {
   tabset_start <- list(
     id = "wizard",

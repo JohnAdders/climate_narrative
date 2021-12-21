@@ -6,6 +6,9 @@
 \usage{
 restore_spaces(camelcase)
 }
+\arguments{
+\item{camelcase}{String to process.}
+}
 \description{
 Format (camelcase) string in order to look better in final output (spaces, capitalisation)
 }

@@ -12,6 +12,17 @@ exposure_grid_cell(
   width = NULL
 )
 }
+\arguments{
+\item{exposure_item}{Name of exposure item or blank for empty}
+
+\item{prefix}{Prefix to apply to name}
+
+\item{tooltip_text}{Tooltip text to show}
+
+\item{dev}{Are we in development mode}
+
+\item{width}{Width of dropdown}
+}
 \description{
 Produce the layout of questionnaire tabs (cell, row, whole table)
 }

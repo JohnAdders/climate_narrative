@@ -6,6 +6,13 @@
 \usage{
 heartbeat(input, output, session)
 }
+\arguments{
+\item{input}{Shiny input}
+
+\item{output}{Shiny output}
+
+\item{session}{Shiny session}
+}
 \description{
 Heartbeat function (server part) to prevent app closing due to inactivity
 }

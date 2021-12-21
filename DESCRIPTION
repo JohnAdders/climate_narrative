@@ -21,7 +21,8 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Depends:
-    shiny
+    shiny,
+    R6
 Imports:
     httr,
     jsonlite,
@@ -31,5 +32,4 @@ Imports:
     stringi,
     tippy,
     uuid,
-    yaml,
-    R6
+    yaml

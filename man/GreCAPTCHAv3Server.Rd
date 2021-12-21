@@ -2,11 +2,16 @@
 % Please edit documentation in R/functions.R
 \name{GreCAPTCHAv3Server}
 \alias{GreCAPTCHAv3Server}
-\title{Google captcha function (server part)}
+\title{Google captcha function, server part.}
 \usage{
-GreCAPTCHAv3Server(secretKey, reCaptchaResponse)
+GreCAPTCHAv3Server(secret_key, recaptcha_response)
+}
+\arguments{
+\item{secret_key}{Secret key from google}
+
+\item{recaptcha_response}{Response from google}
 }
 \description{
-based on
+Based on
 https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 }

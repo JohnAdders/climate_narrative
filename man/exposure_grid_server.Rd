@@ -14,6 +14,21 @@ exposure_grid_server(
   width = NULL
 )
 }
+\arguments{
+\item{input}{Shiny inputs}
+
+\item{output}{Shiny outputs}
+
+\item{exposure_matrix}{Exposure matrix to show}
+
+\item{tooltip_matrix}{Matrix of tooltips}
+
+\item{label}{Label for grid}
+
+\item{dev}{Are we in developement mode}
+
+\item{width}{Width of each dropdown}
+}
 \description{
 Produce a table of inputs with selectInput fields
 }

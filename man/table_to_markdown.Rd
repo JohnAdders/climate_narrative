@@ -6,6 +6,13 @@
 \usage{
 table_to_markdown(table, additional_spaces = 3, dot_to_space = TRUE)
 }
+\arguments{
+\item{table}{R data frame}
+
+\item{additional_spaces}{Additional space to add}
+
+\item{dot_to_space}{Convert dots in titles to spaces}
+}
 \description{
-It does not handle multiline cells
+It does not handle multiline cells.
 }
