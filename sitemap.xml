@@ -13,15 +13,6 @@
     <loc>/index.html</loc>
   </url>
   <url>
-    <loc>/reference/GreCAPTCHAv3Server.html</loc>
-  </url>
-  <url>
-    <loc>/reference/GreCAPTCHAv3Ui.html</loc>
-  </url>
-  <url>
-    <loc>/reference/GreCAPTCHAv3js.html</loc>
-  </url>
-  <url>
     <loc>/reference/QuestionTab.html</loc>
   </url>
   <url>
@@ -29,9 +20,6 @@
   </url>
   <url>
     <loc>/reference/capitalize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/climate_narrative.html</loc>
   </url>
   <url>
     <loc>/reference/exposure_grid_cell.html</loc>
@@ -79,10 +67,22 @@
     <loc>/reference/read_dir.html</loc>
   </url>
   <url>
+    <loc>/reference/recaptcha_js.html</loc>
+  </url>
+  <url>
+    <loc>/reference/recaptcha_server.html</loc>
+  </url>
+  <url>
+    <loc>/reference/recaptcha_ui.html</loc>
+  </url>
+  <url>
     <loc>/reference/remove_special_characters.html</loc>
   </url>
   <url>
     <loc>/reference/restore_spaces.html</loc>
+  </url>
+  <url>
+    <loc>/reference/run_shiny_app.html</loc>
   </url>
   <url>
     <loc>/reference/server.html</loc>
