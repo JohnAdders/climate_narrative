@@ -54,15 +54,6 @@ add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
 
-#' Get object by its name but return NULL (not error) if it does not exist
-get_or_null <- function(name) {
-  if (exists(name)) {
-    return(get(name))
-  } else {
-    return(NULL)
-  }
-}
-
 #' Make the first letter of a string upper case
 capitalize <- function(input_string) {
   return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))

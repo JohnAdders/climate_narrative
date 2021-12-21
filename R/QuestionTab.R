@@ -49,9 +49,9 @@ QuestionTab <- R6::R6Class(
     initialize = function(tab_name, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE,
                           exposure = NULL, type = NULL, subtype = NULL, ui_settings = list()) {
       self$tab_name <- tab_name
-      self$tab_ui <- get_or_null(paste0("tab_", tab_name, "_ui"))
-      self$tab_ui_foot <- get_or_null(paste0("tab_", tab_name, "_foot"))
-      self$tab_server <- get_or_null(paste0("tab_", tab_name, "_server"))
+      self$tab_ui <- get0(paste0("tab_", tab_name, "_ui"))
+      self$tab_ui_foot <- get0(paste0("tab_", tab_name, "_foot"))
+      self$tab_server <- get0(paste0("tab_", tab_name, "_server"))
       self$tab_number <- tab_name_to_number(tab_name)
       self$previous_tab <- tab_name_to_number(previous_tab)
       self$next_tab <- tab_name_to_number(next_tab)
