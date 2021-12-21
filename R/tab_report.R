@@ -40,20 +40,17 @@ tab_report_server <- function(input, output, session, tab) {
   observeEvent(
     input$type,
     {
-      tab$previous_tab <- as.integer(
-        factor(
-          switch(input$type,
-            insurance = "ins_sov",
-            asset = "am_re",
-            bank = "bank_sov"
-          ),
-          global$ordered_tabs
+      tab$previous_tab <- tab_name_to_number(
+        switch(input$type,
+          insurance = "ins_sov",
+          asset = "am_re",
+          bank = "bank_sov"
         )
       )
     }
   )
   observeEvent(
-    input[[paste0("page_",  as.integer(factor("report", global$ordered_tabs)), "_previous")]],
+    input[[paste0("page_",  tab_name_to_number("report"), "_previous")]],
     {
       updateSelectInput(session, "report_scenario_selection", selected = "")
       updateSelectInput(session, "report_sector_selection", selected = "")

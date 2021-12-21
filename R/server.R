@@ -251,7 +251,7 @@ server <- function(input, output, session) {
 
   # finally, tab-specific server function collation
   switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
-  report_tab_no <- as.integer(factor('report', levels=global$ordered_tabs))
+  report_tab_no <- tab_name_to_number('report')
   for (tab in global$tabs) {
     # "sum" below is a trick to include NULL case as sum(NULL)=0
     if (sum(tab$next_tab) == report_tab_no){

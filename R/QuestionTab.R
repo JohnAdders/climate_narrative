@@ -52,9 +52,9 @@ QuestionTab <- R6::R6Class(
       self$tab_ui <- get_or_null(paste0("tab_", tab_name, "_ui"))
       self$tab_ui_foot <- get_or_null(paste0("tab_", tab_name, "_foot"))
       self$tab_server <- get_or_null(paste0("tab_", tab_name, "_server"))
-      self$tab_number <- as.integer(factor(tab_name, global$ordered_tabs))
-      self$previous_tab <- as.integer(factor(previous_tab, global$ordered_tabs))
-      self$next_tab <- as.integer(factor(next_tab, global$ordered_tabs))
+      self$tab_number <- tab_name_to_number(tab_name)
+      self$previous_tab <- tab_name_to_number(previous_tab)
+      self$next_tab <- tab_name_to_number(next_tab)
       self$id <- paste0("page_", self$tab_number)
       self$add_header <- add_header
       self$add_footer <- add_footer

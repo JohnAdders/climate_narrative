@@ -43,6 +43,12 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
   return(list)
 }
 
+#' Helper function to enable using names to refer tabs instead of numbers
+tab_name_to_number <- function(tab_name){
+  as.integer(factor(tab_name, global$ordered_tabs))
+}
+
+
 #' Add element to the list (shortcut)
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
