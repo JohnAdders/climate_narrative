@@ -1,4 +1,6 @@
-#' Remove special characters (in particular spaces) from a string and optionally make it camelcase
+#' Remove special characters (in particular spaces) from a string 
+#' 
+#' Additionally (optionally) make it camelcase.
 remove_special_characters <- function(text, make_camelcase=TRUE) {
   out <- text
   if(make_camelcase){
@@ -9,8 +11,11 @@ remove_special_characters <- function(text, make_camelcase=TRUE) {
   gsub("[_. ]", "", out)
 }
 
-#' Read all files from a directory as a named R list (handles yaml/csv/R files)
-read_dir <- function(directory, file_format = "auto", remove_special_characters_from_names = TRUE) {
+#' Read all files from a directory as a named R list
+#' 
+#' Handles yaml/csv/R files.
+read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_special_characters_from_names = TRUE) {
+  if (in_package) directory <- system.file(directory, package = "climate.narrative") 
   file_list <- dir(path = directory)
   file_format <- tolower(file_format)
   if (file_format == "auto") {
@@ -20,7 +25,7 @@ read_dir <- function(directory, file_format = "auto", remove_special_characters_
     file_list,
     function(file) {
       switch(file_format,
-        yml = read_yaml(paste0(directory, "/", file)),
+        yml = yaml::read_yaml(paste0(directory, "/", file)),
         csv = read.csv(paste0(directory, "/", file), stringsAsFactors = FALSE),
         r = source(paste0(directory, "/", file)),
         stop("Error (function read_dir): file format ", file_format, " not handled")
@@ -38,7 +43,7 @@ read_dir <- function(directory, file_format = "auto", remove_special_characters_
   return(list)
 }
 
-#' Add element to the list (shortcue)
+#' Add element to the list (shortcut)
 add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
@@ -76,6 +81,7 @@ restore_spaces <- function(camelcase) {
 }
 
 #' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
+#' 
 #' and product-specific text (if any)
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
@@ -84,11 +90,11 @@ produce_tooltip_matrix <- function(exposure_matrix) {
     ncol = ncol(exposure_matrix) - 2
   )
   for (i in 1:nrow(out)){
-    row_tooltip <- products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
+    row_tooltip <- global$products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
     for (j in 1:ncol(out)){
       exposure_class <- exposure_matrix[i, j + 2]
       if (exposure_class != ""){
-        exposure_class_tooltip <- exposure_classes[[exposure_class]][["tooltip"]]
+        exposure_class_tooltip <- global$exposure_classes[[exposure_class]][["tooltip"]]
         if (!is.null(exposure_class_tooltip)){
           if (!is.null(row_tooltip)) {
             out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
@@ -124,7 +130,7 @@ exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = F
     if (tooltip_text != "") {
       return(div(
         form,
-        tippy_this(id, tooltip_text),
+        tippy::tippy_this(id, tooltip_text),
       ))
     } else {
       return(form)
@@ -185,26 +191,29 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char=1
 }
 
 #' Add spaces to a string so that it can be split into blocks of exactly the same length
+#' 
 #' without breaking words
 string_add_spaces_to_make_equal_lines <- function(string, line_width){
   out <- string
-  newline_locations <- na.omit(stri_locate_all(out, fixed = "<br>")[[1]][,1])
+  newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][,1])
   i <- 1
   while(i * line_width < nchar(out)){
     for(loc in newline_locations[newline_locations <= 1 + i * line_width]){
       out <- string_break_line_with_spaces(out, line_width, loc, 4)
     }
-    space_locations <- stri_locate_all(out, fixed = " ") [[1]][,1]
+    space_locations <- stringi::stri_locate_all(out, fixed = " ") [[1]][,1]
     last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
     if(length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
-    newline_locations <- na.omit(stri_locate_all(out, fixed="<br>")[[1]][,1])
+    newline_locations <- na.omit(stringi::stri_locate_all(out, fixed="<br>")[[1]][,1])
     i <- i + 1
   }
   return(out)
 }
 
 #' Format the string by appending spaces so it exactly fills the lines of given length
-#' additionally, if the string contains at least one "<br>" format output as a bulleted list
+#' 
+#' additionally, if the string contains at least one "br" tag
+#' format output as a bulleted list
 string_format_lines <- function(string, col_width){
   if (grepl("<br>", string)){
     out <- paste0("- ",gsub("<br>", "<br> - ", string))
@@ -217,7 +226,7 @@ string_format_lines <- function(string, col_width){
 
 #' Produce a markdown table out of R data frame
 #' 
-#' Create a markdown table, allowing multiline cell entries (lines need to be separated by <br>)
+#' Create a markdown table, allowing multiline cell entries (lines need to be separated by br tag)
 #' R table headers cannot contain spaces, to get space in the output use a dot
 #' (it will be replaced with space if dot_to_space=T as in default)
 #' The function splits the text automatically and adds spaces to match the desired column width
@@ -295,7 +304,8 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths=N
 }
 
 #' A simple version of function to produce markdown tables from R table
-#' (does not handle multiline cells)
+#' 
+#' It does not handle multiline cells
 table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE) {
   headers <- colnames(table)
   if (dot_to_space) {
@@ -332,11 +342,12 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 }
 
 #' Produce report content for a given item
+#' 
 #' @param item name of item for which a report is to be produced
 #' @param type_item_inputs table of (disaggregated) inputs to produce a table of contributing rows
 #' @return markdown-formatted report section (h2)
 get_exposure_description <- function(item, type_item_inputs) {
-  if (is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
+  if (is.null(global$exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
@@ -382,9 +393,9 @@ get_exposure_description <- function(item, type_item_inputs) {
   colnames(ordered_aggregate_inputs)[3:5] <- c("Exposure.row", "Materiality", "Product materiality")
   out <- paste0(
     "## ",
-    exposure_classes[[item]][["name"]],
+    global$exposure_classes[[item]][["name"]],
     "\n\n",
-    exposure_classes[[item]][["description"]],
+    global$exposure_classes[[item]][["description"]],
     "\n\nThe following rows contribute: \n\n",
     table_to_markdown_multiline(ordered_aggregate_inputs[, 1:4], TRUE, c(15, 30, 25, 15)),
     "\n\n"
@@ -392,10 +403,11 @@ get_exposure_description <- function(item, type_item_inputs) {
 }
 
 #' Produce appendix for a given item
+#' 
 #' @param item name of item for which appendix is to be produced
 #' @return markdown-formatted appendix section (h3)
 get_exposure_appendix <- function(item){
-  appendix <- exposure_classes[[item]][["appendix"]]
+  appendix <- global$exposure_classes[[item]][["appendix"]]
   if(is.null(appendix)){
     return (c())
   } else {
@@ -403,7 +415,7 @@ get_exposure_appendix <- function(item){
       paste0(
         "### Appendix",
         "\n\n",
-        exposure_classes[[item]][["appendix"]],
+        global$exposure_classes[[item]][["appendix"]],
         "\n\n"
       )
     )
@@ -423,7 +435,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     riskname <- switch(high_or_low, high = "High physical risk", low = "Low physical risk")
   }
   header_text <- paste0(
-    exposure_classes[[item]][["name"]],
+    global$exposure_classes[[item]][["name"]],
     " --- ",
     riskname
   )
@@ -431,7 +443,7 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     "### ",
     capitalize(header_text),
     " --- Summary\n\n",
-    exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
+    global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
     "\n\n"
   )
   if (materiality == "High") {
@@ -440,14 +452,14 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
       "### ",
       capitalize(header_text),
       " --- Details\n\n",
-      exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
+      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
       "\n\n"
     )
   }
   for (product in products) {
     out <- paste0(
       out,
-      exposure_classes[[item]][[physical_or_transition]][[high_or_low]][[product]],
+      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][[product]],
       "\n\n"
     )
   }
@@ -484,6 +496,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
 }
 
 #' Function to produce references section (for all items)
+#' 
 #' @param aggregated_table aggregated inputs
 #' @param type_inputs disaggregated inputs
 #' @return markdown-formatted references section (h2)
@@ -496,13 +509,13 @@ get_references <- function(aggregated_table, type_inputs) {
       )
     for (i in 1:nrow(aggregated_table)) {
       item <- aggregated_table$item[i]
-      if (length(exposure_classes[[item]][["references"]])){
+      if (length(global$exposure_classes[[item]][["references"]])){
         out <- paste0(
           out,
           "\n\n## ",
-          exposure_classes[[item]][["name"]],
+          global$exposure_classes[[item]][["name"]],
           "\n\n",
-          exposure_classes[[item]][["references"]]
+          global$exposure_classes[[item]][["references"]]
         )
       }
     }
@@ -559,7 +572,7 @@ GreCAPTCHAv3Ui <- function(siteKey) {
 #' based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
-  runjs(paste0("
+  shinyjs::runjs(paste0("
         grecaptcha.ready(function () {
           grecaptcha.execute('", siteKey, "', { action: '", action, "' }).then(function (token) {
 			      Shiny.onInputChange('", fieldID, "',token);
@@ -573,7 +586,7 @@ GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
 #' based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
-  gResponse <- POST(
+  gResponse <- httr::POST(
     "https://www.google.com/recaptcha/api/siteverify",
     body = list(
       secret = secretKey,
@@ -582,7 +595,7 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   )
 
   if (gResponse$status_code == 200) {
-    return(fromJSON(content(gResponse, "text")))
+    return(jsonlite::fromJSON(httr::content(gResponse, "text")))
   }
 }
 
@@ -611,6 +624,7 @@ generic_footer <- function(asset_or_liability = c("asset","liability"), is_asset
     )
   )
 }
+
 generic_asset_footer <- function(is_asset_mananger = FALSE) {
   if (is_asset_mananger) {
     asset_text = "assets under management"
@@ -629,7 +643,6 @@ generic_asset_footer <- function(is_asset_mananger = FALSE) {
   )
 }
 
-#' Produce a footer HTML text explaining materiality levels (liabilities)
 generic_liability_footer <- function() {
   p(
     list("Enter your firm's exposures by liability class using the following definitions:",

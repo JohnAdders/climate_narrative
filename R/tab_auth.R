@@ -1,11 +1,11 @@
 passes_captcha <- function(input, session) {
-  result <- GreCAPTCHAv3Server(userData$captcha_secret, input$responseReceived)
+  result <- GreCAPTCHAv3Server(global$captcha_secret, input$responseReceived)
   return(result$success && result$score > 0.5)
 }
 
 request_captcha <- function(output, session) {
-  if (!is.null(userData$captcha_code) && !is.null(userData$captcha_secret)) {
-    GreCAPTCHAv3js(userData$captcha_code, "homepage", "responseReceived")
+  if (!is.null(global$captcha_code) && !is.null(global$captcha_secret)) {
+    GreCAPTCHAv3js(global$captcha_code, "homepage", "responseReceived")
   } else {
     output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
   }
@@ -13,7 +13,7 @@ request_captcha <- function(output, session) {
 
 process_progress <- function(output, should_continue) {
   if (should_continue) {
-    next_tab <- as.integer(factor("type", ordered_tabs))
+    next_tab <- as.integer(factor("type", global$ordered_tabs))
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
   } else {
     output$code_verification_result <- renderText("Code incorrect, please double check")
@@ -21,7 +21,7 @@ process_progress <- function(output, should_continue) {
 }
 
 render_dynamic_auth_ui <- function(output, session) {
-  if (!is.null(userData$beta_code)) {
+  if (!is.null(global$beta_code)) {
     output$first_column <- renderUI({NULL})
     output$auth_text <- renderUI({p("Enter the beta code you have been sent")})
   } else {
@@ -39,7 +39,7 @@ render_dynamic_auth_ui <- function(output, session) {
             inputId = "button_send_code",
             label = "Send the code"
           ),
-          tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
+          tippy::tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
           textOutput("code_send_result")
         )
       }
@@ -52,11 +52,11 @@ send_auth_code_email <- function(input, output, session) {
   output$code_send_result <- renderText(
     paste(
       "TODO: send the actual email from",
-      userData$email_server,
+      global$email_server,
       "to",
       input$email,
       "containing the code:",
-      userData$verification_code
+      global$verification_code
     )
   )
 }
@@ -98,7 +98,7 @@ tab_auth_ui <- function(captcha_code) {
           inputId = "button_check_code",
           label = "Validate the code"
         ),
-        tippy_this("button_check_code", 'Click to proceed (if the code is correct)'),
+        tippy::tippy_this("button_check_code", 'Click to proceed (if the code is correct)'),
         textOutput("code_verification_result")
       )
     )
@@ -125,8 +125,8 @@ tab_auth_server <- function(input, output, session, tab) {
         session$userData$captcha_validated <- passes_captcha(input, session)
       }
       if(session$userData$captcha_validated == TRUE) {
-        if(!is.null(userData$beta_code)) {
-          process_progress(output, input$code == userData$beta_code)
+        if(!is.null(global$beta_code)) {
+          process_progress(output, input$code == global$beta_code)
         } else {
           send_auth_code_email(input, output, session)
         }
@@ -137,13 +137,13 @@ tab_auth_server <- function(input, output, session, tab) {
   observeEvent(
     input$button_check_code,
     {
-      if(!is.null(userData$beta_code)) {
+      if(!is.null(global$beta_code)) {
         request_captcha(output, session)
       } else {
         process_progress(
           output,
           (
-            input$code == userData$verification_code &&
+            input$code == global$verification_code &&
             session$userData$captcha_validated == TRUE
           )
         )

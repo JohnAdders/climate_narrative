@@ -1,6 +1,6 @@
 server <- function(input, output, session) {
   heartbeat(input, output, session)
-  session$userData$verification_code <- substring(UUIDgenerate(), 1, 6)
+  session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
   session$userData$captcha_validated <- FALSE
 
   # the reactive variables (ultimately - the climate report)
@@ -18,12 +18,12 @@ server <- function(input, output, session) {
     for (i in 1:nrow(out)) {
       if (length(splitted_names[[i]]) == 6) {
         out[i, 3:8] <- splitted_names[[i]]
-        if (is.null(products[[out$product[i]]])) {
+        if (is.null(global$products[[out$product[i]]])) {
           print(out[i,])
           warning(paste('No product description for', out$product[i]))
         } else {
-          out$product_description[i] <- products[[out$product[i]]]$description
-          out$product_text[i] <- products[[out$product[i]]]$text
+          out$product_description[i] <- global$products[[out$product[i]]]$description
+          out$product_text[i] <- global$products[[out$product[i]]]$text
         }
       } else if (length(splitted_names[[i]]) > 6) {
         warning(paste0("Unexpectedly large number of underscores in ", out$names[i]))
@@ -74,7 +74,7 @@ server <- function(input, output, session) {
       "  ```\n\n",
       "---\n\n"
     )
-    for (scenario in scenarios) {
+    for (scenario in global$scenarios) {
       out <- c(
         out,
         get_scenario_descriptions(
@@ -110,12 +110,13 @@ server <- function(input, output, session) {
     if (!exists("temp_md_scenario")) temp_md_scenario <- tempfile(fileext = ".md")
     file_conn <- file(temp_md_scenario)
     scenario_no <- c(
-      which(sapply(scenarios, `[[`, i = "name") == report_selection),
+      which(sapply(global$scenarios, `[[`, i = "name") == report_selection),
       length(report_contents()) - 1
     )
+    add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", getwd(),"/www/", "\\1\\2"), x, perl=T)
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
-      report_contents()[c(1 + scenario_no)],
+      add_path_to_graphs(report_contents()[c(1 + scenario_no)]),
       file_conn
     )
     close(file_conn)
@@ -127,8 +128,8 @@ server <- function(input, output, session) {
     file_conn <- file(temp_md_scenario_and_commons)
     scenario_no <- sort(
       c(
-        which(sapply(scenarios, `[[`, i = "name") == report_selection),
-        which(sapply(scenarios, function(sce) !sce$is_scenario)),
+        which(sapply(global$scenarios, `[[`, i = "name") == report_selection),
+        which(sapply(global$scenarios, function(sce) !sce$is_scenario)),
         length(report_contents()) - 1
       )
     )
@@ -146,17 +147,30 @@ server <- function(input, output, session) {
       return(p("Please select a scenario"))
     }
     temp_html <- tempfile(fileext = ".html")
-    result <- includeHTML(rmarkdown::render(
+    rmarkdown::render(
       input = temp_report_scenario(input$report_selection),
       output_file = temp_html,
-      output_format = html_document(
-        toc = TRUE,
-        toc_depth = 2,
+      output_format = rmarkdown::html_document(
         number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
       )
-    ))
+    )
+    # replace back the images links
+    file_conn <- file(temp_html)
+    temp <- readLines(file_conn)
+    writeLines(
+      gsub(
+        paste0(getwd(), "/www"),
+        "/climate_narrative",
+        temp
+      ),
+      file_conn
+    )
+    close(file_conn)
+
+    result <- includeHTML(temp_html)
+    
     return(result)
   })
 
@@ -175,7 +189,7 @@ server <- function(input, output, session) {
       rmarkdown::render(
         input = temp_report_scenario_and_commons(input$report_selection),
         output_file = file,
-        output_format = rtf_document(
+        output_format = rmarkdown::rtf_document(
           toc = TRUE,
           toc_depth = 2,
           number_sections = FALSE,
@@ -195,8 +209,8 @@ server <- function(input, output, session) {
 
   # finally, tab-specific server function collation
   switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
-  report_tab_no <- as.integer(factor('report', levels=ordered_tabs))
-  for (tab in tabs) {
+  report_tab_no <- as.integer(factor('report', levels=global$ordered_tabs))
+  for (tab in global$tabs) {
     # "sum" below is a trick to include NULL case as sum(NULL)=0
     if (sum(tab$next_tab) == report_tab_no){
       tab$server(input, output, session, switch_page, allow_report)

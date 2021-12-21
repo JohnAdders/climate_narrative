@@ -17,9 +17,9 @@ tab_type_server <- function(input, output, session, tab) {
     input$type,
     {
       tab$next_tab <- switch(input$type,
-        insurance = as.integer(factor("ins_l", ordered_tabs)),
-        asset = as.integer(factor("am_c", ordered_tabs)),
-        bank = as.integer(factor("bank_re", ordered_tabs))
+        insurance = as.integer(factor("ins_l", global$ordered_tabs)),
+        asset = as.integer(factor("am_c", global$ordered_tabs)),
+        bank = as.integer(factor("bank_re", global$ordered_tabs))
       )
     }
   )
