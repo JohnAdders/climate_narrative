@@ -13,6 +13,9 @@ tab_type_ui <- function() {
 }
 
 tab_type_server <- function(input, output, session, tab) {
+  if (global$dev == TRUE){
+    tab$previous_tab <- as.integer(factor("title", global$ordered_tabs))
+  }
   observeEvent(
     input$type,
     {
