@@ -6,6 +6,11 @@
 \usage{
 GreCAPTCHAv3Server(secretKey, reCaptchaResponse)
 }
+\arguments{
+\item{secretKey}{the secret key given by google}
+
+\item{reCaptchaResponse}{variable in shiny where response will be stored}
+}
 \description{
 based on
 https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R

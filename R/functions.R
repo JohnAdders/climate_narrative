@@ -19,7 +19,7 @@ remove_special_characters <- function(text, make_camelcase=TRUE) {
 #' @param directory directory to parse
 #' @param file_format format of the files to determine the correct parser.
 #' If "auto" (the default) the format will be guessed by extension of the first file
-#' @param inpackage bool. If true (the default) the directory will be looked for in the package directory
+#' @param in_package bool. If true (the default) the directory will be looked for in the package directory
 #' @param remove_special_characters_from_names bool. If true (the default) the name of the resulting list will be stripped
 #' of special characters (in particular underscores)
 read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_special_characters_from_names = TRUE) {
@@ -34,7 +34,7 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
     function(file) {
       switch(file_format,
         yml = yaml::read_yaml(paste0(directory, "/", file)),
-        csv = read.csv(paste0(directory, "/", file), stringsAsFactors = FALSE),
+        csv = utils::read.csv(paste0(directory, "/", file), stringsAsFactors = FALSE),
         r = source(paste0(directory, "/", file)),
         stop("Error (function read_dir): file format ", file_format, " not handled")
       )
@@ -130,7 +130,7 @@ produce_tooltip_matrix <- function(exposure_matrix) {
 
 #' Produce the layout of questionnaire tabs (cell, row, whole table)
 #' 
-#' @param exposure_item, 
+#' @param exposure_item the name (appended to shiny input name)
 #' @param prefix prefix that will be used for inputs id (to ensure they are unique)
 #' @param tooltip_text text of the tooltip (blank by default)
 #' @param dev development mode (default is FALSE and means "" option is initially selected 
@@ -221,7 +221,7 @@ exposure_grid_server <- function(input,
 #' @param line_width the desired number of characters per line
 #' @param location the location of linebreak (i.e. characters before this position will stay in one line
 #' padded with spaces and everything after this location will be moved to next line)
-#' @param nchar size of linebreak (by default 1) i.e. the number of characters skipped
+#' @param n_char size of linebreak (by default 1) i.e. the number of characters skipped
 string_break_line_with_spaces <- function(string, line_width, location, n_char=1){
   paste0(
     substring(string, 1, location - 1),
@@ -237,16 +237,16 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char=1
 #' @param line_width the desired number of characters per line
 string_add_spaces_to_make_equal_lines <- function(string, line_width){
   out <- string
-  newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][,1])
+  newline_locations <- stats::na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][,1])
   i <- 1
   while(i * line_width < nchar(out)){
     for(loc in newline_locations[newline_locations <= 1 + i * line_width]){
       out <- string_break_line_with_spaces(out, line_width, loc, 4)
     }
     space_locations <- stringi::stri_locate_all(out, fixed = " ") [[1]][,1]
-    last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
+    last_space <- stats::na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
     if(length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
-    newline_locations <- na.omit(stringi::stri_locate_all(out, fixed="<br>")[[1]][,1])
+    newline_locations <- stats::na.omit(stringi::stri_locate_all(out, fixed="<br>")[[1]][,1])
     i <- i + 1
   }
   return(out)
@@ -275,7 +275,7 @@ string_format_lines <- function(string, line_width){
 
 #' The function splits the text automatically and adds spaces to match the desired column width
 #' without breaking words
-#' @param table
+#' @param table the data.frame to be converted
 #' @param dot_to_space if TRUE (the default) the dots in table headers 
 #' will be replaced with space (useful as R table headers cannot contain spaces)
 #' @param col_widths desired width of columns in the markdown file.
@@ -373,7 +373,7 @@ get_exposure_description <- function(item, type_item_inputs) {
       ")"
     )
   }
-  ordered_aggregate_inputs_text <- aggregate(
+  ordered_aggregate_inputs_text <- stats::aggregate(
     ordered_type_item_inputs[, c("rowname_unique", "materiality")],
     by = list(
       Product.description = ordered_type_item_inputs$product_description,
@@ -386,7 +386,7 @@ get_exposure_description <- function(item, type_item_inputs) {
       )
     }
   )
-  ordered_aggregate_inputs_num <- aggregate(
+  ordered_aggregate_inputs_num <- stats::aggregate(
     ordered_type_item_inputs[, c("materiality_num")],
     by = list(
       Product.description = ordered_type_item_inputs$product_description,
@@ -434,6 +434,11 @@ get_exposure_appendix <- function(item){
 }
 
 #' Lower level report helper function responsible for single risk (transition/physical) description
+#' @param item the exposure item (sector or equivalent abstraction class)
+#' @param products a vector of products (within the item)
+#' @param materiality if "high" more detailed description is given
+#' @param physical_or_transition "physical" or "transition" (to select the risk description)
+#' @param high_or_low may be "high", "low" or FALSE in which case empty string is returned
 get_exposure_risk_description <- function(item, products, materiality, physical_or_transition, high_or_low) {
   if (high_or_low == FALSE) {
     return("")
@@ -478,6 +483,10 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
 }
 
 #' Lower level report helper function responsible for single scenario description
+#' @param aggregated_table table of aggregated inputs (per items)
+#' @param type_inputs disaggregated inputs table (to list all the contributing rows)
+#' @param scenario the list with the following fields:
+#' name, description, is_scenario, transition, physical
 get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
   if(is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
@@ -576,6 +585,7 @@ heartbeat_footer <- function() {
 #' 
 #' based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
+#' @param siteKey the (non-secret) sitekey given by google
 GreCAPTCHAv3Ui <- function(siteKey) {
   tagList(tags$head(
     tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=", siteKey)),
@@ -586,6 +596,9 @@ GreCAPTCHAv3Ui <- function(siteKey) {
 #' 
 #' based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
+#' @param siteKey the (non-secret) sitekey given by google - passed to javascript
+#' @param action action parameter passed to javascript
+#' @param fieldID fieldID parameter passed to javascript
 GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
   shinyjs::runjs(paste0("
         grecaptcha.ready(function () {
@@ -600,6 +613,8 @@ GreCAPTCHAv3js <- function(siteKey, action, fieldID) {
 #' 
 #' based on
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
+#' @param secretKey the secret key given by google
+#' @param reCaptchaResponse variable in shiny where response will be stored
 GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
   gResponse <- httr::POST(
     "https://www.google.com/recaptcha/api/siteverify",
@@ -615,6 +630,13 @@ GreCAPTCHAv3Server <- function(secretKey, reCaptchaResponse) {
 }
 
 #' Produce a footer HTML text explaining materiality levels
+#' 
+#' Depending on parameters the materiality is defined in relation to:
+#' "premium income" (asset_or_liability="liability"),
+#' "assets under management" (asset_or_liability="assets" and is_asset_manager=TRUE), or
+#' "assets" (asset_or_liability="assets" and is_asset_manager=FALSE)
+#' @param asset_or_liability see above
+#' @param is_asset_mananger see above
 generic_footer <- function(asset_or_liability = c("asset","liability"), is_asset_mananger = FALSE){
   if(asset_or_liability == "asset"){
     case_name <- "asset class and sector"

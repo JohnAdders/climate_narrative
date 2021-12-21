@@ -57,6 +57,7 @@ This is a wrapper over any ui and server that handles switching to previous/next
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 the constructor fills the slots with values given
 it also automatically gets ui, server and foot
@@ -101,6 +102,7 @@ from the relevant functions (or makes it empty if the function does not exist)
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-server"></a>}}
+\if{latex}{\out{\hypertarget{method-server}{}}}
 \subsection{Method \code{server()}}{
 Tab server function that combines:
 \enumerate{
@@ -139,6 +141,7 @@ additionally, a boolean function may be passed to allow going next only conditio
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ui"></a>}}
+\if{latex}{\out{\hypertarget{method-ui}{}}}
 \subsection{Method \code{ui()}}{
 tab UI function that combines:
 0. a common header (unless add_header=FALSE)
@@ -156,6 +159,7 @@ tab UI function that combines:
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

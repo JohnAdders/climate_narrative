@@ -4,7 +4,12 @@
 \alias{string_format_lines}
 \title{Format the string by appending spaces so it exactly fills the lines of given length}
 \usage{
-string_format_lines(string, col_width)
+string_format_lines(string, line_width)
+}
+\arguments{
+\item{string}{the string to convert}
+
+\item{line_width}{the desired number of characters per line}
 }
 \description{
 additionally, if the string contains at least one "br" tag

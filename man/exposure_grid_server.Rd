@@ -14,6 +14,22 @@ exposure_grid_server(
   width = NULL
 )
 }
+\arguments{
+\item{input}{standard shiny server parameter}
+
+\item{output}{standard shiny server parameter}
+
+\item{exposure_matrix}{matrix of exposures in the specific format}
+
+\item{tooltip_matrix}{matrix of tooltips (where empty no tooltip will appear) corresponding to
+exposure_matrix}
+
+\item{label}{used as a prefix to all input names}
+
+\item{dev}{passed to lower level function, if TRUE initially selected values are all "High"}
+
+\item{width}{passed to lower level function (ultimately selectInput)}
+}
 \description{
 Produce a table of inputs with selectInput fields
 }

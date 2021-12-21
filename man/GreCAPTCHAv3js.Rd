@@ -6,6 +6,13 @@
 \usage{
 GreCAPTCHAv3js(siteKey, action, fieldID)
 }
+\arguments{
+\item{siteKey}{the (non-secret) sitekey given by google - passed to javascript}
+
+\item{action}{action parameter passed to javascript}
+
+\item{fieldID}{fieldID parameter passed to javascript}
+}
 \description{
 based on
 https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R

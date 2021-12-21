@@ -6,6 +6,11 @@
 \usage{
 add_param(previous_list, item_to_add)
 }
+\arguments{
+\item{previous_list}{the list}
+
+\item{item_to_add}{the new element}
+}
 \description{
 Add element to the list (shortcut)
 }

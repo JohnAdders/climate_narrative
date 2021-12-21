@@ -6,6 +6,11 @@
 \usage{
 string_add_spaces_to_make_equal_lines(string, line_width)
 }
+\arguments{
+\item{string}{the string to convert}
+
+\item{line_width}{the desired number of characters per line}
+}
 \description{
 without breaking words
 }

@@ -6,6 +6,9 @@
 \usage{
 GreCAPTCHAv3Ui(siteKey)
 }
+\arguments{
+\item{siteKey}{the (non-secret) sitekey given by google}
+}
 \description{
 based on
 https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R

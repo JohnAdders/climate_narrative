@@ -6,6 +6,9 @@
 \usage{
 climate_narrative(...)
 }
+\arguments{
+\item{...}{currently not used}
+}
 \description{
 Main funtion that runs the shiny app
 }

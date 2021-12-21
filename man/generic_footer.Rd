@@ -9,6 +9,14 @@ generic_footer(
   is_asset_mananger = FALSE
 )
 }
+\arguments{
+\item{asset_or_liability}{see above}
+
+\item{is_asset_mananger}{see above}
+}
 \description{
-Produce a footer HTML text explaining materiality levels
+Depending on parameters the materiality is defined in relation to:
+"premium income" (asset_or_liability="liability"),
+"assets under management" (asset_or_liability="assets" and is_asset_manager=TRUE), or
+"assets" (asset_or_liability="assets" and is_asset_manager=FALSE)
 }

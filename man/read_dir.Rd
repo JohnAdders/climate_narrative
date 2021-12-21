@@ -11,6 +11,17 @@ read_dir(
   remove_special_characters_from_names = TRUE
 )
 }
+\arguments{
+\item{directory}{directory to parse}
+
+\item{file_format}{format of the files to determine the correct parser.
+If "auto" (the default) the format will be guessed by extension of the first file}
+
+\item{in_package}{bool. If true (the default) the directory will be looked for in the package directory}
+
+\item{remove_special_characters_from_names}{bool. If true (the default) the name of the resulting list will be stripped
+of special characters (in particular underscores)}
+}
 \description{
 Handles yaml/csv/R files.
 }

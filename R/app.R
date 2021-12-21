@@ -1,4 +1,5 @@
 #' Main funtion that runs the shiny app
+#' @param ... currently not used
 #' @import shiny
 #' @export
 climate_narrative <- function(...){

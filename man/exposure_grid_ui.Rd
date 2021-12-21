@@ -6,6 +6,9 @@
 \usage{
 exposure_grid_ui(label)
 }
+\arguments{
+\item{label}{the name of output table to look for}
+}
 \description{
 Grid table of inputs (everything happens in matching server function)
 }

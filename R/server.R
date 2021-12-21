@@ -1,3 +1,7 @@
+#' Main server function of the shiny app
+#' @param input standard shiny variable
+#' @param output standard shiny variable
+#' @param session standard shiny variable
 server <- function(input, output, session) {
   heartbeat(input, output, session)
   session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
@@ -49,8 +53,8 @@ server <- function(input, output, session) {
 
   aggregated_type_inputs <- reactive({
     if (allow_report()) {
-      aggregated_inputs_factor <- aggregate(materiality ~ item, FUN = max, data = type_inputs())
-      aggregated_inputs_numeric <- aggregate(
+      aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = type_inputs())
+      aggregated_inputs_numeric <- stats::aggregate(
         materiality_num ~ item,
         FUN = function(x) cut(
           sum(x), 
@@ -133,7 +137,7 @@ server <- function(input, output, session) {
   #' this is necessary as markdown::render takes file as an argument
   #' not used at the moment, but do not delete - will be sent by email probably
   produce_full_report <- function(tempfile){
-    file_conn <- file(temp_md_full)
+    file_conn <- file(tempfile)
     writeLines(report_contents(), file_conn)
     close(file_conn)
     return(NULL)

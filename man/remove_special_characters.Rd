@@ -6,6 +6,11 @@
 \usage{
 remove_special_characters(text, make_camelcase = TRUE)
 }
+\arguments{
+\item{text}{string to convert}
+
+\item{make_camelcase}{bool. If true (the default), the output will be CamelCase}
+}
 \description{
 Additionally (optionally) make it camelcase.
 }

@@ -12,6 +12,18 @@ exposure_grid_cell(
   width = NULL
 )
 }
+\arguments{
+\item{exposure_item}{the name (appended to shiny input name)}
+
+\item{prefix}{prefix that will be used for inputs id (to ensure they are unique)}
+
+\item{tooltip_text}{text of the tooltip (blank by default)}
+
+\item{dev}{development mode (default is FALSE and means "" option is initially selected
+if set to TRUE then all options are selected as High to facilitate debugging}
+
+\item{width}{passed to selectInput}
+}
 \description{
 Produce the layout of questionnaire tabs (cell, row, whole table)
 }

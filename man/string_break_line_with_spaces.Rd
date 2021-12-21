@@ -6,6 +6,16 @@
 \usage{
 string_break_line_with_spaces(string, line_width, location, n_char = 1)
 }
+\arguments{
+\item{string}{the string to convert}
+
+\item{line_width}{the desired number of characters per line}
+
+\item{location}{the location of linebreak (i.e. characters before this position will stay in one line
+padded with spaces and everything after this location will be moved to next line)}
+
+\item{n_char}{size of linebreak (by default 1) i.e. the number of characters skipped}
+}
 \description{
 Insert spaces to the string so that line has exactly given number of characters
 }

@@ -12,6 +12,17 @@ get_exposure_risk_description(
   high_or_low
 )
 }
+\arguments{
+\item{item}{the exposure item (sector or equivalent abstraction class)}
+
+\item{products}{a vector of products (within the item)}
+
+\item{materiality}{if "high" more detailed description is given}
+
+\item{physical_or_transition}{"physical" or "transition" (to select the risk description)}
+
+\item{high_or_low}{may be "high", "low" or FALSE in which case empty string is returned}
+}
 \description{
 Lower level report helper function responsible for single risk (transition/physical) description
 }
