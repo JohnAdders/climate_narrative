@@ -804,3 +804,33 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
   close(file_conn)
   return(NULL)
 }
+
+tempfun <- function(){ #filename to be added as an argument
+  print("WORK IN PROGRESS")
+  filename = "C:/Users/kopalski/Downloads/Climate Report (90).rtf"
+  file_conn <- file(filename)
+  rtf <- readLines(file_conn)
+  toc_lines <- grep(
+    "HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{\\\\fldrslt\\{\\\\ul$",
+    rtf
+  )
+  for (i in toc_lines){
+    bookmark_text <- stringi::stri_match_first(rtf[i], regex="HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
+    bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text)-4)
+    header_row <- grep(paste0(" ", rtf[i + 1],"\\\\p"), rtf)
+    if(length(header_row) > 1){
+      print('header NOT unique')
+      print(bookmark_text)
+      print(rtf[i + 1])
+    } else if(length(header_row)==1) {
+      print('header unique')
+    } else {
+      warning(paste0("Header: ", rtf[i + 1]," not found"))
+    }
+    #print(header_row)
+    #print(rtf[header_row])
+  }
+  writeLines(rtf, file_conn)
+  close(file_conn)
+  return(NULL)
+}
