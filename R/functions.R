@@ -54,6 +54,14 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
   return(list)
 }
 
+#' Helper function to enable using names to refer tabs instead of numbers
+#' 
+#' @param tab_name name of the tab to convert
+tab_name_to_number <- function(tab_name){
+  as.integer(factor(tab_name, global$ordered_tabs))
+}
+
+
 #' Add element to the list (shortcut)
 #'
 #' @param previous_list List to add items to
@@ -63,30 +71,16 @@ add_param <- function(previous_list, item_to_add) {
   c(previous_list, list(item_to_add))
 }
 
-#' Get object by its name but return NULL (not error) if it does not exist
-#'
-#' @param name Name of variable to try and access
-#'
-get_or_null <- function(name) {
-  if (exists(name)) {
-    return(get(name))
-  } else {
-    return(NULL)
-  }
-}
-
 #' Make the first letter of a string upper case
-#'
-#' @param input_string String to process
-#'
-capitalize <- function(input_string) {
-  return(paste0(toupper(substring(input_string, 1, 1)), substring(input_string, 2)))
+#' 
+#' @param string the string to convert
+capitalize <- function(string) {
+  return(paste0(toupper(substring(string, 1, 1)), substring(string, 2)))
 }
 
 #' Format (camelcase) string in order to look better in final output (spaces, capitalisation)
-#'
-#' @param camelcase String to process.
-#'
+#' 
+#' @param camelcase the string to convert
 restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
   s <- sub("^ ", "", s) # remove first space
@@ -106,9 +100,8 @@ restore_spaces <- function(camelcase) {
 
 #' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
 #' and product-specific text (if any)
-#'
-#' @param exposure_matrix Exposure matrix
-#'
+#' @param exposure_matrix the matrix of exposures in the specific format
+#' Its first column is name, second is product, the others contain exposure names or blank cells
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
@@ -289,8 +282,7 @@ string_format_lines <- function(string, col_width) {
 #' Produce a markdown table out of R data frame.
 #'
 #' Create a markdown table, allowing multiline cell entries (lines need to be separated by br tag)
-#' R table headers cannot contain spaces, to get space in the output use a dot
-#' (it will be replaced with space if dot_to_space=T as in default)
+
 #' The function splits the text automatically and adds spaces to match the desired column width
 #' without breaking words.
 #'
@@ -437,7 +429,7 @@ get_exposure_description <- function(item, type_item_inputs) {
       ")"
     )
   }
-  ordered_aggregate_inputs_text <- aggregate(
+  ordered_aggregate_inputs_text <- stats::aggregate(
     ordered_type_item_inputs[, c("rowname_unique", "materiality")],
     by = list(
       Product.description = ordered_type_item_inputs$product_description,
@@ -450,7 +442,7 @@ get_exposure_description <- function(item, type_item_inputs) {
       )
     }
   )
-  ordered_aggregate_inputs_num <- aggregate(
+  ordered_aggregate_inputs_num <- stats::aggregate(
     ordered_type_item_inputs[, c("materiality_num")],
     by = list(
       Product.description = ordered_type_item_inputs$product_description,
@@ -740,4 +732,75 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
       )
     )
   )
+}
+
+# The functions below are writing a report to (temporary) file first
+# this is necessary as markdown::render takes file as an argument
+# there are 3 versions of the report, in each separate temp file:
+#    full report for email RTF,
+#    single scenario for HTML
+#    single scenario with common sectors (e.g. introduction) for button RTF
+
+#' Function that writes a full report to (temporary) file
+#'
+#' this is necessary as markdown::render takes file as an argument
+#' not used at the moment, but do not delete - will be sent by email probably
+#' @param report_contents the content to write
+#' @param tempfile where to write the report
+produce_full_report <- function(report_contents, tempfile){
+  file_conn <- file(tempfile)
+  writeLines(report_contents, file_conn)
+  close(file_conn)
+  return(NULL)
+}
+  
+#' Function that writes a full report to (temporary) file
+#'
+#' this is necessary as markdown::render takes file as an argument
+#' @param report_contents the content to write
+#' @param report_scenario_selection (user-friendly) scenario name (or empty string)
+#' @param include_common_sections whether to include non-scenario sections (e.g. intro)
+#' @param tempfile where to write the report
+produce_selective_report <- function(report_contents, report_scenario_selection, include_common_sections, tempfile){
+  if (report_scenario_selection == ""){
+    scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
+  } else {
+    scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
+  }
+  if (include_common_sections){
+    scenario_no <- sort(
+      c(0, scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
+    )
+  }
+  file_conn <- file(tempfile)
+  add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", system.file("www", package = "climate.narrative"), "/", "\\1\\2"), x, perl=T)
+  writeLines(
+    # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
+    add_path_to_graphs(report_contents[c(1 + scenario_no, length(report_contents))]),
+    file_conn
+  )
+  close(file_conn)
+  return(NULL) 
+}
+
+#' Go through the markdown file, find all png images and scale down where relevant
+#' 
+#' @param filename the path to file to convert
+#' @param max_width_inch maximum width of image in inches (wider will be scaled down to this value)
+ensure_images_fit_page <- function(filename, max_width_inch=7){
+  file_conn <- file(filename)
+  markdown <- readLines(file_conn)
+  graph_lines <- grep("^!\\[",markdown) 
+  for (i in graph_lines){
+    image_name <- substring(stringi::stri_match(markdown[i], regex="\\([[:graph:]]*.png"),2)
+    image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
+    if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
+    if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
+      print(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
+      markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
+    }
+  }
+  writeLines(markdown, file_conn)
+  close(file_conn)
+  return(NULL)
 }

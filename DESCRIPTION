@@ -32,4 +32,5 @@ Imports:
     stringi,
     tippy,
     uuid,
-    yaml
+    yaml,
+    png

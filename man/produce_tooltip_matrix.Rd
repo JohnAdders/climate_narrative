@@ -8,7 +8,8 @@ and product-specific text (if any)}
 produce_tooltip_matrix(exposure_matrix)
 }
 \arguments{
-\item{exposure_matrix}{Exposure matrix}
+\item{exposure_matrix}{the matrix of exposures in the specific format
+Its first column is name, second is product, the others contain exposure names or blank cells}
 }
 \description{
 Produce a matrix of tooltips (strings) by concatenating column-specific (if any)

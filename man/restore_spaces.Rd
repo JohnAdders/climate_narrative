@@ -7,7 +7,7 @@
 restore_spaces(camelcase)
 }
 \arguments{
-\item{camelcase}{String to process.}
+\item{camelcase}{the string to convert}
 }
 \description{
 Format (camelcase) string in order to look better in final output (spaces, capitalisation)

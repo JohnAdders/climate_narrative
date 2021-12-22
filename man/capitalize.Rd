@@ -4,10 +4,10 @@
 \alias{capitalize}
 \title{Make the first letter of a string upper case}
 \usage{
-capitalize(input_string)
+capitalize(string)
 }
 \arguments{
-\item{input_string}{String to process}
+\item{string}{the string to convert}
 }
 \description{
 Make the first letter of a string upper case

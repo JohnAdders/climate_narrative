@@ -9,9 +9,15 @@ tab_report_ui <- function() {
 
   out <- list(
     selectInput(
-      "report_selection",
+      "report_scenario_selection",
       "Select the scenario to show",
       valid_options,
+      selectize = FALSE
+    ),
+    selectInput(
+      "report_sector_selection",
+      "Select the sector to show",
+      c(""),
       selectize = FALSE
     ),
     hr()
@@ -21,7 +27,7 @@ tab_report_ui <- function() {
     out <- c(out, list(uiOutput("html_report")))
   } else {
     out <- c(out, list(
-      downloadButton("report", "Download the selected scenario report as RTF"),
+      downloadButton("report", "Download the selected scenario/sector report as RTF"),
       uiOutput("html_report")
     ))
   }
@@ -34,20 +40,20 @@ tab_report_server <- function(input, output, session, tab) {
   observeEvent(
     input$type,
     {
-      tab$previous_tab <- as.integer(
-        factor(
-          switch(input$type,
-            insurance = "ins_sov",
-            asset = "am_re",
-            bank = "bank_sov"
-          ),
-          global$ordered_tabs
+      tab$previous_tab <- tab_name_to_number(
+        switch(input$type,
+          insurance = "ins_sov",
+          asset = "am_re",
+          bank = "bank_sov"
         )
       )
     }
   )
   observeEvent(
-    input[[paste0("page_", as.integer(factor("report", global$ordered_tabs)), "_previous")]],
-    updateSelectInput(session, "report_selection", selected = "")
+    input[[paste0("page_",  tab_name_to_number("report"), "_previous")]],
+    {
+      updateSelectInput(session, "report_scenario_selection", selected = "")
+      updateSelectInput(session, "report_sector_selection", selected = "")
+    }
   )
 }

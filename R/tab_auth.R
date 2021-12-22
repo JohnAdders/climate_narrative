@@ -13,7 +13,7 @@ request_captcha <- function(output, session) {
 
 process_progress <- function(output, should_continue) {
   if (should_continue) {
-    next_tab <- as.integer(factor("type", global$ordered_tabs))
+    next_tab <- tab_name_to_number("type")
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
   } else {
     output$code_verification_result <- renderText("Code incorrect, please double check")
