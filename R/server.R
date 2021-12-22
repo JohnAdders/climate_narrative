@@ -147,6 +147,8 @@ server <- function(input, output, session) {
       input = session$userData$temp_md_scenario,
       output_file = temp_html,
       output_format = rmarkdown::html_document(
+        toc = TRUE,
+        toc_depth = 2,
         number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
