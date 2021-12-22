@@ -132,73 +132,17 @@ server <- function(input, output, session) {
     out
   })
 
-  # The functions below are writing a report to (temporary) file first
-  # this is necessary as markdown::render takes file as an argument
-  # there are 3 versions of the report, in each separate temp file:
-  #    full report for email RTF,
-  #    single scenario for HTML
-  #    single scenario with common sectors (e.g. introduction) for button RTF
-
-  #' Function that writes a full report to (temporary) file
-  #'
-  #' this is necessary as markdown::render takes file as an argument
-  #' not used at the moment, but do not delete - will be sent by email probably
-  produce_full_report <- function(tempfile){
-    file_conn <- file(tempfile)
-    writeLines(report_contents(), file_conn)
-    close(file_conn)
-    return(NULL)
-  }
-  
-  #' Function that writes a full report to (temporary) file
-  #'
-  #' this is necessary as markdown::render takes file as an argument
-  produce_selective_report <- function(report_scenario_selection, include_common_sections, tempfile){
-    if (report_scenario_selection == ""){
-      scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
-    } else {
-      scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
-    }
-    if (include_common_sections){
-      scenario_no <- sort(
-        c(0, scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
-      )
-    }
-    file_conn <- file(tempfile)
-    add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", system.file("www", package = "climate.narrative"), "/", "\\1\\2"), x, perl=T)
-    writeLines(
-      # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
-      add_path_to_graphs(report_contents()[c(1 + scenario_no, length(report_contents()))]),
-      file_conn
-    )
-    close(file_conn)
-    return(NULL) 
-  }
-
-  ensure_images_fit_page <- function(filename, max_width_inch=7){
-    file_conn <- file(filename)
-    markdown <- readLines(file_conn)
-    graph_lines <- grep("^!\\[",markdown) 
-    for (i in graph_lines){
-      image_name <- substring(stringi::stri_match(markdown[i], regex="\\([[:graph:]]*.png"),2)
-      image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
-      if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
-      if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
-        print(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
-        markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
-      }
-    }
-    writeLines(markdown, file_conn)
-    close(file_conn)
-    return(NULL)
-  }
-
   output$html_report <- renderUI({
     if (input$report_scenario_selection == "" & input$report_sector_selection == "") {
       return(p("Please select a scenario or a sector"))
     }
     temp_html <- tempfile(fileext = ".html")
-    produce_selective_report(input$report_scenario_selection, FALSE, session$userData$temp_md_scenario)
+    produce_selective_report(
+      report_contents,
+      input$report_scenario_selection,
+      FALSE,
+      session$userData$temp_md_scenario
+    )
     rmarkdown::render(
       input = session$userData$temp_md_scenario,
       output_file = temp_html,
@@ -237,7 +181,12 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      produce_selective_report(input$report_scenario_selection, TRUE, session$userData$temp_md_scenario_and_commons)
+      produce_selective_report(
+        report_contents,
+        input$report_scenario_selection,
+        TRUE,
+        session$userData$temp_md_scenario_and_commons
+      )
       fs <- file.size(session$userData$temp_md_scenario_and_commons)
       rmarkdown::render(
         input = session$userData$temp_md_scenario_and_commons,

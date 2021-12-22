@@ -275,7 +275,7 @@ string_format_lines <- function(string, col_width) {
   } else {
     out <- string
   }
-  out <- string_add_spaces_to_make_equal_lines(out, line_width)
+  out <- string_add_spaces_to_make_equal_lines(out, col_width)
   return(out)
 }
 
@@ -732,4 +732,75 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
       )
     )
   )
+}
+
+# The functions below are writing a report to (temporary) file first
+# this is necessary as markdown::render takes file as an argument
+# there are 3 versions of the report, in each separate temp file:
+#    full report for email RTF,
+#    single scenario for HTML
+#    single scenario with common sectors (e.g. introduction) for button RTF
+
+#' Function that writes a full report to (temporary) file
+#'
+#' this is necessary as markdown::render takes file as an argument
+#' not used at the moment, but do not delete - will be sent by email probably
+#' @param report_contents the content to write
+#' @param tempfile where to write the report
+produce_full_report <- function(report_contents, tempfile){
+  file_conn <- file(tempfile)
+  writeLines(report_contents, file_conn)
+  close(file_conn)
+  return(NULL)
+}
+  
+#' Function that writes a full report to (temporary) file
+#'
+#' this is necessary as markdown::render takes file as an argument
+#' @param report_contents the content to write
+#' @param report_scenario_selection (user-friendly) scenario name (or empty string)
+#' @param include_common_sections whether to include non-scenario sections (e.g. intro)
+#' @param tempfile where to write the report
+produce_selective_report <- function(report_contents, report_scenario_selection, include_common_sections, tempfile){
+  if (report_scenario_selection == ""){
+    scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
+  } else {
+    scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
+  }
+  if (include_common_sections){
+    scenario_no <- sort(
+      c(0, scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
+    )
+  }
+  file_conn <- file(tempfile)
+  add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", system.file("www", package = "climate.narrative"), "/", "\\1\\2"), x, perl=T)
+  writeLines(
+    # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
+    add_path_to_graphs(report_contents[c(1 + scenario_no, length(report_contents))]),
+    file_conn
+  )
+  close(file_conn)
+  return(NULL) 
+}
+
+#' Go through the markdown file, find all png images and scale down where relevant
+#' 
+#' @param filename the path to file to convert
+#' @param max_width_inch maximum width of image in inches (wider will be scaled down to this value)
+ensure_images_fit_page <- function(filename, max_width_inch=7){
+  file_conn <- file(filename)
+  markdown <- readLines(file_conn)
+  graph_lines <- grep("^!\\[",markdown) 
+  for (i in graph_lines){
+    image_name <- substring(stringi::stri_match(markdown[i], regex="\\([[:graph:]]*.png"),2)
+    image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
+    if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
+    if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
+      print(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
+      markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
+    }
+  }
+  writeLines(markdown, file_conn)
+  close(file_conn)
+  return(NULL)
 }
