@@ -138,7 +138,7 @@ server <- function(input, output, session) {
     }
     temp_html <- tempfile(fileext = ".html")
     produce_selective_report(
-      report_contents,
+      report_contents(),
       input$report_scenario_selection,
       FALSE,
       session$userData$temp_md_scenario
@@ -182,7 +182,7 @@ server <- function(input, output, session) {
         )
       )
       produce_selective_report(
-        report_contents,
+        report_contents(),
         input$report_scenario_selection,
         TRUE,
         session$userData$temp_md_scenario_and_commons
