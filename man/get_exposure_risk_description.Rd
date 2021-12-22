@@ -2,7 +2,8 @@
 % Please edit documentation in R/functions.R
 \name{get_exposure_risk_description}
 \alias{get_exposure_risk_description}
-\title{Lower level report helper function responsible for single risk (transition/physical) description}
+\title{Lower level report helper function responsible for single risk
+(transition/physical) description.}
 \usage{
 get_exposure_risk_description(
   item,
@@ -13,16 +14,17 @@ get_exposure_risk_description(
 )
 }
 \arguments{
-\item{item}{the exposure item (sector or equivalent abstraction class)}
+\item{item}{Exposure class name}
 
-\item{products}{a vector of products (within the item)}
+\item{products}{Product name}
 
-\item{materiality}{if "high" more detailed description is given}
+\item{materiality}{Materiality of item}
 
-\item{physical_or_transition}{"physical" or "transition" (to select the risk description)}
+\item{physical_or_transition}{Type of scenario}
 
-\item{high_or_low}{may be "high", "low" or FALSE in which case empty string is returned}
+\item{high_or_low}{Is scenario high or low}
 }
 \description{
-Lower level report helper function responsible for single risk (transition/physical) description
+Lower level report helper function responsible for single risk
+(transition/physical) description.
 }

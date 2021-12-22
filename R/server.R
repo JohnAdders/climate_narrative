@@ -1,7 +1,12 @@
-#' Main server function of the shiny app
-#' @param input standard shiny variable
-#' @param output standard shiny variable
-#' @param session standard shiny variable
+#' Main Shiny server function
+#'
+#' @param input Shiny input
+#' @param output Shiny output
+#' @param session Shiny session
+#'
+#' @importFrom stats aggregate
+#' @export
+#'
 server <- function(input, output, session) {
   heartbeat(input, output, session)
   session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
@@ -18,16 +23,16 @@ server <- function(input, output, session) {
       values = unlist(x, use.names = FALSE),
       stringsAsFactors = FALSE
     )
-    new_col_names <- c("type", "subtype", "rowname", "product", "colname", "item", "product_description","product_text")
-    out <- cbind(out, matrix(NA,nrow=nrow(out),ncol=length(new_col_names)))
+    new_col_names <- c("type", "subtype", "rowname", "product", "colname", "item", "product_description", "product_text")
+    out <- cbind(out, matrix(NA, nrow = nrow(out), ncol = length(new_col_names)))
     colnames(out) <- c("names", "values", new_col_names)
     splitted_names <- strsplit(out$names, "_", fixed = TRUE)
     for (i in 1:nrow(out)) {
       if (length(splitted_names[[i]]) == 6) {
         out[i, 3:8] <- splitted_names[[i]]
         if (is.null(global$products[[out$product[i]]])) {
-          print(out[i,])
-          warning(paste('No product description for', out$product[i]))
+          print(out[i, ])
+          warning(paste("No product description for", out$product[i]))
         } else {
           out$product_description[i] <- global$products[[out$product[i]]]$description
           out$product_text[i] <- global$products[[out$product[i]]]$text
@@ -48,7 +53,7 @@ server <- function(input, output, session) {
   })
 
   allow_report <- reactive({
-    return(nrow(type_inputs())>0)
+    return(nrow(type_inputs()) > 0)
   })
 
   aggregated_type_inputs <- reactive({
@@ -56,11 +61,13 @@ server <- function(input, output, session) {
       aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = type_inputs())
       aggregated_inputs_numeric <- stats::aggregate(
         materiality_num ~ item,
-        FUN = function(x) cut(
-          sum(x), 
-          breaks = c(0, 4.5, 9.5, 100),
-          labels = c("Low", "Medium", "High")
-        ),
+        FUN = function(x) {
+          cut(
+            sum(x),
+            breaks = c(0, 4.5, 9.5, 100),
+            labels = c("Low", "Medium", "High")
+          )
+        },
         data = type_inputs()
       )
       aggregated_inputs <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
@@ -207,7 +214,7 @@ server <- function(input, output, session) {
     writeLines(
       gsub(
         system.file("www", package = "climate.narrative"),
-        "/climate_narrative",
+        "climate_narrative",
         temp
       ),
       file_conn
@@ -215,7 +222,7 @@ server <- function(input, output, session) {
     close(file_conn)
 
     result <- includeHTML(temp_html)
-    
+
     return(result)
   })
 
@@ -258,7 +265,7 @@ server <- function(input, output, session) {
   report_tab_no <- tab_name_to_number('report')
   for (tab in global$tabs) {
     # "sum" below is a trick to include NULL case as sum(NULL)=0
-    if (sum(tab$next_tab) == report_tab_no){
+    if (sum(tab$next_tab) == report_tab_no) {
       tab$server(input, output, session, switch_page, allow_report)
     } else {
       tab$server(input, output, session, switch_page)

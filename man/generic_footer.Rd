@@ -2,21 +2,15 @@
 % Please edit documentation in R/functions.R
 \name{generic_footer}
 \alias{generic_footer}
-\title{Produce a footer HTML text explaining materiality levels}
+\title{Produce a footer HTML text explaining materiality levels.}
 \usage{
-generic_footer(
-  asset_or_liability = c("asset", "liability"),
-  is_asset_mananger = FALSE
-)
+generic_footer(asset_or_liability, is_asset_mananger = FALSE)
 }
 \arguments{
-\item{asset_or_liability}{see above}
+\item{asset_or_liability}{A string with the type of exposure page}
 
-\item{is_asset_mananger}{see above}
+\item{is_asset_mananger}{Is this display for an asset manager}
 }
 \description{
-Depending on parameters the materiality is defined in relation to:
-"premium income" (asset_or_liability="liability"),
-"assets under management" (asset_or_liability="assets" and is_asset_manager=TRUE), or
-"assets" (asset_or_liability="assets" and is_asset_manager=FALSE)
+Produce a footer HTML text explaining materiality levels.
 }

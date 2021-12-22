@@ -2,15 +2,17 @@
 % Please edit documentation in R/functions.R
 \name{string_add_spaces_to_make_equal_lines}
 \alias{string_add_spaces_to_make_equal_lines}
-\title{Add spaces to a string so that it can be split into blocks of exactly the same length}
+\title{Add spaces to a string so that it can be split into blocks of exactly the same length
+without breaking words.}
 \usage{
 string_add_spaces_to_make_equal_lines(string, line_width)
 }
 \arguments{
-\item{string}{the string to convert}
+\item{string}{String to break}
 
-\item{line_width}{the desired number of characters per line}
+\item{line_width}{Width of a line}
 }
 \description{
-without breaking words
+Add spaces to a string so that it can be split into blocks of exactly the same length
+without breaking words.
 }

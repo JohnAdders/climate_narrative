@@ -7,12 +7,11 @@
 get_scenario_descriptions(aggregated_table, type_inputs, scenario)
 }
 \arguments{
-\item{aggregated_table}{table of aggregated inputs (per items)}
+\item{aggregated_table}{Table of all possible items}
 
-\item{type_inputs}{disaggregated inputs table (to list all the contributing rows)}
+\item{type_inputs}{Drop box items}
 
-\item{scenario}{the list with the following fields:
-name, description, is_scenario, transition, physical}
+\item{scenario}{Scenario name}
 }
 \description{
 Lower level report helper function responsible for single scenario description

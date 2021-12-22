@@ -1,9 +1,9 @@
 #' QuestionTab class definition
-#' 
+#'
 #' Instances are tabs of the questionnaire.
 #' This is a wrapper over any ui and server that handles switching to previous/next tab if relevant
 #' (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).
-QuestionTab <- R6::R6Class(
+QuestionTab <- R6Class(
   "QuestionTab",
   public = list(
     #' @field tab_name name of the tab
@@ -75,19 +75,21 @@ QuestionTab <- R6::R6Class(
     #' @param switch_page function to be passed that changes the active tab
     #' (used in prev/next buttons)
     #' @param allow_next (optional) additional condition to be checked before going to next tab
-    server = function(input, output, session, switch_page, allow_next=function(){TRUE}) {
+    server = function(input, output, session, switch_page, allow_next = function() {
+                        TRUE
+                      }) {
       if (!is.null(self$exposure)) {
-        if(ncol(self$exposure) < 5) {
-          width <- '12em'
+        if (ncol(self$exposure) < 5) {
+          width <- "12em"
         } else {
-          width <- '6em'
+          width <- "6em"
         }
         exposure_grid_server(
           input,
           output,
           self$exposure,
           produce_tooltip_matrix(self$exposure),
-          paste(self$type, self$subtype, sep="_"),
+          paste(self$type, self$subtype, sep = "_"),
           global$dev,
           width
         )
@@ -100,9 +102,9 @@ QuestionTab <- R6::R6Class(
       }
       if (length(self$next_tab)) {
         observeEvent(
-          input[[paste0(self$id, "_next")]], 
+          input[[paste0(self$id, "_next")]],
           {
-            if(allow_next()){
+            if (allow_next()) {
               switch_page(as.integer(self$next_tab))
             }
           }
@@ -122,7 +124,7 @@ QuestionTab <- R6::R6Class(
         tabpanel_params <- add_param(
           tabpanel_params,
           tag("header", list(
-            img(src = "/climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
+            img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
           ))
         )
       }
@@ -134,7 +136,7 @@ QuestionTab <- R6::R6Class(
       if (!is.null(self$exposure)) {
         tabpanel_params <- add_param(
           tabpanel_params,
-          exposure_grid_ui(paste(self$type, self$subtype, sep="_"))
+          exposure_grid_ui(paste(self$type, self$subtype, sep = "_"))
         )
       }
       tabpanel_params <- add_param(tabpanel_params, br())

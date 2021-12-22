@@ -2,7 +2,8 @@
 % Please edit documentation in R/functions.R
 \name{read_dir}
 \alias{read_dir}
-\title{Read all files from a directory as a named R list}
+\title{Read all files from a directory as a named R list.
+Handles yaml/csv/R files.}
 \usage{
 read_dir(
   directory,
@@ -12,16 +13,15 @@ read_dir(
 )
 }
 \arguments{
-\item{directory}{directory to parse}
+\item{directory}{Directory to process}
 
-\item{file_format}{format of the files to determine the correct parser.
-If "auto" (the default) the format will be guessed by extension of the first file}
+\item{file_format}{File format to interpret files as. One of yml, csv, r or auto}
 
-\item{in_package}{bool. If true (the default) the directory will be looked for in the package directory}
+\item{in_package}{Is the directory in a package}
 
-\item{remove_special_characters_from_names}{bool. If true (the default) the name of the resulting list will be stripped
-of special characters (in particular underscores)}
+\item{remove_special_characters_from_names}{Should we remove special characters}
 }
 \description{
+Read all files from a directory as a named R list.
 Handles yaml/csv/R files.
 }

@@ -2,24 +2,17 @@
 % Please edit documentation in R/server.R
 \name{server}
 \alias{server}
-\title{Main server function of the shiny app}
+\title{Main Shiny server function}
 \usage{
 server(input, output, session)
 }
 \arguments{
-\item{input}{standard shiny variable}
+\item{input}{Shiny input}
 
-\item{output}{standard shiny variable}
+\item{output}{Shiny output}
 
-\item{session}{standard shiny variable
-Function that writes a full report to (temporary) file
-
-this is necessary as markdown::render takes file as an argument
-not used at the moment, but do not delete - will be sent by email probably
-Function that writes a full report to (temporary) file
-
-this is necessary as markdown::render takes file as an argument}
+\item{session}{Shiny session}
 }
 \description{
-Main server function of the shiny app
+Main Shiny server function
 }

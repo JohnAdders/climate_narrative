@@ -1,3 +1,11 @@
+#' Main Shiny User Interface function
+#'
+#' @importFrom tippy use_tippy
+#' @importFrom shinyjs useShinyjs
+#' @importFrom shinythemes shinytheme
+#'
+#' @export
+#'
 ui <- function() {
   tabset_start <- list(
     id = "wizard",
@@ -8,9 +16,10 @@ ui <- function() {
   })
   fluidPage(
     title = "Climate narrative",
-    theme = shinythemes::shinytheme("sandstone"),
-    shinyjs::useShinyjs(),
-    tags$link(rel = "stylesheet", type = "text/css", href = "/climate_narrative/climate_narrative.css"),
+    theme = shinytheme("sandstone"),
+    use_tippy(),
+    useShinyjs(),
+    tags$link(rel = "stylesheet", type = "text/css", href = "climate_narrative/climate_narrative.css"),
     do.call(tabsetPanel, c(tabset_start, tabset_tabs)),
     textOutput("__heartbeat")
   )

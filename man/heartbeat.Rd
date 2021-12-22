@@ -7,11 +7,11 @@
 heartbeat(input, output, session)
 }
 \arguments{
-\item{input}{standard shiny server parameter}
+\item{input}{Shiny input}
 
-\item{output}{standard shiny server parameter}
+\item{output}{Shiny output}
 
-\item{session}{standard shiny server parameter}
+\item{session}{Shiny session}
 }
 \description{
 Heartbeat function (server part) to prevent app closing due to inactivity

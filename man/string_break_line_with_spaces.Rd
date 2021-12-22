@@ -2,20 +2,19 @@
 % Please edit documentation in R/functions.R
 \name{string_break_line_with_spaces}
 \alias{string_break_line_with_spaces}
-\title{Insert spaces to the string so that line has exactly given number of characters}
+\title{Insert spaces to the string so that line has exactly given number of characters.}
 \usage{
 string_break_line_with_spaces(string, line_width, location, n_char = 1)
 }
 \arguments{
-\item{string}{the string to convert}
+\item{string}{String to break}
 
-\item{line_width}{the desired number of characters per line}
+\item{line_width}{Width of line}
 
-\item{location}{the location of linebreak (i.e. characters before this position will stay in one line
-padded with spaces and everything after this location will be moved to next line)}
+\item{location}{starting column}
 
-\item{n_char}{size of linebreak (by default 1) i.e. the number of characters skipped}
+\item{n_char}{Number of characters}
 }
 \description{
-Insert spaces to the string so that line has exactly given number of characters
+Insert spaces to the string so that line has exactly given number of characters.
 }
