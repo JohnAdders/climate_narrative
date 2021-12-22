@@ -124,7 +124,7 @@ server <- function(input, output, session) {
       which(sapply(global$scenarios, `[[`, i = "name") == report_selection),
       length(report_contents()) - 1
     )
-    add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", getwd(), "/www/", "\\1\\2"), x, perl = T)
+    add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", system.file("www", package = "climate.narrative"), "/", "\\1\\2"), x, perl = T)
     writeLines(
       # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
       add_path_to_graphs(report_contents()[c(1 + scenario_no)]),
@@ -172,7 +172,7 @@ server <- function(input, output, session) {
     temp <- readLines(file_conn)
     writeLines(
       gsub(
-        paste0(getwd(), "/www"),
+        system.file("www", package = "climate.narrative"),
         "climate_narrative",
         temp
       ),
@@ -188,7 +188,7 @@ server <- function(input, output, session) {
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
-    content = function(file, res_path = paste0(getwd(), "/www")) {
+    content = function(file, res_path = system.file("www", package = "climate.narrative")) {
       showModal(
         modalDialog(
           "Report rendering in progress... when complete your download will start automatically",
