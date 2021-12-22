@@ -22,6 +22,9 @@
     <loc>/reference/capitalize.html</loc>
   </url>
   <url>
+    <loc>/reference/ensure_images_fit_page.html</loc>
+  </url>
+  <url>
     <loc>/reference/exposure_grid_cell.html</loc>
   </url>
   <url>
@@ -43,9 +46,6 @@
     <loc>/reference/get_exposure_risk_description.html</loc>
   </url>
   <url>
-    <loc>/reference/get_or_null.html</loc>
-  </url>
-  <url>
     <loc>/reference/get_references.html</loc>
   </url>
   <url>
@@ -59,6 +59,12 @@
   </url>
   <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/produce_full_report.html</loc>
+  </url>
+  <url>
+    <loc>/reference/produce_selective_report.html</loc>
   </url>
   <url>
     <loc>/reference/produce_tooltip_matrix.html</loc>
@@ -95,6 +101,9 @@
   </url>
   <url>
     <loc>/reference/string_format_lines.html</loc>
+  </url>
+  <url>
+    <loc>/reference/tab_name_to_number.html</loc>
   </url>
   <url>
     <loc>/reference/table_to_markdown.html</loc>
