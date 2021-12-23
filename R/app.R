@@ -28,6 +28,16 @@ run_shiny_app <- function(secrets_file="secret.yml", ...) {
     QuestionTab$new("am_re", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
     QuestionTab$new("report", "type", NULL)
   )
+  # Tab names validation check
+  # the global$ordered_tabs must be defined first (the QuestionTab constructor relies on this
+  # to assign tab numbers), so check consistency of names post hoc
+  if (global$ordered_tabs == sapply(global$tabs, function(x) x$tab_name)){
+    # OK
+  } else if (!setequal(global$ordered_tabs, sapply(global$tabs, function(x) x$tab_name))){
+    stop('Names of global$tabs do not match global$ordered_tabs')
+  } else {
+    warning('Warning: order of global$tabs overwritten by global$ordered_tabs')
+  }
   shinyApp(ui = ui(), server = server, ...)
 }
 
