@@ -805,30 +805,44 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
   return(NULL)
 }
 
-tempfun <- function(){ #filename to be added as an argument
-  print("WORK IN PROGRESS")
-  filename = "C:/Users/kopalski/Downloads/Climate Report (90).rtf"
+rtf_fix_table_of_contents <- function(filename){
+  #filename = "C:/Users/kopalski/Downloads/Climate Report (91) — kopia.rtf"
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
-  toc_lines <- grep(
+  hyperlink_lines <- grep(
     "HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{\\\\fldrslt\\{\\\\ul$",
     rtf
   )
-  for (i in toc_lines){
+  search_position <- 1
+  for (i in hyperlink_lines){
     bookmark_text <- stringi::stri_match_first(rtf[i], regex="HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
     bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text)-4)
-    header_row <- grep(paste0(" ", rtf[i + 1],"\\\\p"), rtf)
-    if(length(header_row) > 1){
-      print('header NOT unique')
-      print(bookmark_text)
-      print(rtf[i + 1])
-    } else if(length(header_row)==1) {
-      print('header unique')
-    } else {
-      warning(paste0("Header: ", rtf[i + 1]," not found"))
-    }
-    #print(header_row)
-    #print(rtf[header_row])
+    bookmark_row <- search_position + grep(paste0(" ", rtf[i + 1],"\\\\p"), rtf[search_position : length(rtf)])[1] - 1
+    search_position <- bookmark_row
+    print(bookmark_row)
+    # if(length(bookmark_row) > 1){
+    #   print('header NOT unique')
+    # } else if(length(bookmark_row)==1) {
+    #   print('header unique')
+    # } else {
+    #   warning(paste0("Header: ", rtf[i + 1]," not found"))
+    # }
+    print(bookmark_text)
+    print(rtf[i + 1])
+    print(rtf[bookmark_row])
+    rtf[bookmark_row] <- paste0(
+      # "{\\*\\bkmkstart ",
+      # bookmark_text,
+      # "}",
+      rtf[bookmark_row],
+      "{\\*\\bkmkstart ",
+      bookmark_text,
+      "}",
+      "{\\*\\bkmkend ",
+      bookmark_text,
+      "}"
+    )
+    # {*bkmkstart bookmark_name}display_text{*bkmkend bookmark_name}
   }
   writeLines(rtf, file_conn)
   close(file_conn)
