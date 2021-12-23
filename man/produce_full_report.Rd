@@ -11,6 +11,9 @@ produce_full_report(report_contents, tempfile)
 
 \item{tempfile}{where to write the report}
 }
+\value{
+NULL, output is a file as specified in the argument
+}
 \description{
 this is necessary as markdown::render takes file as an argument
 not used at the moment, but do not delete - will be sent by email probably

@@ -74,6 +74,7 @@ add_param <- function(previous_list, item_to_add) {
 #' Make the first letter of a string upper case
 #' 
 #' @param string the string to convert
+#' 
 capitalize <- function(string) {
   return(paste0(toupper(substring(string, 1, 1)), substring(string, 2)))
 }
@@ -81,6 +82,7 @@ capitalize <- function(string) {
 #' Format (camelcase) string in order to look better in final output (spaces, capitalisation)
 #' 
 #' @param camelcase the string to convert
+#' 
 restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
   s <- sub("^ ", "", s) # remove first space
@@ -102,6 +104,7 @@ restore_spaces <- function(camelcase) {
 #' and product-specific text (if any)
 #' @param exposure_matrix the matrix of exposures in the specific format
 #' Its first column is name, second is product, the others contain exposure names or blank cells
+#' 
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
@@ -243,6 +246,7 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char =
 #' @param line_width Width of a line
 #'
 #' @importFrom stats na.omit
+#' @importFrom stringi stri_locate_all
 #'
 string_add_spaces_to_make_equal_lines <- function(string, line_width) {
   out <- string
@@ -498,6 +502,7 @@ get_exposure_appendix <- function(item) {
 #' @param materiality Materiality of item
 #' @param physical_or_transition Type of scenario
 #' @param high_or_low Is scenario high or low
+#' 
 get_exposure_risk_description <- function(item, products, materiality, physical_or_transition, high_or_low) {
   if (high_or_low == FALSE) {
     return("")
@@ -657,6 +662,7 @@ heartbeat_footer <- function() {
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 #'
 #' @param site_key Site key from google
+#' 
 recaptcha_ui <- function(site_key) {
   tagList(tags$head(
     tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=", site_key)),
@@ -673,6 +679,7 @@ recaptcha_ui <- function(site_key) {
 #' @param field_id Field to trigger
 #'
 #' @importFrom shinyjs runjs
+#' 
 recaptcha_js <- function(site_key, action, field_id) {
   runjs(paste0("
         grecaptcha.ready(function () {
@@ -690,6 +697,10 @@ recaptcha_js <- function(site_key, action, field_id) {
 #'
 #' @param secret_key Secret key from google
 #' @param recaptcha_response Response from google
+#' @importFrom httr POST
+#' @importFrom jsonlite fromJSON
+#' @importFrom httr content
+#' 
 recaptcha_server <- function(secret_key, recaptcha_response) {
   response <- httr::POST(
     "https://www.google.com/recaptcha/api/siteverify",
@@ -791,12 +802,14 @@ produce_selective_report <- function(report_contents, report_scenario_selection,
 #' @param max_width_inch maximum width of image in inches (wider will be scaled down to this value)
 #' default is 7 inches which roughly matches vertical A4 page with margins
 #' @return NULL, changes file specified as an argument in place
+#' @importFrom stringi stri_match_first
+#' 
 ensure_images_fit_page <- function(filename, max_width_inch=7){
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[",markdown) 
   for (i in graph_lines){
-    image_name <- substring(stringi::stri_match(markdown[i], regex="\\([[:graph:]]*.png"),2)
+    image_name <- substring(stringi::stri_match_first(markdown[i], regex="\\([[:graph:]]*.png"),2)
     image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
     if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
     if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
@@ -812,8 +825,11 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
 #' 
 #' ToC in pandoc output is not working out of the box. The ToC is a list of hyperlinks,
 #' but there are no corresponding bookmarks in headers of respective sections
+#' 
 #' @param filename name of file to convert
 #' @return NULL, changes file specified as an argument in place
+#' @importFrom stringi stri_match_first
+#' 
 rtf_fix_table_of_contents <- function(filename){
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
@@ -842,6 +858,25 @@ rtf_fix_table_of_contents <- function(filename){
       bookmark_text,
       "}"
     )
+  }
+  writeLines(rtf, file_conn)
+  close(file_conn)
+  return(invisible(NULL))
+}
+
+#' Center images in RTF
+#' 
+#' By default pandoc rtf aligns pictures left, to center them (consistently with HTML)
+#' manual intervention is required
+#' @param filename name of file to convert
+#' @return NULL, changes file specified as an argument in place
+#' 
+rtf_center_images <- function(filename){
+  file_conn <- file(filename)
+  rtf <- readLines(file_conn)
+  image_lines <- grep("{\\pict", rtf, fixed = TRUE)
+  for (i in image_lines){
+    rtf[i] <- gsub("\\ql", "\\qc", rtf[i], fixed = TRUE)
   }
   writeLines(rtf, file_conn)
   close(file_conn)

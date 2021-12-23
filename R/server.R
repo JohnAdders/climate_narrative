@@ -210,6 +210,7 @@ server <- function(input, output, session) {
       if (file.size(session$userData$temp_md_scenario_and_commons) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
       # by default the table of contents in pandoc output does not work, fixing it manually
       rtf_fix_table_of_contents(session$userData$temp_rtf)
+      rtf_center_images(session$userData$temp_rtf)
       removeModal()
       file.copy(session$userData$temp_rtf, file)
     }
