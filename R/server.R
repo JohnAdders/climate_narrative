@@ -208,6 +208,7 @@ server <- function(input, output, session) {
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
       if (file.size(session$userData$temp_md_scenario_and_commons) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+      # by default the table of contents in pandoc output does not work, fixing it manually
       rtf_fix_table_of_contents(session$userData$temp_rtf)
       removeModal()
       file.copy(session$userData$temp_rtf, file)

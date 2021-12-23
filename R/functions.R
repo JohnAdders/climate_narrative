@@ -747,11 +747,12 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' not used at the moment, but do not delete - will be sent by email probably
 #' @param report_contents the content to write
 #' @param tempfile where to write the report
+#' @return NULL, output is a file as specified in the argument
 produce_full_report <- function(report_contents, tempfile){
   file_conn <- file(tempfile)
   writeLines(report_contents, file_conn)
   close(file_conn)
-  return(NULL)
+  return(invisible(NULL))
 }
   
 #' Function that writes a full report to (temporary) file
@@ -761,6 +762,7 @@ produce_full_report <- function(report_contents, tempfile){
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
 #' @param include_common_sections whether to include non-scenario sections (e.g. intro)
 #' @param tempfile where to write the report
+#' @return NULL, output is a file as specified in the argument
 produce_selective_report <- function(report_contents, report_scenario_selection, include_common_sections, tempfile){
   if (report_scenario_selection == ""){
     scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
@@ -780,13 +782,15 @@ produce_selective_report <- function(report_contents, report_scenario_selection,
     file_conn
   )
   close(file_conn)
-  return(NULL) 
+  return(invisible(NULL))
 }
 
 #' Go through the markdown file, find all png images and scale down where relevant
 #' 
 #' @param filename the path to file to convert
 #' @param max_width_inch maximum width of image in inches (wider will be scaled down to this value)
+#' default is 7 inches which roughly matches vertical A4 page with margins
+#' @return NULL, changes file specified as an argument in place
 ensure_images_fit_page <- function(filename, max_width_inch=7){
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
@@ -802,49 +806,44 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
   }
   writeLines(markdown, file_conn)
   close(file_conn)
-  return(NULL)
+  return(invisible(NULL))
 }
-
+#' Fix the table of contents in the RTF file
+#' 
+#' ToC in pandoc output is not working out of the box. The ToC is a list of hyperlinks,
+#' but there are no corresponding bookmarks in headers of respective sections
+#' @param filename name of file to convert
+#' @return NULL, changes file specified as an argument in place
 rtf_fix_table_of_contents <- function(filename){
-  #filename = "C:/Users/kopalski/Downloads/Climate Report (91) — kopia.rtf"
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
+  # First identify the table of contents - look for hyperlinks
   hyperlink_lines <- grep(
     "HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{\\\\fldrslt\\{\\\\ul$",
     rtf
   )
+  # The headers are not unique. I take advantage of the fact that ToC is ordered
+  # and look for the first header with a given name after previous match
   search_position <- 1
   for (i in hyperlink_lines){
     bookmark_text <- stringi::stri_match_first(rtf[i], regex="HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
-    bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text)-4)
-    bookmark_row <- search_position + grep(paste0(" ", rtf[i + 1],"\\\\p"), rtf[search_position : length(rtf)])[1] - 1
+    bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text) - 4)
+    bookmark_row <- grep(
+        paste0(" ", rtf[i + 1],"\\\\p"), 
+        rtf[search_position : length(rtf)]
+      )[1] + search_position - 1
     search_position <- bookmark_row
-    print(bookmark_row)
-    # if(length(bookmark_row) > 1){
-    #   print('header NOT unique')
-    # } else if(length(bookmark_row)==1) {
-    #   print('header unique')
-    # } else {
-    #   warning(paste0("Header: ", rtf[i + 1]," not found"))
-    # }
-    print(bookmark_text)
-    print(rtf[i + 1])
-    print(rtf[bookmark_row])
+    # Appending the bookmark matching the ToC hyperlink
     rtf[bookmark_row] <- paste0(
-      # "{\\*\\bkmkstart ",
-      # bookmark_text,
-      # "}",
       rtf[bookmark_row],
       "{\\*\\bkmkstart ",
       bookmark_text,
-      "}",
-      "{\\*\\bkmkend ",
+      "}{\\*\\bkmkend ",
       bookmark_text,
       "}"
     )
-    # {*bkmkstart bookmark_name}display_text{*bkmkend bookmark_name}
   }
   writeLines(rtf, file_conn)
   close(file_conn)
-  return(NULL)
+  return(invisible(NULL))
 }
