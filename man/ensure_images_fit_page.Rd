@@ -9,7 +9,11 @@ ensure_images_fit_page(filename, max_width_inch = 7)
 \arguments{
 \item{filename}{the path to file to convert}
 
-\item{max_width_inch}{maximum width of image in inches (wider will be scaled down to this value)}
+\item{max_width_inch}{maximum width of image in inches (wider will be scaled down to this value)
+default is 7 inches which roughly matches vertical A4 page with margins}
+}
+\value{
+NULL, changes file specified as an argument in place
 }
 \description{
 Go through the markdown file, find all png images and scale down where relevant

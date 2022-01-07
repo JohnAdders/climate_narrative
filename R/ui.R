@@ -1,6 +1,5 @@
 #' Main Shiny User Interface function
 #'
-#' @importFrom tippy use_tippy
 #' @importFrom shinyjs useShinyjs
 #' @importFrom shinythemes shinytheme
 #'
@@ -17,7 +16,6 @@ ui <- function() {
   fluidPage(
     title = "Climate narrative",
     theme = shinytheme("sandstone"),
-    use_tippy(),
     useShinyjs(),
     tags$link(rel = "stylesheet", type = "text/css", href = "climate_narrative/climate_narrative.css"),
     do.call(tabsetPanel, c(tabset_start, tabset_tabs)),

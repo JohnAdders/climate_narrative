@@ -20,6 +20,9 @@ produce_selective_report(
 
 \item{tempfile}{where to write the report}
 }
+\value{
+NULL, output is a file as specified in the argument
+}
 \description{
 this is necessary as markdown::render takes file as an argument
 }

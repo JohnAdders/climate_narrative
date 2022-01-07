@@ -14,6 +14,7 @@ server <- function(input, output, session) {
   session$userData$temp_md_full <- tempfile(fileext = ".md")
   session$userData$temp_md_scenario <- tempfile(fileext = ".md")
   session$userData$temp_md_scenario_and_commons <- tempfile(fileext = ".md")
+  session$userData$temp_rtf <- tempfile(fileext = ".rtf")
 
   # the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
@@ -147,6 +148,8 @@ server <- function(input, output, session) {
       input = session$userData$temp_md_scenario,
       output_file = temp_html,
       output_format = rmarkdown::html_document(
+        toc = TRUE,
+        toc_depth = 2,
         number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
@@ -190,7 +193,7 @@ server <- function(input, output, session) {
       fs <- file.size(session$userData$temp_md_scenario_and_commons)
       rmarkdown::render(
         input = session$userData$temp_md_scenario_and_commons,
-        output_file = file,
+        output_file = session$userData$temp_rtf,
         output_format = rmarkdown::rtf_document(
           toc = TRUE,
           toc_depth = 2,
@@ -205,7 +208,11 @@ server <- function(input, output, session) {
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
       if (file.size(session$userData$temp_md_scenario_and_commons) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+      # by default the table of contents in pandoc output does not work, fixing it manually
+      rtf_fix_table_of_contents(session$userData$temp_rtf)
+      rtf_center_images(session$userData$temp_rtf)
       removeModal()
+      file.copy(session$userData$temp_rtf, file)
     }
   )
 
