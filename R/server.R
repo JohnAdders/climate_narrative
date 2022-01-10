@@ -108,7 +108,8 @@ server <- function(input, output, session) {
   )
   
 
-  report_contents <- reactive({
+  #report_contents <- reactive({
+  get_report_contents <- function(aggregated_inputs, inputs){
     out <- paste0(
       "---\n",
       "title: |\n",
@@ -123,15 +124,16 @@ server <- function(input, output, session) {
       out <- c(
         out,
         get_scenario_descriptions(
-          aggregated_type_inputs_subset(),
-          type_inputs(),
+          aggregated_inputs,#aggregated_type_inputs_subset(),
+          inputs,#type_inputs(),
           scenario
         )
       )
     }
-    out <- c(out, get_references(aggregated_type_inputs_subset(), type_inputs()))
+    #out <- c(out, get_references(aggregated_type_inputs_subset(), type_inputs()))
+    out <- c(out, get_references(aggregated_inputs, inputs))
     out
-  })
+  }
 
   output$html_report <- renderUI({
     if (input$report_scenario_selection == "" & input$report_sector_selection == "") {
@@ -139,7 +141,8 @@ server <- function(input, output, session) {
     }
     temp_html <- tempfile(fileext = ".html")
     produce_selective_report(
-      report_contents(),
+      #report_contents(),
+      get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
       input$report_scenario_selection,
       FALSE,
       session$userData$temp_md_scenario
@@ -185,7 +188,7 @@ server <- function(input, output, session) {
         )
       )
       produce_selective_report(
-        report_contents(),
+        get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
         input$report_scenario_selection,
         TRUE,
         session$userData$temp_md_scenario_and_commons
