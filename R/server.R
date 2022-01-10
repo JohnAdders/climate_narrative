@@ -147,13 +147,12 @@ server <- function(input, output, session) {
       out <- c(
         out,
         get_scenario_descriptions(
-          aggregated_inputs,#aggregated_type_inputs_subset(),
-          inputs,#type_inputs(),
+          aggregated_inputs,
+          inputs,
           scenario
         )
       )
     }
-    #out <- c(out, get_references(aggregated_type_inputs_subset(), type_inputs()))
     out <- c(out, get_references(aggregated_inputs, inputs))
     out
   }
@@ -164,7 +163,6 @@ server <- function(input, output, session) {
     }
     temp_html <- tempfile(fileext = ".html")
     produce_selective_report(
-      #report_contents(),
       get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
       input$report_scenario_selection,
       FALSE,
@@ -243,7 +241,7 @@ server <- function(input, output, session) {
   )
 
   output$dev_report <- downloadHandler(
-    filename = "DEV.rtf",
+    filename = "All_Outputs.rtf",
     content = function(file, res_path = system.file("www", package = "climate.narrative")) {
       print(all_inputs())
       showModal(
