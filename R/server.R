@@ -15,6 +15,8 @@ server <- function(input, output, session) {
   session$userData$temp_md_scenario <- tempfile(fileext = ".md")
   session$userData$temp_md_scenario_and_commons <- tempfile(fileext = ".md")
   session$userData$temp_rtf <- tempfile(fileext = ".rtf")
+  session$userData$temp_md_dev <- tempfile(fileext = ".md")
+  session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
 
   # the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
@@ -70,6 +72,27 @@ server <- function(input, output, session) {
           )
         },
         data = type_inputs()
+      )
+      aggregated_inputs <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
+      aggregated_inputs[order(aggregated_inputs$materiality, aggregated_inputs$materiality_num, decreasing = TRUE), ]
+    } else {
+      return(data.frame(item = c(), materiality = c()))
+    }
+  })
+  
+  aggregated_all_inputs <- reactive({
+    if (allow_report()) {
+      aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = all_inputs())
+      aggregated_inputs_numeric <- stats::aggregate(
+        materiality_num ~ item,
+        FUN = function(x) {
+          cut(
+            sum(x),
+            breaks = c(0, 4.5, 9.5, 100),
+            labels = c("Low", "Medium", "High")
+          )
+        },
+        data = all_inputs()
       )
       aggregated_inputs <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
       aggregated_inputs[order(aggregated_inputs$materiality, aggregated_inputs$materiality_num, decreasing = TRUE), ]
@@ -216,6 +239,47 @@ server <- function(input, output, session) {
       rtf_center_images(session$userData$temp_rtf)
       removeModal()
       file.copy(session$userData$temp_rtf, file)
+    }
+  )
+
+  output$dev_report <- downloadHandler(
+    filename = "DEV.rtf",
+    content = function(file, res_path = system.file("www", package = "climate.narrative")) {
+      print(all_inputs())
+      showModal(
+        modalDialog(
+          "Report rendering in progress... when complete your download will start automatically",
+          title = "Climate Report",
+          footer = NULL
+        )
+      )
+      produce_full_report(
+        get_report_contents(aggregated_all_inputs(), all_inputs()),
+        session$userData$temp_md_dev
+      )
+      fs <- file.size(session$userData$temp_md_dev)
+      rmarkdown::render(
+        input = session$userData$temp_md_dev,
+        output_file = session$userData$temp_rtf_dev,
+        output_format = rmarkdown::rtf_document(
+          toc = TRUE,
+          toc_depth = 2,
+          number_sections = FALSE,
+          pandoc_args = c(
+            paste0("--resource-path=", res_path),
+            "--self-contained"
+          )
+        )
+      )
+      # I found that in some cases the rendering silently overwrites the markdown file
+      # Cause unknown, maybe due to some weird blank characters instead of space?
+      # Therefore added a control to throw error if the file is truncated in the process
+      if (file.size(session$userData$temp_md_dev) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+      # by default the table of contents in pandoc output does not work, fixing it manually
+      rtf_fix_table_of_contents(session$userData$temp_rtf_dev)
+      rtf_center_images(session$userData$temp_rtf_dev)
+      removeModal()
+      file.copy(session$userData$temp_rtf_dev, file)
     }
   )
 
