@@ -69,12 +69,12 @@ description: |
 
   01. Miscellaneous Retail
   
-  Note: the description above can be found at the North American Industry Classification System, 2018, Available online at: https://www.naics.com/sic-codes-counts-division/?div=G. These may be cross-referenced to the UK Standard Industrial Classification of economic activities codes (SIC) https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic (or other classification systems) via online tools.
+  North American Industry Classification System, 2018, Available online at: https://www.naics.com/sic-codes-counts-division/?div=G. These may be cross-referenced to the UK Standard Industrial Classification of economic activities codes (SIC) https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic (or other classification systems) via online tools.
 transition:
   high:
     always: |
-      As the Consumer Products sector sits between the end-consumers, it is 
-      subject to the considerations of both the products it
+      As the Consumer Products sector sits between the Manufacturing sector and end-consumers, 
+      it is subject to the considerations of both the products it
       purchases (or receives) as suppliers react to a top-down policy
       environment that results in a rapid reduction of emissions, as well as the
       changes in customer behaviour as demand shifts towards a low carbon

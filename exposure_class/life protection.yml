@@ -6,7 +6,7 @@ description: |
   on either an individual or group basis.
 
   Life assurance policies generally pay out a one-off payment of the cover
-  amount on death of the life assured. Policies may be written on a whole of
+  amount on death of the life assured. Policies may be written on whole of
   life basis, or cover may last for a specified term. The cover amount can be
   flat over the term of the policy or may decrease over the policy duration.
 
@@ -69,7 +69,7 @@ transition:
         actually contribute to local particulate pollution.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
-        but without global buy-in then this could also reduce the correlation.
+        but without global buy-in, then this could also reduce the correlation.
 
       In the Disorderly/Divergent transition risk scenarios, there is potential for fewer deaths
       and a positive outcome for health relating to air pollution, the reduction
@@ -96,7 +96,9 @@ transition:
       care, medical research etc. Assuming that greater funding is correlated to
       some extent with mortality and morbidity outcomes, this means any climate
       scenario could have an impact on mortality and morbidity via its impact on
-      GDP. This could impact across the range of protection products. Although
+      GDP. 
+      
+      This could impact across the range of protection products. Although
       the precise impact may differ between products depending on the scenario
       (for example, income protection claims experience might suffer more if
       there was a reduction in spending on musculoskeletal conditions, whilst

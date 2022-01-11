@@ -39,7 +39,13 @@ description: |
   changes in GDP growth and potential downgrades in credit rating. In this paper we 
   use a '20-notch' sovereign bond rating scale translated from S&P's alphabetical 
   standardized rating scale to outline changes to sovereign bond 
-  ratings, as is common in surrounding literature.
+  ratings, as is common in surrounding literature. Impacts of climate change on 
+  sovereign bond ratings are discussed in reference to the 2021 working paper titled 
+  "Rising Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign 
+  Creditworthiness" from the University of Cambridge. This study represents one approach 
+  towards quantifying the effects of climate change on credit ratings and is illustrative 
+  based on a hypothetical model. It is not predictive and broader literature on this 
+  topic is also available.
   
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
@@ -47,7 +53,7 @@ description: |
 transition:
   high:
     always: |
-      In the Delayed transition scenario, late policy action enables a 
+      In the Delayed transition risk scenario, late policy action enables a 
       "fossil recovery" out of the economic crisis brought about by COVID-19. 
       CO<sub>2</sub> emissions increase until 2030, before policies drive a sharp 
       decrease after 2030 to compensate for the inaction beforehand. This results in 
@@ -60,10 +66,14 @@ transition:
       with a strong level of dependence on fossil fuel energy sources. Industries that 
       are negatively impacted by transition risk, such as mining, oil and gas could have 
       reduced revenues from lower fossil fuel demand and increased costs from significantly 
-      higher carbon taxes. On the other hand, government spending (through subsidies 
+      higher carbon taxes. 
+      
+      On the other hand, government spending (through subsidies 
       and investment) could encourage consumer spending and investment in the use 
       of renewables, energy efficiency, energy storage, etc, leading to increases 
-      in fiscal revenues. The Disorderly transition risk scenarios could also lead 
+      in fiscal revenues. 
+      
+      The disorderly transition risk scenarios could also lead 
       to a reduction in GDP growth. This would have a negative impact on UK sovereign 
       bonds.
 
@@ -73,7 +83,7 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure to
       carbon intensive sectors and technologies. Countries with carbon-intensive 
       sectors such as oil and gas are consequently some of the most vulnerable to 
-      transition risk. The impact from disorderly transition risk scenarios on fiscal 
+      transition risk. The impact of a disorderly transition risk scenario on fiscal 
       revenues is largely dependent on the efficiency of government spending in trying 
       to mitigate these risks. While the use of taxes to incentivize more 
       environmentally friendly production, transportation and consumption patterns 
@@ -86,16 +96,16 @@ transition:
       
       The UK electricity sector has been rapidly decarbonising in recent years, with a 
       sharp drop in coal-based electricity production, which in 2020 amounted to just 
-      1.7% of total generation. Generation from low carbon sources reached 59% in 2020, 
-      despite a drop in nuclear generation, thanks to record output from renewables. 
-      With coal now close to being eliminated from the UK power sector, natural gas, 
-      which accounted for 36.5% of generation in 2020, will consequently need to be 
-      scaled down considerably over the next decade for the UK to meet its emission 
-      reduction targets. In 2020, the share of renewable energy in total electricity 
-      generation rose steeply from 37% in 2019 to almost 43%, with renewables producing 
-      more electricity than coal and gas generation combined for the first time ever. 
-      Wind generation, fuelled by new offshore capacity, increased its share of total 
-      generation by 4.4% to 24.2%.
+      1.7% of total generation. Generation from low carbon sources reached 59% in 2020 
+      (up from 54.6% in 2019), despite a drop in nuclear generation, thanks to record 
+      output from renewables. With coal now close to being eliminated from the UK power 
+      sector, natural gas, which accounted for 36.5% of generation in 2020, could 
+      consequently need to be scaled down considerably over the next decade for the UK 
+      to meet its emission reduction targets. In 2020, the share of renewable energy in 
+      total electricity generation rose steeply from 37% in 2019 to almost 43%, with 
+      renewables producing more electricity than coal and gas generation combined for 
+      the first time ever. Wind generation, fuelled by new offshore capacity, increased 
+      its share of total generation by 4.4% to 24.2%.
       
       ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
       
@@ -106,31 +116,32 @@ transition:
       
       A change in a country's GDP could have an impact on the level of fiscal revenue 
       it receives. Assuming taxation rates remain unchanged, a decrease in GDP could 
-      lead to a reduction in fiscal revenue. According to estimates from the NGFS, 
-      disorderly transition risk scenarios could result in significant GDP losses. In 
+      lead to a reduction in fiscal revenue. According to estimates from the NGFS, a 
+      disorderly transition could result in significant GDP losses. In 
       these scenarios, world GDP losses from both physical and transition risk are 
-      estimated to be between -4.2% and -4.8% by 2050. World GDP impact from transition 
+      estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from transition 
       risk is negative as the speed of the transition combines with investment uncertainty 
-      and affects consumption and investment. In these scenarios, there is a large mix 
-      of physical and transition risks in 2050. Based on the IIASA NGFS Scenario 
-      Explorer v2.0, the expected impact of a disorderly scenario on UK GDP compared to 
-      2018 would be significant, ranging from -2.2% to -2.4% by 2050.
+      and affects consumption and investment. 
+      
+      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a disorderly 
+      scenario on UK GDP compared to 2018 would be significant, ranging from -2.2% to -2.4% by 2050.
       
       **Downgrading of credit ratings effect**
       
       Climate risk is, to some extent, priced in the sovereign bond market. No sovereign 
       has yet been downgraded because of the climate risks it faces, although rating 
-      agencies anticipate that climate trends will have implications for ratings 
+      agencies anticipate that climate trends could have implications for ratings 
       in coming decades. According to the 2021 "Rising Temperatures, Falling Ratings: 
       The Effect of Climate Change on Sovereign Creditworthiness" working paper from 
       the University of Cambridge, in disorderly transition risk scenarios, most 
       developed countries would be marginally downgraded (1 notch or less). Most 
       downgrades would be among top-rated countries. This does not necessarily reflect 
       increased climate risks for these top-rated countries, but greater sensitivity 
-      of the top ratings. It is easier to lose an AAA rating than a C rating. According 
-      to the study, in these scenarios, the UK would have a downgrade of 0.92 notches 
-      by 2100, increasing the cost of borrowing for the UK government by approximately 
-      US$2-3bn.
+      of the top ratings. It is easier to lose an AAA rating than a C rating. 
+      
+      According to the study, in a disorderly transition risk scenario, the UK would have 
+      a downgrade of 0.92 notches by 2100, increasing the cost of borrowing for the UK 
+      government by approximately US$2-3bn.
 
   low:
     always: |
@@ -175,7 +186,7 @@ transition:
       reached 59% in 2020, despite a drop in nuclear generation, thanks to record 
       output from renewables. With coal now close to being eliminated from the 
       UK power sector, natural gas, which accounted for 36.5% of generation in 
-      2020, will consequently need to be scaled down considerably over the next 
+      2020, could consequently need to be scaled down considerably over the next 
       decade for the UK to meet its emission reduction targets. In 2020, the 
       share of renewable energy in total electricity generation rose steeply from 
       37% in 2019 to almost 43%, with renewables producing more electricity than 
@@ -194,7 +205,7 @@ transition:
       revenue it receives. Assuming taxation rates remain unchanged, a decrease 
       in GDP could lead to a reduction in fiscal revenue. According to estimates 
       from the NGFS, the early/orderly transition risk scenarios would generally 
-      limit GDP losses; the world GDP losses are estimated to be between -1.5% 
+      limit GDP losses The world GDP losses are estimated to be between -1.5% 
       and -2.5% by 2050. GDP impacts from transition risk are slightly positive 
       in the Net Zero 2050 scenario as negative impacts on demand from higher carbon 
       prices and energy costs are more than offset by the recycling of carbon tax 
@@ -207,10 +218,10 @@ transition:
       
       Climate risk is, to some extent, priced in the sovereign bond market. No 
       sovereign has yet been downgraded because of the climate risks it faces, 
-      although rating agencies anticipate that climate trends will have implications 
+      although rating agencies anticipate that climate trends could have implications 
       for ratings in coming decades. According to the 2021 "Rising Temperatures, 
       Falling Ratings: The Effect of Climate Change on Sovereign Creditworthiness" 
-      working paper from the University of Cambridge, in an orderly low transition 
+      working paper from the University of Cambridge, in an orderly transition 
       risk scenario, most developed countries would be marginally downgraded 
       (1 notch or less). Most downgrades would be among top-rated countries. 
       This does not necessarily reflect increased climate risks for these top-rated 
@@ -296,13 +307,15 @@ physical:
 
   low:
     always: |
-      In a low physical risk scenario, physical risks would undermine GDP growth due 
+      Overall, physical risks would undermine GDP growth due 
       to loss of land, changing crop yields, depleted natural resources, lower 
       productivity of the workforce, damages to infrastructure, etc. Chronic and acute 
       risks could result in lower tax revenues or higher insurance premiums. This 
       could result in a negative impact on GDP globally by 2100 and hit governments' 
-      finances. Extreme weather events such as wildfires, floods, and heat waves could 
-      become more prevalent, impacting households, businesses, cities and states. There 
+      finances. 
+      
+      Extreme weather events such as wildfires, floods, and heat waves could 
+      be more prevalent, impacting households, businesses, cities and states. There 
       are also likely indirect risks, such as those caused by international migration 
       (e.g. increased inequalities, labour right issues, social conflicts), or via 
       biodiversity loss, or to industries supply chains and international trade. The 

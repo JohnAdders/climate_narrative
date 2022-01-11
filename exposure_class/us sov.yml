@@ -39,7 +39,13 @@ description: |
   changes in GDP growth and potential downgrades in credit rating. In this paper we 
   use a '20-notch' sovereign bond rating scale translated from S&P's alphabetical 
   standardized rating scale to outline changes to sovereign bond 
-  ratings, as is common in surrounding literature.
+  ratings, as is common in surrounding literature. Impacts of climate change on 
+  sovereign bond ratings are discussed in reference to the 2021 working paper titled 
+  "Rising Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign 
+  Creditworthiness" from the University of Cambridge. This study represents one approach 
+  towards quantifying the effects of climate change on credit ratings and is illustrative 
+  based on a hypothetical model. It is not predictive and broader literature on this 
+  topic is also available.
   
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
@@ -47,25 +53,27 @@ description: |
 transition:
   high:
     always: |
-      In the Delayed transition scenario, late policy action enables a 
+      In the Delayed transition risk scenario, late policy action enables a 
       "fossil recovery" out of the economic crisis brought about by COVID-19. 
       CO<sub>2</sub> emissions increase until 2030 before policies drive a sharp decrease 
       after 2030 to compensate for the inaction beforehand. This results in smaller 
-      increases in carbon taxes compared to orderly transition scenarios until 2030, 
-      but significantly higher carbon taxes thereafter as countries attempt to make 
-      up lost ground. In the Divergent Net Zero scenario the reduction in 
+      increases in carbon taxes compared to an orderly transition scenario until 2030, 
+      but significantly higher carbon taxes than orderly scenarios after 2030 as countries 
+      attempt to make up lost ground. In the Divergent Net Zero scenario the reduction in 
       CO<sub>2</sub> emissions starts to occur earlier and as a result is more gradual. 
       
       These scenarios could have a very strong impact on fiscal revenues in 
       countries with a strong level of dependence on fossil fuel energy sources. 
       Industries that are negatively impacted by transition risk, such as mining, 
       oil and gas could have reduced revenues from lower fossil fuel demand and 
-      increased costs from significantly higher carbon taxes. On the other hand, 
-      government spending (through subsidies and investment) could encourage consumer 
-      spending and investment in the use of renewables, energy efficiency, energy 
-      storage, etc, leading to increases in fiscal revenues. Scenario analysis of 
-      the effects of climate risks on the US federal budget up to the end of this 
-      century have assessed lost revenue for the federal government, by transposing 
+      increased costs from significantly higher carbon taxes. 
+      
+      On the other hand, government spending (through subsidies and investment) could 
+      encourage consumer spending and investment in the use of renewables, energy 
+      efficiency, energy storage, etc, leading to increases in fiscal revenues. 
+      
+      Scenario analysis of the effects of climate risks on the US federal budget up to 
+      the end of this century have assessed lost revenue for the federal government, by transposing 
       projections from global integrated assessment models to the US. Climate-related 
       expenditures are expected to range from $9 to $28 billion annually (in today's 
       dollars), and revenue losses vary between $56 billion and $111 billion. 
@@ -80,7 +88,9 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure to
       carbon intensive sectors and technologies. Countries with carbon-intensive 
       sectors such as oil and gas are consequently some of the most vulnerable to 
-      transition risk. The impact from the disorderly transition risk scenarios on fiscal 
+      transition risk. 
+      
+      The impact of disorderly transition risk scenarios on fiscal 
       revenues is largely dependent on the efficiency of government spending in trying 
       to mitigate these risks. While the use of taxes to incentivize more 
       environmentally friendly production, transportation and consumption patterns 
@@ -108,7 +118,7 @@ transition:
       disorderly transition risk scenarios could result in significant GDP losses. In 
       these scenarios, world GDP losses from both physical and transition risk are 
       estimated to be between -4.2% and -4.8% by 2050. World GDP impact from transition 
-      risk scenarios is negative as the speed of the transition combines with investment uncertainty and affects consumption and investment. In these scenarios, there is 
+      risks are negative as the speed of the transition combines with investment uncertainty and affects consumption and investment. In these scenarios, there is 
       a large mix of physical and transition risks in 2050. Based on the IIASA NGFS 
       Scenario Explorer v2.0, the expected impact of a disorderly scenario on US 
       GDP compared to 2012 would be significant, ranging from -4.6% to -4.7% by 2050.
@@ -117,7 +127,7 @@ transition:
       
       Climate risk is, to some extent, priced in the sovereign bond market. No sovereign 
       has yet been downgraded because of the climate risks it faces, although rating 
-      agencies anticipate that climate trends will have implications for ratings 
+      agencies anticipate that climate trends could have implications for ratings 
       in coming decades. According to the 2021 "Rising Temperatures, Falling Ratings: 
       The Effect of Climate Change on Sovereign Creditworthiness" working paper from 
       the University of Cambridge, in disorderly transition risk scenarios, most 
@@ -141,7 +151,9 @@ transition:
       On the other hand, government spending (through subsidies and investment) 
       could encourage consumer spending and investment in the use of renewables, 
       energy efficiency, energy storage, etc, leading to increases in fiscal 
-      revenues. The scenario analysis of the effects of climate risks on the US 
+      revenues. 
+      
+      The scenario analysis of the effects of climate risks on the US 
       federal budget up to the end of this century have assessed lost revenue for 
       the federal government, by transposing projections from global integrated 
       assessment models to the US. Climate-related expenditures are expected to 
@@ -162,7 +174,7 @@ transition:
       to ~83% in 2020. Countries with carbon-intensive sectors such as oil and gas 
       are consequently some of the most vulnerable to transition risk. 
       
-      The impact of low transition risk on fiscal revenues 
+      The impact of an orderly transition risk scenario on fiscal revenues 
       is largely dependent on the efficiency of government spending in trying to 
       mitigate these risks. While the use of taxes to incentivize more 
       environmentally friendly production, transportation and consumption patterns 
@@ -187,13 +199,14 @@ transition:
       A change in a country's GDP could have an impact on the level of fiscal 
       revenue it receives. Assuming taxation rates remain unchanged, a decrease 
       in GDP could lead to a reduction in fiscal revenue. According to estimates 
-      from the NGFS, the early/orderly transition risk scenarios would generally 
-      limit GDP losses. The world GDP losses are estimated to be between -1.5% 
-      and -2.5% by 2050. GDP impacts from transition risk are slightly positive 
-      in the Net Zero 2050 scenario as negative impacts on demand from higher carbon 
-      prices and energy costs are more than offset by the recycling of carbon tax 
-      revenues into government investment and lower employment taxes. Based on the 
-      IIASA NGFS Scenario Explorer v2.0, the expected impact of the orderly net 
+      from the NGFS, the early/orderly scenario would generally 
+      limit GDP losses. World GDP losses from both physical and transition risk 
+      are estimated to be between -1.5% and -2.5% by 2050. GDP impacts from transition 
+      risk are slightly positive in the Net Zero 2050 scenario as negative impacts on 
+      demand from higher carbon prices and energy costs are more than offset by the 
+      recycling of carbon tax revenues into government investment and lower employment taxes. 
+      
+      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the orderly net 
       zero scenario on US GDP compared to 2012 would be significant, ranging 
       from -2.6% to -3.2% by 2050.
       
@@ -201,17 +214,18 @@ transition:
       
       Climate risk is, to some extent, priced in the sovereign bond market. No 
       sovereign has yet been downgraded because of the climate risks it faces, 
-      although rating agencies anticipate that climate trends will have implications 
+      although rating agencies anticipate that climate trends could have implications 
       for ratings in coming decades. According to the 2021 "Rising Temperatures, 
       Falling Ratings: The Effect of Climate Change on Sovereign Creditworthiness" 
       working paper from the University of Cambridge, in early/orderly transition 
-      risk scenarios, most developed countries would be marginally downgraded 
+      scenarios, most developed countries would be marginally downgraded 
       (1 notch or less). Most downgrades would be among top-rated countries. 
       This does not necessarily reflect increased climate risks for these top-rated 
       countries, but greater sensitivity of the top ratings. It is easier to lose an 
-      AAA rating than a C rating. According to the study, in a transition risk 
-      (RCP 2.6) scenario, the US would have a downgrade of 0.55 notches by 2100, 
-      increasing the cost of borrowing for the US government by approximately US$7.35-11.03bn.
+      AAA rating than a C rating. 
+      
+      According to the study, in an orderly transition risk (RCP 2.6) scenario, the US would have a 
+      downgrade of 0.55 notches by 2100, increasing the cost of borrowing for the US government by approximately US$7.35-11.03bn.
 physical:
   high:
     always: |
@@ -301,13 +315,15 @@ physical:
 
   low:
     always: |
-      In a low physical risk scenario, physical risks would undermine GDP growth 
+      Overall, physical risks would undermine GDP growth 
       due to loss of land, changing crop yields, depleted natural resources, lower 
       productivity of the workforce, damages to infrastructure, etc. Chronic and 
       acute risks could result in lower tax revenues or higher insurance premiums. 
       This could result in a negative impact on GDP globally by 2100 and hit governments'
-      finances. Extreme weather events such as wildfires, floods, and heat waves could 
-      become more prevalent, impacting households, businesses, cities and states. 
+      finances. 
+      
+      Extreme weather events such as wildfires, floods, and heat waves could 
+      be more prevalent, impacting households, businesses, cities and states. 
       There are also likely indirect risks, such as those caused by international 
       migration (e.g. increased inequalities, labour right issues, social conflicts), 
       or via biodiversity loss, or to industries supply chains and international trade. 

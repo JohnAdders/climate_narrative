@@ -5,16 +5,17 @@ description: |
   economic activity relating to aircrafts. This includes designing,
   manufacturing, supplying, maintaining and operating both manned and unmanned
   aircrafts or parts. It also includes activities related to aircraft supporting
-  facilities such as airports and ticket distribution systems. Aviation is a
-  complex sector, with long product development cycles and where change takes a
-  long time to be implemented. Typical aviation insurance policies cover
+  facilities such as airports and ticket distribution systems. 
+  
+  Aviation is a complex sector, with long product development cycles and where 
+  change takes a long time to be implemented. Typical aviation insurance policies cover
   physical damage and loss split across public liability, passenger liability,
   grounded and in-flight hull (covering loss/ damage to the aircraft when not in
   use and when in use), and cargo.
 transition:
   high:
     always: |
-      The aviation sector could continue to play a role in meeting customer demand
+      Aviation sector could continue to play a role in meeting customer demand
       for the coming years The changing patterns in energy generation in the
       Delayed transition scenario, driven by late policy action enabling a
       "fossil fuelled recovery" out of the economic crisis brought about by
@@ -33,7 +34,7 @@ transition:
       reduction in GDP growth. This could result in changes in the rate of
       growth in demand for the aviation sector.
     high_materiality: |
-      Changes carbon emission pricing or taxes and consumer preferences could
+      Changes to carbon emission pricing or taxes and consumer preferences could
       potentially result in one or more of the following financial impacts:
 
       - **Increased operating costs of the underlying companies to be insured
@@ -86,7 +87,7 @@ transition:
       conditions and coverage.
   low:
     always: |
-      The aviation sector could continue to play a role in meeting customer demand
+      Aviation sector could continue to play a role in meeting customer demand
       for the coming years. The changing patterns in energy generation in
       early/orderly transition risk scenarios, driven by immediate policy
       reaction, societal change, national energy strategies, and carbon
