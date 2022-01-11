@@ -307,11 +307,12 @@ physical:
 
   low:
     always: |
-      Overall, physical risks would undermine GDP growth due to loss of land, changing crop 
-      yields, depleted natural resources, lower productivity of the workforce, damages to 
-      infrastructure, etc. Chronic and acute risks could result in lower tax revenues or 
-      higher insurance premiums. This could result in a negative impact on GDP globally by 2100 
-      and hit governments' finances. 
+      In a low physical risk scenario, physical risks would undermine GDP growth 
+      due to loss of land, changing crop yields, depleted natural resources, lower 
+      productivity of the workforce, damages to infrastructure, etc. Chronic and 
+      acute risks could result in lower tax revenues or higher insurance premiums. 
+      This could result in a negative impact on GDP globally by 2100 and hit governments'
+      finances. 
       
       Extreme weather events such as wildfires, floods, and heat waves could be more prevalent, 
       impacting households, businesses, cities and states. There are also likely indirect 
