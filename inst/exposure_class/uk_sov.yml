@@ -1,379 +1,397 @@
 name: UK sovereign
 
 description: |
-  Sovereign (or government) bonds are debt securities issued by governments to 
-  support government spending. Governments agree to repay the face value of the 
-  bond at a specified maturity date and may also pay interest, in the form of coupon 
-  payments, at regular intervals throughout the term. The government bond sector is 
-  a broad category that includes "sovereign" debt, which is issued and generally 
-  backed by a central government. UK Gilts, US Treasuries, German Bunds, Japanese 
-  Government Bonds (JGBs), Brazilian Government Bonds and Government of Canada 
-  Bonds (GoCs) are all examples of sovereign government bonds. The US, Japan and 
-  Europe have historically been the biggest issuers in the government bond market.
-  
-  Several governments also issue sovereign bonds that are linked to inflation, 
-  known as inflation-linked bonds or, in the US, Treasury Inflation-Protected 
-  Securities (TIPS). On an inflation-linked bond, the interest and/or principal 
-  is adjusted on a regular basis to reflect changes in the rate of inflation, 
-  thus providing a "real," or inflation-adjusted, return. But, unlike other bonds,
-  inflation-linked bonds could experience greater losses when real interest rates 
-  are moving faster than nominal interest rates.
-  
-  In addition to sovereign bonds, the government bond sector includes subcomponents, 
-  such as:
-  
-  * Agency and "quasi-government" bonds: Central governments pursue various goals - 
-  supporting affordable housing or the development of small businesses, for example - 
-  through agencies, a number of which issue bonds to support their operations. 
-  Some agency bonds are guaranteed by the central government while others are not. 
-  Supranational organisations, like the World Bank and the European Investment Bank, 
-  also borrow in the bond market to finance public projects and/or development.
-  
-  * Local government bonds: Local governments - whether provinces, states or cities - 
-  borrow to finance a variety of projects, from bridges to schools, as well as 
-  general operations. The market for local government bonds is well established in 
-  the US, where these bonds are known as municipal bonds. Other developed markets 
-  also issue provincial/local government bonds.
-  
-  Governments that issue sovereign bonds are exposed to various risks from 
-  climate change, including changes to fiscal revenues, higher government spending, 
-  changes in GDP growth and potential downgrades in credit rating. In this paper we 
-  use a '20-notch' sovereign bond rating scale translated from S&P's alphabetical 
-  standardized rating scale to outline changes to sovereign bond 
-  ratings, as is common in surrounding literature. Impacts of climate change on 
-  sovereign bond ratings are discussed in reference to the 2021 working paper titled 
-  "Rising Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign 
-  Creditworthiness" from the University of Cambridge. This study represents one approach 
-  towards quantifying the effects of climate change on credit ratings and is illustrative 
-  based on a hypothetical model. It is not predictive and broader literature on this 
-  topic is also available.
-  
+  Sovereign (or government) bonds are debt securities issued by governments to
+  support government spending. Governments agree to repay the face value of the
+  bond at a specified maturity date and may also pay interest, in the form of
+  coupon payments, at regular intervals throughout the term. The government bond
+  sector is a broad category that includes "sovereign" debt, which is issued and
+  generally backed by a central government. UK Gilts, US Treasuries, German
+  Bunds, Japanese Government Bonds (JGBs), Brazilian Government Bonds and
+  Government of Canada Bonds (GoCs) are all examples of sovereign government
+  bonds. The US, Japan and Europe have historically been the biggest issuers in
+  the government bond market.
+
+  Several governments also issue sovereign bonds that are linked to inflation,
+  known as inflation-linked bonds or, in the US, Treasury Inflation-Protected
+  Securities (TIPS). On an inflation-linked bond, the interest and/or principal
+  is adjusted on a regular basis to reflect changes in the rate of inflation,
+  thus providing a "real," or inflation-adjusted, return. But, unlike other
+  bonds, inflation-linked bonds could experience greater losses when real
+  interest rates are moving faster than nominal interest rates.
+
+  In addition to sovereign bonds, the government bond sector includes
+  subcomponents, such as:
+
+  - Agency and "quasi-government" bonds: Central governments pursue various
+    goals - supporting affordable housing or the development of small
+    businesses, for example - through agencies, a number of which issue bonds to
+    support their operations. Some agency bonds are guaranteed by the central
+    government while others are not. Supranational organisations, like the World
+    Bank and the European Investment Bank, also borrow in the bond market to
+    finance public projects and/or development.
+
+  - Local government bonds: Local governments - whether provinces, states or
+    cities - borrow to finance a variety of projects, from bridges to schools,
+    as well as general operations. The market for local government bonds is well
+    established in the US, where these bonds are known as municipal bonds. Other
+    developed markets also issue provincial/local government bonds.
+
+  Governments that issue sovereign bonds are exposed to various risks from
+  climate change, including changes to fiscal revenues, higher government
+  spending, changes in GDP growth and potential downgrades in credit rating. In
+  this paper we use a '20-notch' sovereign bond rating scale translated from
+  S&P's alphabetical standardized rating scale to outline changes to sovereign
+  bond ratings, as is common in surrounding literature. Impacts of climate
+  change on sovereign bond ratings are discussed in reference to the 2021
+  working paper titled "Rising Temperatures, Falling Ratings: The Effect of
+  Climate Change on Sovereign Creditworthiness" from the University of
+  Cambridge. This study represents one approach towards quantifying the effects
+  of climate change on credit ratings and is illustrative based on a
+  hypothetical model. It is not predictive and broader literature on this topic
+  is also available.
+
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
   **Source:**: 20 Notch Rating Scale
 transition:
   high:
     always: |
-      In the Delayed transition risk scenario, late policy action enables a 
-      "fossil recovery" out of the economic crisis brought about by COVID-19. 
-      CO<sub>2</sub> emissions increase until 2030, before policies drive a sharp 
-      decrease after 2030 to compensate for the inaction beforehand. This results in 
-      smaller increases in carbon taxes compared to orderly transition scenarios until 
-      2030, but significantly higher carbon taxes thereafter as countries attempt to 
-      make up lost ground. In the Divergent Net Zero scenario the reduction in 
-      CO<sub>2</sub> emissions starts to occur earlier and as a result is more gradual. 
-      
-      These scenarios could have a very strong impact on fiscal revenues in countries 
-      with a strong level of dependence on fossil fuel energy sources. Industries that 
-      are negatively impacted by transition risk, such as mining, oil and gas could have 
-      reduced revenues from lower fossil fuel demand and increased costs from significantly 
-      higher carbon taxes. 
-      
-      On the other hand, government spending (through subsidies 
-      and investment) could encourage consumer spending and investment in the use 
-      of renewables, energy efficiency, energy storage, etc, leading to increases 
-      in fiscal revenues. 
-      
-      The disorderly transition risk scenarios could also lead 
-      to a reduction in GDP growth. This would have a negative impact on UK sovereign 
+      In the Delayed transition risk scenario, late policy action enables a
+      "fossil recovery" out of the economic crisis brought about by COVID-19.
+      CO<sub>2</sub> emissions increase until 2030, before policies drive a
+      sharp decrease after 2030 to compensate for the inaction beforehand. This
+      results in smaller increases in carbon taxes compared to orderly
+      transition scenarios until 2030, but significantly higher carbon taxes
+      thereafter as countries attempt to make up lost ground. In the Divergent
+      Net Zero scenario the reduction in CO<sub>2</sub> emissions starts to
+      occur earlier and as a result is more gradual.
+
+      These scenarios could have a very strong impact on fiscal revenues in
+      countries with a strong level of dependence on fossil fuel energy sources.
+      Industries that are negatively impacted by transition risk, such as
+      mining, oil and gas could have reduced revenues from lower fossil fuel
+      demand and increased costs from significantly higher carbon taxes.
+
+      On the other hand, government spending (through subsidies and investment)
+      could encourage consumer spending and investment in the use of renewables,
+      energy efficiency, energy storage, etc, leading to increases in fiscal
+      revenues.
+
+      The disorderly transition risk scenarios could also lead to a reduction in
+      GDP growth. This would have a negative impact on UK sovereign bonds.
+
+    high_materiality: |
+      **Carbon tax effect**
+
+      Transition risks for sovereigns are largely associated with the exposure
+      to carbon intensive sectors and technologies. Countries with
+      carbon-intensive sectors such as oil and gas are consequently some of the
+      most vulnerable to transition risk. The impact of a disorderly transition
+      risk scenario on fiscal revenues is largely dependent on the efficiency of
+      government spending in trying to mitigate these risks. While the use of
+      taxes to incentivize more environmentally friendly production,
+      transportation and consumption patterns can help economies transition to a
+      net-zero scenario, a poorly managed transition policy could lead to shocks
+      in economic activity. Depending on the respective country's size of fossil
+      fuel or renewable energy sectors, green policies, such as carbon taxes
+      would impact, positively or negatively, firms' profitability, which would,
+      in turn, impact fiscal revenues (for more detail see
+      [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
+
+      The UK electricity sector has been rapidly decarbonising in recent years,
+      with a sharp drop in coal-based electricity production, which in 2020
+      amounted to just 1.7% of total generation. Generation from low carbon
+      sources reached 59% in 2020 (up from 54.6% in 2019), despite a drop in
+      nuclear generation, thanks to record output from renewables. With coal now
+      close to being eliminated from the UK power sector, natural gas, which
+      accounted for 36.5% of generation in 2020, could consequently need to be
+      scaled down considerably over the next decade for the UK to meet its
+      emission reduction targets. In 2020, the share of renewable energy in
+      total electricity generation rose steeply from 37% in 2019 to almost 43%,
+      with renewables producing more electricity than coal and gas generation
+      combined for the first time ever. Wind generation, fuelled by new offshore
+      capacity, increased its share of total generation by 4.4% to 24.2%.
+
+      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+
+      **Source:**
+      [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
+
+      **GDP growth effect**
+
+      A change in a country's GDP could have an impact on the level of fiscal
+      revenue it receives. Assuming taxation rates remain unchanged, a decrease
+      in GDP could lead to a reduction in fiscal revenue. According to estimates
+      from the NGFS, a disorderly transition could result in significant GDP
+      losses. In these scenarios, world GDP losses from both physical and
+      transition risk are estimated to be between -4.2% and -4.8% by 2050. World
+      GDP impacts from transition risk is negative as the speed of the
+      transition combines with investment uncertainty and affects consumption
+      and investment.
+
+      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a
+      disorderly scenario on UK GDP compared to 2018 would be significant,
+      ranging from -2.2% to -2.4% by 2050.
+
+      **Downgrading of credit ratings effect**
+
+      Climate risk is, to some extent, priced in the sovereign bond market. No
+      sovereign has yet been downgraded because of the climate risks it faces,
+      although rating agencies anticipate that climate trends could have
+      implications for ratings in coming decades. According to the 2021 "Rising
+      Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
+      Creditworthiness" working paper from the University of Cambridge, in
+      disorderly transition risk scenarios, most developed countries would be
+      marginally downgraded (1 notch or less). Most downgrades would be among
+      top-rated countries. This does not necessarily reflect increased climate
+      risks for these top-rated countries, but greater sensitivity of the top
+      ratings. It is easier to lose an AAA rating than a C rating.
+
+      According to the study, in a disorderly transition risk scenario, the UK
+      would have a downgrade of 0.92 notches by 2100, increasing the cost of
+      borrowing for the UK government by approximately US$2-3bn.
+
+  low:
+    always: |
+      In early/orderly transition risk scenarios, immediate policy reaction,
+      societal change and national energy strategies lead to significant and
+      immediate increases in carbon prices. This could have a strong impact on
+      fiscal revenues in countries with a strong level of dependence on fossil
+      fuel energy sources. Industries that are negatively impacted by transition
+      risk, such as mining, oil and gas could have reduced revenues from lower
+      fossil fuel demand and increased costs from higher carbon taxes.
+
+      On the other hand, government spending (through subsidies and investment)
+      could encourage consumer spending and investment in the use of renewables,
+      energy efficiency, energy storage, etc, leading to increases in fiscal
+      revenues. These scenarios could also lead to a limited relative reduction
+      in GDP growth. This would have a limited, neutral impact on UK sovereign
       bonds.
 
     high_materiality: |
       **Carbon tax effect**
-      
-      Transition risks for sovereigns are largely associated with the exposure to
-      carbon intensive sectors and technologies. Countries with carbon-intensive 
-      sectors such as oil and gas are consequently some of the most vulnerable to 
-      transition risk. The impact of a disorderly transition risk scenario on fiscal 
-      revenues is largely dependent on the efficiency of government spending in trying 
-      to mitigate these risks. While the use of taxes to incentivize more 
-      environmentally friendly production, transportation and consumption patterns 
-      can help economies transition to a net-zero scenario, a poorly managed transition 
-      policy could lead to shocks in economic activity. Depending on the respective 
-      country's size of fossil fuel or renewable energy sectors, green policies, such 
-      as carbon taxes would impact, positively or negatively, firms' profitability, 
-      which would, in turn, impact fiscal revenues (for more detail see
+
+      Transition risks for sovereigns are largely associated with the exposure
+      to carbon intensive sectors and technologies. Based on the IIASA NGFS
+      Climate Scenarios, REMIND model by 2050, in early/orderly transition risk
+      scenarios, fossil fuels represent only ~27% of global energy demand
+      compared to ~83% in 2020. Countries with carbon-intensive sectors such as
+      oil and gas are consequently some of the most vulnerable to transition
+      risk.
+
+      The impact from the orderly transition risk scenarios on fiscal revenues
+      is largely dependent on the efficiency of government spending in trying to
+      mitigate these risks. While the use of taxes to incentivize more
+      environmentally friendly production, transportation and consumption
+      patterns can help economies transition to a net-zero scenario, a poorly
+      managed transition policy could lead to shocks in economic activity.
+      Depending on the respective country's size of fossil fuel or renewable
+      energy sectors, green policies, such as carbon taxes would impact
+      positively or negatively firms' profitability, which would, in turn,
+      impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
-      
-      The UK electricity sector has been rapidly decarbonising in recent years, with a 
-      sharp drop in coal-based electricity production, which in 2020 amounted to just 
-      1.7% of total generation. Generation from low carbon sources reached 59% in 2020 
-      (up from 54.6% in 2019), despite a drop in nuclear generation, thanks to record 
-      output from renewables. With coal now close to being eliminated from the UK power 
-      sector, natural gas, which accounted for 36.5% of generation in 2020, could 
-      consequently need to be scaled down considerably over the next decade for the UK 
-      to meet its emission reduction targets. In 2020, the share of renewable energy in 
-      total electricity generation rose steeply from 37% in 2019 to almost 43%, with 
-      renewables producing more electricity than coal and gas generation combined for 
-      the first time ever. Wind generation, fuelled by new offshore capacity, increased 
-      its share of total generation by 4.4% to 24.2%.
-      
+
+      The UK electricity sector has been rapidly decarbonising in recent years,
+      with a sharp drop in coal-based electricity production, which in 2020
+      amounted to just 1.7% of total generation. Generation from low carbon
+      sources reached 59% in 2020, despite a drop in nuclear generation, thanks
+      to record output from renewables. With coal now close to being eliminated
+      from the UK power sector, natural gas, which accounted for 36.5% of
+      generation in 2020, could consequently need to be scaled down considerably
+      over the next decade for the UK to meet its emission reduction targets. In
+      2020, the share of renewable energy in total electricity generation rose
+      steeply from 37% in 2019 to almost 43%, with renewables producing more
+      electricity than coal and gas generation combined for the first time ever.
+      Wind generation, fuelled by new offshore capacity, increased its share of
+      total generation by 4.4% to 24.2%.
+
       ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
-      
+
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
       **GDP growth effect**
-      
-      A change in a country's GDP could have an impact on the level of fiscal revenue 
-      it receives. Assuming taxation rates remain unchanged, a decrease in GDP could 
-      lead to a reduction in fiscal revenue. According to estimates from the NGFS, a 
-      disorderly transition could result in significant GDP losses. In 
-      these scenarios, world GDP losses from both physical and transition risk are 
-      estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from transition 
-      risk is negative as the speed of the transition combines with investment uncertainty 
-      and affects consumption and investment. 
-      
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a disorderly 
-      scenario on UK GDP compared to 2018 would be significant, ranging from -2.2% to -2.4% by 2050.
-      
-      **Downgrading of credit ratings effect**
-      
-      Climate risk is, to some extent, priced in the sovereign bond market. No sovereign 
-      has yet been downgraded because of the climate risks it faces, although rating 
-      agencies anticipate that climate trends could have implications for ratings 
-      in coming decades. According to the 2021 "Rising Temperatures, Falling Ratings: 
-      The Effect of Climate Change on Sovereign Creditworthiness" working paper from 
-      the University of Cambridge, in disorderly transition risk scenarios, most 
-      developed countries would be marginally downgraded (1 notch or less). Most 
-      downgrades would be among top-rated countries. This does not necessarily reflect 
-      increased climate risks for these top-rated countries, but greater sensitivity 
-      of the top ratings. It is easier to lose an AAA rating than a C rating. 
-      
-      According to the study, in a disorderly transition risk scenario, the UK would have 
-      a downgrade of 0.92 notches by 2100, increasing the cost of borrowing for the UK 
-      government by approximately US$2-3bn.
 
-  low:
-    always: |
-      In early/orderly transition risk scenarios, immediate policy reaction, 
-      societal change and national energy strategies lead to significant and 
-      immediate increases in carbon prices. This could have a strong impact on 
-      fiscal revenues in countries with a strong level of dependence on fossil 
-      fuel energy sources. Industries that are negatively impacted by transition 
-      risk, such as mining, oil and gas could have reduced revenues from lower 
-      fossil fuel demand and increased costs from higher carbon taxes. 
-      
-      On the other hand, government spending (through subsidies and investment) 
-      could encourage consumer spending and investment in the use of renewables, 
-      energy efficiency, energy storage, etc, leading to increases in fiscal 
-      revenues. These scenarios could also lead to a limited relative reduction 
-      in GDP growth. This would have a limited, neutral impact on UK sovereign bonds.
+      A change in a country's GDP could have an impact on the level of fiscal
+      revenue it receives. Assuming taxation rates remain unchanged, a decrease
+      in GDP could lead to a reduction in fiscal revenue. According to estimates
+      from the NGFS, the early/orderly transition risk scenarios would generally
+      limit GDP losses The world GDP losses are estimated to be between -1.5%
+      and -2.5% by 2050. GDP impacts from transition risk are slightly positive
+      in the Net Zero 2050 scenario as negative impacts on demand from higher
+      carbon prices and energy costs are more than offset by the recycling of
+      carbon tax revenues into government investment and lower employment taxes.
+      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the
+      orderly net zero scenario on UK GDP compared to 2018 would be
+      non-significant, ranging from -0.24% to -0.48% by 2050.
 
-    high_materiality: |
-      **Carbon tax effect**
-      
-      Transition risks for sovereigns are largely associated with the exposure 
-      to carbon intensive sectors and technologies. Based on the IIASA NGFS 
-      Climate Scenarios, REMIND model by 2050, in early/orderly transition risk 
-      scenarios, fossil fuels represent only ~27% of global energy demand compared 
-      to ~83% in 2020. Countries with carbon-intensive sectors such as oil and gas 
-      are consequently some of the most vulnerable to transition risk. 
-      
-      The impact from the orderly transition risk scenarios on fiscal revenues 
-      is largely dependent on the efficiency of government spending in trying to 
-      mitigate these risks. While the use of taxes to incentivize more 
-      environmentally friendly production, transportation and consumption patterns 
-      can help economies transition to a net-zero scenario, a poorly managed 
-      transition policy could lead to shocks in economic activity. Depending on 
-      the respective country's size of fossil fuel or renewable energy sectors, 
-      green policies, such as carbon taxes would impact positively or negatively 
-      firms' profitability, which would, in turn, impact fiscal revenues 
-      (for more detail see
-      [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
-      
-      The UK electricity sector has been rapidly decarbonising in recent years, 
-      with a sharp drop in coal-based electricity production, which in 2020 
-      amounted to just 1.7% of total generation. Generation from low carbon sources 
-      reached 59% in 2020, despite a drop in nuclear generation, thanks to record 
-      output from renewables. With coal now close to being eliminated from the 
-      UK power sector, natural gas, which accounted for 36.5% of generation in 
-      2020, could consequently need to be scaled down considerably over the next 
-      decade for the UK to meet its emission reduction targets. In 2020, the 
-      share of renewable energy in total electricity generation rose steeply from 
-      37% in 2019 to almost 43%, with renewables producing more electricity than 
-      coal and gas generation combined for the first time ever. Wind generation, 
-      fuelled by new offshore capacity, increased its share of total generation 
-      by 4.4% to 24.2%.
-      
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
-      
-      **Source:**
-      [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
-      
-      **GDP growth effect**
-      
-      A change in a country's GDP could have an impact on the level of fiscal 
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease 
-      in GDP could lead to a reduction in fiscal revenue. According to estimates 
-      from the NGFS, the early/orderly transition risk scenarios would generally 
-      limit GDP losses The world GDP losses are estimated to be between -1.5% 
-      and -2.5% by 2050. GDP impacts from transition risk are slightly positive 
-      in the Net Zero 2050 scenario as negative impacts on demand from higher carbon 
-      prices and energy costs are more than offset by the recycling of carbon tax 
-      revenues into government investment and lower employment taxes. Based on the 
-      IIASA NGFS Scenario Explorer v2.0, the expected impact of the orderly net 
-      zero scenario on UK GDP compared to 2018 would be non-significant, ranging 
-      from -0.24% to -0.48% by 2050.
-      
       **Downgrading of credit ratings**
-      
-      Climate risk is, to some extent, priced in the sovereign bond market. No 
-      sovereign has yet been downgraded because of the climate risks it faces, 
-      although rating agencies anticipate that climate trends could have implications 
-      for ratings in coming decades. According to the 2021 "Rising Temperatures, 
-      Falling Ratings: The Effect of Climate Change on Sovereign Creditworthiness" 
-      working paper from the University of Cambridge, in an orderly transition 
-      risk scenario, most developed countries would be marginally downgraded 
-      (1 notch or less). Most downgrades would be among top-rated countries. 
-      This does not necessarily reflect increased climate risks for these top-rated 
-      countries, but greater sensitivity of the top ratings. It is easier to lose an 
-      AAA rating than a C rating. According to the study, in a low transition risk 
-      (RCP 2.6) scenario, the UK would have a downgrade of 0.92 notches by 2100, increasing 
-      the cost of borrowing for the UK government by approximately US$2-3bn.
+
+      Climate risk is, to some extent, priced in the sovereign bond market. No
+      sovereign has yet been downgraded because of the climate risks it faces,
+      although rating agencies anticipate that climate trends could have
+      implications for ratings in coming decades. According to the 2021 "Rising
+      Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
+      Creditworthiness" working paper from the University of Cambridge, in an
+      orderly transition risk scenario, most developed countries would be
+      marginally downgraded (1 notch or less). Most downgrades would be among
+      top-rated countries. This does not necessarily reflect increased climate
+      risks for these top-rated countries, but greater sensitivity of the top
+      ratings. It is easier to lose an AAA rating than a C rating. According to
+      the study, in a low transition risk (RCP 2.6) scenario, the UK would have
+      a downgrade of 0.92 notches by 2100, increasing the cost of borrowing for
+      the UK government by approximately US$2-3bn.
 
 physical:
   high:
     always: |
-      In a high physical risk scenario, physical risks would undermine GDP growth 
-      due to loss of land, changing crop yields, depleted natural resources, lower 
-      productivity of the workforce, damages to infrastructure, etc. Chronic and 
-      acute risks could result in lower tax revenues or higher insurance premiums. 
-      This would result in a material negative impact on GDP globally by 2100 and 
-      hit governments' finances. Extreme weather events such as wildfires, floods, 
-      and heat waves could become more prevalent, impacting households, businesses, 
-      cities and states. There are also likely indirect risks, such as those caused 
-      by international migration (e.g. increased inequalities, labour right issues, 
-      social conflicts), or via biodiversity loss, or to industries supply chains
-      and international trade.
-      
-      The high physical risk scenario could lead to a significant reduction in GDP 
-      growth. This would have a negative impact on UK sovereign bonds.
-      
-      As global temperatures rise in a high physical risk scenario, the effects of 
-      climate change, including coastal flooding, reduced rainfall in drylands and 
-      water scarcity, will likely lead to changes in patterns of human migration. 
-      Climate migration could lead to increasing political instability. With people 
-      in less developed countries more likely to leave affected areas, this may cause 
-      conflicts in receiving areas. Indeed, even within a country, climate change 
-      could lead to higher inequality due to slow economic growth in particular areas. 
-      As a result, political instability could rise due to climate risk issues, both 
-      within and between countries. 
+      In a high physical risk scenario, physical risks would undermine GDP
+      growth due to loss of land, changing crop yields, depleted natural
+      resources, lower productivity of the workforce, damages to infrastructure,
+      etc. Chronic and acute risks could result in lower tax revenues or higher
+      insurance premiums. This would result in a material negative impact on GDP
+      globally by 2100 and hit governments' finances. Extreme weather events
+      such as wildfires, floods, and heat waves could become more prevalent,
+      impacting households, businesses, cities and states. There are also likely
+      indirect risks, such as those caused by international migration (e.g.
+      increased inequalities, labour right issues, social conflicts), or via
+      biodiversity loss, or to industries supply chains and international trade.
+
+      The high physical risk scenario could lead to a significant reduction in
+      GDP growth. This would have a negative impact on UK sovereign bonds.
+
+      As global temperatures rise in a high physical risk scenario, the effects
+      of climate change, including coastal flooding, reduced rainfall in
+      drylands and water scarcity, will likely lead to changes in patterns of
+      human migration. Climate migration could lead to increasing political
+      instability. With people in less developed countries more likely to leave
+      affected areas, this may cause conflicts in receiving areas. Indeed, even
+      within a country, climate change could lead to higher inequality due to
+      slow economic growth in particular areas. As a result, political
+      instability could rise due to climate risk issues, both within and between
+      countries.
 
     high_materiality: |
       **GDP growth effect**
-      
-      In a high physical risk scenario, global mean temperatures could increase 
-      across the world by 2.5&deg;C to 3&deg;C, with land warming faster than 
-      oceans and high latitudes experiencing higher warming. These changes will 
-      lead to chronic changes in living conditions affecting health, labour 
-      productivity, agriculture, ecosystems, and sea-level rise, which will 
-      consequently impact the rate of growth in GDP. It can also change the 
-      frequency and severity of weather events such as heatwaves, droughts, 
-      wildfires, tropical cyclones, and flooding. 
-      
-      Research from Burke et al (2015) indicates there is a non-linear effect 
-      of increasing temperature on economic output, with productivity peaking 
-      at an annual average temperature of 13&deg;C and declining strongly at 
-      higher temperatures. In a high physical risk scenario, unmitigated warming 
-      is expected to reshape the global economy by reducing average global incomes 
-      by roughly 23% by 2100, relative to scenarios without climate change. 
-      
-      This declining productivity would affect GDP and government income, as tax 
-      revenues are dependent on economic output. Adaptation costs would cause 
-      further strain to fiscal expenditures. Assuming taxation rates remain unchanged, 
-      a decrease in GDP could lead to a reduction in fiscal revenue. According to 
-      estimates from the NGFS, a hot house world scenario with high physical risk 
-      could result in significant GDP losses. In a hot house world scenario, the GDP 
-      losses are estimated to be between -2.8% and-4.8% by 2050. World GDP losses 
-      from physical risks scale with the rise in temperatures in the scenarios over 
-      time. Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a 
-      hot house world scenario on UK GDP compared to 2018 would be significant, 
-      ranging from -1.35% to -1.75% by 2050.
-      
+
+      In a high physical risk scenario, global mean temperatures could increase
+      across the world by 2.5&deg;C to 3&deg;C, with land warming faster than oceans and
+      high latitudes experiencing higher warming. These changes will lead to
+      chronic changes in living conditions affecting health, labour
+      productivity, agriculture, ecosystems, and sea-level rise, which will
+      consequently impact the rate of growth in GDP. It can also change the
+      frequency and severity of weather events such as heatwaves, droughts,
+      wildfires, tropical cyclones, and flooding.
+
+      Research from Burke et al (2015) indicates there is a non-linear effect of
+      increasing temperature on economic output, with productivity peaking at an
+      annual average temperature of 13&deg;C and declining strongly at higher
+      temperatures. In a high physical risk scenario, unmitigated warming is
+      expected to reshape the global economy by reducing average global incomes
+      by roughly 23% by 2100, relative to scenarios without climate change.
+
+      This declining productivity would affect GDP and government income, as tax
+      revenues are dependent on economic output. Adaptation costs would cause
+      further strain to fiscal expenditures. Assuming taxation rates remain
+      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
+      According to estimates from the NGFS, a hot house world scenario with high
+      physical risk could result in significant GDP losses. In a hot house world
+      scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
+      2050\. World GDP losses from physical risks scale with the rise in
+      temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
+      Explorer v2.0, the expected impact of a hot house world scenario on UK GDP
+      compared to 2018 would be significant, ranging from -1.35% to -1.75% by
+      2050\.
+
       **Downgrading of credit ratings effect**
-      
-      Climate risk is, to some extent, priced in the sovereign bond market. No 
-      sovereign has yet been downgraded because of the climate risks it faces, 
-      although rating agencies anticipate that climate trends will have implications 
-      for ratings in coming decades. According to the 2021 "Rising Temperatures, 
-      Falling Ratings: The Effect of Climate Change on Sovereign Creditworthiness" 
-      working paper from the University of Cambridge, in a high physical risk 
-      scenario, most developed countries would be significantly downgraded, with 
-      an average downgrade of 2.48 notches by 2100. Most downgrades would be among 
-      top-rated countries. This does not necessarily reflect increased climate 
-      risks for these top-rated countries, but greater sensitivity of the top 
-      ratings. It is easier to lose an AAA rating than a C rating. According to 
-      the study, in a high physical risk scenario, the UK would have a downgrade 
-      of 3.48 notches by 2100, increasing the cost of borrowing for the UK government 
-      by approximately US$7.6-11.3bn.
+
+      Climate risk is, to some extent, priced in the sovereign bond market. No
+      sovereign has yet been downgraded because of the climate risks it faces,
+      although rating agencies anticipate that climate trends will have
+      implications for ratings in coming decades. According to the 2021 "Rising
+      Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
+      Creditworthiness" working paper from the University of Cambridge, in a
+      high physical risk scenario, most developed countries would be
+      significantly downgraded, with an average downgrade of 2.48 notches by
+      2100\. Most downgrades would be among top-rated countries. This does not
+      necessarily reflect increased climate risks for these top-rated countries,
+      but greater sensitivity of the top ratings. It is easier to lose an AAA
+      rating than a C rating. According to the study, in a high physical risk
+      scenario, the UK would have a downgrade of 3.48 notches by 2100,
+      increasing the cost of borrowing for the UK government by approximately
+      US$7.6-11.3bn.
 
   low:
     always: |
-      In a low physical risk scenario, physical risks would undermine GDP growth due 
-      to loss of land, changing crop yields, depleted natural resources, lower 
-      productivity of the workforce, damages to infrastructure, etc. Chronic and acute 
-      risks could result in lower tax revenues or higher insurance premiums. This 
-      could result in a negative impact on GDP globally by 2100 and hit governments' 
-      finances. 
-      
-      Extreme weather events such as wildfires, floods, and heat waves could 
-      be more prevalent, impacting households, businesses, cities and states. There 
-      are also likely indirect risks, such as those caused by international migration 
-      (e.g. increased inequalities, labour right issues, social conflicts), or via 
-      biodiversity loss, or to industries supply chains and international trade. The 
-      low physical risk scenario could lead to a reduction in GDP growth. This would 
-      have a negative impact on UK sovereign bonds.
-      
-      As global temperatures rise in a low physical risk scenario, the effects of 
-      climate change, including coastal flooding, reduced rainfall in drylands and 
-      water scarcity, will likely lead to changes in patterns of human migration. 
-      Climate migration could lead to increasing political instability. With people 
-      in less developed countries more likely to leave affected areas, this may cause 
-      conflicts in receiving areas. Indeed, even within a country, climate change could 
-      lead to higher inequality due to slow economic growth in particular areas. As 
-      a result, political instability could rise due to climate risk issues, both 
-      within and between countries. 
+      In a low physical risk scenario, physical risks would undermine GDP growth
+      due to loss of land, changing crop yields, depleted natural resources,
+      lower productivity of the workforce, damages to infrastructure, etc.
+      Chronic and acute risks could result in lower tax revenues or higher
+      insurance premiums. This could result in a negative impact on GDP globally
+      by 2100 and hit governments' finances.
+
+      Extreme weather events such as wildfires, floods, and heat waves could be
+      more prevalent, impacting households, businesses, cities and states. There
+      are also likely indirect risks, such as those caused by international
+      migration (e.g. increased inequalities, labour right issues, social
+      conflicts), or via biodiversity loss, or to industries supply chains and
+      international trade. The low physical risk scenario could lead to a
+      reduction in GDP growth. This would have a negative impact on UK sovereign
+      bonds.
+
+      As global temperatures rise in a low physical risk scenario, the effects
+      of climate change, including coastal flooding, reduced rainfall in
+      drylands and water scarcity, will likely lead to changes in patterns of
+      human migration. Climate migration could lead to increasing political
+      instability. With people in less developed countries more likely to leave
+      affected areas, this may cause conflicts in receiving areas. Indeed, even
+      within a country, climate change could lead to higher inequality due to
+      slow economic growth in particular areas. As a result, political
+      instability could rise due to climate risk issues, both within and between
+      countries.
 
     high_materiality: |
       **GDP growth effect**
-      
-      In a low physical risk scenario, global mean temperatures could increase across 
-      the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels, with 
-      land warming faster than oceans and high latitudes experiencing higher warming 
-      giving rise to low physical risk. These changes could lead to chronic changes in 
-      living conditions affecting health, labour productivity, agriculture, ecosystems, 
-      and sea-level rise. It can also further change the frequency and severity of 
-      weather events such as heatwaves, droughts, wildfires, tropical cyclones, and 
-      flooding. 
-      
-      This declining productivity would affect GDP and government income, as tax 
-      revenues are dependent on economic output. Adaptation costs would cause further 
-      strain to fiscal expenditures. Assuming taxation rates remain unchanged, a 
-      decrease in GDP could lead to a reduction in fiscal revenue. According to 
-      estimates from the NGFS, an orderly transition with low physical risk would 
-      generally limit GDP losses. In an orderly scenario, world GDP losses from both 
-      physical and transition risk are estimated to be between -1.5% and -2.5% by 2050. 
-      World GDP losses from physical risks scale with the rise in temperatures in the 
-      scenarios over time. Based on the IIASA NGFS Scenario Explorer v2.0, the expected 
-      impact of the orderly net zero scenario on UK GDP compared to 2018 would be 
-      non-significant, ranging from -0.24% to -0.48% by 2050.
-      
+
+      In a low physical risk scenario, global mean temperatures could increase
+      across the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels,
+      with land warming faster than oceans and high latitudes experiencing
+      higher warming giving rise to low physical risk. These changes could lead
+      to chronic changes in living conditions affecting health, labour
+      productivity, agriculture, ecosystems, and sea-level rise. It can also
+      further change the frequency and severity of weather events such as
+      heatwaves, droughts, wildfires, tropical cyclones, and flooding.
+
+      This declining productivity would affect GDP and government income, as tax
+      revenues are dependent on economic output. Adaptation costs would cause
+      further strain to fiscal expenditures. Assuming taxation rates remain
+      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
+      According to estimates from the NGFS, an orderly transition with low
+      physical risk would generally limit GDP losses. In an orderly scenario,
+      world GDP losses from both physical and transition risk are estimated to
+      be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
+      scale with the rise in temperatures in the scenarios over time. Based on
+      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the orderly
+      net zero scenario on UK GDP compared to 2018 would be non-significant,
+      ranging from -0.24% to -0.48% by 2050.
+
       **Downgrading of credit ratings**
-      
-      Climate risk is, to some extent, priced in the sovereign bond market. No 
-      sovereign has yet been downgraded because of the climate risks it faces, 
-      although rating agencies anticipate that climate trends will have implications 
-      for ratings in coming decades. According to the 2021 "Rising Temperatures, 
-      Falling Ratings: The Effect of Climate Change on Sovereign Creditworthiness" 
-      working paper from the University of Cambridge, in a low physical risk (NGFS 
-      Orderly) scenario, most developed countries would be marginally downgraded (1 
-      notch or less). Most downgrades would be among top-rated countries. This does 
-      not necessarily reflect increased climate risks for these top-rated countries, 
-      but greater sensitivity of the top ratings. It is easier to lose an AAA rating 
-      than a C rating. According to the study, in a low physical risk (RCP 2.6) scenario, 
-      the UK would have a downgrade of 0.92 notches by 2100, increasing the cost of 
-      borrowing for the UK government by approximately US$2-3bn.
+
+      Climate risk is, to some extent, priced in the sovereign bond market. No
+      sovereign has yet been downgraded because of the climate risks it faces,
+      although rating agencies anticipate that climate trends will have
+      implications for ratings in coming decades. According to the 2021 "Rising
+      Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
+      Creditworthiness" working paper from the University of Cambridge, in a low
+      physical risk (NGFS Orderly) scenario, most developed countries would be
+      marginally downgraded (1 notch or less). Most downgrades would be among
+      top-rated countries. This does not necessarily reflect increased climate
+      risks for these top-rated countries, but greater sensitivity of the top
+      ratings. It is easier to lose an AAA rating than a C rating. According to
+      the study, in a low physical risk (RCP 2.6) scenario, the UK would have a
+      downgrade of 0.92 notches by 2100, increasing the cost of borrowing for
+      the UK government by approximately US$2-3bn.
 
 references: |
   - [The risks from climate change to sovereign debt in Europe - Bruegel, September 2021](http://bruegel.org/reader/The-risks-from-climate-change-to-sovereign-debt-in-Europe#how-exposed-are-european-sovereigns-to-climate-risk){target="\_blank"}

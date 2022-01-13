@@ -7,25 +7,25 @@ description: |
   establishments generally, but not exclusively, include:
 
   - a place of business engaged in activities to attract the general public to
-     purchase goods, such as:
+    purchase goods, such as:
 
-     - physical store: shops, department stores, fuel stations, salons, opticians,
-       consumer cooperatives, auction houses
+    - physical store: shops, department stores, fuel stations, salons,
+      opticians, consumer cooperatives, auction houses
 
-     - non-physical store: stalls, mail-order houses, door-to-door sales, vending
-       machines
+    - non-physical store: stalls, mail-order houses, door-to-door sales, vending
+      machines
 
   - buying or receiving merchandise as well as selling
 
   - incidental or secondary processing of its products (not akin to
-     manufacturing)
+    manufacturing)
 
   - being considered as retail in trade terms
 
   - selling to customers for personal or household use
 
   - operating warehouses which act as an auxiliary to the core business of the
-     customer facing retail stores
+    customer facing retail stores
 
   Buying of goods for resale to the consumer is a characteristic of retail trade
   establishments that distinguishes them from agricultural and extractive
@@ -78,8 +78,8 @@ description: |
 transition:
   high:
     always: |
-      As the Consumer Products sector sits between the Manufacturing sector and end-consumers, 
-      it is subject to the considerations of both the products it
+      As the Consumer Products sector sits between the Manufacturing sector and
+      end-consumers, it is subject to the considerations of both the products it
       purchases (or receives) as suppliers react to a top-down policy
       environment that results in a rapid reduction of emissions, as well as the
       changes in customer behaviour as demand shifts towards a low carbon
@@ -93,14 +93,14 @@ transition:
       recent example being the banning use of single-use plastics such as
       disposable drinking straws in the UK).
 
-      While the consumer products sector could continue to play a role in meeting
-      customer demand for the coming years, the changing patterns in energy
-      generation in the Delayed transition scenario, driven by late policy
-      action enabling a "fossil fuelled recovery" out of the economic crisis
-      brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
-      until 2030 before rapidly decreasing after 2030 as carbon prices are
-      increased to compensate for the inaction beforehand. In the divergent
-      scenario there is a more immediate but divergent reduction in
+      While the consumer products sector could continue to play a role in
+      meeting customer demand for the coming years, the changing patterns in
+      energy generation in the Delayed transition scenario, driven by late
+      policy action enabling a "fossil fuelled recovery" out of the economic
+      crisis brought about by COVID-19, results in CO<sub>2</sub> emissions
+      increasing until 2030 before rapidly decreasing after 2030 as carbon
+      prices are increased to compensate for the inaction beforehand. In the
+      divergent scenario there is a more immediate but divergent reduction in
       CO<sub>2</sub> emissions. Both these scenarios are likely to have a
       significant impact on the inherent practices of retail companies, upstream
       manufacturers and consumer demand, which could affect profitability of
@@ -185,21 +185,21 @@ transition:
         the comparability and accountability of disclosures could increase, with
         which comes reputational and litigation risk. Litigation costs may arise
         through having to have third-party assessments and assurance of
-        environmental disclosures, and as a result of "greenwashing". By following
-        industry norms and being a market follower rather than leader in this
-        space, this risk could be reduced.
+        environmental disclosures, and as a result of "greenwashing". By
+        following industry norms and being a market follower rather than leader
+        in this space, this risk could be reduced.
 
       Furthermore, there is likely to be significant wide economic disruption
       that could lead to falls in equity prices and reduced customer spending
-      levels. In these scenarios, the consumer products sector could deliver 
-      longer-term carbon reduction initiatives by shifting to lower carbon intensive
-      supplies, reducing the carbon intensity of their physical stores or sales
-      platforms, and using clean energy sources. The drive for change arises
-      through retailers being sandwiched between a combination of shift in
-      end-consumer preferences from the buy side and a similar shift on the sell
-      side as manufacturers and suppliers react to a top-down policy environment
-      that results in a rapid reduction of emissions. This could lead to 
-      sudden limited-to-zero supply of carbon intensive goods could mean
+      levels. In these scenarios, the consumer products sector could deliver
+      longer-term carbon reduction initiatives by shifting to lower carbon
+      intensive supplies, reducing the carbon intensity of their physical stores
+      or sales platforms, and using clean energy sources. The drive for change
+      arises through retailers being sandwiched between a combination of shift
+      in end-consumer preferences from the buy side and a similar shift on the
+      sell side as manufacturers and suppliers react to a top-down policy
+      environment that results in a rapid reduction of emissions. This could
+      lead to sudden limited-to-zero supply of carbon intensive goods could mean
       retailers that specialise in such markets in a monoline, or concentrated
       strategy may find their business models no longer viable (for example,
       fossil fuel suppliers such as petrol stations, and coal and oil
@@ -235,13 +235,13 @@ transition:
       recent example being the banning use of single-use plastics such as
       disposable drinking straws in the UK).
 
-      While the consumer products sector could continue to play a role in meeting
-      customer demand for the coming years, the changing patterns in energy
-      consumption, driven by societal change, national energy strategies, and
-      carbon legislation, are likely to have a significant and long-term impact
-      on these inherent practices of retail companies, upstream manufacturers
-      and consumer demand, which could affect profitability of individual
-      companies and the sector overall.
+      While the consumer products sector could continue to play a role in
+      meeting customer demand for the coming years, the changing patterns in
+      energy consumption, driven by societal change, national energy strategies,
+      and carbon legislation, are likely to have a significant and long-term
+      impact on these inherent practices of retail companies, upstream
+      manufacturers and consumer demand, which could affect profitability of
+      individual companies and the sector overall.
 
       In adapting to these transitions, retailers within the consumer products
       sector must overcome one or more of the following and adapt to challenges
@@ -317,25 +317,25 @@ transition:
         the comparability and accountability of disclosures could increase, with
         which comes reputational and litigation risk. Litigation costs may arise
         through having to have third-party assessments and assurance of
-        environmental disclosures, and as a result of "greenwashing". By following
-        industry norms and being a market follower rather than leader in this
-        space, this risk could be reduced.
+        environmental disclosures, and as a result of "greenwashing". By
+        following industry norms and being a market follower rather than leader
+        in this space, this risk could be reduced.
 
       In early/orderly transition risk scenarios, the consumer products sector
-      could deliver longer-term carbon reduction initiatives by shifting to lower
-      carbon intensive supplies, reducing the carbon intensity of their physical
-      stores or sales platforms, and using clean energy sources. The drive for
-      change arises through retailers being sandwiched between a combination of
-      shift in end-consumer preferences from the buy side and a similar shift on
-      the sell side as manufacturers and suppliers react to a top-down policy
-      environment that results in an immediate and smooth reduction of
-      emissions. For example, In the early/orderly transition risk scenarios, on
-      the supply side, Manufacturing Sector's CO<sub>2</sub> emissions are
-      expected to reduce between 76% and 98% by 2050 from 2020 levels. On the
-      demands side, a change in consumer sentiment is already reflected in a 2020
-      collaborative retail customer survey led by Globe Scan, 74% of 27 000
-      polled indicated that they wanted to significantly reduce their impact on
-      the environment and nature.
+      could deliver longer-term carbon reduction initiatives by shifting to
+      lower carbon intensive supplies, reducing the carbon intensity of their
+      physical stores or sales platforms, and using clean energy sources. The
+      drive for change arises through retailers being sandwiched between a
+      combination of shift in end-consumer preferences from the buy side and a
+      similar shift on the sell side as manufacturers and suppliers react to a
+      top-down policy environment that results in an immediate and smooth
+      reduction of emissions. For example, In the early/orderly transition risk
+      scenarios, on the supply side, Manufacturing Sector's CO<sub>2</sub>
+      emissions are expected to reduce between 76% and 98% by 2050 from 2020
+      levels. On the demands side, a change in consumer sentiment is already
+      reflected in a 2020 collaborative retail customer survey led by Globe
+      Scan, 74% of 27 000 polled indicated that they wanted to significantly
+      reduce their impact on the environment and nature.
 
       By its very nature, the Consumer Sector is diverse and nuanced, with
       multiple product categories, distribution platforms and business sizes and
@@ -355,10 +355,10 @@ physical:
       frequency and severity of weather events such as heatwaves, droughts,
       wildfires, tropical cyclones and flooding. Whilst the consumer products
       sector is used to responding to and managing changing weather conditions,
-      in the high physical risk scenario, climate change and global warming could
-      increase weather variations. This could lead to increasing disruption to
-      supply chains and own operations which could impact the profitability for
-      these companies.
+      in the high physical risk scenario, climate change and global warming
+      could increase weather variations. This could lead to increasing
+      disruption to supply chains and own operations which could impact the
+      profitability for these companies.
 
       In a high physical risk scenario, small perturbations in climate can lead
       to significant disruption in crop yields and corresponding disruption to

@@ -1,23 +1,23 @@
 name: Metals and Mining
 
 description: |
-  Companies in the **Mining** sector (except Oil and Gas) primarily
-  engage in mining, mine site development, and beneficiating (i.e. preparing -
-  crushing, screening, washing, sizing, concentrating, and flotation) metallic
-  minerals and non-metallic minerals, including coal. The term "mining" is used in
-  the broad sense to include ore extraction, quarrying, and beneficiating,
-  customarily done at the mine site. 
-  
-  The Mining sector includes companies that have complete responsibility for operating 
-  mines and quarries (except oil and gas wells) and those that operate mines and 
-  quarries (except oil and gas wells) for others on a contract or fee basis. Also 
-  included are companies engaged in providing support activities (except site 
-  preparation and related construction activities) on a contract or fee basis 
-  for the mining and quarrying of metallic minerals and for the extraction of metal ores.
-  Exploration for these minerals is also included in this industry. Exploration
-  (except geophysical surveying and mapping services) includes traditional
-  prospecting methods, such as taking core samples and making geological
-  observations at prospective sites.
+  Companies in the **Mining** sector (except Oil and Gas) primarily engage in
+  mining, mine site development, and beneficiating (i.e. preparing - crushing,
+  screening, washing, sizing, concentrating, and flotation) metallic minerals
+  and non-metallic minerals, including coal. The term "mining" is used in the
+  broad sense to include ore extraction, quarrying, and beneficiating,
+  customarily done at the mine site.
+
+  The Mining sector includes companies that have complete responsibility for
+  operating mines and quarries (except oil and gas wells) and those that operate
+  mines and quarries (except oil and gas wells) for others on a contract or fee
+  basis. Also included are companies engaged in providing support activities
+  (except site preparation and related construction activities) on a contract or
+  fee basis for the mining and quarrying of metallic minerals and for the
+  extraction of metal ores. Exploration for these minerals is also included in
+  this industry. Exploration (except geophysical surveying and mapping services)
+  includes traditional prospecting methods, such as taking core samples and
+  making geological observations at prospective sites.
 transition:
   high:
     always: |
@@ -65,8 +65,8 @@ transition:
       **Source:**
       [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      Primary energy prices (i.e. the spot price at the global market) could also
-      decrease compared to 2020 levels (more significantly in the divergent
+      Primary energy prices (i.e. the spot price at the global market) could
+      also decrease compared to 2020 levels (more significantly in the divergent
       scenario compared to the delayed scenario).
 
       ![Coal Price](Primary_Energy_Price_Coal_Disorderly_Mining.png)
@@ -87,10 +87,10 @@ transition:
       partly offset by increased recycling rates. Although these critical
       mineral resources are not always located in the same locations or
       countries as existing coal mines, the skills and experience of mining
-      companies could be essential to ensure that the supply of these minerals is
-      able to match demand at reasonable prices. Many new mining projects could
-      have to be developed rapidly and sustainably to fuel the transition, which
-      could be challenging from an operating perspective.
+      companies could be essential to ensure that the supply of these minerals
+      is able to match demand at reasonable prices. Many new mining projects
+      could have to be developed rapidly and sustainably to fuel the transition,
+      which could be challenging from an operating perspective.
   low:
     always: |
       By 2050, in orderly transition scenarios coal represents 0.86% (in the
@@ -136,8 +136,8 @@ transition:
       **Source:**
       [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      Primary energy prices (i.e. the spot price at the global market) could also
-      decrease compared to 2020 levels.
+      Primary energy prices (i.e. the spot price at the global market) could
+      also decrease compared to 2020 levels.
 
       ![Coal Price](Primary_Energy_Price_Coal_Orderly_Mining.png)
 
@@ -157,10 +157,10 @@ transition:
       partly offset by increased recycling rates. Although these critical
       mineral resources are not always located in the same locations or
       countries as existing coal mines, the skills and experience of mining
-      companies could be essential to ensure that the supply of these minerals is
-      able to match demand at reasonable prices. Many new mining projects could
-      have to be developed rapidly and sustainably to fuel the transition, which
-      could be challenging from an operating perspective.
+      companies could be essential to ensure that the supply of these minerals
+      is able to match demand at reasonable prices. Many new mining projects
+      could have to be developed rapidly and sustainably to fuel the transition,
+      which could be challenging from an operating perspective.
 physical:
   high:
     always: |
@@ -169,15 +169,15 @@ physical:
       acute effects due to changes in the frequency and severity of weather
       events such as heatwaves, droughts, wildfires, tropical cyclones and
       flooding. Extreme weather events could also impact the national and global
-      supply of chemicals and other materials needed for a mining site's process,
-      plants, and mine equipment and impact the ability to ship concentrate to
-      international markets. Whilst the mining sector is used to responding to
-      and managing changing weather conditions, in the low physical risk
-      scenario, climate change and global warming could increase weather
-      variations. This could lead to increasing disruption to mining production
-      which could significantly impact the profitability for these companies.
-      Note there is a variation in exposure, depending on the mine's geographical
-      location.
+      supply of chemicals and other materials needed for a mining site's
+      process, plants, and mine equipment and impact the ability to ship
+      concentrate to international markets. Whilst the mining sector is used to
+      responding to and managing changing weather conditions, in the low
+      physical risk scenario, climate change and global warming could increase
+      weather variations. This could lead to increasing disruption to mining
+      production which could significantly impact the profitability for these
+      companies. Note there is a variation in exposure, depending on the mine's
+      geographical location.
     high_materiality: |
       The following examples illustrate how the mining sector could be impacted
       in a high physical risk scenario:

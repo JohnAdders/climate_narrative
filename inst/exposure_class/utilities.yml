@@ -1,9 +1,9 @@
 name: Utilities
 
 description: |
-  The **Utilities** sector comprises of companies which provide basic amenities such
-  as water, sewage services, electricity, and gas. The sector includes companies
-  that:
+  The **Utilities** sector comprises of companies which provide basic amenities
+  such as water, sewage services, electricity, and gas. The sector includes
+  companies that:
 
   - Produce or distribute electricity (Electric Utilities)
 
@@ -74,14 +74,14 @@ transition:
       **Source:**
       [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
 
-      Nevertheless, in Disorderly transition risk scenarios one has to be careful
-      about also expecting valuation uplifts in firms that act as 'pure plays' on
-      an accelerated energy transition, like Renewable Electricity Companies.
-      That is because valuations for that subset of firms are already high and
-      arguably pricing in more aggressive transition and decarbonisation
-      scenarios. However, this is less of a constraint in the Divergent Net Zero
-      scenario because a transition of that significance and rapidity is not in
-      the price, in our judgement.
+      Nevertheless, in Disorderly transition risk scenarios one has to be
+      careful about also expecting valuation uplifts in firms that act as 'pure
+      plays' on an accelerated energy transition, like Renewable Electricity
+      Companies. That is because valuations for that subset of firms are already
+      high and arguably pricing in more aggressive transition and
+      decarbonisation scenarios. However, this is less of a constraint in the
+      Divergent Net Zero scenario because a transition of that significance and
+      rapidity is not in the price, in our judgement.
 
       Overall, electricity generation through carbon intensive primary energy
       sources (i.e. those that can be used directly as they appear in the

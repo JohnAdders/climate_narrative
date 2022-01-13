@@ -5,13 +5,13 @@ description: |
   economic activity relating to aircrafts. This includes designing,
   manufacturing, supplying, maintaining and operating both manned and unmanned
   aircrafts or parts. It also includes activities related to aircraft supporting
-  facilities such as airports and ticket distribution systems. 
-  
-  Aviation is a complex sector, with long product development cycles and where 
-  change takes a long time to be implemented. Typical aviation insurance policies cover
-  physical damage and loss split across public liability, passenger liability,
-  grounded and in-flight hull (covering loss/ damage to the aircraft when not in
-  use and when in use), and cargo.
+  facilities such as airports and ticket distribution systems.
+
+  Aviation is a complex sector, with long product development cycles and where
+  change takes a long time to be implemented. Typical aviation insurance
+  policies cover physical damage and loss split across public liability,
+  passenger liability, grounded and in-flight hull (covering loss/ damage to the
+  aircraft when not in use and when in use), and cargo.
 transition:
   high:
     always: |
@@ -133,8 +133,8 @@ transition:
         disposable income.
 
       The profitability of the aviation sector and its associated underwriting
-      class, in the early/orderly transition risk scenarios, could also depend on
-      the relevant companies proactively investing in innovation and new
+      class, in the early/orderly transition risk scenarios, could also depend
+      on the relevant companies proactively investing in innovation and new
       technology. For example:
 
       - Alternative fuel sources (e.g. airlines could invest in Sustainable
