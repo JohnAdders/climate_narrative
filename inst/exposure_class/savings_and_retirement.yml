@@ -18,7 +18,7 @@ description: |
 transition:
   high:
     always: |
-      In Disorderly/Divergent transition risk scenarios, driven by late policy
+      In disorderly/divergent transition risk scenarios, driven by late policy
       action, enables a "fossil fuelled recovery" out of the economic crisis
       brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
       until 2030 before rapidly decreasing after 2030 as carbon prices are
@@ -43,7 +43,7 @@ transition:
     high_materiality: |
       **GDP growth effect**
 
-      In the Disorderly/Divergent transition risk scenarios moderate to severe
+      In the disorderly/divergent transition risk scenario, moderate to severe
       reduction in GDP growth are likely, with equally severe repercussions on
       the levels of health and social care spending. A slower GDP growth would
       potentially constrain the growth in spending on NHS, public health, social
@@ -68,7 +68,7 @@ transition:
       greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
-      CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
+      CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, and the production of pollutants (such as
       particulate matter and oxides of nitrogen) that are more directly harmful
       to health.
@@ -94,7 +94,7 @@ transition:
       reduction of pollution could result in a reduction of cancers (especially
       lung) and respiratory diseases (e.g. asthma, respiratory allergic disease,
       chronic obstructive pulmonary disease and respiratory tract infections,
-      but also cardiovascular disease ), although we note that this is very much
+      but also cardiovascular disease), although we note that this is very much
       dependent on the fuel mix generating electrical power for the grid. This
       is likely to have a material effect on annuity providers, as the incidence
       of cancers and other diseases increases with age. If annuity policyholders
@@ -127,7 +127,7 @@ transition:
       impact the profit margins of annuity providers. At the same time, better
       health could improve mortality, leading to savings and retirement products
       becoming more profitable from longer durations in force, and improved
-      morbidity could lead to higher rates of savings and fewer lapses.
+      morbidity, could lead to higher rates of savings and fewer lapses.
 
       The early/orderly transition risk scenario could lead to a limited
       relative reduction in GDP growth. However, any negative impacts on GDP as
@@ -156,7 +156,7 @@ transition:
       greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
-      CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
+      CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, and the production of pollutants (such as
       particulate matter and oxides of nitrogen) that are more directly harmful
       to health.

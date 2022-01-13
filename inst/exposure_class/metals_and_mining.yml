@@ -6,17 +6,18 @@ description: |
   screening, washing, sizing, concentrating, and flotation) metallic minerals
   and non-metallic minerals, including coal. The term "mining" is used in the
   broad sense to include ore extraction, quarrying, and beneficiating,
-  customarily done at the mine site. The Mining sector includes companies that
-  have complete responsibility for operating mines and quarries (except oil and
-  gas wells) and those that operate mines and quarries (except oil and gas
-  wells) for others on a contract or fee basis. Also included are companies
-  engaged in providing support activities (except site preparation and related
-  construction activities) on a contract or fee basis for the mining and
-  quarrying of metallic minerals and for the extraction of metal ores.
-  Exploration for these minerals is also included in this industry. Exploration
-  (except geophysical surveying and mapping services) includes traditional
-  prospecting methods, such as taking core samples and making geological
-  observations at prospective sites.
+  customarily done at the mine site.
+
+  The Mining sector includes companies that have complete responsibility for
+  operating mines and quarries (except oil and gas wells) and those that operate
+  mines and quarries (except oil and gas wells) for others on a contract or fee
+  basis. Also included are companies engaged in providing support activities
+  (except site preparation and related construction activities) on a contract or
+  fee basis for the mining and quarrying of metallic minerals and for the
+  extraction of metal ores. Exploration for these minerals is also included in
+  this industry. Exploration (except geophysical surveying and mapping services)
+  includes traditional prospecting methods, such as taking core samples and
+  making geological observations at prospective sites.
 transition:
   high:
     always: |
@@ -298,4 +299,3 @@ references: |
 
   - [Climate risk and decarbonization: What every mining CEO needs to know - McKinsey, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know){target="\_blank"}
 
-  - [Net Zero by 2050: A Roadmap for the Global Energy Sector - IEA, May 2021](https://www.iea.org/reports/net-zero-by-2050){target="\_blank"}

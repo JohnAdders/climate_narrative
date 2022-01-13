@@ -72,16 +72,16 @@ transition:
       ![Energy Capacity](Energy_Sources_Oil_and_Gas.png)
 
       **Source:**
-      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model. Electricity capacity in the delayed transition scenario](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
 
-      Nevertheless, in a disorderly transition scenario one has to be careful
-      about also expecting valuation uplifts in firms that act as 'pure plays'
-      on an accelerated energy transition, like Renewable Electricity Companies.
-      That is because valuations for that subset of firms are already high and
-      arguably pricing in more aggressive transition and decarbonisation
-      scenarios. However, this is less of a constraint in the Divergent Net Zero
-      scenario because a transition of that significance and rapidity is not in
-      the price, in our judgement.
+      Nevertheless, in Disorderly transition risk scenarios one has to be
+      careful about also expecting valuation uplifts in firms that act as 'pure
+      plays' on an accelerated energy transition, like Renewable Electricity
+      Companies. That is because valuations for that subset of firms are already
+      high and arguably pricing in more aggressive transition and
+      decarbonisation scenarios. However, this is less of a constraint in the
+      Divergent Net Zero scenario because a transition of that significance and
+      rapidity is not in the price, in our judgement.
 
       Overall, electricity generation through carbon intensive primary energy
       sources (i.e. those that can be used directly as they appear in the
@@ -91,7 +91,7 @@ transition:
       ![Secondary Energy](Secondary_Energy_Disorderly_Utilities.png)
 
       **Source:**
-      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
 
       The important role of technology should also be noted. Forecasting
       technology pathways is just as difficult as forecasting policy pathways.
@@ -110,7 +110,7 @@ transition:
       ![Primary Energy Price Price](Primary_Energy_Price_Disorderly_Utilities.png)
 
       **Source:**
-      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [NGFS Scenario Data IAM output V2.2 Remind-MAgPIE 2.1-4.2 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads)
 
       Because the utilities sector is so diverse, there is no single solution,
       but rather a range of strategies based on the circumstances of each
@@ -197,8 +197,8 @@ transition:
 
       Because the utilities sector is so diverse, there is no single solution,
       but rather a range of strategies based on the circumstances of each
-      company could need to be deployed in an orderly transition risk scenario
-      to maintain revenues and minimise the long-term financial impact. Examples
+      company could need to be deployed in orderly transition risk scenarios to
+      maintain revenues and minimise the long-term financial impact. Examples
       include expanding renewable energy development, investing in more
       efficient thermal power generation and retiring low-efficient coal thermal
       power generation, supporting the development of low carbon alternates to

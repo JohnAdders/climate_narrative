@@ -78,14 +78,14 @@ description: |
 transition:
   high:
     always: |
-      As the Consumer Products sector sits between the end-consumers, it is
-      subject to the considerations of both the products it purchases (or
-      receives) as suppliers react to a top-down policy environment that results
-      in a rapid reduction of emissions, as well as the changes in customer
-      behaviour as demand shifts towards a low carbon economy mindset. In
-      addition, there are considerations to be given to the carbon intensity of
-      its own inherent practices, for example distribution, property, product
-      choices, utility consumption, or packaging.
+      As the Consumer Products sector sits between the Manufacturing sector and
+      end-consumers, it is subject to the considerations of both the products it
+      purchases (or receives) as suppliers react to a top-down policy
+      environment that results in a rapid reduction of emissions, as well as the
+      changes in customer behaviour as demand shifts towards a low carbon
+      economy mindset. In addition, there are considerations to be given to the
+      carbon intensity of its own inherent practices, for example distribution,
+      property, product choices, utility consumption, or packaging.
 
       Transition risk arises in the consumer products sector when any of these
       inherent practices must change because of supply line pressures, strategic

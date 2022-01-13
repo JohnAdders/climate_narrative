@@ -6,9 +6,9 @@ description: |
   on either an individual or group basis.
 
   Life assurance policies generally pay out a one-off payment of the cover
-  amount on death of the life assured. Policies may be written on a whole of
-  life basis, or cover may last for a specified term. The cover amount can be
-  flat over the term of the policy or may decrease over the policy duration.
+  amount on death of the life assured. Policies may be written on whole of life
+  basis, or cover may last for a specified term. The cover amount can be flat
+  over the term of the policy or may decrease over the policy duration.
 
   Critical illness policies provide the pay out on the occurrence of one of a
   set of predetermined conditions. Depending on the definition, payment may
@@ -69,7 +69,7 @@ transition:
         actually contribute to local particulate pollution.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
-        but without global buy-in then this could also reduce the correlation.
+        but without global buy-in, then this could also reduce the correlation.
 
       In the Disorderly/Divergent transition risk scenarios, there is potential
       for fewer deaths and a positive outcome for health relating to air
@@ -97,14 +97,15 @@ transition:
       care, medical research etc. Assuming that greater funding is correlated to
       some extent with mortality and morbidity outcomes, this means any climate
       scenario could have an impact on mortality and morbidity via its impact on
-      GDP. This could impact across the range of protection products. Although
-      the precise impact may differ between products depending on the scenario
-      (for example, income protection claims experience might suffer more if
-      there was a reduction in spending on musculoskeletal conditions, whilst
-      critical illness would be more sensitive to trajectories in cancer
-      diagnosis techniques), it may be more appropriate to view this at the
-      "overall" level rather than spuriously defining specific GDP allocation
-      scenarios.
+      GDP.
+
+      This could impact across the range of protection products. Although the
+      precise impact may differ between products depending on the scenario (for
+      example, income protection claims experience might suffer more if there
+      was a reduction in spending on musculoskeletal conditions, whilst critical
+      illness would be more sensitive to trajectories in cancer diagnosis
+      techniques), it may be more appropriate to view this at the "overall"
+      level rather than spuriously defining specific GDP allocation scenarios.
 
       **Impact on pricing or product design**
 
@@ -134,7 +135,7 @@ transition:
       greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
-      CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
+      CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, and the production of pollutants (such as
       particulate matter and oxides of nitrogen) that are more directly harmful
       to health.

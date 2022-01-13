@@ -39,35 +39,35 @@ description: |
 transition:
   high:
     always: |
-      The agriculture sector continues to expand to feed and supply
-      agriculturial energy products to growing global population. It contributes
-      to 23% of anthropogenic emissions, exposing its producers and financiers
-      to emerging climate related transition risks through public policies,
-      consumer demand shifts and technological evolutions.
+      The agriculture sector continues to expand to feed and supply agricultural
+      energy products to a growing global population. It contributes to 23% of
+      anthropogenic emissions, exposing its producers and financiers to emerging
+      climate related transition risks through public policies, consumer demand
+      shifts and technological evolutions.
 
-      By 2050, in the Delayed transition scenario, late policy action enables a
-      "fossil fuelled recovery" out of the economic crisis brought about by
-      COVID-19. CO<sub>2</sub> emissions increase until 2030, before sharply
-      decreasing after 2030 to compensate for the inaction beforehand. In the
-      divergent net zero scenario there is a more immediate but divergent
-      reduction in CO<sub>2</sub> emissions starts. These scenarios are likely
-      to have a significant impact on agriculture sector. Agricultural value
-      chains face material climate transition risk exposure due to their
-      emissions intensity and reliance on land. Under Disorderly transitional
-      risk scenarios, the expansion of land protection policies and carbon
-      payments made to preserve and expand forests could reduce land available
-      for agriculture.
+      By 2050, in the delayed transition risk scenario, late policy action
+      enables a "fossil fuelled recovery" out of the economic crisis brought
+      about by COVID-19. CO<sub>2</sub> emissions increase until 2030, before
+      sharply decreasing after 2030 to compensate for the inaction beforehand.
+      In the divergent scenario there is a more immediate but divergent
+      reduction in CO<sub>2</sub> emissions. These scenarios are likely to have
+      a significant impact on agriculture sector. Agricultural value chains face
+      material climate transition risk exposure due to their emissions intensity
+      and reliance on land. Under Disorderly/Divergent transitional risk
+      scenarios, the expansion of land protection policies and carbon payments
+      made to preserve and expand forests could reduce land available for
+      agriculture.
 
-      The Disorderly transition risk scenarios could also lead to a reduction in
-      GDP growth. This could result in changes in the rate of growth in demand
-      for the agriculture sector, although the impact is likely to be limited
-      due to inelastic demand for food products.
+      The Disorderly/Divergent transition risk scenarios could also lead to a
+      reduction in GDP growth. This could result in changes in the rate of
+      growth in demand for the agriculture sector, although the impact is likely
+      to be limited due to inelastic demand for food products.
     high_materiality: |
       The changes in food and bioenergy demand, emission pricing or taxes,
       consumer preferences and land use restrictions could potentially result in
       one or more of the following financial impacts:
 
-      - **Revenues growth** due to rising global demand and commodity prices.
+      - **Revenue growth** due to rising global demand and commodity prices.
 
       - **Rising production costs** due to higher input costs and GHG emissions
         costs
@@ -169,7 +169,7 @@ transition:
       consumer preferences and land use restrictions could potentially result in
       one or more of the following financial impacts, for example:
 
-      - **Revenues growth** in line with global demand and commodity prices.
+      - **Revenue growth** in line with global demand and commodity prices.
 
       - **Rising production costs** due to higher input costs and GHG emissions
         costs.
@@ -188,7 +188,7 @@ transition:
       restrictions, and necessary productivity improvements.
 
       The sector has very high GHG emissions as farm and livestock productions
-      and activities are emission intensive. The total demand could continue to
+      and activities are emissions intensive. The total demand could continue to
       increase in the early/orderly transition risk scenarios, however growth in
       demand for food production is limited.
 
@@ -204,7 +204,7 @@ transition:
 
       As the use of bioenergy increases, by 2050, approx. 30% of total
       agricultural production in the Net Zero 2050 scenario and around 12% in
-      the Below 2 degrees scenario could be consumed for energy generation.
+      the Below 2&deg;C scenario could be consumed for energy generation.
 
       ![Total Agriculture Production](Agriculture_Production_Total_Orderly.png)
 
@@ -224,7 +224,7 @@ transition:
       the rising demand of food and energy due to population growth. By 2050,
       agricultural land could increase by around 60 to 100 million hectares and
       forest cover could increase by around 160 million hectares in the Net Zero
-      scenario and could remain unchanged in the Below 2 degrees scenario.
+      scenario and could remain unchanged in the Below 2&deg;C scenario.
 
       ![Agriculture Land Cover](Agriculture_Land_Cover_Orderly.png)
 
@@ -251,14 +251,16 @@ physical:
   high:
     always: |
       The agriculture sector is also exposed to physical risk. Chronic effects
-      (e.g. raised sea-levels) and acute effects due to changes to frequency and
-      severity of weather events such as heatwaves, wildfires, tropical
-      cyclones, and flooding are adding to pressures on global agricultural and
-      food systems and could lead to severe disruption to agricultural
-      production which could impact the profitability for the companies in
-      long-run. In the high physical risk scenario, climate change and global
-      warming could increase weather variations. This could lead to increasing
-      disruption to agriculture sector which could impact profitability.
+      (e.g. raised sea-levels and mean temperatures) and acute effects due to
+      changes to frequency and severity of weather events such as heatwaves,
+      wildfires, tropical cyclones, and flooding are adding to pressures on
+      global agricultural and food systems and could lead to severe disruption
+      to agricultural production which could impact the profitability for some
+      companies in long-run. Whilst the agriculture sector is used to responding
+      to and managing changing weather conditions, in the high physical risk
+      scenario, climate change and global warming could increase weather
+      variations. This could lead to increasing disruption to agriculture sector
+      which could impact profitability.
 
       Adverse impacts on world GDP from physical risks are assumed in the
       scenarios and these scale with the rise in temperatures in the scenarios
@@ -278,10 +280,9 @@ physical:
         threaten agricultural production by adversely affecting crop yields.
 
       - **Higher average temperatures** could have an impact on production, this
-        could vary across the regions. Warmer, drier climate in already arid
-        regions, such as North Africa, may have a negative impact on production
-        whereas production in colder and wetter areas, such as Northern and
-        Western regions in the UK, may benefit from warm conditions.
+        could vary across the regions. Warmer, drier climates in tropical
+        regions may have a negative impact on production where production in
+        colder and wetter areas may benefit from warm conditions.
 
       **Acute Impacts**
 
@@ -317,7 +318,7 @@ physical:
       changes to frequency and severity of weather events such as heatwaves,
       wildfires, tropical cyclones, and flooding are adding to pressures on
       global agricultural and food systems and could lead to severe disruption
-      to agricultural production which could impact the profitability for the
+      to agricultural production which could impact the profitability for some
       companies in long-run.
 
       In the low physical risk scenario, climate change and global warming could
@@ -325,7 +326,7 @@ physical:
       agriculture sector which could impact profitability.
     high_materiality: |
       The following examples illustrate how the agriculture sector could be
-      impacted In a low physical risk scenario:
+      impacted in a low physical risk scenario:
 
       **Chronic Impacts**
 
@@ -339,7 +340,7 @@ physical:
         could vary across the regions. Warmer, drier climate in already arid
         regions, such as North Africa, may have a negative impact on production,
         whereas production in colder and wetter areas, such as Northern and
-        Western UK, may benefit from warm conditions.
+        Western regions in the UK, may benefit from warm conditions.
 
       **Acute Impacts**
 
