@@ -79,7 +79,7 @@ server <- function(input, output, session) {
       return(data.frame(item = c(), materiality = c()))
     }
   })
-  
+
   aggregated_all_inputs <- reactive({
     if (allow_report()) {
       aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = all_inputs())
@@ -112,7 +112,7 @@ server <- function(input, output, session) {
       return(out[out$item == selected_item, ])
     }
   })
-  
+
   # update the available sectors, only after tab switch
   observeEvent(
     input$wizard,
@@ -129,7 +129,7 @@ server <- function(input, output, session) {
       )
     }
   )
-  
+
 
   #report_contents <- reactive({
   get_report_contents <- function(aggregated_inputs, inputs){
@@ -243,7 +243,6 @@ server <- function(input, output, session) {
   output$dev_report <- downloadHandler(
     filename = "All_Outputs.rtf",
     content = function(file, res_path = system.file("www", package = "climate.narrative")) {
-      print(all_inputs())
       showModal(
         modalDialog(
           "Report rendering in progress... when complete your download will start automatically",
