@@ -734,7 +734,7 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
   }
   p(
     list(
-      paste0("Enter your firm's exposures by", case_name, "using the following definitions:"),
+      paste0("Enter your firm's exposures by ", case_name, " using the following definitions:"),
       tags$ul(
         tags$li(paste("\"High\": One of your top 5 exposures or more than 10% of total", total_name)),
         tags$li(paste("\"Medium\": 5% - 10% of total", total_name)),
