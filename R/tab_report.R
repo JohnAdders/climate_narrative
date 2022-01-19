@@ -28,6 +28,11 @@ tab_report_ui <- function() {
   } else {
     out <- c(out, list(
       downloadButton("report", "Download the selected scenario/sector report as RTF"),
+      conditionalPanel(
+        'input.report_scenario_selection != "" | input.report_sector_selection != ""',
+        hr(),
+        actionButton(paste0("page_",tab_name_to_number("report"), "_previous_duplicate"), "prev")
+      ),
       uiOutput("html_report")
     ))
   }
