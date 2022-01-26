@@ -6,17 +6,24 @@
 \usage{
 produce_selective_report(
   report_contents,
+  report_version,
   report_scenario_selection,
-  include_common_sections,
+  is_rtf,
   tempfile
 )
 }
 \arguments{
 \item{report_contents}{the content to write}
 
+\item{report_version}{variable that can be used to control the multiple report versions in a single code}
+
 \item{report_scenario_selection}{(user-friendly) scenario name (or empty string)}
 
-\item{include_common_sections}{whether to include non-scenario sections (e.g. intro)}
+\item{is_rtf}{a flag that triggers several format specific settings:
+\itemize{
+\item TRUE: include non-scenario sections (e.g. intro)
+\item FALSE: include the links to page top (note requires proper report_version as well)
+}}
 
 \item{tempfile}{where to write the report}
 }
