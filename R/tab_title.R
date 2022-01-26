@@ -7,6 +7,7 @@ tab_title_ui <- function() {
       out,
       list(
         hr(),
+        h3("Development version report download"),
         downloadButton("dev_report", "Download the complete output as RTF"),
         hr()
       )

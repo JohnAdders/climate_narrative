@@ -164,6 +164,7 @@ server <- function(input, output, session) {
     temp_html <- tempfile(fileext = ".html")
     produce_selective_report(
       get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
+      input$version_selection,
       input$report_scenario_selection,
       FALSE,
       session$userData$temp_md_scenario
@@ -210,6 +211,7 @@ server <- function(input, output, session) {
       )
       produce_selective_report(
         get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
+        input$version_selection,
         input$report_scenario_selection,
         TRUE,
         session$userData$temp_md_scenario_and_commons
@@ -252,6 +254,7 @@ server <- function(input, output, session) {
       )
       produce_full_report(
         get_report_contents(aggregated_all_inputs(), all_inputs()),
+        input$version_selection,
         session$userData$temp_md_dev
       )
       fs <- file.size(session$userData$temp_md_dev)

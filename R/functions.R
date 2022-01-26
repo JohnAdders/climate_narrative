@@ -757,9 +757,10 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' this is necessary as markdown::render takes file as an argument
 #' not used at the moment, but do not delete - will be sent by email probably
 #' @param report_contents the content to write
+#' @param report_version variable that can be used to control the multiple report versions in a single code
 #' @param tempfile where to write the report
 #' @return NULL, output is a file as specified in the argument
-produce_full_report <- function(report_contents, tempfile){
+produce_full_report <- function(report_contents, report_version, tempfile){
   file_conn <- file(tempfile)
   writeLines(report_contents, file_conn)
   close(file_conn)
@@ -770,26 +771,43 @@ produce_full_report <- function(report_contents, tempfile){
 #'
 #' this is necessary as markdown::render takes file as an argument
 #' @param report_contents the content to write
+#' @param report_version variable that can be used to control the multiple report versions in a single code
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
-#' @param include_common_sections whether to include non-scenario sections (e.g. intro)
+#' @param is_rtf a flag that triggers several format specific settings:
+#' - TRUE: include non-scenario sections (e.g. intro)
+#' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @param tempfile where to write the report
 #' @return NULL, output is a file as specified in the argument
-produce_selective_report <- function(report_contents, report_scenario_selection, include_common_sections, tempfile){
+produce_selective_report <- function(report_contents, report_version, report_scenario_selection, is_rtf, tempfile){
   if (report_scenario_selection == ""){
     scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
   } else {
     scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
   }
-  if (include_common_sections){
+  if (is_rtf){
     scenario_no <- sort(
       c(0, scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
     )
   }
   file_conn <- file(tempfile)
-  add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", system.file("www", package = "climate.narrative"), "/", "\\1\\2"), x, perl=T)
+  contents <- report_contents[c(1 + scenario_no, length(report_contents))]
+  # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
+  contents <- add_path_to_graphs(contents)
+  print(is_rtf)
+  print(report_version)
+  if (!is_rtf && report_version == 2){
+    for (header_tag in c("\n# ","\n## ","\n### ")){
+      contents = gsub(
+        header_tag,
+        paste0("\n<a href='#top'>go to top</a> \n\n", header_tag),
+        contents,
+      )
+    }
+    # also add link at the end
+    contents = paste0(contents,"\n\n<a href='#top'>go to top</a>\n")
+  }
   writeLines(
-    # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
-    add_path_to_graphs(report_contents[c(1 + scenario_no, length(report_contents))]),
+    contents,
     file_conn
   )
   close(file_conn)
@@ -881,4 +899,25 @@ rtf_center_images <- function(filename){
   writeLines(rtf, file_conn)
   close(file_conn)
   return(invisible(NULL))
+}
+
+#' Add path to graphs
+#' 
+#' By default pandoc rtf is run in its own location and does not locate the images properly
+#' manual intervention is required to explicitly point the images
+#' @param x text to convert
+#' @return updated text
+#' 
+add_path_to_graphs <- function(x) {
+  gsub(
+    "\\(([[:graph:]]*)(.png)",
+    paste0(
+      "(",
+      system.file("www", package = "climate.narrative"),
+      "/",
+      "\\1\\2"
+    ),
+    x,
+    perl=T
+  )
 }

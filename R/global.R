@@ -17,3 +17,10 @@ global$ordered_tabs <- c(
   "am_c", "am_sov", "am_re",
   "report"
 )
+
+# defining possible report versions
+global$report_versions <- c(1, 2)
+names(global$report_versions) <- c(
+  "v1 base version",
+  "v2 added links to top (HTML only)"
+)

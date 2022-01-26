@@ -22,6 +22,20 @@ tab_report_ui <- function() {
     ),
     hr()
   )
+  if(global$dev){
+    out <- c(
+      out,
+      list(
+        selectInput(
+          "version_selection",
+          "Select the report version",
+          global$report_versions,
+          global$report_version,
+          selectize=FALSE
+        )
+      )
+    )
+  }
   if (!rmarkdown::pandoc_available()) {
     warning("Pandoc (required to render rtf) not available, hiding download report button")
     out <- c(out, list(uiOutput("html_report")))
