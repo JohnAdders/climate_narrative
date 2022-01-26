@@ -793,8 +793,6 @@ produce_selective_report <- function(report_contents, report_version, report_sce
   contents <- report_contents[c(1 + scenario_no, length(report_contents))]
   # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
   contents <- add_path_to_graphs(contents)
-  print(is_rtf)
-  print(report_version)
   if (!is_rtf && report_version == 2){
     for (header_tag in c("\n# ","\n## ","\n### ")){
       contents = gsub(

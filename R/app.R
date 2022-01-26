@@ -13,6 +13,14 @@ run_shiny_app <- function(secrets_file="secret.yml", ...) {
     "climate_narrative",
     system.file("www", package = "climate.narrative")
   )
+  global$exposures <- read_dir(paste0(global$report_version, "/exposure"))
+  global$scenarios <- read_dir(paste0(global$report_version, "/scenario"))
+  global$products <- read_dir(paste0(global$report_version, "/product"))
+  global$exposure_classes <- read_dir(paste0(global$report_version, "/exposure_class"))
+
+  # ordering the scenarios
+  global$scenarios <- global$scenarios[order(sapply(global$scenarios, `[[`, i = "position"))]
+
   global$tabs <- list(
     QuestionTab$new("title", NULL, "auth", FALSE, FALSE),
     QuestionTab$new("auth", "title", NULL, ui_settings = list(captcha_code = global$captcha_code)),

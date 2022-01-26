@@ -45,7 +45,7 @@ tab_report_ui <- function() {
       conditionalPanel(
         'input.report_scenario_selection != "" | input.report_sector_selection != ""',
         hr(),
-        actionButton(paste0("page_",tab_name_to_number("report"), "_previous_duplicate"), "prev")
+        actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
       ),
       uiOutput("html_report")
     ))

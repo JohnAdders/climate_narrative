@@ -1,14 +1,5 @@
 global <- new.env()
 
-
-global$exposures <- read_dir("exposure")
-global$scenarios <- read_dir("scenario")
-global$products <- read_dir("product")
-global$exposure_classes <- read_dir("exposure_class")
-
-# ordering the scenarios
-global$scenarios <- global$scenarios[order(sapply(global$scenarios, `[[`, i = "position"))]
-
 # defining the questionnaire using list of QuestionTab objects
 global$ordered_tabs <- c(
   "title", "auth", "type",
