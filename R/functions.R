@@ -786,14 +786,18 @@ produce_selective_report <- function(report_contents, report_version, report_sce
   }
   if (is_rtf){
     scenario_no <- sort(
-      c(0, scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
+      c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
     )
   }
   file_conn <- file(tempfile)
-  contents <- report_contents[c(1 + scenario_no, length(report_contents))]
-  # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
+  # offset is for the title (and optionally exec summary), not included in 'scenarios' but included in 'report_contents'
+  if (report_version >= 3) {
+    contents <- report_contents[c(2, 2 + scenario_no, length(report_contents))]
+  } else {
+    contents <- report_contents[c(1 + scenario_no, length(report_contents))]
+  }
   contents <- add_path_to_graphs(contents)
-  if (!is_rtf && report_version == 2){
+  if (!is_rtf && report_version >= 2){
     for (header_tag in c("\n# ","\n## ","\n### ")){
       contents = gsub(
         header_tag,

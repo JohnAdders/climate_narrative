@@ -1,0 +1,112 @@
+name: NGFS Early/Orderly Scenarios
+position: 1
+is_scenario: yes
+transition: low
+physical: low
+
+exec_description: |
+  PLACEHOLDER
+
+description: |
+  These Early/Orderly transition risk scenarios assume that effective policy
+  changes are introduced in a timely manner.
+
+  ![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)
+
+  **Source:**
+  [NGFS Climate Scenarios, June2021](https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf){target="\_blank"}
+
+  The NGFS have defined two orderly scenarios:
+
+  - **Net Zero 2050** limits global warming to 1.5&deg;C through stringent climate
+    policies and innovation, reaching global Net Zero CO<sub>2</sub> emissions
+    around 2050. Some jurisdictions such as the US, EU and Japan reach Net Zero
+    for all GHGs.
+
+  - **Below 2&deg;C** gradually increases the stringency of climate policies, giving
+    a 67% chance of limiting global warming to below 2&deg;C.
+
+  ## Key assumptions and parameters
+
+  In these scenarios the reduction in CO<sub>2</sub> emissions occurs gradually.
+  This is achieved by an immediate and smooth policy reaction decarbonising the
+  energy supply, accelerating electrification and switching to low-carbon fuels
+  in industry, transport and buildings, deploying bioenergy with carbon capture
+  and storage and increasing afforestation.
+
+  ![CO2 emissions](CO2_emissions_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer, REMIND model.](https://data.ene.iiasa.ac.at/ngfs/#/workspaces/82){target="\_blank"}
+
+  The price of carbon is higher in a Net Zero 2050 scenario compared to a Below
+  2&deg;C scenario, this is due to more rigorous targets of limiting global warming
+  to a maximum of 1.5&deg;C set in the Net Zero 2050 scenario. In both the scenarios
+  the gradual but significant rise in emission prices gives rise to transition
+  risk.
+
+  ![Carbon price](Carbon_Price_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer, REMIND model. Carbon prices are weighted global averages.](https://data.ene.iiasa.ac.at/ngfs/#/workspaces/82){target="\_blank"}
+
+  Observed climate change has already increased global mean temperatures above
+  1.2&deg;C, compared to pre-industrial levels, and both the global land area and
+  the global population annually exposed to river flood, crop failure, tropical
+  cyclones, wildfire, drought and heatwaves has more than doubled. (See Kaufman,
+  D. et al. (2020)).
+
+  The increasing concentrations of carbon dioxide, methane and nitrous oxide in
+  the atmosphere are unprecedented in at least the last 800,000 years and are
+  extremely likely to have been the dominant cause of warming since the mid-20th
+  century. In early/orderly transition risk scenarios global mean temperatures
+  are projected to increase across the world by 1.5&deg;C to 1.7&deg;C, compared to
+  pre-industrial levels, with land warming faster than oceans and high latitudes
+  experiencing higher warming giving rise to low physical risk.
+
+  ![Global mean temp rise](Global_mean_temperature_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer, NGFS Scenario Data IAM outputs v2.2 REMIND-MAgPIE 2.1-4.2 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+  These changes could lead to chronic changes in living conditions affecting
+  health, labour productivity, agriculture, ecosystems, and sea-level rise. It
+  can also further change the frequency and severity of weather events such as
+  heatwaves, droughts, wildfires, tropical cyclones, and flooding.
+
+  In these scenarios the GDP losses are estimated to be between -1.5% and-2.5%
+  by 2050. World GDP losses from physical risks scale with the rise in
+  temperatures in the scenarios over time. GDP impacts from transition risk are
+  slightly positive in the Net Zero 2050 scenario as negative impacts on demand
+  from higher carbon prices and energy costs are more than offset by the
+  recycling of carbon tax revenues into government investment and lower
+  employment taxes.
+
+  ![GDP](GDP_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer, NGFS Scenario Data NIGEM v2.0 NiGEM NGFS v1.21 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+  Note GDP losses highlighted in the above graph were calculated based on the
+  methodology set out in Kalkuhl and Wenz (2020) at the country level for the
+  change in average temperature in each scenario compared to the previous year.
+  The methodology does not include impacts related to extreme weather, sea-level
+  rise or wider societal impacts from migration or conflict. For given countries
+  these would likely strongly increase the physical risk. These estimates also
+  do not fully capture adaptation, which would reduce impacts but require
+  significant investment.
+
+  Overall, these are relatively optimistic scenarios as both transition and
+  physical risks are limited. Any policies that are either introduced or changed
+  are assumed to take place efficiently with little variation between countries
+  and sectors. Similarly, the development and deployment of alternative
+  technologies are expected to take place without significant difficulty. For
+  example, the availability of Carbon dioxide removal technologies which
+  involves removing carbon from the atmosphere through increasing forest cover
+  and soil sequestration or growing crops for bioenergy doesn't pose a
+  significant challenge in either orderly scenario.
+
+  ![Orderly scenarios](Orderly_Scenarios.png)
+
+  **Source:**
+  [NGFS Climate Scenarios, June2021](https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf){target="\_blank"}

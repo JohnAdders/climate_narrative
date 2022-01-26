@@ -132,7 +132,7 @@ server <- function(input, output, session) {
 
 
   #report_contents <- reactive({
-  get_report_contents <- function(aggregated_inputs, inputs){
+  get_report_contents <- function(aggregated_inputs, inputs, report_version){
     out <- paste0(
       "---\n",
       "title: |\n",
@@ -143,6 +143,12 @@ server <- function(input, output, session) {
       "  ```\n\n",
       "---\n\n"
     )
+    if (report_version == 3){
+      out <- c(
+        out,
+        get_executive_summary()
+      )
+    }
     for (scenario in global$scenarios) {
       out <- c(
         out,
@@ -157,14 +163,20 @@ server <- function(input, output, session) {
     out
   }
 
+  get_executive_summary <- function(){
+    out <- "# Executive summary\n\n"
+    out <- paste0(out, "PLACEHOLDER\n\n")
+    return(out)
+  }
+
   output$html_report <- renderUI({
     if (input$report_scenario_selection == "" & input$report_sector_selection == "") {
       return(p("Please select a scenario or a sector"))
     }
     temp_html <- tempfile(fileext = ".html")
     produce_selective_report(
-      get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
-      input$version_selection,
+      get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version),
+      global$report_version,
       input$report_scenario_selection,
       FALSE,
       session$userData$temp_md_scenario
@@ -211,7 +223,7 @@ server <- function(input, output, session) {
       )
       produce_selective_report(
         get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
-        input$version_selection,
+        global$report_version,
         input$report_scenario_selection,
         TRUE,
         session$userData$temp_md_scenario_and_commons
@@ -254,7 +266,7 @@ server <- function(input, output, session) {
       )
       produce_full_report(
         get_report_contents(aggregated_all_inputs(), all_inputs()),
-        input$version_selection,
+        global$report_version,
         session$userData$temp_md_dev
       )
       fs <- file.size(session$userData$temp_md_dev)

@@ -1,0 +1,346 @@
+name: Construction
+
+description: |
+  The **Construction** sector includes establishments primarily responsible for
+  the construction of buildings. The work performed may include new work,
+  additions, alterations, or maintenance and repairs. The onsite assembly of
+  pre-cut, panelised, and prefabricated buildings and construction of temporary
+  buildings are also included in this sector. Establishments in this sector are
+  classified based on the types of buildings they construct.
+
+  The construction sector includes companies that are, for example, involved in
+  the following:
+
+  1. The construction of residential and commercial buildings. This also
+     includes remodelling or renovating work for the buildings.
+
+  1. The construction of distribution lines and related buildings and structures
+     for utilities (i.e. water, sewer, petroleum, gas, power, and communication)
+     or the structures that are integral parts of the utility systems (power
+     plants, sewer lines, oil and gas pipelines, telecommunications
+     transmitting/receiving towers, etc.)
+
+  1. The construction of highways (including elevated), streets, roads, airport
+     runways, public sidewalks, bridges, and other heavy and civil engineering
+     constructions.
+
+  1. The installation or servicing of equipment that is part of building
+     mechanical systems such as plumbing, heating, electrical wiring, etc.
+transition:
+  high:
+    always: |
+      In Disorderly/Divergent transition risk scenarios, the demand for
+      construction is likely to increase. The construction sector was
+      responsible for 13% of global GDP in 2020, and this share is expected to
+      increase as the global population continues to rise. However, the
+      Disorderly/Divergent transition risk scenarios could also lead to a
+      reduction in GDP growth. This could partially offset growth in demand for
+      the construction sector.
+
+      While the construction sector could continue to play a role in meeting
+      customer demand for the coming years, the changing patterns in energy
+      generation in the Delayed transition scenario, driven by late policy
+      action enabling a "fossil fuelled recovery" out of the economic crisis
+      brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
+      until 2030 before rapidly decreasing after 2030 as carbon prices are
+      increased to compensate for the inaction beforehand. In the divergent
+      scenario there is a more immediate but divergent reduction in
+      CO<sub>2</sub> emissions. Both these scenarios are likely to have a
+      significant impact on the profitability of this sector; constructing
+      assets such as buildings, roads, railways, tunnels and bridges involves
+      emitting carbon, primarily through electricity use, fuel usage for
+      vehicles and plant, and from the production of materials, such as steel
+      and cement. As per Global Alliance for Buildings and Construction (Global
+      ABC) report, in 2020, the Buildings and Construction sector accounted for
+      36% of global energy consumption.
+    high_materiality: |
+      The changes in carbon pricing, societal preference, energy prices and
+      energy mix could potentially result in one or more of the following
+      financial impacts:
+
+      - **Reduced Revenues** Negative public sentiment around sustainability and
+        climate change issues can affect all the value chain players leading to
+        reduced demand for products and services.
+
+      - **Disruptive increase in costs** from paying a price on carbon emissions
+        directly or indirectly through expensive conventional building material
+        or non-renewable energy for its operations. Due to delayed actions, the
+        emission intensity of construction processes could have a limited scope
+        of improvement.
+
+      - **Increased capital expenditures** New investments could be required to
+        improve the energy efficiency of the construction process including but
+        not limited to using fewer or different materials, employing different
+        production techniques, using lower emission transportation, optimizing
+        transportation routes, planning fewer journeys, minimising the use of
+        non-renewable grid energy and recycling.
+
+      - **Increased R&D investments** could be needed to explore alternative
+        construction processes and materials to improve the emission intensity.
+
+      - **Falling asset values** impairment of the economic value of company
+        assets such as outdated machinery and material transportation vehicles
+        with poor energy efficiency.
+
+      In Disorderly/Divergent transition risk scenarios, the construction sector
+      is likely to be impacted by rapid decarbonization in building materials
+      and its own operations. Likely reduction in the production of cement due
+      to higher carbon tax amid increasing global demand could drive the price
+      of cement more than 500% higher by 2050 in the Divergent Net Zero scenario
+      and over 400% higher by 2050 in the Delayed transition scenario, leading
+      to increased material cost for the construction industry.
+
+      ![Cement Price](Cement_Price_Disorderly_Consruction.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      The construction sector is also likely to be impacted by rapid
+      decarbonization in energy mix. Increased carbon tax cost and new
+      investment for renewables could increase the electricity cost for the
+      construction industry in the short-to-medium term, however this could be
+      below a 150% increase by 2050 in a Delayed transition scenario.
+
+      ![Electricity Price](Electricity_Price_Disorderly_Consruction.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      The construction sector is likely to be impacted by rapid decarbonization
+      in transport. Within road freight vehicles, the portion of electric
+      vehicles could increase between 30% and 75% in Disorderly/Divergent
+      transition risk scenarios.
+
+      ![Freight Vehicles](Electric_Freight_Vehicles_Disorderly_Construction.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      The profitability of the construction sector, in the Disorderly/Divergent
+      transition risk scenarios, could also depend on the relevant companies
+      proactively investing in innovation and new technology. It is critical
+      that energy efficiency improves in design and construction, as well as in
+      the operations of buildings. It is estimated that the total GHG emissions
+      from building material is largely concentrated in just 10 commonly used
+      items: Cement, Steel, Limestone, Structural clay, Aluminium, etc.
+      Decarbonising steel and concrete production currently represent a
+      significant challenge. The alternative is to substitute such materials,
+      where possible, for lower-carbon intensity products, and increase
+      recycling.
+  low:
+    always: |
+      In early/orderly transition risk scenarios, the demand for construction is
+      likely to increase. The construction sector was responsible for 13% of
+      global GDP in 2020, and this share is expected to increase as the global
+      population continues to rise. However, the early/orderly transition risk
+      scenarios could also lead to a limited relative reduction in GDP growth.
+      This could partially offset growth in demand for the construction sector.
+
+      While the construction sector could continue to play a role in meeting
+      customer demand for the coming years, the changing patterns in energy
+      generation in early/orderly transition risk scenarios, driven by immediate
+      policy reaction, societal change, national energy strategies, and carbon
+      legislation, could lead to an immediate and smooth reduction in
+      CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
+      are likely to have an impact on the profitability this sector;
+      constructing assets such as buildings, roads, railways, tunnels and
+      bridges involves emitting carbon, primarily through electricity use, fuel
+      usage for vehicles and plants, and from the production of materials, such
+      as steel and cement. As per Global Alliance for Buildings and Construction
+      (Global ABC) report, in 2020, the Buildings and Construction sector
+      accounted for 36% of global energy consumption.
+    high_materiality: |
+      The changes in carbon pricing, societal preference, energy prices and
+      energy mix could potentially the construction sector as a result in one or
+      more of the following impacts:
+
+      - **Reduced Revenues**. Negative public sentiment around sustainability
+        and climate change issues could affect all the value chain players
+        leading to reduced demand for products and services.
+
+      - **Increased costs** from paying a price on carbon emissions directly or
+        indirectly through expensive conventional building material or
+        non-renewable energy for its operations.
+
+      - **Increased capital expenditures.** New investments could be required to
+        improve the energy efficiency of the construction process including but
+        not limited to using fewer or different materials, employing different
+        production techniques, using lower emission transportation, optimizing
+        transportation routes, planning fewer journeys, minimising the use of
+        non-renewable grid energy and recycling.
+
+      - **Increased R&D investments** could be needed to explore alternative
+        construction processes and materials to improve the emission intensity.
+
+      - **Falling asset values** impairment of the economic value of company
+        assets such as outdated machinery and material transportation vehicles
+        with poor energy efficiency.
+
+      The construction sector is likely to be impacted by steady decarbonization
+      in building materials and its own operations. Among building materials,
+      cement could incur the most impact due to its limited capacity to improve
+      CO<sub>2</sub> intensity and increasing carbon price. A sharper focus
+      would be required for the cement industry to improve its clinker-to-cement
+      ratio and deploy carbon storage technologies.
+
+      ![Emissions Mix](Emissions_Mix_Construction.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      Likely reduction in the production of cement due to higher carbon tax amid
+      increasing global demand could drive the price of cement more than 350%
+      higher by 2050 in the Net Zero 2050 scenario and over 250% higher by 2050
+      in the Below 2&deg;C scenario, leading to increased material cost for the
+      construction industry.
+
+      ![Cement Price](Cement_Price_Orderly_Consruction.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      The construction sector is also likely to be impacted by steady
+      decarbonization in energy mix. By 2050, renewables and biomass would cover
+      68% of global primary energy needs. The increased carbon tax cost and new
+      investment for renewables could increase the electricity cost for the
+      construction industry in the short-to-medium term, however this could be
+      below a 150% increase by 2050.
+
+      ![Electricity Price](Electricity_Price_Orderly_Consruction.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      By 2050, renewables and biomass would cover 68% of global primary energy
+      needs.
+
+      ![Primary Energy](Primary_Energy_Mix_Oil_and_Gas.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      The construction sector is also likely to be impacted by steady
+      decarbonization in transport. Within road freight vehicles, the portion of
+      electric vehicles could increase by between 15% and 35% in early/orderly
+      transition scenarios.
+
+      ![Freight Vehicles](Electric_Freight_Vehicles_Orderly_Construction.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      The profitability of the construction sector, in early/orderly transition
+      risk scenarios, could depend on the relevant companies proactively
+      investing in innovation and new technology. It is critical that energy
+      efficiency improves in design and construction, as well as in the
+      operations of buildings. It is estimated that the total GHG emissions from
+      building material is largely concentrated in just 10 commonly used items:
+      Cement, Steel, Limestone, Structural clay, Aluminium, etc. Decarbonising
+      steel and concrete production currently represent a significant challenge.
+      The alternative is to substitute such materials, where possible, for
+      lower-carbon intensity products, and increase recycling.
+physical:
+  high:
+    always: |
+      The construction sector is one of the most exposed sectors to physical
+      impacts of climate change, chronic effects (e.g. raised sea-levels) and
+      acute effects due to changes to frequency and severity of weather events
+      such as heatwaves, winds, storms and flooding. Whilst the construction
+      industry is used to responding to and managing changing weather
+      conditions, in high physical risk scenarios, global warming could increase
+      the weather variations, and both the severity and frequency of physical
+      risk events are expected to increase exponentially. This could lead to
+      physical damages to buildings as well as disruption to the construction
+      process, which may decrease profitability for the construction industry.
+
+      Adverse impacts on world GDP from physical risks are assumed in the
+      scenarios and these scale with the rise in temperatures in the scenarios
+      over time. The high physical risk scenarios could therefore also lead to a
+      significant GDP impact which could negatively impact demand for
+      construction.
+    high_materiality: |
+      The following examples illustrate how the construction sector could be
+      impacted in a high physical risk scenario:
+
+      **Chronic Impacts**
+
+      - **Rising sea levels** could cause disruption to the construction process
+        and can also lead to reduced demand in particular markets and locations
+        such as in coastal areas.
+
+      **Acute Impacts**
+
+      - **Heatwaves** can stop work on construction projects for health and
+        safety reasons while also potentially compromising the structural
+        integrity of the materials, causing machinery malfunctions, and
+        increasing fire risk.
+
+      - **High winds and storms** are known to be a risk to construction.
+        Tropical cyclones are likely becoming more intense leading to
+        construction timelines getting extended or disrupted.
+
+      - **Heavy precipitation and flooding** can cause significant damage to
+        project sites with infrastructure collapsing and exposed materials
+        getting damaged.
+
+      Significantly slowed GDP growth could further impact demand for
+      construction through its effect on individual's disposable income and
+      government spending.
+
+      There are many mitigating actions companies can take against the physical
+      risks mentioned above. For example, increasing the durability of materials
+      against extreme weather conditions, improved drainage systems and better
+      equipment to be able to withstand stronger cyclones, a more robust design
+      of infrastructure and stricter construction standards. To reduce the
+      impact of rising sea levels, the position of new facilities should
+      consider climate change to minimise the risk of total damage caused by
+      flooding.
+  low:
+    always: |
+      The construction sector is one of the most exposed sectors to physical
+      impacts of climate change, chronic effects (e.g. raised sea-levels) and
+      acute effects due to changes to frequency and severity of weather events
+      such as heatwaves, winds, storms and flooding. Whilst the construction
+      industry is used to responding to and managing changing weather
+      conditions, in the low physical risk scenario, global warming could
+      increase the weather variations. This could lead to physical damages to
+      buildings as well as disruption to the construction process, which may
+      decrease profitability for the construction industry.
+    high_materiality: |
+      The following examples illustrate how the construction sector could be
+      impacted in a low physical risk scenario:
+
+      **Chronic Impacts**
+
+      - **Rising sea levels** could cause disruption to the construction process
+        and can also lead to reduced demand in particular markets and locations
+        such as in coastal areas.
+
+      **Acute Impacts**
+
+      - **Heatwaves** can stop work on construction projects for health and
+        safety reasons while also potentially compromising the structural
+        integrity of the materials, causing machinery malfunctions, and
+        increasing fire risk.
+
+      - **High winds and storms** are known to be a risk to construction.
+        Tropical cyclones are likely becoming more intense leading to
+        construction timelines getting extended or disrupted.
+
+      - **Heavy precipitation and flooding** can cause significant damage to
+        project sites with infrastructure collapsing and exposed materials
+        getting damaged.
+
+      There are many mitigating actions companies can take against the physical
+      risks mentioned above. For example, increasing the durability of materials
+      against extreme weather conditions, improved drainage systems and better
+      equipment to be able to withstand stronger cyclones. To reduce the impact
+      of rising sea levels, the position of new facilities should consider
+      climate change to minimise the risk of total damage caused by flooding.
+
+references: |
+  - [GlobalABC Roadmap for Buildings and Construction 2020-2050, July 2020](https://www.iea.org/reports/globalabc-roadmap-for-buildings-and-construction-2020-2050){target="\_blank"}
+
+  - [Construction and Building Materials TCFD Preparer Forum - wbcsd, July 2020](https://docs.wbcsd.org/2020/06/WBCSD_TCFD_Construction%20Sector.pdf){target="\_blank"}
+
+  - [A circular built environment: from principles to practices - RICS World Built Environment Forum, May 2019](https://www.rics.org/uk/wbef/megatrends/natural-environment/a-circular-built-environment-from-principles-to-practices/){target="\_blank"}

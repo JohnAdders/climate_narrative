@@ -9,10 +9,6 @@
 #' @export
 run_shiny_app <- function(secrets_file="secret.yml", ...) {
   load_secrets(secrets_file)
-  addResourcePath(
-    "climate_narrative",
-    system.file("www", package = "climate.narrative")
-  )
   global$exposures <- read_dir(paste0(global$report_version, "/exposure"))
   global$scenarios <- read_dir(paste0(global$report_version, "/scenario"))
   global$products <- read_dir(paste0(global$report_version, "/product"))
@@ -55,7 +51,7 @@ load_secrets <- function(secrets_file="secret.yml") {
     secret_pars <- yaml::read_yaml(secrets_file)
     global$dev <- FALSE
     for (i in 1:length(secret_pars)) global[[names(secret_pars)[i]]] <- secret_pars[[i]]
-    if( is.null(global$report_version)){
+    if (is.null(global$report_version)){
       default_version = global$report_versions[1]
       global$report_version = default_version
       warning(paste0("Report version not found in the settings file, defaulting to ", default_version))

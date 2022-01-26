@@ -75,4 +75,14 @@ tab_report_server <- function(input, output, session, tab) {
       updateSelectInput(session, "report_sector_selection", selected = "")
     }
   )
+  observeEvent(
+    input$version_selection,
+    {
+      global$report_version <- input$version_selection
+      global$exposures <- read_dir(paste0(global$report_version, "/exposure"))
+      global$scenarios <- read_dir(paste0(global$report_version, "/scenario"))
+      global$products <- read_dir(paste0(global$report_version, "/product"))
+      global$exposure_classes <- read_dir(paste0(global$report_version, "/exposure_class"))
+    }
+  )
 }

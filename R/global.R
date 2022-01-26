@@ -1,5 +1,10 @@
 global <- new.env()
 
+addResourcePath(
+    "climate_narrative",
+    system.file("www", package = "climate.narrative")
+  )
+
 # defining the questionnaire using list of QuestionTab objects
 global$ordered_tabs <- c(
   "title", "auth", "type",
@@ -10,8 +15,9 @@ global$ordered_tabs <- c(
 )
 
 # defining possible report versions
-global$report_versions <- c(1, 2)
+global$report_versions <- c(1, 2, 3)
 names(global$report_versions) <- c(
   "v1 base version",
-  "v2 added links to top (HTML only)"
+  "v2 added links to top (HTML only)",
+  "v3 added links to top (HTML only) AND executive summary stub (both formats)"
 )
