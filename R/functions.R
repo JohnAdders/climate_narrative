@@ -136,19 +136,18 @@ produce_tooltip_matrix <- function(exposure_matrix) {
 
 #' Produce the layout of questionnaire tabs (cell, row, whole table)
 #'
-#' @param exposure_item Name of exposure item or blank for empty
-#' @param prefix Prefix to apply to name
+#' @param id unique input id or blank for empty
 #' @param tooltip_text Tooltip text to show
 #' @param dev Are we in development mode
 #' @param width Width of dropdown
 #'
 #' @importFrom tippy tippy_this
 #'
-exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = FALSE, width = NULL) {
-  if (exposure_item == "") {
+exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL) {
+  if (id == "") {
     form <- p("")
   } else {
-    id <- paste(prefix, remove_special_characters(exposure_item), sep = "_")
+    #id <- paste(prefix, remove_special_characters(exposure_item), sep = "_")
     form <- selectInput(
       inputId = id,
       label = NULL,
@@ -196,19 +195,13 @@ exposure_grid_server <- function(input,
                                  width = NULL) {
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
+  input_ids <- get_input_ids(exposure_matrix, label)
   for (i in 1:nrow(layout)) {
     layout[i, 1] <- as.character(div(exposure_matrix[i, 1], class = "verticalcenter"))
     for (j in 2:ncol(layout)) {
       layout[i, j] <- as.character(
         exposure_grid_cell(
-          exposure_matrix[i, j + 1],
-          paste(
-            label,
-            remove_special_characters(exposure_matrix[i, 1]),
-            remove_special_characters(exposure_matrix[i, 2]),
-            remove_special_characters(colnames(exposure_matrix)[j + 1]),
-            sep = "_"
-          ),
+          input_ids[i, j - 1],
           tooltip_matrix[i, j - 1],
           dev,
           width
@@ -222,6 +215,34 @@ exposure_grid_server <- function(input,
     sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE),
     align = "c"
   )
+}
+
+#' Produce a table of input names for an input table
+#'
+#' @param exposure_matrix Exposure matrix upon which the input table is based
+#' @param label Label for grid
+#' @param tab NULL by default. If given, the first two arguments are ignored and inferred from tab
+#'
+get_input_ids <- function(exposure_matrix, label, tab=NULL){
+  if (!is.null(tab)){
+    exposure_matrix <- tab$exposure
+    label <- paste(tab$type, tab$subtype, sep="_")
+  }
+  input_ids <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 2)
+  colnames(input_ids) <- colnames(exposure_matrix)[-(1:2)]
+  for (i in 1:nrow(input_ids)) {
+    for (j in 1:ncol(input_ids)) {
+      input_ids[i, j] <- paste(
+        label,
+        remove_special_characters(exposure_matrix[i, 1]),
+        remove_special_characters(exposure_matrix[i, 2]),
+        remove_special_characters(colnames(exposure_matrix)[j + 2]),
+        remove_special_characters(exposure_matrix[i, j + 2]),
+        sep = "_"
+      )  
+    }
+  }
+  return(input_ids)
 }
 
 #' Insert spaces to the string so that line has exactly given number of characters.
