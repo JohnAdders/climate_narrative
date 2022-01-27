@@ -130,48 +130,6 @@ server <- function(input, output, session) {
     }
   )
 
-
-  #report_contents <- reactive({
-  get_report_contents <- function(aggregated_inputs, inputs, report_version){
-    out <- list(
-      paste0(
-      "---\n",
-      "title: |\n",
-      "  Climate report\n\n",
-      "  ![](title.png)\n\n",
-      "  ```{=rtf}\n",
-      "  \\page\n",
-      "  ```\n\n",
-      "---\n\n"
-    )
-    )
-    if (report_version == 3){
-      out <- c(
-        out,
-        list(
-          get_executive_summary(aggregated_inputs, inputs)
-        )
-      )
-    }
-    for (scenario in global$scenarios) {
-      out <- c(
-        out,
-        list(get_scenario_descriptions(
-          aggregated_inputs,
-          inputs,
-          scenario
-        ))
-      )
-    }
-    out <- c(out, list(get_references(aggregated_inputs, inputs)))
-    out
-  }
-
-  get_executive_summary <- function(aggregated_inputs, inputs){
-    out <- "# Executive summary\n\nPLACEHOLDER\n\n"
-    return(out)
-  }
-
   output$html_report <- renderUI({
     if (input$report_scenario_selection == "" & input$report_sector_selection == "") {
       return(p("Please select a scenario or a sector"))

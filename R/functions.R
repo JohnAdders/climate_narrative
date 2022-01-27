@@ -232,18 +232,41 @@ get_input_ids <- function(exposure_matrix, label, tab=NULL){
   colnames(input_ids) <- colnames(exposure_matrix)[-(1:2)]
   for (i in 1:nrow(input_ids)) {
     for (j in 1:ncol(input_ids)) {
-      input_ids[i, j] <- paste(
-        label,
-        remove_special_characters(exposure_matrix[i, 1]),
-        remove_special_characters(exposure_matrix[i, 2]),
-        remove_special_characters(colnames(exposure_matrix)[j + 2]),
-        remove_special_characters(exposure_matrix[i, j + 2]),
-        sep = "_"
-      )  
+      if (exposure_matrix[i, j + 2] != ""){
+        input_ids[i, j] <- paste(
+          label,
+          remove_special_characters(exposure_matrix[i, 1]),
+          remove_special_characters(exposure_matrix[i, 2]),
+          remove_special_characters(colnames(exposure_matrix)[j + 2]),
+          remove_special_characters(exposure_matrix[i, j + 2]),
+          sep = "_"
+        )
+      }
     }
   }
   return(input_ids)
 }
+
+#' Produce a matrix of input values from a matrix of input names (simple double loop)
+#'
+#' @param inputs dataframe of (all) inputs to look for
+#' @param ids_matrix matrix of ids
+#'
+get_input_values <- function(inputs, ids_matrix){
+    values <- ids_matrix
+    for (i in 1:nrow(values)){
+      for (j in 1:ncol(values)){
+        id <- ids_matrix[i, j]
+        if (id != ""){
+          temp = inputs[inputs$names == id, "values"]
+          if(length(temp)) {
+            values[i, j] <- inputs[inputs$names == id, "values"]
+          }
+        }
+      }
+    }
+    return(values)
+  }
 
 #' Insert spaces to the string so that line has exactly given number of characters.
 #'
@@ -814,7 +837,7 @@ produce_selective_report <- function(report_contents, report_version, report_sce
   # offset is for the title (and optionally exec summary), not included in 'scenarios' but included in 'report_contents'
   if (report_version >= 3) {
     contents <- report_contents[c(2, 2 + scenario_no, length(report_contents))]
-    contents[[1]] <- contents[[1]][c(1, 2, 1 + scenario_no, length(contents[[1]]))]
+    contents[[1]] <- contents[[1]][c(1:3, 3 + scenario_no, length(contents[[1]]))]
     contents[[1]] <- paste(contents[[1]], collapse="\n")
   } else {
     contents <- report_contents[c(1 + scenario_no, length(report_contents))]
@@ -945,4 +968,108 @@ add_path_to_graphs <- function(x) {
     x,
     perl=T
   )
+}
+
+#' One of the functions comprising the executive summary text
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return string - executive summary text
+#' 
+get_executive_summary_inputs <- function(aggregated_inputs, inputs){
+  return("## Inputs\n\nTBC\n\n")
+}
+
+#' One of the functions comprising the executive summary text
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return vector of strings - executive summary text (one string per scenario)
+#' 
+get_executive_summary_scenarios <- function(aggregated_inputs, inputs){
+  out <- c("## Scenarios\n\nThis report considers the following scenarios:\n\n")
+  for (scenario in global$scenarios) {
+    if (scenario$is_scenario){
+      out <- c(
+        out,
+        paste0(
+          h4(scenario$name),
+          "\n\n",
+          scenario$exec_description,
+          "\n\n"
+        )
+      )
+    } else {
+      # even if not a scenario needs an entry in order to be able to select properly later
+      out <- c(out, "")
+    }
+  }
+  return(out)
+}
+
+#' One of the functions comprising the executive summary text
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return string - executive summary text
+#' 
+get_executive_summary_exposures <- function(aggregated_inputs, inputs){
+  return("## Exposures\n\nTBC\n\n")
+}
+
+#' Function to combine an executive summary from lower level functions
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
+#' 
+get_executive_summary <- function(aggregated_inputs, inputs){
+  out_0 <- "# Executive summary\n\n"
+  out_1 <- get_executive_summary_inputs(aggregated_inputs, inputs) 
+  out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs)
+  out_3 <- get_executive_summary_exposures(aggregated_inputs, inputs)
+  # the final output is a vector, out_2 is a vector, out_0 out_1 out_3 are scalars
+  return(c(out_0, out_1, out_2, out_3))
+}
+
+#' Function that generates a markdown content of the report
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
+#' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
+#' 
+get_report_contents <- function(aggregated_inputs, inputs, report_version){
+  out <- list(
+    paste0(
+    "---\n",
+    "title: |\n",
+    "  Climate report\n\n",
+    "  ![](title.png)\n\n",
+    "  ```{=rtf}\n",
+    "  \\page\n",
+    "  ```\n\n",
+    "---\n\n"
+  )
+  )
+  if (report_version == 3){
+    out <- c(
+      out,
+      list(
+        get_executive_summary(aggregated_inputs, inputs)
+      )
+    )
+  }
+  for (scenario in global$scenarios) {
+    out <- c(
+      out,
+      list(get_scenario_descriptions(
+        aggregated_inputs,
+        inputs,
+        scenario
+      ))
+    )
+  }
+  out <- c(out, list(get_references(aggregated_inputs, inputs)))
+  out
 }
