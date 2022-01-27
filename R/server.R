@@ -133,7 +133,8 @@ server <- function(input, output, session) {
 
   #report_contents <- reactive({
   get_report_contents <- function(aggregated_inputs, inputs, report_version){
-    out <- paste0(
+    out <- list(
+      paste0(
       "---\n",
       "title: |\n",
       "  Climate report\n\n",
@@ -143,29 +144,31 @@ server <- function(input, output, session) {
       "  ```\n\n",
       "---\n\n"
     )
+    )
     if (report_version == 3){
       out <- c(
         out,
-        get_executive_summary()
+        list(
+          get_executive_summary(aggregated_inputs, inputs)
+        )
       )
     }
     for (scenario in global$scenarios) {
       out <- c(
         out,
-        get_scenario_descriptions(
+        list(get_scenario_descriptions(
           aggregated_inputs,
           inputs,
           scenario
-        )
+        ))
       )
     }
-    out <- c(out, get_references(aggregated_inputs, inputs))
+    out <- c(out, list(get_references(aggregated_inputs, inputs)))
     out
   }
 
-  get_executive_summary <- function(){
-    out <- "# Executive summary\n\n"
-    out <- paste0(out, "PLACEHOLDER\n\n")
+  get_executive_summary <- function(aggregated_inputs, inputs){
+    out <- "# Executive summary\n\nPLACEHOLDER\n\n"
     return(out)
   }
 
@@ -222,7 +225,7 @@ server <- function(input, output, session) {
         )
       )
       produce_selective_report(
-        get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
+        get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version),
         global$report_version,
         input$report_scenario_selection,
         TRUE,
@@ -265,7 +268,7 @@ server <- function(input, output, session) {
         )
       )
       produce_full_report(
-        get_report_contents(aggregated_all_inputs(), all_inputs()),
+        get_report_contents(aggregated_all_inputs(), all_inputs(), global$report_version),
         global$report_version,
         session$userData$temp_md_dev
       )

@@ -762,7 +762,7 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' @return NULL, output is a file as specified in the argument
 produce_full_report <- function(report_contents, report_version, tempfile){
   file_conn <- file(tempfile)
-  writeLines(report_contents, file_conn)
+  writeLines(unlist(report_contents), file_conn)
   close(file_conn)
   return(invisible(NULL))
 }
@@ -793,6 +793,8 @@ produce_selective_report <- function(report_contents, report_version, report_sce
   # offset is for the title (and optionally exec summary), not included in 'scenarios' but included in 'report_contents'
   if (report_version >= 3) {
     contents <- report_contents[c(2, 2 + scenario_no, length(report_contents))]
+    contents[[1]] <- contents[[1]][c(1, 2, 1 + scenario_no, length(contents[[1]]))]
+    contents[[1]] <- paste(contents[[1]], collapse="\n")
   } else {
     contents <- report_contents[c(1 + scenario_no, length(report_contents))]
   }
