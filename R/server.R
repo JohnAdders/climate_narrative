@@ -17,7 +17,28 @@ server <- function(input, output, session) {
   session$userData$temp_rtf <- tempfile(fileext = ".rtf")
   session$userData$temp_md_dev <- tempfile(fileext = ".md")
   session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
-
+  if (global$progress_bar){
+    # progress bar code
+    progress <- Progress$new(session, min=0, max=1, style="old")
+    observeEvent(input$wizard, {
+      which_tab <- which(input$wizard == sapply(global$tabs, function(tab) tab$id))
+      tab_type <- global$tabs[[which_tab]]$type
+      tab_number <- global$tabs[[which_tab]]$tab_number
+      if (!is.null(tab_type)){
+        matching_type <- sapply(
+          global$tabs,
+          function(tab) sum(c(is.null(tab$type), tab$type==tab_type))
+        )
+        den <- sum(matching_type)
+        num <- sum(matching_type[1:tab_number]) - 1
+        progress$set(value=num/den, message="Questionnaire progress")
+      } else {
+        den <- length(global$tabs) - 1
+        num <- tab_number - 1
+        progress$set(value=num/den, message="Questionnaire progress")
+      }
+    })
+  }
   # the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)

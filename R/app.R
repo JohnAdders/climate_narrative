@@ -51,6 +51,7 @@ load_secrets <- function(secrets_file="secret.yml") {
     secret_pars <- yaml::read_yaml(secrets_file)
     global$dev <- FALSE
     for (i in 1:length(secret_pars)) global[[names(secret_pars)[i]]] <- secret_pars[[i]]
+    # simple validation and some default values
     if (is.null(global$report_version)){
       default_version = global$report_versions[1]
       global$report_version = default_version
@@ -60,7 +61,17 @@ load_secrets <- function(secrets_file="secret.yml") {
       global$report_version = default_version
       warning(paste0("Invalid report version in the settings file, defaulting to ", default_version))
     }
+    if (is.null(global$progress_bar)){
+      warning("Progress bar setting not found. Defaulting to FALSE")
+      global$progress_bar <- FALSE
+    }
+    if (is.null(global$sidebar_toc)){
+      warning("Sidebar table of contents setting not found. Defaulting to FALSE")
+      global$sidebar_toc <- FALSE
+    }
   } else {
     global$dev <- TRUE
+    global$progress_bar <- FALSE
+    global$sidebar_toc <- FALSE
   }
 }

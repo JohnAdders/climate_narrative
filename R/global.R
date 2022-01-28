@@ -15,9 +15,10 @@ global$ordered_tabs <- c(
 )
 
 # defining possible report versions
-global$report_versions <- c(1, 2, 3)
+global$report_versions <- 1:3
 names(global$report_versions) <- c(
-  "v1 base version",
-  "v2 added links to top (HTML only)",
-  "v3 added links to top (HTML only) AND executive summary stub (both formats)"
+  # the names will be displayed in selectInput (dev mode only)
+  "v1 = base version",
+  "v2 = v1 + added links to top (HTML only)",
+  "v3 = v2 + interim executive summary (both formats)"
 )

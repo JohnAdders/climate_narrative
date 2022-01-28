@@ -258,9 +258,11 @@ get_input_values <- function(inputs, ids_matrix){
       for (j in 1:ncol(values)){
         id <- ids_matrix[i, j]
         if (id != ""){
-          temp = inputs[inputs$names == id, "values"]
-          if(length(temp)) {
-            values[i, j] <- inputs[inputs$names == id, "values"]
+          value <- inputs[inputs$names == id, "values"]
+          if (length(value)) {
+            values[i, j] <- value
+          } else {
+            values[i, j] <- ""
           }
         }
       }
@@ -879,7 +881,7 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
     image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
     if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
     if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
-      print(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
+      warning(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
       markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
     }
   }
@@ -974,16 +976,6 @@ add_path_to_graphs <- function(x) {
 #' 
 #' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
 #' @param inputs data frame of all inputs (implemented in the reactive expression)
-#' @return string - executive summary text
-#' 
-get_executive_summary_inputs <- function(aggregated_inputs, inputs){
-  return("## Inputs\n\nTBC\n\n")
-}
-
-#' One of the functions comprising the executive summary text
-#' 
-#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
-#' @param inputs data frame of all inputs (implemented in the reactive expression)
 #' @return vector of strings - executive summary text (one string per scenario)
 #' 
 get_executive_summary_scenarios <- function(aggregated_inputs, inputs){
@@ -993,7 +985,8 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs){
       out <- c(
         out,
         paste0(
-          h4(scenario$name),
+          "### ",
+          scenario$name,
           "\n\n",
           scenario$exec_description,
           "\n\n"
@@ -1073,27 +1066,30 @@ get_report_contents <- function(aggregated_inputs, inputs, report_version){
 #' 
 get_executive_summary_exposures <- function(aggregated_inputs, inputs){
   out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
-  out_exp <- paste0(out_exp, "### High materiality exposures")
+  out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
+  high_counter <- 0
   for (i in 1:nrow(aggregated_inputs)) {
     item <- aggregated_inputs[i,1]
     materiality = aggregated_inputs[i,2]
-    out_exp <- paste0(
-      out_exp,
-      h4(global$exposure_classes[[item]][["name"]]),
-      "\n\n"
-    )
     if (materiality == "High"){
+      high_counter <- high_counter + 1
       out_exp <- paste0(
         out_exp,
-        "Physical risk\n\n",
+        "#### ",
+        global$exposure_classes[[item]][["name"]],
+        "\n\n",
+        "##### Physical risk\n\n",
         global$exposure_classes[[item]][["physical"]][["high"]]["always"],
-        "\n\nTransition risk\n\n",
+        "\n\n##### Transition risk\n\n",
         global$exposure_classes[[item]][["transition"]][["high"]]["always"],
         "\n\n"
       )
     }
   }
-  out_exp <- paste0(out_exp, "### Other exposures")
+  if (high_counter == 0 ){
+    out_exp <- paste0(out_exp, "None\n\n")
+  }
+  out_exp <- paste0(out_exp, "### Other exposures\n\n")
   less_material <- aggregated_inputs[aggregated_inputs[,2] != "High",]
   if (nrow(less_material)){
     less_material$exec.description <- rep(NA, nrow(less_material))
@@ -1109,6 +1105,53 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs){
         less_material[,c("name", "materiality", "exec.description")]
       )
     )
+  } else {
+    out_exp <- paste0(out_exp, "None\n\n")
   }
   return(out_exp)
+}
+
+#' Helpder function - the name is self-explanatory
+#' 
+#' @param data matrix or data.frame, possibly containing missing value
+#' @return input object without rows and columns where all entries are empty (i.e. NA or "")
+#' 
+delete_empty_rows_and_columns <- function(data){
+  empty_columns <- apply(data, 2, function(x) all(is.na(x) | x == ""))
+  empty_rows <- apply(data, 1, function(x) all(is.na(x) | x == ""))
+  return(data[!empty_rows, !empty_columns])
+}
+
+#' One of the functions comprising the executive summary text
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return string - executive summary text
+#' 
+get_executive_summary_inputs <- function(aggregated_inputs, inputs){
+  out <- "## Inputs\n\n"
+  for (tab in global$tabs){
+    if (!is.null(tab$exposure)){
+      ids <- get_input_ids(tab=tab)
+      values <- get_input_values(inputs, ids)
+      values <- cbind(tab$exposure[, 1], values)
+      values_trimmed <- delete_empty_rows_and_columns(values)
+      if (sum(dim(values_trimmed))){
+        ncol <- ncol(values_trimmed)
+        if (ncol > 5){
+          col_widths <- c(30, rep(20, ncol - 1))
+        } else {
+          col_widths <- rep(30, ncol)
+        }
+        out <- paste0(
+          out,
+          "### ",
+          tab$tab_title,
+          "\n\n",
+          table_to_markdown_multiline(values_trimmed, col_widths = col_widths)
+        )
+      }
+    }
+  }
+  return(out)
 }
