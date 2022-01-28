@@ -1007,15 +1007,6 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs){
   return(out)
 }
 
-#' One of the functions comprising the executive summary text
-#' 
-#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
-#' @param inputs data frame of all inputs (implemented in the reactive expression)
-#' @return string - executive summary text
-#' 
-get_executive_summary_exposures <- function(aggregated_inputs, inputs){
-  return("## Exposures\n\nTBC\n\n")
-}
 
 #' Function to combine an executive summary from lower level functions
 #' 
@@ -1072,4 +1063,52 @@ get_report_contents <- function(aggregated_inputs, inputs, report_version){
   }
   out <- c(out, list(get_references(aggregated_inputs, inputs)))
   out
+}
+
+#' One of the functions comprising the executive summary text
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return string - executive summary text
+#' 
+get_executive_summary_exposures <- function(aggregated_inputs, inputs){
+  out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
+  out_exp <- paste0(out_exp, "### High materiality exposures")
+  for (i in 1:nrow(aggregated_inputs)) {
+    item <- aggregated_inputs[i,1]
+    materiality = aggregated_inputs[i,2]
+    out_exp <- paste0(
+      out_exp,
+      h4(global$exposure_classes[[item]][["name"]]),
+      "\n\n"
+    )
+    if (materiality == "High"){
+      out_exp <- paste0(
+        out_exp,
+        "Physical risk\n\n",
+        global$exposure_classes[[item]][["physical"]][["high"]]["always"],
+        "\n\nTransition risk\n\n",
+        global$exposure_classes[[item]][["transition"]][["high"]]["always"],
+        "\n\n"
+      )
+    }
+  }
+  out_exp <- paste0(out_exp, "### Other exposures")
+  less_material <- aggregated_inputs[aggregated_inputs[,2] != "High",]
+  if (nrow(less_material)){
+    less_material$exec.description <- rep(NA, nrow(less_material))
+    less_material$name <- rep(NA, nrow(less_material))
+    for(i in 1:nrow(less_material)){
+      item <- less_material[i,1]
+      less_material$name[i] <- global$exposure_classes[[item]][["name"]]
+      less_material$exec.description[i] <- global$exposure_classes[[item]][["exec_description"]]
+    }
+    out_exp <- paste0(
+      out_exp,
+      table_to_markdown_multiline(
+        less_material[,c("name", "materiality", "exec.description")]
+      )
+    )
+  }
+  return(out_exp)
 }
