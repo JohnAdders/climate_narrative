@@ -1123,7 +1123,19 @@ delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), i
   use_cols <- setdiff(1:ncol(data), ignore_cols)
   empty_columns <- apply(data, 2, function(x) all(is.na(x) | x %in% empty_strings ))
   empty_rows <- apply(data, 1, function(x) all(is.na(x[use_cols]) | x[use_cols] %in% empty_strings))
-  return(data[!empty_rows, !empty_columns])
+  if (all(empty_columns[use_cols])){
+    return(NULL)
+  } else {
+    data[, empty_columns] <- NULL
+    if (sum(!empty_rows) > 1){
+      return(data[!empty_rows, ])
+    } else { 
+      # a bit clumsy, but need to add separately one row case - by default converted by R to vector
+      out <- as.data.frame(t(data[!empty_rows, ]))
+      colnames(out)[1] <- ""
+      return(out)
+    }
+  }
 }
 
 #' One of the functions comprising the executive summary text
@@ -1140,7 +1152,7 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
       values <- get_input_values(inputs, ids)
       values <- cbind(tab$exposure[, 1], values)
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols=1)
-      if (sum(dim(values_trimmed))){
+      if (!is.null(values_trimmed)){
         ncol <- ncol(values_trimmed)
         if (ncol > 5){
           col_widths <- c(30, rep(20, ncol - 1))
