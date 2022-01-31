@@ -64,6 +64,10 @@ This is a wrapper over any ui and server that handles switching to previous/next
 <dd><p>name of the tab</p></dd>
 
 
+<dt><code>tab_title</code></dt>
+<dd><p>pretty title to be used in the UI</p></dd>
+
+
 <dt><code>tab_ui</code></dt>
 <dd><p>specific UI function, may take any number of arguments</p></dd>
 
@@ -136,6 +140,7 @@ from the relevant functions (or makes it empty if the function does not exist)</
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span class="va"><a href="../reference/QuestionTab.html">QuestionTab</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>
   <span class="va">tab_name</span>,
+  <span class="va">tab_title</span>,
   <span class="va">previous_tab</span>,
   <span class="va">next_tab</span>,
   add_header <span class="op">=</span> <span class="cn">TRUE</span>,
@@ -151,6 +156,10 @@ from the relevant functions (or makes it empty if the function does not exist)</
 <h4 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>tab_name</code></dt>
 <dd><p>name of the tab</p></dd>
+
+
+<dt><code>tab_title</code></dt>
+<dd><p>title of the tab to be used in the UI</p></dd>
 
 
 <dt><code>previous_tab</code></dt>
@@ -234,8 +243,9 @@ additionally, a boolean function may be passed to allow going next only conditio
 
 </div><p></p><hr><a id="method-ui"></a><div class="section">
 <h3 id="method-ui-">Method <code><a href="ui.html">ui()</a></code><a class="anchor" aria-label="anchor" href="#method-ui-"></a></h3>
-<p>tab UI function that combines:
-0. a common header (unless add_header=FALSE)</p><ol><li><p>exposure input table (if exposure table given in the constructore)</p></li>
+<p>tab UI function that combines:</p><ol><li><p>a common header (unless add_header=FALSE)</p></li>
+<li><p>title (unless tab_title is NULL)</p></li>
+<li><p>exposure input table (if exposure table given in the constructore)</p></li>
 <li><p>any other tab_UI (if given in the constructor)</p></li>
 <li><p>buttons that switch to previous/next tab (if applicable)</p></li>
 <li><p>a tab-specific text</p></li>

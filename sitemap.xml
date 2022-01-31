@@ -19,7 +19,13 @@
     <loc>/reference/add_param.html</loc>
   </url>
   <url>
+    <loc>/reference/add_path_to_graphs.html</loc>
+  </url>
+  <url>
     <loc>/reference/capitalize.html</loc>
+  </url>
+  <url>
+    <loc>/reference/delete_empty_rows_and_columns.html</loc>
   </url>
   <url>
     <loc>/reference/ensure_images_fit_page.html</loc>
@@ -37,6 +43,18 @@
     <loc>/reference/generic_footer.html</loc>
   </url>
   <url>
+    <loc>/reference/get_executive_summary.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_executive_summary_exposures.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_executive_summary_inputs.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_executive_summary_scenarios.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_exposure_appendix.html</loc>
   </url>
   <url>
@@ -46,7 +64,16 @@
     <loc>/reference/get_exposure_risk_description.html</loc>
   </url>
   <url>
+    <loc>/reference/get_input_ids.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_input_values.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_references.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_report_contents.html</loc>
   </url>
   <url>
     <loc>/reference/get_scenario_descriptions.html</loc>
