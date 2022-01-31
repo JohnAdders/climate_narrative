@@ -5,6 +5,8 @@ addResourcePath(
     system.file("www", package = "climate.narrative")
   )
 
+global$exposure_classes <- read_dir("exposure_class"))
+
 # defining the questionnaire using list of QuestionTab objects
 global$ordered_tabs <- c(
   "title", "auth", "type",

@@ -46,9 +46,24 @@ tab_report_ui <- function() {
         'input.report_scenario_selection != "" | input.report_sector_selection != ""',
         hr(),
         actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
-      ),
-      uiOutput("html_report")
+      )
     ))
+    if (global$sidebar_toc){
+      out <- c(
+        out,
+        list(
+          div(
+            id = "html_report_div",
+            sidebarLayout(
+              sidebarPanel(uiOutput("html_report_nav")),
+              mainPanel(uiOutput("html_report"))
+            )
+          )
+        )
+      )
+    } else {
+      out <- c(out, list(uiOutput("html_report")))
+    }
   }
 }
 
@@ -85,4 +100,21 @@ tab_report_server <- function(input, output, session, tab) {
       global$exposure_classes <- read_dir(paste0(global$report_version, "/exposure_class"))
     }
   )
+  if (global$sidebar_toc){
+    output$html_report_nav <- renderUI(HTML(
+      '
+      <div id="TOC">
+      <p>This will be a dynamic ToC if the layout is a good direction</p>
+      <ul>
+      <li><a href="#executive-summary">Executive summary</a>
+      <ul>
+      <li><a href="#inputs">Inputs</a></li>
+      <li><a href="#scenarios">Scenarios</a></li>
+      <li><a href="#exposures">Exposures</a></li>
+      </ul></li>
+      </ul>
+      </div>
+      '
+    ))
+  }
 }
