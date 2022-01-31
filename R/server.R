@@ -65,14 +65,14 @@ server <- function(input, output, session) {
         warning(paste0("Unexpectedly large number of underscores in ", out$names[i]))
       }
     }
-    out$materiality <- factor(out$values, levels = c("", "Low", "Medium", "High"), ordered = T)
+    out$materiality <- factor(out$values, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
     out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
     out
   })
 
   type_inputs <- reactive({
     out <- all_inputs()
-    out <- out[(which(out$type == input$type & out$materiality != "")), ]
+    out <- out[(which(out$type == input$type & out$materiality != "N/A")), ]
     return(out)
   })
 

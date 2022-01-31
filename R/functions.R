@@ -151,8 +151,8 @@ exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL)
     form <- selectInput(
       inputId = id,
       label = NULL,
-      choices = c("", "Low", "Medium", "High"),
-      selected = ifelse(dev, "High", ""),
+      choices = c("N/A", "Low", "Medium", "High"),
+      selected = ifelse(dev, "High", "N/A"),
       # to allow empty string as a valid option I do not use selectize
       selectize = FALSE,
       width = width
@@ -1114,11 +1114,15 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs){
 #' Helpder function - the name is self-explanatory
 #' 
 #' @param data matrix or data.frame, possibly containing missing value
+#' @param empty_strings which strings should be considered as "empty"?
+#' @param ignore_cols indices of columns which should be ignored for emptiness check
 #' @return input object without rows and columns where all entries are empty (i.e. NA or "")
 #' 
-delete_empty_rows_and_columns <- function(data){
-  empty_columns <- apply(data, 2, function(x) all(is.na(x) | x == ""))
-  empty_rows <- apply(data, 1, function(x) all(is.na(x) | x == ""))
+delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), ignore_cols=c()){
+  empty_strings <- unlist(empty_strings)
+  use_cols <- setdiff(1:ncol(data), ignore_cols)
+  empty_columns <- apply(data, 2, function(x) all(is.na(x) | x %in% empty_strings ))
+  empty_rows <- apply(data, 1, function(x) all(is.na(x[use_cols]) | x[use_cols] %in% empty_strings))
   return(data[!empty_rows, !empty_columns])
 }
 
@@ -1135,7 +1139,7 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
       ids <- get_input_ids(tab=tab)
       values <- get_input_values(inputs, ids)
       values <- cbind(tab$exposure[, 1], values)
-      values_trimmed <- delete_empty_rows_and_columns(values)
+      values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols=1)
       if (sum(dim(values_trimmed))){
         ncol <- ncol(values_trimmed)
         if (ncol > 5){
