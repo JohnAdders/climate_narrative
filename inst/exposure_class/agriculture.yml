@@ -1,5 +1,6 @@
 name: Agriculture Sector
-
+exec_description: |
+  PLACEHOLDER
 description: |
   The **Agriculture** sector can be split into crop production and animal
   production.

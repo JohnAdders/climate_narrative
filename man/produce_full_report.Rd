@@ -4,10 +4,12 @@
 \alias{produce_full_report}
 \title{Function that writes a full report to (temporary) file}
 \usage{
-produce_full_report(report_contents, tempfile)
+produce_full_report(report_contents, report_version, tempfile)
 }
 \arguments{
 \item{report_contents}{the content to write}
+
+\item{report_version}{variable that can be used to control the multiple report versions in a single code}
 
 \item{tempfile}{where to write the report}
 }

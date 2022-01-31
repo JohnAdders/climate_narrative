@@ -136,24 +136,23 @@ produce_tooltip_matrix <- function(exposure_matrix) {
 
 #' Produce the layout of questionnaire tabs (cell, row, whole table)
 #'
-#' @param exposure_item Name of exposure item or blank for empty
-#' @param prefix Prefix to apply to name
+#' @param id unique input id or blank for empty
 #' @param tooltip_text Tooltip text to show
 #' @param dev Are we in development mode
 #' @param width Width of dropdown
 #'
 #' @importFrom tippy tippy_this
 #'
-exposure_grid_cell <- function(exposure_item, prefix, tooltip_text = "", dev = FALSE, width = NULL) {
-  if (exposure_item == "") {
+exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL) {
+  if (id == "") {
     form <- p("")
   } else {
-    id <- paste(prefix, remove_special_characters(exposure_item), sep = "_")
+    #id <- paste(prefix, remove_special_characters(exposure_item), sep = "_")
     form <- selectInput(
       inputId = id,
       label = NULL,
-      choices = c("", "Low", "Medium", "High"),
-      selected = ifelse(dev, "High", ""),
+      choices = c("N/A", "Low", "Medium", "High"),
+      selected = ifelse(dev, "High", "N/A"),
       # to allow empty string as a valid option I do not use selectize
       selectize = FALSE,
       width = width
@@ -196,19 +195,13 @@ exposure_grid_server <- function(input,
                                  width = NULL) {
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
+  input_ids <- get_input_ids(exposure_matrix, label)
   for (i in 1:nrow(layout)) {
     layout[i, 1] <- as.character(div(exposure_matrix[i, 1], class = "verticalcenter"))
     for (j in 2:ncol(layout)) {
       layout[i, j] <- as.character(
         exposure_grid_cell(
-          exposure_matrix[i, j + 1],
-          paste(
-            label,
-            remove_special_characters(exposure_matrix[i, 1]),
-            remove_special_characters(exposure_matrix[i, 2]),
-            remove_special_characters(colnames(exposure_matrix)[j + 1]),
-            sep = "_"
-          ),
+          input_ids[i, j - 1],
           tooltip_matrix[i, j - 1],
           dev,
           width
@@ -223,6 +216,59 @@ exposure_grid_server <- function(input,
     align = "c"
   )
 }
+
+#' Produce a table of input names for an input table
+#'
+#' @param exposure_matrix Exposure matrix upon which the input table is based
+#' @param label Label for grid
+#' @param tab NULL by default. If given, the first two arguments are ignored and inferred from tab
+#'
+get_input_ids <- function(exposure_matrix, label, tab=NULL){
+  if (!is.null(tab)){
+    exposure_matrix <- tab$exposure
+    label <- paste(tab$type, tab$subtype, sep="_")
+  }
+  input_ids <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 2)
+  colnames(input_ids) <- colnames(exposure_matrix)[-(1:2)]
+  for (i in 1:nrow(input_ids)) {
+    for (j in 1:ncol(input_ids)) {
+      if (exposure_matrix[i, j + 2] != ""){
+        input_ids[i, j] <- paste(
+          label,
+          remove_special_characters(exposure_matrix[i, 1]),
+          remove_special_characters(exposure_matrix[i, 2]),
+          remove_special_characters(colnames(exposure_matrix)[j + 2]),
+          remove_special_characters(exposure_matrix[i, j + 2]),
+          sep = "_"
+        )
+      }
+    }
+  }
+  return(input_ids)
+}
+
+#' Produce a matrix of input values from a matrix of input names (simple double loop)
+#'
+#' @param inputs dataframe of (all) inputs to look for
+#' @param ids_matrix matrix of ids
+#'
+get_input_values <- function(inputs, ids_matrix){
+    values <- ids_matrix
+    for (i in 1:nrow(values)){
+      for (j in 1:ncol(values)){
+        id <- ids_matrix[i, j]
+        if (id != ""){
+          value <- inputs[inputs$names == id, "values"]
+          if (length(value)) {
+            values[i, j] <- value
+          } else {
+            values[i, j] <- ""
+          }
+        }
+      }
+    }
+    return(values)
+  }
 
 #' Insert spaces to the string so that line has exactly given number of characters.
 #'
@@ -739,7 +785,7 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
         tags$li(paste("\"High\": One of your top 5 exposures or more than 10% of total", total_name)),
         tags$li(paste("\"Medium\": 5% - 10% of total", total_name)),
         tags$li(paste("\"Low\": below 5% of total", total_name)),
-        tags$li(paste("blank: immaterial or no exposure"))
+        tags$li(paste("\"N/A\": immaterial or no exposure"))
       )
     )
   )
@@ -757,11 +803,12 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' this is necessary as markdown::render takes file as an argument
 #' not used at the moment, but do not delete - will be sent by email probably
 #' @param report_contents the content to write
+#' @param report_version variable that can be used to control the multiple report versions in a single code
 #' @param tempfile where to write the report
 #' @return NULL, output is a file as specified in the argument
-produce_full_report <- function(report_contents, tempfile){
+produce_full_report <- function(report_contents, report_version, tempfile){
   file_conn <- file(tempfile)
-  writeLines(report_contents, file_conn)
+  writeLines(unlist(report_contents), file_conn)
   close(file_conn)
   return(invisible(NULL))
 }
@@ -770,26 +817,47 @@ produce_full_report <- function(report_contents, tempfile){
 #'
 #' this is necessary as markdown::render takes file as an argument
 #' @param report_contents the content to write
+#' @param report_version variable that can be used to control the multiple report versions in a single code
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
-#' @param include_common_sections whether to include non-scenario sections (e.g. intro)
+#' @param is_rtf a flag that triggers several format specific settings:
+#' - TRUE: include non-scenario sections (e.g. intro)
+#' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @param tempfile where to write the report
 #' @return NULL, output is a file as specified in the argument
-produce_selective_report <- function(report_contents, report_scenario_selection, include_common_sections, tempfile){
+produce_selective_report <- function(report_contents, report_version, report_scenario_selection, is_rtf, tempfile){
   if (report_scenario_selection == ""){
     scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
   } else {
     scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
   }
-  if (include_common_sections){
+  if (is_rtf){
     scenario_no <- sort(
-      c(0, scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
+      c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
     )
   }
   file_conn <- file(tempfile)
-  add_path_to_graphs <- function(x) gsub("\\(([[:graph:]]*)(.png)", paste0("(", system.file("www", package = "climate.narrative"), "/", "\\1\\2"), x, perl=T)
+  # offset is for the title (and optionally exec summary), not included in 'scenarios' but included in 'report_contents'
+  if (report_version >= 3) {
+    contents <- report_contents[c(2, 2 + scenario_no, length(report_contents))]
+    contents[[1]] <- contents[[1]][c(1:3, 3 + scenario_no, length(contents[[1]]))]
+    contents[[1]] <- paste(contents[[1]], collapse="\n")
+  } else {
+    contents <- report_contents[c(1 + scenario_no, length(report_contents))]
+  }
+  contents <- add_path_to_graphs(contents)
+  if (!is_rtf && report_version >= 2){
+    for (header_tag in c("\n# ","\n## ","\n### ")){
+      contents = gsub(
+        header_tag,
+        paste0("\n<a href='#top'>go to top</a> \n\n", header_tag),
+        contents,
+      )
+    }
+    # also add link at the end
+    contents = paste0(contents,"\n\n<a href='#top'>go to top</a>\n")
+  }
   writeLines(
-    # plus one is for the title, not included in 'scenarios' but included in 'report_contents'
-    add_path_to_graphs(report_contents[c(1 + scenario_no, length(report_contents))]),
+    contents,
     file_conn
   )
   close(file_conn)
@@ -813,7 +881,7 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
     image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
     if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
     if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
-      print(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
+      warning(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
       markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
     }
   }
@@ -881,4 +949,225 @@ rtf_center_images <- function(filename){
   writeLines(rtf, file_conn)
   close(file_conn)
   return(invisible(NULL))
+}
+
+#' Add path to graphs
+#' 
+#' By default pandoc rtf is run in its own location and does not locate the images properly
+#' manual intervention is required to explicitly point the images
+#' @param x text to convert
+#' @return updated text
+#' 
+add_path_to_graphs <- function(x) {
+  gsub(
+    "\\(([[:graph:]]*)(.png)",
+    paste0(
+      "(",
+      system.file("www", package = "climate.narrative"),
+      "/",
+      "\\1\\2"
+    ),
+    x,
+    perl=T
+  )
+}
+
+#' One of the functions comprising the executive summary text
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return vector of strings - executive summary text (one string per scenario)
+#' 
+get_executive_summary_scenarios <- function(aggregated_inputs, inputs){
+  out <- c("## Scenarios\n\nThis report considers the following scenarios:\n\n")
+  for (scenario in global$scenarios) {
+    if (scenario$is_scenario){
+      out <- c(
+        out,
+        paste0(
+          "### ",
+          scenario$name,
+          "\n\n",
+          scenario$exec_description,
+          "\n\n"
+        )
+      )
+    } else {
+      # even if not a scenario needs an entry in order to be able to select properly later
+      out <- c(out, "")
+    }
+  }
+  return(out)
+}
+
+
+#' Function to combine an executive summary from lower level functions
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
+#' 
+get_executive_summary <- function(aggregated_inputs, inputs){
+  out_0 <- "# Executive summary\n\n"
+  out_1 <- get_executive_summary_inputs(aggregated_inputs, inputs) 
+  out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs)
+  out_3 <- get_executive_summary_exposures(aggregated_inputs, inputs)
+  # the final output is a vector, out_2 is a vector, out_0 out_1 out_3 are scalars
+  return(c(out_0, out_1, out_2, out_3))
+}
+
+#' Function that generates a markdown content of the report
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
+#' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
+#' 
+get_report_contents <- function(aggregated_inputs, inputs, report_version){
+  out <- list(
+    paste0(
+    "---\n",
+    "title: |\n",
+    "  Climate report\n\n",
+    "  ![](title.png)\n\n",
+    "  ```{=rtf}\n",
+    "  \\page\n",
+    "  ```\n\n",
+    "---\n\n"
+  )
+  )
+  if (report_version == 3){
+    out <- c(
+      out,
+      list(
+        get_executive_summary(aggregated_inputs, inputs)
+      )
+    )
+  }
+  for (scenario in global$scenarios) {
+    out <- c(
+      out,
+      list(get_scenario_descriptions(
+        aggregated_inputs,
+        inputs,
+        scenario
+      ))
+    )
+  }
+  out <- c(out, list(get_references(aggregated_inputs, inputs)))
+  out
+}
+
+#' One of the functions comprising the executive summary text
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return string - executive summary text
+#' 
+get_executive_summary_exposures <- function(aggregated_inputs, inputs){
+  out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
+  out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
+  high_counter <- 0
+  for (i in 1:nrow(aggregated_inputs)) {
+    item <- aggregated_inputs[i,1]
+    materiality = aggregated_inputs[i,2]
+    if (materiality == "High"){
+      high_counter <- high_counter + 1
+      out_exp <- paste0(
+        out_exp,
+        "#### ",
+        global$exposure_classes[[item]][["name"]],
+        "\n\n",
+        "##### Physical risk\n\n",
+        global$exposure_classes[[item]][["physical"]][["high"]]["always"],
+        "\n\n##### Transition risk\n\n",
+        global$exposure_classes[[item]][["transition"]][["high"]]["always"],
+        "\n\n"
+      )
+    }
+  }
+  if (high_counter == 0 ){
+    out_exp <- paste0(out_exp, "None\n\n")
+  }
+  out_exp <- paste0(out_exp, "### Other exposures\n\n")
+  less_material <- aggregated_inputs[aggregated_inputs[,2] != "High",]
+  if (nrow(less_material)){
+    less_material$exec.description <- rep(NA, nrow(less_material))
+    less_material$name <- rep(NA, nrow(less_material))
+    for(i in 1:nrow(less_material)){
+      item <- less_material[i,1]
+      less_material$name[i] <- global$exposure_classes[[item]][["name"]]
+      less_material$exec.description[i] <- global$exposure_classes[[item]][["exec_description"]]
+    }
+    out_exp <- paste0(
+      out_exp,
+      table_to_markdown_multiline(
+        less_material[,c("name", "materiality", "exec.description")]
+      )
+    )
+  } else {
+    out_exp <- paste0(out_exp, "None\n\n")
+  }
+  return(out_exp)
+}
+
+#' Helpder function - the name is self-explanatory
+#' 
+#' @param data matrix or data.frame, possibly containing missing value
+#' @param empty_strings which strings should be considered as "empty"?
+#' @param ignore_cols indices of columns which should be ignored for emptiness check
+#' @return input object without rows and columns where all entries are empty (i.e. NA or "")
+#' 
+delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), ignore_cols=c()){
+  empty_strings <- unlist(empty_strings)
+  use_cols <- setdiff(1:ncol(data), ignore_cols)
+  empty_columns <- apply(data, 2, function(x) all(is.na(x) | x %in% empty_strings ))
+  empty_rows <- apply(data, 1, function(x) all(is.na(x[use_cols]) | x[use_cols] %in% empty_strings))
+  if (all(empty_columns[use_cols])){
+    return(NULL)
+  } else {
+    data[, empty_columns] <- NULL
+    if (sum(!empty_rows) > 1){
+      return(data[!empty_rows, ])
+    } else { 
+      # a bit clumsy, but need to add separately one row case - by default converted by R to vector
+      out <- as.data.frame(t(data[!empty_rows, ]))
+      colnames(out)[1] <- ""
+      return(out)
+    }
+  }
+}
+
+#' One of the functions comprising the executive summary text
+#' 
+#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
+#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @return string - executive summary text
+#' 
+get_executive_summary_inputs <- function(aggregated_inputs, inputs){
+  out <- "## Inputs\n\n"
+  for (tab in global$tabs){
+    if (!is.null(tab$exposure)){
+      ids <- get_input_ids(tab=tab)
+      values <- get_input_values(inputs, ids)
+      values <- cbind(tab$exposure[, 1], values)
+      values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols=1)
+      if (!is.null(values_trimmed)){
+        ncol <- ncol(values_trimmed)
+        if (ncol > 5){
+          col_widths <- c(30, rep(20, ncol - 1))
+        } else {
+          col_widths <- rep(30, ncol)
+        }
+        out <- paste0(
+          out,
+          "### ",
+          tab$tab_title,
+          "\n\n",
+          table_to_markdown_multiline(values_trimmed, col_widths = col_widths)
+        )
+      }
+    }
+  }
+  return(out)
 }

@@ -22,6 +22,20 @@ tab_report_ui <- function() {
     ),
     hr()
   )
+  if(global$dev){
+    out <- c(
+      out,
+      list(
+        selectInput(
+          "version_selection",
+          "Select the report version",
+          global$report_versions,
+          global$report_version,
+          selectize=FALSE
+        )
+      )
+    )
+  }
   if (!rmarkdown::pandoc_available()) {
     warning("Pandoc (required to render rtf) not available, hiding download report button")
     out <- c(out, list(uiOutput("html_report")))
@@ -31,10 +45,25 @@ tab_report_ui <- function() {
       conditionalPanel(
         'input.report_scenario_selection != "" | input.report_sector_selection != ""',
         hr(),
-        actionButton(paste0("page_",tab_name_to_number("report"), "_previous_duplicate"), "prev")
-      ),
-      uiOutput("html_report")
+        actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
+      )
     ))
+    if (global$sidebar_toc){
+      out <- c(
+        out,
+        list(
+          div(
+            id = "html_report_div",
+            sidebarLayout(
+              sidebarPanel(uiOutput("html_report_nav")),
+              mainPanel(uiOutput("html_report"))
+            )
+          )
+        )
+      )
+    } else {
+      out <- c(out, list(uiOutput("html_report")))
+    }
   }
 }
 
@@ -61,4 +90,31 @@ tab_report_server <- function(input, output, session, tab) {
       updateSelectInput(session, "report_sector_selection", selected = "")
     }
   )
+  observeEvent(
+    input$version_selection,
+    {
+      global$report_version <- input$version_selection
+      global$exposures <- read_dir(paste0(global$report_version, "/exposure"))
+      global$scenarios <- read_dir(paste0(global$report_version, "/scenario"))
+      global$products <- read_dir(paste0(global$report_version, "/product"))
+      global$exposure_classes <- read_dir(paste0(global$report_version, "/exposure_class"))
+    }
+  )
+  if (global$sidebar_toc){
+    output$html_report_nav <- renderUI(HTML(
+      '
+      <div id="TOC">
+      <p>This will be a dynamic ToC if the layout is a good direction</p>
+      <ul>
+      <li><a href="#executive-summary">Executive summary</a>
+      <ul>
+      <li><a href="#inputs">Inputs</a></li>
+      <li><a href="#scenarios">Scenarios</a></li>
+      <li><a href="#exposures">Exposures</a></li>
+      </ul></li>
+      </ul>
+      </div>
+      '
+    ))
+  }
 }

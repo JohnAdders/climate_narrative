@@ -17,7 +17,28 @@ server <- function(input, output, session) {
   session$userData$temp_rtf <- tempfile(fileext = ".rtf")
   session$userData$temp_md_dev <- tempfile(fileext = ".md")
   session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
-
+  if (global$progress_bar){
+    # progress bar code
+    progress <- Progress$new(session, min=0, max=1, style="old")
+    observeEvent(input$wizard, {
+      which_tab <- which(input$wizard == sapply(global$tabs, function(tab) tab$id))
+      tab_type <- global$tabs[[which_tab]]$type
+      tab_number <- global$tabs[[which_tab]]$tab_number
+      if (!is.null(tab_type)){
+        matching_type <- sapply(
+          global$tabs,
+          function(tab) sum(c(is.null(tab$type), tab$type==tab_type))
+        )
+        den <- sum(matching_type)
+        num <- sum(matching_type[1:tab_number]) - 1
+        progress$set(value=num/den, message="Questionnaire progress")
+      } else {
+        den <- length(global$tabs) - 1
+        num <- tab_number - 1
+        progress$set(value=num/den, message="Questionnaire progress")
+      }
+    })
+  }
   # the reactive variables (ultimately - the climate report)
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
@@ -44,14 +65,14 @@ server <- function(input, output, session) {
         warning(paste0("Unexpectedly large number of underscores in ", out$names[i]))
       }
     }
-    out$materiality <- factor(out$values, levels = c("", "Low", "Medium", "High"), ordered = T)
+    out$materiality <- factor(out$values, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
     out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
     out
   })
 
   type_inputs <- reactive({
     out <- all_inputs()
-    out <- out[(which(out$type == input$type & out$materiality != "")), ]
+    out <- out[(which(out$type == input$type & out$materiality != "N/A")), ]
     return(out)
   })
 
@@ -130,40 +151,14 @@ server <- function(input, output, session) {
     }
   )
 
-
-  #report_contents <- reactive({
-  get_report_contents <- function(aggregated_inputs, inputs){
-    out <- paste0(
-      "---\n",
-      "title: |\n",
-      "  Climate report\n\n",
-      "  ![](title.png)\n\n",
-      "  ```{=rtf}\n",
-      "  \\page\n",
-      "  ```\n\n",
-      "---\n\n"
-    )
-    for (scenario in global$scenarios) {
-      out <- c(
-        out,
-        get_scenario_descriptions(
-          aggregated_inputs,
-          inputs,
-          scenario
-        )
-      )
-    }
-    out <- c(out, get_references(aggregated_inputs, inputs))
-    out
-  }
-
   output$html_report <- renderUI({
     if (input$report_scenario_selection == "" & input$report_sector_selection == "") {
       return(p("Please select a scenario or a sector"))
     }
     temp_html <- tempfile(fileext = ".html")
     produce_selective_report(
-      get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
+      get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version),
+      global$report_version,
       input$report_scenario_selection,
       FALSE,
       session$userData$temp_md_scenario
@@ -209,7 +204,8 @@ server <- function(input, output, session) {
         )
       )
       produce_selective_report(
-        get_report_contents(aggregated_type_inputs_subset(), type_inputs()),
+        get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version),
+        global$report_version,
         input$report_scenario_selection,
         TRUE,
         session$userData$temp_md_scenario_and_commons
@@ -251,7 +247,8 @@ server <- function(input, output, session) {
         )
       )
       produce_full_report(
-        get_report_contents(aggregated_all_inputs(), all_inputs()),
+        get_report_contents(aggregated_all_inputs(), all_inputs(), global$report_version),
+        global$report_version,
         session$userData$temp_md_dev
       )
       fs <- file.size(session$userData$temp_md_dev)

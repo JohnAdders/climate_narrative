@@ -4,18 +4,10 @@
 \alias{exposure_grid_cell}
 \title{Produce the layout of questionnaire tabs (cell, row, whole table)}
 \usage{
-exposure_grid_cell(
-  exposure_item,
-  prefix,
-  tooltip_text = "",
-  dev = FALSE,
-  width = NULL
-)
+exposure_grid_cell(id, tooltip_text = "", dev = FALSE, width = NULL)
 }
 \arguments{
-\item{exposure_item}{Name of exposure item or blank for empty}
-
-\item{prefix}{Prefix to apply to name}
+\item{id}{unique input id or blank for empty}
 
 \item{tooltip_text}{Tooltip text to show}
 

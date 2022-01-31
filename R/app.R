@@ -9,25 +9,25 @@
 #' @export
 run_shiny_app <- function(secrets_file="secret.yml", ...) {
   load_secrets(secrets_file)
-  addResourcePath(
-    "climate_narrative",
-    system.file("www", package = "climate.narrative")
-  )
+
+  # ordering the scenarios
+  global$scenarios <- global$scenarios[order(sapply(global$scenarios, `[[`, i = "position"))]
+
   global$tabs <- list(
-    QuestionTab$new("title", NULL, "auth", FALSE, FALSE),
-    QuestionTab$new("auth", "title", NULL, ui_settings = list(captcha_code = global$captcha_code)),
-    QuestionTab$new("type", "auth", "ins_l"),
-    QuestionTab$new("bank_re", "type", "bank_c", TRUE, TRUE, global$exposures$bankRe, "bank", "R"),
-    QuestionTab$new("bank_c", "bank_re", "bank_sov", TRUE, TRUE, global$exposures$bankCorporate, "bank", "C"),
-    QuestionTab$new("bank_sov", "bank_c", "report", TRUE, TRUE, global$exposures$sovereign, "bank", "S"),
-    QuestionTab$new("ins_l", "type", "ins_nl", TRUE, TRUE, global$exposures$insuranceLife, "insurance", "L"),
-    QuestionTab$new("ins_nl", "ins_l", "ins_c", TRUE, TRUE, global$exposures$insuranceNonlife, "insurance", "N"),
-    QuestionTab$new("ins_c", "ins_nl", "ins_sov", TRUE, TRUE, global$exposures$insuranceCorporate, "insurance", "C"),
-    QuestionTab$new("ins_sov", "ins_c", "report", TRUE, TRUE, global$exposures$sovereign, "insurance", "S"),
-    QuestionTab$new("am_c", "type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
-    QuestionTab$new("am_sov", "am_c", "am_re", TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
-    QuestionTab$new("am_re", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
-    QuestionTab$new("report", "type", NULL)
+    QuestionTab$new("title", NULL, NULL, "auth", FALSE, FALSE),
+    QuestionTab$new("auth", NULL, "title", NULL, ui_settings = list(captcha_code = global$captcha_code)),
+    QuestionTab$new("type", NULL, "auth", "ins_l"),
+    QuestionTab$new("bank_re", "Bank: Real Estate Exposures", "type", "bank_c", TRUE, TRUE, global$exposures$bankRe, "bank", "R"),
+    QuestionTab$new("bank_c", "Bank: Company Exposures", "bank_re", "bank_sov", TRUE, TRUE, global$exposures$bankCorporate, "bank", "C"),
+    QuestionTab$new("bank_sov", "Bank: Sovereign Exposures", "bank_c", "report", TRUE, TRUE, global$exposures$sovereign, "bank", "S"),
+    QuestionTab$new("ins_l", "Insurance: Life and Health Lines of Business", "type", "ins_nl", TRUE, TRUE, global$exposures$insuranceLife, "insurance", "L"),
+    QuestionTab$new("ins_nl", "Insurance: Property and Casualty Lines of Business", "ins_l", "ins_c", TRUE, TRUE, global$exposures$insuranceNonlife, "insurance", "N"),
+    QuestionTab$new("ins_c", "Insurance: Corporate and Real Estate Assets", "ins_nl", "ins_sov", TRUE, TRUE, global$exposures$insuranceCorporate, "insurance", "C"),
+    QuestionTab$new("ins_sov", "Insurance: Sovereign Assets", "ins_c", "report", TRUE, TRUE, global$exposures$sovereign, "insurance", "S"),
+    QuestionTab$new("am_c", "Asset Manager: Corporate Assets under management", "type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
+    QuestionTab$new("am_sov", "Asset Manager: Sovereign Assets under management", "am_c", "am_re", TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
+    QuestionTab$new("am_re", "Asset Manager: Real Estate Assets under management", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
+    QuestionTab$new("report", NULL, "type", NULL)
   )
   # Tab names validation check
   # the global$ordered_tabs must be defined first (the QuestionTab constructor relies on this
@@ -47,7 +47,27 @@ load_secrets <- function(secrets_file="secret.yml") {
     secret_pars <- yaml::read_yaml(secrets_file)
     global$dev <- FALSE
     for (i in 1:length(secret_pars)) global[[names(secret_pars)[i]]] <- secret_pars[[i]]
+    # simple validation and some default values
+    if (is.null(global$report_version)){
+      default_version = global$report_versions[1]
+      global$report_version = default_version
+      warning(paste0("Report version not found in the settings file, defaulting to ", default_version))
+    } else if (!global$report_version %in% global$report_versions){
+      default_version = global$report_versions[1]
+      global$report_version = default_version
+      warning(paste0("Invalid report version in the settings file, defaulting to ", default_version))
+    }
+    if (is.null(global$progress_bar)){
+      warning("Progress bar setting not found. Defaulting to FALSE")
+      global$progress_bar <- FALSE
+    }
+    if (is.null(global$sidebar_toc)){
+      warning("Sidebar table of contents setting not found. Defaulting to FALSE")
+      global$sidebar_toc <- FALSE
+    }
   } else {
     global$dev <- TRUE
+    global$progress_bar <- FALSE
+    global$sidebar_toc <- FALSE
   }
 }
