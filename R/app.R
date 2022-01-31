@@ -9,9 +9,6 @@
 #' @export
 run_shiny_app <- function(secrets_file="secret.yml", ...) {
   load_secrets(secrets_file)
-  global$exposures <- read_dir(paste0(global$report_version, "/exposure"))
-  global$scenarios <- read_dir(paste0(global$report_version, "/scenario"))
-  global$products <- read_dir(paste0(global$report_version, "/product"))
 
   # ordering the scenarios
   global$scenarios <- global$scenarios[order(sapply(global$scenarios, `[[`, i = "position"))]
