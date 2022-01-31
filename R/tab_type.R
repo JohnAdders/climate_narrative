@@ -6,7 +6,7 @@ tab_type_ui <- function() {
       c(
         "Bank" = "bank",
         "Insurance" = "insurance",
-        "Asset Manager" = "asset"
+        "Asset Manager/Owner" = "asset"
       )
     )
   )
