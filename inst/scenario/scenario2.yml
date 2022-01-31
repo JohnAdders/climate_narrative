@@ -3,6 +3,8 @@ position: 2
 is_scenario: yes
 transition: high
 physical: low
+exec_description: |
+  PLACEHOLDER
 description: |
   These Disorderly/Divergent transition risk scenarios assume the introduction
   of effective policy change is delayed or divergent across countries and

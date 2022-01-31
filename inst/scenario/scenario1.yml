@@ -3,7 +3,8 @@ position: 1
 is_scenario: yes
 transition: low
 physical: low
-
+exec_description: |
+  PLACEHOLDER
 description: |
   These Early/Orderly transition risk scenarios assume that effective policy
   changes are introduced in a timely manner.
