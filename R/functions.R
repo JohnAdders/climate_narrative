@@ -785,7 +785,7 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
         tags$li(paste("\"High\": One of your top 5 exposures or more than 10% of total", total_name)),
         tags$li(paste("\"Medium\": 5% - 10% of total", total_name)),
         tags$li(paste("\"Low\": below 5% of total", total_name)),
-        tags$li(paste("blank: immaterial or no exposure"))
+        tags$li(paste("\"N/A\": immaterial or no exposure"))
       )
     )
   )
