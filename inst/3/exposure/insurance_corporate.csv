@@ -1,5 +1,0 @@
-Type,product,Agriculture,Commercial Real Estate,Construction,Consumer Products,Financial Services,Manufacturing,Metals and Mining,Mortgages,Oil and Gas,Telecommunications,Utilities
-Bonds,bond_like,agriculture,commercial_real_estate,construction,consumer_products,financials,manufacturing,metals_and_mining,,oil_and_gas,telecoms,utilities
-Equity,equity_like,agriculture,commercial_real_estate,construction,consumer_products,financials,manufacturing,metals_and_mining,,oil_and_gas,telecoms,utilities
-Commercial Mortgages,bond_like,,,,,,,,mortgages,,,
-Residential Mortgages including ERM,bond_like,,,,,,,,mortgages,,,
