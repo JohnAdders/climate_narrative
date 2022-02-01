@@ -38,3 +38,10 @@ table td, table th {
     max-height: 500px;
     overflow-y: scroll;
 }
+
+.inline a,
+.inline h1,
+.inline h2,
+.inline h3 {
+  display: inline;
+}

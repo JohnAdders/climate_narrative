@@ -177,12 +177,21 @@ server <- function(input, output, session) {
     # replace back the images links
     file_conn <- file(temp_html)
     temp <- readLines(file_conn)
+    temp <- gsub(
+      system.file("www", package = "climate.narrative"),
+      "climate_narrative",
+      temp
+    )
+    if (global$report_version >= 2){
+      temp <- gsub(
+        "(<h[1-3]?>)(.*)(</h[1-3]?>)",
+        "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
+        temp,
+        perl=TRUE
+      )    
+    }
     writeLines(
-      gsub(
-        system.file("www", package = "climate.narrative"),
-        "climate_narrative",
-        temp
-      ),
+      temp,
       file_conn
     )
     close(file_conn)

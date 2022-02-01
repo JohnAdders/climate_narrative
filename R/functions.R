@@ -845,14 +845,6 @@ produce_selective_report <- function(report_contents, report_version, report_sce
     contents <- report_contents[c(1 + scenario_no, length(report_contents))]
   }
   contents <- add_path_to_graphs(contents)
-  if (!is_rtf && report_version >= 2){
-    contents = gsub(
-      "(#{1,3} )(.*)\n",
-      "\\1\\2\n\n<a href='#top'>&uarr;</a>\n",
-      contents,
-      perl = TRUE
-    )    
-  }
   writeLines(
     contents,
     file_conn
