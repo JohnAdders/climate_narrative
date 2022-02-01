@@ -19,10 +19,10 @@ transition:
       Aviation sector could continue to play a role in meeting customer demand
       for the coming years The changing patterns in energy generation in the
       Delayed transition scenario, driven by late policy action enabling a
-      "fossil fuelled recovery" out of the economic crisis brought about by
+      "fossil recovery" out of the economic crisis brought about by
       COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 and a
       decrease in CO<sub>2</sub> after 2030 to compensate for the inaction
-      beforehand, whereas the divergent scenario results in an immediate but
+      beforehand, whereas the Divergent scenario results in an immediate but
       divergent reduction in CO<sub>2</sub> emissions. Policies and regulatory
       frameworks implemented at regional level rather than international level
       or evolving at a different speed depending on the region, could result in
@@ -44,6 +44,18 @@ transition:
         as aviation firms' carbon emissions face a rising price in the form a
         carbon tax or cap & trade clearing price, especially for airlines
         reliant on fossil-based aviation fuels.
+        
+        In Delayed/Divergent transition risk scenarios, the price per gigajoule 
+        of liquid final energy (liquid fuels from all energy sources; incl. oil 
+        products, synthetic fossil fuels from gas and coal, biofuels) for use in 
+        transportation at least triples by the end of the century, increasing from 
+        ~20 USD (inflation adjusted to 2010 baseline) to ~65 USD in the Delayed 
+        transition scenario, and to ~95 USD in the Divergent Net Zero scenario.
+        
+      ![Transportation Liquid Price](Transportation_Liquids_Price_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - **Change in regulations covering energy efficiency standards would lead
         to increasing compliance requirements.** Governments may conclude it
@@ -67,13 +79,23 @@ transition:
         further impact demand for aviation through its effect on individuals'
         disposable income.
 
-      The profitability of this sector, in the disorderly/divergent transition
+      The profitability of this sector, in the Disorderly/Divergent transition
       risk scenarios, could also depend on the relevant companies proactively
       investing in innovation and new technology. For example:
 
       - Alternative fuel sources (e.g. airlines could invest in Sustainable
         Aviation Fuels (SAF) in the short term whilst more complex solutions
         such as hydrogen and electric aircraft are developed)
+        
+      In Disorderly/Divergent transition risk scenarios, sources of final energy 
+      used in the transport sector change dramatically. As use of oil declines, 
+      electricity becomes the dominant source of final energy by the end of the 
+      century.
+      
+      ![Transportation Final Energy](Transportation_Final_Energy_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - Energy efficient aircraft and infrastructure (e.g. more efficient
         lighting and heating in hangars and airports)
@@ -81,6 +103,15 @@ transition:
       - Intelligent routing and smart technologies which support
         climate-optimized flying
 
+      In Disorderly/Divergent transition risk scenarios, these innovations 
+      could contribute to an overall decrease in CO<sub>2</sub> emissions in 
+      the transportation sector.
+      
+      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
       These actions could also lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
       proactively seek out businesses with an incorporated green strategy as
@@ -90,7 +121,7 @@ transition:
     always: |
       Aviation sector could continue to play a role in meeting customer demand
       for the coming years. The changing patterns in energy generation in
-      early/orderly transition risk scenarios, driven by immediate policy
+      Early/Orderly transition risk scenarios, driven by immediate policy
       reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 and increase in the carbon price.
@@ -99,7 +130,7 @@ transition:
       therefore on the associated insurance products' pricing, terms and
       conditions and coverage, and could generate fast-changing requirements and
       opportunities, as well as potential obstructions, to new product
-      development pathways. The early/orderly transition risk scenarios could
+      development pathways. The Early/Orderly transition risk scenarios could
       also lead to a limited relative reduction in GDP growth. This could result
       in changes in the rate of growth in demand for the aviation sector.
     high_materiality: |
@@ -112,6 +143,17 @@ transition:
         as aviation firms' carbon emissions face a rising price in the form a
         carbon tax or cap & trade clearing price, especially for airlines
         reliant on fossil-based aviation fuels.
+        
+        In Early/Orderly transition risk scenarios, the price per gigajoule of 
+        liquid final energy (liquid fuels from all energy sources; incl. oil products, 
+        synthetic fossil fuels from gas and coal, biofuels) for use in transportation 
+        at least doubles by 2050, increasing from around 20 USD (inflation adjusted 
+        to 2010 baseline) to between 40 USD and 55 USD.
+        
+      ![Transportation Liquid Price](Transportation_Liquids_Price_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - **Change in regulations covering energy efficiency standards would lead
         to increasing compliance requirements.** These changes may require firms
@@ -134,20 +176,37 @@ transition:
         disposable income.
 
       The profitability of the aviation sector and its associated underwriting
-      class, in the early/orderly transition risk scenarios, could also depend
+      class, in the Early/Orderly transition risk scenarios, could also depend
       on the relevant companies proactively investing in innovation and new
       technology. For example:
 
       - Alternative fuel sources (e.g. airlines could invest in Sustainable
         Aviation Fuels (SAF) in the short term whilst more complex solutions
         such as hydrogen and electric aircraft are developed)
+     
+      In Early/Orderly transition risk scenarios, sources of final energy used
+      in the transport sector change dramatically. As the use of oil gradually 
+      declines, electricity becomes the dominant source of final energy by the 
+      end of the century.
+      
+      ![Transportation Final Energy](Transportation_Final_Energy_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - Energy efficient aircraft and infrastructure (e.g. more efficient
         lighting and heating in hangars and airports)
 
       - Intelligent routing and smart technologies which support
         climate-optimized flying
+        
+      In Early/Orderly transition risk scenarios, these innovations could contribute to an overall decrease in CO<sub>2</sub> emissions in the transportation sector.
 
+      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
       These actions could also lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
       proactively seek out businesses with an incorporated green strategy as
@@ -164,7 +223,7 @@ physical:
       operations through frequent re-routings and temporary closures of airspace
       and airports, as well as damage infrastructure and aircraft with
       detrimental effects on costs and earnings. Whilst the aviation sector is
-      used to responding to and managing changing weather conditions, in the low
+      used to responding to and managing changing weather conditions, in the high
       physical risk scenario, climate change and global warming could increase
       weather variations. This could lead to increasing disruption to the
       aviation sector which could impact the profitability for these companies
@@ -191,7 +250,15 @@ physical:
         can increase flight times, affect passenger comfort and safety, damage
         aircraft, and induce large scale rerouting or flight cancellations.
 
-      - **Flooding** can damage infrastructure and grounded aircraft.
+      - **Flooding** can damage infrastructure and grounded aircraft. In the 
+      Current Policies scenario, river flood depth is projected to increase 
+      at an accelerating rate and by 2050 it is as much as 2.5 times higher 
+      compared to 1986-2006.
+      
+      ![River Flood Depth](River_Flood_Depth_High_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
 
       With a large rise in global temperatures the physical effects of climate
       change could materially alter the existence, attractiveness or viability
@@ -200,7 +267,7 @@ physical:
       relying on climate conditions for attracting visitors (e.g. snow cover for
       skiing resorts) or destinations impacted by sea level inundation.
       Significantly slowed GDP growth could further impact demand for aviation
-      through its effect on individual's disposable income.
+      through its effect on individuals' disposable income.
 
       There are a number of mitigating actions these companies can take against
       the high physical risks mentioned above to build resiliency into their
@@ -240,7 +307,15 @@ physical:
         can increase flight times, affect passenger comfort and safety, damage
         aircraft, and induce large scale rerouting or flight cancellations.
 
-      - **Flooding** can damage infrastructure and grounded aircraft.
+      - **Flooding** can damage infrastructure and grounded aircraft. In both the 
+      Net Zero 2050 and Delayed transition scenarios, river flood depth is projected 
+      to increase at an accelerating rate and by 2050 it is as much as 2.5 times 
+      higher compared to 1986-2006.
+      
+      ![River Flood Depth](River_Flood_Depth_Low_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
 
       With a rise in global temperatures the physical effects of climate change
       could alter the existence, attractiveness or viability of some
