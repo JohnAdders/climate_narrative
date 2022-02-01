@@ -1119,6 +1119,7 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs){
 #' @return input object without rows and columns where all entries are empty (i.e. NA or "")
 #' 
 delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), ignore_cols=c()){
+  data <- as.data.frame(data)
   empty_strings <- unlist(empty_strings)
   use_cols <- setdiff(1:ncol(data), ignore_cols)
   empty_columns <- apply(data, 2, function(x) all(is.na(x) | x %in% empty_strings ))
@@ -1131,7 +1132,7 @@ delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), i
       return(data[!empty_rows, ])
     } else { 
       # a bit clumsy, but need to add separately one row case - by default converted by R to vector
-      out <- as.data.frame(t(data[!empty_rows, ]))
+      out <- as.data.frame(t(t(data[!empty_rows, ])))
       colnames(out)[1] <- ""
       return(out)
     }
