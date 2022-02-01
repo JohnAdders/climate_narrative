@@ -846,15 +846,12 @@ produce_selective_report <- function(report_contents, report_version, report_sce
   }
   contents <- add_path_to_graphs(contents)
   if (!is_rtf && report_version >= 2){
-    for (header_tag in c("\n# ","\n## ","\n### ")){
-      contents = gsub(
-        header_tag,
-        paste0("\n<a href='#top'>go to top</a> \n\n", header_tag),
-        contents,
-      )
-    }
-    # also add link at the end
-    contents = paste0(contents,"\n\n<a href='#top'>go to top</a>\n")
+    contents = gsub(
+      "(#{1,3} )(.*)\n",
+      "\\1\\2\n\n<a href='#top'>&uarr;</a>\n",
+      contents,
+      perl = TRUE
+    )    
   }
   writeLines(
     contents,
