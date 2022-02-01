@@ -18,6 +18,8 @@ This is a wrapper over any ui and server that handles switching to previous/next
 \describe{
 \item{\code{tab_name}}{name of the tab}
 
+\item{\code{tab_title}}{pretty title to be used in the UI}
+
 \item{\code{tab_ui}}{specific UI function, may take any number of arguments}
 
 \item{\code{tab_ui_foot}}{specific UI function to be used in footer (without arguments)}
@@ -65,6 +67,7 @@ from the relevant functions (or makes it empty if the function does not exist)
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{QuestionTab$new(
   tab_name,
+  tab_title,
   previous_tab,
   next_tab,
   add_header = TRUE,
@@ -80,6 +83,8 @@ from the relevant functions (or makes it empty if the function does not exist)
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{tab_name}}{name of the tab}
+
+\item{\code{tab_title}}{title of the tab to be used in the UI}
 
 \item{\code{previous_tab}}{name of the previous tab}
 
@@ -144,8 +149,9 @@ additionally, a boolean function may be passed to allow going next only conditio
 \if{latex}{\out{\hypertarget{method-ui}{}}}
 \subsection{Method \code{ui()}}{
 tab UI function that combines:
-0. a common header (unless add_header=FALSE)
 \enumerate{
+\item a common header (unless add_header=FALSE)
+\item title (unless tab_title is NULL)
 \item exposure input table (if exposure table given in the constructore)
 \item any other tab_UI (if given in the constructor)
 \item buttons that switch to previous/next tab (if applicable)

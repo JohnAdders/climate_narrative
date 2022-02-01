@@ -3,6 +3,8 @@ position: 3
 is_scenario: yes
 transition: no
 physical: high
+exec_description: |
+  PLACEHOLDER
 description: |
   These scenarios assume that some climate policies are implemented in some
   jurisdictions, but globally efforts are insufficient to halt significant

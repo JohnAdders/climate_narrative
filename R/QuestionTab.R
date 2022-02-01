@@ -8,6 +8,8 @@ QuestionTab <- R6Class(
   public = list(
     #' @field tab_name name of the tab
     tab_name = NULL,
+    #' @field tab_title pretty title to be used in the UI
+    tab_title = NULL,
     #' @field tab_ui specific UI function, may take any number of arguments
     tab_ui = NULL,
     #' @field tab_ui_foot specific UI function to be used in footer (without arguments)
@@ -38,6 +40,7 @@ QuestionTab <- R6Class(
     #' it also automatically gets ui, server and foot
     #' from the relevant functions (or makes it empty if the function does not exist)
     #' @param tab_name name of the tab
+    #' @param tab_title title of the tab to be used in the UI
     #' @param previous_tab name of the previous tab
     #' @param next_tab name of the next tab
     #' @param add_header whether to add a standard header
@@ -46,9 +49,10 @@ QuestionTab <- R6Class(
     #' @param type type of issuers for which the inputs are applicable
     #' @param subtype unique reference of tab within a type of issuers
     #' @param ui_settings (optional) list of arguments to pass to tab_ui
-    initialize = function(tab_name, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE,
+    initialize = function(tab_name, tab_title, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE,
                           exposure = NULL, type = NULL, subtype = NULL, ui_settings = list()) {
       self$tab_name <- tab_name
+      self$tab_title <- tab_title
       self$tab_ui <- get0(paste0("tab_", tab_name, "_ui"))
       self$tab_ui_foot <- get0(paste0("tab_", tab_name, "_foot"))
       self$tab_server <- get0(paste0("tab_", tab_name, "_server"))
@@ -121,12 +125,13 @@ QuestionTab <- R6Class(
       }
     },
     #' @description tab UI function that combines:
-    #' 0. a common header (unless add_header=FALSE)
-    #' 1. exposure input table (if exposure table given in the constructore)
-    #' 2. any other tab_UI (if given in the constructor)
-    #' 3. buttons that switch to previous/next tab (if applicable)
-    #' 4. a tab-specific text
-    #' 5. a common footer (unless add_footer=FALSE)
+    #' 1. a common header (unless add_header=FALSE)
+    #' 2. title (unless tab_title is NULL)
+    #' 3. exposure input table (if exposure table given in the constructore)
+    #' 4. any other tab_UI (if given in the constructor)
+    #' 5. buttons that switch to previous/next tab (if applicable)
+    #' 6. a tab-specific text
+    #' 7. a common footer (unless add_footer=FALSE)
     ui = function() {
       tabpanel_params <- list(self$id)
       if (self$add_header) {
@@ -135,6 +140,12 @@ QuestionTab <- R6Class(
           tag("header", list(
             img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
           ))
+        )
+      }
+      if(!is.null(self$tab_title)){
+        tabpanel_params <- add_param(
+          tabpanel_params,
+          h2(self$tab_title)
         )
       }
       if (!is.null(self$tab_ui)) {
