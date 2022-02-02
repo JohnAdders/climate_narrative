@@ -7,32 +7,39 @@ tab_report_ui <- function() {
     }
   }))))
 
-  out <- list(
-    selectInput(
-      "report_scenario_selection",
-      "Select the scenario to show",
-      valid_options,
-      selectize = FALSE
-    ),
-    selectInput(
-      "report_sector_selection",
-      "Select the sector to show",
-      c(""),
-      selectize = FALSE
-    ),
-    hr()
+  dropdown_1 <- selectInput(
+    "report_scenario_selection",
+    "Select the scenario to show",
+    valid_options,
+    selectize = FALSE
   )
-  if(global$dev){
-    out <- c(
-      out,
-      list(
-        selectInput(
-          "version_selection",
-          "Select the report version",
-          global$report_versions,
-          global$report_version,
-          selectize=FALSE
-        )
+  dropdown_2 <- selectInput(
+    "report_sector_selection",
+    "Select the sector to show",
+    c(""),
+    selectize = FALSE
+  )
+  
+  if (global$dev){
+    dropdown_3 <- selectInput(
+      "version_selection",
+      "Select the report version",
+      global$report_versions,
+      global$report_version,
+      selectize=FALSE
+    )
+    out <- list(
+      fluidRow(
+        column(4, dropdown_1),
+        column(4, dropdown_2),
+        column(4, dropdown_3)
+      )
+    )
+  } else {
+    out <- list(
+      fluidRow(
+        column(6, dropdown_1),
+        column(6, dropdown_2)
       )
     )
   }
@@ -41,22 +48,28 @@ tab_report_ui <- function() {
     out <- c(out, list(uiOutput("html_report")))
   } else {
     out <- c(out, list(
-      downloadButton("report", "Download the selected scenario/sector report as RTF"),
-      conditionalPanel(
-        'input.report_scenario_selection != "" | input.report_sector_selection != ""',
-        hr(),
-        actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
+      fluidRow(
+        column(4, downloadButton("report", "Download the selected scenario/sector report as RTF")),
+        column(4, actionButton("update_yamls", "Update the report text files")),
+        column(4, conditionalPanel(
+          'input.report_scenario_selection != "" | input.report_sector_selection != ""',
+          actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
+          )
+        )
       )
     ))
     if (global$sidebar_toc){
       out <- c(
         out,
         list(
-          div(
-            id = "html_report_div",
-            sidebarLayout(
-              sidebarPanel(uiOutput("html_report_nav")),
-              mainPanel(uiOutput("html_report"))
+          sidebarLayout(
+            sidebarPanel(
+              div(id = "html_toc_div", uiOutput("html_report_nav")),
+              width = 3
+            ),
+            mainPanel(
+              div(id = "html_report_div", uiOutput("html_report")),
+              width = 9
             )
           )
         )
@@ -94,6 +107,15 @@ tab_report_server <- function(input, output, session, tab) {
     input$version_selection,
     {
       global$report_version <- input$version_selection
+    }
+  )
+  observeEvent(
+    input$update_yamls,
+    {
+      global$exposure_classes <- read_dir("exposure_class")
+      global$exposures <- read_dir("exposure")
+      global$scenarios <- read_dir("scenario")
+      global$products <- read_dir("product")
     }
   )
   if (global$sidebar_toc){

@@ -34,8 +34,9 @@ table td, table th {
     overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
 }
 
-#html_report_div {
-    max-height: 500px;
+#html_report_div,
+#html_toc_div {
+    height: 300px;
     overflow-y: scroll;
 }
 
