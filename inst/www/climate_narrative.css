@@ -43,6 +43,8 @@ table td, table th {
 .inline a,
 .inline h1,
 .inline h2,
-.inline h3 {
+.inline h3,
+.inline h4,
+.inline h5 {
   display: inline;
 }

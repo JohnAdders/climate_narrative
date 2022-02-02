@@ -29,18 +29,24 @@ tab_report_ui <- function() {
       selectize=FALSE
     )
     out <- list(
-      fluidRow(
-        column(4, dropdown_1),
-        column(4, dropdown_2),
-        column(4, dropdown_3)
-      )
+      #div(
+        fluidRow(
+          column(4, dropdown_1),
+          column(4, dropdown_2),
+          column(4, dropdown_3)
+        )#,
+        #id = "report_page_top"
+      #)
     )
   } else {
     out <- list(
-      fluidRow(
-        column(6, dropdown_1),
-        column(6, dropdown_2)
-      )
+      #div(
+        fluidRow(
+          column(6, dropdown_1),
+          column(6, dropdown_2)
+        )#,
+      #  id = "report_page_top"
+      #)
     )
   }
   if (!rmarkdown::pandoc_available()) {
@@ -118,21 +124,4 @@ tab_report_server <- function(input, output, session, tab) {
       global$products <- read_dir("product")
     }
   )
-  if (global$sidebar_toc){
-    output$html_report_nav <- renderUI(HTML(
-      '
-      <div id="TOC">
-      <p>This will be a dynamic ToC if the layout is a good direction</p>
-      <ul>
-      <li><a href="#executive-summary">Executive summary</a>
-      <ul>
-      <li><a href="#inputs">Inputs</a></li>
-      <li><a href="#scenarios">Scenarios</a></li>
-      <li><a href="#exposures">Exposures</a></li>
-      </ul></li>
-      </ul>
-      </div>
-      '
-    ))
-  }
 }
