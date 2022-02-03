@@ -37,9 +37,9 @@ description: |
   
   Governments that issue sovereign bonds are exposed to various risks from 
   climate change, including changes to fiscal revenues, higher government spending, 
-  changes in GDP growth and potential downgrades in credit rating. In this paper we 
-  use a '20-notch' sovereign bond rating scale translated from S&P's alphabetical 
-  standardized rating scale to outline changes to sovereign bond 
+  changes in GDP growth and potential downgrades in credit rating. In this paper 
+  a '20-notch' sovereign bond rating scale translated from S&P's alphabetical 
+  standardized rating scale (see Appendix) is used to outline changes to sovereign bond 
   ratings, as is common in surrounding literature. Impacts of climate change on 
   sovereign bond ratings are discussed in reference to the 2021 working paper titled 
   "Rising Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign 
@@ -47,10 +47,6 @@ description: |
   towards quantifying the effects of climate change on credit ratings and is illustrative 
   based on a hypothetical model. It is not predictive and broader literature on this 
   topic is also available.
-  
-  ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
-
-  **Source:**: 20 Notch Rating Scale
 
 transition:
   high:
@@ -59,7 +55,7 @@ transition:
       late policy action enables a "fossil recovery" out of the economic crisis brought 
       about by COVID-19. CO<sub>2</sub> emissions increase until 2030 before policies 
       drive a sharp decrease after 2030 to compensate for the inaction beforehand. This 
-      results in smaller increases in carbon taxes compared to orderly transition scenarios 
+      results in smaller increases in carbon taxes compared to Orderly transition scenarios 
       until 2030, but significantly higher carbon taxes thereafter as countries attempt to make 
       up lost ground. In the Divergent Net Zero scenario the reduction in CO<sub>2</sub> 
       emissions starts to occur earlier and as a result is more gradual.
@@ -77,7 +73,6 @@ transition:
       On the other hand, government spending (through subsidies and investment) 
       could encourage consumer spending and investment in the use of renewables, 
       energy efficiency, energy storage, etc, leading to increases in fiscal revenues. 
-      
       The Disorderly transition risk scenario could also lead to a reduction in GDP 
       growth. This would have a negative impact on EU sovereign bonds.
 
@@ -88,7 +83,8 @@ transition:
       carbon intensive sectors and technologies. Countries with carbon-intensive 
       sectors such as oil and gas are consequently some of the most vulnerable to 
       transition risk. 
-      The impact from disorderly transition risk scenarios on fiscal 
+
+      The impact from Disorderly transition risk scenarios on fiscal 
       revenues are largely dependent on the efficiency of government spending in trying 
       to mitigate these risks. While the use of taxes to incentivize more 
       environmentally friendly production, transportation and consumption patterns 
@@ -117,35 +113,37 @@ transition:
       A change in a country's GDP could have an impact on the level of fiscal revenue 
       it receives. Assuming taxation rates remain unchanged, a decrease in GDP could 
       lead to a reduction in fiscal revenue. According to estimates from the NGFS, 
-      disorderly transition risk scenario could result in significant GDP losses. In 
+      Disorderly transition risk scenario could result in significant GDP losses. In 
       these scenarios, world GDP losses are estimated to be between -4.2% and -4.8% 
       by 2050. World GDP impacts from transition risk are negative as the speed of 
       the transition combines with investment uncertainty and affects consumption 
       and investment. In these scenarios, there is a large mix of physical and 
       transition risks in 2050. Based on the IIASA NGFS Scenario Explorer v2.0, 
-      the expected impact of a disorderly scenario on EU GDP compared to 2015 would 
+      the expected impact of a Disorderly scenario on EU GDP compared to 2015 would 
       be significant, ranging from -3.77% to -3.84% by 2050.
       
       **Downgrading of credit ratings effect**
       
-      Climate risk is, to some extent, priced in the sovereign bond market. No sovereign 
-      has yet been downgraded because of the climate risks it faces, although rating 
-      agencies anticipate that climate trends could have implications for ratings 
-      in coming decades. According to the 2021 "Rising Temperatures, Falling Ratings: 
-      The Effect of Climate Change on Sovereign Creditworthiness" working paper from 
-      the University of Cambridge, in disorderly transition risk scenarios, most 
-      EU countries would be marginally downgraded (1 notch or less). Most 
-      downgrades would be among top-rated countries. This does not necessarily reflect 
-      increased climate risks for these top-rated countries, but greater sensitivity 
+      Climate-related risks are, to some extent, priced in the sovereign bond
+      market. No sovereign has yet been downgraded because of the climate-related 
+      risks it faces, although rating agencies anticipate that climate trends 
+      could have implications for ratings in coming decades. According to 
+      the 2021 "Rising Temperatures, Falling Ratings: The Effect of Climate 
+      Change on Sovereign Creditworthiness" working paper from the University of 
+      Cambridge, in Disorderly transition risk scenarios, most EU countries 
+      would be marginally downgraded (1 notch or less). Most downgrades would 
+      be among top-rated countries. This does not necessarily reflect increased 
+      climate-related risks for these top-rated countries, but greater sensitivity 
       of the top ratings. It is easier to lose an AAA rating than a C rating. 
       
-      According to the study, in these scenarios, Germany would have a downgrade of 0.23 notches 
-      by 2100, increasing the cost of borrowing for the German government by approximately 
-      US$0.23-0.35bn. France would have a downgrade of 0.83 notches by 2100, increasing 
-      the cost of borrowing for the French government by approximately US$1.35-2.02bn.
+      According to the study, in these scenarios, Germany would have a downgrade of 
+      below one notch by 2100, increasing the cost of borrowing for the German 
+      government by approximately US$0.23-0.35bn. France would have a downgrade 
+      of below one notch by 2100, increasing the cost of borrowing for the French 
+      government by approximately US$1.35-2.02bn.
   low:
     always: |
-      In early/orderly transition risk scenarios, immediate policy reaction, 
+      In Early/Orderly transition risk scenarios, immediate policy reaction, 
       societal change and national energy strategies leads to significant and 
       immediate increases in carbon prices. This could have a strong impact 
       on fiscal revenues in countries with a strong level of dependence on 
@@ -170,7 +168,7 @@ transition:
       
       Transition risks for sovereigns are largely associated with the exposure 
       to carbon intensive sectors and technologies. Based on the IIASA NGFS 
-      Climate Scenarios, REMIND model by 2050, in early/orderly 
+      Climate Scenarios, REMIND model by 2050, in Early/Orderly 
       scenarios, fossil fuels represent only ~27% of global energy demand compared 
       to ~83% in 2020. Countries with carbon-intensive sectors such as oil and gas 
       are consequently some of the most vulnerable to transition risk. 
@@ -182,12 +180,18 @@ transition:
       can help economies transition to a net-zero scenario, a poorly managed 
       transition policy could lead to shocks in economic activity. Depending on 
       the respective country's size of fossil fuel or renewable energy sectors, 
-      green policies, such as carbon taxes would impact positively or negatively 
+      green policies, such as carbon taxes would impact, positively or negatively, 
       firms' profitability, which would, in turn, impact fiscal revenues 
       (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}). 
       
-      The EU's emissions have reduced by over 34% between 1990 and 2020. In 2020, the share of renewables in the EU27 power sector increased to 39% (almost 4% above the 2019 levels), exceeding the share of electricity from fossil fuels. On average, 15% of electricity in the EU in 2020 came from wind energy, exceeding the share of coal in Q4 of 2020. In 2020, electricity generation from coal decreased by 22% and its share in electricity generation fell to 13% (4% below the 2019 level).
+      The EU's emissions have reduced by over 34% between 1990 and 2020. In 2020, 
+      the share of renewables in the EU27 power sector increased to 39% (almost 4% 
+      above the 2019 levels), exceeding the share of electricity from fossil fuels. 
+      On average, 15% of electricity in the EU in 2020 came from wind energy, exceeding 
+      the share of coal in Q4 of 2020. In 2020, electricity generation from coal 
+      decreased by 22% and its share in electricity generation fell to 13% (4% below 
+      the 2019 level).
       
       ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
       
@@ -199,25 +203,25 @@ transition:
       A change in a country's GDP could have an impact on the level of fiscal 
       revenue it receives. Assuming taxation rates remain unchanged, a decrease 
       in GDP could lead to a reduction in fiscal revenue. According to estimates 
-      from the NGFS, the early/orderly transition risk scenarios would generally 
+      from the NGFS, the Early/Orderly transition risk scenarios would generally 
       limit GDP losses. The world GDP losses are estimated to be between -1.5% 
       and -2.5% by 2050. GDP impacts from transition risk are slightly positive 
       in the Net Zero 2050 scenario as negative impacts on demand from higher carbon 
       prices and energy costs are more than offset by the recycling of carbon 
       revenues into government investment and lower employment taxes. 
       
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the orderly net 
-      zero scenario on EU GDP compared to 2015 would be non-significant, ranging 
+      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly Net 
+      Zero scenario on EU GDP compared to 2015 would be non-significant, ranging 
       from -0.4% to +0.8% by 2050.
       
       **Downgrading of credit ratings**
       
-      Climate risk is, to some extent, priced in the sovereign bond market. No 
-      sovereign has yet been downgraded because of the climate risks it faces, 
+      Climate-related risks are, to some extent, priced in the sovereign bond market. No 
+      sovereign has yet been downgraded because of the climate-related risks it faces, 
       although rating agencies anticipate that climate trends could have implications 
       for ratings in coming decades. According to the 2021 "Rising Temperatures, 
       Falling Ratings: The Effect of Climate Change on Sovereign Creditworthiness" 
-      working paper from the University of Cambridge, in early/orderly transition 
+      working paper from the University of Cambridge, in Early/Orderly transition 
       risk scenarios, most EU countries would be marginally downgraded 
       (1 notch or less). Most downgrades would be among top-rated countries. 
       This does not necessarily reflect increased climate risks for these top-rated 
@@ -225,9 +229,9 @@ transition:
       AAA rating than a C rating. 
       
       According to the study, in a transition risk (RCP 2.6) scenario, Germany would have 
-      a downgrade of 0.23 notches by 2100, increasing the cost of borrowing for the 
-      German government by approximately US$0.23-0.35bn. France would have a downgrade of 
-      0.83 notches by 2100, increasing the cost of borrowing for the French government by 
+      a downgrade below one notch by 2100, increasing the cost of borrowing for the 
+      German government by approximately US$0.23-0.35bn. France would have a downgrade below 
+      one notch by 2100, increasing the cost of borrowing for the French government by 
       approximately US$1.35-2.02bn.
 physical:
   high:
@@ -253,7 +257,7 @@ physical:
       in less developed countries more likely to leave affected areas, this may cause 
       conflicts in receiving areas. Indeed, even within a country, climate change 
       could lead to higher inequality due to slow economic growth in particular areas. 
-      As a result, political instability could rise due to climate risk issues, both 
+      As a result, political instability could rise due to climate-related risk issues, both 
       within and between countries. 
 
     high_materiality: |
@@ -284,27 +288,27 @@ physical:
       scenario, the GDP losses are estimated to be between -2.8% and-4.8% by 2050. 
       World GDP losses from physical risks scale with the rise in temperatures in 
       the scenarios over time. Based on the IIASA NGFS Scenario Explorer v2.0, the 
-      expected impact of a disorderly scenario on EU GDP compared to 2015 would be 
+      expected impact of a hot house world scenario on EU GDP compared to 2015 would be 
       significant, ranging from -1.9% to -2.34% by 2050.
       
       **Downgrading of credit ratings effect**
       
-      Climate risk is, to some extent, priced in the sovereign bond market. No 
-      sovereign has yet been downgraded because of the climate risks it faces, 
+      Climate-related risks are, to some extent, priced in the sovereign bond market. No 
+      sovereign has yet been downgraded because of the climate-related risks it faces, 
       although rating agencies anticipate that climate trends will have implications 
       for ratings in coming decades. According to the 2021 "Rising Temperatures, 
       Falling Ratings: The Effect of Climate Change on Sovereign Creditworthiness" 
       working paper from the University of Cambridge, in a high physical risk 
       scenario, most developed countries would be significantly downgraded, 
-      with an average downgrade of 2.48 notches by 2100. Most downgrades would 
+      with an average downgrade exceeding two notches by 2100. Most downgrades would 
       be among top-rated countries. This does not necessarily reflect increased 
-      climate risks for these top-rated countries, but greater sensitivity of the 
+      climate-related risks for these top-rated countries, but greater sensitivity of the 
       top ratings. It is easier to lose an AAA rating than a C rating.
       
       According to the study, in a high physical risk scenario, Germany would have 
-      a downgrade of 3.65 notches by 2100, increasing the cost of borrowing for 
+      a downgrade exceeding three by 2100, increasing the cost of borrowing for 
       the German government by approximately US$3.7-5.5bn. France would have a 
-      downgrade of 2.43 notches by 2100, increasing the cost of borrowing for 
+      downgrade exceeding two by 2100, increasing the cost of borrowing for 
       the French government by approximately US$3.9-5.9bn.
 
   low:
@@ -316,12 +320,12 @@ physical:
       This could result in a negative impact on GDP globally by 2100 and hit governments'
       finances. 
       
-      Extreme weather events such as wildfires, floods, and heat waves could be more prevalent, 
+      Extreme weather events such as wildfires, floods, and heat waves could become more prevalent, 
       impacting households, businesses, cities and states. There are also likely indirect 
       risks, such as those caused by international migration (e.g. increased inequalities, 
       labour right issues, social conflicts), or via biodiversity loss, or to industries 
       supply chains and international trade. The low physical risk scenario could lead to a 
-      reduction in GDP growth. This would have a negative impact on EU sovereign bonds.
+      significant reduction in GDP growth. This would have a negative impact on EU sovereign bonds.
       
       As global temperatures rise in a low physical risk scenario, the effects of 
       climate change, including coastal flooding, reduced rainfall in drylands and 
@@ -330,7 +334,7 @@ physical:
       in less developed countries more likely to leave affected areas, this may cause 
       conflicts in receiving areas. Indeed, even within a country, climate change could 
       lead to higher inequality due to slow economic growth in particular areas. As a 
-      result, political instability could rise due to climate risk issues, both within 
+      result, political instability could rise due to climate-related risk issues, both within 
       and between countries.
 
     high_materiality: |
@@ -349,34 +353,40 @@ physical:
       tax revenues are dependent on economic output. Adaptation costs would 
       cause further strain to fiscal expenditures. Assuming taxation rates remain 
       unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. 
-      According to estimates from the NGFS, an orderly transition with low 
-      physical risk would generally limit GDP losses. In an orderly scenario, 
+      According to estimates from the NGFS, an Orderly transition with low 
+      physical risk would generally limit GDP losses. In an Orderly scenario, 
       world GDP losses from both physical and transition risk are estimated to 
       be between -1.5% and -2.5% by 2050. World GDP losses from physical risks 
-      scale with the rise in temperatures in the scenarios over time. Based on 
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the orderly 
-      net zero scenario on EU GDP compared to 2015 would be non-significant, 
-      ranging from -0.4% to +0.8% by 2050.
+      scale with the rise in temperatures in the scenarios over time. 
+      
+      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact 
+      of the Orderly Net Zero scenario on EU GDP compared to 2015 would be 
+      non-significant, ranging from -0.4% to +0.8% by 2050.
       
       **Downgrading of credit ratings**
       
-      Climate risk is, to some extent, priced in the sovereign bond market. No 
-      sovereign has yet been downgraded because of the climate risks it faces, 
+      Climate-related risks are, to some extent, priced in the sovereign bond market. No 
+      sovereign has yet been downgraded because of the climate-related risks it faces, 
       although rating agencies anticipate that climate trends will have 
       implications for ratings in coming decades. According to the 2021 "Rising 
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign 
       Creditworthiness" working paper from the University of Cambridge, in a 
       low physical risk (NGFS Orderly) scenario, most developed countries would 
       be marginally downgraded (1 notch or less). Most downgrades would be among 
-      top-rated countries. This does not necessarily reflect increased climate risks 
+      top-rated countries. This does not necessarily reflect increased climate-related risks 
       for these top-rated countries, but greater sensitivity of the top ratings. 
       It is easier to lose an AAA rating than a C rating. According to the study, 
-      in a low physical risk (RCP 2.6) scenario, Germany would have a downgrade of 
-      0.23 notches by 2100, increasing the cost of borrowing for the German 
-      government by approximately US$0.23-0.35bn. France would have a downgrade of 
-      0.83 notches by 2100, increasing the cost of borrowing for the French 
+      in a low physical risk (RCP 2.6) scenario, Germany would have a downgrade  
+      below one notch by 2100, increasing the cost of borrowing for the German 
+      government by approximately US$0.23-0.35bn. France would have a downgrade  
+      below one notch by 2100, increasing the cost of borrowing for the French 
       government by approximately US$1.35-2.02bn.
 
+appendix: |
+  ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
+
+  **Source:**: 20 Notch Rating Scale
+      
 references: |
   - [The risks from climate change to sovereign debt in Europe - Bruegel, September 2021](http://bruegel.org/reader/The-risks-from-climate-change-to-sovereign-debt-in-Europe#how-exposed-are-european-sovereigns-to-climate-risk){target="\_blank"}
 
