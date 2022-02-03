@@ -1,5 +1,6 @@
-position: 0
+position: -1
 is_scenario: no
+include_in_HTML: no
 description: |
   ```{=rtf}
     \page
@@ -27,3 +28,7 @@ description: |
   out of or in connection with the report.
 
   **Copyright 2021 The Climate Financial Risk Forum**
+
+  ```{=rtf}
+    \page
+  ```
