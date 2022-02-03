@@ -1,6 +1,4 @@
 name: Utilities
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Utilities** sector comprises of companies which provide basic amenities
   such as water, sewage services, electricity, and gas. The sector includes
@@ -29,6 +27,8 @@ description: |
 
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Whilst the utilities sector could continue to play a critical role in
       meeting customer demand for the coming years, the changing patterns in
@@ -122,6 +122,8 @@ transition:
       power generation, supporting the development of low carbon alternates to
       natural gas, and increasing the weight of electricity in their portfolio.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Whilst the utilities sector could continue to play a critical role in
       meeting customer demand for the coming years, the changing patterns in
@@ -208,6 +210,8 @@ transition:
 
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The utilities sector is exposed to the physical impacts of climate change
       including both the chronic effects (e.g. raised sea-levels) and acute
@@ -248,6 +252,8 @@ physical:
 
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The utilities sector is exposed to the physical impacts of climate change
       including both the chronic effects (e.g. raised sea-levels) and acute

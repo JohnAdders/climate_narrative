@@ -1086,7 +1086,13 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs){
     for (i in 1:nrow(less_material)){
       item <- less_material[i, 1]
       less_material$name[i] <- global$exposure_classes[[item]][["name"]]
-      less_material$risk.description[i] <- global$exposure_classes[[item]][["exec_description"]]
+      less_material$risk.description[i] <- paste(
+        global$exposure_classes[[item]][["transition"]][["high"]][["exec_description"]],
+        global$exposure_classes[[item]][["transition"]][["low"]][["exec_description"]],
+        global$exposure_classes[[item]][["physical"]][["high"]][["exec_description"]],
+        global$exposure_classes[[item]][["physical"]][["low"]][["exec_description"]],
+        sep = "\n"
+      )
     }
     for (i in 1:ncol(less_material)){
       colnames(less_material)[i] <- capitalize(colnames(less_material)[i])

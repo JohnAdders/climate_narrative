@@ -1,6 +1,4 @@
 name: Oil and gas sector
-exec_description: |
-  PLACEHOLDER
 description: |
   The **oil and gas sector** comprises three main activities - upstream
   (exploration and production), midstream (transportation and processing) and
@@ -31,6 +29,8 @@ description: |
 
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in a
       Disorderly/Divergent transition risk scenario, fossil fuels represent only
@@ -118,6 +118,8 @@ transition:
       company providing renewable power generation or investing in carbon
       capture and storage (CCS) technologies.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in
       early/orderly transition risk scenarios, fossil fuels represent only ~27%
@@ -206,6 +208,8 @@ transition:
       [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The oil and gas sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. rising sea-levels)
@@ -279,6 +283,8 @@ physical:
 
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The oil and gas sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. raised sea-levels

@@ -1,6 +1,4 @@
 name: Motor Underwriting Class
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Motor** underwriting class involves insuring cars, trucks, motorcycles,
   and other road vehicles. Motor insurance typically covers drivers for third
@@ -15,6 +13,8 @@ description: |
   their business.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       While motor insurance could continue to play a role in meeting customer
       demand for the coming years, the changing patterns in energy generation in
@@ -96,6 +96,8 @@ transition:
       well as potentially have knock-on impacts for insurance pricing, terms and
       conditions and coverage.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       While motor insurance firms could continue to play a role in meeting
       customer demand for the coming years, the changing patterns in energy
@@ -165,6 +167,8 @@ transition:
       knock-on impacts for insurance pricing, terms and conditions and coverage.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In high physical risk scenarios, climate change is likely to result in
       increased disruption that could have an impact on the motor sector and its
@@ -205,6 +209,8 @@ physical:
       disposable income resulting in a reduction in growth of number of vehicle
       owners.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the low physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on the motor sector and its

@@ -1,6 +1,4 @@
 name: European sovereign
-exec_description: |
-  PLACEHOLDER
 description: |
   Sovereign (or government) bonds are debt securities issued by governments to 
   support government spending. Governments agree to repay the face value of the 
@@ -54,6 +52,8 @@ description: |
 
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the Delayed transition risk scenario, the delayed transition driven by a 
       late policy action enables a "fossil recovery" out of the economic crisis brought 
@@ -144,6 +144,8 @@ transition:
       US$0.23-0.35bn. France would have a downgrade of 0.83 notches by 2100, increasing 
       the cost of borrowing for the French government by approximately US$1.35-2.02bn.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In early/orderly transition risk scenarios, immediate policy reaction, 
       societal change and national energy strategies leads to significant and 
@@ -231,6 +233,8 @@ transition:
       approximately US$1.35-2.02bn.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In a high physical risk scenario, physical risks would undermine GDP growth 
       due to loss of land, changing crop yields, depleted natural resources, lower 
@@ -308,6 +312,8 @@ physical:
       the French government by approximately US$3.9-5.9bn.
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In a low physical risk scenario, physical risks would undermine GDP growth 
       due to loss of land, changing crop yields, depleted natural resources, lower 
