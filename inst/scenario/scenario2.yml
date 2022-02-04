@@ -4,10 +4,27 @@ is_scenario: yes
 transition: high
 physical: low
 exec_description: |
-  PLACEHOLDER
+  Policies drive a sharp decrease in CO<sub>2</sub> emissions after 2030 
+  and increase of carbon prices until 2030. In the Divergent Net Zero 
+  scenario the reduction in CO<sub>2</sub> emissions starts to occur 
+  earlier and as a result is more gradual, the carbon prices rise at 
+  a smoother. The investments in energy efficiency and low carbon are 
+  projected to increase (e.g. annual investment in low carbon increases 
+  from ~750 billion USD to ~3 trillion USD by 2050). The global mean 
+  temperatures are projected to increase across the world by 1.5&deg;C to 
+  1.8&deg;C compared to pre-industrial levels.
+  
+  The Delayed/Divergent transition risk scenarios could lead to chronic changes 
+  in living conditions affecting health, labour productivity (reduce capacity 
+  of the human body to perform physical labour from ~0.035% in 2020 to ~0.09% 
+  in 2050), agriculture, ecosystems, and sea-level rise. It can also further 
+  change the frequency and severity of weather events such as heatwaves, droughts, 
+  wildfires, tropical cyclones, and flooding. The GDP losses are estimated to be 
+  between -4.2% and-4.8% by 2050.
+
 description: |
   These Disorderly/Divergent transition risk scenarios assume the introduction
-  of effective policy change is delayed or divergent across countries and
+  of effective policy change is Delayed or Divergent across countries and
   sectors.
 
   ![NGFS scenarios Framework](NGFS_scenarios_Framework_Disorderly.png)
@@ -37,7 +54,7 @@ description: |
   ![CO2 emissions](CO2_emissions_Disorderly.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer, REMIND model.](https://data.ene.iiasa.ac.at/ngfs/#/workspaces/82){target="\_blank"}
+  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   In the Delayed transition scenario, late policy reaction enables a "fossil
   recovery" out of the economic crisis, which delays the increase of carbon
@@ -50,30 +67,77 @@ description: |
   ![Carbon price](Carbon_Price_Disorderly.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer, REMIND model. Carbon prices are weighted global averages.](https://data.ene.iiasa.ac.at/ngfs/#/workspaces/82){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
+  The investments in energy efficiency and low carbon are projected to increase 
+  in Disorderly/Divergent transition risk scenarios. These are expected to be 
+  higher in a Divergent compared to a Delayed scenario. Overall, firms could be 
+  required to readjust their capital expenditure in line with these trends; 
+  developing more efficient and less carbon intensive products and services in 
+  order to adhere to carbon pricing policies. The technologies that result from 
+  these investments could also adjust asset valuations of relatively older 
+  technology. Annual investment in energy efficiency increases from around 200 
+  billion USD (inflation adjusted to 2010 baseline) to between 600 billion USD 
+  and 850 billion USD by 2050, whilst annual investment in low carbon increases 
+  from ~750 billion USD to ~3 trillion USD by 2050. 
+  
+  ![Energy Efficiency Investment](Investment_Energy_Efficiency_Disorderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  
+  ![Low Carbon Investment](Investment_Low_Carbon_Disorderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+  
   Observed climate change on 1.2&deg;C, compared to pre-industrial levels, has
   already more than doubled both the global land area and the global population
   annually exposed to river flood, crop failure, tropical cyclones, wildfire,
-  drought and heatwaves. (See Kaufman, D. et al. (2020)).
-
-  The increasing concentrations of carbon dioxide, methane and nitrous oxide in
-  the atmosphere are unprecedented in at least the last 800,000 years and are
-  extremely likely to have been the dominant cause of warming since the mid-20th
-  century. In Disorderly transition risk scenarios global mean temperatures are
-  projected to increase across the world by 1.5&deg;C to 1.8&deg;C with land warming
-  faster than oceans and high latitudes experiencing higher warming.
+  drought and heatwaves. (See Kaufman, D. et al. (2020)). The increasing 
+  concentrations of carbon dioxide, methane and nitrous oxide in the atmosphere 
+  are unprecedented in at least the last 800,000 years and are extremely likely 
+  to have been the dominant cause of warming since the mid-20th century. 
+  In these scenarios global mean temperatures are projected to increase across 
+  the world by 1.5&deg;C to 1.8&deg;C above pre-industrial levels, with land 
+  warming faster than oceans and high latitudes experiencing higher warming.
 
   ![Global mean temp rise](Global_mean_temperature_Disorderly.png)
 
   **Source:**
   [IIASA NGFS Scenario Explorer, NGFS Scenario Data IAM outputs v2.2 REMIND-MAgPIE 2.1-4.2 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
+  
   These changes could lead to chronic changes in living conditions affecting
   health, labour productivity, agriculture, ecosystems, and sea-level rise. It
   can also further change the frequency and severity of weather events such as
-  heatwaves, droughts, wildfires, tropical cyclones, and flooding.
+  heatwaves, droughts, wildfires, tropical cyclones, and flooding. For example, 
+  in the delayed transition risk scenario we could see the following:
+  
+  * A decrease in labour productivity due to the reduced capacity of the human 
+    body to perform physical labour under hot and humid climate conditions worsens 
+    from ~0.035% in 2020 to ~0.09% in 2050. However, this decrease lessens after 2050.
+    
+  ![Labour Productivity](Labour_Productivity_Heat_Disorderly.png)
 
+  **Source:** 
+  [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+  
+  * The annual economic damages from river floods are projected to increase, 
+    peaking at a ~140% over a  1986-2006 reference period around 2035, and 
+    remaining around this level thereafter. Annual economic damages from tropical 
+    cyclones are also projected to increase, but to a lesser extent; peaking at 
+    ~20% above reference period levels around 2050.
+    
+  ![River Flood Damage](River_Flood_Damage_Disorderly.png)
+
+  **Source:** 
+  [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+  
+  ![Tropical Cyclone Damage](Tropical_Cyclone_Damage_Disorderly.png)
+
+  **Source:** 
+  [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+  
   In these scenarios the GDP losses are estimated to be between -4.2% and -4.8%
   by 2050. World GDP losses from physical risks scale with the rise in
   temperatures in the scenarios over time. World GDP impacts from
@@ -82,19 +146,19 @@ description: |
   investment. In these scenarios, there is a large mix of physical and
   transition risks in 2050.
 
+  The GDP losses highlighted in the below graph were calculated based on 
+  Kalkuhl and Wenz (2020) methodology at the country level for the
+  change in average temperature in each scenario compared to the previous year.
+  This methodology does not include impacts related to extreme weather, sea-level
+  rise or wider societal impacts from migration or conflict; these would likely 
+  strongly increase the physical risk. These estimates also
+  do not fully capture adaptation, which would reduce impacts but require
+  significant investment.
+  
   ![GDP](GDP_Disorderly.png)
 
   **Source:**
   [IIASA NGFS Scenario Explorer, NGFS Scenario Data NIGEM v2.0 NiGEM NGFS v1.21 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
-  Note GDP losses highlighted in the above graph were calculated based on the
-  methodology set out in Kalkuhl and Wenz (2020) at the country level for the
-  change in average temperature in each scenario compared to the previous year.
-  The methodology does not include impacts related to extreme weather, sea-level
-  rise or wider societal impacts from migration or conflict. For given countries
-  these would likely strongly increase the physical risk. These estimates also
-  do not fully capture adaptation, which would reduce impacts but require
-  significant investment.
 
   Overall, the Delayed transition scenario creates a risk of leaving very little
   or no time to develop and deploy counter measures. This leaves a limited

@@ -5,10 +5,8 @@ description: |
   additions, alterations, or maintenance and repairs. The onsite assembly of
   pre-cut, panelised, and prefabricated buildings and construction of temporary
   buildings are also included in this sector. Establishments in this sector are
-  classified based on the types of buildings they construct.
-
-  The construction sector includes companies that are, for example, involved in
-  the following:
+  classified based on the types of buildings they construct. The construction 
+  sector includes companies that are, for example, involved in the following:
 
   1. The construction of residential and commercial buildings. This also
      includes remodelling or renovating work for the buildings.
@@ -41,10 +39,10 @@ transition:
       While the construction sector could continue to play a role in meeting
       customer demand for the coming years, the changing patterns in energy
       generation in the Delayed transition scenario, driven by late policy
-      action enabling a "fossil fuelled recovery" out of the economic crisis
+      action enabling a "fossil recovery" out of the economic crisis
       brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
       until 2030 before rapidly decreasing after 2030 as carbon prices are
-      increased to compensate for the inaction beforehand. In the divergent
+      increased to compensate for the inaction beforehand. In the Divergent
       scenario there is a more immediate but divergent reduction in
       CO<sub>2</sub> emissions. Both these scenarios are likely to have a
       significant impact on the profitability of this sector; constructing
@@ -99,17 +97,11 @@ transition:
       The construction sector is also likely to be impacted by rapid
       decarbonization in energy mix. Increased carbon tax cost and new
       investment for renewables could increase the electricity cost for the
-      construction industry in the short-to-medium term, however this could be
-      below a 150% increase by 2050 in a Delayed transition scenario.
+      construction industry in the short-to-medium term.
 
-      ![Electricity Price](Electricity_Price_Disorderly_Consruction.png)
-
-      **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
-      The construction sector is likely to be impacted by rapid decarbonization
+      The construction sector is also likely to be impacted by rapid decarbonization
       in transport. Within road freight vehicles, the portion of electric
-      vehicles could increase between 30% and 75% in Disorderly/Divergent
+      vehicles could increase between 30% and 75% by 2050 in Disorderly/Divergent
       transition risk scenarios.
 
       ![Freight Vehicles](Electric_Freight_Vehicles_Disorderly_Construction.png)
@@ -132,16 +124,16 @@ transition:
     exec_description: |
       PLACEHOLDER
     always: |
-      In early/orderly transition risk scenarios, the demand for construction is
+      In Early/Orderly transition risk scenarios, the demand for construction is
       likely to increase. The construction sector was responsible for 13% of
       global GDP in 2020, and this share is expected to increase as the global
-      population continues to rise. However, the early/orderly transition risk
+      population continues to rise. However, the Early/Orderly transition risk
       scenarios could also lead to a limited relative reduction in GDP growth.
       This could partially offset growth in demand for the construction sector.
 
       While the construction sector could continue to play a role in meeting
       customer demand for the coming years, the changing patterns in energy
-      generation in early/orderly transition risk scenarios, driven by immediate
+      generation in Early/Orderly transition risk scenarios, driven by immediate
       policy reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
@@ -200,39 +192,31 @@ transition:
       ![Cement Price](Cement_Price_Orderly_Consruction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The construction sector is also likely to be impacted by steady
       decarbonization in energy mix. By 2050, renewables and biomass would cover
       68% of global primary energy needs. The increased carbon tax cost and new
       investment for renewables could increase the electricity cost for the
-      construction industry in the short-to-medium term, however this could be
-      below a 150% increase by 2050.
-
-      ![Electricity Price](Electricity_Price_Orderly_Consruction.png)
-
-      **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
-      By 2050, renewables and biomass would cover 68% of global primary energy
-      needs.
+      construction industry in the short-to-medium term. By 2050, renewables and 
+      biomass would cover 68% of global primart energy needs.
 
       ![Primary Energy](Primary_Energy_Mix_Oil_and_Gas.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND model. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The construction sector is also likely to be impacted by steady
       decarbonization in transport. Within road freight vehicles, the portion of
-      electric vehicles could increase by between 15% and 35% in early/orderly
+      electric vehicles could increase by between 20% and 30% by 2050 in Early/Orderly
       transition scenarios.
 
       ![Freight Vehicles](Electric_Freight_Vehicles_Orderly_Construction.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database, REMIND Model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      The profitability of the construction sector, in early/orderly transition
+      The profitability of the construction sector, in Early/Orderly transition
       risk scenarios, could depend on the relevant companies proactively
       investing in innovation and new technology. It is critical that energy
       efficiency improves in design and construction, as well as in the
@@ -278,7 +262,14 @@ physical:
       - **Heatwaves** can stop work on construction projects for health and
         safety reasons while also potentially compromising the structural
         integrity of the materials, causing machinery malfunctions, and
-        increasing fire risk.
+        increasing fire risk. In the Current Policies scenario, mean air 
+        temperatures, as well as mean daily minimum and maximum air 
+        temperatures, are projected to increase significantly.
+        
+      ![Air Temperature](Air_Temp_High_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
 
       - **High winds and storms** are known to be a risk to construction.
         Tropical cyclones are likely becoming more intense leading to
@@ -286,10 +277,16 @@ physical:
 
       - **Heavy precipitation and flooding** can cause significant damage to
         project sites with infrastructure collapsing and exposed materials
-        getting damaged.
+        getting damaged. In the current policies scenario, precipitation is 
+        expected to increase significantly.
+        
+      ![Precipitation](Precipitation_High_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
 
       Significantly slowed GDP growth could further impact demand for
-      construction through its effect on individual's disposable income and
+      construction through its effect on individuals' disposable income and
       government spending.
 
       There are many mitigating actions companies can take against the physical
@@ -328,7 +325,15 @@ physical:
       - **Heatwaves** can stop work on construction projects for health and
         safety reasons while also potentially compromising the structural
         integrity of the materials, causing machinery malfunctions, and
-        increasing fire risk.
+        increasing fire risk. In the Net Zero 2050 and Delayed transition 
+        scenarios, mean air temperatures, as well as mean daily minimum and 
+        maximum air temperatures, are projected to increase more in the Delayed 
+        scenario.
+        
+      ![Air Temperature](Air_Temp_Low_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
 
       - **High winds and storms** are known to be a risk to construction.
         Tropical cyclones are likely becoming more intense leading to
@@ -336,7 +341,17 @@ physical:
 
       - **Heavy precipitation and flooding** can cause significant damage to
         project sites with infrastructure collapsing and exposed materials
-        getting damaged.
+        getting damaged, in particular, in the Delayed scenario as highlighted 
+        in the below graph. In both the Net Zero 2050 and Delayed transition 
+        scenarios, precipitation is projected to increase at an accelerating 
+        rate and peak by 2050 before falling. From 2060 onwards, in the Net 
+        Zero 2050 transition scenario, precipitation will decrease at a constant 
+        rate. 
+        
+      ![Precipitation](Precipitation_Low_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
 
       There are many mitigating actions companies can take against the physical
       risks mentioned above. For example, increasing the durability of materials

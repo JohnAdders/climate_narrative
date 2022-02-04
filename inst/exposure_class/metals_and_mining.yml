@@ -1,11 +1,11 @@
-name: Metals and Mining
+name: Mining
 description: |
-  Companies in the **Mining** sector (except Oil and Gas) primarily engage in
-  mining, mine site development, and beneficiating (i.e. preparing - crushing,
-  screening, washing, sizing, concentrating, and flotation) metallic minerals
-  and non-metallic minerals, including coal. The term "mining" is used in the
-  broad sense to include ore extraction, quarrying, and beneficiating,
-  customarily done at the mine site.
+  In the present document, it is admitted that companies in the **Mining** 
+  sector (except Oil and Gas) primarily engage in mining, mine site development, 
+  and beneficiating (i.e. preparing - crushing, screening, washing, sizing, 
+  concentrating, and flotation) metallic minerals and non-metallic minerals, 
+  including coal. The term "mining" is used in the broad sense to include ore 
+  extraction, quarrying, and beneficiating, customarily done at the mine site.
 
   The Mining sector includes companies that have complete responsibility for
   operating mines and quarries (except oil and gas wells) and those that operate
@@ -22,7 +22,7 @@ transition:
     exec_description: |
       PLACEHOLDER
     always: |
-      By 2050, in a disorderly transition risk scenario, coal represents 0.47%
+      By 2050, in a Disorderly transition risk scenario, coal represents 0.47%
       (in the Delayed Transition scenario) or 0.63% (in the Divergent Net Zero
       scenario) of global energy demand, compared to 29% in 2020.
       Carbon-intensive sectors such as coal mining are consequently some of the
@@ -56,26 +56,27 @@ transition:
         5% increase in operating costs, whilst South Africa could face a near
         25% increase.
 
-      In a disorderly transition risk scenario, the mining sector is likely to
-      be impacted. Demand for coal decreases rapidly as the share of renewables
-      in the electricity generation mix increases. This is driven by the
-      increasing share of electric vehicles on the roads.
+      In Delayed/Divergent transition risk scenarios, the mining sector is 
+      likely to be impacted. Overall, in terms of primary energy demand in the 
+      disorderly transition scenario, demand of coal falls rapidly (after 2030 in 
+      the Disorderly/Divergent transition scenario) and is replaced mostly by 
+      renewable energy sources.
 
       ![Primary Energy](Primary_Energy_Disorderly_Mining.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       Primary energy prices (i.e. the spot price at the global market) could
-      also decrease compared to 2020 levels (more significantly in the divergent
-      scenario compared to the delayed scenario).
+      also decrease compared to 2020 levels (more significantly in the Divergent
+      scenario compared to the Delayed scenario).
 
       ![Coal Price](Primary_Energy_Price_Coal_Disorderly_Mining.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      By 2050, the contraction in coal demand, in a disorderly transition risk
+      By 2050, the contraction in coal demand, in a Disorderly transition risk
       scenario, could be offset by the need to increase mining of other raw
       minerals, including those vital to many clean energy technologies. Global
       demand for these critical minerals could rise rapidly. For example,
@@ -96,7 +97,7 @@ transition:
     exec_description: |
       PLACEHOLDER
     always: |
-      By 2050, in orderly transition scenarios coal represents 0.86% (in the
+      By 2050, in Orderly transition scenarios coal represents 0.86% (in the
       Below 2&deg;C scenario) or 0.65% (in the Net Zero 2050 scenario) of global
       energy demand, compared to 29% in 2020. Carbon-intensive sectors such as
       coal mining are consequently some of the most vulnerable to transition.
@@ -105,7 +106,7 @@ transition:
       patterns in energy consumption, driven by societal change, national energy
       strategies, and carbon legislation, are likely to have a significant and
       long-term impact on demand for coal, or even lead to its total abandon,
-      with no need for new coal mines or extensions of existing ones. The mining
+      with no need for new coal mines or extensions of existing ones. However, the mining
       of minerals needed for clean energy transitions (e.g. copper, lithium and
       nickel) could increases very rapidly, and mining expertise is likely to be
       highly valued in this context.
@@ -126,28 +127,27 @@ transition:
         gold mines in South Africa have the highest GHG intensity per unit of
         ore treated, and this intensity is 23 times higher than gold mines
         located in the US. According to S&P Global, US gold mines could face a
-        5% increase in operating costs, whilst South Africa could face a near
+        5% increase in operating costs, whilst South African could face a near
         25% increase.
 
-      Overall, in the orderly transition risk scenarios, demand for coal
-      decreases steadily as the share of renewables in the electricity
-      generation mix increases. This is driven by the steadily increasing share
-      of electric vehicles on roads.
+      Overall, in terms of primary energy demand, the Early/Orderly transition 
+      risk scenarios, demand of coal falls and is replaced mostly renewable energy 
+      sources.
 
       ![Primary Energy](Primary_Energy_Orderly_Mining.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      Primary energy prices (i.e. the spot price at the global market) could
-      also decrease compared to 2020 levels.
+      In these scenarios, the primary energy prices (i.e. the spot price at the 
+      global market) could also decrease compared to 2020 levels.
 
       ![Coal Price](Primary_Energy_Price_Coal_Orderly_Mining.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      By 2050, the contraction in coal demand, in orderly transition risk
+      By 2050, the contraction in coal demand, in Early/Orderly transition risk
       scenarios, could be offset by the need to increase mining of other raw
       minerals, including those vital to many clean energy technologies. Global
       demand for these critical minerals could rise rapidly. For example,
@@ -187,41 +187,39 @@ physical:
       The following examples illustrate how the mining sector could be impacted
       in a high physical risk scenario:
 
-      **Chronic Impacts**
-
-      - **Water Stress** could lead to greater competition between mining
-        companies as they fight for scarce water resources. It could also likely
-        lead to an expectation of increased environmental regulation focusing on
-        protecting water supply and quality. This would incur hefty additional
-        costs for water intensive industries such as mining. Around 30% to 50%
-        of copper, gold, iron ore, and zinc productions are already concentrated
-        in 'water stress hot-spots' (central Asia, Chilean coast, eastern
-        Australia, the Middle East, southern Africa, western Australia, and a
-        large zone in western North America). Changes to precipitation patterns
-        could place increasing stress on the availability of water at these
-        sites, as well as at sites not currently under water stress. Depending
-        on the water intensiveness of the industrial process, such changes,
-        while seemingly minor in percentage terms, could be critical to a mine's
-        operations or license to operate.
+      **Chronic Impacts**: **Water Stress** could lead to greater competition 
+      between mining companies as they fight for scarce water resources. It 
+      could also likely lead to an expectation of increased environmental 
+      regulation focusing on protecting water supply and quality. This would 
+      incur hefty additional costs for water intensive industries such as mining. 
+      Around 30% to 50% of copper, gold, iron ore, and zinc productions are 
+      already concentrated in 'water stress hot-spots' (central Asia, Chilean 
+      coast, eastern Australia, the Middle East, southern Africa, western Australia, 
+      and a large zone in western North America). Changes to precipitation patterns 
+      could place increasing stress on the availability of water at these sites, as 
+      well as at sites not currently under water stress. Depending on the water 
+      intensiveness of the industrial process, such changes, while seemingly minor 
+      in percentage terms, could be critical to a mine's operations or license to 
+      operate.
 
       ![Water Stress](Water_Stress_Mining.png)
 
       **Source:**
       [McKinsey & Company, Climate risk and decarbonization: What every mining CEO needs to know, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know){target="\_blank"}
 
-      **Acute Impacts**
-
-      - **Flooding** from extreme rains can also cause operational disruptions,
-        including mine closure, washed-out roads, and unsafe water levels in
-        tailing dams. At one open-pit coal mine, McKinsey observed 10% annual
-        production losses from wet weather. Flooding affects iron ore and zinc
-        more than others, based on their location, at 50% and 40% of global
-        volume, respectively. McKinsey warns that the problem is expected to get
-        worse, particularly in six "wet spots" likely to experience a 50 to 60%
-        increase in extreme precipitation this century: northern Australia,
-        South America, and southern Africa during Southern Hemisphere summer,
-        and central and western Africa, India and Southeast Asia, and Indonesia
-        during Southern Hemisphere winter.
+      **Acute Impacts**: **Flooding** from extreme rains can also cause operational 
+      disruptions, including mine closure, washed-out roads, and unsafe water 
+      levels in tailing dams. At one open-pit coal mine, McKinsey observed 10% 
+      annual production losses from wet weather. Flooding affects iron ore and 
+      zinc more than others, based on their location, at 50% and 40% of global
+      volume, respectively. McKinsey warns that the problem is expected to get 
+      worse, particularly in six "wet spots" likely to experience a 50 to 60% 
+      increase in extreme precipitation this century: northern Australia, South 
+      America, and southern Africa during Southern Hemisphere summer, and central 
+      and western Africa, India and Southeast Asia, and Indonesia during Southern 
+      Hemisphere winter. Another big risk faced by mining is uncontrolled wildfires, 
+      that tend to multiply across the globe, in regions suffering from drought 
+      and heatwaves.
 
       There are many mitigating actions that companies can take against the high
       physical risks mentioned above. For example, investing in resilient
@@ -251,41 +249,38 @@ physical:
       The following examples illustrate how the mining sector could be impacted
       in a low physical risk scenario:
 
-      **Chronic Impacts**
-
-      - **Water stress** could lead to greater competition between mining
-        companies as they fight for scarce water resources. It could also likely
-        lead to an expectation of increased environmental regulation focusing on
-        protecting water supply and quality. This would incur hefty additional
-        costs for water intensive industries such as mining. Around 30% to 50%
-        of copper, gold, iron ore, and zinc productions are already concentrated
-        in 'water stress hot-spots' (central Asia, Chilean coast, eastern
-        Australia, the Middle East, southern Africa, western Australia, and a
-        large zone in western North America). Changes to precipitation patterns
-        could place increasing stress on the availability of water at these
-        sites, as well as at sites not currently under water stress. Depending
-        on the water intensiveness of the industrial process, such changes,
-        while seemingly minor in percentage terms, could be critical to a mine's
-        operations or license to operate.
+      **Chronic Impacts**: **Water stress** could lead to greater competition 
+      between mining companies as they fight for scarce water resources. It 
+      could also likely lead to an expectation of increased environmental regulation 
+      focusing on protecting water supply and quality. This would incur hefty 
+      additional costs for water intensive industries such as mining. Around 30% 
+      to 50% of copper, gold, iron ore, and zinc productions are already concentrated 
+      in 'water stress hot-spots' (central Asia, Chilean coast, eastern Australia, 
+      the Middle East, southern Africa, western Australia, and a large zone in 
+      western North America). Changes to precipitation patterns could place 
+      increasing stress on the availability of water at these sites, as well as 
+      at sites not currently under water stress. Depending on the water 
+      intensiveness of the industrial process, such changes, while seemingly minor 
+      in percentage terms, could be critical to a mine's operations or license to operate.
 
       ![Water Stress](Water_Stress_Mining.png)
 
       **Source:**
       [McKinsey & Company, Climate risk and decarbonization: What every mining CEO needs to know, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know){target="\_blank"}
 
-      **Acute Impacts**
-
-      - **Flooding** from extreme rains can also cause operational disruptions,
-        including mine closure, washed-out roads, and unsafe water levels in
-        tailing dams. At one open-pit coal mine, McKinsey observed 10% annual
-        production losses from wet weather. Flooding affects iron ore and zinc
-        more than others, based on their location, at 50% and 40% of global
-        volume, respectively. McKinsey warns that the problem is expected to get
-        worse, particularly in six "wet spots" likely to experience a 50 to 60%
-        increase in extreme precipitation this century: northern Australia,
-        South America, and southern Africa during Southern Hemisphere summer,
-        and central and western Africa, India and Southeast Asia, and Indonesia
-        during Southern Hemisphere winter.
+      **Acute Impacts**: **Flooding** from extreme rains can also cause operational 
+      disruptions, including mine closure, washed-out roads, and unsafe water 
+      levels in tailing dams. At one open-pit coal mine, McKinsey observed 10% 
+      annual production losses from wet weather. Flooding affects iron ore and 
+      zinc more than others, based on their location, at 50% and 40% of global
+      volume, respectively. McKinsey warns that the problem is expected to get 
+      worse, particularly in six "wet spots" likely to experience a 50 to 60% 
+      increase in extreme precipitation this century: northern Australia, 
+      South America, and southern Africa during Southern Hemisphere summer, 
+      and central and western Africa, India and Southeast Asia, and Indonesia
+      during Southern Hemisphere winter. Another big risk faced by mining is 
+      uncontrolled wildfires, that tend to multiply across the globe, in regions 
+      suffering from drought and heatwaves.
 
       There are many mitigating actions that companies can take against the low
       physical risks mentioned above. For example, investing in resilient
