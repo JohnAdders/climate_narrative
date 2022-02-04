@@ -225,13 +225,6 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      # produce_selective_report(
-      #   get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version,input$report_scenario_selection,TRUE),
-      #   global$report_version,
-      #   input$report_scenario_selection,
-      #   TRUE,
-      #   session$userData$temp_md_scenario_and_commons
-      # )
       write_report_to_file(
         get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version,input$report_scenario_selection,TRUE),
         session$userData$temp_md_scenario_and_commons
@@ -272,11 +265,6 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      # produce_full_report(
-      #   get_report_contents(aggregated_all_inputs(), all_inputs(), global$report_version,input$report_scenario_selection,TRUE),
-      #   global$report_version,
-      #   session$userData$temp_md_dev
-      # )
       write_report_to_file(
         get_report_contents(aggregated_all_inputs(), all_inputs(), global$report_version,input$report_scenario_selection,TRUE),
         session$userData$temp_md_dev

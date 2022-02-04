@@ -855,8 +855,9 @@ rtf_fix_table_of_contents <- function(filename){
     bookmark_text <- stringi::stri_match_first(rtf[i], regex="HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
     bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text) - 4)
     bookmark_row <- grep(
-        paste0(" ", rtf[i + 1],"\\\\p"), 
-        rtf[search_position : length(rtf)]
+        paste0(" ", rtf[i + 1], "\\p"), 
+        rtf[search_position : length(rtf)],
+        fixed = TRUE,
       )[1] + search_position - 1
     search_position <- bookmark_row
     # Appending the bookmark matching the ToC hyperlink
