@@ -252,7 +252,7 @@ physical:
         services after one of their data centres flooded.
 
       - Loss of power to the network if the national grid is impacted by weather
-        causes operational disruption
+        causes operational disruption.
 
       - **Extreme temperatures** causing overheating of equipment in base
         stations or street cabinets.
@@ -309,7 +309,7 @@ physical:
         causes operational disruption.
 
       - **Extreme temperatures** causing overheating of equipment in base
-        stations or street cabinets
+        stations or street cabinets.
 
       There are several mitigating actions these companies can take against the
       low physical risks mentioned above to build resiliency into the network

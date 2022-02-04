@@ -53,7 +53,7 @@ transition:
       could have a strong impact on sovereign bonds in particular in countries with 
       a strong level of dependence on fossil fuel energy sources.
     always: |
-      In the Delayed transition risk scenario, the delayed transition driven by a 
+      In the Delayed transition risk scenario, the Delayed transition driven by a 
       late policy action enables a "fossil recovery" out of the economic crisis brought 
       about by COVID-19. CO<sub>2</sub> emissions increase until 2030 before policies 
       drive a sharp decrease after 2030 to compensate for the inaction beforehand. This 
@@ -138,10 +138,10 @@ transition:
       climate-related risks for these top-rated countries, but greater sensitivity 
       of the top ratings. It is easier to lose an AAA rating than a C rating. 
       
-      According to the study, in these scenarios, Germany would have a downgrade of 
+      According to the study, in these scenarios, Germany would have a downgrade 
       below one notch by 2100, increasing the cost of borrowing for the German 
       government by approximately US$0.23-0.35bn. France would have a downgrade 
-      of below one notch by 2100, increasing the cost of borrowing for the French 
+      below one notch by 2100, increasing the cost of borrowing for the French 
       government by approximately US$1.35-2.02bn.
   low:
     exec_description: |
@@ -193,11 +193,11 @@ transition:
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}). 
       
       The EU's emissions have reduced by over 34% between 1990 and 2020. In 2020, 
-      the share of renewables in the EU27 power sector increased to 39% (almost 4% 
+      the share of renewables in the EU27 power sector increased to 39%, (almost 4% 
       above the 2019 levels), exceeding the share of electricity from fossil fuels. 
       On average, 15% of electricity in the EU in 2020 came from wind energy, exceeding 
       the share of coal in Q4 of 2020. In 2020, electricity generation from coal 
-      decreased by 22% and its share in electricity generation fell to 13% (4% below 
+      decreased by 22% and its share in electricity generation fell to 13%, (4% below 
       the 2019 level).
       
       ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
@@ -231,7 +231,7 @@ transition:
       working paper from the University of Cambridge, in Early/Orderly transition 
       risk scenarios, most EU countries would be marginally downgraded 
       (1 notch or less). Most downgrades would be among top-rated countries. 
-      This does not necessarily reflect increased climate risks for these top-rated 
+      This does not necessarily reflect increased climate-related risks for these top-rated 
       countries, but greater sensitivity of the top ratings. It is easier to lose an 
       AAA rating than a C rating. 
       
@@ -317,7 +317,7 @@ physical:
       According to the study, in a high physical risk scenario, Germany would have 
       a downgrade exceeding three by 2100, increasing the cost of borrowing for 
       the German government by approximately US$3.7-5.5bn. France would have a 
-      downgrade exceeding two by 2100, increasing the cost of borrowing for 
+      downgrade exceeding two notches by 2100, increasing the cost of borrowing for 
       the French government by approximately US$3.9-5.9bn.
 
   low:
