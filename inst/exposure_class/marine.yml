@@ -22,7 +22,7 @@ transition:
       While the marine sector could continue to play a role in facilitating
       global trade and meeting customer demand for the coming years, the
       changing patterns in energy generation in the Delayed transition scenario,
-      driven by late policy action enabling a "fossil fuelled recovery" out of
+      driven by late policy action enabling a "fossil recovery" out of
       the economic crisis brought about by COVID-19, results in CO<sub>2</sub>
       emissions increasing until 2030 before rapidly decreasing after 2030 to
       compensate for the inaction beforehand. The Divergent Net Zero scenario
@@ -47,6 +47,19 @@ transition:
         firms' carbon emissions face a rising price in the form a carbon tax or
         cap & trade clearing price, particularly for shipping firms using
         fossil-based bunker fuel.
+        
+        In Delayed/Divergent transition risk scenarios, the price per gigajoule 
+        of liquid final energy (liquid fuels from all energy sources; incl. oil 
+        products, synthetic fossil fuels from gas and coal, biofuels) for use in 
+        transportation at least triples by the end of the century, increasing 
+        from ~20 USD (inflation adjusted to 2010 baseline) to ~65 USD in the 
+        Delayed transition scenario, and to ~95 USD in the Divergent Net Zero 
+        scenario.
+        
+        ![Transportation Liquid Price](Transportation_Liquids_Price_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
 
       - Firms could have to keep up with the diverse or rapidly changing
         regulations across jurisdictions in which they operate, leading to
@@ -92,8 +105,25 @@ transition:
         activities to optimise voyage speeds
 
       - Alternatives to fossil-based bunker fuels (e.g. biodiesel, methanol,
-        lignin, and Ammonia)
+        lignin, and Ammonia). In Disorderly/Divergent transition risk scenarios, 
+        sources of final energy used in the transport sector change dramatically. 
+        As use of oil declines, electricity becomes the dominant source of final 
+        energy by the end of the century.
+        
+        ![Transportation Final Energy](Transportation_Final_Energy_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
+      In Disorderly/Divergent transition risk scenarios, these innovations 
+      could contribute to an overall decrease in CO<sub>2</sub> emissions 
+      in the transportation sector.
+      
+      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
       These actions could also lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
       proactively seek out businesses with an incorporated green strategy.
@@ -107,7 +137,7 @@ transition:
     always: |
       The marine sector could continue to play a role in facilitating global
       trade and meeting customer demand for the coming years. The changing
-      patterns in energy generation in early/orderly transition scenarios,
+      patterns in energy generation in Early/Orderly transition scenarios,
       driven by immediate policy reaction, societal change, national energy
       strategies, and carbon legislation, could lead to an immediate and smooth
       reduction in CO<sub>2</sub> emissions by 2050 and increase in the carbon
@@ -115,11 +145,11 @@ transition:
 
       These are likely to have an impact on the profitability of this sector and
       therefore on the associated insurance products' pricing, terms and
-      conditions and coverage. The early/orderly transition risk scenarios could
+      conditions and coverage. The Early/Orderly transition risk scenarios could
       also lead to a limited relative reduction in GDP growth. This could result
       in changes in the rate of growth in demand for the marine sector.
     high_materiality: |
-      In the early/orderly transition risk scenarios, the impact on the marine
+      In the Early/Orderly transition risk scenarios, the impact on the marine
       sector and the underwriting class could depend on how reliant the marine
       company's revenue mix is on low-carbon electricity and bunker fuel and how
       it compares to the sector average. For example:
@@ -129,7 +159,18 @@ transition:
         carbon and energy prices could potentially result in financial impacts,
         as marine firms' carbon emissions face a rising price in the form of a
         carbon tax or cap & trade clearing price, particularly for shipping
-        firms using fossil-based bunker fuel.
+        firms using fossil-based bunker fuel. 
+        
+        In Early/Orderly transition risk scenarios, the price per gigajoule of 
+        liquid final energy (liquid fuels from all energy sources; incl. oil 
+        products, synthetic fossil fuels from gas and coal, biofuels) for use 
+        in transportation at least doubles by 2050, increasing from around 20 
+        USD (inflation adjusted to 2010 baseline) to between 40 USD and 55 USD.
+        
+        ![Transportation Liquid Price](Transportation_Liquids_Price_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
 
       - International cooperation could spur changes in maritime law leading to
         **increasing compliance requirements**. These changes may require firms
@@ -161,7 +202,7 @@ transition:
       could decrease demand for the marine sector.
 
       The profitability of the marine sector and its associated underwriting
-      class, in the early/orderly transition risk scenarios, could also depend
+      class, in the Early/Orderly transition risk scenarios, could also depend
       on the relevant companies proactively investing in innovation and new
       technology. For example:
 
@@ -174,7 +215,24 @@ transition:
         activities to optimise voyage speeds
 
       - Alternatives to fossil-based bunker fuels (e.g. biodiesel, methanol,
-        lignin, and Ammonia)
+        lignin, and Ammonia). In Early/Orderly transition risk scenarios, 
+        sources of final energy used in the transport sector change dramatically. 
+        As the use of oil gradually declines, electricity becomes the dominant 
+        source of final energy by the end of the century.
+        
+        ![Transportation Final Energy](Transportation_Final_Energy_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      In Early/Orderly transition risk scenarios, these innovations could 
+      contribute to an overall decrease in CO<sub>2</sub> emissions in the 
+      transportation sector.
+      
+      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       These actions could also lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
