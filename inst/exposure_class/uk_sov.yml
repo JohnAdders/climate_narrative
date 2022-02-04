@@ -1,6 +1,4 @@
 name: UK sovereign
-exec_description: |
-  PLACEHOLDER
 description: |
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
@@ -54,6 +52,8 @@ description: |
 
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the Delayed transition risk scenario, late policy action enables a
       "fossil recovery" out of the economic crisis brought about by COVID-19.
@@ -150,6 +150,8 @@ transition:
       borrowing for the UK government by approximately US$2-3bn.
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In Early/Orderly transition risk scenarios, immediate policy reaction,
       societal change and national energy strategies lead to significant and
@@ -243,6 +245,8 @@ transition:
 
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In a high physical risk scenario, physical risks would undermine GDP
       growth due to loss of land, changing crop yields, depleted natural
@@ -321,6 +325,8 @@ physical:
       US$7.6-11.3bn.
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In a low physical risk scenario, physical risks would undermine GDP growth
       due to loss of land, changing crop yields, depleted natural resources,

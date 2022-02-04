@@ -1,6 +1,4 @@
 name: Health Underwriting Class
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Health** underwriting class covers personal, corporate and small to
   medium enterprise domestic health insurance predominantly in the UK market.
@@ -14,6 +12,8 @@ description: |
   (claims) for insurance policies.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Health underwriting exposures could be impacted by the transition effects
       related to changes in pollution levels. In disorderly transition risk
@@ -111,6 +111,8 @@ transition:
       government spending is stretched. This may result in an increased demand
       for private health care cover.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Health underwriting exposures could be impacted by the transition effects
       related to changes in pollution levels. In Early/Orderly transition risk
@@ -194,6 +196,8 @@ transition:
       result in an increased demand for private health care cover.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the high physical risk scenario, climate change is likely to result in
       an important disruption that could have a significant impact on health
@@ -312,6 +316,8 @@ physical:
       medical curriculum to better equip health professionals in the face of
       climate change driven emergencies and extreme weather events.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the low physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on health underwriting

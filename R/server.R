@@ -55,8 +55,7 @@ server <- function(input, output, session) {
       if (length(splitted_names[[i]]) == 6) {
         out[i, 3:8] <- splitted_names[[i]]
         if (is.null(global$products[[out$product[i]]])) {
-          print(out[i, ])
-          warning(paste("No product description for", out$product[i]))
+          warning(paste("Issue with", out[i, ], "No product description for", out$product[i]))
         } else {
           out$product_description[i] <- global$products[[out$product[i]]]$description
           out$product_text[i] <- global$products[[out$product[i]]]$text
@@ -156,11 +155,15 @@ server <- function(input, output, session) {
       return(p("Please select a scenario or a sector"))
     }
     temp_html <- tempfile(fileext = ".html")
-    produce_selective_report(
-      get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version),
-      global$report_version,
-      input$report_scenario_selection,
-      FALSE,
+    # produce_selective_report(
+    #   get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version,input$report_scenario_selection,FALSE),
+    #   global$report_version,
+    #   input$report_scenario_selection,
+    #   FALSE,
+    #   session$userData$temp_md_scenario
+    # )
+    write_report_to_file(
+      get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version,input$report_scenario_selection,FALSE),
       session$userData$temp_md_scenario
     )
     rmarkdown::render(
@@ -177,12 +180,31 @@ server <- function(input, output, session) {
     # replace back the images links
     file_conn <- file(temp_html)
     temp <- readLines(file_conn)
+    temp <- gsub(
+      system.file("www", package = "climate.narrative"),
+      "climate_narrative",
+      temp
+    )
+    if (global$report_version >= 2){
+      temp <- gsub(
+        "(<h[1-5]?>)(.*)(</h[1-5]?>)",
+        "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
+        temp,
+        perl=TRUE
+      )    
+    }
+    # extract the table of contents
+    
+    if (global$sidebar_toc){
+      toc_start <- grep("<div id=\"TOC\">", temp)
+      div_end <- grep("</div>", temp)
+      toc_end <- min(div_end[div_end > toc_start])
+      toc <- temp[toc_start:toc_end]
+      output$html_report_nav <- renderUI(HTML(toc))
+      temp <- temp[-(toc_start:toc_end)]
+    }
     writeLines(
-      gsub(
-        system.file("www", package = "climate.narrative"),
-        "climate_narrative",
-        temp
-      ),
+      temp,
       file_conn
     )
     close(file_conn)
@@ -203,11 +225,8 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      produce_selective_report(
-        get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version),
-        global$report_version,
-        input$report_scenario_selection,
-        TRUE,
+      write_report_to_file(
+        get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version,input$report_scenario_selection,TRUE),
         session$userData$temp_md_scenario_and_commons
       )
       fs <- file.size(session$userData$temp_md_scenario_and_commons)
@@ -246,9 +265,8 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      produce_full_report(
-        get_report_contents(aggregated_all_inputs(), all_inputs(), global$report_version),
-        global$report_version,
+      write_report_to_file(
+        get_report_contents(aggregated_all_inputs(), all_inputs(), global$report_version,input$report_scenario_selection,TRUE),
         session$userData$temp_md_dev
       )
       fs <- file.size(session$userData$temp_md_dev)

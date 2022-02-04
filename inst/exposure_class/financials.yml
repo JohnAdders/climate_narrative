@@ -1,6 +1,4 @@
 name: Financial Services
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Financial Services** sector covers a broad range of business that
   provide a variety of economic services, such as investing, managing and
@@ -36,6 +34,8 @@ description: |
   shareholders or beneficiaries of employee benefit or other trust funds.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Financial services are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
@@ -139,6 +139,8 @@ transition:
       avoid 'leakage' by ensuring their repriced carbon intensive assets are 
       retired or modified, rather than sold on and used elsewhere.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Financial services are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
@@ -239,6 +241,8 @@ transition:
       modified, rather than sold on and used elsewhere.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Financial services are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
@@ -318,6 +322,8 @@ physical:
       has exposures to these types of climate impacts, and also assess 
       the extent to which there are local defences, which reduce the risk.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Financial services are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 

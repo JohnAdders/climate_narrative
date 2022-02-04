@@ -1,6 +1,4 @@
 name: US sovereign
-exec_description: |
-  PLACEHOLDER
 description: |
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
@@ -54,6 +52,8 @@ description: |
 
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the Delayed transition risk scenario, late policy action enables a
       "fossil recovery" out of the economic crisis brought about by COVID-19.
@@ -150,6 +150,8 @@ transition:
       by 2100, increasing the cost of borrowing for the US government by
       approximately US$7.35-11.03bn.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In Early/Orderly transition risk scenarios, immediate policy reaction,
       societal change and national energy strategies lead to significant and
@@ -244,6 +246,8 @@ transition:
       of borrowing for the US government by approximately US$7.35-11.03bn.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In a high physical risk scenario, physical risks would undermine GDP
       growth due to loss of land, changing crop yields, depleted natural
@@ -335,6 +339,8 @@ physical:
       US$63.2-94.8bn.
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In a low physical risk scenario, physical risks would undermine GDP growth
       due to loss of land, changing crop yields, depleted natural resources,

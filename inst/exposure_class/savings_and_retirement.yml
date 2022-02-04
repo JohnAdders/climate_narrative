@@ -1,6 +1,4 @@
 name: Savings and Retirement
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Savings and Retirement** underwriting class covers products such as
   pensions, investment bonds, with-profits, unit-linked investments and
@@ -18,6 +16,8 @@ description: |
 
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Disorderly/Divergent transition risk scenarios, driven by late policy 
       action to enable a "fossil recovery" out of the COVID-19 economic crisis, 
@@ -130,6 +130,8 @@ transition:
       and retain talent.
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The Early/Orderly transition risk scenario could lead to a limited relative 
       reduction in GDP growth. However, any negative impacts on GDP are likely to 
@@ -226,6 +228,8 @@ transition:
 
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Under high physical risk scenarios, climate change is likely to result in 
       severe temperature increases and large increases in both the frequency and 
@@ -329,6 +333,8 @@ physical:
       This could increase lapse rates, reduce premiums and reduce new business sales.
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the low physical risk scenarios, climate change is expected to result 
       in material disruption  to the savings and retirement underwriting class. 

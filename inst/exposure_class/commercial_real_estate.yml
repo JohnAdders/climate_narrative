@@ -1,6 +1,4 @@
 name: Commercial Real Estate
-exec_description: |
-  PLACEHOLDER
 description: |
   The Commercial Real Estate sector covers companies that are primarily engaged
   in renting or leasing real estate to others, managing real estate for others,
@@ -43,6 +41,8 @@ description: |
     for others and appraising real estate.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In Disorderly transition risk scenarios, the demand for Commercial Real
       Estate sector is likely to increase.
@@ -109,6 +109,8 @@ transition:
       - divestment of potentially stranded assets
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In Early/Orderly transition risk scenarios, the demand for Commercial Real
       Estate sector is likely to increase. While the Commercial Real Estate
@@ -171,6 +173,8 @@ transition:
 
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Since the sector is highly reliant on revenues attached to assets at fixed
       locations, the commercial real estate services sector is particularly
@@ -234,6 +238,8 @@ physical:
       suffer from a paucity of climate risk-related evidence and available data.
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Since the sector is highly reliant on revenues attached to assets at fixed
       locations, the commercial real estate services sector is particularly

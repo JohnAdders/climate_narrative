@@ -1,6 +1,4 @@
 name: Agriculture Sector
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Agriculture** sector can be split into crop production and animal
   production.
@@ -39,6 +37,8 @@ description: |
 
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The Agriculture sector continues to expand to feed and supply agricultural
       energy products to a growing global population. It contributes to 23% of
@@ -137,6 +137,8 @@ transition:
       diversifying revenue streams, forward-looking agricultural companies could
       see their net value and profitability rise under transitions.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The agriculture sector continues to expand to feed and supply agricultural
       energy products to a growing global population. It contributes to 23% of
@@ -232,6 +234,8 @@ transition:
       see their net value and profitability rise under transitions.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The agriculture sector is also exposed to physical risk. Chronic effects
       (e.g. raised sea-levels and mean temperatures) and acute effects due to
@@ -295,6 +299,8 @@ physical:
 
 
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The agriculture sector is also exposed to physical risk. Chronic effects
       (e.g. raised sea-levels and mean temperatures) and acute effects due to

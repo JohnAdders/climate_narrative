@@ -1,6 +1,4 @@
 name: Life Protection
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Life Protection** underwriting class covers term assurance, whole life
   assurance, mortgage protection, income protection and critical illness written
@@ -24,6 +22,8 @@ description: |
   and catastrophes.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Life Protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Disorderly/Divergent
@@ -125,6 +125,8 @@ transition:
       Disorderly/Divergent transition risk scenarios could have an impact on the
       pricing of life protection products, although this is likely to be modest.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Life Protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Early/Orderly
@@ -199,6 +201,8 @@ transition:
       protection products, although this is likely to be modest.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the high physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on the life protection
@@ -290,6 +294,8 @@ physical:
       change into the medical curriculum to better equip health professionals in
       the face of climate change driven emergencies and extreme weather events.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the low physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on life protection

@@ -4,15 +4,17 @@
 \alias{get_executive_summary_scenarios}
 \title{One of the functions comprising the executive summary text}
 \usage{
-get_executive_summary_scenarios(aggregated_inputs, inputs)
+get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no)
 }
 \arguments{
 \item{aggregated_inputs}{data frame of aggregated inputs (implemented in the reactive expression)}
 
 \item{inputs}{data frame of all inputs (implemented in the reactive expression)}
+
+\item{scenario_no}{integer or vector of integers indicating which of the global$scenarios should be included}
 }
 \value{
-vector of strings - executive summary text (one string per scenario)
+string - executive summary text
 }
 \description{
 One of the functions comprising the executive summary text

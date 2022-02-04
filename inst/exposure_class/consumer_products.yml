@@ -1,6 +1,4 @@
 name: Consumer Products
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Consumer Products** sector consists of establishments engaged in retail
   trade; selling commodities for personal or household consumption and rendering
@@ -78,6 +76,8 @@ description: |
   (or other classification systems) via online tools.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       As the Consumer Products sector sits between the Manufacturing sector and
       end-consumers, it is subject to the considerations of both the products it
@@ -219,6 +219,8 @@ transition:
       climate conscious consumer and play an integral part in a full end-to-end
       supply-chain of product level carbon intensity analysis.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       As the consumer products sector sits between the manufacturing sector and
       end-consumers, it is subject to the considerations of both the products it
@@ -349,6 +351,8 @@ transition:
       supply-chain of product level carbon intensity analysis.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The consumer products sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. raised sea-levels
@@ -469,6 +473,8 @@ physical:
       for greater choice that has grown via the Great Acceleration that has
       proliferated since the second world war).
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The consumer products sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. raised sea-levels

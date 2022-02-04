@@ -1,6 +1,4 @@
 name: Mining
-exec_description: |
-  PLACEHOLDER
 description: |
   In the present document, it is admitted that companies in the **Mining** 
   sector (except Oil and Gas) primarily engage in mining, mine site development, 
@@ -21,6 +19,8 @@ description: |
   making geological observations at prospective sites.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       By 2050, in a Disorderly transition risk scenario, coal represents 0.47%
       (in the Delayed Transition scenario) or 0.63% (in the Divergent Net Zero
@@ -94,6 +94,8 @@ transition:
       could have to be developed rapidly and sustainably to fuel the transition,
       which could be challenging from an operating perspective.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       By 2050, in Orderly transition scenarios coal represents 0.86% (in the
       Below 2&deg;C scenario) or 0.65% (in the Net Zero 2050 scenario) of global
@@ -164,6 +166,8 @@ transition:
       which could be challenging from an operating perspective.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The mining sector is highly exposed to the physical impacts of climate
       change including both the chronic effects (e.g. raised sea-levels) and
@@ -225,6 +229,8 @@ physical:
       and working with key suppliers and distributors to determine their
       resilience to extreme weather events and define alternative routes.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The mining sector is highly exposed to the physical impacts of climate
       change including both the chronic effects and acute effects due to changes

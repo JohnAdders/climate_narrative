@@ -1,6 +1,4 @@
 name: Manufacturing
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Manufacturing** sector involves the transformation of (mainly) raw
   materials or substances into new products by way of mechanical, physical, or
@@ -46,6 +44,8 @@ description: |
   - Miscellaneous manufacturing.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
@@ -146,6 +146,8 @@ transition:
       strategies based on specific circumstances of each industry and company in
       order to reduce the impact of this scenario.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
@@ -237,6 +239,8 @@ transition:
       negative externalities they generate. 
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
@@ -325,6 +329,8 @@ physical:
         which physical machinery and other manufacturing operations can be moved
         when faced with disaster.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials

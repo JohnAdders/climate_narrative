@@ -1,6 +1,4 @@
 name: Construction
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Construction** sector includes establishments primarily responsible for
   the construction of buildings. The work performed may include new work,
@@ -27,6 +25,8 @@ description: |
      mechanical systems such as plumbing, heating, electrical wiring, etc.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In Disorderly/Divergent transition risk scenarios, the demand for
       construction is likely to increase. The construction sector was
@@ -121,6 +121,8 @@ transition:
       where possible, for lower-carbon intensity products, and increase
       recycling.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In Early/Orderly transition risk scenarios, the demand for construction is
       likely to increase. The construction sector was responsible for 13% of
@@ -226,6 +228,8 @@ transition:
       lower-carbon intensity products, and increase recycling.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The construction sector is one of the most exposed sectors to physical
       impacts of climate change, chronic effects (e.g. raised sea-levels) and
@@ -294,6 +298,8 @@ physical:
       consider climate change to minimise the risk of total damage caused by
       flooding.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The construction sector is one of the most exposed sectors to physical
       impacts of climate change, chronic effects (e.g. raised sea-levels) and
