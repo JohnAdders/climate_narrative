@@ -30,7 +30,8 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Disorderly transition risk scenarios, demand for oil and gas decreases, 
+      affecting profitability of individual companies and the sector overall. 
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in a
       Disorderly/Divergent transition risk scenario, fossil fuels represent only
@@ -119,7 +120,8 @@ transition:
       capture and storage (CCS) technologies.
   low:
     exec_description: |
-      PLACEHOLDER
+      In orderly transition risk scenarios, demand for oil and gas decreases, 
+      could affect profitability of individual companies and the sector overall. 
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in
       Early/Orderly transition risk scenarios, fossil fuels represent only ~27%
@@ -209,7 +211,10 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      Oil and gas is one of the sectors that are highly exposed to physical risk 
+      scenarios due to the increase in weather variation. These scenarios could also 
+      lead to a significant GDP impact which could negatively impact demand for this 
+      sector.
     always: |
       The oil and gas sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. rising sea-levels)
@@ -284,7 +289,7 @@ physical:
 
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The oil and gas sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. raised sea-levels

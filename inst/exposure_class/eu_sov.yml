@@ -49,7 +49,9 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the increases in carbon prices 
+      could have a strong impact on sovereign bonds in particular in countries with 
+      a strong level of dependence on fossil fuel energy sources.
     always: |
       In the Delayed transition risk scenario, the delayed transition driven by a 
       late policy action enables a "fossil recovery" out of the economic crisis brought 
@@ -143,7 +145,10 @@ transition:
       government by approximately US$1.35-2.02bn.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, immediate policy reaction, societal 
+      change and national energy strategies could lead to significant increases in 
+      carbon prices. This could have an impact on sovereign bonds in particular in 
+      countries with a strong level of dependence on fossil fuel energy sources.
     always: |
       In Early/Orderly transition risk scenarios, immediate policy reaction, 
       societal change and national energy strategies leads to significant and 
@@ -317,7 +322,7 @@ physical:
 
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       In a low physical risk scenario, physical risks would undermine GDP growth 
       due to loss of land, changing crop yields, depleted natural resources, lower 

@@ -13,7 +13,11 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      Health underwriting exposures could be impacted in the Disorderly/Divergent 
+      transition risk scenarios, as a reduction in pollution could result for 
+      example in a reduction in cancer (especially lung), respiratory diseases, 
+      heart attack and stroke. However, healthcare spending may reduce, and higher 
+      claims costs could arise due to an increased carbon price on the supply chain.
     always: |
       Health underwriting exposures could be impacted by the transition effects
       related to changes in pollution levels. In disorderly transition risk
@@ -112,7 +116,11 @@ transition:
       for private health care cover.
   low:
     exec_description: |
-      PLACEHOLDER
+      Health underwriting exposures could be impacted in the Early/Orderly 
+      transition risk scenarios, as a reduction in pollution could result in 
+      a reduction for example in cancer (especially lung), respiratory diseases, 
+      heart attack and stroke. However, higher claims costs could arise due to 
+      an increased carbon price on the supply chain.
     always: |
       Health underwriting exposures could be impacted by the transition effects
       related to changes in pollution levels. In Early/Orderly transition risk
@@ -197,7 +205,11 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, climate change is likely to result in 
+      increased disruption that could have an impact on the health underwriting 
+      class, as morbidity could be affected by both a reduction in healthcare 
+      spending as well as an increase in the myriad of health problems due to 
+      higher temperatures.
     always: |
       In the high physical risk scenario, climate change is likely to result in
       an important disruption that could have a significant impact on health
@@ -317,7 +329,7 @@ physical:
       climate change driven emergencies and extreme weather events.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       In the low physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on health underwriting

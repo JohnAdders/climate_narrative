@@ -28,7 +28,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the utility sector may 
+      benefit from increased revenue as the global energy system becomes more 
+      electrified, but face a rising carbon price which could increase production 
+      costs for carbon intensive utilities without adequate transition plans.
     always: |
       The Disorderly transition scenarios are primarily characterised by their 
       more disruptive effects on the utility sector. This can be seen most 
@@ -117,7 +120,10 @@ transition:
 
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the utility sector may benefit 
+      from increased revenue as the global energy system becomes more electrified 
+      but faces a rising carbon price which could increase production costs for 
+      carbon intensive utilities without adequate transition plans.
     always: |
       The utilities sector would have a critical role to play in an Orderly 
       transition to either Net Zero CO<sub>2</sub> emissions by 2050, or a 
@@ -238,7 +244,10 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, extreme weather events could increase 
+      disruption and cause damage to infrastructure, resulting in severe impacts 
+      for the utilities sector as large proportion of the value of most utilities 
+      is comprised of tangible (physical) capital.
     always: |
       High physical risk scenarios are those in which global policy makers do not 
       take sufficient steps to hold temperature increases below 2&deg;C. These in 
@@ -296,7 +305,7 @@ physical:
       different jurisdictions.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       Low physical risk scenarios capture all of the Orderly and Disorderly 
       transition scenarios that keep long-term temperature increases Below 

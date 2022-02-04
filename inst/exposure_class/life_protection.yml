@@ -23,7 +23,11 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      Life Protection underwriting exposures could be impacted in the Delayed/Divergent 
+      transition risk scenarios, as mortality and morbidity could be affected by 
+      both a reduction  pollution which could in turn result into a reduction in 
+      cancer (especially lung), respiratory diseases, heart attack and stroke and 
+      potentially a decrease in healthcare spending. 
     always: |
       Life Protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Disorderly/Divergent
@@ -126,7 +130,10 @@ transition:
       pricing of life protection products, although this is likely to be modest.
   low:
     exec_description: |
-      PLACEHOLDER
+      Life Protection underwriting exposures could be impacted in the Early/Orderly 
+      transition risk scenarios, as mortality and morbidity could decrease due to 
+      a reduction in pollution which could in turn result into a reduction in 
+      cancer (especially lung), respiratory diseases, heart attack and stroke.
     always: |
       Life Protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Early/Orderly
@@ -202,7 +209,11 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, climate change is likely to result in 
+      increased disruption that could have an impact on the life protection 
+      underwriting class, as mortality and morbidity could be affected by both a 
+      reduction in healthcare spending and an increase in the myriad of health 
+      problems due to higher temperatures.
     always: |
       In the high physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on the life protection
@@ -295,7 +306,7 @@ physical:
       the face of climate change driven emergencies and extreme weather events.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       In the low physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on life protection

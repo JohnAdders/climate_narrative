@@ -45,7 +45,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, manufacturers could 
+      benefit from new revenue streams, but face rising operating costs due 
+      to carbon pricing policies and falling asset values as current infrastructure 
+      becomes increasingly obsolete. 
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
@@ -147,7 +150,10 @@ transition:
       order to reduce the impact of this scenario.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, manufacturers could benefit 
+      from new revenue streams, but face rising operating costs due to carbon 
+      pricing policies and falling asset values as current infrastructure 
+      becomes increasingly obsolete. 
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
@@ -240,7 +246,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The manufacturing sector is highly exposed to high physical risk 
+      scenarios due to the projected increase in weather variation and 
+      the disruption this could cause to global supply chains. 
     always: |
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
@@ -330,7 +338,7 @@ physical:
         when faced with disaster.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials

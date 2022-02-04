@@ -35,7 +35,11 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the change to carbon and 
+      energy prices, regulations, consumer behaviour, etc., could impact financial 
+      services. However, the extent will depend on their business model, regions 
+      in which they operate as well as the industries/sectors of financial services' 
+      underlying exposures.
     always: |
       Financial services are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
@@ -140,7 +144,11 @@ transition:
       retired or modified, rather than sold on and used elsewhere.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the change to carbon and energy 
+      prices, regulations, consumer behaviour, etc., could impact financial services. 
+      However, the extent will depend on their business model, regions in which they 
+      operate as well as the industries/sectors of financial services' underlying 
+      exposures.
     always: |
       Financial services are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
@@ -242,7 +250,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      For most financial services, the main physical risks are from their 
+      counterparties (i.e. firms they lend to, invest in and/or insure such 
+      as corporates and households) and/or the assets they manage.
     always: |
       Financial services are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
@@ -323,7 +333,7 @@ physical:
       the extent to which there are local defences, which reduce the risk.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       Financial services are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 

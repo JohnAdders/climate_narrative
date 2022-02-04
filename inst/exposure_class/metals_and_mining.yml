@@ -20,7 +20,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the changing patterns in 
+      energy consumption will have a negative impact on carbon-intensive sectors 
+      such as coal mining, however this contraction in demand could be offset by 
+      the need to increase mining of other minerals vital to clean energy technologies.
     always: |
       By 2050, in a Disorderly transition risk scenario, coal represents 0.47%
       (in the Delayed Transition scenario) or 0.63% (in the Divergent Net Zero
@@ -95,7 +98,10 @@ transition:
       which could be challenging from an operating perspective.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the changing patterns in energy 
+      consumption will have a significant negative impact on carbon-intensive sectors 
+      such as coal mining, however, this contraction in demand could be offset by the 
+      need to increase mining of other minerals vital to clean energy technologies.
     always: |
       By 2050, in Orderly transition scenarios coal represents 0.86% (in the
       Below 2&deg;C scenario) or 0.65% (in the Net Zero 2050 scenario) of global
@@ -167,7 +173,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The high physical risk scenarios could lead to increasing disruption to mining 
+      production and could affect profitability, however, there is a variation in 
+      exposure, depending on the mine’s geographical location.
     always: |
       The mining sector is highly exposed to the physical impacts of climate
       change including both the chronic effects (e.g. raised sea-levels) and
@@ -230,7 +238,7 @@ physical:
       resilience to extreme weather events and define alternative routes.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The mining sector is highly exposed to the physical impacts of climate
       change including both the chronic effects and acute effects due to changes

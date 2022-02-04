@@ -27,7 +27,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Disorderly/Divergent transition risk scenarios, the telecoms sector 
+      could face rising operating costs as carbon pricing policies increase 
+      energy prices, as well as falling asset values as current infrastructure 
+      becomes increasingly obsolete.
     always: |
       While telecoms could continue to play a role in meeting customer demand
       for the coming years, the changing patterns in energy generation, driven
@@ -114,7 +117,10 @@ transition:
       proactively shop at businesses with an incorporated green strategy.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the telecoms sector could 
+      face rising operating costs as carbon pricing policies increase energy 
+      prices, as well as falling asset values as current infrastructure becomes 
+      increasingly obsolete.
     always: |
       While the telecom sector could continue to play a role in meeting customer
       demand for the coming years, the changing patterns in energy generation,
@@ -204,7 +210,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, extreme weather events could increase 
+      disruption and cause damage to infrastructure, resulting in severe impacts 
+      for the telecoms sector.
     always: |
       The telecom sector is also exposed to physical risk. Chronic effects (e.g.
       raised sea-levels) and acute effects due to changes in the frequency and
@@ -258,7 +266,7 @@ physical:
       of physical network sites needed (e.g. full fibre).
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The telecom sector is also exposed to physical risk. Chronic effects (e.g.
       raised sea-levels) and acute effects due to changes in the frequency and

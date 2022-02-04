@@ -26,7 +26,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the construction sector could 
+      face rising operating costs as carbon pricing policies increase building material 
+      and energy prices, as well as falling asset values as current infrastructure 
+      becomes increasingly obsolete. 
     always: |
       In Disorderly/Divergent transition risk scenarios, the demand for
       construction is likely to increase. The construction sector was
@@ -122,7 +125,10 @@ transition:
       recycling.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the construction sector could 
+      face rising operating costs as carbon pricing policies increase building 
+      material and energy prices, as well as falling asset values as current 
+      infrastructure becomes increasingly obsolete. 
     always: |
       In Early/Orderly transition risk scenarios, the demand for construction is
       likely to increase. The construction sector was responsible for 13% of
@@ -229,7 +235,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, both the severity and frequency of physical 
+      risk events are expected to increase exponentially, resulting in severe impacts 
+      for the construction sector.
     always: |
       The construction sector is one of the most exposed sectors to physical
       impacts of climate change, chronic effects (e.g. raised sea-levels) and
@@ -299,7 +307,7 @@ physical:
       flooding.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The construction sector is one of the most exposed sectors to physical
       impacts of climate change, chronic effects (e.g. raised sea-levels) and

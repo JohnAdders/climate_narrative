@@ -50,34 +50,13 @@ description: |
   Warehouses may be considered as part of the retail establishment where they
   act as an auxiliary to the core business of the customer facing retail stores.
 
-  Retail Trade is generally covered by NAICS Section G Codes prefixed 52-59 :
-
-  52. Building Materials, Hardware, Garden Supply, and Mobile Home Dealers
-
-  01. General Merchandise Stores
-
-  01. Food Stores
-
-  01. Automotive Dealers and Gasoline Service Stations
-
-  01. Apparel and Accessory Stores
-
-  01. Home Furniture, Furnishings, and Equipment Stores
-
-  01. Eating and Drinking Places
-
-  01. Miscellaneous Retail
-
-  North American Industry Classification System, 2018, Available online at:
-  (https://www.naics.com/sic-codes-counts-division/?div=G){target="\_blank"}.
-  These may be cross-referenced to the UK Standard Industrial Classification of
-  economic activities codes (SIC)
-  (https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic){target="\_blank"}
-  (or other classification systems) via online tools.
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the consumer products 
+      sector could deliver longer-term carbon reduction initiatives by shifting 
+      to lower carbon intensive supplies, reducing the carbon intensity of their 
+      physical stores or sales platforms, and using clean energy sources.
     always: |
       As the Consumer Products sector sits between the Manufacturing sector and
       end-consumers, it is subject to the considerations of both the products it
@@ -220,7 +199,10 @@ transition:
       supply-chain of product level carbon intensity analysis.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the consumer products sector 
+      could deliver longer-term carbon reduction initiatives by shifting to lower 
+      carbon intensive supplies, reducing the carbon intensity of their physical 
+      stores or sales platforms, and using clean energy sources.
     always: |
       As the consumer products sector sits between the manufacturing sector and
       end-consumers, it is subject to the considerations of both the products it
@@ -352,7 +334,11 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, whilst the consumer products sector is used 
+      to responding to and managing changing weather conditions, climate change and 
+      global warming could increase weather variations. This could lead to increasing 
+      disruption to supply chains and own operations which could impact the profitability 
+      for these companies.
     always: |
       The consumer products sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. raised sea-levels
@@ -377,7 +363,6 @@ physical:
       over time. The high physical risk scenarios could therefore also lead to a
       significant GDP impact which could negatively impact demand for consumer
       products.
-
 
     high_materiality: |
       Consideration should be given to the following hazards when considering
@@ -474,7 +459,7 @@ physical:
       proliferated since the second world war).
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The consumer products sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. raised sea-levels

@@ -42,7 +42,11 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the commercial real estate sector 
+      could be impacted by an increase in carbon price through cost of complying with 
+      "low carbon/green" building criteria which would reduce the demand in the quality 
+      of the real estate product which in turn could affect the profitability in this 
+      sector. This could also lead to a limited relative reduction in GDP growth. 
     always: |
       In Disorderly transition risk scenarios, the demand for Commercial Real
       Estate sector is likely to increase.
@@ -110,7 +114,11 @@ transition:
 
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the commercial real estate sector 
+      could be impacted by an increase in carbon price through cost of complying 
+      with "low carbon/green" building criteria which would reduce the demand in 
+      the quality of the real estate product which in turn could affect the profitability 
+      in this sector. This could also lead to a limited relative reduction in GDP growth. 
     always: |
       In Early/Orderly transition risk scenarios, the demand for Commercial Real
       Estate sector is likely to increase. While the Commercial Real Estate
@@ -174,7 +182,10 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, property values may decline after climate 
+      events. Trading volumes or time on market may provide early signals of how 
+      markets are reacting to climate events and risks through lower liquidity that 
+      could ultimately feed into prices. 
     always: |
       Since the sector is highly reliant on revenues attached to assets at fixed
       locations, the commercial real estate services sector is particularly
@@ -189,7 +200,6 @@ physical:
       materially impact the revenues of assets that are not adapted to these
       changes as this could potentially affect the productivity of assets and
       labour.
-
 
     high_materiality: |
       Property values themselves may be impacted by the occurrence, or risk of
@@ -239,7 +249,7 @@ physical:
 
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       Since the sector is highly reliant on revenues attached to assets at fixed
       locations, the commercial real estate services sector is particularly
