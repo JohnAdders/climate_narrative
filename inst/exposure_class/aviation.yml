@@ -1,6 +1,4 @@
 name: Aviation Underwriting Class
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Aviation** underwriting class involves insuring companies engaging in
   economic activity relating to aircrafts. This includes designing,
@@ -15,6 +13,8 @@ description: |
   aircraft when not in use and when in use), and cargo.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Aviation sector could continue to play a role in meeting customer demand
       for the coming years The changing patterns in energy generation in the
@@ -87,6 +87,8 @@ transition:
       well as potentially have knock-on impacts for insurance pricing, terms and
       conditions and coverage.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Aviation sector could continue to play a role in meeting customer demand
       for the coming years. The changing patterns in energy generation in
@@ -155,6 +157,8 @@ transition:
       conditions and coverage.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The aviation sector and its associated underwriting class are also exposed
       to physical risk. Chronic effects (e.g. raised sea-level and mean
@@ -209,6 +213,8 @@ physical:
       optimal routings, standby engineers to reduce technical fault repair time,
       and increase flood-mitigating construction standards.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The aviation sector and its associated underwriting class are also exposed
       to physical risk. Chronic effects (e.g. raised sea-levels and mean

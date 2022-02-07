@@ -1,6 +1,4 @@
 name: Savings and Retirement
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Savings and Retirement** underwriting class covers products such as
   pensions, investment bonds, with-profits, unit-linked investments and
@@ -18,6 +16,8 @@ description: |
   credit risks.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In disorderly/divergent transition risk scenarios, driven by late policy
       action, enables a "fossil fuelled recovery" out of the economic crisis
@@ -115,6 +115,8 @@ transition:
       organisations that do but any inflows from such switches may be expected
       to be lower than what might be.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Savings and Retirement exposures are impacted by household incomes, which
       affect savings rates, as well as health outcomes, which affect mortality.
@@ -202,6 +204,8 @@ transition:
       that do.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the high physical risk scenario, climate change is likely to result in
       severe temperature increases and large increases in both the frequency and
@@ -285,6 +289,8 @@ physical:
       offices) could drive up unit costs. The cost of ensuring redundancy and
       resiliency could also increase.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       In the low physical risk scenario, it may be expected that climate change
       is likely to result in increased disruption that could have an impact on

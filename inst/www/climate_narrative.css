@@ -34,7 +34,17 @@ table td, table th {
     overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
 }
 
-#html_report_div {
-    max-height: 500px;
+#html_report_div,
+#html_toc_div {
+    height: 300px;
     overflow-y: scroll;
+}
+
+.inline a,
+.inline h1,
+.inline h2,
+.inline h3,
+.inline h4,
+.inline h5 {
+  display: inline;
 }

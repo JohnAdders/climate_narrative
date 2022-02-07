@@ -1,6 +1,4 @@
 name: Telecommunications
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Telecommunication** (telecom) sector is comprised of companies that
   provide telecommunications and services related to that activity (e.g.
@@ -29,6 +27,8 @@ description: |
     services via client-supplied telecommunications connections.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       While telecoms could continue to play a role in meeting customer demand
       for the coming years, the changing patterns in energy generation, driven
@@ -101,6 +101,8 @@ transition:
       therefore magnify demand and overall revenue as consumers could
       proactively shop at businesses with an incorporated green strategy.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       While the telecom sector could continue to play a role in meeting customer
       demand for the coming years, the changing patterns in energy generation,
@@ -177,6 +179,8 @@ transition:
       proactively shop at businesses with an incorporated green strategy.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The telecom sector is also exposed to physical risk. Chronic effects (e.g.
       raised sea-levels) and acute effects due to changes in the frequency and
@@ -228,6 +232,8 @@ physical:
       proposition development and invest in technologies which reduce the number
       of physical network sites needed (e.g. full fibre).
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The telecom sector is also exposed to physical risk. Chronic effects (e.g.
       raised sea-levels) and acute effects due to changes in the frequency and

@@ -1,6 +1,4 @@
 name: Mortgage Lending Exposure
-exec_description: |
-  PLACEHOLDER
 description: |
   **Mortgages** are a lending exposure type based upon a legal agreement by
   which a bank, building society or other regulated organisation lends money at
@@ -21,6 +19,8 @@ description: |
   - Later life or equity release
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Lending on residential property remains a key focus and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
@@ -184,6 +184,8 @@ transition:
       - Products aimed at supporting the transition of the Housing Association
         sector (e.g., Sustainable Linked Loans)
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Lending on residential property remains a key focus, and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
@@ -302,6 +304,8 @@ transition:
         sector (e.g., Sustainable Linked Loans)
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The mortgage market has the potential to be one of the most exposed
       sectors to physical impacts of climate change due to changes to frequency
@@ -383,6 +387,8 @@ physical:
         as while it impacts a relatively small number of properties the unit
         level of loss is extreme, albeit still low.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The mortgage market has the potential to be one of the most exposed
       sectors to physical impacts of climate change due to changes to frequency

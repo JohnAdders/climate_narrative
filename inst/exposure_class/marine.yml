@@ -1,6 +1,4 @@
 name: Marine Underwriting Class
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Marine** underwriting class is one of the oldest classes of insurance
   business. It involves insuring companies engaging in economic activity
@@ -18,6 +16,8 @@ description: |
   personal injuries, pollution and collision) and yacht insurance.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       While the marine sector could continue to play a role in facilitating
       global trade and meeting customer demand for the coming years, the
@@ -102,6 +102,8 @@ transition:
       Principles, could allow consumers to easily identify firms making progress
       in alignment with their green strategy.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The marine sector could continue to play a role in facilitating global
       trade and meeting customer demand for the coming years. The changing
@@ -183,6 +185,8 @@ transition:
       in alignment with their green strategy.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The marine sector and its associated underwriting class are exposed to
       physical risk. Chronic (e.g. raised sea-levels and global mean
@@ -236,6 +240,8 @@ physical:
       infrastructure likely to be damaged in extreme weather, and consider sea
       water temperature profiles when planning new fish farm sites.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The marine sector and its associated underwriting class are exposed to
       physical risk. Chronic effects (e.g. raised sea-levels and global mean

@@ -1,6 +1,4 @@
 name: Property Underwriting Class
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Property** underwriting class covers a very wide range of asset types
   and coverages, with risk transfers flowing from the policyholders, through to
@@ -16,6 +14,8 @@ description: |
   estate) settings.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       While the Property underwriting class could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
@@ -141,6 +141,8 @@ transition:
       underwriting decisions, either in determining limits on the level of risk
       acceptance, or in the setting of corporate risk appetite and capital.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       While the Property underwriting class could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
@@ -264,6 +266,8 @@ transition:
       acceptance, or in the setting of corporate risk appetite and capital.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       While the non-life property insurance market is generally highly exposed
       to physical risks, and in particular from those related to weather
@@ -409,6 +413,8 @@ physical:
       either in determining limits on the level of risk acceptance, or in the
       setting of corporate risk appetite and capital.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       While the non-life property insurance market is generally highly exposed
       to physical risks, and in particular from those related to weather

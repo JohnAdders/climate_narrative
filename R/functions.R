@@ -845,17 +845,6 @@ produce_selective_report <- function(report_contents, report_version, report_sce
     contents <- report_contents[c(1 + scenario_no, length(report_contents))]
   }
   contents <- add_path_to_graphs(contents)
-  if (!is_rtf && report_version >= 2){
-    for (header_tag in c("\n# ","\n## ","\n### ")){
-      contents = gsub(
-        header_tag,
-        paste0("\n<a href='#top'>go to top</a> \n\n", header_tag),
-        contents,
-      )
-    }
-    # also add link at the end
-    contents = paste0(contents,"\n\n<a href='#top'>go to top</a>\n")
-  }
   writeLines(
     contents,
     file_conn
@@ -1092,17 +1081,27 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs){
   out_exp <- paste0(out_exp, "### Other exposures\n\n")
   less_material <- aggregated_inputs[aggregated_inputs[,2] != "High",]
   if (nrow(less_material)){
-    less_material$exec.description <- rep(NA, nrow(less_material))
+    less_material$risk.description <- rep(NA, nrow(less_material))
     less_material$name <- rep(NA, nrow(less_material))
-    for(i in 1:nrow(less_material)){
-      item <- less_material[i,1]
+    for (i in 1:nrow(less_material)){
+      item <- less_material[i, 1]
       less_material$name[i] <- global$exposure_classes[[item]][["name"]]
-      less_material$exec.description[i] <- global$exposure_classes[[item]][["exec_description"]]
+      less_material$risk.description[i] <- paste(
+        global$exposure_classes[[item]][["transition"]][["high"]][["exec_description"]],
+        global$exposure_classes[[item]][["transition"]][["low"]][["exec_description"]],
+        global$exposure_classes[[item]][["physical"]][["high"]][["exec_description"]],
+        global$exposure_classes[[item]][["physical"]][["low"]][["exec_description"]],
+        sep = "\n"
+      )
     }
+    for (i in 1:ncol(less_material)){
+      colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
+    }
+    print(less_material)
     out_exp <- paste0(
       out_exp,
       table_to_markdown_multiline(
-        less_material[,c("name", "materiality", "exec.description")]
+        less_material[,c("Name", "Materiality", "Risk.description")]
       )
     )
   } else {
@@ -1129,6 +1128,7 @@ delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), i
   } else {
     data[, empty_columns] <- NULL
     if (sum(!empty_rows) > 1){
+      colnames(data)[1] <- ""
       return(data[!empty_rows, ])
     } else { 
       # a bit clumsy, but need to add separately one row case - by default converted by R to vector

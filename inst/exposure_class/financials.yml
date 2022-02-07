@@ -1,6 +1,4 @@
 name: Financial Services
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Financial Services** sector covers a broad range of business that
   provide a variety of economic services, such as investing, managing and
@@ -44,6 +42,8 @@ description: |
   they are managing on behalf of their clients (in portfolios or funds).
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The risks from climate change could largely depend on the business model
       of the financial firm and the regions in which it operates. Because they
@@ -108,6 +108,8 @@ transition:
       ensuring their repriced carbon intensive assets are retired or modified,
       rather than sold on and used elsewhere.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The risks from climate change could largely depend on the business model
       of the financial firm and the regions in which it operates. Because they
@@ -168,6 +170,8 @@ transition:
       retired or modified, rather than sold on and used elsewhere.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The risks from climate change could largely depend on the business model
       of the financial firm and the regions in which it operates. Because they
@@ -238,6 +242,8 @@ physical:
       to these types of climate impacts. Firms could need to assess the extent
       to which there are local defences, which reduce the risk.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The risks from climate change could largely depend on the business model
       of the financial firm and the regions in which it operates. Because they

@@ -1,6 +1,4 @@
 name: Casualty Underwriting Class
-exec_description: |
-  PLACEHOLDER
 description: |
   The **Casualty** underwriting class covers legal liabilities from a number of
   causes. Common product types include:
@@ -49,6 +47,8 @@ description: |
   from shareholders and other stakeholders for mismanagement of firms.
 transition:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Climate change risk management is a board-level governance issue and
       directors have to be actively involved in establishing and monitoring
@@ -109,6 +109,8 @@ transition:
       This creates a big opportunity to gain new customers while customer
       retention is strained.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       Climate change risk management is a board-level governance issue and
       directors have to be actively involved in establishing and monitoring
@@ -157,6 +159,8 @@ transition:
       other sectors may see growth.
 physical:
   high:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The casualty underwriting class are also exposed to physical risk. Chronic
       effects (e.g. raised sea-levels and mean temperatures) and acute effects
@@ -206,6 +210,8 @@ physical:
       boundaries, and claimants are bringing novel and creative legal arguments
       which courts might be willing to follow.
   low:
+    exec_description: |
+      PLACEHOLDER
     always: |
       The casualty underwriting class are also exposed to physical risk. Chronic
       effects (e.g. raised sea-levels and mean temperatures) and acute effects
