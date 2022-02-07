@@ -69,10 +69,8 @@ transition:
       increases to customers. Hence, concentrations of lending or underwriting
       to these sectors could be more highly exposed.
     high_materiality: |
-      As highlighted in [SS3/19](https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2019/ss319), the changes in policy, carbon pricing, energy 
-      demand/mix and energy prices could impact financial services. For example:
-      
-      The changes in policy, carbon pricing, energy demand/mix and energy 
+      As highlighted in [SS3/19](https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2019/ss319), 
+      the changes in policy, carbon pricing, energy demand/mix and energy 
       prices could potentially result in one or more of the following 
       impacts for financial services:
       
@@ -174,10 +172,8 @@ transition:
       customers. Hence, concentrations of lending or underwriting to these 
       sectors could be more highly exposed.
     high_materiality: |
-      As highlighted in [SS3/19](https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2019/ss319), the changes in policy, carbon pricing, energy 
-      demand/mix and energy prices could impact financial services. For example:
-      
-      The changes in policy, carbon pricing, energy demand/mix and energy 
+      As highlighted in [SS3/19](https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2019/ss319), 
+      the changes in policy, carbon pricing, energy demand/mix and energy 
       prices could potentially result in one or more of the following 
       impacts for financial services:
       
@@ -415,3 +411,11 @@ physical:
       portfolio has exposures to these types of climate impacts, and also
       assess the extent to which there are local defences, which reduce the
       risk.
+      
+references: |
+  - [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf){target="\_blank"}
+  
+  - [NAICS Code 52](https://www.naics.com/six-digit-naics/?code=52){target="\_blank"}
+  
+  - [SIC Code H](https://www.naics.com/sic-codes-counts-division/?div=H){target="\_blank"}
+  

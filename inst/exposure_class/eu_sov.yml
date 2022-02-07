@@ -14,7 +14,8 @@ description: |
   known as inflation-linked bonds or, in the US, Treasury Inflation-Protected 
   Securities (TIPS). On an inflation-linked bond, the interest and/or principal 
   is adjusted on a regular basis to reflect changes in the rate of inflation, 
-  thus providing a "real," or inflation-adjusted, return. But, unlike other bonds, inflation-linked bonds could experience greater losses when real interest rates 
+  thus providing a "real," or inflation-adjusted, return. But, unlike other bonds, 
+  inflation-linked bonds could experience greater losses when real interest rates 
   are moving faster than nominal interest rates.
   
   In addition to sovereign bonds, the government bond sector includes subcomponents, 
@@ -315,7 +316,7 @@ physical:
       top ratings. It is easier to lose an AAA rating than a C rating.
       
       According to the study, in a high physical risk scenario, Germany would have 
-      a downgrade exceeding three by 2100, increasing the cost of borrowing for 
+      a downgrade exceeding three notches by 2100, increasing the cost of borrowing for 
       the German government by approximately US$3.7-5.5bn. France would have a 
       downgrade exceeding two notches by 2100, increasing the cost of borrowing for 
       the French government by approximately US$3.9-5.9bn.
