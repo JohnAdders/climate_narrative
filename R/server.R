@@ -151,17 +151,10 @@ server <- function(input, output, session) {
   )
 
   output$html_report <- renderUI({
-    if (input$report_scenario_selection == "" & input$report_sector_selection == "") {
-      return(p("Please select a scenario or a sector"))
+    if (input$report_scenario_selection == "") {
+      return(p("Please select a scenario (optionally a sector as well)"))
     }
     temp_html <- tempfile(fileext = ".html")
-    # produce_selective_report(
-    #   get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version,input$report_scenario_selection,FALSE),
-    #   global$report_version,
-    #   input$report_scenario_selection,
-    #   FALSE,
-    #   session$userData$temp_md_scenario
-    # )
     write_report_to_file(
       get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version,input$report_scenario_selection,FALSE),
       session$userData$temp_md_scenario
