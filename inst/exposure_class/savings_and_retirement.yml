@@ -17,7 +17,11 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      Savings and Retirement underwriting exposures could be impacted in the 
+      Delayed/Divergent transition risk scenarios, the moderated to severe 
+      reduction in GDP could reduce real household income. The reduction in 
+      CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
+      in morbidity.
     always: |
       Disorderly/Divergent transition risk scenarios, driven by late policy 
       action to enable a "fossil recovery" out of the COVID-19 economic crisis, 
@@ -131,7 +135,11 @@ transition:
 
   low:
     exec_description: |
-      PLACEHOLDER
+      Savings and Retirement underwriting exposures could be impacted in the 
+      Early/Orderly transition risk scenarios, the limited reduction in GDP 
+      could reduce real household income. The immediate and smooth reduction 
+      in CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
+      in morbidity.
     always: |
       The Early/Orderly transition risk scenario could lead to a limited relative 
       reduction in GDP growth. However, any negative impacts on GDP are likely to 
@@ -229,7 +237,12 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, climate change is likely to result in 
+      increased disruption that could have an impact on the Savings and Retirement 
+      underwriting class, the significant reduction in GDP could impact household's 
+      income. Mortality and morbidity could also be affected by both a reduction in 
+      healthcare spending and an increase in the myriad of health problems due to 
+      higher temperatures.
     always: |
       Under high physical risk scenarios, climate change is likely to result in 
       severe temperature increases and large increases in both the frequency and 
@@ -334,7 +347,7 @@ physical:
 
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       In the low physical risk scenarios, climate change is expected to result 
       in material disruption  to the savings and retirement underwriting class. 

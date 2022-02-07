@@ -13,7 +13,11 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the ability to offer some 
+      lines of business e.g. surety insurer guarantees performance of a contractual 
+      obligation and insurer guarantees payment of credit extended to a party 
+      to carbon-intensive sectors could be significantly affected if public policies 
+      curb carbon emissions dramatically.
     always: |
       Climate change risk management is a board-level governance issue and
       directors have to be actively involved in establishing and monitoring
@@ -82,7 +86,12 @@ transition:
       retention is strained.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the ability to offer some lines 
+      of business e.g. insurer guarantees performance of a contractual obligation 
+      and insurer guarantees payment of credit extended to a party to carbon-intensive 
+      sectors could be significantly affected. There are also risks that some types of 
+      business shrink in size through the transition, reducing the top-line premium 
+      income; while other sectors may see growth.
     always: |
       Climate change risk management is a board-level governance issue and 
       directors have to be actively involved in establishing and monitoring 
@@ -138,7 +147,10 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, action against insured parties could be 
+      for failure to mitigate climate change risks if the insured parties are being 
+      held responsible for the physical impacts of climate change, such as through 
+      emissions of greenhouse gases. 
     always: |
       The casualty underwriting class are also exposed to physical risk. Chronic
       effects (e.g. raised sea-levels and mean temperatures) and acute effects
@@ -210,7 +222,7 @@ physical:
       which courts might be willing to follow.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The casualty underwriting class are also exposed to physical risk. Chronic
       effects (e.g. raised sea-levels and mean temperatures) and acute effects

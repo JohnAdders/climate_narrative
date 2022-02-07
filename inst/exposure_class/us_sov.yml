@@ -40,7 +40,7 @@ description: |
   climate change, including changes to fiscal revenues, higher government
   spending, changes in GDP growth and potential downgrades in credit rating. In
   this paper a '20-notch' sovereign bond rating scale translated from
-  S&P's alphabetical standardized rating scale (see Appendix) is usedto outline 
+  S&P's alphabetical standardized rating scale (see Appendix) is used to outline 
   changes to sovereign bond ratings, as is common in surrounding literature. 
   Impacts of climate change on sovereign bond ratings are discussed in reference 
   to the 2021 working paper titled "Rising Temperatures, Falling Ratings: 
@@ -53,7 +53,9 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the increases in carbon 
+      prices could have a strong impact on sovereign bonds in particular in 
+      countries with a strong level of dependence on fossil fuel energy sources.
     always: |
       In the Delayed transition risk scenario, late policy action enables a
       "fossil recovery" out of the economic crisis brought about by COVID-19.
@@ -86,7 +88,7 @@ transition:
       
       The Disorderly transition risk scenarios could also lead to a reduction in
       GDP growth. Based on the IIASA NGFS Scenario Explorer v2.0, the impact of
-      the divergent net zero scenario on the US GDP would be about twice as much
+      the Divergent Net Zero scenario on the US GDP would be about twice as much
       as the one on the UK by 2050.
 
     high_materiality: |
@@ -151,7 +153,11 @@ transition:
       approximately US$7.35-11.03bn.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, immediate policy reaction, 
+      societal change and national energy strategies could lead to significant 
+      increases in carbon prices. This could have an impact on sovereign bonds 
+      in particular in countries with a strong level of dependence on fossil 
+      fuel energy sources.
     always: |
       In Early/Orderly transition risk scenarios, immediate policy reaction,
       societal change and national energy strategies lead to significant and
@@ -329,18 +335,18 @@ physical:
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
       Creditworthiness" working paper from the University of Cambridge, in a
       high physical risk scenario, most developed countries would be
-      significantly downgraded, with an average downgrade exceeding notches by
-      2100\. Most downgrades would be among top-rated countries. This does not
+      significantly downgraded, with an average downgrade exceeding two notches by
+      2100. Most downgrades would be among top-rated countries. This does not
       necessarily reflect increased climate-related risks for these top-rated countries,
       but greater sensitivity of the top ratings. It is easier to lose an AAA
       rating than a C rating. According to the study, in a high physical risk
-      scenario, the US would have a downgrade clost to five notches by 2100,
+      scenario, the US would have a downgrade close to five notches by 2100,
       increasing the cost of borrowing for the US government by approximately
       US$63.2-94.8bn.
 
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       In a low physical risk scenario, physical risks would undermine GDP growth
       due to loss of land, changing crop yields, depleted natural resources,

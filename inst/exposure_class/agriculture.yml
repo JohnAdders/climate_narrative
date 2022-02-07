@@ -38,7 +38,11 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, agricultural producers can 
+      benefit from expanding markets but face greater risks of stranded assets, 
+      geographic growth constraints, and rising production costs in the face of 
+      new emissions costs, land use restrictions, and necessary productivity 
+      improvements.
     always: |
       The Agriculture sector continues to expand to feed and supply agricultural
       energy products to a growing global population. It contributes to 23% of
@@ -138,7 +142,10 @@ transition:
       see their net value and profitability rise under transitions.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, agricultural producers can benefit 
+      from expanding markets but face greater risks of stranded assets, geographic 
+      growth constraints, and rising production costs in the face of new emissions 
+      costs, land use restrictions, and necessary productivity improvements.
     always: |
       The agriculture sector continues to expand to feed and supply agricultural
       energy products to a growing global population. It contributes to 23% of
@@ -235,7 +242,10 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The agriculture sector is highly exposed to high physical risk scenarios 
+      due to the projected increase in weather variation. These scenarios could 
+      also lead to a significant GDP impact which could negatively impact demand 
+      for this sector.
     always: |
       The agriculture sector is also exposed to physical risk. Chronic effects
       (e.g. raised sea-levels and mean temperatures) and acute effects due to
@@ -300,7 +310,7 @@ physical:
 
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The agriculture sector is also exposed to physical risk. Chronic effects
       (e.g. raised sea-levels and mean temperatures) and acute effects due to

@@ -50,36 +50,15 @@ description: |
   Warehouses may be considered as part of the retail establishment where they
   act as an auxiliary to the core business of the customer facing retail stores.
 
-  Retail Trade is generally covered by NAICS Section G Codes prefixed 52-59 :
-
-  52. Building Materials, Hardware, Garden Supply, and Mobile Home Dealers
-
-  01. General Merchandise Stores
-
-  01. Food Stores
-
-  01. Automotive Dealers and Gasoline Service Stations
-
-  01. Apparel and Accessory Stores
-
-  01. Home Furniture, Furnishings, and Equipment Stores
-
-  01. Eating and Drinking Places
-
-  01. Miscellaneous Retail
-
-  North American Industry Classification System, 2018, Available online at:
-  (https://www.naics.com/sic-codes-counts-division/?div=G){target="\_blank"}.
-  These may be cross-referenced to the UK Standard Industrial Classification of
-  economic activities codes (SIC)
-  (https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic){target="\_blank"}
-  (or other classification systems) via online tools.
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the consumer products 
+      sector could deliver longer-term carbon reduction initiatives by shifting 
+      to lower carbon intensive supplies, reducing the carbon intensity of their 
+      physical stores or sales platforms, and using clean energy sources.
     always: |
-      As the Consumer Products sector sits between the Manufacturing sector and
+      As the consumer products sector sits between the Manufacturing sector and
       end-consumers, it is subject to the considerations of both the products it
       purchases (or receives) as suppliers react to a top-down policy
       environment that results in a rapid reduction of emissions, as well as the
@@ -97,11 +76,11 @@ transition:
       While the consumer products sector could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
       energy generation in the Delayed transition scenario, driven by late
-      policy action enabling a "fossil fuelled recovery" out of the economic
+      policy action enabling a "fossil recovery" out of the economic
       crisis brought about by COVID-19, results in CO<sub>2</sub> emissions
       increasing until 2030 before rapidly decreasing after 2030 as carbon
       prices are increased to compensate for the inaction beforehand. In the
-      divergent scenario there is a more immediate but divergent reduction in
+      Divergent scenario there is a more immediate but divergent reduction in
       CO<sub>2</sub> emissions. Both these scenarios are likely to have a
       significant impact on the inherent practices of retail companies, upstream
       manufacturers and consumer demand, which could affect profitability of
@@ -220,7 +199,10 @@ transition:
       supply-chain of product level carbon intensity analysis.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the consumer products sector 
+      could deliver longer-term carbon reduction initiatives by shifting to lower 
+      carbon intensive supplies, reducing the carbon intensity of their physical 
+      stores or sales platforms, and using clean energy sources.
     always: |
       As the consumer products sector sits between the manufacturing sector and
       end-consumers, it is subject to the considerations of both the products it
@@ -324,7 +306,7 @@ transition:
         following industry norms and being a market follower rather than leader
         in this space, this risk could be reduced.
 
-      In early/orderly transition risk scenarios, the consumer products sector
+      In Early/Orderly transition risk scenarios, the consumer products sector
       could deliver longer-term carbon reduction initiatives by shifting to
       lower carbon intensive supplies, reducing the carbon intensity of their
       physical stores or sales platforms, and using clean energy sources. The
@@ -332,13 +314,13 @@ transition:
       combination of shift in end-consumer preferences from the buy side and a
       similar shift on the sell side as manufacturers and suppliers react to a
       top-down policy environment that results in an immediate and smooth
-      reduction of emissions. For example, In the early/orderly transition risk
-      scenarios, on the supply side, Manufacturing Sector's CO<sub>2</sub>
-      emissions are expected to reduce between 76% and 98% by 2050 from 2020
-      levels. On the demands side, a change in consumer sentiment is already
-      reflected in a 2020 collaborative retail customer survey led by Globe
-      Scan, 74% of 27 000 polled indicated that they wanted to significantly
-      reduce their impact on the environment and nature.
+      reduction of emissions. For example, in these scenarios, on the supply 
+      side, Manufacturing Sector's CO<sub>2</sub> emissions are expected to 
+      reduce between 76% and 98% by 2050 from 2020 levels. On the demands side, 
+      a change in consumer sentiment is already reflected in a 2020 collaborative 
+      retail customer survey led by Globe Scan, 74% of 27 000 polled indicated 
+      that they wanted to significantly reduce their impact on the environment 
+      and nature.
 
       By its very nature, the Consumer Sector is diverse and nuanced, with
       multiple product categories, distribution platforms and business sizes and
@@ -352,7 +334,11 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, whilst the consumer products sector is used 
+      to responding to and managing changing weather conditions, climate change and 
+      global warming could increase weather variations. This could lead to increasing 
+      disruption to supply chains and own operations which could impact the profitability 
+      for these companies.
     always: |
       The consumer products sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. raised sea-levels
@@ -377,7 +363,6 @@ physical:
       over time. The high physical risk scenarios could therefore also lead to a
       significant GDP impact which could negatively impact demand for consumer
       products.
-
 
     high_materiality: |
       Consideration should be given to the following hazards when considering
@@ -445,6 +430,8 @@ physical:
         Thailand in 2011 lead to severe supply chain disruption.
 
       ![Impact of 2011 Thai Floods](Thai_Flooding_Consumer_Products.png)
+      
+      Infographic: impact of 2011 Thai floods.
 
       **Source:**
       [BSR Climate and Supply Chain Management](https://www.bsr.org/reports/BSR_Climate_and_Supply_Chain_Management.pdf)
@@ -474,7 +461,7 @@ physical:
       proliferated since the second world war).
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The consumer products sector is highly exposed to the physical impacts of
       climate change including both the chronic effects (e.g. raised sea-levels
@@ -563,6 +550,8 @@ physical:
         Thailand in 2011 lead to severe supply chain disruption.
 
       ![Impact of 2011 Thai Floods](Thai_Flooding_Consumer_Products.png)
+      
+      Infographic: impact of 2011 Thai floods.
 
       **Source:**
       [BSR Climate and Supply Chain Management](https://www.bsr.org/reports/BSR_Climate_and_Supply_Chain_Management.pdf)
@@ -590,6 +579,20 @@ physical:
       less wide-ranging product choices in such a scenario (undoing the fashion
       for greater choice that has grown via the Great Acceleration that has
       proliferated since the second world war).
+
+appendix: |
+  **Rising temperatures and retail sales**
+  
+  It is established that retail sales are negatively impacted by negative 
+  divergence of seasonal temperatures from the norm, and positively impacted 
+  by positive divergence of seasonal temperatures from the norm:
+  
+  ![Retail Sales](Retail_Sales.png)
+  
+  Retail sales and UK mean temperature variance to mean (2003-2013).
+
+  **Source:**
+  [ONS: How sensitive to weather is the retail sector?](https://webarchive.nationalarchives.gov.uk/ukgwa/20160109040025/http:/www.ons.gov.uk/ons/rel/rsi/retail-sales/november-2013/sty-how-sensitive-to-the-weather-is-the-retail-sector-.html)
 
 references: |
   - [NAICS Code Description](https://www.naics.com/sic-codes-counts-division/?div=G){target="\_blank"}

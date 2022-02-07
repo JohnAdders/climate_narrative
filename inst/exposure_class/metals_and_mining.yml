@@ -20,7 +20,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the changing patterns in 
+      energy consumption will have a negative impact on carbon-intensive sectors 
+      such as coal mining, however this contraction in demand could be offset by 
+      the need to increase mining of other minerals vital to clean energy technologies.
     always: |
       By 2050, in a Disorderly transition risk scenario, coal represents 0.47%
       (in the Delayed Transition scenario) or 0.63% (in the Divergent Net Zero
@@ -58,7 +61,7 @@ transition:
 
       In Delayed/Divergent transition risk scenarios, the mining sector is 
       likely to be impacted. Overall, in terms of primary energy demand in the 
-      disorderly transition scenario, demand of coal falls rapidly (after 2030 in 
+      disorderly transition risk scenario, demand of coal falls rapidly (after 2030 in 
       the Disorderly/Divergent transition scenario) and is replaced mostly by 
       renewable energy sources.
 
@@ -95,7 +98,10 @@ transition:
       which could be challenging from an operating perspective.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the changing patterns in energy 
+      consumption will have a significant negative impact on carbon-intensive sectors 
+      such as coal mining, however, this contraction in demand could be offset by the 
+      need to increase mining of other minerals vital to clean energy technologies.
     always: |
       By 2050, in Orderly transition scenarios coal represents 0.86% (in the
       Below 2&deg;C scenario) or 0.65% (in the Net Zero 2050 scenario) of global
@@ -130,8 +136,8 @@ transition:
         5% increase in operating costs, whilst South African could face a near
         25% increase.
 
-      Overall, in terms of primary energy demand, the Early/Orderly transition 
-      risk scenarios, demand of coal falls and is replaced mostly renewable energy 
+      Overall, in terms of primary energy demand, in the Early/Orderly transition 
+      risk scenarios, demand of coal falls and is replaced mostly by renewable energy 
       sources.
 
       ![Primary Energy](Primary_Energy_Orderly_Mining.png)
@@ -167,7 +173,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The high physical risk scenarios could lead to increasing disruption to mining 
+      production and could affect profitability, however, there is a variation in 
+      exposure, depending on the mine’s geographical location.
     always: |
       The mining sector is highly exposed to the physical impacts of climate
       change including both the chronic effects (e.g. raised sea-levels) and
@@ -177,7 +185,7 @@ physical:
       supply of chemicals and other materials needed for a mining site's
       process, plants, and mine equipment and impact the ability to ship
       concentrate to international markets. Whilst the mining sector is used to
-      responding to and managing changing weather conditions, in the low
+      responding to and managing changing weather conditions, in the high
       physical risk scenario, climate change and global warming could increase
       weather variations. This could lead to increasing disruption to mining
       production which could significantly impact the profitability for these
@@ -187,15 +195,16 @@ physical:
       The following examples illustrate how the mining sector could be impacted
       in a high physical risk scenario:
 
-      **Chronic Impacts**: **Water Stress** could lead to greater competition 
-      between mining companies as they fight for scarce water resources. It 
-      could also likely lead to an expectation of increased environmental 
-      regulation focusing on protecting water supply and quality. This would 
-      incur hefty additional costs for water intensive industries such as mining. 
-      Around 30% to 50% of copper, gold, iron ore, and zinc productions are 
-      already concentrated in 'water stress hot-spots' (central Asia, Chilean 
-      coast, eastern Australia, the Middle East, southern Africa, western Australia, 
-      and a large zone in western North America). Changes to precipitation patterns 
+      **Chronic Impacts**: **Water Stress** is the key physical risk faced by 
+      the sector; the issue could lead to greater competition between mining 
+      companies as they fight for scarce water resources. It could also likely 
+      lead to an expectation of increased environmental regulation focusing on 
+      protecting water supply and quality. This would incur hefty additional 
+      costs for water intensive industries such as mining. Around 30% to 50% of 
+      copper, gold, iron ore, and zinc productions are already concentrated 
+      in 'water stress hot-spots' (central Asia, Chilean coast, eastern 
+      Australia, the Middle East, southern Africa, western Australia, and a 
+      large zone in western North America). Changes to precipitation patterns 
       could place increasing stress on the availability of water at these sites, as 
       well as at sites not currently under water stress. Depending on the water 
       intensiveness of the industrial process, such changes, while seemingly minor 
@@ -230,7 +239,7 @@ physical:
       resilience to extreme weather events and define alternative routes.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The mining sector is highly exposed to the physical impacts of climate
       change including both the chronic effects and acute effects due to changes
@@ -249,19 +258,20 @@ physical:
       The following examples illustrate how the mining sector could be impacted
       in a low physical risk scenario:
 
-      **Chronic Impacts**: **Water stress** could lead to greater competition 
-      between mining companies as they fight for scarce water resources. It 
-      could also likely lead to an expectation of increased environmental regulation 
-      focusing on protecting water supply and quality. This would incur hefty 
-      additional costs for water intensive industries such as mining. Around 30% 
-      to 50% of copper, gold, iron ore, and zinc productions are already concentrated 
-      in 'water stress hot-spots' (central Asia, Chilean coast, eastern Australia, 
-      the Middle East, southern Africa, western Australia, and a large zone in 
-      western North America). Changes to precipitation patterns could place 
-      increasing stress on the availability of water at these sites, as well as 
-      at sites not currently under water stress. Depending on the water 
-      intensiveness of the industrial process, such changes, while seemingly minor 
-      in percentage terms, could be critical to a mine's operations or license to operate.
+      **Chronic Impacts**: **Water stress** is the key physical risk faced by the 
+      sector; the issue could lead to greater competition between mining companies 
+      as they fight for scarce water resources. It could also likely lead to an 
+      expectation of increased environmental regulation focusing on protecting water 
+      supply and quality. This would incur hefty additional costs for water intensive 
+      industries such as mining. Around 30% to 50% of copper, gold, iron ore, and 
+      zinc productions are already concentrated in 'water stress hot-spots' 
+      (central Asia, Chilean coast, eastern Australia, the Middle East, southern 
+      Africa, western Australia, and a large zone in western North America). 
+      Changes to precipitation patterns could place increasing stress on the 
+      availability of water at these sites, as well as at sites not currently 
+      under water stress. Depending on the water intensiveness of the industrial 
+      process, such changes, while seemingly minor in percentage terms, could 
+      be critical to a mine's operations or license to operate.
 
       ![Water Stress](Water_Stress_Mining.png)
 

@@ -14,7 +14,9 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the profitability of the 
+      motor sector and its associated underwriting class could also depend on the 
+      automotive companies' proactively investing in innovation and new technology. 
     always: |
       While motor insurance could continue to play a role in meeting customer
       demand for the coming years, the changing patterns in energy generation in
@@ -127,7 +129,9 @@ transition:
       conditions and coverage.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the profitability of the motor 
+      sector and its associated underwriting class could depend on the automotive 
+      companies' proactively investing in innovation and new technology. 
     always: |
       While motor insurance firms could continue to play a role in meeting
       customer demand for the coming years, the changing patterns in energy
@@ -166,7 +170,7 @@ transition:
         internal combustion engines.
 
       - **Changing consumer preferences and revenue**. There is potential for
-        models of car ownership changing as transition to low a carbon economy
+        models of car ownership changing as transition to a low carbon economy
         could encourage more active travel (walking and cycling) and use of
         public transport which could lead to a rise in shared-ownership vehicles
         (such as zip car) and fewer personal cars. This could mean that the
@@ -184,7 +188,7 @@ transition:
         collisions from drivers to manufacturers whilst autonomous driving
         software is active. An increase in the proportion of electric vehicles
         on the road may also be associated with cover expanding to include
-        charging cables and chargers where owned by the vehicle owner.
+        charging cables and chargers owned by the vehicle owner.
 
       Primary energy prices (i.e. the spot price at the global market) remain 
       above 2020 levels but secondary energy prices (i.e. paid by large scale 
@@ -227,7 +231,12 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, the motor underwriting class could be 
+      subject to increasing disruption which could impact the profitability for 
+      these companies and therefore could impact the motor underwriting class as 
+      the physical effects of climate change could result in increased claims and 
+      increased premiums potentially resulting in some of the motor underwriting 
+      risks becoming either uninsurable or unaffordable. 
     always: |
       In high physical risk scenarios, climate change is likely to result in
       increased disruption that could have an impact on the motor sector and its
@@ -269,7 +278,7 @@ physical:
       owners.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       In the low physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on the motor sector and its

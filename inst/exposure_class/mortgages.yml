@@ -20,7 +20,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, lenders who have a material 
+      exposure to mortgages are likely to be the largest source of carbon emissions, 
+      so there is a heavy reliance on accurate energy efficiency and/or consumption 
+      data to calculate financed emissions.
     always: |
       Lending on residential property remains a key focus and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
@@ -215,7 +218,10 @@ transition:
       begins the feedback loop of climate scenario analysis into future strategy.  
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, lenders who have a material 
+      exposure to mortgages are likely to be the largest source of carbon emissions, 
+      so there is a heavy reliance on accurate energy efficiency and/or consumption 
+      data to calculate financed emissions. 
     always: |
       Lending on residential property remains a key focus, and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
@@ -370,7 +376,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, there could be a skew of lending towards 
+      properties less prone to physical risks and could result in certain segments 
+      in the property market being blighted given their risk profile. 
     always: |
       The mortgage market has the potential to be one of the most exposed
       sectors to physical impacts of climate change due to changes to frequency
@@ -461,7 +469,7 @@ physical:
         level of loss is extreme, albeit still low.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The mortgage market has the potential to be one of the most exposed
       sectors to physical impacts of climate change due to changes to frequency

@@ -14,7 +14,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the aviation sector could 
+      face increasing operating costs through carbon taxation as well as falling 
+      asset values as older and less efficient aircraft could have to be retired 
+      earlier than originally planned.
     always: |
       Aviation sector could continue to play a role in meeting customer demand
       for the coming years The changing patterns in energy generation in the
@@ -119,7 +122,10 @@ transition:
       conditions and coverage.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the aviation sector could 
+      face increasing operating costs through carbon taxation as well as falling 
+      asset values as older and less efficient aircraft could have to be retired 
+      earlier than originally planned.
     always: |
       Aviation sector could continue to play a role in meeting customer demand
       for the coming years. The changing patterns in energy generation in
@@ -217,7 +223,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The aviation sector and its associated underwriting class could be highly 
+      exposed to high physical risk scenarios due to the projected increase in 
+      weather variation which could impact the profitability for these companies. 
     always: |
       The aviation sector and its associated underwriting class are also exposed
       to physical risk. Chronic effects (e.g. raised sea-level and mean
@@ -281,7 +289,7 @@ physical:
       and increase flood-mitigating construction standards.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The aviation sector and its associated underwriting class are also exposed
       to physical risk. Chronic effects (e.g. raised sea-levels and mean

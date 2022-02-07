@@ -45,7 +45,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, manufacturers could 
+      benefit from new revenue streams, but face rising operating costs due 
+      to carbon pricing policies and falling asset values as current infrastructure 
+      becomes increasingly obsolete. 
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
@@ -96,7 +99,7 @@ transition:
         transition to net zero such as carbon capture storage (CCS)
         manufacturing. 
         
-        In Delayed/Divergent scenarios, CCS utilisation is projected 
+      - In Delayed/Divergent scenarios, CCS utilisation is projected 
         to increase dramatically, with between ~5000 and ~6000 Megatons of CO<sub>2</sub> 
         being stored annually by 2050.
         
@@ -147,7 +150,10 @@ transition:
       order to reduce the impact of this scenario.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, manufacturers could benefit 
+      from new revenue streams, but face rising operating costs due to carbon 
+      pricing policies and falling asset values as current infrastructure 
+      becomes increasingly obsolete. 
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
@@ -240,7 +246,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The manufacturing sector is highly exposed to high physical risk 
+      scenarios due to the projected increase in weather variation and 
+      the disruption this could cause to global supply chains. 
     always: |
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
@@ -290,7 +298,7 @@ physical:
         production is highly susceptible to diseases which could significantly
         availability of rubber on a global scale.
         
-      - **Rising sea levels and flooding events** could pose risks to the
+      - **Rising sea levels** could pose risks to the
         manufacturing sector through substantial damage to facilities and
         equipment leading to establishment closures. This may result in
         abandoned assets and long-term disruptions to manufacturing outputs as
@@ -330,7 +338,7 @@ physical:
         when faced with disaster.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
@@ -378,7 +386,7 @@ physical:
         highly susceptible to disease which could significantly affect the
         availability of rubber on a global scale.
         
-      - **Rising sea levels could pose a risk to the manufacturing sector through 
+      - **Rising sea levels** could pose a risk to the manufacturing sector through 
         damage to facilities and equipment, which is particularly apparent for the 
         manufacturing hubs that dominant Asia's costal pathways. 
 

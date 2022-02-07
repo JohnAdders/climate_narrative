@@ -17,7 +17,11 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the marine sector could 
+      be impacted by an increase in carbon price through fuel cost, falling 
+      asset values as older inefficient vessels becomes increasingly obsolete, 
+      and lower demand as consumers become more conscious of the environmental 
+      impacts of their purchases. 
     always: |
       While the marine sector could continue to play a role in facilitating
       global trade and meeting customer demand for the coming years, the
@@ -133,7 +137,11 @@ transition:
       in alignment with their green strategy.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the marine sector could be 
+      impacted by an increase in carbon price through fuel cost, falling asset 
+      values as older inefficient vessels becomes increasingly obsolete, and 
+      lower demand as consumers become more conscious of the environmental 
+      impacts of their purchases. 
     always: |
       The marine sector could continue to play a role in facilitating global
       trade and meeting customer demand for the coming years. The changing
@@ -244,7 +252,11 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The marine sector and its associated underwriting class are highly exposed 
+      to high physical risk scenarios due to the projected increase in weather 
+      variation and the resulting damage this could cause to vessels and other 
+      infrastructure, which could increase claims and premiums; potentially 
+      rendering some marine underwriting risks uninsurable or unaffordable. 
     always: |
       The marine sector and its associated underwriting class are exposed to
       physical risk. Chronic (e.g. raised sea-levels and global mean
@@ -299,7 +311,7 @@ physical:
       water temperature profiles when planning new fish farm sites.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The marine sector and its associated underwriting class are exposed to
       physical risk. Chronic effects (e.g. raised sea-levels and global mean
