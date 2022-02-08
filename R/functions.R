@@ -636,19 +636,17 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
 
 #' Function to produce references section (for all items)
 #'
-#' @param aggregated_table aggregated inputs
-#' @param type_inputs disaggregated inputs
+#' @param items vector of items to get references for
 #' @return markdown-formatted references section (h2)
 #'
-get_references <- function(aggregated_table, type_inputs) {
+get_references <- function(items) {
   out <- ""
-  if (nrow(aggregated_table)) {
+  if (length(items)) {
     out <- paste0(
       out,
       "# References\n\n"
     )
-    for (i in 1:nrow(aggregated_table)) {
-      item <- aggregated_table$item[i]
+    for (item in items) {
       if (length(global$exposure_classes[[item]][["references"]])) {
         out <- paste0(
           out,
@@ -1034,7 +1032,7 @@ get_report_contents <- function(aggregated_inputs, inputs, report_version, repor
       } else if (content_function == "get_references"){
         out <- c(
           out,
-          list(get_references(aggregated_inputs, inputs))
+          list(get_references(aggregated_inputs$item))
         )
       } else {
         stop(paste("Invalid content function name", content_function))
@@ -1089,7 +1087,7 @@ get_executive_summary_exposures <- function(
             out_exp <- paste0(
               out_exp,
               "##### ",
-              risk_intensity,
+              capitalize(risk_intensity),
               " ",
               risk,
               " risk\n\n",
