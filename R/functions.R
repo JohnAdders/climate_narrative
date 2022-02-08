@@ -1203,3 +1203,49 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
   }
   return(out)
 }
+
+#' Karnan's request for easier change comparison - single sector
+#' 
+#' @param exposure_class sector
+#' 
+get_exposure_test_description <- function(exposure_class){
+  out <- paste0(
+    "## ",
+    exposure_class$name,
+    "\n\n",
+    exposure_class$description,
+    "\n\n"
+  )
+  for (risk in c("transition", "physical")){
+    for (risk_intensity in c("high", "low")){
+      temp <- exposure_class[[risk]][[risk_intensity]]
+      out <- paste0(
+        out,
+        "### ",
+        capitalize(paste(risk_intensity, risk, "risk")),
+        "\n\n",
+        temp[["exec_description"]],
+        "\n\n",
+        "#### Summary",
+        "\n\n",
+        temp[["always"]],
+        "\n\n",
+        "#### Details",
+        "\n\n",
+        temp[["high_materiality"]],
+        "\n\n"
+      )
+    }
+  }
+  return(out)
+}
+
+#' Karnan's request for easier change comparison - loop over all sectors
+#'
+get_test_report <- function(){
+  out <- "# Test report\n\n"
+  for (exposure_class in global$exposure_classes){
+    out <- paste0(out, get_exposure_test_description(exposure_class))
+  }
+  return(out)
+}

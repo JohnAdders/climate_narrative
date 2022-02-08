@@ -17,6 +17,8 @@ server <- function(input, output, session) {
   session$userData$temp_rtf <- tempfile(fileext = ".rtf")
   session$userData$temp_md_dev <- tempfile(fileext = ".md")
   session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
+  session$userData$temp_md_dev_2 <- tempfile(fileext = ".md")
+  session$userData$temp_rtf_dev_2 <- tempfile(fileext = ".rtf")
   if (global$progress_bar){
     # progress bar code
     progress <- Progress$new(session, min=0, max=1, style="old")
@@ -259,7 +261,7 @@ server <- function(input, output, session) {
         )
       )
       write_report_to_file(
-        get_report_contents(aggregated_all_inputs(), all_inputs(), global$report_version, input$report_scenario_selection, TRUE),
+        get_report_contents(aggregated_all_inputs()[1,], all_inputs(), global$report_version, input$report_scenario_selection, TRUE),
         session$userData$temp_md_dev
       )
       fs <- file.size(session$userData$temp_md_dev)
@@ -285,6 +287,46 @@ server <- function(input, output, session) {
       rtf_center_images(session$userData$temp_rtf_dev)
       removeModal()
       file.copy(session$userData$temp_rtf_dev, file)
+    }
+  )
+
+output$dev_report_2 <- downloadHandler(
+    filename = "Sectors_Output.rtf",
+    content = function(file, res_path = system.file("www", package = "climate.narrative")) {
+      showModal(
+        modalDialog(
+          "Report rendering in progress... when complete your download will start automatically",
+          title = "Climate Report",
+          footer = NULL
+        )
+      )
+      write_report_to_file(
+        get_test_report(),
+        session$userData$temp_md_dev_2
+      )
+      fs <- file.size(session$userData$temp_md_dev_2)
+      rmarkdown::render(
+        input = session$userData$temp_md_dev_2,
+        output_file = session$userData$temp_rtf_dev_2,
+        output_format = rmarkdown::rtf_document(
+          toc = TRUE,
+          toc_depth = 2,
+          number_sections = FALSE,
+          pandoc_args = c(
+            paste0("--resource-path=", res_path),
+            "--self-contained"
+          )
+        )
+      )
+      # I found that in some cases the rendering silently overwrites the markdown file
+      # Cause unknown, maybe due to some weird blank characters instead of space?
+      # Therefore added a control to throw error if the file is truncated in the process
+      if (file.size(session$userData$temp_md_dev_2) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+      # by default the table of contents in pandoc output does not work, fixing it manually
+      rtf_fix_table_of_contents(session$userData$temp_rtf_dev_2)
+      rtf_center_images(session$userData$temp_rtf_dev_2)
+      removeModal()
+      file.copy(session$userData$temp_rtf_dev_2, file)
     }
   )
 
