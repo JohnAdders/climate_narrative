@@ -1089,7 +1089,7 @@ get_executive_summary_exposures <- function(
             out_exp <- paste0(
               out_exp,
               "##### ",
-              risk_intensity,
+              capitalize(risk_intensity),
               " ",
               risk,
               " risk\n\n",
