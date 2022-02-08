@@ -1256,8 +1256,10 @@ get_exposure_test_description <- function(exposure_class){
 #'
 get_test_report <- function(){
   out <- "# Test report\n\n"
-  for (exposure_class in global$exposure_classes){
+  for (i in 1:length(global$exposure_classes)){
+    exposure_class <- global$exposure_classes[[i]]
     out <- paste0(out, get_exposure_test_description(exposure_class))
+    out <- paste0(out, get_exposure_appendix(names(global$exposure_classes)[i]))
   }
   return(out)
 }
