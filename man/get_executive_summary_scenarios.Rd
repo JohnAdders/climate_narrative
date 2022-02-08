@@ -4,7 +4,12 @@
 \alias{get_executive_summary_scenarios}
 \title{One of the functions comprising the executive summary text}
 \usage{
-get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no)
+get_executive_summary_scenarios(
+  aggregated_inputs,
+  inputs,
+  scenario_no,
+  exposure_exec = FALSE
+)
 }
 \arguments{
 \item{aggregated_inputs}{data frame of aggregated inputs (implemented in the reactive expression)}
@@ -12,6 +17,9 @@ get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no)
 \item{inputs}{data frame of all inputs (implemented in the reactive expression)}
 
 \item{scenario_no}{integer or vector of integers indicating which of the global$scenarios should be included}
+
+\item{exposure_exec}{bool whether to include a short description for the sector
+(applicable in single sector context only)}
 }
 \value{
 string - executive summary text

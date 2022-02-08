@@ -151,7 +151,7 @@ exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL)
       inputId = id,
       label = NULL,
       choices = c("N/A", "Low", "Medium", "High"),
-      selected = ifelse(dev, "High", "N/A"),
+      selected = ifelse(dev, "Medium", "N/A"),
       # to allow empty string as a valid option I do not use selectize
       selectize = FALSE,
       width = width
@@ -296,14 +296,18 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width) {
   out <- string
   newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
   i <- 1
-  while (i * line_width < nchar(out)) {
-    for (loc in newline_locations[newline_locations <= 1 + i * line_width]) {
+  while (i * line_width < nchar(out) || length(newline_locations)) {
+    if (any(newline_locations <= 1 + i * line_width)) {
+      loc <- min(newline_locations)
       out <- string_break_line_with_spaces(out, line_width, loc, 4)
+      newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
     }
-    space_locations <- stringi::stri_locate_all(out, fixed = " ")[[1]][, 1]
-    last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
-    if (length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
-    newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
+    else {
+      space_locations <- stringi::stri_locate_all(out, fixed = " ")[[1]][, 1]
+      last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
+      if (length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
+      newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
+    }
     i <- i + 1
   }
   return(out)
@@ -918,24 +922,33 @@ add_path_to_graphs <- function(x) {
 #' One of the functions comprising the executive summary text
 #' 
 #' @inherit get_executive_summary
+#' @param exposure_exec bool whether to include a short description for the sector
+#' (applicable in single sector context only)
 #' 
-get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_no){
-  out <- c("## Scenarios\n\nThis report considers the following scenarios:\n\n")
+get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_no, exposure_exec = FALSE){
+  out <- "## Scenarios\n\nThis report considers the following scenarios:\n\n"
   for (scenario in global$scenarios[scenario_no]) {
     if (scenario$is_scenario){
-      out <- c(
+      out <- paste0(
         out,
-        paste0(
-          "### ",
-          scenario$name,
-          "\n\n",
-          scenario$exec_description,
+        "### ",
+        scenario$name,
+        "\n\n",
+        scenario$exec_description,
+        "\n\n"
+      )
+      risk <- scenario$exec_short
+      risk_intensity <- scenario[[risk]]
+      if (exposure_exec){
+        out <- paste0(
+          out,
+          "##### ",
+          capitalize(risk),
+          " risk\n\n",
+          global$exposure_classes[[aggregated_inputs$item]][[risk]][[risk_intensity]]["always"],
           "\n\n"
         )
-      )
-    } else {
-      # even if not a scenario needs an entry in order to be able to select properly later
-      out <- c(out, "")
+      }
     }
   }
   out <- paste(out, collapse = "\n")
@@ -952,10 +965,24 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
 #' 
 get_executive_summary <- function(aggregated_inputs, inputs, scenario_no){
   out_0 <- "# Executive summary\n\n"
-  out_1 <- get_executive_summary_inputs(aggregated_inputs, inputs) 
-  out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no)
-  out_3 <- get_executive_summary_exposures(aggregated_inputs, inputs, scenario_no)
-  # the final output is a vector, out_2 is a vector, out_0 out_1 out_3 are scalars
+  exec <- data.frame(high = rep(FALSE,2), low = rep(FALSE,2))
+  rownames(exec) <- c("physical", "transition")
+  for (i in scenario_no){
+    if (global$scenarios[[i]]$is_scenario){
+      risk <- global$scenarios[[i]][["exec_short"]]
+      exec[risk, global$scenarios[[i]][[risk]]] <- TRUE
+    }
+  }
+  if (nrow(aggregated_inputs) > 1){
+    out_1 <- get_executive_summary_inputs(aggregated_inputs, inputs)
+    out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no)
+    out_3 <- get_executive_summary_exposures(aggregated_inputs, inputs, scenario_no, exec)
+  } else {
+    out_1 <- ""
+    out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no, TRUE)
+    out_3 <- ""
+  }
+  # the final output is a string
   return(paste0(out_0, out_1, out_2, out_3))
 }
 
@@ -995,7 +1022,6 @@ get_report_contents <- function(aggregated_inputs, inputs, report_version, repor
   scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
   out <- list()
   for (scenario in global$scenarios[scenario_no]) {
-    cat("\n")
     content_function <- scenario$special_content_function
     if (!is.null(content_function)){
       if (content_function == "get_executive_summary"){
@@ -1011,7 +1037,7 @@ get_report_contents <- function(aggregated_inputs, inputs, report_version, repor
           list(get_references(aggregated_inputs, inputs))
         )
       } else {
-        stop(paste("Invalid function name", content_function))
+        stop(paste("Invalid content function name", content_function))
       }
     } else {
       out <- c(
@@ -1024,7 +1050,6 @@ get_report_contents <- function(aggregated_inputs, inputs, report_version, repor
       )
     }
   }
-  # out <- c(out, list(get_references(aggregated_inputs, inputs)))
   out <- add_path_to_graphs(out)
   return(out)
 }
@@ -1032,8 +1057,18 @@ get_report_contents <- function(aggregated_inputs, inputs, report_version, repor
 #' One of the functions comprising the executive summary text
 #' 
 #' @inherit get_executive_summary
+#' @param exec the table of bools, determining which of the descriptions
+#' (in both high materiality and others) will be used in the report
 #'
-get_executive_summary_exposures <- function(aggregated_inputs, inputs, scenario_no){
+#' Rows denote risks (physical/transition)
+#' Columns denote risk intensity (high/low)
+#'
+get_executive_summary_exposures <- function(
+  aggregated_inputs,
+  inputs,
+  scenario_no,
+  exec
+){
   out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
@@ -1046,14 +1081,24 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs, scenario_
         out_exp,
         "#### ",
         global$exposure_classes[[item]][["name"]],
-        "\n\n",
-        "TODO: select the correct physical/transition desc",
-        # "##### Physical risk\n\n",
-        # global$exposure_classes[[item]][["physical"]][["high"]]["always"],
-        # "\n\n##### Transition risk\n\n",
-        # global$exposure_classes[[item]][["transition"]][["high"]]["always"],
         "\n\n"
       )
+      for (risk in rownames(exec)){
+        for (risk_intensity in colnames(exec)){
+          if (exec[risk, risk_intensity]){
+            out_exp <- paste0(
+              out_exp,
+              "##### ",
+              risk_intensity,
+              " ",
+              risk,
+              " risk\n\n",
+              global$exposure_classes[[item]][["physical"]][["high"]]["always"],
+              "\n\n"
+            )
+          }
+        }
+      }
     }
   }
   if (high_counter == 0 ){
@@ -1067,14 +1112,18 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs, scenario_
     for (i in 1:nrow(less_material)){
       item <- less_material[i, 1]
       less_material$name[i] <- global$exposure_classes[[item]][["name"]]
-      less_material$risk.description[i] <- paste(
-        "TODO: select the correct physical/transition desc",
-        #global$exposure_classes[[item]][["transition"]][["high"]][["exec_description"]],
-        #global$exposure_classes[[item]][["transition"]][["low"]][["exec_description"]],
-        #global$exposure_classes[[item]][["physical"]][["high"]][["exec_description"]],
-        #global$exposure_classes[[item]][["physical"]][["low"]][["exec_description"]],
-        sep = "\n"
-      )
+      less_material$risk.description[i] <- ""
+      for (risk in rownames(exec)){
+        for (risk_intensity in colnames(exec)){
+          if (exec[risk, risk_intensity]){
+            less_material$risk.description[i] <- paste(
+              less_material$risk.description[i],
+              global$exposure_classes[[item]][[risk]][[risk_intensity]][["exec_description"]],
+              sep = "<br>"
+            )
+          }
+        }
+      }
     }
     for (i in 1:ncol(less_material)){
       colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
@@ -1082,7 +1131,8 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs, scenario_
     out_exp <- paste0(
       out_exp,
       table_to_markdown_multiline(
-        less_material[,c("Name", "Materiality", "Risk.description")]
+        less_material[,c("Name", "Materiality", "Risk.description")],
+        col_widths = c(20, 20, 60)
       )
     )
   } else {
