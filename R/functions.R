@@ -1218,21 +1218,35 @@ get_exposure_test_description <- function(exposure_class){
   )
   for (risk in c("transition", "physical")){
     for (risk_intensity in c("high", "low")){
-      temp <- exposure_class[[risk]][[risk_intensity]]
+      if (risk == "transition") {
+        riskname <- switch(risk_intensity,
+          high = "Disorderly transition",
+          low = "Orderly transition"
+        )
+      } else {
+        riskname <- switch(risk_intensity,
+          high = "High physical risk",
+          low = "Low physical risk"
+        )
+      }
+      content <- exposure_class[[risk]][[risk_intensity]]
+      header_core <- paste(capitalize(exposure_class$name), " --- ", riskname)
       out <- paste0(
         out,
         "### ",
-        capitalize(paste(risk_intensity, risk, "risk")),
+        header_core,
+        " --- One-liner\n\n",
+        content[["exec_description"]],
         "\n\n",
-        temp[["exec_description"]],
+        "### ",
+        header_core,
+        " --- Summary\n\n",
+        content[["always"]],
         "\n\n",
-        "#### Summary",
-        "\n\n",
-        temp[["always"]],
-        "\n\n",
-        "#### Details",
-        "\n\n",
-        temp[["high_materiality"]],
+        "### ",
+        header_core,
+        " --- Details\n\n",
+        content[["high_materiality"]],
         "\n\n"
       )
     }
