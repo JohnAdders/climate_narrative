@@ -4,12 +4,10 @@
 \alias{get_references}
 \title{Function to produce references section (for all items)}
 \usage{
-get_references(aggregated_table, type_inputs)
+get_references(items)
 }
 \arguments{
-\item{aggregated_table}{aggregated inputs}
-
-\item{type_inputs}{disaggregated inputs}
+\item{items}{vector of items to get references for}
 }
 \value{
 markdown-formatted references section (h2)

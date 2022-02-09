@@ -3,6 +3,7 @@ position: 2
 is_scenario: yes
 transition: high
 physical: low
+exec_short: transition
 exec_description: |
   Policies drive a sharp decrease in CO<sub>2</sub> emissions after 2030 
   and increase of carbon prices until 2030. In the Divergent Net Zero 
