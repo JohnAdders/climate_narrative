@@ -594,6 +594,7 @@ get_exposure_risk_description <- function(
     )
   }
   out <- paste0(
+    out,
     "### ",
     header_text,
     " --- Summary\n\n",
