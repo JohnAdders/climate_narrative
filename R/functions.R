@@ -550,8 +550,16 @@ get_exposure_appendix <- function(item) {
 #' @param materiality Materiality of item
 #' @param physical_or_transition Type of scenario
 #' @param high_or_low Is scenario high or low
+#' @param include_oneliner FALSE by default, normally oneliner is for executive summary
 #' 
-get_exposure_risk_description <- function(item, products, materiality, physical_or_transition, high_or_low) {
+get_exposure_risk_description <- function(
+  item,
+  products,
+  materiality,
+  physical_or_transition,
+  high_or_low,
+  include_oneliner=FALSE
+) {
   if (high_or_low == FALSE) {
     return("")
   }
@@ -573,27 +581,38 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     " --- ",
     riskname
   )
+  header_text <- capitalize(header_text)
+  content <- global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]]
+  if (include_oneliner){
+    out <- paste0(
+      "### ",
+      header_text,
+      " --- Summary\n\n",
+      content[["exec_description"]],
+      "\n\n"
+    )
+  }
   out <- paste0(
     "### ",
-    capitalize(header_text),
-    " --- Summary\n\n",
-    global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
+    header_text,
+    " --- One-liner\n\n",
+    content[["always"]],
     "\n\n"
   )
   if (materiality == "High") {
     out <- paste0(
       out,
       "### ",
-      capitalize(header_text),
+      header_text,
       " --- Details\n\n",
-      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
+      content[["high_materiality"]],
       "\n\n"
     )
   }
   for (product in products) {
     out <- paste0(
       out,
-      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][[product]],
+      content[[product]],
       "\n\n"
     )
   }
