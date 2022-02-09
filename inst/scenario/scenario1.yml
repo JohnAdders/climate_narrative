@@ -3,6 +3,7 @@ position: 1
 is_scenario: yes
 transition: low
 physical: low
+exec_short: transition
 exec_description: |
   The Early/Orderly transition risk scenarios could result in a gradual 
   reduction in CO<sub>2</sub> emissions and an increase in the carbon price. 
