@@ -1184,18 +1184,22 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols=1)
       if (!is.null(values_trimmed)){
         ncol <- ncol(values_trimmed)
-        if (ncol > 5){
-          col_widths <- c(30, rep(20, ncol - 1))
-        } else {
-          col_widths <- rep(30, ncol)
-        }
         out <- paste0(
           out,
           "### ",
           tab$tab_title,
-          "\n\n",
-          table_to_markdown_multiline(values_trimmed, col_widths = col_widths)
+          "\n\n"
         )
+        # if table has more than 4 columns split it in parts
+        nparts <- ceiling((ncol - 1) / 3)
+        for (i in 1:nparts){
+          cols_to_use <- c(1, 3 * i + (-1:1))
+          cols_to_use <- cols_to_use[cols_to_use <= ncol]
+          out <- paste0(
+            out,
+            table_to_markdown_multiline(values_trimmed[, cols_to_use], col_widths = c(30,20,20,20))
+          )
+        }
       }
     }
   }
