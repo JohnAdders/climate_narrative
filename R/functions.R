@@ -550,8 +550,16 @@ get_exposure_appendix <- function(item) {
 #' @param materiality Materiality of item
 #' @param physical_or_transition Type of scenario
 #' @param high_or_low Is scenario high or low
+#' @param include_oneliner FALSE by default, normally oneliner is for executive summary
 #' 
-get_exposure_risk_description <- function(item, products, materiality, physical_or_transition, high_or_low) {
+get_exposure_risk_description <- function(
+  item,
+  products,
+  materiality,
+  physical_or_transition,
+  high_or_low,
+  include_oneliner=FALSE
+) {
   if (high_or_low == FALSE) {
     return("")
   }
@@ -573,27 +581,40 @@ get_exposure_risk_description <- function(item, products, materiality, physical_
     " --- ",
     riskname
   )
+  header_text <- capitalize(header_text)
+  content <- global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]]
+  out <- ""
+  if (include_oneliner){
+    out <- paste0(
+      "### ",
+      header_text,
+      " --- One-liner\n\n",
+      content[["exec_description"]],
+      "\n\n"
+    )
+  }
   out <- paste0(
+    out,
     "### ",
-    capitalize(header_text),
+    header_text,
     " --- Summary\n\n",
-    global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["always"]],
+    content[["always"]],
     "\n\n"
   )
   if (materiality == "High") {
     out <- paste0(
       out,
       "### ",
-      capitalize(header_text),
+      header_text,
       " --- Details\n\n",
-      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][["high_materiality"]],
+      content[["high_materiality"]],
       "\n\n"
     )
   }
   for (product in products) {
     out <- paste0(
       out,
-      global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]][[product]],
+      content[[product]],
       "\n\n"
     )
   }
@@ -1198,6 +1219,44 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
         )
       }
     }
+  }
+  return(out)
+}
+
+
+#' Karnan's request for easier change comparison - single sector
+#' 
+#' @param item sector name
+#' 
+get_exposure_test_description <- function(item){
+  exposure_class <- global$exposure_classes[[item]]
+  out <- paste0(
+    "## ",
+    exposure_class$name,
+    "\n\n",
+    exposure_class$description,
+    "\n\n"
+  )
+  
+  for (risk in c("transition", "physical")){
+    for (risk_intensity in c("high", "low")){
+      out <- paste0(
+        out,
+        get_exposure_risk_description(item, c(), "High", risk, risk_intensity, TRUE)
+      )
+    }
+  }
+  return(out)
+}
+
+#' Karnan's request for easier change comparison - loop over all sectors
+#'
+get_test_report <- function(){
+  out <- "# Test report\n\n"
+  for (i in 1:length(global$exposure_classes)){
+    exposure_class <- global$exposure_classes[[i]]
+    out <- paste0(out, get_exposure_test_description(names(global$exposure_classes)[i]))
+    out <- paste0(out, get_exposure_appendix(names(global$exposure_classes)[i]))
   }
   return(out)
 }

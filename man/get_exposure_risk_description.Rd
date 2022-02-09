@@ -10,7 +10,8 @@ get_exposure_risk_description(
   products,
   materiality,
   physical_or_transition,
-  high_or_low
+  high_or_low,
+  include_oneliner = FALSE
 )
 }
 \arguments{
@@ -23,6 +24,8 @@ get_exposure_risk_description(
 \item{physical_or_transition}{Type of scenario}
 
 \item{high_or_low}{Is scenario high or low}
+
+\item{include_oneliner}{FALSE by default, normally oneliner is for executive summary}
 }
 \description{
 Lower level report helper function responsible for single risk
