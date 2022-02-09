@@ -1202,51 +1202,57 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
   return(out)
 }
 
+
 #' Karnan's request for easier change comparison - single sector
 #' 
-#' @param exposure_class sector
+#' @param item sector
 #' 
-get_exposure_test_description <- function(exposure_class){
+get_exposure_test_description <- function(item){
   out <- paste0(
     "## ",
-    exposure_class$name,
+    item$name,
     "\n\n",
-    exposure_class$description,
+    item$description,
     "\n\n"
   )
+  
   for (risk in c("transition", "physical")){
     for (risk_intensity in c("high", "low")){
-      if (risk == "transition") {
-        riskname <- switch(risk_intensity,
-          high = "Disorderly transition",
-          low = "Orderly transition"
-        )
-      } else {
-        riskname <- switch(risk_intensity,
-          high = "High physical risk",
-          low = "Low physical risk"
-        )
-      }
-      content <- exposure_class[[risk]][[risk_intensity]]
-      header_core <- paste(capitalize(exposure_class$name), " --- ", riskname)
-      out <- paste0(
+      out <- paste(
         out,
-        "### ",
-        header_core,
-        " --- One-liner\n\n",
-        content[["exec_description"]],
-        "\n\n",
-        "### ",
-        header_core,
-        " --- Summary\n\n",
-        content[["always"]],
-        "\n\n",
-        "### ",
-        header_core,
-        " --- Details\n\n",
-        content[["high_materiality"]],
-        "\n\n"
+        get_exposure_risk_description(item, c(), "High", risk, risk_intensity, TRUE)
       )
+      # if (risk == "transition") {
+      #   riskname <- switch(risk_intensity,
+      #     high = "Disorderly transition",
+      #     low = "Orderly transition"
+      #   )
+      # } else {
+      #   riskname <- switch(risk_intensity,
+      #     high = "High physical risk",
+      #     low = "Low physical risk"
+      #   )
+      # }
+      # content <- exposure_class[[risk]][[risk_intensity]]
+      # header_core <- paste(capitalize(exposure_class$name), " --- ", riskname)
+      # out <- paste0(
+      #   out,
+      #   "### ",
+      #   header_core,
+      #   " --- One-liner\n\n",
+      #   content[["exec_description"]],
+      #   "\n\n",
+      #   "### ",
+      #   header_core,
+      #   " --- Summary\n\n",
+      #   content[["always"]],
+      #   "\n\n",
+      #   "### ",
+      #   header_core,
+      #   " --- Details\n\n",
+      #   content[["high_materiality"]],
+      #   "\n\n"
+      # )
     }
   }
   return(out)
