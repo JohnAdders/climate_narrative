@@ -113,7 +113,8 @@ transition:
       increased claims costs. The Increased health care costs, due to increasing
       carbon prices, could equally place a strain on national health services as
       government spending is stretched. This may result in an increased demand
-      for private health care cover.
+      for private health care cover, providing an opportunity for the health 
+      underwriting class.
   low:
     exec_description: |
       Health underwriting exposures could be impacted in the Early/Orderly 
@@ -178,7 +179,7 @@ transition:
         actually contribute to local particulate pollution.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
-        but without global buy-in then this could also reduce the correlation.
+        but without global buy-in, then this could also reduce the correlation.
 
       In an Orderly transition risk scenario, there is potential for fewer
       deaths and a positive outcome for health relating to air pollution. The
@@ -201,7 +202,8 @@ transition:
       insurers through increased claims costs. The increased health care costs,
       due to increasing in carbon prices, could equally place a strain on
       national health services as government spending is stretched. This may
-      result in an increased demand for private health care cover.
+      result in an increased demand for private health care cover, providing 
+      an opportunity for the health underwriting class.
 physical:
   high:
     exec_description: |
