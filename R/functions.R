@@ -1224,14 +1224,15 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
 
 #' Karnan's request for easier change comparison - single sector
 #' 
-#' @param item sector
+#' @param item sector name
 #' 
 get_exposure_test_description <- function(item){
+  exposure_class <- global$exposure_classes[[item]]
   out <- paste0(
     "## ",
-    item$name,
+    exposure_class$name,
     "\n\n",
-    item$description,
+    exposure_class$description,
     "\n\n"
   )
   
@@ -1241,37 +1242,6 @@ get_exposure_test_description <- function(item){
         out,
         get_exposure_risk_description(item, c(), "High", risk, risk_intensity, TRUE)
       )
-      # if (risk == "transition") {
-      #   riskname <- switch(risk_intensity,
-      #     high = "Disorderly transition",
-      #     low = "Orderly transition"
-      #   )
-      # } else {
-      #   riskname <- switch(risk_intensity,
-      #     high = "High physical risk",
-      #     low = "Low physical risk"
-      #   )
-      # }
-      # content <- exposure_class[[risk]][[risk_intensity]]
-      # header_core <- paste(capitalize(exposure_class$name), " --- ", riskname)
-      # out <- paste0(
-      #   out,
-      #   "### ",
-      #   header_core,
-      #   " --- One-liner\n\n",
-      #   content[["exec_description"]],
-      #   "\n\n",
-      #   "### ",
-      #   header_core,
-      #   " --- Summary\n\n",
-      #   content[["always"]],
-      #   "\n\n",
-      #   "### ",
-      #   header_core,
-      #   " --- Details\n\n",
-      #   content[["high_materiality"]],
-      #   "\n\n"
-      # )
     }
   }
   return(out)
@@ -1283,7 +1253,7 @@ get_test_report <- function(){
   out <- "# Test report\n\n"
   for (i in 1:length(global$exposure_classes)){
     exposure_class <- global$exposure_classes[[i]]
-    out <- paste0(out, get_exposure_test_description(exposure_class))
+    out <- paste0(out, get_exposure_test_description(names(global$exposure_classes)[i]))
     out <- paste0(out, get_exposure_appendix(names(global$exposure_classes)[i]))
   }
   return(out)
