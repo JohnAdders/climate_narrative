@@ -50,7 +50,12 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_executive_summary_scenarios</span><span class="op">(</span><span class="va">aggregated_inputs</span>, <span class="va">inputs</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_executive_summary_scenarios</span><span class="op">(</span>
+  <span class="va">aggregated_inputs</span>,
+  <span class="va">inputs</span>,
+  <span class="va">scenario_no</span>,
+  exposure_exec <span class="op">=</span> <span class="cn">FALSE</span>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -59,10 +64,15 @@
 <dd><p>data frame of aggregated inputs (implemented in the reactive expression)</p></dd>
 <dt>inputs</dt>
 <dd><p>data frame of all inputs (implemented in the reactive expression)</p></dd>
+<dt>scenario_no</dt>
+<dd><p>integer or vector of integers indicating which of the global$scenarios should be included</p></dd>
+<dt>exposure_exec</dt>
+<dd><p>bool whether to include a short description for the sector
+(applicable in single sector context only)</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>vector of strings - executive summary text (one string per scenario)</p>
+    <p>string - executive summary text</p>
     </div>
 
   </div>

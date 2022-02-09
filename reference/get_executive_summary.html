@@ -50,7 +50,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_executive_summary</span><span class="op">(</span><span class="va">aggregated_inputs</span>, <span class="va">inputs</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_executive_summary</span><span class="op">(</span><span class="va">aggregated_inputs</span>, <span class="va">inputs</span>, <span class="va">scenario_no</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -59,10 +59,12 @@
 <dd><p>data frame of aggregated inputs (implemented in the reactive expression)</p></dd>
 <dt>inputs</dt>
 <dd><p>data frame of all inputs (implemented in the reactive expression)</p></dd>
+<dt>scenario_no</dt>
+<dd><p>integer or vector of integers indicating which of the global$scenarios should be included</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)</p>
+    <p>string - executive summary text</p>
     </div>
 
   </div>

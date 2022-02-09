@@ -79,6 +79,9 @@
     <loc>/reference/get_scenario_descriptions.html</loc>
   </url>
   <url>
+    <loc>/reference/get_scenario_no.html</loc>
+  </url>
+  <url>
     <loc>/reference/heartbeat.html</loc>
   </url>
   <url>
@@ -86,12 +89,6 @@
   </url>
   <url>
     <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/produce_full_report.html</loc>
-  </url>
-  <url>
-    <loc>/reference/produce_selective_report.html</loc>
   </url>
   <url>
     <loc>/reference/produce_tooltip_matrix.html</loc>
@@ -146,5 +143,8 @@
   </url>
   <url>
     <loc>/reference/ui.html</loc>
+  </url>
+  <url>
+    <loc>/reference/write_report_to_file.html</loc>
   </url>
 </urlset>
