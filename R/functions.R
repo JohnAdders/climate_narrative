@@ -1240,7 +1240,7 @@ get_exposure_test_description <- function(item){
   
   for (risk in c("transition", "physical")){
     for (risk_intensity in c("high", "low")){
-      out <- paste(
+      out <- paste0(
         out,
         get_exposure_risk_description(item, c(), "High", risk, risk_intensity, TRUE)
       )
