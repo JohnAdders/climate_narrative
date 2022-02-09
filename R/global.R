@@ -1,10 +1,5 @@
 global <- new.env()
 
-addResourcePath(
-    "climate_narrative",
-    system.file("www", package = "climate.narrative")
-  )
-
 global$exposure_classes <- read_dir("exposure_class")
 global$exposures <- read_dir("exposure")
 global$scenarios <- read_dir("scenario")
