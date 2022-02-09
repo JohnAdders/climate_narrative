@@ -102,8 +102,8 @@ restore_spaces <- function(camelcase) {
 
 #' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
 #' and product-specific text (if any)
-#' @param exposure_matrix the matrix of exposures in the specific format
-#' Its first column is name, second is product, the others contain exposure names or blank cells
+#' 
+#' @inherit exposure_grid_server
 #' 
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
@@ -147,12 +147,11 @@ exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL)
   if (id == "") {
     form <- p("")
   } else {
-    #id <- paste(prefix, remove_special_characters(exposure_item), sep = "_")
     form <- selectInput(
       inputId = id,
       label = NULL,
       choices = c("N/A", "Low", "Medium", "High"),
-      selected = ifelse(dev, "High", "N/A"),
+      selected = ifelse(dev, "Medium", "N/A"),
       # to allow empty string as a valid option I do not use selectize
       selectize = FALSE,
       width = width
@@ -288,8 +287,7 @@ string_break_line_with_spaces <- function(string, line_width, location, n_char =
 #' Add spaces to a string so that it can be split into blocks of exactly the same length
 #' without breaking words.
 #'
-#' @param string String to break
-#' @param line_width Width of a line
+#' @inherit string_break_line_with_spaces
 #'
 #' @importFrom stats na.omit
 #' @importFrom stringi stri_locate_all
@@ -298,14 +296,18 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width) {
   out <- string
   newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
   i <- 1
-  while (i * line_width < nchar(out)) {
-    for (loc in newline_locations[newline_locations <= 1 + i * line_width]) {
+  while (i * line_width < nchar(out) || length(newline_locations)) {
+    if (any(newline_locations <= 1 + i * line_width)) {
+      loc <- min(newline_locations)
       out <- string_break_line_with_spaces(out, line_width, loc, 4)
+      newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
     }
-    space_locations <- stringi::stri_locate_all(out, fixed = " ")[[1]][, 1]
-    last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
-    if (length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
-    newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
+    else {
+      space_locations <- stringi::stri_locate_all(out, fixed = " ")[[1]][, 1]
+      last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
+      if (length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
+      newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
+    }
     i <- i + 1
   }
   return(out)
@@ -634,19 +636,17 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
 
 #' Function to produce references section (for all items)
 #'
-#' @param aggregated_table aggregated inputs
-#' @param type_inputs disaggregated inputs
+#' @param items vector of items to get references for
 #' @return markdown-formatted references section (h2)
 #'
-get_references <- function(aggregated_table, type_inputs) {
+get_references <- function(items) {
   out <- ""
-  if (nrow(aggregated_table)) {
+  if (length(items)) {
     out <- paste0(
       out,
       "# References\n\n"
     )
-    for (i in 1:nrow(aggregated_table)) {
-      item <- aggregated_table$item[i]
+    for (item in items) {
       if (length(global$exposure_classes[[item]][["references"]])) {
         out <- paste0(
           out,
@@ -791,62 +791,16 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
   )
 }
 
-# The functions below are writing a report to (temporary) file first
-# this is necessary as markdown::render takes file as an argument
-# there are 3 versions of the report, in each separate temp file:
-#    full report for email RTF,
-#    single scenario for HTML
-#    single scenario with common sectors (e.g. introduction) for button RTF
-
-#' Function that writes a full report to (temporary) file
-#'
-#' this is necessary as markdown::render takes file as an argument
-#' not used at the moment, but do not delete - will be sent by email probably
-#' @param report_contents the content to write
-#' @param report_version variable that can be used to control the multiple report versions in a single code
-#' @param tempfile where to write the report
-#' @return NULL, output is a file as specified in the argument
-produce_full_report <- function(report_contents, report_version, tempfile){
-  file_conn <- file(tempfile)
-  writeLines(unlist(report_contents), file_conn)
-  close(file_conn)
-  return(invisible(NULL))
-}
-  
-#' Function that writes a full report to (temporary) file
+#' Function that writes a (full or selective) report to a (temporary) file
 #'
 #' this is necessary as markdown::render takes file as an argument
 #' @param report_contents the content to write
-#' @param report_version variable that can be used to control the multiple report versions in a single code
-#' @param report_scenario_selection (user-friendly) scenario name (or empty string)
-#' @param is_rtf a flag that triggers several format specific settings:
-#' - TRUE: include non-scenario sections (e.g. intro)
-#' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @param tempfile where to write the report
 #' @return NULL, output is a file as specified in the argument
-produce_selective_report <- function(report_contents, report_version, report_scenario_selection, is_rtf, tempfile){
-  if (report_scenario_selection == ""){
-    scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
-  } else {
-    scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
-  }
-  if (is_rtf){
-    scenario_no <- sort(
-      c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
-    )
-  }
+write_report_to_file <- function(report_contents, tempfile){ 
   file_conn <- file(tempfile)
-  # offset is for the title (and optionally exec summary), not included in 'scenarios' but included in 'report_contents'
-  if (report_version >= 3) {
-    contents <- report_contents[c(2, 2 + scenario_no, length(report_contents))]
-    contents[[1]] <- contents[[1]][c(1:3, 3 + scenario_no, length(contents[[1]]))]
-    contents[[1]] <- paste(contents[[1]], collapse="\n")
-  } else {
-    contents <- report_contents[c(1 + scenario_no, length(report_contents))]
-  }
-  contents <- add_path_to_graphs(contents)
   writeLines(
-    contents,
+    report_contents,
     file_conn
   )
   close(file_conn)
@@ -878,6 +832,7 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
   close(file_conn)
   return(invisible(NULL))
 }
+
 #' Fix the table of contents in the RTF file
 #' 
 #' ToC in pandoc output is not working out of the box. The ToC is a list of hyperlinks,
@@ -902,8 +857,9 @@ rtf_fix_table_of_contents <- function(filename){
     bookmark_text <- stringi::stri_match_first(rtf[i], regex="HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
     bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text) - 4)
     bookmark_row <- grep(
-        paste0(" ", rtf[i + 1],"\\\\p"), 
-        rtf[search_position : length(rtf)]
+        paste0(" ", rtf[i + 1], "\\p"), 
+        rtf[search_position : length(rtf)],
+        fixed = TRUE,
       )[1] + search_position - 1
     search_position <- bookmark_row
     # Appending the bookmark matching the ToC hyperlink
@@ -963,29 +919,37 @@ add_path_to_graphs <- function(x) {
 
 #' One of the functions comprising the executive summary text
 #' 
-#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
-#' @param inputs data frame of all inputs (implemented in the reactive expression)
-#' @return vector of strings - executive summary text (one string per scenario)
+#' @inherit get_executive_summary
+#' @param exposure_exec bool whether to include a short description for the sector
+#' (applicable in single sector context only)
 #' 
-get_executive_summary_scenarios <- function(aggregated_inputs, inputs){
-  out <- c("## Scenarios\n\nThis report considers the following scenarios:\n\n")
-  for (scenario in global$scenarios) {
+get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_no, exposure_exec = FALSE){
+  out <- "## Scenarios\n\nThis report considers the following scenarios:\n\n"
+  for (scenario in global$scenarios[scenario_no]) {
     if (scenario$is_scenario){
-      out <- c(
+      out <- paste0(
         out,
-        paste0(
-          "### ",
-          scenario$name,
-          "\n\n",
-          scenario$exec_description,
+        "### ",
+        scenario$name,
+        "\n\n",
+        scenario$exec_description,
+        "\n\n"
+      )
+      risk <- scenario$exec_short
+      risk_intensity <- scenario[[risk]]
+      if (exposure_exec){
+        out <- paste0(
+          out,
+          "##### ",
+          capitalize(risk),
+          " risk\n\n",
+          global$exposure_classes[[aggregated_inputs$item]][[risk]][[risk_intensity]]["always"],
           "\n\n"
         )
-      )
-    } else {
-      # even if not a scenario needs an entry in order to be able to select properly later
-      out <- c(out, "")
+      }
     }
   }
+  out <- paste(out, collapse = "\n")
   return(out)
 }
 
@@ -994,66 +958,115 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs){
 #' 
 #' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
 #' @param inputs data frame of all inputs (implemented in the reactive expression)
-#' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
+#' @param scenario_no integer or vector of integers indicating which of the global$scenarios should be included
+#' @return string - executive summary text
 #' 
-get_executive_summary <- function(aggregated_inputs, inputs){
+get_executive_summary <- function(aggregated_inputs, inputs, scenario_no){
   out_0 <- "# Executive summary\n\n"
-  out_1 <- get_executive_summary_inputs(aggregated_inputs, inputs) 
-  out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs)
-  out_3 <- get_executive_summary_exposures(aggregated_inputs, inputs)
-  # the final output is a vector, out_2 is a vector, out_0 out_1 out_3 are scalars
-  return(c(out_0, out_1, out_2, out_3))
+  exec <- data.frame(high = rep(FALSE,2), low = rep(FALSE,2))
+  rownames(exec) <- c("physical", "transition")
+  for (i in scenario_no){
+    if (global$scenarios[[i]]$is_scenario){
+      risk <- global$scenarios[[i]][["exec_short"]]
+      exec[risk, global$scenarios[[i]][[risk]]] <- TRUE
+    }
+  }
+  if (nrow(aggregated_inputs) > 1){
+    out_1 <- get_executive_summary_inputs(aggregated_inputs, inputs)
+    out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no)
+    out_3 <- get_executive_summary_exposures(aggregated_inputs, inputs, scenario_no, exec)
+  } else {
+    out_1 <- ""
+    out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no, TRUE)
+    out_3 <- ""
+  }
+  # the final output is a string
+  return(paste0(out_0, out_1, out_2, out_3))
 }
+
+#' Helper function that translate the value of input field to the scenario number(s)
+#' 
+#' @param report_scenario_selection value of the input
+#' @param is_rtf bool whether to include sections that are for RTF only
+#' @return vector of integers
+get_scenario_no <- function(report_scenario_selection, is_rtf){
+  if (report_scenario_selection == ""){
+    scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
+  } else {
+    scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
+  }
+  if (is_rtf){
+    scenario_no <- c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
+  } else {
+    scenario_no <- c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario && sce$include_in_HTML)))
+  }
+  scenario_no <- sort(scenario_no)
+  return(scenario_no)
+}
+
 
 #' Function that generates a markdown content of the report
 #' 
 #' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
 #' @param inputs data frame of all inputs (implemented in the reactive expression)
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
+#' @param report_scenario_selection (user-friendly) scenario name (or empty string)
+#' @param is_rtf a flag that triggers several format specific settings:
+#' - TRUE: include non-scenario sections (e.g. intro)
+#' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #' 
-get_report_contents <- function(aggregated_inputs, inputs, report_version){
-  out <- list(
-    paste0(
-    "---\n",
-    "title: |\n",
-    "  Climate report\n\n",
-    "  ![](title.png)\n\n",
-    "  ```{=rtf}\n",
-    "  \\page\n",
-    "  ```\n\n",
-    "---\n\n"
-  )
-  )
-  if (report_version == 3){
-    out <- c(
-      out,
-      list(
-        get_executive_summary(aggregated_inputs, inputs)
+get_report_contents <- function(aggregated_inputs, inputs, report_version, report_scenario_selection, is_rtf){
+  scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
+  out <- list()
+  for (scenario in global$scenarios[scenario_no]) {
+    content_function <- scenario$special_content_function
+    if (!is.null(content_function)){
+      if (content_function == "get_executive_summary"){
+        if (report_version >= 3){
+          out <- c(
+            out,
+            list(get_executive_summary(aggregated_inputs, inputs, scenario_no))
+          )
+        }
+      } else if (content_function == "get_references"){
+        out <- c(
+          out,
+          list(get_references(aggregated_inputs$item))
+        )
+      } else {
+        stop(paste("Invalid content function name", content_function))
+      }
+    } else {
+      out <- c(
+        out,
+        list(get_scenario_descriptions(
+          aggregated_inputs,
+          inputs,
+          scenario
+        ))
       )
-    )
+    }
   }
-  for (scenario in global$scenarios) {
-    out <- c(
-      out,
-      list(get_scenario_descriptions(
-        aggregated_inputs,
-        inputs,
-        scenario
-      ))
-    )
-  }
-  out <- c(out, list(get_references(aggregated_inputs, inputs)))
-  out
+  out <- add_path_to_graphs(out)
+  return(out)
 }
 
 #' One of the functions comprising the executive summary text
 #' 
-#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
-#' @param inputs data frame of all inputs (implemented in the reactive expression)
-#' @return string - executive summary text
-#' 
-get_executive_summary_exposures <- function(aggregated_inputs, inputs){
+#' @inherit get_executive_summary
+#' @param exec the table of bools, determining which of the descriptions
+#' (in both high materiality and others) will be used in the report
+#'
+#' Rows denote risks (physical/transition)
+#' Columns denote risk intensity (high/low)
+#'
+get_executive_summary_exposures <- function(
+  aggregated_inputs,
+  inputs,
+  scenario_no,
+  exec
+){
   out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
@@ -1066,13 +1079,24 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs){
         out_exp,
         "#### ",
         global$exposure_classes[[item]][["name"]],
-        "\n\n",
-        "##### Physical risk\n\n",
-        global$exposure_classes[[item]][["physical"]][["high"]]["always"],
-        "\n\n##### Transition risk\n\n",
-        global$exposure_classes[[item]][["transition"]][["high"]]["always"],
         "\n\n"
       )
+      for (risk in rownames(exec)){
+        for (risk_intensity in colnames(exec)){
+          if (exec[risk, risk_intensity]){
+            out_exp <- paste0(
+              out_exp,
+              "##### ",
+              capitalize(risk_intensity),
+              " ",
+              risk,
+              " risk\n\n",
+              global$exposure_classes[[item]][["physical"]][["high"]]["always"],
+              "\n\n"
+            )
+          }
+        }
+      }
     }
   }
   if (high_counter == 0 ){
@@ -1086,22 +1110,29 @@ get_executive_summary_exposures <- function(aggregated_inputs, inputs){
     for (i in 1:nrow(less_material)){
       item <- less_material[i, 1]
       less_material$name[i] <- global$exposure_classes[[item]][["name"]]
-      less_material$risk.description[i] <- paste(
-        global$exposure_classes[[item]][["transition"]][["high"]][["exec_description"]],
-        global$exposure_classes[[item]][["transition"]][["low"]][["exec_description"]],
-        global$exposure_classes[[item]][["physical"]][["high"]][["exec_description"]],
-        global$exposure_classes[[item]][["physical"]][["low"]][["exec_description"]],
-        sep = "\n"
-      )
+      risk_description <- ""
+      for (risk in rownames(exec)){
+        for (risk_intensity in colnames(exec)){
+          if (exec[risk, risk_intensity]){
+            risk_description <- paste(
+              risk_description,
+              global$exposure_classes[[item]][[risk]][[risk_intensity]][["exec_description"]],
+              sep = "<br>"
+            )
+          }
+        }
+      }
+      risk_description <- substring(risk_description,5)
+      less_material$risk.description[i] <- risk_description
     }
     for (i in 1:ncol(less_material)){
       colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
     }
-    print(less_material)
     out_exp <- paste0(
       out_exp,
       table_to_markdown_multiline(
-        less_material[,c("Name", "Materiality", "Risk.description")]
+        less_material[,c("Name", "Materiality", "Risk.description")],
+        col_widths = c(20, 20, 60)
       )
     )
   } else {
@@ -1141,9 +1172,7 @@ delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), i
 
 #' One of the functions comprising the executive summary text
 #' 
-#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
-#' @param inputs data frame of all inputs (implemented in the reactive expression)
-#' @return string - executive summary text
+#' @inherit get_executive_summary
 #' 
 get_executive_summary_inputs <- function(aggregated_inputs, inputs){
   out <- "## Inputs\n\n"

@@ -45,13 +45,16 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, manufacturers could 
+      benefit from new revenue streams, but face rising operating costs due 
+      to carbon pricing policies and falling asset values as current infrastructure 
+      becomes increasingly obsolete. 
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
       are increasingly supporting the transition to a low carbon economy. The
       extent to which is heavily influenced by various characteristics such as
-      the political could within a given jurisdiction, the availability of
+      the political will within a given jurisdiction, the availability of
       climate finance or whether there is an economic rationale to consider
       abatement. An example of this includes the integration of sustainable
       materials in apparel manufacturing to appeal to the climate conscious
@@ -80,7 +83,7 @@ transition:
       short on one or more of the points listed above:
 
       - **Increased costs** from paying a price on carbon intensive exports (see
-        European Union's proposed Carbon Border Adjusted Mechanism) and rising
+        EU's proposed Carbon Border Adjusted Mechanism) and rising
         energy costs.
 
       - **Reduced revenue** due to decline in demand for consumer discretionary
@@ -94,7 +97,16 @@ transition:
 
       - **Increased revenue** for industries that can support the global
         transition to net zero such as carbon capture storage (CCS)
-        manufacturing.
+        manufacturing. 
+        
+      - In Delayed/Divergent scenarios, CCS utilisation is projected 
+        to increase dramatically, with between ~5000 and ~6000 Megatons of CO<sub>2</sub> 
+        being stored annually by 2050.
+        
+        ![Carbon Sequestration](Carbon_Sequestration_CCS_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       - **Increased demand for skilled labour** to support the research,
         development, and implementation of climate mitigation strategies.
@@ -123,7 +135,7 @@ transition:
 
       - High risk of stranded assets.
 
-      Manufacturing industries that adopt a disorderly pathway to net zero
+      Manufacturing industries that adopt a Disorderly pathway to Net Zero
       emissions under Disorderly/Divergent transition risk scenarios may
       significantly **lose market value**. It is expected that those industries
       could face stranded assets as uncertainty about climate policies and
@@ -138,13 +150,16 @@ transition:
       order to reduce the impact of this scenario.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, manufacturers could benefit 
+      from new revenue streams, but face rising operating costs due to carbon 
+      pricing policies and falling asset values as current infrastructure 
+      becomes increasingly obsolete. 
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
       are increasingly supporting the transition to a low carbon economy. The
       extent to which is heavily influenced by various characteristics such as
-      the political could within a given jurisdiction, the availability of
+      the political will within a given jurisdiction, the availability of
       climate finance or whether there is an economic rationale to consider
       abatement. An example of this includes the integration of sustainable
       materials in apparel manufacturing to appeal to the climate conscious
@@ -173,7 +188,7 @@ transition:
       short on one or more of the points listed above:
 
       - **Increased costs** from paying a price on carbon intensive exports (see
-        European Union's proposed Carbon Border Adjusted Mechanism) and rising
+        EU's proposed Carbon Border Adjusted Mechanism) and rising
         energy costs.
 
       - **Reduced revenue** due to decline in demand for consumer discretionary
@@ -186,8 +201,18 @@ transition:
         required for transport equipment manufacturing.
 
       - **Increased revenue** for industries that can support the global
-        transition to net zero such as carbon capture storage (CCS)
+        transition to Net Zero such as carbon capture storage (CCS)
         manufacturing.
+        
+        In Early/Orderly scenarios, CCS utilisation is projected to increase 
+        dramatically, with ~5000 Megatons of CO<sub>2</sub> being stored annually by 
+        2050 in the Below 2&deg;C scenario, and ~8500 Megatons in the Net Zero 
+        2050 scenario. 
+        
+        ![Carbon Sequestration](Carbon_Sequestration_CCS_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       - **Increased demand for skilled labour** to support the research,
         development, and implementation of climate mitigation strategies.
@@ -197,9 +222,10 @@ transition:
         integration of renewable energy sources in largescale manufacturing
         establishments.
 
-      In early/orderly transition risk scenarios, the manufacturing sector could
-      achieve long-term carbon neutrality through new manufacturing processes
-      supported by clean energy sources, a circular economy which increases
+      In Early/Orderly transition risk scenarios, carbon pricing mechanisms will 
+      gradually increase which will force polluters in the manufacturing sector 
+      towards efforts to achieve long-term carbon neutrality, such as 
+      clean energy sources, a circular economy which increases
       materials efficiency and widespread carbon capture storage (CCS)
       utilisation. A strong policy environment that supports manufacturers'
       decarbonisation efforts could result in an immediate and smooth reduction
@@ -212,10 +238,17 @@ transition:
       manufacturing industries could need to adopt a range of different
       strategies based on specific circumstances of each industry and company in
       order to reduce the impact of this scenario.
+      
+      Additionally, critics suggest the effectiveness of carbon pricing schemes 
+      in facilitating abatement in the manufacturing sector is highly dependent 
+      upon whether the price of carbon adequately causes polluters to address the 
+      negative externalities they generate. 
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The manufacturing sector is highly exposed to high physical risk 
+      scenarios due to the projected increase in weather variation and 
+      the disruption this could cause to global supply chains. 
     always: |
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
@@ -243,11 +276,8 @@ physical:
         for some manufacturing activities due to raw material scarcity and
         damage to facilities and equipment.
 
-      - **Rising sea levels and flooding events** could pose risks to the
-        manufacturing sector through substantial damage to facilities and
-        equipment leading to establishment closures. This may result in
-        abandoned assets and long-term disruptions to manufacturing outputs as
-        companies struggle to move their operations.
+      - **Flooding events** could cause significant damage to facilities and
+        equipment.
 
       **Chronic Impacts**
 
@@ -267,14 +297,20 @@ physical:
         thought a lack of genetic variation amongst rubber trees means rubber
         production is highly susceptible to diseases which could significantly
         availability of rubber on a global scale.
+        
+      - **Rising sea levels** could pose risks to the
+        manufacturing sector through substantial damage to facilities and
+        equipment leading to establishment closures. This may result in
+        abandoned assets and long-term disruptions to manufacturing outputs as
+        companies struggle to move their operations.
 
       There are many actions manufacturing companies can take to adapt to high
       physical risks mentioned above. This includes investing in more resilient
       physical infrastructure, significantly diversifying supplier portfolios,
       increasing the geographical competence of manufacturing operations and
       creating robust technical systems that can identify future physical
-      stresses (particularly in the case of food manufacturing). By imbedding
-      such measures into long term climate risk planning, manufacturing
+      stresses (particularly in the case of food manufacturing). By embedding
+      such measures into long term climate business planning, manufacturing
       companies are better placed to absorb physical shocks in a high physical
       risk scenario.
 
@@ -302,7 +338,7 @@ physical:
         when faced with disaster.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
@@ -329,15 +365,14 @@ physical:
       - **Wildfires** could influence the regional availability of raw materials
         and influence volatility in commodity markets.
 
-      - **Rising sea levels and flooding events** could pose risks to the
-        manufacturing sector through damage to facilities and equipment, which
-        is particularly apparent for the manufacturing hubs that dominant Asia's
-        costal pathways.
+      - **Flooding events** could damage facilities and equipment.
 
       **Chronic Impacts**
 
       - Some industries can expect reductions in labour productivity as global
-        mean temperatures rise. **Drought** could result in competition amongst
+        mean temperatures rise. 
+        
+      - **Drought** could result in competition amongst
         manufacturers for water resources which could affect production levels
         as industry accounts for approximately 40% of total water abstractions.
         It could also likely lead to an expectation of increased environmental
@@ -350,6 +385,10 @@ physical:
         of genetic variation amongst rubber trees means rubber production is
         highly susceptible to disease which could significantly affect the
         availability of rubber on a global scale.
+        
+      - **Rising sea levels** could pose a risk to the manufacturing sector through 
+        damage to facilities and equipment, which is particularly apparent for the 
+        manufacturing hubs that dominant Asia's costal pathways. 
 
       There are many actions manufacturing companies can take to adapt to the
       low physical risks mentioned above. This includes investing in more
@@ -357,7 +396,7 @@ physical:
       portfolios, increasing the geographical competence of manufacturing
       operations and creating robust technical systems that can identify future
       physical stresses (particularly in the case of food manufacturing). By
-      imbedding such measures into long term climate risk planning,
+      embedding such measures into long term climate business planning,
       manufacturing companies are better placed to absorb physical shocks in a
       low physical risk scenario.
 
@@ -385,8 +424,6 @@ physical:
         when faced with disaster.
 
 references: |
-  - [NAICS Code Description](https://www.naics.com/naics-code-description/?code=31-33){target="\_blank"}
-
   - [Sustainability sells: Why consumers and clothing brands alike are turning to sustainability as a guiding light - Business Insider, April 2020](https://www.businessinsider.com/sustainability-as-a-value-is-changing-how-consumers-shop?r=US&IR=T){target="\_blank"}
 
   - [Carbon Border Adjustment Mechanism: Questions and Answers - European Commission, July 2021](https://ec.europa.eu/commission/presscorner/detail/en/qanda_21_3661){target="\_blank"}
@@ -402,3 +439,7 @@ references: |
   - [Climate change is affecting crop yields and reducing global food supplies - The Conversation, July 2019](https://theconversation.com/climate-change-is-affecting-crop-yields-and-reducing-global-food-supplies-118897){target="\_blank"}
 
   - [Floods, Companies and Supply Chain Risk - Columbia Climate School, November 2014](https://news.climate.columbia.edu/2014/11/17/floods-companies-and-supply-chain-risk/){target="\_blank"}
+  
+  - [NAICS Code 31-33](https://www.naics.com/six-digit-naics/?code=31-33){target="\_blank"}
+  
+  - [SIC Code D](https://www.naics.com/sic-codes-counts-division/?div=D){target="\_blank"}

@@ -23,15 +23,19 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      Life Protection underwriting exposures could be impacted in the Delayed/Divergent 
+      transition risk scenarios, as mortality and morbidity could be affected by 
+      both a reduction  pollution which could in turn result into a reduction in 
+      cancer (especially lung), respiratory diseases, heart attack and stroke and 
+      potentially a decrease in healthcare spending. 
     always: |
       Life Protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Disorderly/Divergent
-      transition risk scenarios, the delayed transition driven by a late policy
-      action enables a "fossil fuelled recovery" out of the economic crisis
+      transition risk scenarios, the Delayed transition driven by a late policy
+      action enables a "fossil recovery" out of the economic crisis
       brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
       until 2030 and a decrease in CO<sub>2</sub> emissions after 2030 to
-      compensate for the inaction beforehand. The divergent scenario results in
+      compensate for the inaction beforehand. The Divergent scenario results in
       an immediate by divergent reduction in CO<sub>2</sub> emissions. This
       could lead to a significant reduction in CO<sub>2</sub> emissions by 2050,
       probably associated with a drive towards cleaner air (due to for example,
@@ -51,10 +55,21 @@ transition:
       greenhouse gases could probably be associated with a drive towards cleaner
       air, and therefore positive outcomes for health. However, it is important
       to differentiate between the production of greenhouse gases (such as
-      CO<sub>2</sub> and CO<sub>4</sub>) that lead to warming but do not
+      CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, and the production of pollutants (such as
-      particulate matter and oxides of nitrogen) that are more directly harmful
+      particulate matter and oxides of nitrogen (NOx)) that are more directly harmful
       to health.
+      
+      In these scenarios, emissions of hazardous pollutants, for example 
+      black carbon, volatile organic compounds, and oxides of nitrogen, 
+      are projected to decrease. Emission trajectories for oxides of nitrogen 
+      (NOx) can be seen here, but other hazardous pollutants in the NGFS could 
+      equally be referenced as a guide as these have broadly similar trajectories. 
+      
+      ![NOx Emissions](Emissions_NOx_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
 
       Whilst it may be the case that advances in one are correlated with
       advancements in the other (for example if diesel cars are replaced with
@@ -115,10 +130,13 @@ transition:
       pricing of life protection products, although this is likely to be modest.
   low:
     exec_description: |
-      PLACEHOLDER
+      Life Protection underwriting exposures could be impacted in the Early/Orderly 
+      transition risk scenarios, as mortality and morbidity could decrease due to 
+      a reduction in pollution which could in turn result into a reduction in 
+      cancer (especially lung), respiratory diseases, heart attack and stroke.
     always: |
       Life Protection underwriting exposures could be impacted by the transition
-      effects related to changes in pollution levels. In early/orderly
+      effects related to changes in pollution levels. In Early/Orderly
       transition risk scenarios, immediate policy reaction, societal change,
       national energy strategies, and carbon legislation could lead to an
       immediate and smooth reduction in CO<sub>2</sub> emissions by 2050, and
@@ -128,7 +146,7 @@ transition:
       which could in turn result into a reduction in cancer (especially lung),
       respiratory diseases, heart attack and stroke.
 
-      The early/orderly transition risk scenarios could also lead to a limited
+      The Early/Orderly transition risk scenarios could also lead to a limited
       fall in GDP. This could result in changes in the rate of growth in
       healthcare spending, which could impact mortality and morbidity.
     high_materiality: |
@@ -159,7 +177,7 @@ transition:
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
         but without global buy-in then this could also reduce the correlation.
 
-      In the early/orderly transition risk scenarios, there is potential for
+      In the Early/Orderly transition risk scenarios, there is potential for
       fewer deaths and a positive outcome for health relating to air pollution.
       The reduction in pollution could result in a reduction of cancers
       (especially lung) and respiratory diseases (e.g. asthma, respiratory
@@ -171,16 +189,31 @@ transition:
       wood pellet fired facilities, for their many positives, produce
       significantly more particulates than gas-fired power stations (Hajat et
       al., 2014).
+      
+      In these scenarios, emissions of hazardous pollutants, for example black 
+      carbon, volatile organic compounds, and oxides of nitrogen, are projected 
+      to decrease. Emission trajectories for oxides of nitrogen (NOx) can be 
+      seen here, but other hazardous pollutants in the NGFS could equally be 
+      referenced as a guide as these have broadly similar trajectories.
+
+      ![NOx Emissions](Emissions_NOx_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       **Impact on pricing or product design**
 
-      To the extent that there is an impact on mortality, the early/orderly
+      To the extent that there is an impact on mortality, the Early/Orderly
       transition risk scenarios could have an impact on the pricing of life
       protection products, although this is likely to be modest.
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, climate change is likely to result in 
+      increased disruption that could have an impact on the life protection 
+      underwriting class, as mortality and morbidity could be affected by both a 
+      reduction in healthcare spending and an increase in the myriad of health 
+      problems due to higher temperatures.
     always: |
       In the high physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on the life protection
@@ -250,6 +283,14 @@ physical:
         risk, e.g. heart attacks which could lead to higher critical illness
         claims or income protection claims.
 
+      In the Current Policies scenario, mean air temperatures, as well as mean 
+      daily minimum and maximum air temperatures, are projected to increase.
+      
+      ![Air Temperature](Air_Temp_High_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+      
       **Impact on pricing or product design**
 
       To the extent that there is an impact on mortality and morbidity, the low
@@ -265,7 +306,7 @@ physical:
       the face of climate change driven emergencies and extreme weather events.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       In the low physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on life protection
@@ -333,6 +374,15 @@ physical:
         temperatures and high temperature changes with increased cardiovascular
         risk, e.g. heart attacks which could potentially lead to higher critical
         illness claims or income protection claims.
+        
+        In the Net Zero 2050 and Delayed transition scenarios, mean air temperatures, 
+        as well as mean daily minimum and maximum air temperatures, are projected 
+        to increase more in the Delayed scenario.
+        
+      ![Air Temperature](Air_Temp_Low_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
 
       **Impact on pricing or product design**
 

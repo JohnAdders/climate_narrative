@@ -7,9 +7,8 @@ description: |
   reselling services). This sector is also engaged in operating, and/or
   providing access to facilities for the transmission of voice, data, text,
   sound, and video. Transmission facilities may be based on a single technology
-  or a combination of technologies.
-
-  This sector also includes firms that are primarily engaged in:
+  or a combination of technologies. This sector also includes firms that are 
+  primarily engaged in:
 
   - purchasing access and network capacity from owners and operators of
     telecommunications networks and reselling wired and wireless
@@ -28,7 +27,10 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Disorderly/Divergent transition risk scenarios, the telecoms sector 
+      could face rising operating costs as carbon pricing policies increase 
+      energy prices, as well as falling asset values as current infrastructure 
+      becomes increasingly obsolete.
     always: |
       While telecoms could continue to play a role in meeting customer demand
       for the coming years, the changing patterns in energy generation, driven
@@ -59,6 +61,19 @@ transition:
         due to new/lost customers as a result of change in environmental
         performance.
 
+      Increased carbon tax cost and new investment for renewables could increase 
+      the electricity cost for the telecoms sector in the short-to-medium term, 
+      peaking at around 2030 in the Divergent Net Zero scenario at ~28 USD (inflation 
+      adjusted to 2010 baseline) per gigajoule. In the Delayed transition scenario 
+      prices peak around 2035 at ~33 USD per gigajoule. However electricity prices 
+      are projected to fall back towards 2020 levels by 2050 in both Delayed/Divergent 
+      transition risk scenarios. 
+      
+      ![Electricity Price](Electricity_Price_Disorderly.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
       The profitability of the telecom sector, in the Disorderly/Divergent
       transition risk scenarios, could also depend on the relevant companies
       proactively investing in innovation and new technology and their ability
@@ -102,18 +117,21 @@ transition:
       proactively shop at businesses with an incorporated green strategy.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the telecoms sector could 
+      face rising operating costs as carbon pricing policies increase energy 
+      prices, as well as falling asset values as current infrastructure becomes 
+      increasingly obsolete.
     always: |
       While the telecom sector could continue to play a role in meeting customer
       demand for the coming years, the changing patterns in energy generation,
-      in early/orderly transition risk scenarios, driven by immediate policy
+      in Early/Orderly transition risk scenarios, driven by immediate policy
       reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
       are likely to have an impact on this sector, affecting profitability and
       consumer preferences.
     high_materiality: |
-      In the early/orderly transition risk scenarios, the increases in carbon
+      In the Early/Orderly transition risk scenarios, the increases in carbon
       and energy prices could potentially result in financial impacts; the
       extent could depend on how reliant the company's production /revenue mix
       is on low-carbon electricity, the company's transition plans and how they
@@ -136,7 +154,19 @@ transition:
         due to new/lost customers as a result of change in environmental
         expectations and changes in demand as a result of societal changes.
 
-      The profitability of the telecoms sector, in the early/orderly transition
+      Increased carbon tax cost and new investment for renewables could increase 
+      the electricity cost for the telecoms sector in the short-to-medium term, 
+      peaking at around 2030 at ~24 USD (inflation adjusted to 2010 baseline) per 
+      gigajoule in the Below 2&deg;C scenario and ~33 USD per gigajoule in the Net Zero 
+      2050 scenario. However costs are projected to fall back to 2020 levels by 2050 
+      in Early/Orderly transition risk scenarios. 
+      
+      ![Electricity Price](Electricity_Price_Orderly.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      The profitability of the telecoms sector, in the Early/Orderly transition
       risk scenarios, could depend on the relevant companies proactively
       investing in innovation and new technology and their ability to mitigate
       transition risks. For example, in particular whether firms:
@@ -180,7 +210,9 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, extreme weather events could increase 
+      disruption and cause damage to infrastructure, resulting in severe impacts 
+      for the telecoms sector.
     always: |
       The telecom sector is also exposed to physical risk. Chronic effects (e.g.
       raised sea-levels) and acute effects due to changes in the frequency and
@@ -194,7 +226,8 @@ physical:
       companies and could therefore result in an increase in the operational
       costs (as operations become largely reactive to remediate issues), impact
       employment and potentially lead to a significant decline in revenue due to
-      an inability to operate and meet customer demands.
+      an inability to operate and meet customer demands. These are likely to have an 
+      impact on this sector, affecting profitability and consumer preferences.
     high_materiality: |
       The following examples illustrate how the telecom sector could be impacted
       in a high physical risk scenario:
@@ -219,7 +252,7 @@ physical:
         services after one of their data centres flooded.
 
       - Loss of power to the network if the national grid is impacted by weather
-        causes operational disruption
+        causes operational disruption.
 
       - **Extreme temperatures** causing overheating of equipment in base
         stations or street cabinets.
@@ -233,7 +266,7 @@ physical:
       of physical network sites needed (e.g. full fibre).
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The telecom sector is also exposed to physical risk. Chronic effects (e.g.
       raised sea-levels) and acute effects due to changes in the frequency and
@@ -247,7 +280,8 @@ physical:
       therefore result in an increase in the operational costs (as operations
       become largely reactive to remediate issues), impact employment and
       potentially lead to a significant decline in revenue due to an inability
-      to operate and meet customer demands.
+      to operate and meet customer demands. These are likely to have an impact on 
+      this sector, affecting profitability and consumer preferences.
     high_materiality: |
       The following examples illustrate how the telecom sector could be impacted
       in a low physical risk scenario:
@@ -275,7 +309,7 @@ physical:
         causes operational disruption.
 
       - **Extreme temperatures** causing overheating of equipment in base
-        stations or street cabinets
+        stations or street cabinets.
 
       There are several mitigating actions these companies can take against the
       low physical risks mentioned above to build resiliency into the network
@@ -291,3 +325,7 @@ references: |
   - [Vodafone Group plc Task Force on Climate-Related Financial Disclosures (TCFD) Report 2021](https://investors.vodafone.com/sites/vodafone-ir/files/2021-05/vodafone-tcfd-report-2021.pdf){target="\_blank"}
 
   - [Insuring a sustainable, greener future. A Roadmap for climate action - LLoyd's](https://assets.lloyds.com/media/706fda85-f5df-437e-9722-db633df23a18/Lloyd%27s_climate%20action%20discussion_green%20paper_oct.pdf){target="\_blank"}
+  
+  - [NAICS Code 51](https://www.naics.com/six-digit-naics/?code=51){target="\_blank"}
+  
+  - [SIC Code E](https://www.naics.com/sic-codes-counts-division/?div=E){target="\_blank"}

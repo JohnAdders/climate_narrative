@@ -4,7 +4,7 @@ description: |
   production.
 
   Industries in the Crop Production subsector grow crops mainly for food and
-  fibre. This subsector comprises establishments, such as farms, orchards,
+  fibre. This subsector comprises establishments such as farms, orchards,
   groves, greenhouses, and nurseries, primarily engaged in growing crops,
   plants, vines, or trees and their seeds. The industries in this subsector are
   grouped by similarity of production activity, the length of growing season,
@@ -38,19 +38,23 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, agricultural producers can 
+      benefit from expanding markets but face greater risks of stranded assets, 
+      geographic growth constraints, and rising production costs in the face of 
+      new emissions costs, land use restrictions, and necessary productivity 
+      improvements.
     always: |
-      The agriculture sector continues to expand to feed and supply agricultural
+      The Agriculture sector continues to expand to feed and supply agricultural
       energy products to a growing global population. It contributes to 23% of
       anthropogenic emissions, exposing its producers and financiers to emerging
       climate related transition risks through public policies, consumer demand
       shifts and technological evolutions.
 
       By 2050, in the delayed transition risk scenario, late policy action
-      enables a "fossil fuelled recovery" out of the economic crisis brought
+      enables a "fossil recovery" out of the economic crisis brought
       about by COVID-19. CO<sub>2</sub> emissions increase until 2030, before
       sharply decreasing after 2030 to compensate for the inaction beforehand.
-      In the divergent scenario there is a more immediate but divergent
+      In the Divergent scenario there is a more immediate but divergent
       reduction in CO<sub>2</sub> emissions. These scenarios are likely to have
       a significant impact on agriculture sector. Agricultural value chains face
       material climate transition risk exposure due to their emissions intensity
@@ -93,13 +97,10 @@ transition:
 
       ![Total Agriculture Demand](Agriculture_Demand_Total_Disorderly.png)
 
-      **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
       ![Food Agriculture Demand](Agriculture_Demand_Food_Disorderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       As the use of bioenergy increases, by 2050, just over 40% of total
       agricultural production (in both Delayed Transition and Divergent Net Zero
@@ -107,13 +108,10 @@ transition:
 
       ![Total Agriculture Production](Agriculture_Production_Total_Disorderly.png)
 
-      **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
       ![Energy Agriculture Production](Agriculture_Production_Energy_Disorderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       Agricultural sector is key driver of forest loss, and due to forest
       conservation and preservation policies, availability of agricultural land
@@ -126,13 +124,10 @@ transition:
 
       ![Agriculture Land Cover](Agriculture_Land_Cover_Disorderly.png)
 
-      **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
       ![Forest Land Cover](Forest_Land_Cover_Disorderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The operational and production costs of firms could increase as they need
       to make necessary investments for technological upgrades and increase in
@@ -147,7 +142,10 @@ transition:
       see their net value and profitability rise under transitions.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, agricultural producers can benefit 
+      from expanding markets but face greater risks of stranded assets, geographic 
+      growth constraints, and rising production costs in the face of new emissions 
+      costs, land use restrictions, and necessary productivity improvements.
     always: |
       The agriculture sector continues to expand to feed and supply agricultural
       energy products to a growing global population. It contributes to 23% of
@@ -155,7 +153,7 @@ transition:
       climate related transition risks through public policies, consumer demand
       shifts and technological evolutions.
 
-      By 2050, the early/orderly transition risk scenarios driven by societal
+      By 2050, the Early/Orderly transition risk scenarios driven by societal
       change, national energy strategies, and carbon legislation, are likely to
       have a significant impact on the agriculture sector. Agricultural value
       chains face material climate transition risk exposure due to their
@@ -163,7 +161,7 @@ transition:
       protection policies and carbon payments made to preserve and expand
       forests could reduce land available for agriculture.
 
-      The early/orderly transition risk scenarios could also lead to a limited
+      The Early/Orderly transition risk scenarios could also lead to a limited
       relative reduction in GDP growth and could result in changes in the rate
       of growth in demand for the agriculture sector, although the impact is
       likely to be limited due to inelastic demand for food products.
@@ -192,18 +190,15 @@ transition:
 
       The sector has very high GHG emissions as farm and livestock productions
       and activities are emissions intensive. The total demand could continue to
-      increase in the early/orderly transition risk scenarios, however growth in
+      increase in the Early/Orderly transition risk scenarios, however growth in
       demand for food production is limited.
 
       ![Total Agriculture Demand](Agriculture_Demand_Total_Orderly.png)
-
-      **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
+      
       ![Food Agriculture Demand](Agriculture_Demand_Food_Orderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       As the use of bioenergy increases, by 2050, approx. 30% of total
       agricultural production in the Net Zero 2050 scenario and around 12% in
@@ -211,13 +206,10 @@ transition:
 
       ![Total Agriculture Production](Agriculture_Production_Total_Orderly.png)
 
-      **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
       ![Energy Agriculture Production](Agriculture_Production_Energy_Orderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       Agricultural sector is key driver of forest loss, and due to forest
       conservation and preservation policies, availability of agricultural land
@@ -231,13 +223,10 @@ transition:
 
       ![Agriculture Land Cover](Agriculture_Land_Cover_Orderly.png)
 
-      **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
       ![Forest Land Cover](Forest_Land_Cover_Orderly.png)
 
       **Source:**
-      [NGFS Scenario Data IAM outputs V2.2, REMIND model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The operational and production costs of firms could increase as they need
       to make necessary investments for technological upgrades and due to
@@ -253,7 +242,10 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The agriculture sector is highly exposed to high physical risk scenarios 
+      due to the projected increase in weather variation. These scenarios could 
+      also lead to a significant GDP impact which could negatively impact demand 
+      for this sector.
     always: |
       The agriculture sector is also exposed to physical risk. Chronic effects
       (e.g. raised sea-levels and mean temperatures) and acute effects due to
@@ -318,7 +310,7 @@ physical:
 
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       The agriculture sector is also exposed to physical risk. Chronic effects
       (e.g. raised sea-levels and mean temperatures) and acute effects due to
@@ -374,3 +366,7 @@ references: |
   - [How will African farmers adjust to changing patterns of precipitation? - McKinsey, May 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/how-will-african-farmers-adjust-to-changing-patterns-of-precipitation){target="\_blank"}
 
   - [Agriculture and Forestry Climate Change Impacts - Living With Environmental Change, Report Card 2016](https://nerc.ukri.org/research/partnerships/ride/lwec/report-cards/agriculture/){target="\_blank"}
+  
+  - [NAICS Code 11](https://www.naics.com/six-digit-naics/?code=11){target="\_blank"}
+  
+  - [SIC Code A](https://www.naics.com/sic-codes-counts-division/?div=A){target="\_blank"}

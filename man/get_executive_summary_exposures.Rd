@@ -4,12 +4,20 @@
 \alias{get_executive_summary_exposures}
 \title{One of the functions comprising the executive summary text}
 \usage{
-get_executive_summary_exposures(aggregated_inputs, inputs)
+get_executive_summary_exposures(aggregated_inputs, inputs, scenario_no, exec)
 }
 \arguments{
 \item{aggregated_inputs}{data frame of aggregated inputs (implemented in the reactive expression)}
 
 \item{inputs}{data frame of all inputs (implemented in the reactive expression)}
+
+\item{scenario_no}{integer or vector of integers indicating which of the global$scenarios should be included}
+
+\item{exec}{the table of bools, determining which of the descriptions
+(in both high materiality and others) will be used in the report
+
+Rows denote risks (physical/transition)
+Columns denote risk intensity (high/low)}
 }
 \value{
 string - executive summary text

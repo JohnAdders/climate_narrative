@@ -15,7 +15,11 @@ description: |
 transition:
   high:
     exec_description: |
-      PLACEHOLDER
+      In Delayed/Divergent transition risk scenarios, the increase in carbon price 
+      along with a change to the demand in the quality of real estate are likely 
+      to influence insurance products' pricing, terms and conditions and coverage. 
+      There is likely to be an increasing pressure on insurers to decline cover for 
+      high GHG emitting industrial or commercial activities.
     always: |
       While the Property underwriting class could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
@@ -142,7 +146,11 @@ transition:
       acceptance, or in the setting of corporate risk appetite and capital.
   low:
     exec_description: |
-      PLACEHOLDER
+      In Early/Orderly transition risk scenarios, the increase in carbon price 
+      along with a change to the demand in the quality of real estate are likely 
+      to influence insurance products' pricing, terms and conditions and coverage. 
+      There is likely to be an increasing pressure on insurers to decline cover for 
+      high GHG emitting industrial or commercial activities.
     always: |
       While the Property underwriting class could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
@@ -267,7 +275,12 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      In high physical risk scenarios, any insurance underwriting strategy could 
+      need to assess existing, and future physical risks, not only due to the 
+      potential for future changes in the physical drivers of climate related 
+      hazards (e.g., flood intensity, frequency and extents), but also due to 
+      changes in the distribution of exposures due to changing underwriting plans, 
+      and changes in the types of assets being insured.
     always: |
       While the non-life property insurance market is generally highly exposed
       to physical risks, and in particular from those related to weather
@@ -414,7 +427,7 @@ physical:
       setting of corporate risk appetite and capital.
   low:
     exec_description: |
-      PLACEHOLDER
+      n/a
     always: |
       While the non-life property insurance market is generally highly exposed
       to physical risks, and in particular from those related to weather
