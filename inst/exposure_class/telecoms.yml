@@ -1,0 +1,331 @@
+name: Telecommunications
+description: |
+  The **Telecommunication** (telecom) sector is comprised of companies that
+  provide telecommunications and services related to that activity (e.g.
+  telephony, including Voice over Internet Protocol (VoIP); cable and satellite
+  television distribution services; Internet access; telecommunications
+  reselling services). This sector is also engaged in operating, and/or
+  providing access to facilities for the transmission of voice, data, text,
+  sound, and video. Transmission facilities may be based on a single technology
+  or a combination of technologies. This sector also includes firms that are 
+  primarily engaged in:
+
+  - purchasing access and network capacity from owners and operators of
+    telecommunications networks and reselling wired and wireless
+    telecommunications services (except satellite) to businesses and households
+
+  - providing specialised telecommunications services, such as satellite
+    tracking, communications telemetry, and radar station operation
+
+  - providing satellite terminal stations and associated facilities connected
+    with one or more terrestrial systems and capable of transmitting
+    telecommunications to, and receiving telecommunications from, satellite
+    systems; or
+
+  - providing Internet access services or Voice over Internet protocol (VoIP)
+    services via client-supplied telecommunications connections.
+transition:
+  high:
+    exec_description: |
+      In Disorderly/Divergent transition risk scenarios, the telecoms sector 
+      could face rising operating costs as carbon pricing policies increase 
+      energy prices, as well as falling asset values as current infrastructure 
+      becomes increasingly obsolete.
+    always: |
+      While telecoms could continue to play a role in meeting customer demand
+      for the coming years, the changing patterns in energy generation, driven
+      by divergent or late policy reaction, societal change, national energy
+      strategies, and carbon legislation, are likely to have a significant and
+      long term impact on this sector, affecting profitability and consumer
+      preferences.
+    high_materiality: |
+      In the Disorderly/Divergent transition risk scenarios, the impacts could
+      depend on how reliant the company's production/revenue mix is on low
+      carbon electricity, the client's 'temperature alignment' score and how
+      this compares to the sector average. For example:
+
+      - **Increased operating costs**, the increases in carbon and energy prices
+        could potentially result in financial impacts, as firms' carbon
+        emissions face a rising price in the form of a carbon tax or cap and
+        trade clearing price, particularly for copper and other lightweight
+        materials commonly found in phones/ cables and network sites.
+
+      - **Asset valuation of company reserves could be re-priced** based on the
+        re-adjusted expectations of the use of low-carbon products and energy
+        efficient technologies in the future. Failure to provide low carbon
+        emissions in telecom material could affect the commercial reputation of
+        the company and could lead to loss of customers and a decrease in
+        revenue.
+
+      - **Changing consumer preferences**, these could lead to changes in sales
+        due to new/lost customers as a result of change in environmental
+        performance.
+
+      Increased carbon tax cost and new investment for renewables could increase 
+      the electricity cost for the telecoms sector in the short-to-medium term, 
+      peaking at around 2030 in the Divergent Net Zero scenario at ~28 USD (inflation 
+      adjusted to 2010 baseline) per gigajoule. In the Delayed transition scenario 
+      prices peak around 2035 at ~33 USD per gigajoule. However electricity prices 
+      are projected to fall back towards 2020 levels by 2050 in both Delayed/Divergent 
+      transition risk scenarios. 
+      
+      ![Electricity Price](Electricity_Price_Disorderly.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      The profitability of the telecom sector, in the Disorderly/Divergent
+      transition risk scenarios, could also depend on the relevant companies
+      proactively investing in innovation and new technology and their ability
+      to mitigate transition risks. For example:
+
+      - invest in and roll out energy efficient technologies e.g. 5G & Fibre
+        (balanced with expanding use cases driving energy consumption up),
+
+      - use electric vehicles for engineering truck fleets;
+
+      - switch to 100% renewables and green power purchase agreements (PPAs) for
+        fixed and mobile networks;
+
+      - develop on site energy generation and sustainable energy sourcing
+        (offsite PPAs);
+
+      - use natural resources more efficiently
+
+      - use Internet of Things (IoT) and artificial intelligence (AI)
+        technologies to better forecast network energy demands and measure
+        consumption. The uses and new capabilities are adding to these
+        technologies and are growing in year-on-year basis;
+
+      - improve device battery technologies and packaging reduction;
+
+      - embed sustainable supply chain & partnership strategy;
+
+      - use 'Smart' network components which shutdown/start up in line with
+        demand and usage;
+
+      - integrate E-Waste circular economy and smart recycling into consumer
+        propositions (e.g. O2 Recycle);
+
+      - use 'Green Steel' in construction of telecoms infrastructure;
+
+      - develop technology to foster, or directly work on, solutions that
+        minimise need for travel (e.g. BT's Remote Diagnostic Station).
+
+      These actions could also lead to gain positive commercial reputation and
+      therefore magnify demand and overall revenue as consumers could
+      proactively shop at businesses with an incorporated green strategy.
+  low:
+    exec_description: |
+      In Early/Orderly transition risk scenarios, the telecoms sector could 
+      face rising operating costs as carbon pricing policies increase energy 
+      prices, as well as falling asset values as current infrastructure becomes 
+      increasingly obsolete.
+    always: |
+      While the telecom sector could continue to play a role in meeting customer
+      demand for the coming years, the changing patterns in energy generation,
+      in Early/Orderly transition risk scenarios, driven by immediate policy
+      reaction, societal change, national energy strategies, and carbon
+      legislation, could lead to an immediate and smooth reduction in
+      CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
+      are likely to have an impact on this sector, affecting profitability and
+      consumer preferences.
+    high_materiality: |
+      In the Early/Orderly transition risk scenarios, the increases in carbon
+      and energy prices could potentially result in financial impacts; the
+      extent could depend on how reliant the company's production /revenue mix
+      is on low-carbon electricity, the company's transition plans and how they
+      compare to the sector average. For example:
+
+      - **Increased operating costs** resulting from the smooth but significant
+        rises in electricity and the price of materials, particularly for copper
+        and other lightweight materials commonly found in phones/cables and
+        network sites. Change in regulations covering infrastructure efficiency
+        would lead to increasing compliance requirements.
+
+      - **Asset valuation of company reserves could have to be re-priced** based
+        on the re-adjusted expectations of the use of low-carbon products and
+        energy efficient technologies in the future. Failure to use low-carbon
+        products and energy efficient technologies could affect the commercial
+        reputation of the company and could lead to loss of customers and a
+        decrease in revenue.
+
+      - **Changing consumer preferences**, these could lead to changes in sales
+        due to new/lost customers as a result of change in environmental
+        expectations and changes in demand as a result of societal changes.
+
+      Increased carbon tax cost and new investment for renewables could increase 
+      the electricity cost for the telecoms sector in the short-to-medium term, 
+      peaking at around 2030 at ~24 USD (inflation adjusted to 2010 baseline) per 
+      gigajoule in the Below 2&deg;C scenario and ~33 USD per gigajoule in the Net Zero 
+      2050 scenario. However costs are projected to fall back to 2020 levels by 2050 
+      in Early/Orderly transition risk scenarios. 
+      
+      ![Electricity Price](Electricity_Price_Orderly.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      The profitability of the telecoms sector, in the Early/Orderly transition
+      risk scenarios, could depend on the relevant companies proactively
+      investing in innovation and new technology and their ability to mitigate
+      transition risks. For example, in particular whether firms:
+
+      - invest in and roll out energy efficient technologies e.g. 5G & Fibre
+        (balanced with expanding use cases driving energy consumption up);
+
+      - use electric vehicles for engineering truck fleets (e.g. BT is a
+        founding member of EV Fleet Accelerator);
+
+      - switch to 100% renewables and green power purchase agreements (PPAs) for
+        fixed and mobile networks;
+
+      - develop on site energy generation and sustainable energy sourcing
+        (offsite PPAs);
+
+      - use the Internet of Things (IoT) and artificial intelligence (AI)
+        technologies to better forecast network energy demands and measure
+        consumption;
+
+      - improve device battery technologies and packaging reduction;
+
+      - use sustainable products and proposition development;
+
+      - embed sustainable supply chain & partnership strategies;
+
+      - use 'Smart' network components which shutdown/start up in line with
+        demand and usage;
+
+      - integrate E-Waste circular economy and smart recycling into consumer
+        propositions (e.g. O2 Recycle);
+
+      - use 'Green Steel' in construction of telecoms infrastructure;
+
+      - develop technology to foster, or directly work on, solutions that
+        minimise need for travel (e.g. BT's Remote Diagnostic Station).
+
+      These actions could also lead to positive gains in commercial reputation
+      and therefore magnify demand and overall revenue as consumers could
+      proactively shop at businesses with an incorporated green strategy.
+physical:
+  high:
+    exec_description: |
+      In high physical risk scenarios, extreme weather events could increase 
+      disruption and cause damage to infrastructure, resulting in severe impacts 
+      for the telecoms sector.
+    always: |
+      The telecom sector is also exposed to physical risk. Chronic effects (e.g.
+      raised sea-levels) and acute effects due to changes in the frequency and
+      severity of weather events such as flooding, high winds, fire and extreme
+      temperatures could cause significant network damage or service impacts.
+      Whilst the telecom industry is used to responding to and managing changing
+      weather conditions, in the high physical risk scenario, climate change and
+      global warming could increase weather variations. This could lead to
+      increasing disruption to productivity in this sector which could
+      significantly impact the profitability and the infrastructure for these
+      companies and could therefore result in an increase in the operational
+      costs (as operations become largely reactive to remediate issues), impact
+      employment and potentially lead to a significant decline in revenue due to
+      an inability to operate and meet customer demands. These are likely to have an 
+      impact on this sector, affecting profitability and consumer preferences.
+    high_materiality: |
+      The following examples illustrate how the telecom sector could be impacted
+      in a high physical risk scenario:
+
+      - **Flooding events** could pose risks to the telecom sector such as
+        damage to infrastructure e.g. damage to facilities, water ingress and
+        flooding of exchange buildings, base stations, cable ducts and chambers
+        due to high rainfall and flooding. Marvell Technology Group Ltd., a
+        company which makes network components for smartphones, has had their
+        assets damaged by flooding.
+
+      - Overhead access network, backhaul, and core network via poles and pylons
+        at risk of damage by **severe winds**.
+
+      - The increase in **wildfires** frequency and severity could also increase
+        damage to infrastructure.
+
+      - **Increase in precipitation** leading to interruption to or reduction in
+        quality of wireless service, and an increase in frequency or severity of
+        damage to low-lying infrastructure, access holes, transport structures &
+        underground facilities. For example, Vodafone had disruptions to their
+        services after one of their data centres flooded.
+
+      - Loss of power to the network if the national grid is impacted by weather
+        causes operational disruption.
+
+      - **Extreme temperatures** causing overheating of equipment in base
+        stations or street cabinets.
+
+      There are several mitigating actions these companies can take against the
+      high physical risks mentioned above to build resiliency into the network
+      against extreme weather events. For example, investing in more resilient
+      solutions e.g. develop sustained requirement for heating/ cooling
+      technologies across the network, invest in sustainable products and
+      proposition development and invest in technologies which reduce the number
+      of physical network sites needed (e.g. full fibre).
+  low:
+    exec_description: |
+      n/a
+    always: |
+      The telecom sector is also exposed to physical risk. Chronic effects (e.g.
+      raised sea-levels) and acute effects due to changes in the frequency and
+      severity of weather events such as flooding, high winds, fire and extreme
+      temperatures could cause service outages or degradation. Whilst the
+      telecom industry is used to responding to and managing changing weather
+      conditions, in the low physical risk scenario, climate change and global
+      warming could increase weather variations. This could lead to increasing
+      disruption to productivity in this sector which could impact the
+      profitability and the infrastructure for these companies and could
+      therefore result in an increase in the operational costs (as operations
+      become largely reactive to remediate issues), impact employment and
+      potentially lead to a significant decline in revenue due to an inability
+      to operate and meet customer demands. These are likely to have an impact on 
+      this sector, affecting profitability and consumer preferences.
+    high_materiality: |
+      The following examples illustrate how the telecom sector could be impacted
+      in a low physical risk scenario:
+
+      - **Flooding events** could pose risks to the telecom sector such as
+        damage to infrastructure e.g. damage to facilities, water ingress and
+        flooding of exchange buildings, base stations, cable ducts and chambers
+        due to high rainfall and flooding. Marvell Technology Group Ltd., a
+        company which makes network components for smartphones, has had their
+        assets damaged by flooding.
+
+      - Overhead access network, backhaul, and core network via poles and pylons
+        at risk of damage by **severe winds**
+
+      - The increase in **wildfires** frequency and severity could also increase
+        damage to infrastructure.
+
+      - **Increase in precipitation** leading to interruption to or reduction in
+        quality of wireless service, and an increase in frequency or severity of
+        damage to low-lying infrastructure, access holes, transport structures &
+        underground facilities. For example, Vodafone had disruptions to their
+        services after one of their data centres flooded.
+
+      - Loss of power to the network if the national grid is impacted by weather
+        causes operational disruption.
+
+      - **Extreme temperatures** causing overheating of equipment in base
+        stations or street cabinets.
+
+      There are several mitigating actions these companies can take against the
+      low physical risks mentioned above to build resiliency into the network
+      against extreme weather events. For example, investing in more resilient
+      solutions e.g. develop sustained requirement for heating/cooling
+      technologies across the network, invest in sustainable products and
+      proposition development and invest in technologies which reduce the number
+      of physical network sites needed (e.g. full fibre).
+
+references: |
+  - [BT Group plc Annual Report 2021](https://www.bt.com/bt-plc/assets/documents/investors/financial-reporting-and-news/annual-reports/2021/bt-annual-report.pdf){target="\_blank"}
+
+  - [Vodafone Group plc Task Force on Climate-Related Financial Disclosures (TCFD) Report 2021](https://investors.vodafone.com/sites/vodafone-ir/files/2021-05/vodafone-tcfd-report-2021.pdf){target="\_blank"}
+
+  - [Insuring a sustainable, greener future. A Roadmap for climate action - LLoyd's](https://assets.lloyds.com/media/706fda85-f5df-437e-9722-db633df23a18/Lloyd%27s_climate%20action%20discussion_green%20paper_oct.pdf){target="\_blank"}
+  
+  - [NAICS Code 51](https://www.naics.com/six-digit-naics/?code=51){target="\_blank"}
+  
+  - [SIC Code E](https://www.naics.com/sic-codes-counts-division/?div=E){target="\_blank"}

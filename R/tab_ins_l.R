@@ -1,7 +1,6 @@
-tab_ins_l_ui <- function() {
+tab_ins_l_foot <- function() {
   list(
-    h2("Insurance: Life and Health Lines of Business")
+    p("If you only have property & casualty exposures, click next."),
+    generic_footer("liability")
   )
 }
-
-tab_ins_l_foot <- generic_liability_footer

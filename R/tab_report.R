@@ -1,5 +1,5 @@
 tab_report_ui <- function() {
-  valid_options <- c("", unname(unlist(lapply(scenarios, function(x) {
+  valid_options <- c("", unname(unlist(lapply(global$scenarios, function(x) {
     if (x$is_scenario) {
       return(x$name)
     } else {
@@ -7,47 +7,121 @@ tab_report_ui <- function() {
     }
   }))))
 
-  out <- list(
-    selectInput(
-      "report_selection",
-      "Select the scenario to show",
-      valid_options,
-      selectize = FALSE
-    ),
-    hr()
+  dropdown_1 <- selectInput(
+    "report_scenario_selection",
+    "Select the scenario to show",
+    valid_options,
+    selectize = FALSE
   )
-  if (!pandoc_available()) {
+  dropdown_2 <- selectInput(
+    "report_sector_selection",
+    "Select the sector to show",
+    c(""),
+    selectize = FALSE
+  )
+  
+  if (global$dev){
+    dropdown_3 <- selectInput(
+      "version_selection",
+      "Select the report version",
+      global$report_versions,
+      global$report_version,
+      selectize=FALSE
+    )
+    out <- list(
+      #div(
+        fluidRow(
+          column(4, dropdown_1),
+          column(4, dropdown_2),
+          column(4, dropdown_3)
+        )#,
+        #id = "report_page_top"
+      #)
+    )
+  } else {
+    out <- list(
+      #div(
+        fluidRow(
+          column(6, dropdown_1),
+          column(6, dropdown_2)
+        )#,
+      #  id = "report_page_top"
+      #)
+    )
+  }
+  if (!rmarkdown::pandoc_available()) {
     warning("Pandoc (required to render rtf) not available, hiding download report button")
     out <- c(out, list(uiOutput("html_report")))
   } else {
     out <- c(out, list(
-      downloadButton("report", "Download the selected scenario report as RTF"),
-      uiOutput("html_report")
+      fluidRow(
+        column(4, downloadButton("report", "Download the selected scenario/sector report as RTF")),
+        column(4, actionButton("update_yamls", "Update the report text files")),
+        column(4, conditionalPanel(
+          'input.report_scenario_selection != "" | input.report_sector_selection != ""',
+          actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
+          )
+        )
+      )
     ))
+    if (global$sidebar_toc){
+      out <- c(
+        out,
+        list(
+          sidebarLayout(
+            sidebarPanel(
+              div(id = "html_toc_div", uiOutput("html_report_nav")),
+              width = 3
+            ),
+            mainPanel(
+              div(id = "html_report_div", uiOutput("html_report")),
+              width = 9
+            )
+          )
+        )
+      )
+    } else {
+      out <- c(out, list(uiOutput("html_report")))
+    }
   }
 }
 
 tab_report_server <- function(input, output, session, tab) {
-  if (session$userData$dev == TRUE){
-    updateSelectInput(session, "report_selection", selected = scenarios[[2]]$name)
+  if (global$dev == TRUE) {
+    updateSelectInput(session, "report_selection", selected = global$scenarios[[2]]$name)
   }
   observeEvent(
     input$type,
     {
-      tab$previous_tab <- as.integer(
-        factor(
-          switch(input$type,
-            insurance = "ins_sov",
-            asset = "am_re",
-            bank = "bank_sov"
-          ),
-          ordered_tabs
+      tab$previous_tab <- tab_name_to_number(
+        switch(input$type,
+          insurance = "ins_sov",
+          asset = "am_re",
+          bank = "bank_sov"
         )
       )
     }
   )
   observeEvent(
-    input[[paste0("page_",  as.integer(factor("report", ordered_tabs)), "_previous")]],
-    updateSelectInput(session, "report_selection", selected = "")
+    input[[paste0("page_",  tab_name_to_number("report"), "_previous")]],
+    {
+      updateSelectInput(session, "report_scenario_selection", selected = "")
+      updateSelectInput(session, "report_sector_selection", selected = "")
+    }
+  )
+  observeEvent(
+    input$version_selection,
+    {
+      global$report_version <- input$version_selection
+    }
+  )
+  observeEvent(
+    input$update_yamls,
+    {
+      global$exposure_classes <- read_dir("exposure_class")
+      global$exposures <- read_dir("exposure")
+      global$scenarios <- read_dir("scenario")
+      global$products <- read_dir("product")
+    }
   )
 }

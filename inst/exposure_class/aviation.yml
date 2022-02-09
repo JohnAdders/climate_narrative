@@ -1,0 +1,358 @@
+name: Aviation Underwriting Class
+description: |
+  The **Aviation** underwriting class involves insuring companies engaging in
+  economic activity relating to aircrafts. This includes designing,
+  manufacturing, supplying, maintaining and operating both manned and unmanned
+  aircrafts or parts. It also includes activities related to aircraft supporting
+  facilities such as airports and ticket distribution systems.
+
+  Aviation is a complex sector, with long product development cycles and where
+  change takes a long time to be implemented. Typical aviation insurance
+  policies cover physical damage and loss split across public liability,
+  passenger liability, grounded and in-flight hull (covering loss/ damage to the
+  aircraft when not in use and when in use), and cargo.
+transition:
+  high:
+    exec_description: |
+      In Delayed/Divergent transition risk scenarios, the aviation sector could 
+      face increasing operating costs through carbon taxation as well as falling 
+      asset values as older and less efficient aircraft could have to be retired 
+      earlier than originally planned.
+    always: |
+      Aviation sector could continue to play a role in meeting customer demand
+      for the coming years The changing patterns in energy generation in the
+      Delayed transition scenario, driven by late policy action enabling a
+      "fossil recovery" out of the economic crisis brought about by
+      COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 and a
+      decrease in CO<sub>2</sub> after 2030 to compensate for the inaction
+      beforehand, whereas the Divergent scenario results in an immediate but
+      divergent reduction in CO<sub>2</sub> emissions. Policies and regulatory
+      frameworks implemented at regional level rather than international level
+      or evolving at a different speed depending on the region, could result in
+      an un-level playing field for manufacturers and operators. Both these
+      scenarios are likely to have an impact on the profitability of this sector
+      and therefore on the associated insurance products pricing, terms and
+      conditions, and coverage.
+
+      The Disorderly/Divergent transition risk scenario could also lead to a
+      reduction in GDP growth. This could result in changes in the rate of
+      growth in demand for the aviation sector.
+    high_materiality: |
+      Changes to carbon emission pricing or taxes and consumer preferences could
+      potentially result in one or more of the following financial impacts:
+
+      - **Increased operating costs of the underlying companies to be insured
+        could impact their demand for insurance.** The significant rise in
+        carbon and energy prices could potentially result in financial impacts,
+        as aviation firms' carbon emissions face a rising price in the form a
+        carbon tax or cap & trade clearing price, especially for airlines
+        reliant on fossil-based aviation fuels.
+        
+        In Delayed/Divergent transition risk scenarios, the price per gigajoule 
+        of liquid final energy (liquid fuels from all energy sources; incl. oil 
+        products, synthetic fossil fuels from gas and coal, biofuels) for use in 
+        transportation at least triples by the end of the century, increasing from 
+        ~20 USD (inflation adjusted to 2010 baseline) to ~65 USD in the Delayed 
+        transition scenario, and to ~95 USD in the Divergent Net Zero scenario.
+        
+      ![Transportation Liquid Price](Transportation_Liquids_Price_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+
+      - **Change in regulations covering energy efficiency standards would lead
+        to increasing compliance requirements.** Governments may conclude it
+        impossible to decarbonise flying in line with national targets and so
+        limit demand by raising the cost of air travel and limiting airport
+        capacity and could lead to changes in the level and type of insurance
+        coverage required.
+
+      - **Asset valuations of aviation companies could be re-priced** based on
+        the re-adjusted expectations of the use of low-carbon products and
+        energy efficient technologies in the future. Higher fuel costs impose a
+        risk that older and less efficient aircraft could have to be retired
+        earlier than originally planned, resulting in an impairment of their
+        residual value.
+
+      - **Changing consumer preferences**, these could lead to changes in
+        revenue due to lower customers numbers as a result of change in
+        environmental expectations that could impact this underwriting class.
+        'Flight shame' could also increase along with a modal shift to (high
+        speed) rail, reducing demand for aviation. Slowed GDP growth could
+        further impact demand for aviation through its effect on individuals'
+        disposable income.
+
+      The profitability of this sector, in the Disorderly/Divergent transition
+      risk scenarios, could also depend on the relevant companies proactively
+      investing in innovation and new technology. For example:
+
+      - Alternative fuel sources (e.g. airlines could invest in Sustainable
+        Aviation Fuels (SAF) in the short term whilst more complex solutions
+        such as hydrogen and electric aircraft are developed)
+        
+      In Disorderly/Divergent transition risk scenarios, sources of final energy 
+      used in the transport sector change dramatically. As use of oil declines, 
+      electricity becomes the dominant source of final energy by the end of the 
+      century.
+      
+      ![Transportation Final Energy](Transportation_Final_Energy_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+
+      - Energy efficient aircraft and infrastructure (e.g. more efficient
+        lighting and heating in hangars and airports)
+
+      - Intelligent routing and smart technologies which support
+        climate-optimized flying
+
+      In Disorderly/Divergent transition risk scenarios, these innovations 
+      could contribute to an overall decrease in CO<sub>2</sub> emissions in 
+      the transportation sector.
+      
+      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      These actions could also lead to positive gains in commercial reputation
+      and therefore magnify demand and overall revenue as consumers could
+      proactively seek out businesses with an incorporated green strategy as
+      well as potentially have knock-on impacts for insurance pricing, terms and
+      conditions and coverage.
+  low:
+    exec_description: |
+      In Early/Orderly transition risk scenarios, the aviation sector could 
+      face increasing operating costs through carbon taxation as well as falling 
+      asset values as older and less efficient aircraft could have to be retired 
+      earlier than originally planned.
+    always: |
+      Aviation sector could continue to play a role in meeting customer demand
+      for the coming years. The changing patterns in energy generation in
+      Early/Orderly transition risk scenarios, driven by immediate policy
+      reaction, societal change, national energy strategies, and carbon
+      legislation, could lead to an immediate and smooth reduction in
+      CO<sub>2</sub> emissions by 2050 and increase in the carbon price.
+
+      These are likely to have an impact on the profitability this sector, and
+      therefore on the associated insurance products' pricing, terms and
+      conditions and coverage, and could generate fast-changing requirements and
+      opportunities, as well as potential obstructions, to new product
+      development pathways. The Early/Orderly transition risk scenarios could
+      also lead to a limited relative reduction in GDP growth. This could result
+      in changes in the rate of growth in demand for the aviation sector.
+    high_materiality: |
+      The changes in carbon pricing, energy demand/mix and energy prices could
+      potentially result in one or more of the following financial impacts:
+
+      - **Increased operating costs of the underlying companies to be insured
+        could impact their demand for insurance.** The significant rise in
+        carbon and energy prices could potentially result in financial impacts,
+        as aviation firms' carbon emissions face a rising price in the form a
+        carbon tax or cap & trade clearing price, especially for airlines
+        reliant on fossil-based aviation fuels.
+        
+        In Early/Orderly transition risk scenarios, the price per gigajoule of 
+        liquid final energy (liquid fuels from all energy sources; incl. oil products, 
+        synthetic fossil fuels from gas and coal, biofuels) for use in transportation 
+        at least doubles by 2050, increasing from around 20 USD (inflation adjusted 
+        to 2010 baseline) to between 40 USD and 55 USD.
+        
+      ![Transportation Liquid Price](Transportation_Liquids_Price_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+
+      - **Change in regulations covering energy efficiency standards would lead
+        to increasing compliance requirements.** These changes may require firms
+        to adapt their service, potentially reducing sales and could lead to
+        changes in the level and type of insurance coverage required.
+
+      - **Asset valuations of aviation companies could be re-priced based** on
+        the re-adjusted expectations of the use of low-carbon products and
+        energy efficient technologies in the future. Higher fuel costs impose a
+        risk that older and less efficient aircraft could have to be retired
+        earlier than originally planned, resulting in an impairment of their
+        residual value.
+
+      - **Changing consumer preferences**, these could lead to changes in
+        revenue due to lower customer numbers as a result of change in
+        environmental expectations that could impact this underwriting class.
+        'Flight shame' could also increase along with a modal shift to (high
+        speed) rail, reducing demand for aviation. Slowed GDP growth could
+        further impact demand for aviation through its effect on individuals'
+        disposable income.
+
+      The profitability of the aviation sector and its associated underwriting
+      class, in the Early/Orderly transition risk scenarios, could also depend
+      on the relevant companies proactively investing in innovation and new
+      technology. For example:
+
+      - Alternative fuel sources (e.g. airlines could invest in Sustainable
+        Aviation Fuels (SAF) in the short term whilst more complex solutions
+        such as hydrogen and electric aircraft are developed)
+     
+      In Early/Orderly transition risk scenarios, sources of final energy used
+      in the transport sector change dramatically. As the use of oil gradually 
+      declines, electricity becomes the dominant source of final energy by the 
+      end of the century.
+      
+      ![Transportation Final Energy](Transportation_Final_Energy_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+
+      - Energy efficient aircraft and infrastructure (e.g. more efficient
+        lighting and heating in hangars and airports)
+
+      - Intelligent routing and smart technologies which support
+        climate-optimized flying
+        
+      In Early/Orderly transition risk scenarios, these innovations could contribute to an overall decrease in CO<sub>2</sub> emissions in the transportation sector.
+
+      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      These actions could also lead to positive gains in commercial reputation
+      and therefore magnify demand and overall revenue as consumers could
+      proactively seek out businesses with an incorporated green strategy as
+      well as potentially have knock-on impacts for insurance pricing, terms and
+      conditions and coverage.
+physical:
+  high:
+    exec_description: |
+      The aviation sector and its associated underwriting class could be highly 
+      exposed to high physical risk scenarios due to the projected increase in 
+      weather variation which could impact the profitability for these companies. 
+    always: |
+      The aviation sector and its associated underwriting class are also exposed
+      to physical risk. Chronic effects (e.g. raised sea-level and mean
+      temperatures) and acute effects due to changes to frequency and severity
+      of weather events such as heatwaves, wildfires, tropical cyclones, and
+      flooding could severely affect aircraft performance, significantly disrupt
+      operations through frequent re-routings and temporary closures of airspace
+      and airports, as well as damage infrastructure and aircraft with
+      detrimental effects on costs and earnings. Whilst the aviation sector is
+      used to responding to and managing changing weather conditions, in the high
+      physical risk scenario, climate change and global warming could increase
+      weather variations. This could lead to increasing disruption to the
+      aviation sector which could impact the profitability for these companies
+      and therefore could impact the aviation underwriting class as the physical
+      effects of climate change could result in increased claims and increased
+      premiums potentially resulting in some of the aviation underwriting risks
+      becoming either uninsurable or unaffordable.
+
+      Adverse impacts on world GDP from physical risks are assumed in the
+      scenarios and these scale with the rise in temperatures in the scenarios
+      over time. The high physical risk scenarios could therefore also lead to a
+      significant GDP impact which could negatively impact demand for aviation
+      products and services with knock-on impacts for sector's insurance needs.
+    high_materiality: |
+      The following examples illustrate how the aviation sector could be
+      impacted in a high physical risk scenario:
+
+      - **Higher average temperatures** can decrease regulated take-off weight
+        leading to lower passenger and cargo loads. Increased fuel uplift to
+        cope with weather related rerouting could further reduce a flight's
+        payload.
+
+      - **Increased frequency of atmospheric turbulences, storms and heatwaves**
+        can increase flight times, affect passenger comfort and safety, damage
+        aircraft, and induce large scale rerouting or flight cancellations.
+
+      - **Flooding** can damage infrastructure and grounded aircraft. In the 
+        Current Policies scenario, river flood depth is projected to increase 
+        at an accelerating rate and by 2050 it is as much as 2.5 times higher 
+        compared to 1986-2006.
+      
+      ![River Flood Depth](River_Flood_Depth_High_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+
+      With a large rise in global temperatures the physical effects of climate
+      change could materially alter the existence, attractiveness or viability
+      of some destinations, decreasing demand for some aviation services. For
+      example, demand could decrease for airline routes serving destinations
+      relying on climate conditions for attracting visitors (e.g. snow cover for
+      skiing resorts) or destinations impacted by sea level inundation.
+      Significantly slowed GDP growth could further impact demand for aviation
+      through its effect on individuals' disposable income.
+
+      There are a number of mitigating actions these companies can take against
+      the high physical risks mentioned above to build resiliency into their
+      operations against extreme weather events. For example, investing in more
+      resilient solutions e.g. continuously review flight plans to ensure
+      optimal routings, standby engineers to reduce technical fault repair time,
+      and increase flood-mitigating construction standards.
+  low:
+    exec_description: |
+      n/a
+    always: |
+      The aviation sector and its associated underwriting class are also exposed
+      to physical risk. Chronic effects (e.g. raised sea-levels and mean
+      temperatures) and acute effects due to changes to frequency and severity
+      of weather events such as heatwaves, wildfires, tropical cyclones, and
+      flooding could affect aircraft performance, cause re-routings and
+      temporary closure of airspace and airports as well as damage to
+      infrastructure and aircraft with negative effects on costs and earnings.
+
+      Whilst the aviation sector is used to responding to and managing changing
+      weather conditions, in the low physical risk scenario, climate change and
+      global warming could increase weather variations. This could lead to
+      increasing disruption to aviation sector which could impact the
+      profitability for these companies and therefore could impact the aviation
+      underwriting class as the physical effects of climate change could result
+      in increased claims and increased premiums potentially resulting in some
+      of the aviation underwriting risks becoming either uninsurable or
+      unaffordable.
+    high_materiality: |
+      The following examples illustrate how the aviation sector could be
+      impacted in a low physical risk scenario:
+
+      - **Higher average temperatures** can decrease regulated take-off weight
+        leading to lower passenger and cargo loads. Increased fuel uplift to
+        cope with weather related rerouting could further reduce a flight's
+        payload.
+
+      - **Increased frequency of atmospheric turbulences, storms and heatwaves**
+        can increase flight times, affect passenger comfort and safety, damage
+        aircraft, and induce large scale rerouting or flight cancellations.
+
+      - **Flooding** can damage infrastructure and grounded aircraft. In both the 
+        Net Zero 2050 and Delayed transition scenarios, river flood depth is projected 
+        to increase at an accelerating rate and by 2050 it is as much as 2.5 times 
+        higher compared to 1986-2006.
+      
+      ![River Flood Depth](River_Flood_Depth_Low_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+
+      With a rise in global temperatures the physical effects of climate change
+      could alter the existence, attractiveness or viability of some
+      destinations, decreasing demand for some aviation services. For example,
+      demand could decrease for airline routes serving destinations relying on
+      climate conditions for attracting visitors (e.g. snow cover for skiing
+      resorts) or destinations impacted by sea level inundation. There are a
+      number of mitigating actions these companies can take against the low
+      physical risks mentioned above to build resiliency into their operations
+      against extreme weather events. For example, investing in more resilient
+      solutions e.g. continuously review flight plans to ensure optimal
+      routings, standby engineers to reduce technical fault repair time, and
+      increase flood-mitigating construction standards.
+
+references: |
+  - [Lufthansa Group Taskforce on Climate-Related Financial Disclosures (TCFD) Report 2020](https://www.lufthansagroup.com/media/downloads/en/responsibility/LH-TCFD-Report-2020.pdf){target="\_blank"}
+
+  - [EasyJet plc Annual Report and Accounts 2020](https://corporate.easyjet.com/~/media/Files/E/Easyjet/pdf/investors/agm/agm-dec-2020/annual-report-2020.pdf){target="\_blank"}
+
+  - [Airbus SE Annual Report 2020](https://www.airbus.com/content/dam/corporate-topics/financial-and-company-information/Full%20-Report-Airbus-SE-Annual-Report-2020.pdf){target="\_blank"}
+
+  - [Heathrow Airport Limited Annual Report and Financial Statements 2020](https://www.heathrow.com/content/dam/heathrow/web/common/documents/company/investor/reports-and-presentations/annual-accounts/airport-ltd/Heathrow-Airport-Limited-31-Dec-2020.pdf){target="\_blank"}
+  
+  - [NAICS Code 48-49](https://www.naics.com/six-digit-naics/?code=48-49){target="\_blank"}
+  
+  - [SIC Code E](https://www.naics.com/sic-codes-counts-division/?div=E){target="\_blank"}
