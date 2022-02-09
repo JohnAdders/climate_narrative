@@ -15,7 +15,9 @@ exec_description: |
   health, labour productivity (reduce capacity of the human body to perform 
   physical labour from ~0.035% in 2020 to ~0.275% by the end of the century), 
   agriculture, ecosystems, and sea-level rise. It can also change the frequency 
-  and severity of weather events such as heatwaves, droughts, wildfires
+  and severity of weather events such as heatwaves, droughts, wildfires, 
+  tropical cyclones, and flooding. The GDP losses are estimated to be between 
+  -2.8% and-4.8% by 2050.
 description: |
   These scenarios assume that some climate policies are implemented in some
   jurisdictions, but globally efforts are insufficient to halt significant
@@ -28,10 +30,10 @@ description: |
 
   The NGFS have provided two hot house world scenarios:
 
-  - Nationally Determined Contributions (NDCs) includes all pledged policies
+  - **Nationally Determined Contributions (NDCs)** includes all pledged policies
     even if not yet implemented.
 
-  - Current Policies assumes that only currently implemented policies are
+  - **Current Policies** assumes that only currently implemented policies are
     preserved, leading to high physical risk.
 
   ## Key physical assumptions and parameters
