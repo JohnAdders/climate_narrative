@@ -253,7 +253,10 @@ transition:
 physical:
   high:
     exec_description: |
-      PLACEHOLDER
+      The high physical risk scenarios could result in a material negative impact on 
+      GDP growth. Global temperatures rise which will likely lead to changes in patterns of 
+      human migration that could increase inequality due to slow economic growth in 
+      particular areas. 
     always: |
       In a high physical risk scenario, physical risks would undermine GDP
       growth due to loss of land, changing crop yields, depleted natural
@@ -427,7 +430,7 @@ physical:
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. According to
       the study, in a low physical risk (RCP 2.6) scenario, the US would have a
-      downgrade of below one notch by 2100, increasing the cost of borrowing for
+      downgrade below one notch by 2100, increasing the cost of borrowing for
       the US government by approximately US$7.35-11.03bn.
       
 appendix: |
