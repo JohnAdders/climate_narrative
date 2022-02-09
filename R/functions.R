@@ -583,19 +583,21 @@ get_exposure_risk_description <- function(
   )
   header_text <- capitalize(header_text)
   content <- global$exposure_classes[[item]][[physical_or_transition]][[high_or_low]]
+  out <- ""
   if (include_oneliner){
     out <- paste0(
       "### ",
       header_text,
-      " --- Summary\n\n",
+      " --- One-liner\n\n",
       content[["exec_description"]],
       "\n\n"
     )
   }
   out <- paste0(
+    out,
     "### ",
     header_text,
-    " --- One-liner\n\n",
+    " --- Summary\n\n",
     content[["always"]],
     "\n\n"
   )
