@@ -32,7 +32,7 @@ description: |
   There are a number of uncertainties and limitations associated with the CFRF Online Scenario 
   Analysis Narrative Tool; for example: The tool is not updated on an ongoing basis. It draws 
   heavily on the NGFS scenarios (updated in June 2021). The results are in turn underpinned by 
-  a single energy systems model – REMIND – which makes particular assumptions about long-term 
+  a single energy systems model --- REMIND --- which makes particular assumptions about long-term 
   technology pathways that are of course highly uncertain.
   
   This tool is very useful for climate reporting and risk assessments. However, a limitation 
