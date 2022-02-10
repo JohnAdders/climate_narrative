@@ -16,6 +16,7 @@ run_shiny_app <- function(secrets_file="secret.yml", ...) {
   global$tabs <- list(
     QuestionTab$new("title", NULL, NULL, "auth", FALSE, FALSE),
     QuestionTab$new("auth", NULL, "title", NULL, ui_settings = list(captcha_code = global$captcha_code)),
+    QuestionTab$new("intro", "Introduction to the Tool", "auth", "type"),
     QuestionTab$new("type", NULL, "auth", "ins_l"),
     QuestionTab$new("bank_re", "Bank: Real Estate Exposures", "type", "bank_c", TRUE, TRUE, global$exposures$bankRe, "bank", "R"),
     QuestionTab$new("bank_c", "Bank: Company Exposures", "bank_re", "bank_sov", TRUE, TRUE, global$exposures$bankCorporate, "bank", "C"),

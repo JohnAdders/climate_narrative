@@ -13,7 +13,7 @@ request_captcha <- function(output, session) {
 
 process_progress <- function(output, should_continue) {
   if (should_continue) {
-    next_tab <- tab_name_to_number("type")
+    next_tab <- tab_name_to_number("intro")
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
   } else {
     output$code_verification_result <- renderText("Code incorrect, please double check")
@@ -69,21 +69,11 @@ tab_auth_ui <- function(captcha_code) {
   list(
     div(
       class = "disclaimer", id = "disclaimer_1",
-      p("This tool and its contents represent the output from the cross-industry
-      Scenario Analysis Working Group of the Prudential Regulation Authority
-      and Financial Conduct Authority's Climate Financial Risk Forum (CFRF).
-      The tool aims to promote understanding, consistency, and comparability
-      by providing guidance on how to use scenario analysis to assess financial impacts
-      and inform strategy/business decisions."),
-      p("The tool has not been endorsed or approved by the PRA, FCA, the Climate Financial Risk Forum
-      or any of its members, and no reliance should be placed on the accuracy or
-      completeness of any information herein."),
-      p("The software is provided \"as is\" without warranty of any kind, express or
-      implied, including but not limited to the warranties or merchantability, fitness
-      for a particular purpose and noninfringement.  In no event shall the authors
-      or copyright holders be liable for any claim, damages or other liability,
-      whether in an action of contract, tort or otherwise arising from, out of or in
-      connection with the software or the use or other dealings in the software."),
+      p("This report represents output from the cross-industry Scenario Analysis Working Group of the Prudential Regulation Authority and Financial Conduct Authority’s Climate Financial Risk Forum (CFRF)."),
+      p("The PRA and FCA have convened and facilitated CFRF discussions but do not accept liability for the views expressed in this guide which do not necessarily represent the view of the regulators and in any case do not constitute regulatory guidance."),
+      p("This report has been written by industry, for industry. The recommendations in this guide do not constitute financial or other professional advice and should not be relied upon as such."),
+      p("The information contained in any reports can be reproduced or re-disseminated in any form as long as this disclaimer is not removed, the source is identified as the Climate Financial Risk Forum's Climate Narrative Tool and any changes from the original text are clearly marked."),
+      p("The report is provided \"as is\" without warranty of any kind, express or implied, including but not limited to the warranties or merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise arising from, out of or in connection with the report."),
       p(strong("Copyright 2021 The Climate Financial Risk Forum"))
     ),
     hr(),
