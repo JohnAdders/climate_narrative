@@ -7,197 +7,63 @@ description: |
   ```
 
   ## Disclaimer
-
-  This report is currently under development and is only being made available to
-  selected users for testing purposes.
-
-  It has not been endorsed or approved by the PRA, FCA, the Climate Financial
-  Risk Forum or any of its members, and no reliance should be placed on the
-  accuracy or completeness of any information herein.
-
-  The information contained in any reports can be reproduced or redisseminated
-  in any form as long as this disclaimer is not removed, the source is
-  identified as the Climate Financial Risk Forum's Climate Narrative Tool and
-  any changes from the original text are clearly marked.
-
-  The report is provided "as is" without warranty of any kind, express or
-  implied, including but not limited to the warranties or merchantability,
-  fitness for a particular purpose and noninfringement. In no event shall the
-  authors or copyright holders be liable for any claim, damages or other
-  liability, whether in an action of contract, tort or otherwise arising from,
-  out of or in connection with the report.
-
-  **Copyright 2021 The Climate Financial Risk Forum**
-  
-  ## Introduction
-  
-  In the Scenario Analysis Chapter of the Climate Financial Risk Forum 2021 Guide 
-  published on 21st October, the Scenario Analysis Working Group included the 
-  development of an online climate scenario analysis narrative tool to support 
-  smaller firms as part of its future work programme.
-  
-  The Centre for Greening Finance and Investment have agreed to house the tool and 
-  an IT solution is under development.
-  
-  The idea of the tool is that firms would input some basic information regarding 
-  their business activities, products, or risks into the tool. The tool would then 
-  output a report describing some of the potential climate-related risks and opportunities 
-  for a selected NGFS scenario (i.e. Orderly, Disorderly, or Hot House World).
-  
-  The report would summarise the relevant climate-related risks and opportunities for 
-  banks, insurers and asset managers based on the business activities, products, or 
-  risks of the firm and the materiality of different lending exposure types, underwriting 
-  classes, asset classes, and economic sectors for the firm. 
-  
-  The tool is designed to be fully open source and the purpose of this document is to 
-  record the contents to be used in the tool for different NGFS scenarios, lending exposure 
-  types, underwriting classes, asset classes and economic sectors.
-  
-  The descriptions of the NGFS scenarios are based on the latest version of the scenarios 
-  which were updated and expanded in June 2021. These were developed to provide a common 
-  starting point for the financial sector to assess climate-related risks.
-  
-  The scenarios were primarily developed for central banks and supervisors, but they provide 
-  a useful reference point for other financial institutions, including banks, asset 
-  managers and insurers, when evaluating the impacts of climate-related risk to their 
-  business.
-  
-  As well as a description for each lending exposure type, underwriting class, asset 
-  class and economic sector the following blocks of narrative are required to produce 
-  the contents of the report for different NGFS scenarios:
-  
-  * Orderly transition --- Summary
-  
-  * Orderly transition --- Detail
-  
-  * Disorderly transition --- Summary
-  
-  * Disorderly transition --- Detail
-  
-  * Low physical risk --- Summary
-  
-  * Low physical risk --- Detail
-  
-  * High physical risk --- Summary
-  
-  * High physical risk --- Detail
-  
-  The table below describes which narrative blocks could be used for the report depending 
-  on which NGFS scenario has been selected and whether or not the firm has indicated it 
-  has an exposure to the lending type, underwriting class, asset class or economic sector 
-  in question and if so whether that exposure is material for them.
-  
-  ![Narrative Block](Narrative_Block.png)
-  
-  There are many uncertainties and limitations associated with climate scenario analysis. 
-  Each report could include discussion of some of the key challenges facing the user of 
-  scenario analysis and a disclaimer that the reports do not constitute financial or other 
-  professional advice and should not be relied upon as such.
   
   ![Disclaimer](Disclaimer.png)
   
-  ## Target Audience
+  ## Introduction to the Report
   
-  The CFRF Online Scenario Analysis tool content has been written by a cross-industry 
-  working group under the auspices of the Climate Financial Risk Forum (CFRF). It is 
-  aimed at banks, asset managers and insurers of all sizes, and may be of interest to 
-  other institutions, such as pension schemes. 
-
-  The tool summarises the relevant climate-related risks and opportunities for banks, 
-  insurers and asset managers based on the business activities, products, or risks of 
-  the firm and the materiality of different lending exposure types, underwriting classes, 
-  asset classes, and economic sectors for the firm. 
-
-  ## How can the tool be used?
+  This report summarises the relevant climate-related risks and opportunities for a firm based 
+  on the materiality of exposures to different lending exposure types, underwriting classes, 
+  asset classes, and economic sectors selected. These narratives are based on the NGFS scenarios 
+  which were updated in June 2021.
   
-  Firms are required to input some basic information regarding their business activities, 
-  products, or risks into the tool. The tool would then output an executive summary and 
-  a detail report.
-
-  Firms will be required to select their level of exposure, to an asset class, sector, or liability class, from one of the following: 
+  ### How can the report be used?
   
-  * High: One of your top 5 exposures or more than 10% of total assets
+  The information provided by the tool and its associated reports aims to help firms better 
+  understand their potential financial exposures to climate change. This information could 
+  help them to start considering climate-related risks and opportunities within their governance, 
+  strategy, risk management and reporting under the Task Force on Climate-Related Financial 
+  Disclosures' (TCFD) recommendations. The information provided could also encourage a more 
+  in-depth scenario analysis exercise to better understand the associated impact and support 
+  decision making.  
   
-  * Medium: 5% - 10% of total assets
+  ### Limitations
   
-  * Low: below 5% of total assets
+  There are a number of uncertainties and limitations associated with the CFRF Online Scenario 
+  Analysis Narrative Tool; for example: The tool is not updated on an ongoing basis. It draws 
+  heavily on the NGFS scenarios (updated in June 2021). The results are in turn underpinned by 
+  a single energy systems model – REMIND – which makes particular assumptions about long-term 
+  technology pathways that are of course highly uncertain.
   
-  Based on the level of exposure selected, the tool will output different levels of detail 
-  in the report. Where low or medium are selected the tool will output a summary narrative 
-  for that exposure. Where high is selected the tool will output the summary as well as a 
-  more detailed narrative for that exposure.
+  This tool is very useful for climate reporting and risk assessments. However, a limitation 
+  for those seeking to embed climate-related risks and opportunities into their investment 
+  decision making and risk management framework is that it does not specify a baseline related 
+  directly to what is priced into assets today. It also does not allow for meaningful variation 
+  in the implementation of climate policies across geographies and sectors, nor alternative 
+  technology pathways.
   
-  The executive summary covers the following:
-  
-  - a description and a summary of key assumptions and parameters of selected NGFS scenario 
-  (i.e. Orderly, Disorderly, or Hot House World). These descriptions are based on the NGFS 
-  scenarios which were updated in June 2021. 
-  
-  - by sectors, underwriting and asset classes as well as lending exposure types (ordered 
-  by materiality i.e. high/medium/low):
-  
-    -	tables summarising the selected exposure type and highlighting the materiality (in 
-    line with inputs to the online tool).
-    
-    -	a summary (for each selected high materiality exposure) covering some of the 
-    potential climate-related risks and opportunities supported by the NGFS variables and a 
-    table of one-liners (for selected medium/low materiality exposures).
-    
-  The long form report covers the following:
-   
-  * a description and key assumptions and parameters of selected NGFS scenario (i.e. Orderly, 
-  Disorderly, or Hot House World). These descriptions are based on the NGFS scenarios which 
-  were updated in June 2021. 
-   
-  * by sectors, underwriting and asset classes as well as lending exposure types (ordered 
-  by materiality i.e. high/medium/low):
-   
-  * a description of each lending exposure type, underwriting class, asset class and sector 
-  selected.
-   
-  * detail narratives (for high materiality exposures) covering some of the potential 
-  climate-related risks and opportunities supported by the NGFS variables and a 
-  summary (for medium/low materiality)
-   
-  There are many uncertainties and limitations associated with climate scenario 
-  analysis. For example, The CFRF Online Scenario Analysis Narrative Tool is not 
-  updated on an ongoing basis. It draws heavily on the climate scenarios designed 
-  by the NGFS (updated in June 2021) to aid users' understanding of their 
-  potential financial exposures to a set of highly stylised transition and 
-  physical climate-related risks and opportunities. The results are in turn 
-  underpinned by a single energy systems model --- REMIND --- which makes particular 
-  assumptions about long-term technology pathways that are of course highly uncertain.
-  
-  This scenario and modelling framework is very useful for climate reporting 
-  and risk assessments. However, a limitation for those seeking to embed 
-  climate-related risks and opportunities into their investment decision making 
-  and risk management framework is that it does not specify a baseline related 
-  directly to what is priced into assets today. It also does not allow for meaningful 
-  variation in the implementation of climate policies across geographies and 
-  sectors, nor alternative technology pathways.
-   
-  For example, the Orderly Below 2&deg;C scenario generates a common carbon price 
-  for the global power and transportation sectors, as well as between, say EU and 
-  US and China. Similarly, the tool does not provide a mechanism to really test 
-  how financial exposures may differ if the very solar PV friendly technology pathways 
-  of the REMIND model does not come to pass. Relaxing these policy and technology 
-  universality assumptions will naturally generate quite different assessments 
+  For example, the Orderly Below 2&deg;C scenario generates a common carbon price for the global 
+  power and transportation sectors, as well as between, say EU and US and China. Similarly, the 
+  tool does not provide a mechanism to really test how financial exposures may differ if the very 
+  solar PV friendly technology pathways of the REMIND model do not come to pass. Relaxing these 
+  policy and technology universality assumptions will naturally generate quite different assessments 
   of the climate exposures of different financial securities and assets.
-
-  There are many potential ways to incorporate more plausible policy pathways 
-  and a wider range of technology pathways into climate scenario analyses. One 
-  of these has been designed by abrdn in partnership with Planetrics. This 
-  approach creates scenarios that allow for climate policy objectives to vary 
-  across the major emitting regions and sectors. It also allows for the 
-  interaction between these plausible policy variations and alternative technology 
-  pathways to be explored. All financial impairment estimates are then calculated 
-  relative to a baseline assessment of what is priced into assets at any given 
-  point in time.
-   
-  This framework also has the virtue of filling in some of the 'probability mass' 
-  that sits between transition-heavy scenarios that are strongly or weakly aligned 
-  with the objectives of the Paris Agreement and those that are dominated by 
-  physical risks.
-   
-  During 2022, we will continue to collect feedback and we will update the 
-  tool in Q1 2023.
+  
+  There are many potential ways to incorporate more plausible policy pathways and a wider range of 
+  technology pathways into climate scenario analyses. One of these has been designed by abrdn in 
+  partnership with Planetrics. This approach creates scenarios that allow for climate policy objectives 
+  to vary across the major emitting regions and sectors. It also allows for the interaction between 
+  these plausible policy variations and alternative technology pathways to be explored. All financial 
+  impairment estimates are then calculated relative to a baseline assessment of what is priced into 
+  assets at any given point in time.
+  
+  This framework also has the virtue of filling in some of the 'probability mass' that sits between 
+  transition-heavy scenarios that are strongly or weakly aligned with the objectives of the Paris 
+  Agreement and those that are dominated by physical risks.
+  
+  ### What is next?
+  
+  The Centre for Greening Finance and Investment have agreed to house the tool and an IT solution. 
+  The tool is realised on [add date]. During the remainder of 2022, the Climate Financial Risk Forum 
+  Scenario Analysis Working Group will continue to collect feedback from users and will update the 
+  tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.
