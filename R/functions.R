@@ -984,8 +984,8 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
 #' 
 get_executive_summary <- function(aggregated_inputs, inputs, scenario_no){
   out_0 <- "# Executive summary\n\n"
-  exec <- data.frame(high = rep(FALSE,2), low = rep(FALSE,2))
-  rownames(exec) <- c("physical", "transition")
+  exec <- data.frame(low = rep(FALSE,2), high = rep(FALSE,2))
+  rownames(exec) <- c("transition", "physical")
   for (i in scenario_no){
     if (global$scenarios[[i]]$is_scenario){
       risk <- global$scenarios[[i]][["exec_short"]]
