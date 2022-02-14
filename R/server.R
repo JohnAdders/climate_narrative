@@ -103,28 +103,32 @@ server <- function(input, output, session) {
     }
     temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
+      if (input$report_sector_selection == "") {
+        exec_summary_layout <- 1
+      } else {
+        exec_summary_layout <- 2
+      }
       write_report_to_file(
         get_report_contents(
           get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE),
           global$report_version,
           input$report_scenario_selection,
-          FALSE
+          FALSE,
+          exec_summary_layout
         ),
         session$userData$temp_md_scenario
       )
     } else {
-      # write_report_to_file(
-      #   get_report_contents(all_inputs(), global$report_version, input$report_scenario_selection, FALSE),
-      #   session$userData$temp_md_scenario
-      # )
-      file_conn <- file(session$userData$temp_md_scenario)
-      writeLines(
-        "# In progress\n\na sector report placeholder",
-        file_conn
+      write_report_to_file(
+        get_report_contents(
+          get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE),
+          global$report_version,
+          input$report_scenario_selection,
+          FALSE,
+          2
+        ),
+        session$userData$temp_md_scenario
       )
-      print(head(aggregated_all_inputs()))
-      print(head(all_inputs()))
-      close(file_conn)
     }
     rmarkdown::render(
       input = session$userData$temp_md_scenario,
@@ -175,6 +179,8 @@ server <- function(input, output, session) {
     return(result)
   })
 
+
+  
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
@@ -186,12 +192,18 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
+      if (input$report_sector_selection == "") {
+        exec_summary_layout <- 1
+      } else {
+        exec_summary_layout <- 2
+      }
       write_report_to_file(
         get_report_contents(
           get_inputs(all_inputs(), input$inst_type, input$report_sector_selection),
           global$report_version,
           input$report_scenario_selection,
-          TRUE
+          TRUE,
+          exec_summary_layout
         ),
         session$userData$temp_md_scenario_and_commons
       )
@@ -232,7 +244,13 @@ server <- function(input, output, session) {
         )
       )
       write_report_to_file(
-        get_report_contents(all_inputs(), global$report_version, input$report_scenario_selection, TRUE),
+        get_report_contents(
+          all_inputs(),
+          global$report_version,
+          input$report_scenario_selection,
+          TRUE,
+          1
+        ),
         session$userData$temp_md_dev
       )
       fs <- file.size(session$userData$temp_md_dev)
