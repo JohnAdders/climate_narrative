@@ -1028,8 +1028,7 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 
 #' Function that generates a markdown content of the report
 #' 
-#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
-#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @param inputs data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
 #' @param is_rtf a flag that triggers several format specific settings:
@@ -1037,7 +1036,8 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 #' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #' 
-get_report_contents <- function(aggregated_inputs, inputs, report_version, report_scenario_selection, is_rtf){
+get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf){
+  aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
   out <- list()
   for (scenario in global$scenarios[scenario_no]) {
@@ -1262,5 +1262,40 @@ get_test_report <- function(){
     out <- paste0(out, get_exposure_test_description(names(global$exposure_classes)[i]))
     out <- paste0(out, get_exposure_appendix(names(global$exposure_classes)[i]))
   }
+  return(out)
+}
+
+get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALSE){
+  out <- all_inputs_table
+  if (inst_type != ""){
+    out <- out[(which(out$type == inst_type & out$materiality != "N/A")), ]
+  }
+  if (sector != ""){
+    selected_item <- names(
+      which(sapply(global$exposure_classes, `[[`, i = "name") == sector)
+    )
+    out <- out[out$item == selected_item, ]
+  }
+  if (aggregate){
+    out <- aggregate_inputs(out)
+  }
+  return(out)
+}
+
+aggregate_inputs <- function(inputs){
+  aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = inputs)
+  aggregated_inputs_numeric <- stats::aggregate(
+    materiality_num ~ item,
+    FUN = function(x) {
+      cut(
+        sum(x),
+        breaks = c(0, 4.5, 9.5, 100),
+        labels = c("Low", "Medium", "High")
+      )
+    },
+    data = inputs
+  )
+  out <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
+  out <- out[order(out$materiality, out$materiality_num, decreasing = TRUE), ]
   return(out)
 }
