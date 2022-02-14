@@ -25,6 +25,6 @@ tab_rep_type_server <- function(input, output, session, tab) {
 
 tab_rep_type_foot <- function() {
   list(
-    helpText("Please select the report type. SECTOR REPORT LOGIC UNDER CONSTRUCTIOn")
+    helpText("Please select the report type.")
   )
 }

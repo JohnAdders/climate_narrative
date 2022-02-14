@@ -75,6 +75,17 @@ server <- function(input, output, session) {
   allow_report <- reactive({
     return(nrow(get_inputs(all_inputs(), input$inst_type)))
   })
+  
+  report_message <- reactive({
+    if (input$rep_type == "inst" && input$report_scenario_selection == "") {
+      return("Please select a scenario (optionally a sector as well)")
+    }
+    if (input$rep_type == "sect" && input$report_sector_selection == "") {
+      return("Please select a sector")
+    } else {
+      return("")
+    }
+  })
 
   # update the available sectors, only after tab switch
   observeEvent(
@@ -94,12 +105,13 @@ server <- function(input, output, session) {
     }
   )
 
+  output$html_report_message <- renderText({
+    report_message()
+  })
+  
   output$html_report <- renderUI({
-    if (input$rep_type == "inst" && input$report_scenario_selection == "") {
-      return(p("Please select a scenario (optionally a sector as well)"))
-    }
-    if (input$rep_type == "sect" && input$report_sector_selection == "") {
-      return(p("Please select a sector"))
+    if (report_message() != "") {
+      return("")
     }
     temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
@@ -178,7 +190,6 @@ server <- function(input, output, session) {
 
     return(result)
   })
-
 
   
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html

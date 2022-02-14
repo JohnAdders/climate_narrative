@@ -969,7 +969,7 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
         } else if (materiality %in% c("Medium", "Low")){
           text <- global$exposure_classes[[item]][[risk]][[risk_intensity]]["exec_description"]
         } else {
-          stop (paste("Unknown materiality level: ", materiality)
+          stop (paste("Unknown materiality level: ", materiality))
         }
         out <- paste0(
           out,
