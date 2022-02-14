@@ -102,15 +102,19 @@ tab_report_server <- function(input, output, session, tab) {
     updateSelectInput(session, "report_selection", selected = global$scenarios[[2]]$name)
   }
   observeEvent(
-    input$type,
+    list(input$inst_type, input$rep_type),
     {
-      tab$previous_tab <- tab_name_to_number(
-        switch(input$type,
-          insurance = "ins_sov",
-          asset = "am_re",
-          bank = "bank_sov"
+      if (input$rep_type == "inst"){
+        tab$previous_tab <- tab_name_to_number(
+          switch(input$inst_type,
+            insurance = "ins_sov",
+            asset = "am_re",
+            bank = "bank_sov"
+          )
         )
-      )
+      } else {
+        tab$previous_tab <- tab_name_to_number("rep_type")
+      }
     }
   )
   observeEvent(

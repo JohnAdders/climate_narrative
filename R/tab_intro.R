@@ -58,3 +58,9 @@ tab_intro_ui <- function() {
   )
   out
 }
+
+tab_intro_server <- function(input, output, session, tab) {
+  if (global$dev == TRUE){
+    tab$previous_tab <- tab_name_to_number("title")
+  }
+}

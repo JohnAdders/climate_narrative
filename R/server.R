@@ -73,7 +73,7 @@ server <- function(input, output, session) {
 
   type_inputs <- reactive({
     out <- all_inputs()
-    out <- out[(which(out$type == input$type & out$materiality != "N/A")), ]
+    out <- out[(which(out$type == input$inst_type & out$materiality != "N/A")), ]
     return(out)
   })
 
@@ -166,6 +166,7 @@ server <- function(input, output, session) {
       output_file = temp_html,
       output_format = rmarkdown::html_document(
         toc = TRUE,
+        toc_float = FALSE,
         toc_depth = 2,
         number_sections = FALSE,
         self_contained = FALSE,
