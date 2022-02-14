@@ -1052,6 +1052,7 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 #' @param is_rtf a flag that triggers several format specific settings:
 #' - TRUE: include non-scenario sections (e.g. intro)
 #' - FALSE: include the links to page top (note requires proper report_version as well)
+#' @param exec_summary_layout determines the structure of the executive summary (see get_executive_summary function)
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #' 
 get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf, exec_summary_layout=1){
@@ -1283,6 +1284,14 @@ get_test_report <- function(){
   return(out)
 }
 
+#' Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities
+#' 
+#' @param all_inputs_table data frame of all inputs (usually the reactive expression all_inputs)
+#' @param inst_type institution type to filter (or "" for no filtering)
+#' @param sector sector to filter (or "" for no filtering)
+#' @param aggregate bool, whether to aggregate the inputs by sector
+#' @param override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
+#' 
 get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
   out <- all_inputs_table
   if (override_materiality != ""){
@@ -1303,6 +1312,10 @@ get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALS
   return(out)
 }
 
+#' Aggregate the inputs by sector
+#' 
+#' @param inputs data frame of all inputs (usually the reactive expression all_inputs or its subset)
+#' 
 aggregate_inputs <- function(inputs){
   aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = inputs)
   aggregated_inputs_numeric <- stats::aggregate(
