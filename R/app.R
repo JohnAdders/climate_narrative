@@ -25,9 +25,9 @@ run_shiny_app <- function(secrets_file="secret.yml", ...) {
     QuestionTab$new("ins_nl", "Insurance: Property and Casualty Lines of Business", "ins_l", "ins_c", TRUE, TRUE, global$exposures$insuranceNonlife, "insurance", "N"),
     QuestionTab$new("ins_c", "Insurance: Corporate and Real Estate Assets", "ins_nl", "ins_sov", TRUE, TRUE, global$exposures$insuranceCorporate, "insurance", "C"),
     QuestionTab$new("ins_sov", "Insurance: Sovereign Assets", "ins_c", "report", TRUE, TRUE, global$exposures$sovereign, "insurance", "S"),
-    QuestionTab$new("am_c", "Asset Manager: Corporate Assets under management", "type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
-    QuestionTab$new("am_sov", "Asset Manager: Sovereign Assets under management", "am_c", "am_re", TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
-    QuestionTab$new("am_re", "Asset Manager: Real Estate Assets under management", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
+    QuestionTab$new("am_c", "Asset Manager / Owner / Fund: Corporate Assets", "type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
+    QuestionTab$new("am_sov", "Asset Manager / Owner / Fund: Sovereign Assets", "am_c", "am_re", TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
+    QuestionTab$new("am_re", "Asset Manager/ Owner / Fund: Real Estate Assets", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
     QuestionTab$new("report", NULL, "type", NULL)
   )
   # Tab names validation check
