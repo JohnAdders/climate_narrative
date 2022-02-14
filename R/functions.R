@@ -55,7 +55,7 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
 }
 
 #' Helper function to enable using names to refer tabs instead of numbers
-#' 
+#'
 #' @param tab_name name of the tab to convert
 tab_name_to_number <- function(tab_name){
   as.integer(factor(tab_name, global$ordered_tabs))
@@ -72,17 +72,17 @@ add_param <- function(previous_list, item_to_add) {
 }
 
 #' Make the first letter of a string upper case
-#' 
+#'
 #' @param string the string to convert
-#' 
+#'
 capitalize <- function(string) {
   return(paste0(toupper(substring(string, 1, 1)), substring(string, 2)))
 }
 
 #' Format (camelcase) string in order to look better in final output (spaces, capitalisation)
-#' 
+#'
 #' @param camelcase the string to convert
-#' 
+#'
 restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
   s <- sub("^ ", "", s) # remove first space
@@ -102,9 +102,9 @@ restore_spaces <- function(camelcase) {
 
 #' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
 #' and product-specific text (if any)
-#' 
+#'
 #' @inherit exposure_grid_server
-#' 
+#'
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
@@ -551,7 +551,7 @@ get_exposure_appendix <- function(item) {
 #' @param physical_or_transition Type of scenario
 #' @param high_or_low Is scenario high or low
 #' @param include_oneliner FALSE by default, normally oneliner is for executive summary
-#' 
+#'
 get_exposure_risk_description <- function(
   item,
   products,
@@ -708,7 +708,7 @@ heartbeat_footer <- function() {
     tag(
       "footer",
       list(
-        p("Copyright 2021 The Climate Financial Risk Forum"),
+        p("Copyright 2022 The Climate Financial Risk Forum"),
         p(
           a(href = "https://github.com/JohnAdders/climate_narrative", "Source Code", target = "_blank"),
           " | ",
@@ -729,7 +729,7 @@ heartbeat_footer <- function() {
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 #'
 #' @param site_key Site key from google
-#' 
+#'
 recaptcha_ui <- function(site_key) {
   tagList(tags$head(
     tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=", site_key)),
@@ -746,7 +746,7 @@ recaptcha_ui <- function(site_key) {
 #' @param field_id Field to trigger
 #'
 #' @importFrom shinyjs runjs
-#' 
+#'
 recaptcha_js <- function(site_key, action, field_id) {
   runjs(paste0("
         grecaptcha.ready(function () {
@@ -767,7 +767,7 @@ recaptcha_js <- function(site_key, action, field_id) {
 #' @importFrom httr POST
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr content
-#' 
+#'
 recaptcha_server <- function(secret_key, recaptcha_response) {
   response <- httr::POST(
     "https://www.google.com/recaptcha/api/siteverify",
@@ -818,7 +818,7 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' @param report_contents the content to write
 #' @param tempfile where to write the report
 #' @return NULL, output is a file as specified in the argument
-write_report_to_file <- function(report_contents, tempfile){ 
+write_report_to_file <- function(report_contents, tempfile){
   file_conn <- file(tempfile)
   writeLines(
     report_contents,
@@ -829,17 +829,17 @@ write_report_to_file <- function(report_contents, tempfile){
 }
 
 #' Go through the markdown file, find all png images and scale down where relevant
-#' 
+#'
 #' @param filename the path to file to convert
 #' @param max_width_inch maximum width of image in inches (wider will be scaled down to this value)
 #' default is 7 inches which roughly matches vertical A4 page with margins
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
-#' 
+#'
 ensure_images_fit_page <- function(filename, max_width_inch=7){
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
-  graph_lines <- grep("^!\\[",markdown) 
+  graph_lines <- grep("^!\\[",markdown)
   for (i in graph_lines){
     image_name <- substring(stringi::stri_match_first(markdown[i], regex="\\([[:graph:]]*.png"),2)
     image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
@@ -855,14 +855,14 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
 }
 
 #' Fix the table of contents in the RTF file
-#' 
+#'
 #' ToC in pandoc output is not working out of the box. The ToC is a list of hyperlinks,
 #' but there are no corresponding bookmarks in headers of respective sections
-#' 
+#'
 #' @param filename name of file to convert
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
-#' 
+#'
 rtf_fix_table_of_contents <- function(filename){
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
@@ -878,7 +878,7 @@ rtf_fix_table_of_contents <- function(filename){
     bookmark_text <- stringi::stri_match_first(rtf[i], regex="HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
     bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text) - 4)
     bookmark_row <- grep(
-        paste0(" ", rtf[i + 1], "\\p"), 
+        paste0(" ", rtf[i + 1], "\\p"),
         rtf[search_position : length(rtf)],
         fixed = TRUE,
       )[1] + search_position - 1
@@ -899,12 +899,12 @@ rtf_fix_table_of_contents <- function(filename){
 }
 
 #' Center images in RTF
-#' 
+#'
 #' By default pandoc rtf aligns pictures left, to center them (consistently with HTML)
 #' manual intervention is required
 #' @param filename name of file to convert
 #' @return NULL, changes file specified as an argument in place
-#' 
+#'
 rtf_center_images <- function(filename){
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
@@ -918,12 +918,12 @@ rtf_center_images <- function(filename){
 }
 
 #' Add path to graphs
-#' 
+#'
 #' By default pandoc rtf is run in its own location and does not locate the images properly
 #' manual intervention is required to explicitly point the images
 #' @param x text to convert
 #' @return updated text
-#' 
+#'
 add_path_to_graphs <- function(x) {
   gsub(
     "\\(([[:graph:]]*)(.png)",
@@ -939,11 +939,11 @@ add_path_to_graphs <- function(x) {
 }
 
 #' One of the functions comprising the executive summary text
-#' 
+#'
 #' @inherit get_executive_summary
 #' @param exposure_exec bool whether to include a short description for the sector
 #' (applicable in single sector context only)
-#' 
+#'
 get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_no, exposure_exec = FALSE){
   out <- "## Scenarios\n\nThis report considers the following scenarios:\n\n"
   for (scenario in global$scenarios[scenario_no]) {
@@ -976,12 +976,12 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
 
 
 #' Function to combine an executive summary from lower level functions
-#' 
+#'
 #' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
 #' @param inputs data frame of all inputs (implemented in the reactive expression)
 #' @param scenario_no integer or vector of integers indicating which of the global$scenarios should be included
 #' @return string - executive summary text
-#' 
+#'
 get_executive_summary <- function(aggregated_inputs, inputs, scenario_no){
   out_0 <- "# Executive summary\n\n"
   exec <- data.frame(low = rep(FALSE,2), high = rep(FALSE,2))
@@ -1006,13 +1006,13 @@ get_executive_summary <- function(aggregated_inputs, inputs, scenario_no){
 }
 
 #' Helper function that translate the value of input field to the scenario number(s)
-#' 
+#'
 #' @param report_scenario_selection value of the input
 #' @param is_rtf bool whether to include sections that are for RTF only
 #' @return vector of integers
 get_scenario_no <- function(report_scenario_selection, is_rtf){
   if (report_scenario_selection == ""){
-    scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
+    scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name)))
   } else {
     scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
   }
@@ -1027,7 +1027,7 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 
 
 #' Function that generates a markdown content of the report
-#' 
+#'
 #' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
 #' @param inputs data frame of all inputs (implemented in the reactive expression)
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
@@ -1036,7 +1036,7 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 #' - TRUE: include non-scenario sections (e.g. intro)
 #' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
-#' 
+#'
 get_report_contents <- function(aggregated_inputs, inputs, report_version, report_scenario_selection, is_rtf){
   scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
   out <- list()
@@ -1074,7 +1074,7 @@ get_report_contents <- function(aggregated_inputs, inputs, report_version, repor
 }
 
 #' One of the functions comprising the executive summary text
-#' 
+#'
 #' @inherit get_executive_summary
 #' @param exec the table of bools, determining which of the descriptions
 #' (in both high materiality and others) will be used in the report
@@ -1163,12 +1163,12 @@ get_executive_summary_exposures <- function(
 }
 
 #' Helpder function - the name is self-explanatory
-#' 
+#'
 #' @param data matrix or data.frame, possibly containing missing value
 #' @param empty_strings which strings should be considered as "empty"?
 #' @param ignore_cols indices of columns which should be ignored for emptiness check
 #' @return input object without rows and columns where all entries are empty (i.e. NA or "")
-#' 
+#'
 delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), ignore_cols=c()){
   data <- as.data.frame(data)
   empty_strings <- unlist(empty_strings)
@@ -1182,7 +1182,7 @@ delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), i
     if (sum(!empty_rows) > 1){
       colnames(data)[1] <- ""
       return(data[!empty_rows, ])
-    } else { 
+    } else {
       # a bit clumsy, but need to add separately one row case - by default converted by R to vector
       out <- as.data.frame(t(t(data[!empty_rows, ])))
       colnames(out)[1] <- ""
@@ -1192,9 +1192,9 @@ delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), i
 }
 
 #' One of the functions comprising the executive summary text
-#' 
+#'
 #' @inherit get_executive_summary
-#' 
+#'
 get_executive_summary_inputs <- function(aggregated_inputs, inputs){
   out <- "## Inputs\n\n"
   for (tab in global$tabs){
@@ -1229,9 +1229,9 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
 
 
 #' Karnan's request for easier change comparison - single sector
-#' 
+#'
 #' @param item sector name
-#' 
+#'
 get_exposure_test_description <- function(item){
   exposure_class <- global$exposure_classes[[item]]
   out <- paste0(
@@ -1241,7 +1241,7 @@ get_exposure_test_description <- function(item){
     exposure_class$description,
     "\n\n"
   )
-  
+
   for (risk in c("transition", "physical")){
     for (risk_intensity in c("low", "high")){
       out <- paste0(
