@@ -261,7 +261,7 @@ server <- function(input, output, session) {
         )
       )
       write_report_to_file(
-        get_report_contents(aggregated_all_inputs()[1,], all_inputs(), global$report_version, input$report_scenario_selection, TRUE),
+        get_report_contents(aggregated_all_inputs(), all_inputs(), global$report_version, input$report_scenario_selection, TRUE),
         session$userData$temp_md_dev
       )
       fs <- file.size(session$userData$temp_md_dev)
