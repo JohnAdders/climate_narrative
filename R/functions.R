@@ -997,13 +997,8 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
 #' 1 for full three subsections (inputs, scenarios, exposures)
 #' 2 for one subsection (scenarios, including also exposures)
 #' @return string - executive summary text
-<<<<<<< HEAD
 #' 
 get_executive_summary <- function(aggregated_inputs, inputs, scenario_no, layout=1){
-=======
-#'
-get_executive_summary <- function(aggregated_inputs, inputs, scenario_no){
->>>>>>> 86d42ac7cd02cf60994052d5dd46410b0e643a6d
   out_0 <- "# Executive summary\n\n"
   exec <- data.frame(low = rep(FALSE,2), high = rep(FALSE,2))
   rownames(exec) <- c("transition", "physical")
@@ -1050,28 +1045,17 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 
 
 #' Function that generates a markdown content of the report
-<<<<<<< HEAD
 #' 
 #' @param inputs data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)
-=======
-#'
-#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
-#' @param inputs data frame of all inputs (implemented in the reactive expression)
->>>>>>> 86d42ac7cd02cf60994052d5dd46410b0e643a6d
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
 #' @param is_rtf a flag that triggers several format specific settings:
 #' - TRUE: include non-scenario sections (e.g. intro)
 #' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
-<<<<<<< HEAD
 #' 
 get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf, exec_summary_layout=1){
   aggregated_inputs <- aggregate_inputs(inputs)
-=======
-#'
-get_report_contents <- function(aggregated_inputs, inputs, report_version, report_scenario_selection, is_rtf){
->>>>>>> 86d42ac7cd02cf60994052d5dd46410b0e643a6d
   scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
   out <- list()
   for (scenario in global$scenarios[scenario_no]) {
