@@ -142,9 +142,7 @@ server <- function(input, output, session) {
         session$userData$temp_md_scenario
       )
     }
-    rmarkdown::render(
-      input = session$userData$temp_md_scenario,
-      output_file = temp_html,
+    if (global$sidebar_toc != 2){
       output_format = rmarkdown::html_document(
         toc = TRUE,
         toc_float = FALSE,
@@ -153,6 +151,21 @@ server <- function(input, output, session) {
         self_contained = FALSE,
         fig_caption = FALSE
       )
+    } else {
+      output_format = rmarkdown::html_document(
+        toc = TRUE,
+        toc_float = list(collapsed=FALSE),
+        theme = "sandstone",
+        toc_depth = 2,
+        number_sections = FALSE,
+        self_contained = TRUE,
+        fig_caption = FALSE
+      )
+    }
+    rmarkdown::render(
+      input = session$userData$temp_md_scenario,
+      output_file = temp_html,
+      output_format = output_format
     )
     # replace back the images links
     file_conn <- file(temp_html)
@@ -172,7 +185,7 @@ server <- function(input, output, session) {
     }
     # extract the table of contents
     
-    if (global$sidebar_toc){
+    if (global$sidebar_toc == 1){
       toc_start <- grep("<div id=\"TOC\">", temp)
       div_end <- grep("</div>", temp)
       toc_end <- min(div_end[div_end > toc_start])
