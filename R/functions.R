@@ -1070,10 +1070,11 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 #' 
 get_section_no <- function(is_rtf){
   if (is_rtf){
-    return(which(sapply(global$sections, function(sce) TRUE)))
+    indicator_function <- function(s) s$include_in_RTF
   } else {
-    return(which(sapply(global$sections, function(sce) sce$include_in_HTML)))
+    indicator_function <- function(s) s$include_in_HTML
   }
+  return(which(sapply(global$sections, indicator_function)))
 }
 
 #' Function that generates a markdown content of the report
@@ -1367,4 +1368,31 @@ aggregate_inputs <- function(inputs){
   out <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
   out <- out[order(out$materiality, out$materiality_num, decreasing = TRUE), ]
   return(out)
+}
+
+#' Read the markdown section from relevant yaml file and save as output
+#' 
+#' This function should be used on the server side.
+#' Corresponding UI side call should be: uiOutput(output_name)
+#' 
+#' @param output Shiny output
+#' @param output_name Name of slot created in shiny output (to be used in UI part of shiny app)
+#' @param section_name Name of yaml file within section directory read from
+#' (description section only, other YAML fields are ignored)
+#' 
+include_markdown_section <- function(output, output_name, section_name){
+  text <- unlist(
+    strsplit(
+      global$sections[[section_name]]$description,
+      "\n"
+    )
+  )
+  output[[output_name]] <- renderUI({
+    HTML(
+      markdown::markdownToHTML(
+        text=text,
+        fragment.only = TRUE
+      )
+    )
+  })
 }
