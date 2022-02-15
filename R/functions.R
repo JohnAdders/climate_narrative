@@ -1380,6 +1380,8 @@ aggregate_inputs <- function(inputs){
 #' @param section_name Name of yaml file within section directory read from
 #' (description section only, other YAML fields are ignored)
 #' 
+#' @importFrom markdown markdownToHTML
+#' 
 include_markdown_section <- function(output, output_name, section_name){
   text <- unlist(
     strsplit(
