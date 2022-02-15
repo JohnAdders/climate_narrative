@@ -20,17 +20,21 @@ tab_intro_ui <- function() {
     ),
     h3("How can the tool be used?"),
     p(
-      "Firms are required to select the relevant NGFS scenario (i.e. Orderly, Disorderly,
-      or Hot House World) and input some basic information regarding their business activities, products, and materiality of exposure to an asset class, sector, or liability class, as follows:"
+      "Firms are required to input some basic information regarding their business activities, 
+	  products, and materiality of exposure to an asset class, sector, or liability class, as follows:"
     ),
     tags$ul(
       tags$li("High: One of your top 5 exposures or more than 10% of total assets"),
       tags$li("Medium: 5% - 10% of total assets"),
       tags$li("Low: below 5% of total assets")
     ),
-    p(
-      "The tool would then output an executive summary and a detailed long form report. Based on materiality and the NGFS scenario selected, the tool will output different levels of detail in the reports. Where low or medium materiality are selected, the tool will output a summary narrative. Where high materiality is selected, the tool will output a more detailed narrative.
-      The executive summary covers the following:"
+	p(
+      "Users will then select the relevant NGFS scenario (i.e. Orderly, Disorderly, or Hot House World) 
+	  and/or sector which will generate an output. This will be in the form of an executive summary and 
+	  a detailed long form report. Based on materiality and the NGFS scenario selected, the tool will output 
+	  different levels of detail in the reports. Where low or medium materiality are selected for a business activity, 
+	  the tool will output a summary narrative. Where high materiality is selected, the tool will output a more detailed 
+	  narrative. The executive summary covers the following:"
     ),
     tags$ul(
       tags$li("A summary of the key assumptions and parameters used in the selected NGFS scenario"),
@@ -38,23 +42,27 @@ tab_intro_ui <- function() {
         "For each sector, underwriting and asset class as well as lending exposure type (ordered from high to low materiality):",
         tags$ul(
           tags$li("Tables summarising the selected exposure type and highlighting the materiality"),
-          tags$li("A summary for high materiality exposures"),
+          tags$li("A summary narrative for high materiality exposures"),
           tags$li("A table of one-liners for medium and low materiality exposures")
         )
       )
     ),
     p("The long form report covers the following:"),
     tags$ul(
-      tags$li("A description of key assumptions and parameters used in the selected NGFS scenario"),
+      tags$li("A more detailed description of key assumptions and parameters used in the selected NGFS scenario"),
       tags$li(
         "For each sector, underwriting and asset class as well as lending exposure type (ordered from high to low materiality):",
         tags$ul(
           tags$li("A description of each lending exposure type, underwriting class, asset class and sector selected"),
-          tags$li("Detail narratives for high materiality exposures"),
-          tags$li("A summary for medium and low materiality")
+          tags$li("Detailed narratives for high materiality exposures"),
+          tags$li("A summary narrative for medium and low materiality exposures")
         )
       )
-    )
+    ),
+	p(
+	  "The tool will also generate a report covering a stand-alone description for an underwriting class or economic sector 
+	  in a particular NGFS scenario."
+	)
   )
   out
 }
