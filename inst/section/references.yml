@@ -1,4 +1,3 @@
 position: 99
-is_scenario: no
 include_in_HTML: yes
 special_content_function: get_references

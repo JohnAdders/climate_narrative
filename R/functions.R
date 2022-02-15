@@ -631,13 +631,12 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
   if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
   description <- scenario$description
-  is_scenario <- scenario$is_scenario
   transition <- scenario$transition
   physical <- scenario$physical
   out <- ""
   if (!is.null(name)) out <- paste0("# ", name, "\n\n")
   if (!is.null(description)) out <- paste0(out, description, "\n\n")
-  if (nrow(aggregated_table) & is_scenario) {
+  if (nrow(aggregated_table)) {
     for (i in 1:nrow(aggregated_table)) {
       item <- aggregated_table$item[i]
       materiality <- aggregated_table$materiality_num[i]
@@ -651,6 +650,37 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
         get_exposure_appendix(item)
       )
     }
+  }
+  return(out)
+}
+
+#' Lower level report helper function responsible for single section description
+#'
+#' @param section Section name
+#' @param additional_pars List of additional parameters that may be required by special content functions
+#'
+get_section_descriptions <- function(section, additional_pars=list()) {
+  out <- ""
+  content_function <- section$special_content_function
+  if (!is.null(content_function)){
+    if (content_function == "get_executive_summary"){
+      if (additional_pars$report_version >= 3){
+        out <- paste0(
+          out,
+          get_executive_summary(additional_pars$aggregated_inputs, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
+        )
+      }
+    } else if (content_function == "get_references"){
+      out <- paste0(
+        out,
+        get_references(additional_pars$aggregated_inputs$item)
+      )
+    } else {
+      stop(paste("Invalid content function name", content_function))
+    }
+  } else {
+    if (!is.null(name)) out <- paste0("# ", name, "\n\n")
+    if (!is.null(description)) out <- paste0(out, description, "\n\n")
   }
   return(out)
 }
@@ -947,39 +977,37 @@ add_path_to_graphs <- function(x) {
 get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_no, exposure_exec = FALSE){
   out <- "## Scenarios\n\nThis report considers the following scenarios:\n\n"
   for (scenario in global$scenarios[scenario_no]) {
-    if (scenario$is_scenario){
+    out <- paste0(
+      out,
+      "### ",
+      scenario$name,
+      "\n\n",
+      scenario$exec_description,
+      "\n\n"
+    )
+    risk <- scenario$exec_short
+    risk_intensity <- scenario[[risk]]
+    if (exposure_exec){
+      if (nrow(aggregated_inputs) > 1){
+        warning("Multiple sectors not compatible with this executive summary layout, using the first sector only")
+      }
+      item <- aggregated_inputs$item[1]
+      materiality <- aggregated_inputs$materiality[1]
+      if (materiality == "High"){
+        text <- global$exposure_classes[[item]][[risk]][[risk_intensity]][["always"]]
+      } else if (materiality %in% c("Medium", "Low")){
+        text <- global$exposure_classes[[item]][[risk]][[risk_intensity]]["exec_description"]
+      } else {
+        stop (paste("Unknown materiality level: ", materiality))
+      }
       out <- paste0(
         out,
-        "### ",
-        scenario$name,
-        "\n\n",
-        scenario$exec_description,
+        "##### ",
+        capitalize(risk),
+        " risk\n\n",
+        global$exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
         "\n\n"
       )
-      risk <- scenario$exec_short
-      risk_intensity <- scenario[[risk]]
-      if (exposure_exec){
-        if (nrow(aggregated_inputs) > 1){
-          warning("Multiple sectors not compatible with this executive summary layout, using the first sector only")
-        }
-        item <- aggregated_inputs$item[1]
-        materiality <- aggregated_inputs$materiality[1]
-        if (materiality == "High"){
-          text <- global$exposure_classes[[item]][[risk]][[risk_intensity]][["always"]]
-        } else if (materiality %in% c("Medium", "Low")){
-          text <- global$exposure_classes[[item]][[risk]][[risk_intensity]]["exec_description"]
-        } else {
-          stop (paste("Unknown materiality level: ", materiality))
-        }
-        out <- paste0(
-          out,
-          "##### ",
-          capitalize(risk),
-          " risk\n\n",
-          global$exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
-          "\n\n"
-        )
-      }
     }
   }
   out <- paste(out, collapse = "\n")
@@ -1003,10 +1031,8 @@ get_executive_summary <- function(aggregated_inputs, inputs, scenario_no, layout
   exec <- data.frame(low = rep(FALSE,2), high = rep(FALSE,2))
   rownames(exec) <- c("transition", "physical")
   for (i in scenario_no){
-    if (global$scenarios[[i]]$is_scenario){
-      risk <- global$scenarios[[i]][["exec_short"]]
-      exec[risk, global$scenarios[[i]][[risk]]] <- TRUE
-    }
+    risk <- global$scenarios[[i]][["exec_short"]]
+    exec[risk, global$scenarios[[i]][[risk]]] <- TRUE
   }
   if (layout == 1){
     out_1 <- get_executive_summary_inputs(aggregated_inputs, inputs)
@@ -1028,21 +1054,27 @@ get_executive_summary <- function(aggregated_inputs, inputs, scenario_no, layout
 #' @param report_scenario_selection value of the input
 #' @param is_rtf bool whether to include sections that are for RTF only
 #' @return vector of integers
+#' 
 get_scenario_no <- function(report_scenario_selection, is_rtf){
   if (report_scenario_selection == ""){
     scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name)))
   } else {
     scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
   }
-  if (is_rtf){
-    scenario_no <- c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
-  } else {
-    scenario_no <- c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario && sce$include_in_HTML)))
-  }
-  scenario_no <- sort(scenario_no)
   return(scenario_no)
 }
 
+#' Helper function that returns non-scenario section number(s)
+#'
+#' @inherit get_scenario_no
+#' 
+get_section_no <- function(is_rtf){
+  if (is_rtf){
+    return(which(sapply(global$sections, function(sce) TRUE)))
+  } else {
+    return(which(sapply(global$sections, function(sce) sce$include_in_HTML)))
+  }
+}
 
 #' Function that generates a markdown content of the report
 #' 
@@ -1058,26 +1090,10 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf, exec_summary_layout=1){
   aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
+  section_no <- get_section_no(is_rtf)
   out <- list()
   for (scenario in global$scenarios[scenario_no]) {
-    content_function <- scenario$special_content_function
-    if (!is.null(content_function)){
-      if (content_function == "get_executive_summary"){
-        if (report_version >= 3){
-          out <- c(
-            out,
-            list(get_executive_summary(aggregated_inputs, inputs, scenario_no, exec_summary_layout))
-          )
-        }
-      } else if (content_function == "get_references"){
-        out <- c(
-          out,
-          list(get_references(aggregated_inputs$item))
-        )
-      } else {
-        stop(paste("Invalid content function name", content_function))
-      }
-    } else {
+    #else {
       out <- c(
         out,
         list(get_scenario_descriptions(
@@ -1086,8 +1102,27 @@ get_report_contents <- function(inputs, report_version, report_scenario_selectio
           scenario
         ))
       )
-    }
+    #}
   }
+  for(section in global$sections[section_no]){
+    out <- c(
+        out,
+        list(get_section_descriptions(
+          section,
+          list(
+            report_version=report_version,
+            aggregated_inputs=aggregated_inputs,
+            inputs=inputs,
+            scenario_no=scenario_no,
+            exec_summary_layout=exec_summary_layout
+          )
+        ))
+      )
+  }
+  # order the scenario and non-scenario sections
+  scenario_pos <- sapply(global$scenarios, function(sce) sce$position)[scenario_no]
+  section_pos <- sapply(global$sections, function(s) s$position)[section_no]
+  out <- out[order(c(scenario_pos, section_pos))]
   out <- add_path_to_graphs(out)
   return(out)
 }
