@@ -53,12 +53,15 @@ tab_report_ui <- function() {
     warning("Pandoc (required to render rtf) not available, hiding download report button")
     out <- c(out, list(uiOutput("html_report")))
   } else {
-    button_1 <- downloadButton("report", "Download the selected scenario/sector report as RTF")
-    button_2 <- actionButton("update_yamls", "Update the report text files")
-    button_3 <- conditionalPanel(
-      'input.report_scenario_selection != "" | input.report_sector_selection != ""',
+    button_1 <- conditionalPanel(
+      'output.html_report_message == ""',
       actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
     )
+    button_2 <- conditionalPanel(
+      'output.html_report_message == ""',
+      downloadButton("report", "Download the selected report as RTF")
+    )
+    button_3 <- actionButton("update_yamls", "Update the report text files")
     if (global$dev){
       out <- c(out, list(
         fluidRow(
@@ -71,7 +74,7 @@ tab_report_ui <- function() {
       out <- c(out, list(
         fluidRow(
           column(4, button_1),
-          column(4, button_3)
+          column(4, button_2)
         )
       ))
     }
@@ -79,6 +82,7 @@ tab_report_ui <- function() {
       out <- c(
         out,
         list(
+          textOutput("html_report_message"),
           sidebarLayout(
             sidebarPanel(
               div(id = "html_toc_div", uiOutput("html_report_nav")),
@@ -92,7 +96,10 @@ tab_report_ui <- function() {
         )
       )
     } else {
-      out <- c(out, list(uiOutput("html_report")))
+      out <- c(out, list(
+        textOutput("html_report_message"),
+        uiOutput("html_report")
+      ))
     }
   }
 }
@@ -102,19 +109,26 @@ tab_report_server <- function(input, output, session, tab) {
     updateSelectInput(session, "report_selection", selected = global$scenarios[[2]]$name)
   }
   observeEvent(
-    input$type,
+    list(input$inst_type, input$rep_type),
     {
-      tab$previous_tab <- tab_name_to_number(
-        switch(input$type,
-          insurance = "ins_sov",
-          asset = "am_re",
-          bank = "bank_sov"
+      if (input$rep_type == "inst"){
+        tab$previous_tab <- tab_name_to_number(
+          switch(input$inst_type,
+            insurance = "ins_sov",
+            asset = "am_re",
+            bank = "bank_sov"
+          )
         )
-      )
+      } else {
+        tab$previous_tab <- tab_name_to_number("rep_type")
+      }
     }
   )
   observeEvent(
-    input[[paste0("page_",  tab_name_to_number("report"), "_previous")]],
+    list(
+      input[[paste0("page_",  tab_name_to_number("report"), "_previous")]],
+      input[[paste0("page_",  tab_name_to_number("report"), "_previous_duplicate")]]
+    ),
     {
       updateSelectInput(session, "report_scenario_selection", selected = "")
       updateSelectInput(session, "report_sector_selection", selected = "")

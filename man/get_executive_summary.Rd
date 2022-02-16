@@ -4,7 +4,7 @@
 \alias{get_executive_summary}
 \title{Function to combine an executive summary from lower level functions}
 \usage{
-get_executive_summary(aggregated_inputs, inputs, scenario_no)
+get_executive_summary(aggregated_inputs, inputs, scenario_no, layout = 1)
 }
 \arguments{
 \item{aggregated_inputs}{data frame of aggregated inputs (implemented in the reactive expression)}
@@ -12,6 +12,11 @@ get_executive_summary(aggregated_inputs, inputs, scenario_no)
 \item{inputs}{data frame of all inputs (implemented in the reactive expression)}
 
 \item{scenario_no}{integer or vector of integers indicating which of the global$scenarios should be included}
+
+\item{layout}{determines the structure of the output
+
+1 for full three subsections (inputs, scenarios, exposures)
+2 for one subsection (scenarios, including also exposures)}
 }
 \value{
 string - executive summary text

@@ -959,12 +959,24 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
       risk <- scenario$exec_short
       risk_intensity <- scenario[[risk]]
       if (exposure_exec){
+        if (nrow(aggregated_inputs) > 1){
+          warning("Multiple sectors not compatible with this executive summary layout, using the first sector only")
+        }
+        item <- aggregated_inputs$item[1]
+        materiality <- aggregated_inputs$materiality[1]
+        if (materiality == "High"){
+          text <- global$exposure_classes[[item]][[risk]][[risk_intensity]][["always"]]
+        } else if (materiality %in% c("Medium", "Low")){
+          text <- global$exposure_classes[[item]][[risk]][[risk_intensity]]["exec_description"]
+        } else {
+          stop (paste("Unknown materiality level: ", materiality))
+        }
         out <- paste0(
           out,
           "##### ",
           capitalize(risk),
           " risk\n\n",
-          global$exposure_classes[[aggregated_inputs$item]][[risk]][[risk_intensity]]["always"],
+          global$exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
           "\n\n"
         )
       }
@@ -980,9 +992,13 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
 #' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
 #' @param inputs data frame of all inputs (implemented in the reactive expression)
 #' @param scenario_no integer or vector of integers indicating which of the global$scenarios should be included
+#' @param layout determines the structure of the output
+#' 
+#' 1 for full three subsections (inputs, scenarios, exposures)
+#' 2 for one subsection (scenarios, including also exposures)
 #' @return string - executive summary text
-#'
-get_executive_summary <- function(aggregated_inputs, inputs, scenario_no){
+#' 
+get_executive_summary <- function(aggregated_inputs, inputs, scenario_no, layout=1){
   out_0 <- "# Executive summary\n\n"
   exec <- data.frame(low = rep(FALSE,2), high = rep(FALSE,2))
   rownames(exec) <- c("transition", "physical")
@@ -992,14 +1008,16 @@ get_executive_summary <- function(aggregated_inputs, inputs, scenario_no){
       exec[risk, global$scenarios[[i]][[risk]]] <- TRUE
     }
   }
-  if (nrow(aggregated_inputs) > 1){
+  if (layout == 1){
     out_1 <- get_executive_summary_inputs(aggregated_inputs, inputs)
     out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no)
     out_3 <- get_executive_summary_exposures(aggregated_inputs, inputs, scenario_no, exec)
-  } else {
+  } else if (layout == 2) {
     out_1 <- ""
     out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no, TRUE)
     out_3 <- ""
+  } else {
+    stop("Invalid layout parameter")
   }
   # the final output is a string
   return(paste0(out_0, out_1, out_2, out_3))
@@ -1027,17 +1045,18 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 
 
 #' Function that generates a markdown content of the report
-#'
-#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
-#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' 
+#' @param inputs data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
 #' @param is_rtf a flag that triggers several format specific settings:
 #' - TRUE: include non-scenario sections (e.g. intro)
 #' - FALSE: include the links to page top (note requires proper report_version as well)
+#' @param exec_summary_layout determines the structure of the executive summary (see get_executive_summary function)
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
-#'
-get_report_contents <- function(aggregated_inputs, inputs, report_version, report_scenario_selection, is_rtf){
+#' 
+get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf, exec_summary_layout=1){
+  aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
   out <- list()
   for (scenario in global$scenarios[scenario_no]) {
@@ -1047,7 +1066,7 @@ get_report_contents <- function(aggregated_inputs, inputs, report_version, repor
         if (report_version >= 3){
           out <- c(
             out,
-            list(get_executive_summary(aggregated_inputs, inputs, scenario_no))
+            list(get_executive_summary(aggregated_inputs, inputs, scenario_no, exec_summary_layout))
           )
         }
       } else if (content_function == "get_references"){
@@ -1112,7 +1131,7 @@ get_executive_summary_exposures <- function(
               " ",
               risk,
               " risk\n\n",
-              global$exposure_classes[[item]][["physical"]][["high"]]["always"],
+              global$exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
               "\n\n"
             )
           }
@@ -1262,5 +1281,55 @@ get_test_report <- function(){
     out <- paste0(out, get_exposure_test_description(names(global$exposure_classes)[i]))
     out <- paste0(out, get_exposure_appendix(names(global$exposure_classes)[i]))
   }
+  return(out)
+}
+
+#' Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities
+#' 
+#' @param all_inputs_table data frame of all inputs (usually the reactive expression all_inputs)
+#' @param inst_type institution type to filter (or "" for no filtering)
+#' @param sector sector to filter (or "" for no filtering)
+#' @param aggregate bool, whether to aggregate the inputs by sector
+#' @param override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
+#' 
+get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
+  out <- all_inputs_table
+  if (override_materiality != ""){
+    out$materiality <- override_materiality
+  }
+  if (inst_type != ""){
+    out <- out[(which(out$type == inst_type & out$materiality != "N/A")), ]
+  }
+  if (sector != ""){
+    selected_item <- names(
+      which(sapply(global$exposure_classes, `[[`, i = "name") == sector)
+    )
+    out <- out[out$item == selected_item, ]
+  }
+  if (aggregate){
+    out <- aggregate_inputs(out)
+  }
+  return(out)
+}
+
+#' Aggregate the inputs by sector
+#' 
+#' @param inputs data frame of all inputs (usually the reactive expression all_inputs or its subset)
+#' 
+aggregate_inputs <- function(inputs){
+  aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = inputs)
+  aggregated_inputs_numeric <- stats::aggregate(
+    materiality_num ~ item,
+    FUN = function(x) {
+      cut(
+        sum(x),
+        breaks = c(0, 4.5, 9.5, 100),
+        labels = c("Low", "Medium", "High")
+      )
+    },
+    data = inputs
+  )
+  out <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
+  out <- out[order(out$materiality, out$materiality_num, decreasing = TRUE), ]
   return(out)
 }
