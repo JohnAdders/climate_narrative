@@ -1,11 +1,8 @@
 tab_report_ui <- function() {
-  valid_options <- c("", unname(unlist(lapply(global$scenarios, function(x) {
-    if (x$is_scenario) {
-      return(x$name)
-    } else {
-      return(NULL)
-    }
-  }))))
+  valid_options <- c(
+    "",
+    unname(unlist(lapply(global$scenarios, function(x) x$name)))
+  )
 
   dropdown_1 <- selectInput(
     "report_scenario_selection",
@@ -146,6 +143,7 @@ tab_report_server <- function(input, output, session, tab) {
       global$exposure_classes <- read_dir("exposure_class")
       global$exposures <- read_dir("exposure")
       global$scenarios <- read_dir("scenario")
+      global$section <- read_dir("section")
       global$products <- read_dir("product")
     }
   )
