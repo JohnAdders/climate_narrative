@@ -975,11 +975,10 @@ add_path_to_graphs <- function(x) {
 #' (applicable in single sector context only)
 #'
 get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_no, exposure_exec = FALSE){
-  out <- "## Scenarios\n\nThis report considers the following scenarios:\n\n"
   for (scenario in global$scenarios[scenario_no]) {
     out <- paste0(
       out,
-      "### ",
+      "## ",
       scenario$name,
       "\n\n",
       scenario$exec_description,
@@ -1021,11 +1020,11 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
 #' @param inputs data frame of all inputs (implemented in the reactive expression)
 #' @param scenario_no integer or vector of integers indicating which of the global$scenarios should be included
 #' @param layout determines the structure of the output
-#' 
+#'
 #' 1 for full three subsections (inputs, scenarios, exposures)
 #' 2 for one subsection (scenarios, including also exposures)
 #' @return string - executive summary text
-#' 
+#'
 get_executive_summary <- function(aggregated_inputs, inputs, scenario_no, layout=1){
   out_0 <- "# Executive summary\n\n"
   exec <- data.frame(low = rep(FALSE,2), high = rep(FALSE,2))
@@ -1054,7 +1053,7 @@ get_executive_summary <- function(aggregated_inputs, inputs, scenario_no, layout
 #' @param report_scenario_selection value of the input
 #' @param is_rtf bool whether to include sections that are for RTF only
 #' @return vector of integers
-#' 
+#'
 get_scenario_no <- function(report_scenario_selection, is_rtf){
   if (report_scenario_selection == ""){
     scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name)))
@@ -1067,7 +1066,7 @@ get_scenario_no <- function(report_scenario_selection, is_rtf){
 #' Helper function that returns non-scenario section number(s)
 #'
 #' @inherit get_scenario_no
-#' 
+#'
 get_section_no <- function(is_rtf){
   if (is_rtf){
     indicator_function <- function(s) s$include_in_RTF
@@ -1078,7 +1077,7 @@ get_section_no <- function(is_rtf){
 }
 
 #' Function that generates a markdown content of the report
-#' 
+#'
 #' @param inputs data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
@@ -1087,7 +1086,7 @@ get_section_no <- function(is_rtf){
 #' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @param exec_summary_layout determines the structure of the executive summary (see get_executive_summary function)
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
-#' 
+#'
 get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf, exec_summary_layout=1){
   aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
@@ -1321,13 +1320,13 @@ get_test_report <- function(){
 }
 
 #' Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities
-#' 
+#'
 #' @param all_inputs_table data frame of all inputs (usually the reactive expression all_inputs)
 #' @param inst_type institution type to filter (or "" for no filtering)
 #' @param sector sector to filter (or "" for no filtering)
 #' @param aggregate bool, whether to aggregate the inputs by sector
 #' @param override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
-#' 
+#'
 get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
   out <- all_inputs_table
   if (override_materiality != ""){
@@ -1349,9 +1348,9 @@ get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALS
 }
 
 #' Aggregate the inputs by sector
-#' 
+#'
 #' @param inputs data frame of all inputs (usually the reactive expression all_inputs or its subset)
-#' 
+#'
 aggregate_inputs <- function(inputs){
   aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = inputs)
   aggregated_inputs_numeric <- stats::aggregate(
@@ -1371,17 +1370,17 @@ aggregate_inputs <- function(inputs){
 }
 
 #' Read the markdown section from relevant yaml file and save as output
-#' 
+#'
 #' This function should be used on the server side.
 #' Corresponding UI side call should be: uiOutput(output_name)
-#' 
+#'
 #' @param output Shiny output
 #' @param output_name Name of slot created in shiny output (to be used in UI part of shiny app)
 #' @param section_name Name of yaml file within section directory read from
 #' (description section only, other YAML fields are ignored)
-#' 
+#'
 #' @importFrom markdown markdownToHTML
-#' 
+#'
 include_markdown_section <- function(output, output_name, section_name){
   text <- unlist(
     strsplit(
