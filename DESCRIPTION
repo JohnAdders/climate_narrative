@@ -33,4 +33,5 @@ Imports:
     tippy,
     uuid,
     yaml,
-    png
+    png,
+    markdown

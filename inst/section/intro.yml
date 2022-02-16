@@ -1,6 +1,6 @@
 position: -1
-is_scenario: no
 include_in_HTML: no
+include_in_RTF: yes
 description: |
   ```{=rtf}
     \page
