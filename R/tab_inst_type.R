@@ -1,25 +1,22 @@
-tab_type_ui <- function() {
+tab_inst_type_ui <- function() {
   list(
     radioButtons(
-      "type",
+      "inst_type",
       "Type of Institution:",
       c(
         "Bank" = "bank",
         "Insurance" = "insurance",
-        "Asset Manager / Owner" = "asset"
+        "Asset Manager / Owner / Fund" = "asset"
       )
     )
   )
 }
 
-tab_type_server <- function(input, output, session, tab) {
-  if (global$dev == TRUE){
-    tab$previous_tab <- tab_name_to_number("title")
-  }
+tab_inst_type_server <- function(input, output, session, tab) {
   observeEvent(
-    input$type,
+    input$inst_type,
     {
-      tab$next_tab <- switch(input$type,
+      tab$next_tab <- switch(input$inst_type,
         insurance = tab_name_to_number("ins_l"),
         asset = tab_name_to_number("am_c"),
         bank = tab_name_to_number("bank_re")
@@ -28,7 +25,7 @@ tab_type_server <- function(input, output, session, tab) {
   )
 }
 
-tab_type_foot <- function() {
+tab_inst_type_foot <- function() {
   list(
     helpText("Please select your firm's type")
   )

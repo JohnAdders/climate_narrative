@@ -55,7 +55,7 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
 }
 
 #' Helper function to enable using names to refer tabs instead of numbers
-#' 
+#'
 #' @param tab_name name of the tab to convert
 tab_name_to_number <- function(tab_name){
   as.integer(factor(tab_name, global$ordered_tabs))
@@ -72,17 +72,17 @@ add_param <- function(previous_list, item_to_add) {
 }
 
 #' Make the first letter of a string upper case
-#' 
+#'
 #' @param string the string to convert
-#' 
+#'
 capitalize <- function(string) {
   return(paste0(toupper(substring(string, 1, 1)), substring(string, 2)))
 }
 
 #' Format (camelcase) string in order to look better in final output (spaces, capitalisation)
-#' 
+#'
 #' @param camelcase the string to convert
-#' 
+#'
 restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
   s <- sub("^ ", "", s) # remove first space
@@ -102,9 +102,9 @@ restore_spaces <- function(camelcase) {
 
 #' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
 #' and product-specific text (if any)
-#' 
+#'
 #' @inherit exposure_grid_server
-#' 
+#'
 produce_tooltip_matrix <- function(exposure_matrix) {
   out <- matrix(
     "",
@@ -551,7 +551,7 @@ get_exposure_appendix <- function(item) {
 #' @param physical_or_transition Type of scenario
 #' @param high_or_low Is scenario high or low
 #' @param include_oneliner FALSE by default, normally oneliner is for executive summary
-#' 
+#'
 get_exposure_risk_description <- function(
   item,
   products,
@@ -631,13 +631,12 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
   if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
   description <- scenario$description
-  is_scenario <- scenario$is_scenario
   transition <- scenario$transition
   physical <- scenario$physical
   out <- ""
   if (!is.null(name)) out <- paste0("# ", name, "\n\n")
   if (!is.null(description)) out <- paste0(out, description, "\n\n")
-  if (nrow(aggregated_table) & is_scenario) {
+  if (nrow(aggregated_table)) {
     for (i in 1:nrow(aggregated_table)) {
       item <- aggregated_table$item[i]
       materiality <- aggregated_table$materiality_num[i]
@@ -651,6 +650,37 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
         get_exposure_appendix(item)
       )
     }
+  }
+  return(out)
+}
+
+#' Lower level report helper function responsible for single section description
+#'
+#' @param section Section name
+#' @param additional_pars List of additional parameters that may be required by special content functions
+#'
+get_section_descriptions <- function(section, additional_pars=list()) {
+  out <- ""
+  content_function <- section$special_content_function
+  if (!is.null(content_function)){
+    if (content_function == "get_executive_summary"){
+      if (additional_pars$report_version >= 3){
+        out <- paste0(
+          out,
+          get_executive_summary(additional_pars$aggregated_inputs, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
+        )
+      }
+    } else if (content_function == "get_references"){
+      out <- paste0(
+        out,
+        get_references(additional_pars$aggregated_inputs$item)
+      )
+    } else {
+      stop(paste("Invalid content function name", content_function))
+    }
+  } else {
+    if (!is.null(section$name)) out <- paste0("# ", section$name, "\n\n")
+    if (!is.null(section$description)) out <- paste0(out, section$description, "\n\n")
   }
   return(out)
 }
@@ -708,7 +738,7 @@ heartbeat_footer <- function() {
     tag(
       "footer",
       list(
-        p("Copyright 2021 The Climate Financial Risk Forum"),
+        p("Copyright 2022 The Climate Financial Risk Forum"),
         p(
           a(href = "https://github.com/JohnAdders/climate_narrative", "Source Code", target = "_blank"),
           " | ",
@@ -729,7 +759,7 @@ heartbeat_footer <- function() {
 #' https://github.com/sarthi2395/shinygCAPTCHAv3/blob/master/R/shinygCAPTCHAv3.R
 #'
 #' @param site_key Site key from google
-#' 
+#'
 recaptcha_ui <- function(site_key) {
   tagList(tags$head(
     tags$script(src = paste0("https://www.google.com/recaptcha/api.js?render=", site_key)),
@@ -746,7 +776,7 @@ recaptcha_ui <- function(site_key) {
 #' @param field_id Field to trigger
 #'
 #' @importFrom shinyjs runjs
-#' 
+#'
 recaptcha_js <- function(site_key, action, field_id) {
   runjs(paste0("
         grecaptcha.ready(function () {
@@ -767,7 +797,7 @@ recaptcha_js <- function(site_key, action, field_id) {
 #' @importFrom httr POST
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr content
-#' 
+#'
 recaptcha_server <- function(secret_key, recaptcha_response) {
   response <- httr::POST(
     "https://www.google.com/recaptcha/api/siteverify",
@@ -818,7 +848,7 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' @param report_contents the content to write
 #' @param tempfile where to write the report
 #' @return NULL, output is a file as specified in the argument
-write_report_to_file <- function(report_contents, tempfile){ 
+write_report_to_file <- function(report_contents, tempfile){
   file_conn <- file(tempfile)
   writeLines(
     report_contents,
@@ -829,17 +859,17 @@ write_report_to_file <- function(report_contents, tempfile){
 }
 
 #' Go through the markdown file, find all png images and scale down where relevant
-#' 
+#'
 #' @param filename the path to file to convert
 #' @param max_width_inch maximum width of image in inches (wider will be scaled down to this value)
 #' default is 7 inches which roughly matches vertical A4 page with margins
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
-#' 
+#'
 ensure_images_fit_page <- function(filename, max_width_inch=7){
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
-  graph_lines <- grep("^!\\[",markdown) 
+  graph_lines <- grep("^!\\[",markdown)
   for (i in graph_lines){
     image_name <- substring(stringi::stri_match_first(markdown[i], regex="\\([[:graph:]]*.png"),2)
     image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
@@ -855,14 +885,14 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
 }
 
 #' Fix the table of contents in the RTF file
-#' 
+#'
 #' ToC in pandoc output is not working out of the box. The ToC is a list of hyperlinks,
 #' but there are no corresponding bookmarks in headers of respective sections
-#' 
+#'
 #' @param filename name of file to convert
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
-#' 
+#'
 rtf_fix_table_of_contents <- function(filename){
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
@@ -878,7 +908,7 @@ rtf_fix_table_of_contents <- function(filename){
     bookmark_text <- stringi::stri_match_first(rtf[i], regex="HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
     bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text) - 4)
     bookmark_row <- grep(
-        paste0(" ", rtf[i + 1], "\\p"), 
+        paste0(" ", rtf[i + 1], "\\p"),
         rtf[search_position : length(rtf)],
         fixed = TRUE,
       )[1] + search_position - 1
@@ -899,12 +929,12 @@ rtf_fix_table_of_contents <- function(filename){
 }
 
 #' Center images in RTF
-#' 
+#'
 #' By default pandoc rtf aligns pictures left, to center them (consistently with HTML)
 #' manual intervention is required
 #' @param filename name of file to convert
 #' @return NULL, changes file specified as an argument in place
-#' 
+#'
 rtf_center_images <- function(filename){
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
@@ -918,12 +948,12 @@ rtf_center_images <- function(filename){
 }
 
 #' Add path to graphs
-#' 
+#'
 #' By default pandoc rtf is run in its own location and does not locate the images properly
 #' manual intervention is required to explicitly point the images
 #' @param x text to convert
 #' @return updated text
-#' 
+#'
 add_path_to_graphs <- function(x) {
   gsub(
     "\\(([[:graph:]]*)(.png)",
@@ -939,35 +969,45 @@ add_path_to_graphs <- function(x) {
 }
 
 #' One of the functions comprising the executive summary text
-#' 
+#'
 #' @inherit get_executive_summary
 #' @param exposure_exec bool whether to include a short description for the sector
 #' (applicable in single sector context only)
-#' 
+#'
 get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_no, exposure_exec = FALSE){
   out <- "## Scenarios\n\nThis report considers the following scenarios:\n\n"
   for (scenario in global$scenarios[scenario_no]) {
-    if (scenario$is_scenario){
+    out <- paste0(
+      out,
+      "### ",
+      scenario$name,
+      "\n\n",
+      scenario$exec_description,
+      "\n\n"
+    )
+    risk <- scenario$exec_short
+    risk_intensity <- scenario[[risk]]
+    if (exposure_exec){
+      if (nrow(aggregated_inputs) > 1){
+        warning("Multiple sectors not compatible with this executive summary layout, using the first sector only")
+      }
+      item <- aggregated_inputs$item[1]
+      materiality <- aggregated_inputs$materiality[1]
+      if (materiality == "High"){
+        text <- global$exposure_classes[[item]][[risk]][[risk_intensity]][["always"]]
+      } else if (materiality %in% c("Medium", "Low")){
+        text <- global$exposure_classes[[item]][[risk]][[risk_intensity]]["exec_description"]
+      } else {
+        stop (paste("Unknown materiality level: ", materiality))
+      }
       out <- paste0(
         out,
-        "### ",
-        scenario$name,
-        "\n\n",
-        scenario$exec_description,
+        "##### ",
+        capitalize(risk),
+        " risk\n\n",
+        global$exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
         "\n\n"
       )
-      risk <- scenario$exec_short
-      risk_intensity <- scenario[[risk]]
-      if (exposure_exec){
-        out <- paste0(
-          out,
-          "##### ",
-          capitalize(risk),
-          " risk\n\n",
-          global$exposure_classes[[aggregated_inputs$item]][[risk]][[risk_intensity]]["always"],
-          "\n\n"
-        )
-      }
     }
   }
   out <- paste(out, collapse = "\n")
@@ -976,105 +1016,118 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
 
 
 #' Function to combine an executive summary from lower level functions
-#' 
+#'
 #' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
 #' @param inputs data frame of all inputs (implemented in the reactive expression)
 #' @param scenario_no integer or vector of integers indicating which of the global$scenarios should be included
+#' @param layout determines the structure of the output
+#' 
+#' 1 for full three subsections (inputs, scenarios, exposures)
+#' 2 for one subsection (scenarios, including also exposures)
 #' @return string - executive summary text
 #' 
-get_executive_summary <- function(aggregated_inputs, inputs, scenario_no){
+get_executive_summary <- function(aggregated_inputs, inputs, scenario_no, layout=1){
   out_0 <- "# Executive summary\n\n"
   exec <- data.frame(low = rep(FALSE,2), high = rep(FALSE,2))
   rownames(exec) <- c("transition", "physical")
   for (i in scenario_no){
-    if (global$scenarios[[i]]$is_scenario){
-      risk <- global$scenarios[[i]][["exec_short"]]
-      exec[risk, global$scenarios[[i]][[risk]]] <- TRUE
-    }
+    risk <- global$scenarios[[i]][["exec_short"]]
+    exec[risk, global$scenarios[[i]][[risk]]] <- TRUE
   }
-  if (nrow(aggregated_inputs) > 1){
+  if (layout == 1){
     out_1 <- get_executive_summary_inputs(aggregated_inputs, inputs)
     out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no)
     out_3 <- get_executive_summary_exposures(aggregated_inputs, inputs, scenario_no, exec)
-  } else {
+  } else if (layout == 2) {
     out_1 <- ""
     out_2 <- get_executive_summary_scenarios(aggregated_inputs, inputs, scenario_no, TRUE)
     out_3 <- ""
+  } else {
+    stop("Invalid layout parameter")
   }
   # the final output is a string
   return(paste0(out_0, out_1, out_2, out_3))
 }
 
 #' Helper function that translate the value of input field to the scenario number(s)
-#' 
+#'
 #' @param report_scenario_selection value of the input
 #' @param is_rtf bool whether to include sections that are for RTF only
 #' @return vector of integers
+#' 
 get_scenario_no <- function(report_scenario_selection, is_rtf){
   if (report_scenario_selection == ""){
-    scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name))) 
+    scenario_no <- which(sapply(global$scenarios, function(sce) !is.null(sce$name)))
   } else {
     scenario_no <- which(sapply(global$scenarios, `[[`, i = "name") == report_scenario_selection)
   }
-  if (is_rtf){
-    scenario_no <- c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario)))
-  } else {
-    scenario_no <- c(scenario_no, which(sapply(global$scenarios, function(sce) !sce$is_scenario && sce$include_in_HTML)))
-  }
-  scenario_no <- sort(scenario_no)
   return(scenario_no)
 }
 
+#' Helper function that returns non-scenario section number(s)
+#'
+#' @inherit get_scenario_no
+#' 
+get_section_no <- function(is_rtf){
+  if (is_rtf){
+    indicator_function <- function(s) s$include_in_RTF
+  } else {
+    indicator_function <- function(s) s$include_in_HTML
+  }
+  return(which(sapply(global$sections, indicator_function)))
+}
 
 #' Function that generates a markdown content of the report
 #' 
-#' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
-#' @param inputs data frame of all inputs (implemented in the reactive expression)
+#' @param inputs data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
 #' @param is_rtf a flag that triggers several format specific settings:
 #' - TRUE: include non-scenario sections (e.g. intro)
 #' - FALSE: include the links to page top (note requires proper report_version as well)
+#' @param exec_summary_layout determines the structure of the executive summary (see get_executive_summary function)
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #' 
-get_report_contents <- function(aggregated_inputs, inputs, report_version, report_scenario_selection, is_rtf){
+get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf, exec_summary_layout=1){
+  aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
+  section_no <- get_section_no(is_rtf)
   out <- list()
   for (scenario in global$scenarios[scenario_no]) {
-    content_function <- scenario$special_content_function
-    if (!is.null(content_function)){
-      if (content_function == "get_executive_summary"){
-        if (report_version >= 3){
-          out <- c(
-            out,
-            list(get_executive_summary(aggregated_inputs, inputs, scenario_no))
-          )
-        }
-      } else if (content_function == "get_references"){
-        out <- c(
-          out,
-          list(get_references(aggregated_inputs$item))
-        )
-      } else {
-        stop(paste("Invalid content function name", content_function))
-      }
-    } else {
-      out <- c(
+    out <- c(
+      out,
+      list(get_scenario_descriptions(
+        aggregated_inputs,
+        inputs,
+        scenario
+      ))
+    )
+  }
+  for (section in global$sections[section_no]){
+    out <- c(
         out,
-        list(get_scenario_descriptions(
-          aggregated_inputs,
-          inputs,
-          scenario
+        list(get_section_descriptions(
+          section,
+          list(
+            report_version=report_version,
+            aggregated_inputs=aggregated_inputs,
+            inputs=inputs,
+            scenario_no=scenario_no,
+            exec_summary_layout=exec_summary_layout
+          )
         ))
       )
-    }
   }
+  # order the scenario and non-scenario sections
+  scenario_pos <- sapply(global$scenarios, function(sce) sce$position)[scenario_no]
+  section_pos <- sapply(global$sections, function(s) s$position)[section_no]
+  out <- out[order(c(scenario_pos, section_pos))]
   out <- add_path_to_graphs(out)
   return(out)
 }
 
 #' One of the functions comprising the executive summary text
-#' 
+#'
 #' @inherit get_executive_summary
 #' @param exec the table of bools, determining which of the descriptions
 #' (in both high materiality and others) will be used in the report
@@ -1112,7 +1165,7 @@ get_executive_summary_exposures <- function(
               " ",
               risk,
               " risk\n\n",
-              global$exposure_classes[[item]][["physical"]][["high"]]["always"],
+              global$exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
               "\n\n"
             )
           }
@@ -1163,12 +1216,12 @@ get_executive_summary_exposures <- function(
 }
 
 #' Helpder function - the name is self-explanatory
-#' 
+#'
 #' @param data matrix or data.frame, possibly containing missing value
 #' @param empty_strings which strings should be considered as "empty"?
 #' @param ignore_cols indices of columns which should be ignored for emptiness check
 #' @return input object without rows and columns where all entries are empty (i.e. NA or "")
-#' 
+#'
 delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), ignore_cols=c()){
   data <- as.data.frame(data)
   empty_strings <- unlist(empty_strings)
@@ -1182,7 +1235,7 @@ delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), i
     if (sum(!empty_rows) > 1){
       colnames(data)[1] <- ""
       return(data[!empty_rows, ])
-    } else { 
+    } else {
       # a bit clumsy, but need to add separately one row case - by default converted by R to vector
       out <- as.data.frame(t(t(data[!empty_rows, ])))
       colnames(out)[1] <- ""
@@ -1192,9 +1245,9 @@ delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), i
 }
 
 #' One of the functions comprising the executive summary text
-#' 
+#'
 #' @inherit get_executive_summary
-#' 
+#'
 get_executive_summary_inputs <- function(aggregated_inputs, inputs){
   out <- "## Inputs\n\n"
   for (tab in global$tabs){
@@ -1229,9 +1282,9 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
 
 
 #' Karnan's request for easier change comparison - single sector
-#' 
+#'
 #' @param item sector name
-#' 
+#'
 get_exposure_test_description <- function(item){
   exposure_class <- global$exposure_classes[[item]]
   out <- paste0(
@@ -1241,7 +1294,7 @@ get_exposure_test_description <- function(item){
     exposure_class$description,
     "\n\n"
   )
-  
+
   for (risk in c("transition", "physical")){
     for (risk_intensity in c("low", "high")){
       out <- paste0(
@@ -1263,4 +1316,84 @@ get_test_report <- function(){
     out <- paste0(out, get_exposure_appendix(names(global$exposure_classes)[i]))
   }
   return(out)
+}
+
+#' Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities
+#' 
+#' @param all_inputs_table data frame of all inputs (usually the reactive expression all_inputs)
+#' @param inst_type institution type to filter (or "" for no filtering)
+#' @param sector sector to filter (or "" for no filtering)
+#' @param aggregate bool, whether to aggregate the inputs by sector
+#' @param override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
+#' 
+get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
+  out <- all_inputs_table
+  if (override_materiality != ""){
+    out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered=T)
+    out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
+  } else {}
+  if (inst_type != ""){
+    out <- out[(which(out$type == inst_type & out$materiality != "N/A")), ]
+  }
+  if (sector != ""){
+    selected_item <- names(
+      which(sapply(global$exposure_classes, `[[`, i = "name") == sector)
+    )
+    out <- out[out$item == selected_item, ]
+  }
+  if (aggregate){
+    out <- aggregate_inputs(out)
+  }
+  return(out)
+}
+
+#' Aggregate the inputs by sector
+#' 
+#' @param inputs data frame of all inputs (usually the reactive expression all_inputs or its subset)
+#' 
+aggregate_inputs <- function(inputs){
+  aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = inputs)
+  aggregated_inputs_numeric <- stats::aggregate(
+    materiality_num ~ item,
+    FUN = function(x) {
+      cut(
+        sum(x),
+        breaks = c(0, 4.5, 9.5, 100),
+        labels = c("Low", "Medium", "High")
+      )
+    },
+    data = inputs
+  )
+  out <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
+  out <- out[order(out$materiality, out$materiality_num, decreasing = TRUE), ]
+  return(out)
+}
+
+#' Read the markdown section from relevant yaml file and save as output
+#' 
+#' This function should be used on the server side.
+#' Corresponding UI side call should be: uiOutput(output_name)
+#' 
+#' @param output Shiny output
+#' @param output_name Name of slot created in shiny output (to be used in UI part of shiny app)
+#' @param section_name Name of yaml file within section directory read from
+#' (description section only, other YAML fields are ignored)
+#' 
+#' @importFrom markdown markdownToHTML
+#' 
+include_markdown_section <- function(output, output_name, section_name){
+  text <- unlist(
+    strsplit(
+      global$sections[[section_name]]$description,
+      "\n"
+    )
+  )
+  output[[output_name]] <- renderUI({
+    HTML(
+      markdown::markdownToHTML(
+        text=text,
+        fragment.only = TRUE
+      )
+    )
+  })
 }

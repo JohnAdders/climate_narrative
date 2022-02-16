@@ -16,19 +16,20 @@ run_shiny_app <- function(secrets_file="secret.yml", ...) {
   global$tabs <- list(
     QuestionTab$new("title", NULL, NULL, "auth", FALSE, FALSE),
     QuestionTab$new("auth", NULL, "title", NULL, ui_settings = list(captcha_code = global$captcha_code)),
-    QuestionTab$new("intro", "Introduction to the Tool", "auth", "type"),
-    QuestionTab$new("type", NULL, "auth", "ins_l"),
-    QuestionTab$new("bank_re", "Bank: Real Estate Exposures", "type", "bank_c", TRUE, TRUE, global$exposures$bankRe, "bank", "R"),
+    QuestionTab$new("intro", "Introduction to the Tool", "auth", "rep_type"),
+    QuestionTab$new("rep_type", "Report Type Selection", "intro", "inst_type"),
+    QuestionTab$new("inst_type", "Institution Type Selection", "rep_type", "ins_l"),
+    QuestionTab$new("bank_re", "Bank: Real Estate Exposures", "inst_type", "bank_c", TRUE, TRUE, global$exposures$bankRe, "bank", "R"),
     QuestionTab$new("bank_c", "Bank: Company Exposures", "bank_re", "bank_sov", TRUE, TRUE, global$exposures$bankCorporate, "bank", "C"),
     QuestionTab$new("bank_sov", "Bank: Sovereign Exposures", "bank_c", "report", TRUE, TRUE, global$exposures$sovereign, "bank", "S"),
-    QuestionTab$new("ins_l", "Insurance: Life and Health Lines of Business", "type", "ins_nl", TRUE, TRUE, global$exposures$insuranceLife, "insurance", "L"),
+    QuestionTab$new("ins_l", "Insurance: Life and Health Lines of Business", "inst_type", "ins_nl", TRUE, TRUE, global$exposures$insuranceLife, "insurance", "L"),
     QuestionTab$new("ins_nl", "Insurance: Property and Casualty Lines of Business", "ins_l", "ins_c", TRUE, TRUE, global$exposures$insuranceNonlife, "insurance", "N"),
     QuestionTab$new("ins_c", "Insurance: Corporate and Real Estate Assets", "ins_nl", "ins_sov", TRUE, TRUE, global$exposures$insuranceCorporate, "insurance", "C"),
     QuestionTab$new("ins_sov", "Insurance: Sovereign Assets", "ins_c", "report", TRUE, TRUE, global$exposures$sovereign, "insurance", "S"),
-    QuestionTab$new("am_c", "Asset Manager: Corporate Assets under management", "type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
-    QuestionTab$new("am_sov", "Asset Manager: Sovereign Assets under management", "am_c", "am_re", TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
-    QuestionTab$new("am_re", "Asset Manager: Real Estate Assets under management", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
-    QuestionTab$new("report", NULL, "type", NULL)
+    QuestionTab$new("am_c", "Asset Manager / Owner / Fund: Corporate Assets", "type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
+    QuestionTab$new("am_sov", "Asset Manager / Owner / Fund: Sovereign Assets", "am_c", "am_re", TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
+    QuestionTab$new("am_re", "Asset Manager/ Owner / Fund: Real Estate Assets", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
+    QuestionTab$new("report", NULL, "rep_type", NULL)
   )
   # Tab names validation check
   # the global$ordered_tabs must be defined first (the QuestionTab constructor relies on this

@@ -1,6 +1,5 @@
 name: NGFS Hot House World Scenarios
 position: 3
-is_scenario: yes
 transition: no
 physical: high
 exec_short: physical
