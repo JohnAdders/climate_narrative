@@ -1330,8 +1330,9 @@ get_test_report <- function(){
 get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
   out <- all_inputs_table
   if (override_materiality != ""){
-    out$materiality <- override_materiality
-  }
+    out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered=T)
+    out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
+  } else {}
   if (inst_type != ""){
     out <- out[(which(out$type == inst_type & out$materiality != "N/A")), ]
   }
