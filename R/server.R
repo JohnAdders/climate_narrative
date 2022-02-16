@@ -41,7 +41,7 @@ server <- function(input, output, session) {
       }
     })
   }
-  # the reactive variables (ultimately - the climate report)
+  # the reactive variables
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
     out <- data.frame(
@@ -68,70 +68,22 @@ server <- function(input, output, session) {
     }
     out$materiality <- factor(out$values, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
     out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
-    out
-  })
-
-  type_inputs <- reactive({
-    out <- all_inputs()
-    out <- out[(which(out$type == input$type & out$materiality != "N/A")), ]
+    out <- out[!is.na(out$type), ]
     return(out)
   })
 
   allow_report <- reactive({
-    return(nrow(type_inputs()) > 0)
+    return(nrow(get_inputs(all_inputs(), input$inst_type)))
   })
-
-  aggregated_type_inputs <- reactive({
-    if (allow_report()) {
-      aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = type_inputs())
-      aggregated_inputs_numeric <- stats::aggregate(
-        materiality_num ~ item,
-        FUN = function(x) {
-          cut(
-            sum(x),
-            breaks = c(0, 4.5, 9.5, 100),
-            labels = c("Low", "Medium", "High")
-          )
-        },
-        data = type_inputs()
-      )
-      aggregated_inputs <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
-      aggregated_inputs[order(aggregated_inputs$materiality, aggregated_inputs$materiality_num, decreasing = TRUE), ]
-    } else {
-      return(data.frame(item = c(), materiality = c()))
+  
+  report_message <- reactive({
+    if (input$rep_type == "inst" && input$report_scenario_selection == "") {
+      return("Please select a scenario (optionally a sector as well)")
     }
-  })
-
-  aggregated_all_inputs <- reactive({
-    if (allow_report()) {
-      aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = all_inputs())
-      aggregated_inputs_numeric <- stats::aggregate(
-        materiality_num ~ item,
-        FUN = function(x) {
-          cut(
-            sum(x),
-            breaks = c(0, 4.5, 9.5, 100),
-            labels = c("Low", "Medium", "High")
-          )
-        },
-        data = all_inputs()
-      )
-      aggregated_inputs <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
-      aggregated_inputs[order(aggregated_inputs$materiality, aggregated_inputs$materiality_num, decreasing = TRUE), ]
+    if (input$rep_type == "sect" && input$report_sector_selection == "") {
+      return("Please select a sector")
     } else {
-      return(data.frame(item = c(), materiality = c()))
-    }
-  })
-
-  aggregated_type_inputs_subset <- reactive({
-    if (input$report_sector_selection == ""){
-      return (aggregated_type_inputs())
-    } else {
-      out <- aggregated_type_inputs()
-      selected_item <- names(
-        which(sapply(global$exposure_classes, `[[`, i = "name") == input$report_sector_selection)
-      )
-      return(out[out$item == selected_item, ])
+      return("")
     }
   })
 
@@ -139,33 +91,67 @@ server <- function(input, output, session) {
   observeEvent(
     input$wizard,
     {
+      if (input$rep_type == "inst"){
+        selection_type_filter <- input$inst_type
+      } else {
+        selection_type_filter <- ""
+      }
       updateSelectInput(
         session,
         "report_sector_selection",
         choices=c(
           "",
           unname(sapply(global$exposure_classes, `[[`, i = "name"))[
-            names(global$exposure_classes) %in% aggregated_type_inputs()$item
+            names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item
           ]
         )
       )
     }
   )
 
+  output$html_report_message <- renderText({
+    report_message()
+  })
+  
   output$html_report <- renderUI({
-    if (input$report_scenario_selection == "") {
-      return(p("Please select a scenario (optionally a sector as well)"))
+    if (report_message() != "") {
+      return("")
     }
     temp_html <- tempfile(fileext = ".html")
-    write_report_to_file(
-      get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version,input$report_scenario_selection,FALSE),
-      session$userData$temp_md_scenario
-    )
+    if (input$rep_type == "inst"){
+      if (input$report_sector_selection == "") {
+        exec_summary_layout <- 1
+      } else {
+        exec_summary_layout <- 2
+      }
+      write_report_to_file(
+        get_report_contents(
+          get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE),
+          global$report_version,
+          input$report_scenario_selection,
+          FALSE,
+          exec_summary_layout
+        ),
+        session$userData$temp_md_scenario
+      )
+    } else {
+      write_report_to_file(
+        get_report_contents(
+          get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
+          global$report_version,
+          input$report_scenario_selection,
+          FALSE,
+          2
+        ),
+        session$userData$temp_md_scenario
+      )
+    }
     rmarkdown::render(
       input = session$userData$temp_md_scenario,
       output_file = temp_html,
       output_format = rmarkdown::html_document(
         toc = TRUE,
+        toc_float = FALSE,
         toc_depth = 2,
         number_sections = FALSE,
         self_contained = FALSE,
@@ -209,6 +195,7 @@ server <- function(input, output, session) {
     return(result)
   })
 
+  
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
@@ -220,10 +207,34 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      write_report_to_file(
-        get_report_contents(aggregated_type_inputs_subset(), type_inputs(), global$report_version,input$report_scenario_selection,TRUE),
-        session$userData$temp_md_scenario_and_commons
-      )
+      if (input$rep_type == "inst"){
+        if (input$report_sector_selection == "") {
+          exec_summary_layout <- 1
+        } else {
+          exec_summary_layout <- 2
+        }
+        write_report_to_file(
+          get_report_contents(
+            get_inputs(all_inputs(), input$inst_type, input$report_sector_selection),
+            global$report_version,
+            input$report_scenario_selection,
+            TRUE,
+            exec_summary_layout
+          ),
+          session$userData$temp_md_scenario_and_commons
+        )
+      } else {
+        write_report_to_file(
+          get_report_contents(
+            get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
+            global$report_version,
+            input$report_scenario_selection,
+            TRUE,
+            2
+          ),
+          session$userData$temp_md_scenario_and_commons
+        )
+      }
       fs <- file.size(session$userData$temp_md_scenario_and_commons)
       rmarkdown::render(
         input = session$userData$temp_md_scenario_and_commons,
@@ -261,7 +272,13 @@ server <- function(input, output, session) {
         )
       )
       write_report_to_file(
-        get_report_contents(aggregated_all_inputs(), all_inputs(), global$report_version, input$report_scenario_selection, TRUE),
+        get_report_contents(
+          all_inputs(),
+          global$report_version,
+          input$report_scenario_selection,
+          TRUE,
+          1
+        ),
         session$userData$temp_md_dev
       )
       fs <- file.size(session$userData$temp_md_dev)

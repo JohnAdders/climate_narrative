@@ -1,6 +1,5 @@
 name: NGFS Disorderly/Divergent Scenarios
 position: 2
-is_scenario: yes
 transition: high
 physical: low
 exec_short: transition
