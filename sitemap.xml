@@ -91,6 +91,12 @@
     <loc>/reference/get_scenario_no.html</loc>
   </url>
   <url>
+    <loc>/reference/get_section_descriptions.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_section_no.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_test_report.html</loc>
   </url>
   <url>
@@ -98,6 +104,9 @@
   </url>
   <url>
     <loc>/reference/heartbeat_footer.html</loc>
+  </url>
+  <url>
+    <loc>/reference/include_markdown_section.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
