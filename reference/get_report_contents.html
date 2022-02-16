@@ -51,20 +51,18 @@
 
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_report_contents</span><span class="op">(</span>
-  <span class="va">aggregated_inputs</span>,
   <span class="va">inputs</span>,
   <span class="va">report_version</span>,
   <span class="va">report_scenario_selection</span>,
-  <span class="va">is_rtf</span>
+  <span class="va">is_rtf</span>,
+  exec_summary_layout <span class="op">=</span> <span class="fl">1</span>
 <span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>aggregated_inputs</dt>
-<dd><p>data frame of aggregated inputs (implemented in the reactive expression)</p></dd>
-<dt>inputs</dt>
-<dd><p>data frame of all inputs (implemented in the reactive expression)</p></dd>
+    <dl><dt>inputs</dt>
+<dd><p>data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)</p></dd>
 <dt>report_version</dt>
 <dd><p>enables different versions of the reports within a single code, see global file for possible choices and their meaning</p></dd>
 <dt>report_scenario_selection</dt>
@@ -73,6 +71,8 @@
 <dd><p>a flag that triggers several format specific settings:</p><ul><li><p>TRUE: include non-scenario sections (e.g. intro)</p></li>
 <li><p>FALSE: include the links to page top (note requires proper report_version as well)</p></li>
 </ul></dd>
+<dt>exec_summary_layout</dt>
+<dd><p>determines the structure of the executive summary (see get_executive_summary function)</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>

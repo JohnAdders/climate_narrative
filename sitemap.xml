@@ -22,6 +22,9 @@
     <loc>/reference/add_path_to_graphs.html</loc>
   </url>
   <url>
+    <loc>/reference/aggregate_inputs.html</loc>
+  </url>
+  <url>
     <loc>/reference/capitalize.html</loc>
   </url>
   <url>
@@ -64,10 +67,16 @@
     <loc>/reference/get_exposure_risk_description.html</loc>
   </url>
   <url>
+    <loc>/reference/get_exposure_test_description.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_input_ids.html</loc>
   </url>
   <url>
     <loc>/reference/get_input_values.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_inputs.html</loc>
   </url>
   <url>
     <loc>/reference/get_references.html</loc>
@@ -80,6 +89,9 @@
   </url>
   <url>
     <loc>/reference/get_scenario_no.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_test_report.html</loc>
   </url>
   <url>
     <loc>/reference/heartbeat.html</loc>
