@@ -137,7 +137,7 @@ server <- function(input, output, session) {
     } else {
       write_report_to_file(
         get_report_contents(
-          get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE, "High"),
+          get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
           global$report_version,
           input$report_scenario_selection,
           FALSE,
@@ -226,7 +226,7 @@ server <- function(input, output, session) {
       } else {
         write_report_to_file(
           get_report_contents(
-            get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE, "High"),
+            get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
             global$report_version,
             input$report_scenario_selection,
             TRUE,
