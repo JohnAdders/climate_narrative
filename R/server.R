@@ -137,7 +137,7 @@ server <- function(input, output, session) {
     } else {
       write_report_to_file(
         get_report_contents(
-          get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE),
+          get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE, "High"),
           global$report_version,
           input$report_scenario_selection,
           FALSE,
@@ -207,21 +207,34 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (input$report_sector_selection == "") {
-        exec_summary_layout <- 1
+      if (input$rep_type == "inst"){
+        if (input$report_sector_selection == "") {
+          exec_summary_layout <- 1
+        } else {
+          exec_summary_layout <- 2
+        }
+        write_report_to_file(
+          get_report_contents(
+            get_inputs(all_inputs(), input$inst_type, input$report_sector_selection),
+            global$report_version,
+            input$report_scenario_selection,
+            TRUE,
+            exec_summary_layout
+          ),
+          session$userData$temp_md_scenario_and_commons
+        )
       } else {
-        exec_summary_layout <- 2
+        write_report_to_file(
+          get_report_contents(
+            get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE, "High"),
+            global$report_version,
+            input$report_scenario_selection,
+            TRUE,
+            2
+          ),
+          session$userData$temp_md_scenario_and_commons
+        )
       }
-      write_report_to_file(
-        get_report_contents(
-          get_inputs(all_inputs(), input$inst_type, input$report_sector_selection),
-          global$report_version,
-          input$report_scenario_selection,
-          TRUE,
-          exec_summary_layout
-        ),
-        session$userData$temp_md_scenario_and_commons
-      )
       fs <- file.size(session$userData$temp_md_scenario_and_commons)
       rmarkdown::render(
         input = session$userData$temp_md_scenario_and_commons,
