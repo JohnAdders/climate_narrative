@@ -1,6 +1,6 @@
 position: -1
 include_in_HTML: no
-include_in_RTF: yes
+include_in_RTF: no
 description: |
   This online climate scenario analysis tool is designed to support firms
   in assessing their climate-related risks and opportunities.
