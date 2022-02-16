@@ -679,8 +679,8 @@ get_section_descriptions <- function(section, additional_pars=list()) {
       stop(paste("Invalid content function name", content_function))
     }
   } else {
-    if (!is.null(name)) out <- paste0("# ", name, "\n\n")
-    if (!is.null(description)) out <- paste0(out, description, "\n\n")
+    if (!is.null(section$name)) out <- paste0("# ", section$name, "\n\n")
+    if (!is.null(section$description)) out <- paste0(out, section$description, "\n\n")
   }
   return(out)
 }
@@ -1094,18 +1094,16 @@ get_report_contents <- function(inputs, report_version, report_scenario_selectio
   section_no <- get_section_no(is_rtf)
   out <- list()
   for (scenario in global$scenarios[scenario_no]) {
-    #else {
-      out <- c(
-        out,
-        list(get_scenario_descriptions(
-          aggregated_inputs,
-          inputs,
-          scenario
-        ))
-      )
-    #}
+    out <- c(
+      out,
+      list(get_scenario_descriptions(
+        aggregated_inputs,
+        inputs,
+        scenario
+      ))
+    )
   }
-  for(section in global$sections[section_no]){
+  for (section in global$sections[section_no]){
     out <- c(
         out,
         list(get_section_descriptions(
@@ -1331,8 +1329,9 @@ get_test_report <- function(){
 get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
   out <- all_inputs_table
   if (override_materiality != ""){
-    out$materiality <- override_materiality
-  }
+    out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered=T)
+    out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
+  } else {}
   if (inst_type != ""){
     out <- out[(which(out$type == inst_type & out$materiality != "N/A")), ]
   }
