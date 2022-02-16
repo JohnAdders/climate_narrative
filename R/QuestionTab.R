@@ -97,10 +97,8 @@ QuestionTab <- R6Class(
           global$dev,
           width
         )
-        # in order to create a full report without visiting the tabs in dev mode:
-        if(global$dev){
-          outputOptions(output, paste(self$type, self$subtype, sep = "_"), suspendWhenHidden = FALSE)
-        }
+        # in order to create a full report without visiting the tabs (e.g. dev mode or sector report):
+        outputOptions(output, paste(self$type, self$subtype, sep = "_"), suspendWhenHidden = FALSE)
       }
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
       if (length(self$previous_tab)) {

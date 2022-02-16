@@ -91,14 +91,18 @@ server <- function(input, output, session) {
   observeEvent(
     input$wizard,
     {
+      if (input$rep_type == "inst"){
+        selection_type_filter <- input$inst_type
+      } else {
+        selection_type_filter <- ""
+      }
       updateSelectInput(
         session,
         "report_sector_selection",
         choices=c(
           "",
           unname(sapply(global$exposure_classes, `[[`, i = "name"))[
-            #names(global$exposure_classes) %in% aggregated_type_inputs()$item
-            names(global$exposure_classes) %in% get_inputs(all_inputs(), input$inst_type)$item
+            names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item
           ]
         )
       )
