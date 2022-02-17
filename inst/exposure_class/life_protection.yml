@@ -23,14 +23,14 @@ description: |
 transition:
   high:
     exec_description: |
-      Life Protection underwriting exposures could be impacted in the Delayed/Divergent 
+      Life Protection underwriting exposures could be impacted in the Disorderly 
       transition risk scenarios, as mortality and morbidity could be affected by 
-      both a reduction  pollution which could in turn result into a reduction in 
-      cancer (especially lung), respiratory diseases, heart attack and stroke and 
+      both a reduction in pollution which could in turn result in a reduction in 
+      cancer (especially lung), respiratory diseases, heart attack and stroke as well as 
       potentially a decrease in healthcare spending. 
     always: |
       Life Protection underwriting exposures could be impacted by the transition
-      effects related to changes in pollution levels. In Disorderly/Divergent
+      effects related to changes in pollution levels. In Disorderly
       transition risk scenarios, the Delayed transition driven by a late policy
       action enables a "fossil recovery" out of the economic crisis
       brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
@@ -44,10 +44,9 @@ transition:
       in turn result into a reduction in cancer (especially lung), respiratory
       diseases, heart attack and stroke.
 
-      The Disorderly/Divergent transition risk scenarios could also lead to a
-      limited reduction in GDP growth. This could lead to significant changes in
-      the rate of growth in healthcare spending that could negatively impact
-      mortality and morbidity.
+      These scenarios could also lead to a limited reduction in GDP growth. This 
+      could lead to significant changes in the rate of growth in healthcare spending 
+      that could negatively impact mortality and morbidity.
     high_materiality: |
       **Pollution effect**
 
@@ -87,7 +86,7 @@ transition:
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
         but without global buy-in, then this could also reduce the correlation.
 
-      In the Disorderly/Divergent transition risk scenarios, there is potential
+      In the Disorderly transition risk scenarios, there is potential
       for fewer deaths and a positive outcome for health relating to air
       pollution, the reduction of pollution could result into a reduction of
       cancers (especially lung) and respiratory diseases (e.g. asthma,
@@ -107,7 +106,7 @@ transition:
       of mortality and morbidity claims. The specific scenario would depend on
       how government and society chose to allocate any GDP growth.
 
-      The Disorderly/Divergent transition risk scenarios could lead to a
+      The Disorderly transition risk scenarios could lead to a
       moderate to severe fall in GDP growth. A slower GDP growth would
       potentially constrain the growth in spending on NHS, public health, social
       care, medical research etc. Assuming that greater funding is correlated to
@@ -126,17 +125,17 @@ transition:
       **Impact on pricing or product design**
 
       To the extent that there is an impact on mortality, the
-      Disorderly/Divergent transition risk scenarios could have an impact on the
+      Disorderly transition risk scenarios could have an impact on the
       pricing of life protection products, although this is likely to be modest.
   low:
     exec_description: |
-      Life Protection underwriting exposures could be impacted in the Early/Orderly 
+      Life Protection underwriting exposures could be impacted in the Orderly 
       transition risk scenarios, as mortality and morbidity could decrease due to 
-      a reduction in pollution which could in turn result into a reduction in 
+      a reduction in pollution which could in turn result in a reduction in 
       cancer (especially lung), respiratory diseases, heart attack and stroke.
     always: |
       Life Protection underwriting exposures could be impacted by the transition
-      effects related to changes in pollution levels. In Early/Orderly
+      effects related to changes in pollution levels. In Orderly
       transition risk scenarios, immediate policy reaction, societal change,
       national energy strategies, and carbon legislation could lead to an
       immediate and smooth reduction in CO<sub>2</sub> emissions by 2050, and
@@ -146,7 +145,7 @@ transition:
       which could in turn result into a reduction in cancer (especially lung),
       respiratory diseases, heart attack and stroke.
 
-      The Early/Orderly transition risk scenarios could also lead to a limited
+      The Orderly transition risk scenarios could also lead to a limited
       fall in GDP. This could result in changes in the rate of growth in
       healthcare spending, which could impact mortality and morbidity.
     high_materiality: |
@@ -175,9 +174,9 @@ transition:
         actually contribute to local particulate pollution.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
-        but without global buy-in then this could also reduce the correlation.
+        but without global buy-in, then this could also reduce the correlation.
 
-      In the Early/Orderly transition risk scenarios, there is potential for
+      In Orderly transition risk scenarios, there is potential for
       fewer deaths and a positive outcome for health relating to air pollution.
       The reduction in pollution could result in a reduction of cancers
       (especially lung) and respiratory diseases (e.g. asthma, respiratory
@@ -203,7 +202,7 @@ transition:
 
       **Impact on pricing or product design**
 
-      To the extent that there is an impact on mortality, the Early/Orderly
+      To the extent that there is an impact on mortality, the Orderly
       transition risk scenarios could have an impact on the pricing of life
       protection products, although this is likely to be modest.
 physical:
@@ -212,7 +211,7 @@ physical:
       In high physical risk scenarios, climate change is likely to result in 
       increased disruption that could have an impact on the life protection 
       underwriting class, as mortality and morbidity could be affected by both a 
-      reduction in healthcare spending and an increase in the myriad of health 
+      reduction in healthcare spending and an increase in a myriad of health 
       problems due to higher temperatures.
     always: |
       In the high physical risk scenario, climate change is likely to result in
@@ -377,7 +376,7 @@ physical:
         
         In the Net Zero 2050 and Delayed transition scenarios, mean air temperatures, 
         as well as mean daily minimum and maximum air temperatures, are projected 
-        to increase more in the Delayed scenario.
+        to increase.
         
       ![Air Temperature](Air_Temp_Low_Physical.png)
       

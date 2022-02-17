@@ -14,9 +14,9 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the profitability of the 
-      motor sector and its associated underwriting class could also depend on the 
-      automotive companies' proactively investing in innovation and new technology. 
+      In Disorderly transition risk scenarios, the motor sector and its associated 
+      underwriting class could be disrupted by the automotive companies' proactively 
+      investing in innovation and new technology and changing customer preferences. 
     always: |
       While motor insurance could continue to play a role in meeting customer
       demand for the coming years, the changing patterns in energy generation in
@@ -38,7 +38,7 @@ transition:
       in GDP growth. This could result in changes in the rate of growth in
       demand for motor insurance.
     high_materiality: |
-      In the Disorderly/Divergent transition risk scenarios, there are a number
+      In the Disorderly transition risk scenarios, there are a number
       of potential impacts on the motor sector and the underwriting class. For
       example:
 
@@ -48,7 +48,7 @@ transition:
         particularly those made of steel or hydrocarbon derived plastics, which
         could increase claims costs significantly alongside increased costs to
         operate associated processes such as paint booths or waste disposal. In
-        the Disorderly/Divergent transition risk scenarios there is a shift from
+        the Disorderly transition risk scenarios there is a shift from
         internal combustion engine vehicles towards electric vehicles (and
         possibly hydrogen or other zero-carbon fuel types). This has impacts on
         replacement and repair costs, increasing costs of claims in the short
@@ -56,7 +56,7 @@ transition:
         instead of internal combustion engines.
 
       - **Changing consumer preferences and revenue**. In the
-        Disorderly/Divergent transition risk scenarios, internal combustion
+        Disorderly transition risk scenarios, internal combustion
         engine vehicle ownership could become significantly more expensive,
         causing many people to give up their vehicles and cancel cover, without
         being able to afford an electric replacement. There is potential for
@@ -88,7 +88,7 @@ transition:
         on the road may also be associated with cover expanding to include
         charging cables and chargers owned by the vehicle owner.
 
-      In Disorderly/Divergent transition risk scenarios, Primary energy prices 
+      In Disorderly transition risk scenarios, Primary energy prices 
       (i.e. the spot price at the global market) remain depressed throughout the 
       scenario horizon, while secondary energy prices (i.e. paid by large scale 
       consumers) rise in line with the carbon price.
@@ -100,8 +100,8 @@ transition:
       
       The motor underwriting class is likely to be impacted by steady 
       decarbonization in transport. Within both freight and passenger vehicles, 
-      the portion of electric vehicles could increase in Disorderly/Divergent 
-      transition scenarios.
+      the portion of electric vehicles could increase in Disorderly 
+      transition risk scenarios.
       
       ![Transportation Freight Passenger](Transportation_Final_Energy_Freight_Passenger_Disorderly.png)
       
@@ -109,20 +109,19 @@ transition:
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The profitability of the motor sector and its associated underwriting
-      class, in the Disorderly/Divergent transition risk scenarios, could also
+      class, in the Disorderly transition risk scenarios, could also
       depend on the relevant automotive companies proactively investing in
       innovation and new technology. For example, expansion of affordable
-      low-carbon products and services, and electric vehicle charging networks.
-      
-      In Disorderly/Divergent transition risk scenarios, these innovations could contribute 
-      to an overall decrease in CO<sub>2</sub> emissions in the transportation sector.
+      low-carbon products and services, and electric vehicle charging networks. 
+      These innovations could contribute to an overall decrease in CO<sub>2</sub> 
+      emissions in the transportation sector.
       
       ![CO2 Transport Emissions](CO2_emissions_Transportation_Disorderly.png)
       
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      The Delayed/Divergent transition risk scenarios also present opportunities for 
+      The Disorderly transition risk scenarios also present opportunities for 
       the motor sector. Proactively investing in the above innovations could lead to 
       positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
@@ -131,13 +130,14 @@ transition:
       conditions and coverage.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the profitability of the motor 
-      sector and its associated underwriting class could depend on the automotive 
-      companies' proactively investing in innovation and new technology. 
+      In Orderly transition risk scenarios, the motor sector and its associated 
+      underwriting class could be disrupted by the automotive companies' 
+      proactively investing in innovation and new technology and changing customer 
+      preferences.
     always: |
       While motor insurance firms could continue to play a role in meeting
       customer demand for the coming years, the changing patterns in energy
-      generation in Early/Orderly transition risk scenarios, driven by immediate
+      generation in Orderly transition risk scenarios, driven by immediate
       policy reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050. This would, in turn, lead to an increase 
@@ -150,7 +150,7 @@ transition:
       of the motor sector, and therefore on the associated insurance products' 
       pricing, terms and conditions, and coverage.
 
-      The Early/Orderly transition risk scenarios could also lead to a limited
+      The Orderly transition risk scenarios could also lead to a limited
       relative reduction in GDP growth. This could result in changes in the rate
       of growth in demand for the motor insurance sector.
     high_materiality: |
@@ -163,7 +163,7 @@ transition:
         and affect the price of parts, particularly those made of steel or
         hydrocarbon derived plastics, which could increase claims costs
         alongside increased costs to operate associated processes such as paint
-        booths or waste disposal. In the Early/Orderly transition risk scenarios
+        booths or waste disposal. In the Orderly transition risk scenarios
         there is a smooth transition away from Internal Combustion Engine (ICE)
         vehicles towards electric vehicles (and possibly hydrogen or other
         zero-carbon fuel types). This has impacts on claims, replacement
@@ -204,7 +204,7 @@ transition:
       
       The motor underwriting class is likely to be impacted by steady 
       decarbonization in transport. Within both freight and passenger vehicles, 
-      the portion of electric vehicles could increase in Early/Orderly 
+      the portion of electric vehicles could increase in Orderly 
       transition scenarios.
       
       ![Transportation Freight Passenger](Transportation_Final_Energy_Freight_Passenger_Orderly.png)
@@ -213,20 +213,18 @@ transition:
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The profitability of the motor sector and its associated underwriting
-      class, in the Early/Orderly transition risk scenarios, could depend on the
+      class, in the Orderly transition risk scenarios, could depend on the
       relevant automotive companies proactively investing in innovation and new
       technology. For example, expansion of affordable low-carbon products and
-      services, and electric vehicle charging networks. 
-      
-      In Early/Orderly transition risk scenarios, these innovations could contribute 
-      to an overall decrease in CO<sub>2</sub> emissions in the transportation sector.
+      services, and electric vehicle charging networks. These innovations could contribute 
+      to an overall decrease in CO<sub>2</sub> emissions in the transportation sector
       
       ![CO2 Transport Emissions](CO2_emissions_Transportation_Orderly.png)
       
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      The Early/Orderly transition risk scenarios also present opportunities for the motor 
+      The Orderly transition risk scenarios also present opportunities for the motor 
       sector. Proactively investing in the above innovations could 
       lead to positive gains in commercial reputation 
       and therefore magnify demand and overall revenue as consumers could proactively 
@@ -235,12 +233,10 @@ transition:
 physical:
   high:
     exec_description: |
-      In high physical risk scenarios, the motor underwriting class could be 
-      subject to increasing disruption which could impact the profitability for 
-      these companies and therefore could impact the motor underwriting class as 
-      the physical effects of climate change could result in increased claims and 
-      increased premiums potentially resulting in some of the motor underwriting 
-      risks becoming either uninsurable or unaffordable. 
+      The motor sector is exposed to high physical risk scenarios due to the projected 
+      increase in weather variation and being subject to increasing disruption. This is 
+      likely to have an impact on the profitability of this sector and therefore on the 
+      associated insurance products pricing, terms and conditions, and coverage.
     always: |
       In high physical risk scenarios, climate change is likely to result in
       increased disruption that could have an impact on the motor sector and its
@@ -312,8 +308,8 @@ physical:
       winters may reduce the number of claims related to ice. Firms should
       consider detailed analysis of their claims supply chain to identify the
       most carbon-intensive areas, which would be most impacted. This could give
-      a more accurate picture of how the Disorderly transition impacts on the
-      business.
+      a more accurate picture of how the Disorderly transition risk scenarios impact 
+      the business.
 
 references: |
   - [Driverless vehicles and the future of motor insurance - Zurich, February 2020](https://www.zurich.co.uk/news-and-insight/driverless-vehicles-and-the-future-of-motor-insurance){target="\_blank"}

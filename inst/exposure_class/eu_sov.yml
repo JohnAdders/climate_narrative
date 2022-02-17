@@ -50,9 +50,10 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the increases in carbon prices 
-      could have a strong impact on sovereign bonds in particular in countries with 
-      a strong level of dependence on fossil fuel energy sources.
+      In Disorderly transition risk scenarios, delayed or divergent policy reaction, 
+      societal change and national energy strategies could lead to significant 
+      increases in carbon prices. This could have an impact on sovereign bonds in 
+      particular in countries with a strong level of dependence on fossil fuel energy sources.
     always: |
       In the Delayed transition risk scenario, the Delayed transition driven by a 
       late policy action enables a "fossil recovery" out of the economic crisis brought 
@@ -67,16 +68,15 @@ transition:
       countries with a strong level of dependence on fossil fuel energy sources. 
       Industries that are negatively impacted by transition risk, such as mining, 
       oil and gas could have reduced revenues from lower fossil fuel demand and 
-      increased costs from significantly higher carbon taxes. 
-      
-      Countries with high energy intensity or high fossil-fuel extraction include Estonia, Bulgaria, 
+      increased costs from significantly higher carbon taxes. Countries with high 
+      energy intensity or high fossil-fuel extraction include Estonia, Bulgaria, 
       Czechia, Greece and Poland. Countries with low energy intensity, such as 
       Austria, Finland, France, Spain and Sweden are less vulnerable to transition risk.
       
       On the other hand, government spending (through subsidies and investment) 
       could encourage consumer spending and investment in the use of renewables, 
       energy efficiency, energy storage, etc, leading to increases in fiscal revenues. 
-      The Disorderly transition risk scenario could also lead to a reduction in GDP 
+      The Disorderly transition risk scenarios could also lead to a reduction in GDP 
       growth. This would have a negative impact on EU sovereign bonds.
 
     high_materiality: |
@@ -146,12 +146,12 @@ transition:
       government by approximately US$1.35-2.02bn.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, immediate policy reaction, societal 
+      In Orderly transition risk scenarios, immediate policy reaction, societal 
       change and national energy strategies could lead to significant increases in 
       carbon prices. This could have an impact on sovereign bonds in particular in 
       countries with a strong level of dependence on fossil fuel energy sources.
     always: |
-      In Early/Orderly transition risk scenarios, immediate policy reaction, 
+      In Orderly transition risk scenarios, immediate policy reaction, 
       societal change and national energy strategies leads to significant and 
       immediate increases in carbon prices. This could have a strong impact 
       on fiscal revenues in countries with a strong level of dependence on 
@@ -176,7 +176,7 @@ transition:
       
       Transition risks for sovereigns are largely associated with the exposure 
       to carbon intensive sectors and technologies. Based on the IIASA NGFS 
-      Climate Scenarios, REMIND model by 2050, in Early/Orderly 
+      Climate Scenarios, REMIND model by 2050, in Orderly 
       scenarios, fossil fuels represent only ~27% of global energy demand compared 
       to ~83% in 2020. Countries with carbon-intensive sectors such as oil and gas 
       are consequently some of the most vulnerable to transition risk. 
@@ -211,7 +211,7 @@ transition:
       A change in a country's GDP could have an impact on the level of fiscal 
       revenue it receives. Assuming taxation rates remain unchanged, a decrease 
       in GDP could lead to a reduction in fiscal revenue. According to estimates 
-      from the NGFS, the Early/Orderly transition risk scenarios would generally 
+      from the NGFS, the Orderly transition risk scenarios would generally 
       limit GDP losses. The world GDP losses are estimated to be between -1.5% 
       and -2.5% by 2050. GDP impacts from transition risk are slightly positive 
       in the Net Zero 2050 scenario as negative impacts on demand from higher carbon 
@@ -229,7 +229,7 @@ transition:
       although rating agencies anticipate that climate trends could have implications 
       for ratings in coming decades. According to the 2021 "Rising Temperatures, 
       Falling Ratings: The Effect of Climate Change on Sovereign Creditworthiness" 
-      working paper from the University of Cambridge, in Early/Orderly transition 
+      working paper from the University of Cambridge, in Orderly transition 
       risk scenarios, most EU countries would be marginally downgraded 
       (1 notch or less). Most downgrades would be among top-rated countries. 
       This does not necessarily reflect increased climate-related risks for these top-rated 
@@ -244,10 +244,10 @@ transition:
 physical:
   high:
     exec_description: |
-      The high physical risk scenarios could result in a material negative impact on 
-      GDP growth. Global temperatures rise which will likely lead to changes in patterns of 
-      human migration that could increase inequality due to slow economic growth in 
-      particular areas. 
+      In the high physical risk scenarios, physical risks would undermine GDP growth due 
+      to loss of land, changing crop yields, depleted natural resources, lower productivity 
+      of the workforce, damages to infrastructure, etc. This would have a negative impact on 
+      sovereign bonds.
     always: |
       In a high physical risk scenario, physical risks would undermine GDP growth 
       due to loss of land, changing crop yields, depleted natural resources, lower 
@@ -258,10 +258,9 @@ physical:
       and heat waves could become more prevalent, impacting households, businesses, 
       cities and states. There are also likely indirect risks, such as those caused 
       by international migration (e.g. increased inequalities, labour right issues, 
-      social conflicts), or via biodiversity loss, or to industries supply chains and international trade.
-      
-      The high physical risk scenario could lead to a significant reduction in GDP 
-      growth. This would have a negative impact on EU sovereign bonds.
+      social conflicts), or via biodiversity loss, or to industries supply chains and 
+      international trade. The high physical risk scenario could lead to a significant 
+      reduction in GDP growth. This would have a negative impact on EU sovereign bonds.
       
       As global temperatures rise in a high physical risk scenario, the effects of 
       climate change, including coastal flooding, reduced rainfall in drylands and 
@@ -333,13 +332,11 @@ physical:
       productivity of the workforce, damages to infrastructure, etc. Chronic and 
       acute risks could result in lower tax revenues or higher insurance premiums. 
       This could result in a negative impact on GDP globally by 2100 and hit governments'
-      finances. 
-      
-      Extreme weather events such as wildfires, floods, and heat waves could become more prevalent, 
-      impacting households, businesses, cities and states. There are also likely indirect 
-      risks, such as those caused by international migration (e.g. increased inequalities, 
-      labour right issues, social conflicts), or via biodiversity loss, or to industries 
-      supply chains and international trade. The low physical risk scenario could lead to a 
+      finances. Extreme weather events such as wildfires, floods, and heat waves could 
+      become more prevalent, impacting households, businesses, cities and states. There are 
+      also likely indirect risks, such as those caused by international migration (e.g. increased 
+      inequalities, labour right issues, social conflicts), or via biodiversity loss, or to 
+      industries supply chains and international trade. The low physical risk scenario could lead to a 
       significant reduction in GDP growth. This would have a negative impact on EU sovereign bonds.
       
       As global temperatures rise in a low physical risk scenario, the effects of 

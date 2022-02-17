@@ -17,11 +17,13 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the marine sector could 
+      In Disorderly transition risk scenarios, the marine sector could 
       be impacted by an increase in carbon price through fuel cost, falling 
       asset values as older inefficient vessels becomes increasingly obsolete, 
       and lower demand as consumers become more conscious of the environmental 
-      impacts of their purchases. 
+      impacts of their purchases. This is likely to have an impact on the profitability 
+      of this sector and therefore on the associated insurance products pricing, terms 
+      and conditions, and coverage.
     always: |
       While the marine sector could continue to play a role in facilitating
       global trade and meeting customer demand for the coming years, the
@@ -35,11 +37,10 @@ transition:
       this sector and therefore on the associated insurance products' pricing
       and coverage.
 
-      The Disorderly/Divergent transition risk scenarios could also lead to a
-      limited reduction in GDP growth. This could result in changes in the rate
-      of growth in demand for the marine sector.
+      These scenarios could also lead to a limited reduction in GDP growth. This 
+      could result in changes in the rate of growth in demand for the marine sector.
     high_materiality: |
-      In Disorderly/Divergent transition risk scenarios, the impact on the
+      In Disorderly transition risk scenarios, the impact on the
       marine underwriting class could depend on the increases in carbon and
       energy prices and how reliant the marine company's revenue mix is on
       low-carbon electricity and bunker fuel and how it compares to the sector
@@ -52,7 +53,7 @@ transition:
         cap & trade clearing price, particularly for shipping firms using
         fossil-based bunker fuel.
         
-        In Delayed/Divergent transition risk scenarios, the price per gigajoule 
+        In Disorderly transition risk scenarios, the price per gigajoule 
         of liquid final energy (liquid fuels from all energy sources; incl. oil 
         products, synthetic fossil fuels from gas and coal, biofuels) for use in 
         transportation at least triples by the end of the century, increasing 
@@ -96,7 +97,7 @@ transition:
       could decrease demand for the marine sector.
 
       The profitability of the marine sector and its associated underwriting
-      class, in the Disorderly/Divergent transition risk scenarios, could also
+      class, in the Disorderly transition risk scenarios, could also
       depend on the relevant companies proactively investing in innovation and
       new technology. For example:
 
@@ -109,7 +110,7 @@ transition:
         activities to optimise voyage speeds
 
       - Alternatives to fossil-based bunker fuels (e.g. biodiesel, methanol,
-        lignin, and Ammonia). In Disorderly/Divergent transition risk scenarios, 
+        lignin, and Ammonia). In Disorderly transition risk scenarios, 
         sources of final energy used in the transport sector change dramatically. 
         As use of oil declines, electricity becomes the dominant source of final 
         energy by the end of the century.
@@ -119,7 +120,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      In Disorderly/Divergent transition risk scenarios, these innovations 
+      In Disorderly transition risk scenarios, these innovations 
       could contribute to an overall decrease in CO<sub>2</sub> emissions 
       in the transportation sector.
       
@@ -128,7 +129,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      The Delayed/Divergent transition risk scenarios also present opportunities 
+      The Disorderly transition risk scenarios also present opportunities 
       for the marine sector. Proactively investing in the above innovations could 
       lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
@@ -139,15 +140,17 @@ transition:
       in alignment with their green strategy.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the marine sector could be 
+      In Orderly transition risk scenarios, the marine sector could be 
       impacted by an increase in carbon price through fuel cost, falling asset 
       values as older inefficient vessels becomes increasingly obsolete, and 
       lower demand as consumers become more conscious of the environmental 
-      impacts of their purchases. 
+      impacts of their purchases. This is likely to have an impact on the profitability 
+      of this sector and therefore on the associated insurance products pricing, terms 
+      and conditions, and coverage.
     always: |
       The marine sector could continue to play a role in facilitating global
       trade and meeting customer demand for the coming years. The changing
-      patterns in energy generation in Early/Orderly transition scenarios,
+      patterns in energy generation in Orderly transition scenarios,
       driven by immediate policy reaction, societal change, national energy
       strategies, and carbon legislation, could lead to an immediate and smooth
       reduction in CO<sub>2</sub> emissions by 2050 and increase in the carbon
@@ -155,11 +158,11 @@ transition:
 
       These are likely to have an impact on the profitability of this sector and
       therefore on the associated insurance products' pricing, terms and
-      conditions and coverage. The Early/Orderly transition risk scenarios could
+      conditions and coverage. The Orderly transition risk scenarios could
       also lead to a limited relative reduction in GDP growth. This could result
       in changes in the rate of growth in demand for the marine sector.
     high_materiality: |
-      In the Early/Orderly transition risk scenarios, the impact on the marine
+      In the Orderly transition risk scenarios, the impact on the marine
       sector and the underwriting class could depend on how reliant the marine
       company's revenue mix is on low-carbon electricity and bunker fuel and how
       it compares to the sector average. For example:
@@ -171,7 +174,7 @@ transition:
         carbon tax or cap & trade clearing price, particularly for shipping
         firms using fossil-based bunker fuel. 
         
-        In Early/Orderly transition risk scenarios, the price per gigajoule of 
+        In Orderly transition risk scenarios, the price per gigajoule of 
         liquid final energy (liquid fuels from all energy sources; incl. oil 
         products, synthetic fossil fuels from gas and coal, biofuels) for use 
         in transportation at least doubles by 2050, increasing from around 20 
@@ -212,7 +215,7 @@ transition:
       could decrease demand for the marine sector.
 
       The profitability of the marine sector and its associated underwriting
-      class, in the Early/Orderly transition risk scenarios, could also depend
+      class, in the Orderly transition risk scenarios, could also depend
       on the relevant companies proactively investing in innovation and new
       technology. For example:
 
@@ -225,7 +228,7 @@ transition:
         activities to optimise voyage speeds
 
       - Alternatives to fossil-based bunker fuels (e.g. biodiesel, methanol,
-        lignin, and Ammonia). In Early/Orderly transition risk scenarios, 
+        lignin, and Ammonia). In Orderly transition risk scenarios, 
         sources of final energy used in the transport sector change dramatically. 
         As the use of oil gradually declines, electricity becomes the dominant 
         source of final energy by the end of the century.
@@ -235,7 +238,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      In Early/Orderly transition risk scenarios, these innovations could 
+      In Orderly transition risk scenarios, these innovations could 
       contribute to an overall decrease in CO<sub>2</sub> emissions in the 
       transportation sector.
       
@@ -244,7 +247,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      The Early/Orderly transition risk scenarios also present opportunities 
+      The Orderly transition risk scenarios also present opportunities 
       for the marine sector. Proactively investing in the above innovations 
       could lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
@@ -258,9 +261,9 @@ physical:
     exec_description: |
       The marine sector and its associated underwriting class are highly exposed 
       to high physical risk scenarios due to the projected increase in weather 
-      variation and the resulting damage this could cause to vessels and other 
-      infrastructure, which could increase claims and premiums; potentially 
-      rendering some marine underwriting risks uninsurable or unaffordable. 
+      variation and being subject to increasing disruption. This is likely to have 
+      an impact on the profitability of this sector and therefore on the associated 
+      insurance products pricing, terms and conditions, and coverage. 
     always: |
       The marine sector and its associated underwriting class are exposed to
       physical risk. Chronic (e.g. raised sea-levels and global mean
