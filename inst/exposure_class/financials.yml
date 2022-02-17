@@ -36,7 +36,7 @@ transition:
   high:
     exec_description: |
       In Disorderly transition risk scenarios, the change to carbon and 
-      energy prices, regulations, consumer behaviour, etc., could impact financial 
+      energy prices, regulations, consumer behaviour etc. could impact financial 
       firms. However, the extent will depend on their business model, regions 
       in which they operate as well as the industries/sectors that they provide 
       financial services to.
@@ -73,7 +73,7 @@ transition:
       
       * Tightening energy efficiency standards for domestic and commercial 
       buildings could impact the risk in banks' buy-to-let lending portfolios. 
-      In Disorderly scenarios, emissions from residential and commercial 
+      In Disorderly transition risk scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from tightened 
       standards (as well as a change in energy mix).
       
@@ -129,7 +129,7 @@ transition:
       Although it has been estimated that the finance sector funds emissions in an 
       amount that is more than 700 times greater than its own emissions, currently 
       only one quarter of financial firms disclose their financed emissions (
-      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf)).
+      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf).
       
       Asset managers must also consider reputational transition risks and 
       avoid 'leakage' by ensuring their repriced carbon intensive assets are 
@@ -137,7 +137,7 @@ transition:
   low:
     exec_description: |
       In Orderly transition risk scenarios, the change to carbon and energy 
-      prices, regulations, consumer behaviour, etc., could impact financial firms. 
+      prices, regulations, consumer behaviour etc. could impact financial firms. 
       However, the extent will depend on their business model, regions in which they 
       operate as well as the industries/sectors that they provide financial services to.
     always: |
@@ -232,7 +232,7 @@ transition:
       Although it has been estimated that the finance sector funds emissions in an 
       amount that is more than 700 times greater than its own emissions, currently 
       only one quarter of financial firms disclose their financed emissions (
-      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf)).
+      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf).
       
       Asset managers must also consider reputational transition risks and avoid 
       'leakage' by ensuring their repriced carbon intensive assets are retired or 

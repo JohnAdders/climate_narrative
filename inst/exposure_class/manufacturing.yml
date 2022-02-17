@@ -45,7 +45,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, manufacturers could 
+      In Disorderly transition risk scenarios, manufacturers could 
       benefit from new revenue streams, but face rising operating costs due 
       to carbon pricing policies and falling asset values as current infrastructure 
       becomes increasingly obsolete. 
@@ -96,10 +96,10 @@ transition:
         required for transport equipment manufacturing.
 
       - **Increased revenue** for industries that can support the global
-        transition to net zero such as carbon capture storage (CCS)
+        transition to Net Zero such as carbon capture storage (CCS)
         manufacturing. 
         
-      - In Delayed/Divergent scenarios, CCS utilisation is projected 
+      - In Disorderly transition risk scenarios, CCS utilisation is projected 
         to increase dramatically, with between ~5000 and ~6000 Megatons of CO<sub>2</sub> 
         being stored annually by 2050.
         
@@ -116,16 +116,15 @@ transition:
         integration of renewable energy sources in largescale manufacturing
         establishments.
 
-      In Disorderly/Divergent transition risk scenarios, the manufacturing
+      In Disorderly transition risk scenarios, the manufacturing
       sector could achieve long-term carbon neutrality through new manufacturing
       processes supported by clean energy sources, a circular economy which
       increases materials efficiency and widespread carbon capture storage (CCS)
       utilisation.
 
-      In Disorderly/Divergent transition risk scenarios, the manufacturing
-      sector is forced to significantly increase production of key commodities
-      to support the global transition whilst simultaneously reducing its carbon
-      footprint. This is likely to result in:
+      In these scenarios, the manufacturing sector is forced to significantly increase 
+      production of key commodities to support the global transition whilst simultaneously 
+      reducing its carbon footprint. This is likely to result in:
 
       - A sharp disruption to production (with asset damage).
 
@@ -136,7 +135,7 @@ transition:
       - High risk of stranded assets.
 
       Manufacturing industries that adopt a Disorderly pathway to Net Zero
-      emissions under Disorderly/Divergent transition risk scenarios may
+      emissions under Disorderly transition risk scenarios may
       significantly **lose market value**. It is expected that those industries
       could face stranded assets as uncertainty about climate policies and
       unanticipated breakthroughs in renewable technologies collide with
@@ -150,7 +149,7 @@ transition:
       order to reduce the impact of this scenario.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, manufacturers could benefit 
+      In Orderly transition risk scenarios, manufacturers could benefit 
       from new revenue streams, but face rising operating costs due to carbon 
       pricing policies and falling asset values as current infrastructure 
       becomes increasingly obsolete. 
@@ -204,7 +203,7 @@ transition:
         transition to Net Zero such as carbon capture storage (CCS)
         manufacturing.
         
-        In Early/Orderly scenarios, CCS utilisation is projected to increase 
+        In Orderly scenarios, CCS utilisation is projected to increase 
         dramatically, with ~5000 Megatons of CO<sub>2</sub> being stored annually by 
         2050 in the Below 2&deg;C scenario, and ~8500 Megatons in the Net Zero 
         2050 scenario. 
@@ -222,14 +221,14 @@ transition:
         integration of renewable energy sources in largescale manufacturing
         establishments.
 
-      In Early/Orderly transition risk scenarios, carbon pricing mechanisms will 
+      In Orderly transition risk scenarios, carbon pricing mechanisms will 
       gradually increase which will force polluters in the manufacturing sector 
       towards efforts to achieve long-term carbon neutrality, such as 
       clean energy sources, a circular economy which increases
       materials efficiency and widespread carbon capture storage (CCS)
       utilisation. A strong policy environment that supports manufacturers'
       decarbonisation efforts could result in an immediate and smooth reduction
-      of emissions. For example, in early/orderly transition risk scenarios,
+      of emissions. For example, in Orderly transition risk scenarios,
       CO<sub>2</sub> emissions are expected to reduce between 76% and 98% by
       2050 from 2020 levels based on CCS utilisation, fuel-switching, and
       improvements to resource and energy efficiency.
@@ -388,7 +387,7 @@ physical:
         
       - **Rising sea levels** could pose a risk to the manufacturing sector through 
         damage to facilities and equipment, which is particularly apparent for the 
-        manufacturing hubs that dominant Asia's costal pathways. 
+        manufacturing hubs that are dominant in Asia's costal pathways. 
 
       There are many actions manufacturing companies can take to adapt to the
       low physical risks mentioned above. This includes investing in more

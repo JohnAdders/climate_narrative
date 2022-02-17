@@ -61,19 +61,18 @@ description: |
      (ordered from high to low materiality):
 
     - Tables summarising the selected exposure type and highlighting the materiality
-    - A summary for high materiality exposures
+    - A summary narrative for high materiality exposures
     - A table of one-liners for medium and low materiality exposures
 
   The long form report covers the following:
-
-  - A description of key assumptions and parameters used in the selected NGFS scenario
+    
+  - A more detailed description of key assumptions and parameters used in the selected NGFS scenario
   - For each sector, underwriting and asset class as well as lending exposure type
     (ordered from high to low materiality):
 
-    - A description of each lending exposure type, underwriting class, asset class and
-      sector selected
-    - Detail narratives for high materiality exposures
-    - A summary for medium and low materiality
+    - A description of each lending exposure type, underwriting class, asset class and sector selected
+    - Detailed narratives for high materiality exposures
+    - A summary narrative for medium and low materiality exposures
 
   The tool will also generate a report covering a stand-alone description for an 
   underwriting class or economic sector in a particular NGFS scenario.

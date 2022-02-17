@@ -64,7 +64,7 @@ description: |
 
   The investments in energy efficiency and low carbon technologies are projected to increase 
   in Orderly transition risk scenarios. These are expected to be higher 
-  in a Net Zero 2050 scenario compared to a below 2&deg;C scenario. Overall, firms 
+  in a Net Zero 2050 scenario compared to a Below 2&deg;C scenario. Overall, firms 
   could be required to readjust their capital expenditure in line with these 
   trends; developing more efficient and less carbon intensive products and 
   services in order to adhere to carbon pricing policies. The technologies 
@@ -111,7 +111,7 @@ description: |
   in the Net Zero 2050 scenario, we could see the following:
   
   * A decrease in labour productivity due to the reduced capacity of the human 
-  body to perform physical labour under hot and humid climate.
+  body to perform physical labour under hot and humid climate conditions.
   
   ![Labour Productivity](Labour_Productivity_Heat_Orderly.png)
 
@@ -134,9 +134,9 @@ description: |
   **Source:** 
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
-  In these scenarios the total cumulative GDP impact is estimated to be between -1.5% and-2.5%
-  by 2050. World GDP losses from physical risks scale with the rise in
-  temperatures in the scenarios over time. GDP impacts from transition risk are
+  In these scenarios the total cumulative relative GDP impact is estimated to be 
+  between -1.5% and-2.5% by 2050. World GDP losses from physical risks scale with 
+  the rise in temperatures in the scenarios over time. GDP impacts from transition risk are
   slightly positive in the Net Zero 2050 scenario as negative impacts on demand
   from higher carbon prices and energy costs are more than offset by the
   recycling of carbon tax revenues into government investment and lower
