@@ -20,12 +20,12 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the changing patterns in 
+      In Disorderly transition risk scenarios, the changing patterns in 
       energy consumption will have a negative impact on carbon-intensive sectors 
       such as coal mining, however this contraction in demand could be offset by 
       the need to increase mining of other minerals vital to clean energy technologies.
     always: |
-      By 2050, in a Disorderly transition risk scenario, coal represents 0.47%
+      By 2050, in Disorderly transition risk scenarios, coal represents 0.47%
       (in the Delayed Transition scenario) or 0.63% (in the Divergent Net Zero
       scenario) of global energy demand, compared to 29% in 2020.
       Carbon-intensive sectors such as coal mining are consequently some of the
@@ -59,11 +59,10 @@ transition:
         5% increase in operating costs, whilst South Africa could face a near
         25% increase.
 
-      In Delayed/Divergent transition risk scenarios, the mining sector is 
+      In Disorderly transition risk scenarios, the mining sector is 
       likely to be impacted. Overall, in terms of primary energy demand in the 
-      disorderly transition risk scenario, demand of coal falls rapidly (after 2030 in 
-      the Disorderly/Divergent transition scenario) and is replaced mostly by 
-      renewable energy sources.
+      Disorderly transition risk scenarios, demand of coal falls rapidly (after 2030 in 
+      both scenarios) and is replaced mostly by renewable energy sources.
 
       ![Primary Energy](Primary_Energy_Disorderly_Mining.png)
 
@@ -79,8 +78,8 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      By 2050, the contraction in coal demand, in a Disorderly transition risk
-      scenario, could be offset by the need to increase mining of other raw
+      By 2050, the contraction in coal demand, in Disorderly transition risk
+      scenarios, could be offset by the need to increase mining of other raw
       minerals, including those vital to many clean energy technologies. Global
       demand for these critical minerals could rise rapidly. For example,
       lithium (used for batteries), platinum, palladium and other catalyst
@@ -98,7 +97,7 @@ transition:
       which could be challenging from an operating perspective.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the changing patterns in energy 
+      In Orderly transition risk scenarios, the changing patterns in energy 
       consumption will have a significant negative impact on carbon-intensive sectors 
       such as coal mining, however, this contraction in demand could be offset by the 
       need to increase mining of other minerals vital to clean energy technologies.
@@ -136,8 +135,8 @@ transition:
         5% increase in operating costs, whilst South African could face a near
         25% increase.
 
-      Overall, in terms of primary energy demand, in the Early/Orderly transition 
-      risk scenarios, demand of coal falls and is replaced mostly by renewable energy 
+      Overall, in terms of primary energy demand, in the Orderly transition 
+      risk scenarios, demand for coal falls and is replaced mostly by renewable energy 
       sources.
 
       ![Primary Energy](Primary_Energy_Orderly_Mining.png)
@@ -153,7 +152,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      By 2050, the contraction in coal demand, in Early/Orderly transition risk
+      By 2050, the contraction in coal demand, in Orderly transition risk
       scenarios, could be offset by the need to increase mining of other raw
       minerals, including those vital to many clean energy technologies. Global
       demand for these critical minerals could rise rapidly. For example,

@@ -13,16 +13,19 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the ability to offer some 
-      lines of business e.g. surety insurer guarantees performance of a contractual 
-      obligation and insurer guarantees payment of credit extended to a party 
-      to carbon-intensive sectors could be significantly affected if public policies 
-      curb carbon emissions dramatically.
+      In Disorderly transition risk scenarios, the failure to consider, mitigate or adapt 
+      to climate change-related risk factors (if insured parties have not sufficiently 
+      accounted for climate change risk factors in their acts, omissions or decision-making) 
+      could become the subject of shareholder actions against corporations and their directors 
+      for breaches of statutory or fiduciary duties or for loss of share value (particularly as 
+      fossil fuel assets become devalued). There are also risks that some types of 
+      business shrink in size through the transition, reducing the top-line premium 
+      income; while other sectors may see growth.      
     always: |
       Climate change risk management is a board-level governance issue and
       directors have to be actively involved in establishing and monitoring
       strategies to reduce wide-ranging climate-related carbon asset risk which
-      are relevant for corporate risk or return. The failure to consider or
+      are relevant for corporate risk or return. The failure to consider, mitigate or
       adapt to climate change-related risk factors (if insured parties have not 
       sufficiently accounted for climate change risk factors in their acts, 
       omissions or decision-making) could become the subject of shareholder 
@@ -45,7 +48,7 @@ transition:
       and in the years afterwards (as stakeholders continue to take legal action
       against Directors).
     high_materiality: |
-      In Disorderly/Divergent transition risk scenarios, immediate policy
+      In Disorderly transition risk scenarios, immediate policy
       reaction, societal change, national energy strategies, carbon and other
       legislation could drive a fraught transition to a low carbon economy. The
       changing patterns in energy generation in the Delayed transition scenario,
@@ -86,18 +89,20 @@ transition:
       retention is strained.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the ability to offer some lines 
-      of business e.g. insurer guarantees performance of a contractual obligation 
-      and insurer guarantees payment of credit extended to a party to carbon-intensive 
-      sectors could be significantly affected. There are also risks that some types of 
+      In Orderly transition risk scenarios, the failure to consider, mitigate or adapt 
+      to climate change-related risk factors (if insured parties have not sufficiently 
+      accounted for climate change risk factors in their acts, omissions or decision-making) 
+      could become the subject of shareholder actions against corporations and their directors 
+      for breaches of statutory or fiduciary duties or for loss of share value (particularly as 
+      fossil fuel assets become devalued). There are also risks that some types of 
       business shrink in size through the transition, reducing the top-line premium 
       income; while other sectors may see growth.
     always: |
       Climate change risk management is a board-level governance issue and 
       directors have to be actively involved in establishing and monitoring 
       strategies to reduce wide-ranging climate-related carbon asset risk 
-      which are relevant for corporate risk or return. The failure to consider 
-      or adapt to climate change-related risk factors (if insured parties 
+      which are relevant for corporate risk or return. The failure to consider, 
+      mitigate or adapt to climate change-related risk factors (if insured parties 
       have not sufficiently accounted for climate change risk factors in 
       their acts, omissions or decision-making) could become the subject of 
       shareholder actions against corporations and their directors for 
@@ -121,7 +126,7 @@ transition:
       for new companies to fill the gaps. 
 
     high_materiality: |
-      In Early/Orderly transition risk scenarios, additional risks for Casualty
+      In Orderly transition risk scenarios, additional risks for Casualty
       insurance are fairly low as immediate policy reaction, societal change,
       national energy strategies, and carbon legislation could lead to a smooth
       transition to a low carbon economy and an immediate and smooth reduction
