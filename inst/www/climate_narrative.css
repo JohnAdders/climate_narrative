@@ -48,3 +48,7 @@ table td, table th {
 .inline h5 {
   display: inline;
 }
+
+.reportimage{
+  width: 80%;
+}

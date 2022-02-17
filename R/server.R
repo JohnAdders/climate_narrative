@@ -174,8 +174,15 @@ server <- function(input, output, session) {
         perl=TRUE
       )    
     }
+    # add class to images
+    if (global$report_version >= 4){
+      temp <- gsub(
+        '<img ',
+        '<img class="reportimage"',
+        temp
+      )   
+    }
     # extract the table of contents
-    
     if (global$sidebar_toc){
       toc_start <- grep("<div id=\"TOC\">", temp)
       div_end <- grep("</div>", temp)
