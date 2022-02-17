@@ -38,19 +38,19 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, agricultural producers can 
+      In Disorderly transition risk scenarios, agricultural producers can 
       benefit from expanding markets but face greater risks of stranded assets, 
       geographic growth constraints, and rising production costs in the face of 
       new emissions costs, land use restrictions, and necessary productivity 
       improvements.
     always: |
-      The agriculture sector continues to expand to feed and supply agricultural
+      The Agriculture sector continues to expand to feed and supply agricultural
       energy products to a growing global population. It contributes to 23% of
       anthropogenic emissions, exposing its producers and financiers to emerging
       climate related transition risks through public policies, consumer demand
       shifts and technological evolutions.
 
-      By 2050, in the delayed transition risk scenario, late policy action
+      By 2050, in the Delayed transition risk scenario, late policy action
       enables a "fossil recovery" out of the economic crisis brought
       about by COVID-19. CO<sub>2</sub> emissions increase until 2030, before
       sharply decreasing after 2030 to compensate for the inaction beforehand.
@@ -58,15 +58,13 @@ transition:
       reduction in CO<sub>2</sub> emissions. These scenarios are likely to have
       a significant impact on agriculture sector. Agricultural value chains face
       material climate transition risk exposure due to their emissions intensity
-      and reliance on land. Under Disorderly/Divergent transitional risk
-      scenarios, the expansion of land protection policies and carbon payments
-      made to preserve and expand forests could reduce land available for
-      agriculture.
+      and reliance on land. Under these transitional risk scenarios, the expansion 
+      of land protection policies and carbon payments made to preserve and expand 
+      forests could reduce land available for agriculture.
 
-      The Disorderly/Divergent transition risk scenarios could also lead to a
-      reduction in GDP growth. This could result in changes in the rate of
-      growth in demand for the agriculture sector, although the impact is likely
-      to be limited due to inelastic demand for food products.
+      These scenarios could also lead to a reduction in GDP growth. This could result 
+      in changes in the rate of growth in demand for the agriculture sector, although 
+      the impact is likely to be limited due to inelastic demand for food products.
     high_materiality: |
       The changes in food and bioenergy demand, emission pricing or taxes,
       consumer preferences and land use restrictions could potentially result in
@@ -92,7 +90,7 @@ transition:
 
       The sector has very high GHG emissions as farm and livestock productions
       and activities are emission intensive. The total demand could continue to
-      increase in the Disorderly/Divergent transition risk scenarios, however
+      increase in the Disorderly transition risk scenarios, however
       growth in demand for food production is limited.
 
       ![Total Agriculture Demand](Agriculture_Demand_Total_Disorderly.png)
@@ -142,18 +140,18 @@ transition:
       see their net value and profitability rise under transitions.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, agricultural producers can benefit 
+      In Orderly transition risk scenarios, agricultural producers can benefit 
       from expanding markets but face greater risks of stranded assets, geographic 
       growth constraints, and rising production costs in the face of new emissions 
       costs, land use restrictions, and necessary productivity improvements.
     always: |
-      The agriculture sector continues to expand to feed and supply agricultural
+      The Agriculture sector continues to expand to feed and supply agricultural
       energy products to a growing global population. It contributes to 23% of
       anthropogenic emissions, exposing its producers and financiers to emerging
       climate related transition risks through public policies, consumer demand
       shifts and technological evolutions.
 
-      By 2050, the Early/Orderly transition risk scenarios driven by societal
+      By 2050, the Orderly transition risk scenarios driven by societal
       change, national energy strategies, and carbon legislation, are likely to
       have a significant impact on the agriculture sector. Agricultural value
       chains face material climate transition risk exposure due to their
@@ -161,10 +159,10 @@ transition:
       protection policies and carbon payments made to preserve and expand
       forests could reduce land available for agriculture.
 
-      The Early/Orderly transition risk scenarios could also lead to a limited
-      relative reduction in GDP growth and could result in changes in the rate
-      of growth in demand for the agriculture sector, although the impact is
-      likely to be limited due to inelastic demand for food products.
+      These scenarios could also lead to a limited relative reduction in GDP 
+      growth and could result in changes in the rate of growth in demand for 
+      the agriculture sector, although the impact is likely to be limited due 
+      to inelastic demand for food products.
     high_materiality: |
       The changes in food and bioenergy demand, emission pricing or taxes,
       consumer preferences and land use restrictions could potentially result in
@@ -190,7 +188,7 @@ transition:
 
       The sector has very high GHG emissions as farm and livestock productions
       and activities are emissions intensive. The total demand could continue to
-      increase in the Early/Orderly transition risk scenarios, however growth in
+      increase in the Orderly transition risk scenarios, however growth in
       demand for food production is limited.
 
       ![Total Agriculture Demand](Agriculture_Demand_Total_Orderly.png)
@@ -219,7 +217,7 @@ transition:
       the rising demand of food and energy due to population growth. By 2050,
       agricultural land could increase by around 60 to 100 million hectares and
       forest cover could increase by around 160 million hectares in the Net Zero
-      scenario and could remain unchanged in the Below 2&deg;C scenario.
+      2050 scenario and could remain unchanged in the Below 2&deg;C scenario.
 
       ![Agriculture Land Cover](Agriculture_Land_Cover_Orderly.png)
 
@@ -242,12 +240,12 @@ transition:
 physical:
   high:
     exec_description: |
-      The agriculture sector is highly exposed to high physical risk scenarios 
+      The Agriculture sector is highly exposed to high physical risk scenarios 
       due to the projected increase in weather variation. These scenarios could 
       also lead to a significant GDP impact which could negatively impact demand 
       for this sector.
     always: |
-      The agriculture sector is also exposed to physical risk. Chronic effects
+      The Agriculture sector is also exposed to physical risk. Chronic effects
       (e.g. raised sea-levels and mean temperatures) and acute effects due to
       changes to frequency and severity of weather events such as heatwaves,
       wildfires, tropical cyclones, and flooding are adding to pressures on
@@ -266,7 +264,7 @@ physical:
       agriculture, although the impact is likely to be limited due to inelastic
       demand for food products.
     high_materiality: |
-      The following examples illustrate how the agriculture sector could be
+      The following examples illustrate how the Agriculture sector could be
       impacted in a high physical risk scenario:
 
       **Chronic Impacts**
@@ -312,7 +310,7 @@ physical:
     exec_description: |
       n/a
     always: |
-      The agriculture sector is also exposed to physical risk. Chronic effects
+      The Agriculture sector is also exposed to physical risk. Chronic effects
       (e.g. raised sea-levels and mean temperatures) and acute effects due to
       changes to frequency and severity of weather events such as heatwaves,
       wildfires, tropical cyclones, and flooding are adding to pressures on

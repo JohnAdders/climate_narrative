@@ -31,10 +31,10 @@ transition:
   high:
     exec_description: |
       In Disorderly transition risk scenarios, demand for oil and gas decreases, 
-      affecting profitability of individual companies and the sector overall. 
+      which could affect profitability of individual companies and the sector overall. 
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in a
-      Disorderly/Divergent transition risk scenario, fossil fuels represent only
+      Disorderly transition risk scenario, fossil fuels represent only
       ~23% of global energy demand compared to ~83% in 2020. Carbon-intensive
       sectors such as oil and gas are consequently some of the most vulnerable
       to the transition. In a delayed transition scenario, the policy delays
@@ -50,7 +50,7 @@ transition:
       carbon legislation, are likely to have a significant and long-term impact
       on demand for oil and gas, affecting profitability in both scenarios.
 
-      The Disorderly/Divergent transition risk scenarios could also lead to a
+      The Disorderly transition risk scenarios could also lead to a
       reduction in GDP growth. This could result in changes in the rate of
       growth in demand for the oil and gas sector.
     high_materiality: |
@@ -75,13 +75,13 @@ transition:
         infrastructure required for extraction, based on re-adjusted
         expectations of much lower demand for fossil fuels in future
 
-      In Disorderly/Divergent transition risk scenarios, the oil and gas sector
+      In Disorderly transition risk scenarios, the oil and gas sector
       is likely to be significantly impacted. Driven by increased
       electrification, total electricity capacity and generation jumps markedly,
       and the underlying sources change dramatically. Solar is the dominant
       technology representing around half of electricity generation capacity by
-      2050, completely displacing coal (before 2030) and gas (between 2030 and
-      2035).
+      2050, completely displacing coal (before 2030) and gas (between 2025 and
+      2030).
 
       ![Electricity Capacity](Electricity_Capacity_Disorderly.png)
 
@@ -105,7 +105,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      Under Disorderly/Divergent transition risk scenarios, belated awareness by
+      Under Disorderly transition risk scenarios, belated awareness by
       financial market participants of the scale and speed of the transition
       required may cause fossil fuel assets to undergo a fire-sale by investors,
       at the moment when they fully understand the real risk involved in holding
@@ -113,18 +113,17 @@ transition:
 
       Because the oil and gas sector is so diverse, there is no single solution,
       but rather a range of strategies based on the circumstances of each
-      company that could need to be deployed in Disorderly/Divergent transition
-      risk scenario to maintain revenues and minimise the long-term financial
-      impact. Examples include transitioning to become an integrated energy
-      company providing renewable power generation or investing in carbon
-      capture and storage (CCS) technologies.
+      company that could need to be deployed in these scenarios to maintain 
+      revenues and minimise the long-term financial impact. Examples include 
+      transitioning to become an integrated energy company providing renewable power 
+      generation or investing in carbon capture and storage (CCS) technologies.
   low:
     exec_description: |
-      In orderly transition risk scenarios, demand for oil and gas decreases, 
-      could affect profitability of individual companies and the sector overall. 
+      In Orderly transition risk scenarios, demand for oil and gas decreases, 
+      which could affect profitability of individual companies and the sector overall. 
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in
-      Early/Orderly transition risk scenarios, fossil fuels represent only ~27%
+      Orderly transition risk scenarios, fossil fuels represent only ~27%
       of global energy demand compared to ~83% in 2020. Carbon-intensive sectors
       such as oil and gas are consequently some of the most vulnerable to
       transition.
@@ -198,7 +197,7 @@ transition:
       (compared to ~20% in 2020), driving stranding of fossil fuel assets.
       Because the oil and gas sector is so diverse, there is no single solution,
       but rather a range of strategies based on the circumstances of each
-      company that could need to be deployed in Early/Orderly transition risk
+      company that could need to be deployed in Orderly transition risk
       scenarios to maintain revenues and minimise the long-term financial
       impact. Examples include transitioning to become an integrated energy
       company providing renewable power generation or investing in carbon
