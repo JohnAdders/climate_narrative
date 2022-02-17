@@ -119,33 +119,26 @@ server <- function(input, output, session) {
     }
     temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
+      inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
       if (input$report_sector_selection == "") {
         exec_summary_layout <- 1
       } else {
         exec_summary_layout <- 2
       }
-      write_report_to_file(
-        get_report_contents(
-          get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE),
-          global$report_version,
-          input$report_scenario_selection,
-          FALSE,
-          exec_summary_layout
-        ),
-        session$userData$temp_md_scenario
-      )
     } else {
-      write_report_to_file(
-        get_report_contents(
-          get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
-          global$report_version,
-          input$report_scenario_selection,
-          FALSE,
-          2
-        ),
-        session$userData$temp_md_scenario
-      )
+      exec_summary_layout <- 2
+      inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
     }
+    write_report_to_file(
+      get_report_contents(
+        inputs,
+        global$report_version,
+        input$report_scenario_selection,
+        FALSE,
+        exec_summary_layout
+      ),
+      session$userData$temp_md_scenario
+    )
     render_html(session$userData$temp_md_scenario, temp_html)
     result <- includeHTML(temp_html)
     return(result)
@@ -164,35 +157,27 @@ server <- function(input, output, session) {
         )
       )
       if (input$rep_type == "inst"){
+        inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
         if (input$report_sector_selection == "") {
           exec_summary_layout <- 1
         } else {
           exec_summary_layout <- 2
         }
-        write_report_to_file(
-          get_report_contents(
-            get_inputs(all_inputs(), input$inst_type, input$report_sector_selection),
-            global$report_version,
-            input$report_scenario_selection,
-            TRUE,
-            exec_summary_layout
-          ),
-          session$userData$temp_md_scenario_and_commons,
-          (global$report_version >= 4)
-        )
       } else {
-        write_report_to_file(
-          get_report_contents(
-            get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
-            global$report_version,
-            input$report_scenario_selection,
-            TRUE,
-            2
-          ),
-          session$userData$temp_md_scenario_and_commons,
-          (global$report_version >= 4)
-        )
+        exec_summary_layout <- 2
+        inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
       }
+      write_report_to_file(
+        get_report_contents(
+          inputs,
+          global$report_version,
+          input$report_scenario_selection,
+          TRUE,
+          exec_summary_layout
+        ),
+        session$userData$temp_md_scenario_and_commons,
+        (global$report_version >= 4)
+      )
       render_rtf(session$userData$temp_md_scenario_and_commons, session$userData$temp_rtf, res_path)
       removeModal()
       file.copy(session$userData$temp_rtf, file)
