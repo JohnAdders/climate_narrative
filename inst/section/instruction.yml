@@ -74,3 +74,6 @@ description: |
       sector selected
     - Detail narratives for high materiality exposures
     - A summary for medium and low materiality
+
+  The tool will also generate a report covering a stand-alone description for an 
+  underwriting class or economic sector in a particular NGFS scenario.
