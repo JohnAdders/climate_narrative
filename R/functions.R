@@ -1002,6 +1002,9 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
       }
       out <- paste0(
         out,
+        "##### ",
+        global$exposure_classes[[item]][["name"]],
+        "\n\n",
         global$exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
         "\n\n"
       )
