@@ -975,6 +975,7 @@ add_path_to_graphs <- function(x) {
 #' (applicable in single sector context only)
 #'
 get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_no, exposure_exec = FALSE){
+  out <- ""
   for (scenario in global$scenarios[scenario_no]) {
     out <- paste0(
       out,
