@@ -18,12 +18,12 @@ transition:
   high:
     exec_description: |
       Savings and Retirement underwriting exposures could be impacted in the 
-      Delayed/Divergent transition risk scenarios, the moderated to severe 
+      Disorderly transition risk scenarios, as the moderate to severe 
       reduction in GDP could reduce real household income. The reduction in 
       CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
       in morbidity.
     always: |
-      Disorderly/Divergent transition risk scenarios, driven by late policy 
+      Disorderly transition risk scenarios, driven by late policy 
       action to enable a "fossil recovery" out of the COVID-19 economic crisis, 
       would result in CO<sub>2</sub> emissions increasing until 2030 before 
       rapidly decreasing after 2030 as carbon prices are increased to compensate 
@@ -46,8 +46,8 @@ transition:
     high_materiality: |
       **GDP growth effect**
 
-      Under Disorderly/Divergent transition risk scenarios, a moderate to severe 
-      reduction in GDP growth is likely with  associated repercussions on the levels 
+      Under Disorderly transition risk scenarios, a moderate to severe 
+      reduction in GDP growth is likely with associated repercussions on the levels 
       of health and social care spending. Slower GDP growth would potentially 
       constrain the growth in spending on NHS, public health, social care, 
       private medical insurance etc. These scenarios are therefore correlated 
@@ -62,7 +62,7 @@ transition:
       concentrated in sectors with greater exposure to transition risks (e.g. oil 
       and gas). 
       
-      In a Disorderly transition, transition costs are likely to be high and 
+      In Disorderly transition risk scenarios, transition costs are likely to be high and 
       concentrated in a short time. This may be expected to increase expenses. 
       The moderate to severe reduction in GDP growth would increase the risk of 
       guarantees biting on legacy policies. This would in turn impact the impacted 
@@ -92,7 +92,7 @@ transition:
       - If we increase biomass burning, this may reduce the greenhouse effect
         but actually contribute to local particulate pollution.
 
-      However, under Delayed/Divergent transition risk scenarios, there is 
+      However, under Disorderly transition risk scenarios, there is 
       certainly potential for improved health outcomes due to reduced air 
       pollution and therefore fewer deaths. For example, reduced pollution 
       could result in a reduction of cancers (especially lung) and respiratory 
@@ -109,7 +109,7 @@ transition:
 
       **Impact on pricing or product design**
 
-      Under a disorderly transition, the impact on pricing and product design 
+      Under Disorderly transition risk scenarios, the impact on pricing and product design 
       is likely to be modest. Though price adjustments may be necessary due to 
       expected impacts on mortality (as described above), as well as reduced market 
       sentiment and increased credit risk (due to impact on GDP growth 
@@ -137,12 +137,12 @@ transition:
   low:
     exec_description: |
       Savings and Retirement underwriting exposures could be impacted in the 
-      Early/Orderly transition risk scenarios, the limited reduction in GDP 
+      Orderly transition risk scenarios, as the limited reduction in GDP 
       could reduce real household income. The immediate and smooth reduction 
       in CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
       in morbidity.
     always: |
-      The Early/Orderly transition risk scenario could lead to a limited relative 
+      The Orderly transition risk scenario could lead to a limited relative 
       reduction in GDP growth. However, any negative impacts on GDP are likely to 
       be smaller than in other scenarios. A reduction in GDP growth could result in 
       reduced real household income. In turn this may lead to lower savings rates 
@@ -151,18 +151,18 @@ transition:
       longer-term economic outlook is unaffected, new business sales should not be 
       negatively impacted and the impact on saving rates and lapses should be limited.
       
-      Under the Early/Orderly transition risk scenarios, an immediate and smooth 
-      reduction in CO<sub>2</sub> emissions would be expected by 2050. This could 
-      lead to increased policyholder longevity if pollutants also reduce over this 
-      period, resulting in annuities being paid out for longer durations than currently 
-      expected, negatively impacting profit margins for annuity providers. Similarly, 
-      customer morbidity may be reduced, leading to savings and retirement products becoming 
-      more profitable from longer durations in force and fewer lapses. Offsetting these 
-      impacts, on the other hand, would be the expected reduction in household incomes, 
-      which could negatively impact health outcomes and thus reduce policyholder longevity.
+      Under these scenarios, an immediate and smooth reduction in CO<sub>2</sub> 
+      emissions would be expected by 2050. This could lead to increased policyholder 
+      longevity if pollutants also reduce over this period, resulting in annuities being 
+      paid out for longer durations than currently expected, negatively impacting profit 
+      margins for annuity providers. Similarly, customer morbidity may be reduced, leading 
+      to savings and retirement products becoming more profitable from longer durations in 
+      force and fewer lapses. Offsetting these impacts, on the other hand, would be the 
+      expected reduction in household incomes, which could negatively impact health outcomes 
+      and thus reduce policyholder longevity.
 
     high_materiality: |
-      Under the Early/Orderly transition risk scenarios, changes in diet (e.g. 
+      Under the Orderly transition risk scenarios, changes in diet (e.g. 
       reduction in calorie intake or shift to plant-based diets) may result in 
       lower levels of obesity, diabetes and cardiovascular disease, and may also 
       improve mortality rates, but may also result in malnutrition which would have 
@@ -200,7 +200,7 @@ transition:
       - If we increase biomass burning this may reduce the greenhouse effect but
         actually contribute to local particulate pollution.
 
-      However, under Early/Orderly transition risk scenarios, there is certainly 
+      However, under the Orderly transition risk scenarios, there is certainly 
       potential for improved health outcomes due to reduced air pollution and therefore 
       fewer deaths. For example, reduced pollution could result in a reduction of 
       cancers (especially lung) and respiratory diseases (e.g. asthma, respiratory 
@@ -370,7 +370,7 @@ physical:
     high_materiality: |
       **GDP growth effect**
 
-      Under the low physical risk scenarios, a significant reduction in GDP growth 
+      Under the low physical risk scenarios, a reduction in GDP growth 
       is likely with associated repercussions on the levels of health and social 
       care spending. Slower GDP growth would potentially constrain the growth in 
       spending on NHS, public health, social care, private medical insurance etc. 
