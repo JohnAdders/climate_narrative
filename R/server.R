@@ -228,7 +228,8 @@ server <- function(input, output, session) {
             TRUE,
             exec_summary_layout
           ),
-          session$userData$temp_md_scenario_and_commons
+          session$userData$temp_md_scenario_and_commons,
+          (global$report_version >= 4)
         )
       } else {
         write_report_to_file(
@@ -239,7 +240,8 @@ server <- function(input, output, session) {
             TRUE,
             2
           ),
-          session$userData$temp_md_scenario_and_commons
+          session$userData$temp_md_scenario_and_commons,
+          (global$report_version >= 4)
         )
       }
       fs <- file.size(session$userData$temp_md_scenario_and_commons)
@@ -260,9 +262,7 @@ server <- function(input, output, session) {
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
       if (file.size(session$userData$temp_md_scenario_and_commons) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-      # by default the table of contents in pandoc output does not work, fixing it manually
-      rtf_fix_table_of_contents(session$userData$temp_rtf)
-      rtf_center_images(session$userData$temp_rtf)
+      rtf_postprocess(session$userData$temp_rtf, global$report_version)
       removeModal()
       file.copy(session$userData$temp_rtf, file)
     }
@@ -286,7 +286,8 @@ server <- function(input, output, session) {
           TRUE,
           1
         ),
-        session$userData$temp_md_dev
+        session$userData$temp_md_dev,
+        (global$report_version >= 4)
       )
       fs <- file.size(session$userData$temp_md_dev)
       rmarkdown::render(
@@ -306,9 +307,7 @@ server <- function(input, output, session) {
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
       if (file.size(session$userData$temp_md_dev) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-      # by default the table of contents in pandoc output does not work, fixing it manually
-      rtf_fix_table_of_contents(session$userData$temp_rtf_dev)
-      rtf_center_images(session$userData$temp_rtf_dev)
+      rtf_postprocess(session$userData$temp_rtf_dev, global$report_version)
       removeModal()
       file.copy(session$userData$temp_rtf_dev, file)
     }
@@ -326,7 +325,8 @@ output$dev_report_2 <- downloadHandler(
       )
       write_report_to_file(
         get_test_report(),
-        session$userData$temp_md_dev_2
+        session$userData$temp_md_dev_2,
+        (global$report_version >= 4)
       )
       fs <- file.size(session$userData$temp_md_dev_2)
       rmarkdown::render(
@@ -346,9 +346,7 @@ output$dev_report_2 <- downloadHandler(
       # Cause unknown, maybe due to some weird blank characters instead of space?
       # Therefore added a control to throw error if the file is truncated in the process
       if (file.size(session$userData$temp_md_dev_2) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-      # by default the table of contents in pandoc output does not work, fixing it manually
-      rtf_fix_table_of_contents(session$userData$temp_rtf_dev_2)
-      rtf_center_images(session$userData$temp_rtf_dev_2)
+      rtf_postprocess(session$userData$temp_rtf_dev_2, global$report_version)
       removeModal()
       file.copy(session$userData$temp_rtf_dev_2, file)
     }

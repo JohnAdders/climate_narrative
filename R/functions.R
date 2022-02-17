@@ -847,34 +847,46 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' this is necessary as markdown::render takes file as an argument
 #' @param report_contents the content to write
 #' @param tempfile where to write the report
+#' @param fix_image_width whether to set all the images to fixed width
 #' @return NULL, output is a file as specified in the argument
-write_report_to_file <- function(report_contents, tempfile){
+write_report_to_file <- function(report_contents, tempfile, fix_image_width=FALSE){
   file_conn <- file(tempfile)
   writeLines(
     report_contents,
     file_conn
   )
   close(file_conn)
+  if (fix_image_width){
+    ensure_images_fit_page(tempfile, 6, TRUE)
+  }
   return(invisible(NULL))
 }
 
 #' Go through the markdown file, find all png images and scale down where relevant
 #'
-#' @param filename the path to file to convert
+#' @inherit rtf_postprocess
 #' @param max_width_inch maximum width of image in inches (wider will be scaled down to this value)
 #' default is 7 inches which roughly matches vertical A4 page with margins
+#' @param fix_width if TRUE all images will be scaled exactly to max_width_inch. otherwise,
+#' only the larger images will be scaled down
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-ensure_images_fit_page <- function(filename, max_width_inch=7){
+ensure_images_fit_page <- function(filename, max_width_inch=7, fix_width){
+  print(filename)
+  print(max_width_inch)
+  print(fix_width)
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[",markdown)
   for (i in graph_lines){
     image_name <- substring(stringi::stri_match_first(markdown[i], regex="\\([[:graph:]]*.png"),2)
-    image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
+    image_attributes <- attributes(png::readPNG(paste0(image_name), info=TRUE))$info
     if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
-    if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
+    if (fix_width){
+      warning(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
+      markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
+    } else if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
       warning(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
       markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
     }
@@ -889,7 +901,7 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
 #' ToC in pandoc output is not working out of the box. The ToC is a list of hyperlinks,
 #' but there are no corresponding bookmarks in headers of respective sections
 #'
-#' @param filename name of file to convert
+#' @inherit rtf_postprocess
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
@@ -932,7 +944,7 @@ rtf_fix_table_of_contents <- function(filename){
 #'
 #' By default pandoc rtf aligns pictures left, to center them (consistently with HTML)
 #' manual intervention is required
-#' @param filename name of file to convert
+#' @inherit rtf_postprocess
 #' @return NULL, changes file specified as an argument in place
 #'
 rtf_center_images <- function(filename){
@@ -945,6 +957,19 @@ rtf_center_images <- function(filename){
   writeLines(rtf, file_conn)
   close(file_conn)
   return(invisible(NULL))
+}
+
+#' Fix the RTF file
+#' 
+#' It is not possible to set some options using markdown syntax. Also, there seems to be a bug
+#' in pandoc which breaks the TOC (links are not working)
+#' @param filename name of file to convert
+#' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
+#' @return NULL, changes file specified as an argument in place
+
+rtf_postprocess <- function (filename, report_version){
+  rtf_fix_table_of_contents(filename)
+  rtf_center_images(filename)
 }
 
 #' Add path to graphs
