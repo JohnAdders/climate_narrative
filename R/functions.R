@@ -1422,3 +1422,80 @@ include_markdown_section <- function(output, output_name, section_name){
     )
   })
 }
+
+render_rtf <- function(input_file, output_file, res_path){
+  fs <- file.size(input_file)
+  rmarkdown::render(
+        input = input_file,
+        output_file = output_file,
+        output_format = rmarkdown::rtf_document(
+          toc = TRUE,
+          toc_depth = 2,
+          number_sections = FALSE,
+          pandoc_args = c(
+            paste0("--resource-path=", res_path),
+            "--self-contained"
+          )
+        )
+      )
+  # I found that in some cases the rendering silently overwrites the markdown file
+  # Cause unknown, maybe due to some weird blank characters instead of space?
+  # Therefore added a control to throw error if the file is truncated in the process
+  if (file.size(input_file) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+  rtf_postprocess(input_file, global$report_version)
+  return(invisible(NULL))
+}
+
+render_html <- function(input_file, output_file){
+  rmarkdown::render(
+    input = input_file,
+    output_file = output_file,
+    output_format = rmarkdown::html_document(
+      toc = TRUE,
+      toc_float = FALSE,
+      toc_depth = 2,
+      number_sections = FALSE,
+      self_contained = FALSE,
+      fig_caption = FALSE
+    )
+  )
+  # replace back the images links
+  file_conn <- file(output_file)
+  temp <- readLines(file_conn)
+  temp <- gsub(
+    system.file("www", package = "climate.narrative"),
+    "climate_narrative",
+    temp
+  )
+  if (global$report_version >= 2){
+    temp <- gsub(
+      "(<h[1-5]?>)(.*)(</h[1-5]?>)",
+      "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
+      temp,
+      perl=TRUE
+    )    
+  }
+  # add class to images
+  if (global$report_version >= 4){
+    temp <- gsub(
+      '<img ',
+      '<img class="reportimage"',
+      temp
+    )   
+  }
+  # extract the table of contents
+  if (global$sidebar_toc){
+    toc_start <- grep("<div id=\"TOC\">", temp)
+    div_end <- grep("</div>", temp)
+    toc_end <- min(div_end[div_end > toc_start])
+    toc <- temp[toc_start:toc_end]
+    output$html_report_nav <- renderUI(HTML(toc))
+    temp <- temp[-(toc_start:toc_end)]
+  }
+  writeLines(
+    temp,
+    file_conn
+  )
+  close(file_conn)
+  return(invisible(NULL))
+}

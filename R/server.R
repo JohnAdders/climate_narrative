@@ -146,59 +146,8 @@ server <- function(input, output, session) {
         session$userData$temp_md_scenario
       )
     }
-    rmarkdown::render(
-      input = session$userData$temp_md_scenario,
-      output_file = temp_html,
-      output_format = rmarkdown::html_document(
-        toc = TRUE,
-        toc_float = FALSE,
-        toc_depth = 2,
-        number_sections = FALSE,
-        self_contained = FALSE,
-        fig_caption = FALSE
-      )
-    )
-    # replace back the images links
-    file_conn <- file(temp_html)
-    temp <- readLines(file_conn)
-    temp <- gsub(
-      system.file("www", package = "climate.narrative"),
-      "climate_narrative",
-      temp
-    )
-    if (global$report_version >= 2){
-      temp <- gsub(
-        "(<h[1-5]?>)(.*)(</h[1-5]?>)",
-        "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
-        temp,
-        perl=TRUE
-      )    
-    }
-    # add class to images
-    if (global$report_version >= 4){
-      temp <- gsub(
-        '<img ',
-        '<img class="reportimage"',
-        temp
-      )   
-    }
-    # extract the table of contents
-    if (global$sidebar_toc){
-      toc_start <- grep("<div id=\"TOC\">", temp)
-      div_end <- grep("</div>", temp)
-      toc_end <- min(div_end[div_end > toc_start])
-      toc <- temp[toc_start:toc_end]
-      output$html_report_nav <- renderUI(HTML(toc))
-      temp <- temp[-(toc_start:toc_end)]
-    }
-    writeLines(
-      temp,
-      file_conn
-    )
-    close(file_conn)
-
+    render_html(session$userData$temp_md_scenario, temp_html)
     result <- includeHTML(temp_html)
-
     return(result)
   })
 
@@ -244,25 +193,7 @@ server <- function(input, output, session) {
           (global$report_version >= 4)
         )
       }
-      fs <- file.size(session$userData$temp_md_scenario_and_commons)
-      rmarkdown::render(
-        input = session$userData$temp_md_scenario_and_commons,
-        output_file = session$userData$temp_rtf,
-        output_format = rmarkdown::rtf_document(
-          toc = TRUE,
-          toc_depth = 2,
-          number_sections = FALSE,
-          pandoc_args = c(
-            paste0("--resource-path=", res_path),
-            "--self-contained"
-          )
-        )
-      )
-      # I found that in some cases the rendering silently overwrites the markdown file
-      # Cause unknown, maybe due to some weird blank characters instead of space?
-      # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(session$userData$temp_md_scenario_and_commons) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-      rtf_postprocess(session$userData$temp_rtf, global$report_version)
+      render_rtf(session$userData$temp_md_scenario_and_commons, session$userData$temp_rtf, res_path)
       removeModal()
       file.copy(session$userData$temp_rtf, file)
     }
@@ -289,25 +220,7 @@ server <- function(input, output, session) {
         session$userData$temp_md_dev,
         (global$report_version >= 4)
       )
-      fs <- file.size(session$userData$temp_md_dev)
-      rmarkdown::render(
-        input = session$userData$temp_md_dev,
-        output_file = session$userData$temp_rtf_dev,
-        output_format = rmarkdown::rtf_document(
-          toc = TRUE,
-          toc_depth = 2,
-          number_sections = FALSE,
-          pandoc_args = c(
-            paste0("--resource-path=", res_path),
-            "--self-contained"
-          )
-        )
-      )
-      # I found that in some cases the rendering silently overwrites the markdown file
-      # Cause unknown, maybe due to some weird blank characters instead of space?
-      # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(session$userData$temp_md_dev) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-      rtf_postprocess(session$userData$temp_rtf_dev, global$report_version)
+      render_rtf(session$userData$temp_md_dev, session$userData$temp_rtf_dev, res_path)
       removeModal()
       file.copy(session$userData$temp_rtf_dev, file)
     }
@@ -328,25 +241,7 @@ output$dev_report_2 <- downloadHandler(
         session$userData$temp_md_dev_2,
         (global$report_version >= 4)
       )
-      fs <- file.size(session$userData$temp_md_dev_2)
-      rmarkdown::render(
-        input = session$userData$temp_md_dev_2,
-        output_file = session$userData$temp_rtf_dev_2,
-        output_format = rmarkdown::rtf_document(
-          toc = TRUE,
-          toc_depth = 2,
-          number_sections = FALSE,
-          pandoc_args = c(
-            paste0("--resource-path=", res_path),
-            "--self-contained"
-          )
-        )
-      )
-      # I found that in some cases the rendering silently overwrites the markdown file
-      # Cause unknown, maybe due to some weird blank characters instead of space?
-      # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(session$userData$temp_md_dev_2) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-      rtf_postprocess(session$userData$temp_rtf_dev_2, global$report_version)
+      render_rtf(session$userData$temp_md_dev_2, session$userData$temp_rtf_dev_2, res_path)
       removeModal()
       file.copy(session$userData$temp_rtf_dev_2, file)
     }
