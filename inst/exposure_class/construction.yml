@@ -26,18 +26,17 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the construction sector could 
+      In Disorderly transition risk scenarios, the construction sector could 
       face rising operating costs as carbon pricing policies increase building material 
       and energy prices, as well as falling asset values as current infrastructure 
       becomes increasingly obsolete. 
     always: |
-      In Disorderly/Divergent transition risk scenarios, the demand for
+      In Disorderly transition risk scenarios, the demand for
       construction is likely to increase. The construction sector was
       responsible for 13% of global GDP in 2020, and this share is expected to
-      increase as the global population continues to rise. However, the
-      Disorderly/Divergent transition risk scenarios could also lead to a
-      reduction in GDP growth. This could partially offset growth in demand for
-      the construction sector.
+      increase as the global population continues to rise. However, these
+      scenarios could also lead to a reduction in GDP growth. This could partially 
+      offset growth in demand for the construction sector.
 
       While the construction sector could continue to play a role in meeting
       customer demand for the coming years, the changing patterns in energy
@@ -70,7 +69,7 @@ transition:
         emission intensity of construction processes could have a limited scope
         of improvement.
 
-      - **Increased capital expenditures** New investments could be required to
+      - **Increased capital expenditures** new investments could be required to
         improve the energy efficiency of the construction process including but
         not limited to using fewer or different materials, employing different
         production techniques, using lower emission transportation, optimizing
@@ -84,7 +83,7 @@ transition:
         assets such as outdated machinery and material transportation vehicles
         with poor energy efficiency.
 
-      In Disorderly/Divergent transition risk scenarios, the construction sector
+      In Disorderly transition risk scenarios, the construction sector
       is likely to be impacted by rapid decarbonization in building materials
       and its own operations. Likely reduction in the production of cement due
       to higher carbon tax amid increasing global demand could drive the price
@@ -104,7 +103,7 @@ transition:
 
       The construction sector is also likely to be impacted by rapid decarbonization
       in transport. Within road freight vehicles, the portion of electric
-      vehicles could increase between 30% and 75% by 2050 in Disorderly/Divergent
+      vehicles could increase between 30% and 75% by 2050 in Disorderly
       transition risk scenarios.
 
       ![Freight Vehicles](Electric_Freight_Vehicles_Disorderly_Construction.png)
@@ -112,12 +111,12 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      The profitability of the construction sector, in the Disorderly/Divergent
+      The profitability of the construction sector, in the Disorderly
       transition risk scenarios, could also depend on the relevant companies
       proactively investing in innovation and new technology. It is critical
-      that energy efficiency improves in design and construction, as well as in
-      the operations of buildings. It is estimated that the total GHG emissions
-      from building material is largely concentrated in just 10 commonly used
+      that energy efficiency improvements are made in the design and construction, 
+      as well as in the operations of buildings. It is estimated that the total 
+      GHG emissions from building material is largely concentrated in just 10 commonly used
       items: Cement, Steel, Limestone, Structural clay, Aluminium, etc.
       Decarbonising steel and concrete production currently represent a
       significant challenge. The alternative is to substitute such materials,
@@ -125,21 +124,21 @@ transition:
       recycling.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the construction sector could 
+      In Orderly transition risk scenarios, the construction sector could 
       face rising operating costs as carbon pricing policies increase building 
       material and energy prices, as well as falling asset values as current 
       infrastructure becomes increasingly obsolete. 
     always: |
-      In Early/Orderly transition risk scenarios, the demand for construction is
+      In Orderly transition risk scenarios, the demand for construction is
       likely to increase. The construction sector was responsible for 13% of
       global GDP in 2020, and this share is expected to increase as the global
-      population continues to rise. However, the Early/Orderly transition risk
+      population continues to rise. However, the Orderly transition risk
       scenarios could also lead to a limited relative reduction in GDP growth.
       This could partially offset growth in demand for the construction sector.
 
       While the construction sector could continue to play a role in meeting
       customer demand for the coming years, the changing patterns in energy
-      generation in Early/Orderly transition risk scenarios, driven by immediate
+      generation in Orderly transition risk scenarios, driven by immediate
       policy reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
@@ -204,8 +203,7 @@ transition:
       decarbonization in energy mix. By 2050, renewables and biomass would cover
       68% of global primary energy needs. The increased carbon tax cost and new
       investment for renewables could increase the electricity cost for the
-      construction industry in the short-to-medium term. By 2050, renewables and 
-      biomass would cover 68% of global primary energy needs.
+      construction industry in the short-to-medium term. 
 
       ![Primary Energy](Primary_Energy_Mix_Oil_and_Gas.png)
 
@@ -214,7 +212,7 @@ transition:
 
       The construction sector is also likely to be impacted by steady
       decarbonization in transport. Within road freight vehicles, the portion of
-      electric vehicles could increase by between 20% and 30% by 2050 in Early/Orderly
+      electric vehicles could increase by between 20% and 30% by 2050 in Orderly
       transition scenarios.
 
       ![Freight Vehicles](Electric_Freight_Vehicles_Orderly_Construction.png)
@@ -222,15 +220,15 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      The profitability of the construction sector, in Early/Orderly transition
+      The profitability of the construction sector, in Orderly transition
       risk scenarios, could depend on the relevant companies proactively
       investing in innovation and new technology. It is critical that energy
-      efficiency improves in design and construction, as well as in the
-      operations of buildings. It is estimated that the total GHG emissions from
-      building material is largely concentrated in just 10 commonly used items:
-      Cement, Steel, Limestone, Structural clay, Aluminium, etc. Decarbonising
-      steel and concrete production currently represent a significant challenge.
-      The alternative is to substitute such materials, where possible, for
+      efficiency improvements are made in the design and construction, as well 
+      as in the operations of buildings. It is estimated that the total GHG 
+      emissions from building material is largely concentrated in just 10 commonly 
+      used items: Cement, Steel, Limestone, Structural clay, Aluminium, etc. 
+      Decarbonising steel and concrete production currently represent a significant 
+      challenge. The alternative is to substitute such materials, where possible, for
       lower-carbon intensity products, and increase recycling.
 physical:
   high:
@@ -352,9 +350,8 @@ physical:
         getting damaged, in particular in the Delayed scenario as highlighted 
         in the below graph. In both the Net Zero 2050 and Delayed transition 
         scenarios, precipitation is projected to increase at an accelerating 
-        rate and peak by 2050 before falling. From 2060 onwards, in the Net 
-        Zero 2050 transition scenario, precipitation will decrease at a constant 
-        rate. 
+        rate and peak by 2050 before falling. From 2060 onwards, in the Delayed 
+        transition scenario, precipitation will decrease at a constant rate. 
         
       ![Precipitation](Precipitation_Low_Physical.png)
       
