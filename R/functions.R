@@ -184,7 +184,7 @@ exposure_grid_ui <- function(label) {
 #' @param label Label for grid
 #' @param dev Are we in developement mode
 #' @param width Width of each dropdown
-#' @param transpose whether to transpose the grid (relative to csv file layout)
+#' @param transpose whether to transpose the grid (relative to exposure_matrix)
 #'
 exposure_grid_server <- function(
   input,
@@ -364,6 +364,7 @@ string_format_lines <- function(string, col_width) {
 #' @param col_widths Width of columns
 #'
 table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths = NULL) {
+  print("table_to_markdown_multiline")
   headers <- colnames(table)
   if (is.null(col_widths)) {
     col_widths <- pmax(apply(table, 2, function(x) max(nchar(x))), nchar(headers)) + 4
@@ -382,6 +383,8 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     max(nchar(headers) / (col_widths - 2)),
     apply(table, 1, function(x) max(nchar(x) / (col_widths - 2)))
   ))
+  # ensure split rows is not zero
+  split_rows <- pmax(split_rows,1)
   out <- matrix("", nrow = 0, ncol = ncol(table))
   emptyline <- rep("", ncol(table))
   sepline <- emptyline
@@ -425,7 +428,6 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     }
     out <- rbind(out, rowsout, sepline)
   }
-
   out2 <- paste0(
     paste(sepline, collapse = ""),
     "\n",
@@ -1283,6 +1285,14 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
       values <- cbind(tab$exposure[, 1], values)
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols=1)
       if (!is.null(values_trimmed)){
+        if(TRUE){#if (tab$transpose){
+          values_trimmed <- as.data.frame(t(values_trimmed))
+          row_names <- rownames(values_trimmed)
+          row_names <- gsub(".", " ", row_names, fixed = TRUE)
+          values_trimmed <- cbind(row_names, values_trimmed)
+          colnames(values_trimmed) <- values_trimmed[1,]
+          values_trimmed <- values_trimmed[-1,]
+        }
         ncol <- ncol(values_trimmed)
         out <- paste0(
           out,
@@ -1295,6 +1305,7 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
         for (i in 1:nparts){
           cols_to_use <- c(1, 3 * i + (-1:1))
           cols_to_use <- cols_to_use[cols_to_use <= ncol]
+          print(values_trimmed[, cols_to_use])
           out <- paste0(
             out,
             table_to_markdown_multiline(values_trimmed[, cols_to_use], col_widths = c(30,20,20,20))
