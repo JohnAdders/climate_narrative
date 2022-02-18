@@ -129,6 +129,7 @@ server <- function(input, output, session) {
     } else {
       exec_summary_layout <- 2
       inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
+      include_exposures <- FALSE
     }
     write_report_to_file(
       get_report_contents(
@@ -169,6 +170,7 @@ server <- function(input, output, session) {
       } else {
         exec_summary_layout <- 2
         inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
+        include_exposures <- FALSE
       }
       write_report_to_file(
         get_report_contents(
