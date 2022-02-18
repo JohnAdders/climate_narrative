@@ -4,12 +4,14 @@
 \alias{write_report_to_file}
 \title{Function that writes a (full or selective) report to a (temporary) file}
 \usage{
-write_report_to_file(report_contents, tempfile)
+write_report_to_file(report_contents, tempfile, fix_image_width = FALSE)
 }
 \arguments{
 \item{report_contents}{the content to write}
 
 \item{tempfile}{where to write the report}
+
+\item{fix_image_width}{whether to set all the images to fixed width}
 }
 \value{
 NULL, output is a file as specified in the argument

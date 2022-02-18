@@ -4,17 +4,21 @@
 \alias{ensure_images_fit_page}
 \title{Go through the markdown file, find all png images and scale down where relevant}
 \usage{
-ensure_images_fit_page(filename, max_width_inch = 7)
+ensure_images_fit_page(filename, max_width_inch = 7, fix_width)
 }
 \arguments{
-\item{filename}{the path to file to convert}
+\item{filename}{name of file to convert}
 
 \item{max_width_inch}{maximum width of image in inches (wider will be scaled down to this value)
 default is 7 inches which roughly matches vertical A4 page with margins}
+
+\item{fix_width}{if TRUE all images will be scaled exactly to max_width_inch. otherwise,
+only the larger images will be scaled down}
 }
 \value{
 NULL, changes file specified as an argument in place
 }
 \description{
-Go through the markdown file, find all png images and scale down where relevant
+It is not possible to set some options using markdown syntax. Also, there seems to be a bug
+in pandoc which breaks the TOC (links are not working)
 }
