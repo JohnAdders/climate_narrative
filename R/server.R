@@ -73,7 +73,8 @@ server <- function(input, output, session) {
   })
 
   allow_report <- reactive({
-    return(nrow(get_inputs(all_inputs(), input$inst_type)))
+    exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
+    return(nrow(get_inputs(exposure_classes_names, all_inputs(), input$inst_type)))
   })
   
   report_message <- reactive({
@@ -96,13 +97,18 @@ server <- function(input, output, session) {
       } else {
         selection_type_filter <- ""
       }
+      exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
       updateSelectInput(
         session,
         "report_sector_selection",
         choices=c(
           "",
           unname(sapply(global$exposure_classes, `[[`, i = "name"))[
-            names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item
+            names(global$exposure_classes) %in% get_inputs(
+                exposure_classes_names,
+                all_inputs(),
+                selection_type_filter
+              )$item
           ]
         )
       )
@@ -117,9 +123,10 @@ server <- function(input, output, session) {
     if (report_message() != "") {
       return("")
     }
+    exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
     temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
-      inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
+      inputs <- get_inputs(exposure_classes_names, all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
       if (input$report_sector_selection == "") {
         exec_summary_layout <- 1
       } else {
@@ -127,10 +134,14 @@ server <- function(input, output, session) {
       }
     } else {
       exec_summary_layout <- 2
-      inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
+      inputs <- get_inputs(exposure_classes_names, all_inputs(), "", input$report_sector_selection, FALSE, "High")
     }
     write_report_to_file(
       get_report_contents(
+        global$tabs,
+        global$scenarios,
+        global$sections,
+        global$exposure_classes
         inputs,
         global$report_version,
         input$report_scenario_selection,
@@ -139,7 +150,7 @@ server <- function(input, output, session) {
       ),
       session$userData$temp_md_scenario
     )
-    render_html(session$userData$temp_md_scenario, temp_html)
+    render_html(session$userData$temp_md_scenario, temp_html, global$report_version, global$sidebar_toc)
     result <- includeHTML(temp_html)
     return(result)
   })
@@ -156,8 +167,9 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
+      exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
       if (input$rep_type == "inst"){
-        inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
+        inputs <- get_inputs(exposure_classes_names, all_inputs(), input$inst_type, input$report_sector_selection)
         if (input$report_sector_selection == "") {
           exec_summary_layout <- 1
         } else {
@@ -165,7 +177,7 @@ server <- function(input, output, session) {
         }
       } else {
         exec_summary_layout <- 2
-        inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
+        inputs <- get_inputs(exposure_classes_names, all_inputs(), "", input$report_sector_selection, FALSE, "High")
       }
       write_report_to_file(
         get_report_contents(
@@ -178,7 +190,7 @@ server <- function(input, output, session) {
         session$userData$temp_md_scenario_and_commons,
         (global$report_version >= 4)
       )
-      render_rtf(session$userData$temp_md_scenario_and_commons, session$userData$temp_rtf, res_path)
+      render_rtf(session$userData$temp_md_scenario_and_commons, session$userData$temp_rtf, res_path, global$report_version)
       removeModal()
       file.copy(session$userData$temp_rtf, file)
     }
@@ -205,7 +217,7 @@ server <- function(input, output, session) {
         session$userData$temp_md_dev,
         (global$report_version >= 4)
       )
-      render_rtf(session$userData$temp_md_dev, session$userData$temp_rtf_dev, res_path)
+      render_rtf(session$userData$temp_md_dev, session$userData$temp_rtf_dev, res_path, global$report_version)
       removeModal()
       file.copy(session$userData$temp_rtf_dev, file)
     }
@@ -222,11 +234,11 @@ output$dev_report_2 <- downloadHandler(
         )
       )
       write_report_to_file(
-        get_test_report(),
+        get_test_report(global$exposure_classes),
         session$userData$temp_md_dev_2,
         (global$report_version >= 4)
       )
-      render_rtf(session$userData$temp_md_dev_2, session$userData$temp_rtf_dev_2, res_path)
+      render_rtf(session$userData$temp_md_dev_2, session$userData$temp_rtf_dev_2, res_path, global$report_version)
       removeModal()
       file.copy(session$userData$temp_rtf_dev_2, file)
     }

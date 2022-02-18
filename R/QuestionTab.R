@@ -92,7 +92,7 @@ QuestionTab <- R6Class(
           input,
           output,
           self$exposure,
-          produce_tooltip_matrix(self$exposure),
+          produce_tooltip_matrix(self$exposure, global$products, global$exposure_classes),
           paste(self$type, self$subtype, sep = "_"),
           global$dev,
           width
