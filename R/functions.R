@@ -461,11 +461,13 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 #'
 #' @param item name of item for which a report is to be produced
 #' @param type_item_inputs table of (disaggregated) inputs to produce a table of contributing rows
+#' @param include_exposures whether to include tables with contributing exposures
 #' @return markdown-formatted report section (h2)
 #'
 #' @importFrom stats aggregate
 #'
-get_exposure_description <- function(item, type_item_inputs) {
+get_exposure_description <- function(item, type_item_inputs, include_exposures) {
+  print(include_exposures)
   if (is.null(global$exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
@@ -514,11 +516,18 @@ get_exposure_description <- function(item, type_item_inputs) {
     "## ",
     global$exposure_classes[[item]][["name"]],
     "\n\n",
-    global$exposure_classes[[item]][["description"]],
-    "\n\nThe following rows contribute: \n\n",
-    table_to_markdown_multiline(ordered_aggregate_inputs[, 1:4], TRUE, c(15, 30, 25, 15)),
-    "\n\n"
+    global$exposure_classes[[item]][["description"]]
   )
+  print(out)
+  if (include_exposures){
+    out <- paste0(
+      out,
+      "\n\nThe following rows contribute: \n\n",
+      table_to_markdown_multiline(ordered_aggregate_inputs[, 1:4], TRUE, c(15, 30, 25, 15)),
+      "\n\n"
+    )
+  }
+  return(out)
 }
 
 #' Produce appendix for a given item
@@ -627,7 +636,7 @@ get_exposure_risk_description <- function(
 #' @param type_inputs Drop box items
 #' @param scenario Scenario name
 #'
-get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
+get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, include_exposures) {
   if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
   description <- scenario$description
@@ -644,7 +653,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario) {
       products <- unique(type_item_inputs$product)
       out <- paste0(
         out,
-        get_exposure_description(item, type_item_inputs),
+        get_exposure_description(item, type_item_inputs, include_exposures),
         get_exposure_risk_description(item, products, materiality, "transition", transition),
         get_exposure_risk_description(item, products, materiality, "physical", physical),
         get_exposure_appendix(item)
@@ -1088,7 +1097,7 @@ get_section_no <- function(is_rtf){
 #' @param exec_summary_layout determines the structure of the executive summary (see get_executive_summary function)
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #'
-get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf, exec_summary_layout=1){
+get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf, exec_summary_layout=1,include_exposures){
   aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(report_scenario_selection, is_rtf)
   section_no <- get_section_no(is_rtf)
@@ -1099,7 +1108,8 @@ get_report_contents <- function(inputs, report_version, report_scenario_selectio
       list(get_scenario_descriptions(
         aggregated_inputs,
         inputs,
-        scenario
+        scenario,
+        include_exposures
       ))
     )
   }
