@@ -194,7 +194,7 @@ exposure_grid_server <- function(
   label,
   dev = FALSE,
   width = NULL,
-  transpose = TRUE
+  transpose
 ){
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
@@ -364,7 +364,6 @@ string_format_lines <- function(string, col_width) {
 #' @param col_widths Width of columns
 #'
 table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths = NULL) {
-  print("table_to_markdown_multiline")
   headers <- colnames(table)
   if (is.null(col_widths)) {
     col_widths <- pmax(apply(table, 2, function(x) max(nchar(x))), nchar(headers)) + 4
@@ -1285,7 +1284,7 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
       values <- cbind(tab$exposure[, 1], values)
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols=1)
       if (!is.null(values_trimmed)){
-        if(TRUE){#if (tab$transpose){
+        if (tab$transpose_exposures){
           values_trimmed <- as.data.frame(t(values_trimmed))
           row_names <- rownames(values_trimmed)
           row_names <- gsub(".", " ", row_names, fixed = TRUE)
@@ -1305,7 +1304,6 @@ get_executive_summary_inputs <- function(aggregated_inputs, inputs){
         for (i in 1:nparts){
           cols_to_use <- c(1, 3 * i + (-1:1))
           cols_to_use <- cols_to_use[cols_to_use <= ncol]
-          print(values_trimmed[, cols_to_use])
           out <- paste0(
             out,
             table_to_markdown_multiline(values_trimmed[, cols_to_use], col_widths = c(30,20,20,20))
