@@ -873,9 +873,6 @@ write_report_to_file <- function(report_contents, tempfile, fix_image_width=FALS
 #' @importFrom stringi stri_match_first
 #'
 ensure_images_fit_page <- function(filename, max_width_inch=7, fix_width){
-  print(filename)
-  print(max_width_inch)
-  print(fix_width)
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[",markdown)
