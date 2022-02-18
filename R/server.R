@@ -141,7 +141,7 @@ server <- function(input, output, session) {
         global$tabs,
         global$scenarios,
         global$sections,
-        global$exposure_classes
+        global$exposure_classes,
         inputs,
         global$report_version,
         input$report_scenario_selection,

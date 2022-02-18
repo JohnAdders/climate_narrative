@@ -1149,7 +1149,7 @@ get_report_contents <- function(
             scenario_no=scenario_no,
             exec_summary_layout=exec_summary_layout,
             scenarios=scenarios,
-            exposure_classes=exposure_classes
+            exposure_classes=exposure_classes,
             tabs=tabs
           )
         ))
