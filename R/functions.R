@@ -200,7 +200,7 @@ exposure_grid_server <- function(
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
   input_ids <- get_input_ids(exposure_matrix, label)
   for (i in 1:nrow(layout)) {
-    layout[i, 1] <- as.character(div(exposure_matrix[i, 1], class = "verticalcenter"))
+    layout[i, 1] <- exposure_matrix[i, 1]
     for (j in 2:ncol(layout)) {
       layout[i, j] <- as.character(
         exposure_grid_cell(
@@ -213,13 +213,26 @@ exposure_grid_server <- function(
     }
   }
   if (transpose){
+    layout0 <- layout
     layout <- t(layout)
+    row_headers <- gsub(".", " ", rownames(layout), fixed = TRUE)
+    col_names <- layout[1, ]
+    # remove first row, but ensure no degeneration to vector
+    if (nrow(layout) > 2){
+      layout <- layout[-1, ]
+    } else {
+      layout <- t(layout[-1, ])
+    }
+    layout <- cbind(row_headers[-1], layout)
+    colnames(layout) <- c(row_headers[1], col_names)
+  }
+  for (i in 1:nrow(layout)){
+    layout[i, 1] <- as.character(div(layout[i, 1], class = "verticalcenter"))
   }
   output[[label]] <- renderTable(
     layout,
     sanitize.text.function = function(x) x,
     sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE),
-    sanitize.rownames.function = function(x) gsub(".", " ", x, fixed = TRUE),
     align = "c"
   )
 }
