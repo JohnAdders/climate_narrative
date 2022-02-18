@@ -184,14 +184,18 @@ exposure_grid_ui <- function(label) {
 #' @param label Label for grid
 #' @param dev Are we in developement mode
 #' @param width Width of each dropdown
+#' @param transpose whether to transpose the grid (relative to csv file layout)
 #'
-exposure_grid_server <- function(input,
-                                 output,
-                                 exposure_matrix,
-                                 tooltip_matrix,
-                                 label,
-                                 dev = FALSE,
-                                 width = NULL) {
+exposure_grid_server <- function(
+  input,
+  output,
+  exposure_matrix,
+  tooltip_matrix,
+  label,
+  dev = FALSE,
+  width = NULL,
+  transpose = TRUE
+){
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
   input_ids <- get_input_ids(exposure_matrix, label)
@@ -208,10 +212,14 @@ exposure_grid_server <- function(input,
       )
     }
   }
+  if (transpose){
+    layout <- t(layout)
+  }
   output[[label]] <- renderTable(
     layout,
     sanitize.text.function = function(x) x,
     sanitize.colnames.function = function(x) gsub(".", " ", x, fixed = TRUE),
+    sanitize.rownames.function = function(x) gsub(".", " ", x, fixed = TRUE),
     align = "c"
   )
 }
