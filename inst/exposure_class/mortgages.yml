@@ -20,10 +20,11 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, lenders who have a material 
-      exposure to mortgages are likely to be the largest source of carbon emissions, 
-      so there is a heavy reliance on accurate energy efficiency and/or consumption 
-      data to calculate financed emissions.
+      In Disorderly transition risk scenarios, lenders who have a material 
+      exposure to mortgages are likely to be impacted mainly due to the cost 
+      of retrofitting (if not Government funded) properties that are unable to 
+      meet the minimum Efficiency Performance Certificate (EPC) standard and 
+      hence are classified as unmarketable (and unmortgageable).
     always: |
       Lending on residential property remains a key focus and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
@@ -53,13 +54,13 @@ transition:
       reduced ability to pay, as a result of more income being spent on energy
       bills, could increase probabilities of default.
       
-      In Delayed/Divergent scenarios, electricity price increases in the short 
+      In Disorderly transition risk scenarios, electricity price increases in the short 
       term, peaking around 2035 in the Delayed transition scenario and 2030 in 
       the Divergent Net Zero scenario. Oil and gas prices increase throughout, 
       both more than tripling by 2050 in the Delayed transition scenario, and 
       more than doubling by 2050 in the Divergent Net Zero scenario.
       
-      ![Residential and Commercial Price](Residential_Energy_Price_Orderly.png)
+      ![Residential and Commercial Price](Residential_Energy_Price_Disorderly.png)
 
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
@@ -135,11 +136,11 @@ transition:
       - Inability to deliver a just transition leading to vulnerable or
         least-able-to-pay customers being disadvantaged
 
-      In Delayed/Divergent scenarios, emissions from residential and commercial 
+      In Disorderly transition risk scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from new 
       legislation (as well as a change in energy mix).
       
-      ![CO2 Emissions Residential vs Commercial](CO2_emissions_Residential_vs_Commercial_Orderly.png)
+      ![CO2 Emissions Residential vs Commercial](CO2_emissions_Residential_vs_Commercial_Disorderly.png)
 
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
@@ -207,7 +208,7 @@ transition:
       - Products aimed at supporting the transition of the Housing Association
         sector (e.g., Sustainable Linked Loans)
         
-      In Delayed/Divergent scenarios, lenders with exposures to mortgage books 
+      In Disorderly transition risk scenarios, lenders with exposures to mortgage books 
       should also look to assess the strategic risk caused by the emissions of 
       their mortgage lending. This could be driven from targets and commitments 
       previously set or imposed by regulators. Lenders could use the Partnership 
@@ -218,10 +219,11 @@ transition:
       begins the feedback loop of climate scenario analysis into future strategy.  
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, lenders who have a material 
-      exposure to mortgages are likely to be the largest source of carbon emissions, 
-      so there is a heavy reliance on accurate energy efficiency and/or consumption 
-      data to calculate financed emissions. 
+      In Orderly transition risk scenarios, lenders who have a material 
+      exposure to mortgages are likely to be impacted mainly due to the cost 
+      of retrofitting (if not Government funded) properties that are unable to 
+      meet the minimum Efficiency Performance Certificate (EPC) standard and 
+      hence are classified as unmarketable (and unmortgageable).
     always: |
       Lending on residential property remains a key focus, and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
@@ -297,7 +299,7 @@ transition:
       - Inability to deliver a just transition leading to vulnerable or
         least-able-to-pay customers being disadvantaged
 
-      In Early/Orderly scenarios, emissions from residential and commercial 
+      In Orderly scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from new 
       legislation (as well as a change in energy mix).
       
@@ -334,7 +336,7 @@ transition:
       over an extended period of time as a result of more income being spent on 
       energy bills. This could increase probabilities of default.
       
-      In Early/Orderly scenarios, electricity price increases in the short term, 
+      In Orderly scenarios, electricity price increases in the short term, 
       peaking around 2030, whilst oil and gas prices increase throughout, both more 
       than tripling by 2050.
       
@@ -364,7 +366,7 @@ transition:
       - Products aimed at supporting the transition of the Housing Association
         sector (e.g., Sustainable Linked Loans)
         
-      In Early/Orderly scenarios, lenders with exposures to mortgage books should 
+      In Orderly scenarios, lenders with exposures to mortgage books should 
       also look to assess the strategic risk caused by the emissions of their mortgage 
       lending. This could be driven from targets and commitments previously set or 
       imposed by regulators. Lenders could use the Partnership Carbon Accounting 

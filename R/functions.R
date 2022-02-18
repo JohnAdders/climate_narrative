@@ -1003,8 +1003,8 @@ get_executive_summary_scenarios <- function(aggregated_inputs, inputs, scenario_
       out <- paste0(
         out,
         "##### ",
-        capitalize(risk),
-        " risk\n\n",
+        global$exposure_classes[[item]][["name"]],
+        "\n\n",
         global$exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
         "\n\n"
       )
@@ -1160,11 +1160,6 @@ get_executive_summary_exposures <- function(
           if (exec[risk, risk_intensity]){
             out_exp <- paste0(
               out_exp,
-              "##### ",
-              capitalize(risk_intensity),
-              " ",
-              risk,
-              " risk\n\n",
               global$exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
               "\n\n"
             )

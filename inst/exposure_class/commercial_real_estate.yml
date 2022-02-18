@@ -18,19 +18,14 @@ description: |
       then acting as lessors in subleasing it to others.
 
     - Firms acting as lessors of buildings that are not used as residences or
-      dwellings include:
+      dwellings including owner-lessors of non-residential buildings, establishments 
+      renting real estate and then acting as lessors in subleasing it to others, and 
+      establishments providing full-service office space, whether on a lease or 
+      service contract basis.
 
-      - owner-lessors of non-residential buildings
-
-      - establishments renting real estate and then acting as lessors in
-        subleasing it to others
-
-      - establishments providing full-service office space, whether on a lease
-        or service contract basis.
-
-    - Renting or leasing space to others for self-storage. These establishments
-      provide secure space (i.e., rooms, compartments, lockers, containers, or
-      outdoor space) where clients can store and retrieve their goods.
+  - Renting or leasing space to others for self-storage. These establishments
+    provide secure space (i.e., rooms, compartments, lockers, containers, or
+    outdoor space) where clients can store and retrieve their goods.
 
   - Acting as lessors of real estate (except buildings), such as manufactured
     home (i.e., mobile home) sites, vacant lots, and grazing land.
@@ -42,11 +37,11 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the commercial real estate sector 
-      could be impacted by an increase in carbon price through cost of complying with 
-      "low carbon/green" building criteria which would reduce the demand in the quality 
-      of the real estate product which in turn could affect the profitability in this 
-      sector. This could also lead to a limited relative reduction in GDP growth. 
+      In Disorderly transition risk scenarios, the commercial real estate sector 
+      could be impacted by an increase in carbon price and through the cost of complying with 
+      "low carbon/green" building criteria which in turn could affect the profitability in this 
+      sector. In these scenarios a limited relative reduction in GDP growth will also 
+      impact the sector. 
     always: |
       In Disorderly transition risk scenarios, the demand for Commercial Real
       Estate sector is likely to increase.
@@ -100,7 +95,7 @@ transition:
       (directly or indirectly) from high transition risk industries, such as
       coal, oil & gas extraction, or from industries with transition risks arising 
       from their supply chains, such as deforestation-related reputational risks 
-      in the supply chains of fast-moving consumer goods companies (for more 
+      in the supply chains companies (for more 
       information see [Deforestation-Driven Reputation Risk Could Become Material for FMCGs](https://chainreactionresearch.com/report/deforestation-driven-reputation-risk-could-become-material-for-fmcgs/)), then knock-on effects would be expected to revenues and occupancy. 
       
       Mitigating steps can include:
@@ -114,25 +109,25 @@ transition:
 
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the commercial real estate sector 
-      could be impacted by an increase in carbon price through cost of complying 
-      with "low carbon/green" building criteria which would reduce the demand in 
-      the quality of the real estate product which in turn could affect the profitability 
-      in this sector. This could also lead to a limited relative reduction in GDP growth. 
+      In Orderly transition risk scenarios, the commercial real estate sector 
+      could be impacted by an increase in carbon price and through the cost of complying 
+      with "low carbon/green" building criteria which in turn could affect the profitability 
+      in this sector. In these scenarios a limited relative reduction in GDP growth will also 
+      impact the sector.
     always: |
-      In Early/Orderly transition risk scenarios, the demand for Commercial Real
+      In Orderly transition risk scenarios, the demand for Commercial Real
       Estate sector is likely to increase. While the Commercial Real Estate
       sector could continue to play a role in meeting customer demand for the
-      coming years, the changing patterns in energy generation in Early/Orderly
-      transition risk scenarios, driven by immediate policy reaction, societal
-      change, national energy strategies, and carbon legislation, could lead to
-      an immediate and smooth reduction in CO<sub>2</sub> emissions by 2050.
+      coming years, the changing patterns in energy generation in these 
+      scenarios, driven by immediate policy reaction, societal change, national 
+      energy strategies, and carbon legislation, could lead to an immediate and smooth 
+      reduction in CO<sub>2</sub> emissions by 2050.
 
       The increase in the carbon price as well as a change to the demand in the
       quality of the real estate product (e.g. emissions from the construction
       and fabric of the building, energy efficiency performance and use of low
       carbon technology (especially heating and cooling)) are likely to
-      influence the profitability of this sector. The Early/Orderly transition
+      influence the profitability of this sector. The Orderly transition
       risk scenarios could also lead to a limited relative reduction in GDP
       growth. This could partially offset growth in demand for the Commercial
       Real Estate sector.
@@ -164,7 +159,7 @@ transition:
       (directly or indirectly) from high transition risk industries, such as
       coal, oil & gas extraction, or from industries with transition risks arising 
       from their supply chains, such as deforestation-related reputational risks 
-      in the supply chains of fast-moving consumer goods companies (for more 
+      in the supply chains of companies (for more 
       information see [Deforestation-Driven Reputation Risk Could Become Material for FMCGs](https://chainreactionresearch.com/report/deforestation-driven-reputation-risk-could-become-material-for-fmcgs/)), then knock-on effects would be expected to revenues and occupancy. 
       This is likely to be less severe in the short term under Orderly transition 
       risk scenarios and could occur more smoothly over time, albeit with certain 
@@ -182,25 +177,25 @@ transition:
 physical:
   high:
     exec_description: |
-      In high physical risk scenarios, property values may decline after climate 
-      events. Trading volumes or time on market may provide early signals of how 
-      markets are reacting to climate events and risks through lower liquidity that 
-      could ultimately feed into prices. 
+      Since the sector is highly reliant on revenues attached to assets at 
+      fixed locations, the commercial real estate services sector is particularly 
+      exposed to the physical impacts of climate change. In addition to direct damage, 
+      extreme temperatures can materially impact the revenues of assets that are not 
+      adapted to these changes as this could potentially affect the productivity of 
+      assets and labour. 
     always: |
-      Since the sector is highly reliant on revenues attached to assets at fixed
-      locations, the commercial real estate services sector is particularly
-      exposed to the physical impacts of climate change: these include chronic
-      effects (e.g. raised sea-levels) and acute effects due to changes to
-      frequency and severity of weather events such as heatwaves, droughts,
-      wildfires, tropical cyclones and flooding.
-
-      Floods, storms and extreme temperatures damage buildings, with the former
-      particularly acute for assets on flood plains or located in low-lying
-      coastal areas. In addition to direct damage, extreme temperatures can
-      materially impact the revenues of assets that are not adapted to these
-      changes as this could potentially affect the productivity of assets and
-      labour.
-
+      Since the sector is highly reliant on revenues attached to assets at fixed 
+      locations, the commercial real estate services sector is particularly exposed 
+      to the physical impacts of climate change: these include chronic effects 
+      (e.g. raised sea-levels) and acute effects due to changes to frequency and 
+      severity of weather events such as heatwaves, droughts, wildfires, tropical 
+      cyclones and flooding. 
+      
+      Floods, storms and extreme temperatures damage buildings, with the former 
+      particularly acute for assets on flood plains or located in low-lying coastal 
+      areas. In addition to direct damage, extreme temperatures can materially impact 
+      the revenues of assets that are not adapted to these changes as this could 
+      potentially affect the productivity of assets and labour. 
     high_materiality: |
       Property values themselves may be impacted by the occurrence, or risk of
       occurrence, of climate-related events. This can manifest itself as:

@@ -53,8 +53,8 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the consumer products 
-      sector could deliver longer-term carbon reduction initiatives by shifting 
+      In Disorderly transition risk scenarios, the consumer products 
+      sector will need to deliver longer-term carbon reduction initiatives by shifting 
       to lower carbon intensive supplies, reducing the carbon intensity of their 
       physical stores or sales platforms, and using clean energy sources.
     always: |
@@ -171,7 +171,7 @@ transition:
 
       Furthermore, there is likely to be significant wide economic disruption
       that could lead to falls in equity prices and reduced customer spending
-      levels. In these scenarios, the consumer products sector could deliver
+      levels. In these scenarios, the consumer products sector will need to deliver
       longer-term carbon reduction initiatives by shifting to lower carbon
       intensive supplies, reducing the carbon intensity of their physical stores
       or sales platforms, and using clean energy sources. The drive for change
@@ -199,10 +199,10 @@ transition:
       supply-chain of product level carbon intensity analysis.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the consumer products sector 
-      could deliver longer-term carbon reduction initiatives by shifting to lower 
-      carbon intensive supplies, reducing the carbon intensity of their physical 
-      stores or sales platforms, and using clean energy sources.
+      In Orderly transition risk scenarios, the consumer products sector 
+      will need to deliver longer-term carbon reduction initiatives by shifting 
+      to lower carbon intensive supplies, reducing the carbon intensity of their 
+      physical stores or sales platforms, and using clean energy sources.
     always: |
       As the consumer products sector sits between the manufacturing sector and
       end-consumers, it is subject to the considerations of both the products it
@@ -306,8 +306,8 @@ transition:
         following industry norms and being a market follower rather than leader
         in this space, this risk could be reduced.
 
-      In Early/Orderly transition risk scenarios, the consumer products sector
-      could deliver longer-term carbon reduction initiatives by shifting to
+      In Orderly transition risk scenarios, the consumer products sector
+      will need to deliver longer-term carbon reduction initiatives by shifting to
       lower carbon intensive supplies, reducing the carbon intensity of their
       physical stores or sales platforms, and using clean energy sources. The
       drive for change arises through retailers being sandwiched between a
