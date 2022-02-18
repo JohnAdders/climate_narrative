@@ -10,10 +10,12 @@ tab_report_ui <- function() {
     valid_options,
     selectize = FALSE
   )
+  options <- ""
+  names(options) <- "All relevant sectors"
   dropdown_2 <- selectInput(
     "report_sector_selection",
     "Select the sector to show",
-    c("All relevant sectors"),
+    options,
     selectize = FALSE
   )
   
@@ -128,7 +130,7 @@ tab_report_server <- function(input, output, session, tab) {
     ),
     {
       updateSelectInput(session, "report_scenario_selection", selected = "")
-      updateSelectInput(session, "report_sector_selection", selected = "All relevant sectors")
+      updateSelectInput(session, "report_sector_selection", selected = "")
     }
   )
   observeEvent(
