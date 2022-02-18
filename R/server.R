@@ -80,7 +80,7 @@ server <- function(input, output, session) {
     if (input$rep_type == "inst" && input$report_scenario_selection == "") {
       return("Please select a scenario (optionally a sector as well)")
     }
-    if (input$rep_type == "sect" && input$report_sector_selection == "all relevant sectors") {
+    if (input$rep_type == "sect" && input$report_sector_selection == "All relevant sectors") {
       return("Please select a sector")
     } else {
       return("")
@@ -100,7 +100,7 @@ server <- function(input, output, session) {
         session,
         "report_sector_selection",
         choices=c(
-          "all relevant sectors",
+          "All relevant sectors",
           unname(sapply(global$exposure_classes, `[[`, i = "name"))[
             names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item
           ]
@@ -120,7 +120,7 @@ server <- function(input, output, session) {
     temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
       include_exposures <- TRUE
-      if (input$report_sector_selection == "all relevant sectors") {
+      if (input$report_sector_selection == "All relevant sectors") {
         exec_summary_layout <- 1
       } else {
         exec_summary_layout <- 2
@@ -213,7 +213,7 @@ server <- function(input, output, session) {
       )
       if (input$rep_type == "inst"){
         include_exposures <- TRUE
-        if (input$report_sector_selection == "all relevant sectors") {
+        if (input$report_sector_selection == "All relevant sectors") {
           exec_summary_layout <- 1
         } else {
           exec_summary_layout <- 2
