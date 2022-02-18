@@ -4,12 +4,14 @@
 \alias{get_exposure_description}
 \title{Produce report content for a given item}
 \usage{
-get_exposure_description(item, type_item_inputs)
+get_exposure_description(item, type_item_inputs, include_exposures)
 }
 \arguments{
 \item{item}{name of item for which a report is to be produced}
 
 \item{type_item_inputs}{table of (disaggregated) inputs to produce a table of contributing rows}
+
+\item{include_exposures}{whether to include tables with contributing exposures}
 }
 \value{
 markdown-formatted report section (h2)

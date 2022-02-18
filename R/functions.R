@@ -467,7 +467,6 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 #' @importFrom stats aggregate
 #'
 get_exposure_description <- function(item, type_item_inputs, include_exposures) {
-  print(include_exposures)
   if (is.null(global$exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
@@ -518,7 +517,6 @@ get_exposure_description <- function(item, type_item_inputs, include_exposures) 
     "\n\n",
     global$exposure_classes[[item]][["description"]]
   )
-  print(out)
   if (include_exposures){
     out <- paste0(
       out,
@@ -635,6 +633,7 @@ get_exposure_risk_description <- function(
 #' @param aggregated_table Table of all possible items
 #' @param type_inputs Drop box items
 #' @param scenario Scenario name
+#' @param include_exposures whether to include tables with contributing exposures
 #'
 get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, include_exposures) {
   if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
@@ -1095,6 +1094,7 @@ get_section_no <- function(is_rtf){
 #' - TRUE: include non-scenario sections (e.g. intro)
 #' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @param exec_summary_layout determines the structure of the executive summary (see get_executive_summary function)
+#' @param include_exposures whether to include tables with contributing exposures
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #'
 get_report_contents <- function(inputs, report_version, report_scenario_selection, is_rtf, exec_summary_layout=1,include_exposures){
