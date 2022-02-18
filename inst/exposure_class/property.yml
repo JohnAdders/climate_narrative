@@ -15,7 +15,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the increase in carbon price 
+      In Disorderly transition risk scenarios, the increase in carbon price 
       along with a change to the demand in the quality of real estate are likely 
       to influence insurance products' pricing, terms and conditions and coverage. 
       There is likely to be an increasing pressure on insurers to decline cover for 
@@ -146,7 +146,7 @@ transition:
       acceptance, or in the setting of corporate risk appetite and capital.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the increase in carbon price 
+      In Orderly transition risk scenarios, the increase in carbon price 
       along with a change to the demand in the quality of real estate are likely 
       to influence insurance products' pricing, terms and conditions and coverage. 
       There is likely to be an increasing pressure on insurers to decline cover for 
@@ -275,12 +275,11 @@ transition:
 physical:
   high:
     exec_description: |
-      In high physical risk scenarios, any insurance underwriting strategy could 
+      In high physical risk scenarios, insurance underwriting strategies could 
       need to assess existing, and future physical risks, not only due to the 
       potential for future changes in the physical drivers of climate related 
       hazards (e.g., flood intensity, frequency and extents), but also due to 
-      changes in the distribution of exposures due to changing underwriting plans, 
-      and changes in the types of assets being insured.
+      changes in the distribution of exposures and in the types of assets being insured.
     always: |
       While the non-life property insurance market is generally highly exposed
       to physical risks, and in particular from those related to weather
@@ -300,8 +299,6 @@ physical:
       flood intensity, frequency and extents), but also due to changes in the
       distribution of exposures due to changing underwriting plans, and changes
       in the types of assets being insured.
-
-
 
     high_materiality: |
       The relative materiality of physical risks to insurers and hence the
@@ -513,7 +510,7 @@ physical:
       methods for pricing and portfolio assessment could be less effective as a
       means to effectively account for future losses within premiums. The lack
       of consistent modelling approaches for both present day and future
-      physical climate risk, particularly in emerging economies and markets,
+      physical risk, particularly in emerging economies and markets,
       means that there could be a lower level of confidence placed on estimates
       of probable maximum loss. This uncertainty drives many of the physical
       risk considerations mentioned.

@@ -27,7 +27,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly/Divergent transition risk scenarios, the telecoms sector 
+      In Disorderly transition risk scenarios, the telecoms sector 
       could face rising operating costs as carbon pricing policies increase 
       energy prices, as well as falling asset values as current infrastructure 
       becomes increasingly obsolete.
@@ -39,7 +39,7 @@ transition:
       long term impact on this sector, affecting profitability and consumer
       preferences.
     high_materiality: |
-      In the Disorderly/Divergent transition risk scenarios, the impacts could
+      In Disorderly transition risk scenarios, the impacts could
       depend on how reliant the company's production/revenue mix is on low
       carbon electricity, the client's 'temperature alignment' score and how
       this compares to the sector average. For example:
@@ -66,7 +66,7 @@ transition:
       peaking at around 2030 in the Divergent Net Zero scenario at ~28 USD (inflation 
       adjusted to 2010 baseline) per gigajoule. In the Delayed transition scenario 
       prices peak around 2035 at ~33 USD per gigajoule. However electricity prices 
-      are projected to fall back towards 2020 levels by 2050 in both Delayed/Divergent 
+      are projected to fall back towards 2020 levels by 2050 in the Disorderly 
       transition risk scenarios. 
       
       ![Electricity Price](Electricity_Price_Disorderly.png)
@@ -74,7 +74,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      The profitability of the telecom sector, in the Disorderly/Divergent
+      The profitability of the telecom sector, in Disorderly 
       transition risk scenarios, could also depend on the relevant companies
       proactively investing in innovation and new technology and their ability
       to mitigate transition risks. For example:
@@ -117,21 +117,21 @@ transition:
       proactively shop at businesses with an incorporated green strategy.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the telecoms sector could 
+      In Orderly transition risk scenarios, the telecoms sector could 
       face rising operating costs as carbon pricing policies increase energy 
       prices, as well as falling asset values as current infrastructure becomes 
       increasingly obsolete.
     always: |
       While the telecom sector could continue to play a role in meeting customer
       demand for the coming years, the changing patterns in energy generation,
-      in Early/Orderly transition risk scenarios, driven by immediate policy
+      in Orderly transition risk scenarios, driven by immediate policy
       reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
       are likely to have an impact on this sector, affecting profitability and
       consumer preferences.
     high_materiality: |
-      In the Early/Orderly transition risk scenarios, the increases in carbon
+      In the Orderly transition risk scenarios, the increases in carbon
       and energy prices could potentially result in financial impacts; the
       extent could depend on how reliant the company's production /revenue mix
       is on low-carbon electricity, the company's transition plans and how they
@@ -159,14 +159,14 @@ transition:
       peaking at around 2030 at ~24 USD (inflation adjusted to 2010 baseline) per 
       gigajoule in the Below 2&deg;C scenario and ~33 USD per gigajoule in the Net Zero 
       2050 scenario. However costs are projected to fall back to 2020 levels by 2050 
-      in Early/Orderly transition risk scenarios. 
+      in Orderly transition risk scenarios. 
       
       ![Electricity Price](Electricity_Price_Orderly.png)
 
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      The profitability of the telecoms sector, in the Early/Orderly transition
+      The profitability of the telecoms sector, in the Orderly transition
       risk scenarios, could depend on the relevant companies proactively
       investing in innovation and new technology and their ability to mitigate
       transition risks. For example, in particular whether firms:
@@ -294,7 +294,7 @@ physical:
         assets damaged by flooding.
 
       - Overhead access network, backhaul, and core network via poles and pylons
-        at risk of damage by **severe winds**
+        at risk of damage by **severe winds**.
 
       - The increase in **wildfires** frequency and severity could also increase
         damage to infrastructure.

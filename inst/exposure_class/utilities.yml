@@ -28,7 +28,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the utility sector may 
+      In Disorderly transition risk scenarios, the utility sector may 
       benefit from increased revenue as the global energy system becomes more 
       electrified, but face a rising carbon price which could increase production 
       costs for carbon intensive utilities without adequate transition plans.
@@ -48,18 +48,18 @@ transition:
       a lot longer to emerge. The Divergent Net Zero scenario, on the other hand, 
       results in immediate but more divergent CO<sub>2</sub> emissions reductions 
       across emitting sectors.  There would be considerable dispersion of impacts 
-      across firms in the disorderly scenarios, depending on the carbon intensity 
-      of their production processes.
+      across firms in the Disorderly transition risk scenarios, depending on the 
+      carbon intensity of their production processes.
 
     high_materiality: |
       Changes in carbon pricing, electricity demand, the energy mix, and energy 
       prices are likely to dominate financial impacts, through the same revenue 
-      and cost channels. However, in disorderly scenarios, for a given long-term 
-      emissions and temperature objective, effects will likely be amplified, 
-      either because of policy divergences across sectors, or because delayed 
-      decarbonisation requires greater decarbonisation later on.
+      and cost channels. However, in Disorderly transition risk scenarios, for a 
+      given long-term emissions and temperature objective, effects will likely 
+      be amplified, either because of policy divergences across sectors, or because 
+      delayed decarbonisation requires greater decarbonisation later on.
       
-      Comparing energy usage and mix patterns between the Net Zero and Divergent 
+      Comparing energy usage and mix patterns between the Net Zero 2050 and Divergent 
       Net Zero, and then the Below 2&deg;C and Delayed Transition scenarios, we 
       generally see similarly large shifts towards solar and wind generation, 
       and away from fossil fuel generation over the longer-term. A key difference, 
@@ -70,13 +70,13 @@ transition:
       gradual technological change. And it also has the potential to be much more 
       damaging for the margins of more fossil fuel intensive utilities.
       
-      As with the Orderly scenarios, the disorderly scenarios are all derived from 
-      an energy systems model that makes relatively favourable assumptions about how 
-      the relative price of solar PV and, to a lesser extent, wind technologies evolve 
-      relative to fossil fuels and nuclear energy. As a result, solar and wind become 
+      As with the Orderly scenarios, the Disorderly transition risk scenarios are all 
+      derived from an energy systems model that makes relatively favourable assumptions 
+      about how the relative price of solar PV and, to a lesser extent, wind technologies 
+      evolve relative to fossil fuels and nuclear energy. As a result, solar and wind become 
       the dominant technologies, with solar representing around half of electricity 
       generation capacity by 2050, completely displacing coal (before 2030) and gas 
-      (between 2030 and 2035). These models also envision only a modest role for carbon, 
+      (between 2025 and 2030). These models also envision only a modest role for carbon, 
       capture and storage technologies to keep fossil fuel usage viable over the longer 
       term.
 
@@ -92,20 +92,17 @@ transition:
 
       Testing these assumptions using different models therefore remains wise. 
       And the same goes for allowing for policy variation across different regions, 
-      particular in the scenarios that fall short of achieving Net Zero emissions 
+      in particular in the scenarios that fall short of achieving Net Zero emissions 
       by 2050.
       
-      When thinking about the effects of the Disorderly scenarios on the valuation 
-      of utility companies, it is important to first consider what is already priced 
-      in. The greater the transition that is priced in, the lesser the valuation 
-      up-lift one can expect from renewable-heavy utilities and the smaller the 
-      impairment for carbon intensive utilities. Nevertheless, our assessment is 
-      that it is unlikely markets are pricing in either the Divergent Net Zero 
-      scenario or the Delayed Transition scenario, though we also think that Delayed 
-      Transition is more likely than either Orderly or Disorderly Net Zero, or Orderly 
-      Below 2&deg;C. That is because government actions are currently (and expected 
-      to remain well short of what is necessary to achieve an Orderly transition, 
-      with Net Zero scenarios becoming especially improbable.
+      When thinking about the effects of the Disorderly transition risk scenarios 
+      on the valuation of utility companies, it is important to first consider what 
+      is already priced in. The greater the transition that is priced in, the lesser 
+      the valuation up-lift one can expect from renewable-heavy utilities and the smaller 
+      the impairment for carbon intensive utilities. Delayed Transition is more likely 
+      than either Orderly or Divergent Net Zero, or Orderly Below 2&deg;C, because government 
+      actions are currently (and expected to remain) well short of what is necessary for 
+      these scenarios.
       
       Companies considering how to transition in ways consistent with Orderly 
       scenario pathways, and investors looking to encourage such transitions, 
@@ -120,7 +117,7 @@ transition:
 
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the utility sector may benefit 
+      In Orderly transition risk scenarios, the utility sector may benefit 
       from increased revenue as the global energy system becomes more electrified 
       but faces a rising carbon price which could increase production costs for 
       carbon intensive utilities without adequate transition plans.
@@ -129,10 +126,10 @@ transition:
       transition to either Net Zero CO<sub>2</sub> emissions by 2050, or a 
       Below 2&deg;C scenario. Orderly transition scenarios have two key features: 
       the decarbonisation of the global power and hence utilities sector; and 
-      the electrification of energy usage in as many other emitting sectors --- 
+      the electrification of energy usage in many other emitting sectors --- 
       like transportation and parts of industry --- as possible.
       
-      The supporting pillars for the types of accelerated transitions envisages 
+      The supporting pillars for the types of accelerated transitions envisaged 
       in the Orderly scenarios would involve radical changes in climate policy, 
       via significant increases in carbon prices, as well as much more stringent 
       regulatory 'command and control' policies. While the average utility company 
@@ -167,7 +164,7 @@ transition:
       Risks are heavily concentrated in carbon intensive utilities that do not have 
       adequate transition plans, whilst opportunities exist for utilities drawing 
       most heavily on zero and low carbon activities. Capital investments into 
-      fossil fuel intensive electricity would significantly lag investment into 
+      fossil intensive electricity would significantly lag investment into 
       green electricity and storage.
 
       ![Cumulative Energy Investment](Cumulative_Energy_Investment_Oil_and_Gas.png)
@@ -175,19 +172,14 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      Users of this tool might expect the valuation of zero and low carbon 
-      intensive utilities to increase in Orderly scenarios because their 
-      revenue and earnings would be boosted relative to a current policy 
-      baseline. However, they also need to be conscious that firms acting as 
-      'pure plays', like Renewable Electricity Companies, are high and arguably 
-      pricing in a far reaching, Orderly transition already. Conversely, 
-      valuations tend to be more attractive amongst currently carbon intensive 
-      utilities with credible transition plans. This is more of a constraint 
-      in the Below 2&deg;C scenario than the Net Zero 2050 scenario because a 
-      transition of that significance and rapidity is not in the price, in our 
-      judgement. 
+      Nevertheless, in orderly transition scenarios, one has to be careful about also 
+      expecting valuation uplifts in firms that act as 'pure plays' on an accelerated 
+      energy transition, like Renewable Electricity Companies. That is because valuations 
+      for that subset of firms are already high and arguably pricing in more aggressive 
+      transition and decarbonisation scenarios. However, this is less of a constraint 
+      in the Net Zero 2050 scenario because of the significance and rapidity of that transition. 
       
-      Focusing on electricity generation and capacity, solar and wind see the 
+      Focusing on electricity generation capacity, solar and wind see the 
       largest absolute and relative increases in both the Net Zero 2050 and 
       Below 2&deg;C scenarios. Non-biomass renewables are then the third best 
       performer. In contrast the outlook for natural gas and especially coal 
@@ -208,7 +200,7 @@ transition:
       from one particular energy-systems model, which makes particular 
       assumptions about how the relative costs of different technologies are 
       likely to evolve over the longer-term. Even in Orderly transition scenarios, 
-      the zero and low carbon 'winners' cannot be predicted with uncertainty. 
+      the zero and low carbon 'winners' cannot be predicted with certainty. 
       The relative cost reductions and growth rates of solar and wind technologies, 
       government nuclear investment plans, and the viability of biomass, hydrogen 
       and carbon capture and storage technologies at greater scale are all highly 
@@ -255,48 +247,60 @@ physical:
       change derived from countries' NDCs, or Current Policy scenarios in which there 
       is no policy change at all.
       
-      In these scenarios, the directional physical effects are very similar to the 
-      low physical risk scenarios outlined above, but the amplitude is considerably 
-      greater, especially under Current Policy.
+      The physical effects of climate change on utilities can be decomposed into the 
+      chronic, such as raised sea-levels and acute changes in the frequency and severity 
+      of weather events such as heatwaves, droughts, wildfires, tropical cyclones and flooding. 
+      These effects will definitionally be larger in high physical risk scenarios than low 
+      physical risk scenarios, with significant disruptions to the utility sector. Effects 
+      on profitability and valuations through this channel will be highly dependent on the 
+      locational characteristics of the underlying assets. 
 
     high_materiality: |
-      The utility sector would be affected through both chronic and acute impact 
-      channels. Chronic impacts include the effects of higher average temperatures 
-      reducing the performance of power stations, or sea level rises making the 
-      location of some assets unviable. 
+      The following examples illustrate how the utilities sector could be impacted in a 
+      low physical risk scenario:
       
-      Acute impacts include increased incidences of flooding, wildfires, droughts 
-      and other extreme weather events. These could lead to water contamination, 
-      damaged overhead powerlines and other infrastructure, and disrupted operations. 
-      The utilities sector in particular is especially susceptible to these events; 
-      a lot of generating infrastructure is located in areas exposed to increased 
-      flooding risk as well as tropical cyclone effects, and a large proportion of 
-      the value of most utilities is comprised of tangible (physical) capital.
+      **Chronic Impacts**:
       
-      There are many adaptation actions that companies can take against the high 
-      physical risks mentioned above. For example, investing in resilient solutions 
+      - **Higher average temperatures** could reduce demand for energy used for
+        heating, particularly natural gas demand. Performance of combined-cycle
+        power stations could decrease with an increase in temperature.
+        
+      - **Higher average sea levels** could render the existing locations of 
+        some utilities unviable, particularly those that are in low-lying coastal 
+        locations.
+      
+      **Acute Impacts**:
+      
+      - **More regular flooding, wildfires and other extreme weather events** 
+        can cause water contamination, damage overhead powerlines and other 
+        infrastructure, and disrupt operations. The utilities sector in particular 
+        is especially susceptible to these events; a lot of generating infrastructure 
+        is located in areas exposed to increased flooding risk as well as tropical 
+        cyclone effects, and a large proportion of the value of most utilities is 
+        comprised of tangible (physical) capital.
+      
+      There are many adaptation actions that companies can take to reduce the 
+      physical risks mentioned above. These include, investing in resilient solutions 
       e.g. underground power line networks, disaster prevention systems (e.g. 
-      vegetation management to keep tree limbs a safe distance from power lines), 
-      and increase contribution of electricity businesses vs gas businesses. 
-      
-      However, adaptation becomes more difficult and costly, the greater the extent 
+      vegetation management to keep tree limbs a safe distance from power lines) 
+      and increase contribution of electricity businesses vs gas businesses. However, 
+      adaptation becomes more difficult and costly, the greater the extent 
       of the temperature rises and climate change, especially as the consequences 
       become harder to predict.
       
-      As with the low physical risk scenarios, the most serious, sustained impacts 
-      on asset prices are likely to manifest later in the scenario horizon. Indeed, 
-      standard discounting methods generate relatively moderate negative effects 
-      on utility security valuations, though there is naturally significant 
-      variation depending on their locational characteristics.
+      The most serious, sustained impacts on asset prices are likely to manifest later 
+      in the scenario horizon. Indeed, standard discounting methods generate relatively 
+      moderate negative effects on utility security valuations, though there is naturally 
+      significant variation depending on their locational characteristics.
       
       It is also important to keep in mind that because the high physical risk 
       scenarios are also scenarios in which there is only an extremely slow energy 
       transition, the transitional risk effects on valuations will generally reverse 
-      compared with the Orderly and Disorderly transition scenarios.
+      compared with the Orderly and Disorderly transition risk scenarios.
       
-      For example, low-carbon intensive utilities generally benefit from valuation 
-      impairments at current market prices rather than uplifts, while high-carbon 
-      intensive utilities generally suffer uplifts instead of impairments. This is 
+      For example, low-carbon intensive utilities could face valuation 
+      impairments compared to current market prices rather than uplifts, while high-carbon 
+      intensive utilities may see uplifts instead of impairments. This is 
       because markets are generally pricing in a faster energy transition than 
       implied by countries' NDCs, and particularly the maintenance of current policy.
       
@@ -308,9 +312,9 @@ physical:
       n/a
     always: |
       Low physical risk scenarios capture all of the Orderly and Disorderly 
-      transition scenarios that keep long-term temperature increases Below 
+      transition risk scenarios that keep long-term temperature increases below 
       2&deg;C, with physical risks naturally being lowest, though not entirely 
-      absent, in the Net Zero or 1.5&deg;C scenarios.
+      absent, in the 1.5&deg;C scenarios (Net Zero 2050 and Divergent Net Zero).
       
       The physical effects of climate change on utilities can be decomposed into 
       the chronic, such as raised sea-levels and acute changes in the frequency 
@@ -332,8 +336,8 @@ physical:
         power stations could decrease with an increase in temperature.
         
       - **Higher average sea levels** could render the existing locations of 
-      some utilities unviable, particularly those that are in low-lying coastal 
-      locations.
+        some utilities unviable, particularly those that are in low-lying coastal 
+        locations.
 
       **Acute Impacts**:
 

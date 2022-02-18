@@ -35,66 +35,61 @@ description: |
 transition:
   high:
     exec_description: |
-      In Delayed/Divergent transition risk scenarios, the change to carbon and 
-      energy prices, regulations, consumer behaviour, etc., could impact financial 
-      services. However, the extent will depend on their business model, regions 
-      in which they operate as well as the industries/sectors of financial services' 
-      underlying exposures.
+      In Disorderly transition risk scenarios, the change to carbon and 
+      energy prices, regulations, consumer behaviour etc. could impact financial 
+      firms. However, the extent will depend on their business model, regions 
+      in which they operate as well as the industries/sectors that they provide 
+      financial services to.
     always: |
-      Financial services are at the heart of our economy, they serve as a 
+      Financial firms are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
       funds towards their most productive use and play a critical role in 
-      mitigating risk. The risks from climate change could largely depend 
-      on the business model of the financial service and the regions in which 
-      it operates. Because they have relatively low greenhouse gas emissions, 
-      the main financial risk for most financial services is from the impact 
-      of transition (and physical) risks on their counterparties (that is, firms 
-      they lend to, invest in and/or insure such as corporates and households) 
-      and/or the assets they manage.
+      mitigating risk. The risks from climate change will largely depend 
+      on the business model of the financial firm and the regions in which 
+      it operates. 
+      
+      Because they have relatively low greenhouse gas emissions, 
+      the main financial risk for most financial firms is from their 
+      counterparties (that is, firms they lend to, invest in and/or insure 
+      such as corporates and households) and/or the assets they manage.
 
       Where the increases in carbon and energy prices in the Disorderly transition
-      risk scenario could potentially result in financial impacts; the extent
-      of these will depend on the industries/sectors of financial services' underlying
-      exposures. The Disorderly transition risk scenario can affect real
-      financial asset valuations significantly, with considerable regional
-      differences. Sectors with high emissions are arguably most exposed to
-      transition risk. To determine the nature of the transition risks for financial 
-      services, it is necessary to examine the industries/sectors of their underlying 
+      risk scenarios could potentially result in financial impacts; the extent
+      of these will depend on the industries/sectors of financial firms' underlying
+      exposures. These scenarios can affect real financial asset valuations significantly, 
+      with considerable regional differences. Sectors with high emissions are arguably most 
+      exposed to transition risk. To determine the nature of the transition risks for financial 
+      firms, it is necessary to examine the industries/sectors of their underlying 
       exposures. 
 
-      In a Disorderly transition risk scenario, we expect to see a sharp change
-      in regulation, laws, consumer behaviour and/or technological development.
-      Sectors that are most vulnerable to this change tend to be in
-      the carbon intensive sectors or have limited ability to pass price
-      increases to customers. Hence, concentrations of lending or underwriting
-      to these sectors could be more highly exposed.
+      In these scenarios, we expect to see a change in regulation, laws, consumer 
+      behaviour and/or technological development. Sectors that are most vulnerable 
+      to this change tend to be in the carbon intensive sectors or have limited 
+      ability to pass price increases to customers. Hence, concentrations of lending 
+      or underwriting to these sectors could be more highly exposed.
     high_materiality: |
-      As highlighted in [SS3/19](https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2019/ss319), 
-      the changes in policy, carbon pricing, energy demand/mix and energy 
-      prices could impact financial services. For example:
+      The changes in policy, carbon pricing, energy demand/mix and energy 
+      prices could impact financial firms. For example:
       
       * Tightening energy efficiency standards for domestic and commercial 
       buildings could impact the risk in banks' buy-to-let lending portfolios. 
-      In Delayed/Divergent scenarios, emissions from residential and commercial 
+      In Disorderly transition risk scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from tightened 
       standards (as well as a change in energy mix).
       
       ![CO2 Emissions Residential and Commercial](CO2_emissions_Residential_and_Commercial_Disorderly.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      * **Falling asset values** due to rapid technological change, such as the 
-      development of electric vehicles or renewable energy technology, affecting 
-      the value of financial assets in the automotive and energy sector. 
+      * **Rapid technological change**, such as the development of electric vehicles 
+      or renewable energy technology, affecting the value of financial assets in the 
+      automotive and energy sector. 
       
-      * **Higher claims/loss of market value of counterparties** as companies in 
-      the wider economy that fail to mitigate, adapt to, or disclose the financial 
-      risks from climate change could be exposed to climate-related litigation, 
-      which could impact their market value or lead to higher claims for insurers 
-      that provide liability cover to those companies.
+      * **Higher losses or claims related to counterparties** that fail to mitigate 
+      or adapt to climate change.
 
-      Material exposures for financial services in Disorderly transition
+      Material exposures for financial firms in Disorderly transition
       risk scenarios could tend to occur where there are concentrations of
       lending, insurance underwriting, asset management and/or trading to
 
@@ -108,62 +103,61 @@ transition:
       out (e.g. a manufacturing company whose sole customer base is thermal coal
       mines).
 
-      Financial services investing in climate solutions, for example, renewable
+      Financial firms investing in climate solutions, for example, renewable
       energy, green hydrogen, battery electric vehicles, and carbon capture and
-      storage (technologies and market set to grow in a Disorderly transition
-      scenario) or investing in companies with ambitious commitments to reduce
+      storage (technologies and market set to grow in Disorderly transition
+      scenarios) or investing in companies with ambitious commitments to reduce
       their carbon emissions across the value chain in line with the Paris
-      Agreement should be less exposed to transition risk than financial services
+      Agreement should be less exposed to transition risk than financial firms
       investing in companies with carbon intensive activities with little or no
       ambition to change (current and future carbon emissions misaligned with
-      the Paris Agreement). Financial services' exposure to transition risks also
+      the Paris Agreement). Financial firms' exposure to transition risks also
       depends on their geographical and business mix (including jurisdictions
       most exposed to carbon policy risks and technologies which are the most
       threatened by the transition, for example, Internal Combustion Engines in
       the Automobile sector).
 
-      Financial services could need to identity whether their portfolio has exposures to
+      Financial firms could need to identity whether their portfolio has exposures to
       these types of industries and engage with these counterparties to aid
       their transition to a low carbon economy or, where this is not possible
       (e.g. when the portfolio must be adjusted quickly), divest. Failure to do
       this could result in further transition risks, such as a reduced social
-      licence to operate as their service suffers reputational damage. 
+      licence to operate as their firm suffers reputational damage. 
       
-      To mitigate this reputational risk, financial services would also need to 
+      To mitigate this reputational risk, financial firms would also need to 
       communicate progress in this area through disclosing their financed emissions. 
       Although it has been estimated that the finance sector funds emissions in an 
       amount that is more than 700 times greater than its own emissions, currently 
-      only one quarter of financial services disclose their financed emissions (
-      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf)).
+      only one quarter of financial firms disclose their financed emissions (
+      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf).
       
       Asset managers must also consider reputational transition risks and 
       avoid 'leakage' by ensuring their repriced carbon intensive assets are 
       retired or modified, rather than sold on and used elsewhere.
   low:
     exec_description: |
-      In Early/Orderly transition risk scenarios, the change to carbon and energy 
-      prices, regulations, consumer behaviour, etc., could impact financial services. 
+      In Orderly transition risk scenarios, the change to carbon and energy 
+      prices, regulations, consumer behaviour etc. could impact financial firms. 
       However, the extent will depend on their business model, regions in which they 
-      operate as well as the industries/sectors of financial services' underlying 
-      exposures.
+      operate as well as the industries/sectors that they provide financial services to.
     always: |
-      Financial services are at the heart of our economy, they serve as a 
+      Financial firms are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
       funds towards their most productive use and play a critical role in 
-      mitigating risk. The risks from climate change could largely depend 
-      on the business model of the financial service and the regions in which 
+      mitigating risk. The risks from climate change will largely depend 
+      on the business model of the financial firm and the regions in which 
       it operates. 
       
       Because they generally have relatively low greenhouse gas emissions, 
-      the main climate-related risks for most financial services is from
+      the main climate-related risks for most financial firms is from
       their counterparties (that is, firms they lend to, invest in and/or 
       insure such as corporates and households) and/or the assets they manage.
 
-      Where the increases in carbon and energy prices in the Early/Orderly
+      Where the increases in carbon and energy prices in the Orderly
       transition risk scenarios could potentially result in financial impacts,
-      the extent could depend on the industries/sectors of financial services'
+      the extent could depend on the industries/sectors of financial firms'
       underlying exposures. To determine the nature of the transition risks for
-      financial services, it is necessary to examine the industries/sectors of
+      financial firms, it is necessary to examine the industries/sectors of
       their underlying exposures. In these scenarios, we expect to see a change 
       in regulation, laws, consumer behaviour and/or technological development. 
       Sectors that are most vulnerable to this change tend to be in the carbon 
@@ -171,26 +165,28 @@ transition:
       customers. Hence, concentrations of lending or underwriting to these 
       sectors could be more highly exposed.
     high_materiality: |
-      As highlighted in [SS3/19](https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2019/ss319), 
-      the changes in policy, carbon pricing, energy demand/mix and energy 
-      prices could impact for financial services. For example:
+      Changes in policy, carbon pricing, energy demand/mix and energy 
+      prices could impact financial firms. For example:
       
       * Tightening energy efficiency standards for domestic and commercial 
       buildings could impact the risk in banks' buy-to-let lending portfolios. 
-      In Early/Orderly scenarios, emissions from residential and commercial 
+      In Orderly transition risk scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from tightened 
       standards (as well as a change in energy mix).
       
       ![CO2 Emissions Residential and Commercial](CO2_emissions_Residential_and_Commercial_Orderly.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Scenarios Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      * **Falling asset values** due to rapid technological change, such as the development of electric vehicles or renewable energy technology, affecting the value of financial assets in the automotive and energy sector. 
+      * **Rapid technological change**, such as the development of electric vehicles 
+      or renewable energy technology, affecting the value of financial assets in the 
+      automotive and energy sector. 
       
-      * **Higher claims/loss of market value of counterparties** as companies in the wider economy that fail to mitigate, adapt to, or disclose the financial risks from climate change could be exposed to climate-related litigation, which could impact their market value or lead to higher claims for insurers that provide liability cover to those companies.
+      * **Higher losses or claims related to counterparties** that fail to mitigate 
+      or adapt to climate change.
 
-      Material exposures for financial services in Early/Orderly transition risk
+      Material exposures for financial firms in Orderly transition risk
       scenarios could tend to occur where there are concentrations of lending,
       insurance underwriting, asset management and/or trading to
 
@@ -204,21 +200,21 @@ transition:
       out (e.g. a manufacturing company whose sole customer base is thermal coal
       mines).
 
-      Financial services investing in climate solutions, for example, renewable
+      Financial firms investing in climate solutions, for example, renewable
       energy, green hydrogen, battery electric vehicles, and carbon capture and
       storage (technologies and markets set to grow in an Orderly transition
       scenario) or investing in companies with ambitious commitments to reduce
       their carbon emissions across the value chain in line with the Paris
-      Agreement should be less exposed to transition risk than financial services
+      Agreement should be less exposed to transition risk than financial firms
       investing in companies with carbon intensive activities with little or no
       ambition to change (current and future carbon emissions misaligned with
-      the Paris Agreement). Financial services' exposure to transition risks also
+      the Paris Agreement). Financial firms' exposure to transition risks also
       depends on their geographical and business mix (including jurisdictions
       most exposed to carbon policy risks and technologies which are most
       threatened by the transition, for example, Internal Combustion Engines in
       the Automobile sector).
 
-      Financial services wield great power through their business activities and 
+      Financial firms wield great power through their business activities and 
       the decisions they make on what to finance, to insure and under which conditions, 
       and which products and companies to invest in. In addition, they can be instrumental 
       in the way they engage with and lobby policymakers. They can engage with the 
@@ -231,12 +227,12 @@ transition:
       as a reduced social licence to operate as their service suffers reputational
       damage.
       
-      To mitigate this reputational risk, financial services would also need to 
+      To mitigate this reputational risk, financial firms would also need to 
       communicate progress in this area through disclosing their financed emissions. 
       Although it has been estimated that the finance sector funds emissions in an 
       amount that is more than 700 times greater than its own emissions, currently 
-      only one quarter of financial services disclose their financed emissions (
-      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf)).
+      only one quarter of financial firms disclose their financed emissions (
+      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf).
       
       Asset managers must also consider reputational transition risks and avoid 
       'leakage' by ensuring their repriced carbon intensive assets are retired or 
@@ -244,19 +240,19 @@ transition:
 physical:
   high:
     exec_description: |
-      For most financial services, the main physical risks are from their 
+      For most financial firms, the main physical risks are from their 
       counterparties (i.e. firms they lend to, invest in and/or insure such 
       as corporates and households) and/or the assets they manage.
     always: |
-      Financial services are at the heart of our economy, they serve as a 
+      Financial firms are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
       funds towards their most productive use and play a critical role in 
       mitigating risk. The risks from climate change could largely depend 
-      on the business model of the financial service and the regions in which it 
+      on the business model of the financial firm and the regions in which it 
       operates. Because they have relatively low greenhouse gas emissions, 
-      the main financial risk for most financial services is from the 
+      the main financial risk for most financial firms is from the 
       impact of physical (and transition) risks on their counterparties 
-      (that is, firms they lend to, invest in and/or insure such as 
+      (that is, firms they lend to invest in and/or insure such as 
       corporates and households) and/or the assets they manage.
 
       To determine the nature of physical risks requires information on the
@@ -269,20 +265,20 @@ physical:
       labour productivity, agriculture, ecosystems, and sea-level rise. It can
       also change the frequency and severity of weather events such as
       heatwaves, droughts, wildfires, tropical cyclones, and flooding. Financial
-      services could need to consider how to adapt their physical operations to
+      firms could need to consider how to adapt their physical operations to
       ensure the safety of their staff and more general business continuity
       concerns. But their main financial risk could arise from the impact on
       their counterparties, which could be largely a function of their
       geographic location.
     high_materiality: |
-      Financial services are highly exposed to physical risks, particularly 
+      Financial firms are highly exposed to physical risks, particularly 
       those with concentrations of lending, insurance underwriting, asset 
       management and/or trading in geographies that could be affected by any 
-      of the different climate changes. Financial services with physical operations, 
+      of the different climate changes. Financial firms with physical operations, 
       such as offices, data centres, branch networks, could also be exposed to physical 
       risks within their own operations.
       
-      The following examples illustrate how financial services
+      The following examples illustrate how financial firms
       could be impacted in a high physical risk scenario:
 
       **Acute Impacts**
@@ -304,40 +300,37 @@ physical:
       - **Temperature** increases in some regions could be substantial,
         affecting everything from agriculture, to transport, to medical care.
 
-      There could be direct impacts on counterparties, impacting residential and 
+      There could be direct impacts on counterparties as well as residential and 
       commercial real estate, potentially reducing the value of those properties 
-      that are held as collateral against loans. This can lead to increased credit 
-      risks, particularly for banks, or to underwriting risks for liability insurers 
-      if it results in legal claims to recover financial losses from this physical 
-      damage. 
-      
-      Increasing frequency, severity or volatility of extreme weather events could 
-      also increase losses for non-life insurance companies', meaning that premiums 
-      could need to be increased to maintain margins. The insurance market already 
-      devotes much resource to acute impacts e.g. flood modelling and flood 
-      mapping, as a key weather peril. Different insurance entities could have 
-      different areas of focus, depending on the size, risk profile, business mix etc.
+      that are held as collateral against loans, thereby increasing loss given 
+      default if the customer is not able to repay the loan. Increasing frequency, 
+      severity or volatility of extreme weather events could also increase claims for 
+      non-life insurance companies', meaning that premiums could need to be increased 
+      to maintain margins. The insurance market already devotes much resource to acute 
+      impacts e.g. flood modelling and flood mapping, as a key weather peril. Different 
+      insurance entities could have different areas of focus, depending on the size, 
+      risk profile, business mix etc.
 
       In high physical risk scenarios, it may be that certain risks become
       uninsurable. That could have knock on consequences for other companies in
       the financial system. Counterparties' supply chains may also be vulnerable
       to physical impacts, affecting their sales, profit and loss, and balance
-      sheets. Financial services could need to identity whether their portfolio 
+      sheets. Financial firms could need to identity whether their portfolio 
       has exposures to these types of climate impacts, and also assess 
       the extent to which there are local defences, which reduce the risk.
   low:
     exec_description: |
       n/a
     always: |
-      Financial services are at the heart of our economy, they serve as a 
+      Financial firms are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
       funds towards their most productive use and play a critical role in 
-      mitigating risk. The risks from climate change could largely depend on 
-      the business model of the financial service and the regions in which it 
+      mitigating risk. The risks from climate change will largely depend on 
+      the business model of the financial firm and the regions in which it 
       operates. Because they have relatively low greenhouse gas emissions, 
-      the main financial risk for most financial services is from the 
+      the main financial risk for most financial firms is from the 
       impact of physical (and transition) risks on their counterparties 
-      (that is, firms they lend to, invest in and/or insure such as corporates 
+      (that is, firms they lend to invest in and/or insure such as corporates 
       and households) and/or the assets they manage.
 
       To determine the nature of physical risks requires information on the
@@ -345,7 +338,7 @@ physical:
       requires insights on the vulnerability (for example, how reliant is the
       asset on climate sensitive supplies?), the likelihood of a 'damage event'
       (e.g. flooding or heat-related failures), and the exposure (i.e. the
-      amount invested in that location). Financial services could need to consider
+      amount invested in that location). Financial firms could need to consider
       how to adapt their physical operations to ensure the safety of their staff
       and more general business continuity concerns. But their main financial
       risk could arise from the impact on their counterparties, which could be
@@ -357,14 +350,14 @@ physical:
       frequency and severity of weather events such as heatwaves, droughts,
       wildfires, tropical cyclones, and flooding.
     high_materiality: |
-      Financial services are highly exposed to physical risks, particularly
+      Financial firms are highly exposed to physical risks, particularly
       those with concentrations of lending, insurance underwriting, asset 
       management and/or trading in geographies that could be affected by 
-      any of the different climate changes. Financial services with physical 
+      any of the different climate changes. Financial firms with physical 
       operations, such as offices, data centres, branch networks, could also 
       be exposed to physical risks within their own operations.
       
-      The following examples illustrate how financial services
+      The following examples illustrate how financial firms
       could be impacted in a low physical risk scenario:
 
       **Acute Impacts**
@@ -386,26 +379,22 @@ physical:
       - **Temperature** increases in some regions could be substantial,
         affecting everything from agriculture, to transport, to medical care.
 
-      There could be direct impacts on counterparties, impacting residential and
+      There could be direct impacts on counterparties as well as residential and
       commercial real estate, potentially reducing the value of those properties
-      that are held as collateral against loans This can lead to increased credit 
-      risks, particularly for banks, or to underwriting risks for liability insurers 
-      if it results in legal claims to recover financial losses from this physical 
-      damage.
-      
-      Increasing frequency, severity or volatility of extreme weather events could 
-      also increase losses for non-life insurance companies', meaning that 
-      premiums could need to be increased to maintain margins. The insurance 
-      market already devotes much resource to acute impacts e.g. flood modelling 
-      and flood mapping, as a key weather peril. Different insurance entities 
-      could have different areas of focus, depending on the size, risk profile, 
-      business mix etc.
+      that are held as collateral against loans, thereby increasing loss given default
+      if the customer is not able to repay the loan. Increasing frequency, severity 
+      or volatility of extreme weather events could also increase claims for non-life 
+      insurance companies', meaning that premiums could need to be increased to 
+      maintain margins. The insurance market already devotes much resource to acute 
+      impacts e.g. flood modelling and flood mapping, as a key weather peril. Different 
+      insurance entities could have different areas of focus, depending on the size, 
+      risk profile, business mix etc.
       
       In a low physical risk scenario, it may be possible that certain risks
       become uninsurable. That could have knock on consequences for other
       companies in the financial system. Counterparties' supply chains may also
       be vulnerable to physical impacts, affecting their sales, profit and loss,
-      and balance sheets. Financial services could need to identity whether their 
+      and balance sheets. Financial firms could need to identity whether their 
       portfolio has exposures to these types of climate impacts, and also
       assess the extent to which there are local defences, which reduce the
       risk.

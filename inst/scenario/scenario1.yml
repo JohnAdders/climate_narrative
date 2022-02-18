@@ -1,26 +1,26 @@
-name: NGFS Early/Orderly Scenarios
+name: NGFS Orderly Scenarios
 position: 1
 transition: low
 physical: low
 exec_short: transition
 exec_description: |
-  The Early/Orderly transition risk scenarios could result in a gradual 
+  The Orderly transition risk scenarios could result in a gradual 
   reduction in CO<sub>2</sub> emissions and an increase in the carbon price. 
-  The investments in energy efficiency and low carbon are projected to increase 
+  The investments in energy efficiency and low carbon technologies are projected to increase 
   (e.g. annual investment in low carbon increases from ~750 billion USD to between 
-  ~2 trillion USD and ~3 trillion USD by 2030). The global mean temperatures are 
+  ~2 trillion USD and ~3 trillion USD by 2030). Global mean temperatures are 
   projected to increase across the world by 1.6&deg;C to 1.7&deg;C, compared to 
-  pre-industrial levels. 
+  pre-industrial levels, by 2050. 
   
   These scenarios could lead to chronic changes in living conditions affecting 
-  health, labour productivity (reduce capacity of the human body to perform physical 
-  labour from ~0.035% in 2020 to ~0.07% in 2050), agriculture, ecosystems, and 
-  sea-level rise. It can also further change the frequency and severity of weather 
-  events such as heatwaves, droughts, wildfires, tropical cyclones, and flooding. 
-  The GDP losses are estimated to be between -1.5% and -2.5% by 2050.
+  health, labour productivity (a decrease in labour productivity due to the reduced 
+  capacity of the human body to perform physical labour under hot and humid climate conditions), 
+  agriculture, ecosystems, and sea-level rise. It can also further change the frequency and 
+  severity of weather events such as heatwaves, droughts, wildfires, tropical cyclones, and flooding. 
+  The total cumulative relative GDP impact is estimated to be between -1.5% and -2.5% by 2050.
 
 description: |
-  These Early/Orderly transition risk scenarios assume that effective policy
+  These Orderly transition risk scenarios assume that effective policy
   changes are introduced in a timely manner.
 
   ![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)
@@ -62,9 +62,9 @@ description: |
   **Source:**
   [IIASA NGFS Scenario Explorer. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-  The investments in energy efficiency and low carbon are projected to increase 
-  in early/orderly transition risk scenarios. These are expected to be higher 
-  in a Below 2&deg;C scenario compared to a Net Zero 2050 scenario. Overall, firms 
+  The investments in energy efficiency and low carbon technologies are projected to increase 
+  in Orderly transition risk scenarios. These are expected to be higher 
+  in a Net Zero 2050 scenario compared to a Below 2&deg;C scenario. Overall, firms 
   could be required to readjust their capital expenditure in line with these 
   trends; developing more efficient and less carbon intensive products and 
   services in order to adhere to carbon pricing policies. The technologies 
@@ -72,8 +72,8 @@ description: |
   relatively older technology. Annual investment in energy efficiency increases 
   from ~200 billion USD (inflation adjusted to 2010 baseline) to between ~500 
   billion USD and ~750 billion USD by 2050, whilst annual investment in low 
-  carbon increases from ~750 billion USD to between ~2 trillion USD and ~3 
-  trillion USD by 2030. 
+  carbon technologies increases from ~750 billion USD to between ~2.5 trillion USD and ~3 
+  trillion USD by 2050. 
   
   ![Energy Efficiency Investment](Investment_Energy_Efficiency_Orderly.png)
 
@@ -94,10 +94,10 @@ description: |
   The increasing concentrations of carbon dioxide, methane and nitrous oxide in
   the atmosphere are unprecedented in at least the last 800,000 years and are
   extremely likely to have been the dominant cause of warming since the mid-20th
-  century. In these early/orderly transition risk scenarios global mean temperatures
-  are projected to increase across the world by 1.6&deg;C to 1.7&deg;C, compared to
-  pre-industrial levels, with land warming faster than oceans and high latitudes
-  experiencing higher warming giving rise to low physical risk.
+  century. In these scenarios global mean temperatures are projected to increase 
+  across the world by 1.6&deg;C to 1.7&deg;C, compared to pre-industrial levels by 2050, 
+  with land warming faster than oceans and high latitudes experiencing higher warming 
+  giving rise to low physical risk.
 
   ![Global mean temp rise](Global_mean_temperature_Orderly.png)
 
@@ -111,9 +111,7 @@ description: |
   in the Net Zero 2050 scenario, we could see the following:
   
   * A decrease in labour productivity due to the reduced capacity of the human 
-  body to perform physical labour under hot and humid climate conditions worsens 
-  from ~0.035% in 2020 to ~0.07% in 2050. However, in this scenario, the decrease 
-  lessens after 2050.
+  body to perform physical labour under hot and humid climate conditions.
   
   ![Labour Productivity](Labour_Productivity_Heat_Orderly.png)
 
@@ -136,22 +134,13 @@ description: |
   **Source:** 
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
-  In these scenarios the GDP losses are estimated to be between -1.5% and-2.5%
-  by 2050. World GDP losses from physical risks scale with the rise in
-  temperatures in the scenarios over time. GDP impacts from transition risk are
+  In these scenarios the total cumulative relative GDP impact is estimated to be 
+  between -1.5% and-2.5% by 2050. World GDP losses from physical risks scale with 
+  the rise in temperatures in the scenarios over time. GDP impacts from transition risk are
   slightly positive in the Net Zero 2050 scenario as negative impacts on demand
   from higher carbon prices and energy costs are more than offset by the
   recycling of carbon tax revenues into government investment and lower
   employment taxes.
-
-  The GDP losses highlighted in the below graph were calculated based on Kalkuhl 
-  and Wenz (2020) methodology, at the country level for the change in average 
-  temperature in each scenario compared to the previous year.
-  This methodology does not include impacts related to extreme weather, sea-level
-  rise or wider societal impacts from migration or conflict; 
-  these would likely strongly increase the physical risk. These estimates also
-  do not fully capture adaptation, which would reduce impacts but require
-  significant investment.
   
   ![GDP](GDP_Orderly.png)
 
