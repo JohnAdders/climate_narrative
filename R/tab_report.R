@@ -1,21 +1,19 @@
 tab_report_ui <- function() {
-  valid_options <- c(
+  scenario_options <- c(
     "",
     unname(unlist(lapply(global$scenarios, function(x) x$name)))
   )
-
   dropdown_1 <- selectInput(
     "report_scenario_selection",
     "Select the scenario to show",
-    valid_options,
+    scenario_options,
     selectize = FALSE
   )
-  options <- ""
-  names(options) <- "All relevant sectors"
+  sector_options <- ""
   dropdown_2 <- selectInput(
     "report_sector_selection",
     "Select the sector to show",
-    options,
+    sector_options,
     selectize = FALSE
   )
   
