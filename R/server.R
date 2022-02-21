@@ -119,6 +119,7 @@ server <- function(input, output, session) {
     }
     temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
+      include_exposures <- TRUE
       if (input$report_sector_selection == "") {
         exec_summary_layout <- 1
       } else {
@@ -130,18 +131,21 @@ server <- function(input, output, session) {
           global$report_version,
           input$report_scenario_selection,
           FALSE,
-          exec_summary_layout
+          exec_summary_layout,
+          include_exposures
         ),
         session$userData$temp_md_scenario
       )
     } else {
+      include_exposures <- FALSE
       write_report_to_file(
         get_report_contents(
           get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
           global$report_version,
           input$report_scenario_selection,
           FALSE,
-          2
+          2,
+          include_exposures
         ),
         session$userData$temp_md_scenario
       )
@@ -208,6 +212,7 @@ server <- function(input, output, session) {
         )
       )
       if (input$rep_type == "inst"){
+        include_exposures <- TRUE
         if (input$report_sector_selection == "") {
           exec_summary_layout <- 1
         } else {
@@ -219,18 +224,21 @@ server <- function(input, output, session) {
             global$report_version,
             input$report_scenario_selection,
             TRUE,
-            exec_summary_layout
+            exec_summary_layout,
+            include_exposures
           ),
           session$userData$temp_md_scenario_and_commons
         )
       } else {
+        include_exposures <- FALSE
         write_report_to_file(
           get_report_contents(
             get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
             global$report_version,
             input$report_scenario_selection,
             TRUE,
-            2
+            2,
+            include_exposures
           ),
           session$userData$temp_md_scenario_and_commons
         )
@@ -277,7 +285,8 @@ server <- function(input, output, session) {
           global$report_version,
           input$report_scenario_selection,
           TRUE,
-          1
+          1,
+          TRUE
         ),
         session$userData$temp_md_dev
       )
