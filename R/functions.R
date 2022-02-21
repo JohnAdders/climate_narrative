@@ -1497,3 +1497,18 @@ render_html <- function(input_file, output_file){
   close(file_conn)
   return(invisible(NULL))
 }
+
+# refactor - top down
+
+produce_report <- function(report_contents, report_settings){ 
+  report_version <- settings$report_version
+  md_file <- settings$md_file
+  output_file <- settings$output_file
+  toc_output_file <- settings$toc_output_file # global$sidebar_toc (HTML only)
+  output_format <- settings$output_format # a full rmarkdown specs?
+  institution_type <- settings$institution_type
+  report_type <- settings$report_type
+  sector_selection <- settings$sector_selection
+  scenario_selection <- settings$scenario_selection
+  
+}
