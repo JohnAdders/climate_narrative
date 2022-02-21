@@ -24,9 +24,10 @@ run_shiny_app <- function(secrets_file="secret.yml", ...) {
     QuestionTab$new("bank_sov", "Bank: Sovereign Exposures", "bank_c", "report", TRUE, TRUE, global$exposures$sovereign, "bank", "S"),
     QuestionTab$new("ins_l", "Insurance: Life and Health Lines of Business", "inst_type", "ins_nl", TRUE, TRUE, global$exposures$insuranceLife, "insurance", "L"),
     QuestionTab$new("ins_nl", "Insurance: Property and Casualty Lines of Business", "ins_l", "ins_c", TRUE, TRUE, global$exposures$insuranceNonlife, "insurance", "N"),
-    QuestionTab$new("ins_c", "Insurance: Corporate and Real Estate Assets", "ins_nl", "ins_sov", TRUE, TRUE, global$exposures$insuranceCorporate, "insurance", "C", TRUE),
-    QuestionTab$new("ins_sov", "Insurance: Sovereign Assets", "ins_c", "report", TRUE, TRUE, global$exposures$sovereign, "insurance", "S"),
-    QuestionTab$new("am_c", "Asset Manager / Owner / Fund: Corporate Assets", "rep_type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C", TRUE),
+    QuestionTab$new("ins_c", "Insurance: Corporate Assets", "ins_nl", "ins_sov", TRUE, TRUE, global$exposures$insuranceCorporate, "insurance", "C", TRUE),
+    QuestionTab$new("ins_sov", "Insurance: Sovereign Assets", "ins_c", "ins_re", TRUE, TRUE, global$exposures$sovereign, "insurance", "S"),
+    QuestionTab$new("ins_re", "Insurance: Real Estate Exposures", "ins_sov", "report", TRUE, TRUE, global$exposures$insuranceRe, "insurance", "R"),
+    QuestionTab$new("am_c", "Asset Manager / Owner / Fund: Corporate Assets", "rep_type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C",TRUE),
     QuestionTab$new("am_sov", "Asset Manager / Owner / Fund: Sovereign Assets", "am_c", "am_re", TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
     QuestionTab$new("am_re", "Asset Manager/ Owner / Fund: Real Estate Assets", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
     QuestionTab$new("report", NULL, "rep_type", NULL)
