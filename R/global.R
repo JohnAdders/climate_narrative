@@ -22,5 +22,5 @@ names(global$report_versions) <- c(
   "v1 = base version",
   "v2 = v1 + added links to top (HTML only)",
   "v3 = v2 + interim executive summary (both formats)",
-  "v4 = v3 + html images width set to 80%"
+  "v4 = v3 + images width set to 6 inches (both formats), unless < 300px"
 )

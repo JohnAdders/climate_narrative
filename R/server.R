@@ -140,7 +140,8 @@ server <- function(input, output, session) {
         exec_summary_layout,
         include_exposures
       ),
-      session$userData$temp_md_scenario
+      session$userData$temp_md_scenario,
+      (global$report_version >= 4)
     )
     render_html(session$userData$temp_md_scenario, temp_html)
     result <- includeHTML(temp_html)

@@ -858,6 +858,7 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' @param fix_image_width whether to set all the images to fixed width
 #' @return NULL, output is a file as specified in the argument
 write_report_to_file <- function(report_contents, tempfile, fix_image_width=FALSE){
+  print(fix_image_width)
   file_conn <- file(tempfile)
   writeLines(
     report_contents,
@@ -865,22 +866,25 @@ write_report_to_file <- function(report_contents, tempfile, fix_image_width=FALS
   )
   close(file_conn)
   if (fix_image_width){
-    ensure_images_fit_page(tempfile, 6, TRUE)
+    ensure_images_fit_page(tempfile, 6, "in", TRUE)
   }
   return(invisible(NULL))
 }
 
 #' Go through the markdown file, find all png images and scale down where relevant
 #'
-#' @inherit rtf_postprocess
-#' @param max_width_inch maximum width of image in inches (wider will be scaled down to this value)
+#' @param filename markdown file to process
+#' @param target_width target width of images
 #' default is 7 inches which roughly matches vertical A4 page with margins
-#' @param fix_width if TRUE all images will be scaled exactly to max_width_inch. otherwise,
+#' @param target_width_units either "in" for inches of "%"
+#' @param fix_width if TRUE all images will be scaled exactly to target_width. otherwise,
 #' only the larger images will be scaled down
+#' @param min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
+#' this is to prevent ugly look of upscaled low resolution images
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-ensure_images_fit_page <- function(filename, max_width_inch=7, fix_width){
+ensure_images_fit_page <- function(filename, target_width=7, target_width_units=c("in","%"), fix_width, min_pixels_to_rescale=300){
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[",markdown)
@@ -888,12 +892,12 @@ ensure_images_fit_page <- function(filename, max_width_inch=7, fix_width){
     image_name <- substring(stringi::stri_match_first(markdown[i], regex="\\([[:graph:]]*.png"),2)
     image_attributes <- attributes(png::readPNG(paste0(image_name), info=TRUE))$info
     if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
-    if (fix_width){
-      warning(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
-      markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
-    } else if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
-      warning(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
-      markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
+    if (fix_width && image_attributes$dim[1] > min_pixels_to_rescale){
+      print(image_name)
+      markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
+    } else if (target_width_units == "in" && image_attributes$dim[1]/image_attributes$dpi[1] > target_width){
+      warning(paste0("image ", image_name, " has width > ", target_width, target_width_units, ", resizing"))
+      markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch, target_width_units, " }")
     }
   }
   writeLines(markdown, file_conn)
@@ -1476,14 +1480,6 @@ render_html <- function(input_file, output_file){
       temp,
       perl=TRUE
     )    
-  }
-  # add class to images
-  if (global$report_version >= 4){
-    temp <- gsub(
-      '<img ',
-      '<img class="reportimage"',
-      temp
-    )   
   }
   # extract the table of contents
   if (global$sidebar_toc){
