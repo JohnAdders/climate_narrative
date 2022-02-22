@@ -1372,23 +1372,31 @@ get_test_report <- function(exposure_classes){
 #'
 get_inputs <- function(exposure_classes_names, all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
   out <- all_inputs_table
+  print(1)
   if (override_materiality != ""){
+    print(2)
     out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered=T)
     out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
-  } else {}
+  } else {print(3)}
   if (inst_type != ""){
+    print(4)
     out <- out[(which(out$type == inst_type & out$materiality != "N/A")), ]
   }
+  print(5)
   if (sector != ""){
+    print(6)
     selected_item <- names(
       #which(sapply(exposure_classes, `[[`, i = "name") == sector)
       which(exposure_classes_names == sector)
     )
     out <- out[out$item == selected_item, ]
   }
+  print(7)
   if (aggregate){
+    print(8)
     out <- aggregate_inputs(out)
   }
+  print(9)
   return(out)
 }
 

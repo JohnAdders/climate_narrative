@@ -1,6 +1,6 @@
 # top down refactor
 get_report_settings <- function(file_format, report_version, rep_type, inst_type, 
-  report_sector_selection, report_scenario_selection, override_materiality
+  report_sector_selection, report_scenario_selection
 ){
   settings <- list(
     file_format=file_format,
@@ -8,11 +8,11 @@ get_report_settings <- function(file_format, report_version, rep_type, inst_type
     rep_type=rep_type,
     inst_type=inst_type, 
     report_sector_selection=report_sector_selection,
-    report_scenario_selection=report_scenario_selection,
-    override_materiality=override_materiality
+    report_scenario_selection=report_scenario_selection
   )
   if (rep_type == "inst"){
     #inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
+    settings$override_materiality <- ""
     settings$include_exposures <- TRUE
     if (report_sector_selection == "") {
       settings$exec_summary_layout <- 1
@@ -22,6 +22,7 @@ get_report_settings <- function(file_format, report_version, rep_type, inst_type
   } else {
     settings$exec_summary_layout <- 2
     #inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
+    settings$override_materiality <- "High"
     settings$include_exposures <- FALSE
   }
   if (file_format == "html"){
@@ -47,7 +48,7 @@ get_report_settings <- function(file_format, report_version, rep_type, inst_type
   settings$fix_image_width <- TRUE
   settings$md_file <- tempfile(fileext=".md")
   settings$output_file <- "C:/Users/kopalski/Desktop/temp/temp.html"
-  settings$exposure_classes_names <- names(global$exposure_classes)
+  settings$exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
   return(settings)
 }
 
@@ -69,9 +70,8 @@ produce_report <- function(all_inputs, settings){
   exposure_classes_names <- settings$exposure_classes_names
   override_materiality <- settings$override_materiality
   print("settings read")
-  inputs <- get_inputs(exposure_classes_names, all_inputs, inst_type, report_sector_selection, override_materiality)
+  inputs <- get_inputs(exposure_classes_names, all_inputs, inst_type, report_sector_selection, FALSE, override_materiality)
   print("inputs produced")
-
   report_contents <- get_report_contents(
     global$tabs,
     global$scenarios,

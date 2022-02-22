@@ -123,6 +123,15 @@ server <- function(input, output, session) {
     if (report_message() != "") {
       return("")
     }
+    if (global$refactor){
+      print("settings")
+      settings <- get_report_settings("html", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+      print("report")
+      produce_report(all_inputs(), settings)
+      print("to browser")
+      result <- includeHTML("C:/Users/kopalski/Desktop/temp/temp.html")
+      return(result)
+    } # old code below
     exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
     temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
