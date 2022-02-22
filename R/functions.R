@@ -1479,8 +1479,13 @@ render_html <- function(input_file, output_file, report_version, sidebar_toc){
       fig_caption = FALSE
     )
   )
+  html_postprocess(input_file, report_version)
+  return(invisible(NULL))
+}
+
+html_postprocess <- function(file, report_version){
   # replace back the images links
-  file_conn <- file(output_file)
+  file_conn <- file(file)
   temp <- readLines(file_conn)
   temp <- gsub(
     system.file("www", package = "climate.narrative"),
@@ -1504,7 +1509,8 @@ render_html <- function(input_file, output_file, report_version, sidebar_toc){
     )   
   }
   # extract the table of contents
-  if (sidebar_toc == 1){
+  # disabled for a moment
+  if (FALSE){#sidebar_toc == 1){
     toc_start <- grep("<div id=\"TOC\">", temp)
     div_end <- grep("</div>", temp)
     toc_end <- min(div_end[div_end > toc_start])
