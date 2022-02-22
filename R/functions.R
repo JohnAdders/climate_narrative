@@ -1448,7 +1448,7 @@ render_rtf <- function(input_file, output_file, res_path){
   # Cause unknown, maybe due to some weird blank characters instead of space?
   # Therefore added a control to throw error if the file is truncated in the process
   if (file.size(input_file) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-  rtf_postprocess(input_file, global$report_version)
+  rtf_postprocess(output_file, global$report_version)
   return(invisible(NULL))
 }
 
@@ -1465,15 +1465,20 @@ render_html <- function(input_file, output_file){
       fig_caption = FALSE
     )
   )
+  html_postprocess(output_file, global$report_version)
+  return(invisible(NULL))
+}
+
+html_postprocess <- function(file, report_version){
   # replace back the images links
-  file_conn <- file(output_file)
+  file_conn <- file(file)
   temp <- readLines(file_conn)
   temp <- gsub(
     system.file("www", package = "climate.narrative"),
     "climate_narrative",
     temp
   )
-  if (global$report_version >= 2){
+  if (report_version >= 2){
     temp <- gsub(
       "(<h[1-5]?>)(.*)(</h[1-5]?>)",
       "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
@@ -1482,6 +1487,7 @@ render_html <- function(input_file, output_file){
     )    
   }
   # extract the table of contents
+  # disabled for a moment
   if (global$sidebar_toc){
     toc_start <- grep("<div id=\"TOC\">", temp)
     div_end <- grep("</div>", temp)
