@@ -89,7 +89,7 @@ produce_report <- function(all_inputs, settings){
   )
   close(file_conn)
   if (fix_image_width){
-    ensure_images_fit_page(md_file, 6, TRUE)
+    ensure_images_fit_page(md_file, 6, "in", TRUE)
   }
   rmarkdown::render(
     input = md_file,

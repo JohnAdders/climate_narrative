@@ -915,7 +915,6 @@ ensure_images_fit_page <- function(filename, target_width=7, target_width_units=
     image_attributes <- attributes(png::readPNG(paste0(image_name), info=TRUE))$info
     if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
     if (fix_width && image_attributes$dim[1] > min_pixels_to_rescale){
-      print(image_name)
       markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
     } else if (target_width_units == "in" && image_attributes$dim[1]/image_attributes$dpi[1] > target_width){
       warning(paste0("image ", image_name, " has width > ", target_width, target_width_units, ", resizing"))
@@ -1491,7 +1490,7 @@ render_rtf <- function(input_file, output_file, res_path, report_version){
   # Cause unknown, maybe due to some weird blank characters instead of space?
   # Therefore added a control to throw error if the file is truncated in the process
   if (file.size(input_file) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-  rtf_postprocess(input_file, report_version)
+  rtf_postprocess(output_file, report_version)
   return(invisible(NULL))
 }
 
@@ -1508,7 +1507,7 @@ render_html <- function(input_file, output_file, report_version, sidebar_toc){
       fig_caption = FALSE
     )
   )
-  html_postprocess(input_file, report_version)
+  html_postprocess(output_file, report_version)
   return(invisible(NULL))
 }
 

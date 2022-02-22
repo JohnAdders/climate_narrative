@@ -101,7 +101,7 @@ server <- function(input, output, session) {
         name_of_blank_scenario <- "All relevant scenarios"
         name_of_blank_sector <- ""
       }
-      sectors_available <- (names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item)
+      sectors_available <- (names(global$exposure_classes) %in% get_inputs(NULL, all_inputs(), selection_type_filter)$item)
       sector_choices <- c(
           "",
           names(sapply(global$exposure_classes, `[[`, i = "name"))[sectors_available]
@@ -137,15 +137,14 @@ server <- function(input, output, session) {
     if (report_message() != "") {
       return("")
     }
+    temp_html <- tempfile(fileext = ".html")
     if (global$report_version >= 5){
-      temp_html <- tempfile(fileext = ".html")
       settings <- get_report_settings(temp_html, "html", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
       produce_report(all_inputs(), settings)
       result <- includeHTML(temp_html)
       return(result)
     } # old code below
     exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
-    temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
       inputs <- get_inputs(exposure_classes_names, all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
       include_exposures <- TRUE
@@ -158,17 +157,21 @@ server <- function(input, output, session) {
       exec_summary_layout <- 2
       inputs <- get_inputs(exposure_classes_names, all_inputs(), "", input$report_sector_selection, FALSE, "High")
       include_exposures <- FALSE
-      write_report_to_file(
-        get_report_contents(
-          get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
-          global$report_version,
-          input$report_scenario_selection,
-          FALSE,
-          2,
-          include_exposures
-        ),
-        session$userData$temp_md_scenario
-      )
+      # write_report_to_file(
+      #   get_report_contents(
+      #     global$tabs,
+      #     global$scenarios,
+      #     global$sections,
+      #     global$exposure_classes,
+      #     inputs,
+      #     global$report_version,
+      #     input$report_scenario_selection,
+      #     FALSE,
+      #     2,
+      #     include_exposures
+      #   ),
+      #   session$userData$temp_md_scenario
+      # )
     }
     if (global$sidebar_toc != 2){
       output_format = rmarkdown::html_document(
@@ -190,37 +193,37 @@ server <- function(input, output, session) {
         fig_caption = FALSE
       )
     }
-    rmarkdown::render(
-      input = session$userData$temp_md_scenario,
-      output_file = temp_html,
-      output_format = output_format
-    )
-    # replace back the images links
-    file_conn <- file(temp_html)
-    temp <- readLines(file_conn)
-    temp <- gsub(
-      system.file("www", package = "climate.narrative"),
-      "climate_narrative",
-      temp
-    )
-    if (global$report_version >= 2){
-      temp <- gsub(
-        "(<h[1-5]?>)(.*)(</h[1-5]?>)",
-        "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
-        temp,
-        perl=TRUE
-      )    
-    }
-    # extract the table of contents
+    # rmarkdown::render(
+    #   input = session$userData$temp_md_scenario,
+    #   output_file = temp_html,
+    #   output_format = output_format
+    # )
+    # # replace back the images links
+    # file_conn <- file(temp_html)
+    # temp <- readLines(file_conn)
+    # temp <- gsub(
+    #   system.file("www", package = "climate.narrative"),
+    #   "climate_narrative",
+    #   temp
+    # )
+    # if (global$report_version >= 2){
+    #   temp <- gsub(
+    #     "(<h[1-5]?>)(.*)(</h[1-5]?>)",
+    #     "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
+    #     temp,
+    #     perl=TRUE
+    #   )    
+    # }
+    # # extract the table of contents
     
-    if (global$sidebar_toc == 1){
-      toc_start <- grep("<div id=\"TOC\">", temp)
-      div_end <- grep("</div>", temp)
-      toc_end <- min(div_end[div_end > toc_start])
-      toc <- temp[toc_start:toc_end]
-      output$html_report_nav <- renderUI(HTML(toc))
-      temp <- temp[-(toc_start:toc_end)]
-    }
+    # if (global$sidebar_toc == 1){
+    #   toc_start <- grep("<div id=\"TOC\">", temp)
+    #   div_end <- grep("</div>", temp)
+    #   toc_end <- min(div_end[div_end > toc_start])
+    #   toc <- temp[toc_start:toc_end]
+    #   output$html_report_nav <- renderUI(HTML(toc))
+    #   temp <- temp[-(toc_start:toc_end)]
+    # }
     write_report_to_file(
       get_report_contents(
         global$tabs,
@@ -284,6 +287,10 @@ server <- function(input, output, session) {
       }
       write_report_to_file(
         get_report_contents(
+          global$tabs,
+          global$scenarios,
+          global$sections,
+          global$exposure_classes,
           inputs,
           global$report_version,
           input$report_scenario_selection,
@@ -319,6 +326,10 @@ server <- function(input, output, session) {
       } else {
       write_report_to_file(
         get_report_contents(
+          global$tabs,
+          global$scenarios,
+          global$sections,
+          global$exposure_classes,
           all_inputs(),
           global$report_version,
           input$report_scenario_selection,
