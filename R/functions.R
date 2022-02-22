@@ -1383,11 +1383,7 @@ get_inputs <- function(exposure_classes_names, all_inputs_table, inst_type="", s
     out <- out[(which(out$type == inst_type & out$materiality != "N/A")), ]
   }
   if (sector != ""){
-    selected_item <- names(
-      #which(sapply(exposure_classes, `[[`, i = "name") == sector)
-      which(exposure_classes_names == sector)
-    )
-    out <- out[out$item == selected_item, ]
+    out <- out[out$item == sector, ]
   }
   if (aggregate){
     out <- aggregate_inputs(out)
