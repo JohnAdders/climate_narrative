@@ -1529,8 +1529,8 @@ html_postprocess <- function(file, report_version){
     )    
   }
   # extract the table of contents
-  # disabled for a moment
-  if (FALSE){#sidebar_toc == 1){
+  # TODO: fix the toc code below
+  if (sidebar_toc == 1){
     toc_start <- grep("<div id=\"TOC\">", temp)
     div_end <- grep("</div>", temp)
     toc_end <- min(div_end[div_end > toc_start])
