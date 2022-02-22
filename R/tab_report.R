@@ -75,7 +75,7 @@ tab_report_ui <- function() {
         )
       ))
     }
-    if (global$sidebar_toc){
+    if (global$sidebar_toc == 1){
       out <- c(
         out,
         list(

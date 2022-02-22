@@ -144,6 +144,68 @@ server <- function(input, output, session) {
       exec_summary_layout <- 2
       inputs <- get_inputs(exposure_classes_names, all_inputs(), "", input$report_sector_selection, FALSE, "High")
       include_exposures <- FALSE
+      write_report_to_file(
+        get_report_contents(
+          get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
+          global$report_version,
+          input$report_scenario_selection,
+          FALSE,
+          2,
+          include_exposures
+        ),
+        session$userData$temp_md_scenario
+      )
+    }
+    if (global$sidebar_toc != 2){
+      output_format = rmarkdown::html_document(
+        toc = TRUE,
+        toc_float = FALSE,
+        toc_depth = 2,
+        number_sections = FALSE,
+        self_contained = FALSE,
+        fig_caption = FALSE
+      )
+    } else {
+      output_format = rmarkdown::html_document(
+        toc = TRUE,
+        toc_float = list(collapsed=FALSE),
+        theme = "sandstone",
+        toc_depth = 2,
+        number_sections = FALSE,
+        self_contained = TRUE,
+        fig_caption = FALSE
+      )
+    }
+    rmarkdown::render(
+      input = session$userData$temp_md_scenario,
+      output_file = temp_html,
+      output_format = output_format
+    )
+    # replace back the images links
+    file_conn <- file(temp_html)
+    temp <- readLines(file_conn)
+    temp <- gsub(
+      system.file("www", package = "climate.narrative"),
+      "climate_narrative",
+      temp
+    )
+    if (global$report_version >= 2){
+      temp <- gsub(
+        "(<h[1-5]?>)(.*)(</h[1-5]?>)",
+        "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
+        temp,
+        perl=TRUE
+      )    
+    }
+    # extract the table of contents
+    
+    if (global$sidebar_toc == 1){
+      toc_start <- grep("<div id=\"TOC\">", temp)
+      div_end <- grep("</div>", temp)
+      toc_end <- min(div_end[div_end > toc_start])
+      toc <- temp[toc_start:toc_end]
+      output$html_report_nav <- renderUI(HTML(toc))
+      temp <- temp[-(toc_start:toc_end)]
     }
     write_report_to_file(
       get_report_contents(
