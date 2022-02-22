@@ -1,5 +1,4 @@
-# top down refactor
-get_report_settings <- function(file_format, report_version, rep_type, inst_type, 
+get_report_settings <- function(output_file, file_format, report_version, rep_type, inst_type, 
   report_sector_selection, report_scenario_selection
 ){
   settings <- list(
@@ -40,14 +39,14 @@ get_report_settings <- function(file_format, report_version, rep_type, inst_type
       toc_depth = 2,
       number_sections = FALSE,
       pandoc_args = c(
-        paste0("--resource-path=", res_path),
+        paste0("--resource-path=", system.file("www", package = "climate.narrative")),
         "--self-contained"
       )
     )
   }
   settings$fix_image_width <- TRUE
   settings$md_file <- tempfile(fileext=".md")
-  settings$output_file <- "C:/Users/kopalski/Desktop/temp/temp.html"
+  settings$output_file <- output_file
   settings$exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
   return(settings)
 }
@@ -69,9 +68,8 @@ produce_report <- function(all_inputs, settings){
   fix_image_width <- settings$fix_image_width
   exposure_classes_names <- settings$exposure_classes_names
   override_materiality <- settings$override_materiality
-  print("settings read")
+  #res_path <- settings$res_path
   inputs <- get_inputs(exposure_classes_names, all_inputs, inst_type, report_sector_selection, FALSE, override_materiality)
-  print("inputs produced")
   report_contents <- get_report_contents(
     global$tabs,
     global$scenarios,
@@ -84,29 +82,24 @@ produce_report <- function(all_inputs, settings){
     exec_summary_layout,
     include_exposures
   )
-  print("contents produced")
   file_conn <- file(md_file)
   writeLines(
     report_contents,
     file_conn
   )
   close(file_conn)
-  print("contents saved to file")
   if (fix_image_width){
     ensure_images_fit_page(md_file, 6, TRUE)
   }
-  print("images fixed")
   rmarkdown::render(
     input = md_file,
     output_file = output_file,
     output_format = output_format
   )
-  print("file rendered to file")
   if (is_rtf){
     rtf_postprocess(output_file, global$report_version)
   } else {
     html_postprocess(output_file, global$report_version)
   }
-  print("file post-processed")
   return(invisible(NULL))
 }

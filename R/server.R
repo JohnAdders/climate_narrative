@@ -123,13 +123,11 @@ server <- function(input, output, session) {
     if (report_message() != "") {
       return("")
     }
-    if (global$refactor){
-      print("settings")
-      settings <- get_report_settings("html", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
-      print("report")
+    if (global$report_version >= 5){
+      temp_html <- tempfile(fileext = ".html")
+      settings <- get_report_settings(temp_html, "html", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
       produce_report(all_inputs(), settings)
-      print("to browser")
-      result <- includeHTML("C:/Users/kopalski/Desktop/temp/temp.html")
+      result <- includeHTML(temp_html)
       return(result)
     } # old code below
     exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
@@ -169,7 +167,7 @@ server <- function(input, output, session) {
 
   observeEvent(input$testbutton, {
     output$test <- renderUI({
-      settings <- get_report_settings("html", 4, "inst", "bank", "", "")
+      settings <- get_report_settings("C:/Users/kopalski/Desktop/temp/temp.html", "html", 4, "inst", "bank", "", "")
       produce_report(all_inputs(), settings)
       result <- includeHTML("C:/Users/kopalski/Desktop/temp/temp.html")
       return(result)
@@ -187,6 +185,12 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
+      if (global$report_version >= 5){
+        settings <- get_report_settings(session$userData$temp_rtf, "rtf", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+        produce_report(all_inputs(), settings)
+        removeModal()
+        file.copy(session$userData$temp_rtf, file)
+      } else { # old code below
       exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
       if (input$rep_type == "inst"){
         inputs <- get_inputs(exposure_classes_names, all_inputs(), input$inst_type, input$report_sector_selection)
@@ -216,6 +220,7 @@ server <- function(input, output, session) {
       render_rtf(session$userData$temp_md_scenario_and_commons, session$userData$temp_rtf, res_path, global$report_version)
       removeModal()
       file.copy(session$userData$temp_rtf, file)
+      }
     }
   )
 
@@ -229,6 +234,12 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
+      if (global$report_version >= 5){
+        settings <- get_report_settings(session$userData$temp_rtf, "rtf", global$report_version, "inst", "", "", "")
+        produce_report(all_inputs(), settings)
+        removeModal()
+        file.copy(session$userData$temp_rtf, file)
+      } else {
       write_report_to_file(
         get_report_contents(
           all_inputs(),
@@ -245,6 +256,7 @@ server <- function(input, output, session) {
       removeModal()
       file.copy(session$userData$temp_rtf_dev, file)
     }
+    }
   )
 
 output$dev_report_2 <- downloadHandler(
@@ -257,6 +269,13 @@ output$dev_report_2 <- downloadHandler(
           footer = NULL
         )
       )
+      if (global$report_version >= 5){
+        warning("sector by sector report still TODO")
+        settings <- get_report_settings(session$userData$temp_rtf, "rtf", global$report_version, "sector", "", "", "")
+        produce_report(all_inputs(), settings)
+        removeModal()
+        file.copy(session$userData$temp_rtf, file)
+      } else {
       write_report_to_file(
         get_test_report(global$exposure_classes),
         session$userData$temp_md_dev_2,
@@ -265,6 +284,7 @@ output$dev_report_2 <- downloadHandler(
       render_rtf(session$userData$temp_md_dev_2, session$userData$temp_rtf_dev_2, res_path, global$report_version)
       removeModal()
       file.copy(session$userData$temp_rtf_dev_2, file)
+    }
     }
   )
 

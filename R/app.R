@@ -68,14 +68,9 @@ load_secrets <- function(secrets_file="secret.yml") {
       warning("Sidebar table of contents setting not found. Defaulting to FALSE")
       global$sidebar_toc <- FALSE
     }
-    if (is.null(global$refactor)){
-      warning("Refactor flag not found. Defaulting to FALSE")
-      global$refactor <- FALSE
-    }
   } else {
     global$dev <- TRUE
     global$progress_bar <- FALSE
     global$sidebar_toc <- FALSE
-    global$refactor <- FALSE
   }
 }
