@@ -1,7 +1,12 @@
 get_report_settings <- function(output_file, file_format, report_version, rep_type, inst_type, 
   report_sector_selection, report_scenario_selection
 ){
+  # hierarchical structure?
   settings <- list(
+    tabs=global$tabs,
+    scenarios=global$scenarios,
+    sections=global$sections,
+    exposure_classes=global$exposure_classes,
     file_format=file_format,
     report_version=report_version,
     rep_type=rep_type,
@@ -52,6 +57,10 @@ get_report_settings <- function(output_file, file_format, report_version, rep_ty
 }
 
 produce_report <- function(all_inputs, settings){ 
+  tabs <- settings$tabs
+  scenarios <- settings$scenarios
+  sections <- settings$sections
+  exposure_classes <- settings$exposure_classes
   report_version <- settings$report_version
   md_file <- settings$md_file
   output_file <- settings$output_file
@@ -71,10 +80,10 @@ produce_report <- function(all_inputs, settings){
   #res_path <- settings$res_path
   inputs <- get_inputs(exposure_classes_names, all_inputs, inst_type, report_sector_selection, FALSE, override_materiality)
   report_contents <- get_report_contents(
-    global$tabs,
-    global$scenarios,
-    global$sections,
-    global$exposure_classes,
+    tabs,
+    scenarios,
+    sections,
+    exposure_classes,
     inputs,
     report_version,
     report_scenario_selection,
@@ -97,9 +106,9 @@ produce_report <- function(all_inputs, settings){
     output_format = output_format
   )
   if (is_rtf){
-    rtf_postprocess(output_file, global$report_version)
+    rtf_postprocess(output_file, report_version)
   } else {
-    html_postprocess(output_file, global$report_version)
+    html_postprocess(output_file, report_version)
   }
   return(invisible(NULL))
 }
