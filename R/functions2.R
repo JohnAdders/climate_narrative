@@ -8,37 +8,22 @@ get_report_settings <- function(
   report_sector_selection,
   report_scenario_selection
 ){
-  # hierarchical structure?
-  settings <- list(
-    tabs=global$tabs,
-    scenarios=global$scenarios,
-    sections=global$sections,
-    exposure_classes=global$exposure_classes,
-    file_format=file_format,
-    report_version=report_version,
-    sidebar_toc=sidebar_toc,
-    rep_type=rep_type,
-    inst_type=inst_type, 
-    report_sector_selection=report_sector_selection,
-    report_scenario_selection=report_scenario_selection
-  )
+  # translating the parameters to complete setup
   if (rep_type == "inst"){
-    #inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
-    settings$override_materiality <- ""
-    settings$include_exposures <- TRUE
+    override_materiality <- ""
+    include_exposures <- TRUE
     if (report_sector_selection == "") {
-      settings$exec_summary_layout <- 1
+      exec_summary_layout <- 1
     } else {
-      settings$exec_summary_layout <- 2
+      exec_summary_layout <- 2
     }
   } else {
-    settings$exec_summary_layout <- 2
-    #inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
-    settings$override_materiality <- "High"
-    settings$include_exposures <- FALSE
+    exec_summary_layout <- 2
+    override_materiality <- "High"
+    include_exposures <- FALSE
   }
   if (file_format == "html"){
-    settings$output_format <- rmarkdown::html_document(
+    output_format <- rmarkdown::html_document(
       toc = TRUE,
       toc_float = FALSE,
       toc_depth = 2,
@@ -47,7 +32,7 @@ get_report_settings <- function(
       fig_caption = FALSE
     )
   } else {
-    settings$output_format <- rmarkdown::rtf_document(
+    output_format <- rmarkdown::rtf_document(
       toc = TRUE,
       toc_depth = 2,
       number_sections = FALSE,
@@ -57,70 +42,123 @@ get_report_settings <- function(
       )
     )
   }
-  settings$image_width <- 6
-  settings$image_width_unit <- "in"
-  settings$image_width_fix <- TRUE
-  settings$md_file <- tempfile(fileext=".md")
-  settings$output_file <- output_file
-  settings$exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
+  image_width <- 6
+  image_width_unit <- "in"
+  image_width_fix <- TRUE
+  md_file <- tempfile(fileext=".md")
+  
+  # hierarchical structure
+  content_files <- list(
+    tabs = global$tabs,
+    scenarios = global$scenarios,
+    sections = global$sections,
+    exposure_classes = global$exposure_classes
+  )
+  
+  filter_settings <- list(
+    inst_type = inst_type,
+    report_sector_selection = report_sector_selection,
+    override_materiality = override_materiality
+  )
+
+  content_settings <- list(
+    report_version = report_version,
+    is_rtf = (output_format=="rtf"),
+    rep_type = rep_type,
+    report_scenario_selection = report_scenario_selection,
+    include_exposures = include_exposures,
+    exec_summary_layout = exec_summary_layout
+  )
+
+  render_settings <- list(
+    md_file = tempfile(fileext=".md"),
+    output_file = output_file,
+    output_format = output_format
+  )
+
+  image_settings = list(
+      image_width = 6,
+      image_width_unit = "in",
+      image_width_fix = TRUE
+    )
+  
+  postprocess_settings <- list(
+    file_format = file_format,
+    output_file = output_file,
+    report_version = report_version,
+    sidebar_toc = sidebar_toc
+  )
+  
+  settings <- list(
+    content_files = content_files,
+    filter_settings = filter_settings,
+    content_settings = content_settings,
+    render_settings = render_settings,
+    postprocess_settings = postprocess_settings
+  )
+
   return(settings)
 }
 
 produce_report <- function(all_inputs, settings){ 
-  tabs <- settings$tabs
-  scenarios <- settings$scenarios
-  sections <- settings$sections
-  exposure_classes <- settings$exposure_classes
-  report_version <- settings$report_version
-  sidebar_toc <- settings$sidebar_toc
-  md_file <- settings$md_file
-  output_file <- settings$output_file
-  #toc_output_file <- settings$toc_output_file # global$sidebar_toc (HTML only)
-  output_format <- settings$output_format # a full rmarkdown specs
-  file_format <- output_format$pandoc$to
-  is_rtf <- (file_format == "rtf")
-  inst_type <- settings$inst_type
-  rep_type <- settings$rep_type
-  report_sector_selection <- settings$report_sector_selection
-  report_scenario_selection <- settings$report_scenario_selection
-  exec_summary_layout <- settings$exec_summary_layout
-  include_exposures <- settings$include_exposures
-  image_width <- settings$image_width
-  image_width_unit <- settings$image_width_unit
-  image_width_fix <- settings$image_width_fix
-  exposure_classes_names <- settings$exposure_classes_names
-  override_materiality <- settings$override_materiality
-  inputs <- get_inputs(exposure_classes_names, all_inputs, inst_type, report_sector_selection, FALSE, override_materiality)
-  report_contents <- get_report_contents(
-    tabs,
-    scenarios,
-    sections,
-    exposure_classes,
+  content_files <- settings$content_files
+  filter_settings <- settings$filter_settings,
+  content_settings <- settings$content_settings
+  render_settings <- settings$render_settings
+  postprocess_settings <- settings$postprocess_settings
+
+  inputs <- filter_inputs(all_inputs, filter_settings)
+  report_contents <- get_report_contents_2(
+    contents_files,
     inputs,
-    report_version,
-    report_scenario_selection,
-    is_rtf,
-    exec_summary_layout,
-    include_exposures
+    contents_settings
   )
-  file_conn <- file(md_file)
+  file_conn <- file(render_settings$md_file)
   writeLines(
     report_contents,
     file_conn
   )
   close(file_conn)
-  if (image_width_fix){
-    ensure_images_fit_page(md_file, image_width, image_width_unit, image_width_fix)
+  if (image_settings$image_width_fix){
+    format_images(render_settings$md_file, image_settings)
   }
   rmarkdown::render(
-    input = md_file,
-    output_file = output_file,
-    output_format = output_format
+    input = render_settings$md_file,
+    output_file = render_settings$output_file,
+    output_format = render_settings$output_format
   )
-  if (is_rtf){
-    rtf_postprocess(output_file, report_version)
-  } else {
-    html_postprocess(output_file, report_version, sidebar_toc)
-  }
+  postprocess(file_format, output_file, report_version, sidebar_toc)
   return(invisible(NULL))
+}
+
+# refactored parameter version of existing functions
+filter_inputs <- function(all_inputs_table, filter_settings){
+  get_inputs(all_inputs_table, filter_settings$inst_type, filter_settings$sector, FALSE, filter_settings$override_materiality)
+}
+
+get_report_contents_2 <- function(content_files, inputs, content_settings){
+  get_report_contents(
+    content_files$tabs,
+    content_files$scenarios,
+    content_files$sections,
+    content_files$exposure_classes,
+    inputs,
+    content_settings$report_version,
+    content_settings$report_scenario_selection,
+    content_settings$is_rtf,
+    content_settings$exec_summary_layout,
+    content_settings$include_exposures
+  )
+}
+
+format_images <- function(md_file, image_settings){
+  ensure_images_fit_page(md_file, image_settings$image_width, image_settings$image_width_unit, image_settings$image_width_fix)
+}
+
+postprocess <- function(postprocess_settings){
+  if (postprocess_settings$file_format == "rtf"){
+    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
+  } else {
+    html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version, postprocess_settings$sidebar_toc)
+  }
 }

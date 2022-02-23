@@ -1402,7 +1402,7 @@ get_test_report <- function(exposure_classes){
 #' @param aggregate bool, whether to aggregate the inputs by sector
 #' @param override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
 #'
-get_inputs <- function(exposure_classes_names, all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
+get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
   out <- all_inputs_table
   if (override_materiality != ""){
     out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered=T)

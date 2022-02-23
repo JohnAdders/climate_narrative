@@ -73,8 +73,7 @@ server <- function(input, output, session) {
   })
 
   allow_report <- reactive({
-    exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
-    return(nrow(get_inputs(exposure_classes_names, all_inputs(), input$inst_type)))
+    return(nrow(get_inputs(all_inputs(), input$inst_type)))
   })
   
   report_message <- reactive({
@@ -144,9 +143,8 @@ server <- function(input, output, session) {
       result <- includeHTML(temp_html)
       return(result)
     } # old code below
-    exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
     if (input$rep_type == "inst"){
-      inputs <- get_inputs(exposure_classes_names, all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
+      inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
       include_exposures <- TRUE
       if (input$report_sector_selection == "") {
         exec_summary_layout <- 1
@@ -155,7 +153,7 @@ server <- function(input, output, session) {
       }
     } else {
       exec_summary_layout <- 2
-      inputs <- get_inputs(exposure_classes_names, all_inputs(), "", input$report_sector_selection, FALSE, "High")
+      inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
       include_exposures <- FALSE
     }
     if (global$sidebar_toc != 2){
@@ -225,9 +223,8 @@ server <- function(input, output, session) {
         removeModal()
         file.copy(session$userData$temp_rtf, file)
       } else { # old code below
-      exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
       if (input$rep_type == "inst"){
-        inputs <- get_inputs(exposure_classes_names, all_inputs(), input$inst_type, input$report_sector_selection)
+        inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
         include_exposures <- TRUE
         if (input$report_sector_selection == "") {
           exec_summary_layout <- 1
@@ -236,7 +233,7 @@ server <- function(input, output, session) {
         }
       } else {
         exec_summary_layout <- 2
-        inputs <- get_inputs(exposure_classes_names, all_inputs(), "", input$report_sector_selection, FALSE, "High")
+        inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
         include_exposures <- FALSE
       }
       write_report_to_file(
