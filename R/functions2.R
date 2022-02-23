@@ -16,6 +16,7 @@ get_report_settings <- function(
     exposure_classes=global$exposure_classes,
     file_format=file_format,
     report_version=report_version,
+    sidebar_toc=sidebar_toc,
     rep_type=rep_type,
     inst_type=inst_type, 
     report_sector_selection=report_sector_selection,
@@ -69,6 +70,7 @@ produce_report <- function(all_inputs, settings){
   sections <- settings$sections
   exposure_classes <- settings$exposure_classes
   report_version <- settings$report_version
+  sidebar_toc <- settings$sidebar_toc
   md_file <- settings$md_file
   output_file <- settings$output_file
   #toc_output_file <- settings$toc_output_file # global$sidebar_toc (HTML only)
