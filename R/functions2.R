@@ -1,5 +1,12 @@
-get_report_settings <- function(output_file, file_format, report_version, rep_type, inst_type, 
-  report_sector_selection, report_scenario_selection
+get_report_settings <- function(
+  output_file,
+  file_format,
+  report_version,
+  sidebar_toc, 
+  rep_type,
+  inst_type, 
+  report_sector_selection,
+  report_scenario_selection
 ){
   # hierarchical structure?
   settings <- list(
@@ -108,7 +115,7 @@ produce_report <- function(all_inputs, settings){
   if (is_rtf){
     rtf_postprocess(output_file, report_version)
   } else {
-    html_postprocess(output_file, report_version)
+    html_postprocess(output_file, report_version, sidebar_toc)
   }
   return(invisible(NULL))
 }
