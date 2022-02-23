@@ -184,7 +184,6 @@ exposure_grid_ui <- function(label) {
 #' @param label Label for grid
 #' @param dev Are we in developement mode
 #' @param width Width of each dropdown
-#' @param transpose whether to transpose the grid (relative to exposure_matrix)
 #'
 exposure_grid_server <- function(
   input,
@@ -193,9 +192,9 @@ exposure_grid_server <- function(
   tooltip_matrix,
   label,
   dev = FALSE,
-  width = NULL,
-  transpose
+  width = NULL
 ){
+  transpose <- (ncol(exposure_matrix) > 3)
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
   input_ids <- get_input_ids(exposure_matrix, label)
@@ -1325,7 +1324,8 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs){
       values <- cbind(tab$exposure[, 1], values)
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols=1)
       if (!is.null(values_trimmed)){
-        if (tab$transpose_exposures){
+        transpose <- (ncol(tab$exposure) > 3)
+        if (transpose){
           values_trimmed <- as.data.frame(t(values_trimmed))
           row_names <- rownames(values_trimmed)
           row_names <- gsub(".", " ", row_names, fixed = TRUE)

@@ -44,16 +44,7 @@ This is a wrapper over any ui and server that handles switching to previous/next
 
 \item{\code{subtype}}{subtype of tab within a type of institution (to group the inputs from all tabs)}
 
-\item{\code{transpose_exposure}}{flag to transpose the table of exposures (false by default)}
-
 \item{\code{ui_settings}}{optional list of parameters to pass to ui function}
-}
-\if{html}{\out{</div>}}
-}
-\section{Active bindings}{
-\if{html}{\out{<div class="r6-active-bindings">}}
-\describe{
-\item{\code{transpose_exposure}}{flag to transpose the table of exposures (false by default)}
 }
 \if{html}{\out{</div>}}
 }
@@ -84,7 +75,6 @@ from the relevant functions (or makes it empty if the function does not exist)
   exposure = NULL,
   type = NULL,
   subtype = NULL,
-  transpose_exposures = FALSE,
   ui_settings = list()
 )}\if{html}{\out{</div>}}
 }
