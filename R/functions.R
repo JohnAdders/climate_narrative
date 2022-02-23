@@ -858,7 +858,6 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' @param fix_image_width whether to set all the images to fixed width
 #' @return NULL, output is a file as specified in the argument
 write_report_to_file <- function(report_contents, tempfile, fix_image_width=FALSE){
-  print(fix_image_width)
   file_conn <- file(tempfile)
   writeLines(
     report_contents,
@@ -893,7 +892,6 @@ ensure_images_fit_page <- function(filename, target_width=7, target_width_units=
     image_attributes <- attributes(png::readPNG(paste0(image_name), info=TRUE))$info
     if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
     if (fix_width && image_attributes$dim[1] > min_pixels_to_rescale){
-      print(image_name)
       markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
     } else if (target_width_units == "in" && image_attributes$dim[1]/image_attributes$dpi[1] > target_width){
       warning(paste0("image ", image_name, " has width > ", target_width, target_width_units, ", resizing"))
