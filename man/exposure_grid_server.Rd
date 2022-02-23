@@ -11,8 +11,7 @@ exposure_grid_server(
   tooltip_matrix,
   label,
   dev = FALSE,
-  width = NULL,
-  transpose
+  width = NULL
 )
 }
 \arguments{
@@ -29,8 +28,6 @@ exposure_grid_server(
 \item{dev}{Are we in developement mode}
 
 \item{width}{Width of each dropdown}
-
-\item{transpose}{whether to transpose the grid (relative to exposure_matrix)}
 }
 \description{
 Produce a table of inputs with selectInput fields
