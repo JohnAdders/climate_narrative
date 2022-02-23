@@ -34,8 +34,6 @@ QuestionTab <- R6Class(
     type = NULL,
     #' @field subtype subtype of tab within a type of institution (to group the inputs from all tabs)
     subtype = NULL,
-    #' @field transpose_exposure flag to transpose the table of exposures (false by default)
-    transpose_exposures = NULL,
     #' @field ui_settings optional list of parameters to pass to ui function  
     ui_settings = NULL,
     #' @description the constructor fills the slots with values given
@@ -52,7 +50,7 @@ QuestionTab <- R6Class(
     #' @param subtype unique reference of tab within a type of issuers
     #' @param ui_settings (optional) list of arguments to pass to tab_ui
     initialize = function(tab_name, tab_title, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE,
-                          exposure = NULL, type = NULL, subtype = NULL, transpose_exposures = FALSE, ui_settings = list()) {
+                          exposure = NULL, type = NULL, subtype = NULL, ui_settings = list()) {
       self$tab_name <- tab_name
       self$tab_title <- tab_title
       self$tab_ui <- get0(paste0("tab_", tab_name, "_ui"))
@@ -67,7 +65,6 @@ QuestionTab <- R6Class(
       self$exposure <- exposure
       self$type <- type
       self$subtype <- subtype
-      self$transpose_exposures <- transpose_exposures
       self$ui_settings <- ui_settings
     },
     #' @description Tab server function that combines:
@@ -98,8 +95,7 @@ QuestionTab <- R6Class(
           produce_tooltip_matrix(self$exposure),
           paste(self$type, self$subtype, sep = "_"),
           global$dev,
-          width,
-          self$transpose_exposures
+          width
         )
         # in order to create a full report without visiting the tabs (e.g. dev mode or sector report):
         outputOptions(output, paste(self$type, self$subtype, sep = "_"), suspendWhenHidden = FALSE)

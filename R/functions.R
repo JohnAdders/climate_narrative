@@ -193,9 +193,9 @@ exposure_grid_server <- function(
   tooltip_matrix,
   label,
   dev = FALSE,
-  width = NULL,
-  transpose
+  width = NULL
 ){
+  transpose <- (ncol(exposure_matrix) > 3)
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
   input_ids <- get_input_ids(exposure_matrix, label)
