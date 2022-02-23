@@ -57,7 +57,9 @@ get_report_settings <- function(
       )
     )
   }
-  settings$fix_image_width <- TRUE
+  settings$image_width <- 6
+  settings$image_width_unit <- "in"
+  settings$image_width_fix <- TRUE
   settings$md_file <- tempfile(fileext=".md")
   settings$output_file <- output_file
   settings$exposure_classes_names <- sapply(global$exposure_classes, `[[`, i = "name")
@@ -83,10 +85,11 @@ produce_report <- function(all_inputs, settings){
   report_scenario_selection <- settings$report_scenario_selection
   exec_summary_layout <- settings$exec_summary_layout
   include_exposures <- settings$include_exposures
-  fix_image_width <- settings$fix_image_width
+  image_width <- settings$image_width
+  image_width_unit <- settings$image_width_unit
+  image_width_fix <- settings$image_width_fix
   exposure_classes_names <- settings$exposure_classes_names
   override_materiality <- settings$override_materiality
-  #res_path <- settings$res_path
   inputs <- get_inputs(exposure_classes_names, all_inputs, inst_type, report_sector_selection, FALSE, override_materiality)
   report_contents <- get_report_contents(
     tabs,
@@ -106,8 +109,8 @@ produce_report <- function(all_inputs, settings){
     file_conn
   )
   close(file_conn)
-  if (fix_image_width){
-    ensure_images_fit_page(md_file, 6, "in", TRUE)
+  if (image_width_fix){
+    ensure_images_fit_page(md_file, image_width, image_width_unit, image_width_fix)
   }
   rmarkdown::render(
     input = md_file,
