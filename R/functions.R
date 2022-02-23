@@ -1507,11 +1507,11 @@ render_html <- function(input_file, output_file, report_version, sidebar_toc){
       fig_caption = FALSE
     )
   )
-  html_postprocess(output_file, report_version)
+  html_postprocess(output_file, report_version, sidebar_toc)
   return(invisible(NULL))
 }
 
-html_postprocess <- function(file, report_version){
+html_postprocess <- function(file, report_version, sidebar_toc){
   # replace back the images links
   file_conn <- file(file)
   temp <- readLines(file_conn)
