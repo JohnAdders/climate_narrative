@@ -93,18 +93,37 @@ server <- function(input, output, session) {
     {
       if (input$rep_type == "inst"){
         selection_type_filter <- input$inst_type
+        name_of_blank_scenario <- ""
+        name_of_blank_sector <- "All relevant sectors"
       } else {
         selection_type_filter <- ""
+        name_of_blank_scenario <- "All relevant scenarios"
+        name_of_blank_sector <- ""
       }
+      sectors_available <- (names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item)
+      sector_choices <- c(
+          "",
+          names(sapply(global$exposure_classes, `[[`, i = "name"))[sectors_available]
+      )
+      names(sector_choices) <- c(
+        name_of_blank_sector,
+        unname(sapply(global$exposure_classes, `[[`, i = "name"))[sectors_available]
+      )
+      scenario_options <- c(
+        "",
+        unname(unlist(lapply(global$scenarios, function(x) x$name)))
+      )
+      names(scenario_options) <- scenario_options
+      names(scenario_options)[1] <- name_of_blank_scenario
       updateSelectInput(
         session,
         "report_sector_selection",
-        choices=c(
-          "",
-          unname(sapply(global$exposure_classes, `[[`, i = "name"))[
-            names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item
-          ]
-        )
+        choices = sector_choices
+      )
+      updateSelectInput(
+        session,
+        "report_scenario_selection",
+        choices = scenario_options
       )
     }
   )
@@ -119,6 +138,7 @@ server <- function(input, output, session) {
     }
     temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
+      include_exposures <- TRUE
       if (input$report_sector_selection == "") {
         exec_summary_layout <- 1
       } else {
@@ -130,18 +150,21 @@ server <- function(input, output, session) {
           global$report_version,
           input$report_scenario_selection,
           FALSE,
-          exec_summary_layout
+          exec_summary_layout,
+          include_exposures
         ),
         session$userData$temp_md_scenario
       )
     } else {
+      include_exposures <- FALSE
       write_report_to_file(
         get_report_contents(
           get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
           global$report_version,
           input$report_scenario_selection,
           FALSE,
-          2
+          2,
+          include_exposures
         ),
         session$userData$temp_md_scenario
       )
@@ -208,6 +231,7 @@ server <- function(input, output, session) {
         )
       )
       if (input$rep_type == "inst"){
+        include_exposures <- TRUE
         if (input$report_sector_selection == "") {
           exec_summary_layout <- 1
         } else {
@@ -219,18 +243,21 @@ server <- function(input, output, session) {
             global$report_version,
             input$report_scenario_selection,
             TRUE,
-            exec_summary_layout
+            exec_summary_layout,
+            include_exposures
           ),
           session$userData$temp_md_scenario_and_commons
         )
       } else {
+        include_exposures <- FALSE
         write_report_to_file(
           get_report_contents(
             get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
             global$report_version,
             input$report_scenario_selection,
             TRUE,
-            2
+            2,
+            include_exposures
           ),
           session$userData$temp_md_scenario_and_commons
         )
@@ -277,7 +304,8 @@ server <- function(input, output, session) {
           global$report_version,
           input$report_scenario_selection,
           TRUE,
-          1
+          1,
+          TRUE
         ),
         session$userData$temp_md_dev
       )
