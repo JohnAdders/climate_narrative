@@ -50,16 +50,30 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ensure_images_fit_page</span><span class="op">(</span><span class="va">filename</span>, max_width_inch <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ensure_images_fit_page</span><span class="op">(</span>
+  <span class="va">filename</span>,
+  target_width <span class="op">=</span> <span class="fl">7</span>,
+  target_width_units <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"in"</span>, <span class="st">"%"</span><span class="op">)</span>,
+  <span class="va">fix_width</span>,
+  min_pixels_to_rescale <span class="op">=</span> <span class="fl">300</span>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>filename</dt>
-<dd><p>the path to file to convert</p></dd>
-<dt>max_width_inch</dt>
-<dd><p>maximum width of image in inches (wider will be scaled down to this value)
+<dd><p>markdown file to process</p></dd>
+<dt>target_width</dt>
+<dd><p>target width of images
 default is 7 inches which roughly matches vertical A4 page with margins</p></dd>
+<dt>target_width_units</dt>
+<dd><p>either "in" for inches of "%"</p></dd>
+<dt>fix_width</dt>
+<dd><p>if TRUE all images will be scaled exactly to target_width. otherwise,
+only the larger images will be scaled down</p></dd>
+<dt>min_pixels_to_rescale</dt>
+<dd><p>for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
+this is to prevent ugly look of upscaled low resolution images</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
