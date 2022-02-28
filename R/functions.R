@@ -57,7 +57,7 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
 #' Helper function to enable using names to refer tabs instead of numbers
 #'
 #' @param tab_name name of the tab to convert
-tab_name_to_number <- function(tab_name){
+tab_name_to_number <- function(tab_name) {
   as.integer(factor(tab_name, global$ordered_tabs))
 }
 
@@ -185,15 +185,13 @@ exposure_grid_ui <- function(label) {
 #' @param dev Are we in developement mode
 #' @param width Width of each dropdown
 #'
-exposure_grid_server <- function(
-  input,
-  output,
-  exposure_matrix,
-  tooltip_matrix,
-  label,
-  dev = FALSE,
-  width = NULL
-){
+exposure_grid_server <- function(input,
+                                 output,
+                                 exposure_matrix,
+                                 tooltip_matrix,
+                                 label,
+                                 dev = FALSE,
+                                 width = NULL) {
   transpose <- (ncol(exposure_matrix) > 3)
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
@@ -211,13 +209,13 @@ exposure_grid_server <- function(
       )
     }
   }
-  if (transpose){
+  if (transpose) {
     layout0 <- layout
     layout <- t(layout)
     row_headers <- gsub(".", " ", rownames(layout), fixed = TRUE)
     col_names <- layout[1, ]
     # remove first row, but ensure no degeneration to vector
-    if (nrow(layout) > 2){
+    if (nrow(layout) > 2) {
       layout <- layout[-1, ]
     } else {
       layout <- t(layout[-1, ])
@@ -225,7 +223,7 @@ exposure_grid_server <- function(
     layout <- cbind(row_headers[-1], layout)
     colnames(layout) <- c(row_headers[1], col_names)
   }
-  for (i in 1:nrow(layout)){
+  for (i in 1:nrow(layout)) {
     layout[i, 1] <- as.character(div(layout[i, 1], class = "verticalcenter"))
   }
   output[[label]] <- renderTable(
@@ -242,16 +240,16 @@ exposure_grid_server <- function(
 #' @param label Label for grid
 #' @param tab NULL by default. If given, the first two arguments are ignored and inferred from tab
 #'
-get_input_ids <- function(exposure_matrix, label, tab=NULL){
-  if (!is.null(tab)){
+get_input_ids <- function(exposure_matrix, label, tab = NULL) {
+  if (!is.null(tab)) {
     exposure_matrix <- tab$exposure
-    label <- paste(tab$type, tab$subtype, sep="_")
+    label <- paste(tab$type, tab$subtype, sep = "_")
   }
   input_ids <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 2)
   colnames(input_ids) <- colnames(exposure_matrix)[-(1:2)]
   for (i in 1:nrow(input_ids)) {
     for (j in 1:ncol(input_ids)) {
-      if (exposure_matrix[i, j + 2] != ""){
+      if (exposure_matrix[i, j + 2] != "") {
         input_ids[i, j] <- paste(
           label,
           remove_special_characters(exposure_matrix[i, 1]),
@@ -271,23 +269,23 @@ get_input_ids <- function(exposure_matrix, label, tab=NULL){
 #' @param inputs dataframe of (all) inputs to look for
 #' @param ids_matrix matrix of ids
 #'
-get_input_values <- function(inputs, ids_matrix){
-    values <- ids_matrix
-    for (i in 1:nrow(values)){
-      for (j in 1:ncol(values)){
-        id <- ids_matrix[i, j]
-        if (id != ""){
-          value <- inputs[inputs$names == id, "values"]
-          if (length(value)) {
-            values[i, j] <- value
-          } else {
-            values[i, j] <- ""
-          }
+get_input_values <- function(inputs, ids_matrix) {
+  values <- ids_matrix
+  for (i in 1:nrow(values)) {
+    for (j in 1:ncol(values)) {
+      id <- ids_matrix[i, j]
+      if (id != "") {
+        value <- inputs[inputs$names == id, "values"]
+        if (length(value)) {
+          values[i, j] <- value
+        } else {
+          values[i, j] <- ""
         }
       }
     }
-    return(values)
   }
+  return(values)
+}
 
 #' Insert spaces to the string so that line has exactly given number of characters.
 #'
@@ -321,8 +319,7 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width) {
       loc <- min(newline_locations)
       out <- string_break_line_with_spaces(out, line_width, loc, 4)
       newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
-    }
-    else {
+    } else {
       space_locations <- stringi::stri_locate_all(out, fixed = " ")[[1]][, 1]
       last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
       if (length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
@@ -382,7 +379,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     apply(table, 1, function(x) max(nchar(x) / (col_widths - 2)))
   ))
   # ensure split rows is not zero
-  split_rows <- pmax(split_rows,1)
+  split_rows <- pmax(split_rows, 1)
   out <- matrix("", nrow = 0, ncol = ncol(table))
   emptyline <- rep("", ncol(table))
   sepline <- emptyline
@@ -538,7 +535,7 @@ get_exposure_description <- function(item, type_item_inputs, exposure_classes, i
     "\n\n",
     global$exposure_classes[[item]][["description"]]
   )
-  if (include_exposures){
+  if (include_exposures) {
     out <- paste0(
       out,
       "\n\nThe following rows contribute: \n\n",
@@ -613,7 +610,7 @@ get_exposure_risk_description <- function(
   header_text <- capitalize(header_text)
   content <- exposure_classes[[item]][[physical_or_transition]][[high_or_low]]
   out <- ""
-  if (include_oneliner){
+  if (include_oneliner) {
     out <- paste0(
       "### ",
       header_text,
@@ -689,18 +686,18 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
 #' @param section Section name
 #' @param additional_pars List of additional parameters that may be required by special content functions
 #'
-get_section_descriptions <- function(section, additional_pars=list()) {
+get_section_descriptions <- function(section, additional_pars = list()) {
   out <- ""
   content_function <- section$special_content_function
-  if (!is.null(content_function)){
-    if (content_function == "get_executive_summary"){
-      if (additional_pars$report_version >= 3){
+  if (!is.null(content_function)) {
+    if (content_function == "get_executive_summary") {
+      if (additional_pars$report_version >= 3) {
         out <- paste0(
           out,
           get_executive_summary(additional_pars$tabs, additional_pars$scenarios, additional_pars$exposure_classes, additional_pars$aggregated_inputs, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
         )
       }
-    } else if (content_function == "get_references"){
+    } else if (content_function == "get_references") {
       out <- paste0(
         out,
         get_references(additional_pars$aggregated_inputs$item, additional_pars$exposure_classes)
@@ -879,14 +876,14 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' @param tempfile where to write the report
 #' @param fix_image_width whether to set all the images to fixed width
 #' @return NULL, output is a file as specified in the argument
-write_report_to_file <- function(report_contents, tempfile, fix_image_width=FALSE){
+write_report_to_file <- function(report_contents, tempfile, fix_image_width = FALSE) {
   file_conn <- file(tempfile)
   writeLines(
     report_contents,
     file_conn
   )
   close(file_conn)
-  if (fix_image_width){
+  if (fix_image_width) {
     ensure_images_fit_page(tempfile, 6, "in", TRUE)
   }
   return(invisible(NULL))
@@ -905,17 +902,17 @@ write_report_to_file <- function(report_contents, tempfile, fix_image_width=FALS
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-ensure_images_fit_page <- function(filename, target_width=7, target_width_units=c("in","%"), fix_width, min_pixels_to_rescale=300){
+ensure_images_fit_page <- function(filename, target_width = 7, target_width_units = c("in", "%"), fix_width, min_pixels_to_rescale = 300) {
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
-  graph_lines <- grep("^!\\[",markdown)
-  for (i in graph_lines){
-    image_name <- substring(stringi::stri_match_first(markdown[i], regex="\\([[:graph:]]*.png"),2)
-    image_attributes <- attributes(png::readPNG(paste0(image_name), info=TRUE))$info
+  graph_lines <- grep("^!\\[", markdown)
+  for (i in graph_lines) {
+    image_name <- substring(stringi::stri_match_first(markdown[i], regex = "\\([[:graph:]]*.png"), 2)
+    image_attributes <- attributes(png::readPNG(paste0(image_name), info = TRUE))$info
     if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
-    if (fix_width && image_attributes$dim[1] > min_pixels_to_rescale){
+    if (fix_width && image_attributes$dim[1] > min_pixels_to_rescale) {
       markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
-    } else if (target_width_units == "in" && image_attributes$dim[1]/image_attributes$dpi[1] > target_width){
+    } else if (target_width_units == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
       warning(paste0("image ", image_name, " has width > ", target_width, target_width_units, ", resizing"))
       markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch, target_width_units, " }")
     }
@@ -934,7 +931,7 @@ ensure_images_fit_page <- function(filename, target_width=7, target_width_units=
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-rtf_fix_table_of_contents <- function(filename){
+rtf_fix_table_of_contents <- function(filename) {
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
   # First identify the table of contents - look for hyperlinks
@@ -945,14 +942,14 @@ rtf_fix_table_of_contents <- function(filename){
   # The headers are not unique. I take advantage of the fact that ToC is ordered
   # and look for the first header with a given name after previous match
   search_position <- 1
-  for (i in hyperlink_lines){
-    bookmark_text <- stringi::stri_match_first(rtf[i], regex="HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
+  for (i in hyperlink_lines) {
+    bookmark_text <- stringi::stri_match_first(rtf[i], regex = "HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
     bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text) - 4)
     bookmark_row <- grep(
-        paste0(" ", rtf[i + 1], "\\p"),
-        rtf[search_position : length(rtf)],
-        fixed = TRUE,
-      )[1] + search_position - 1
+      paste0(" ", rtf[i + 1], "\\p"),
+      rtf[search_position:length(rtf)],
+      fixed = TRUE,
+    )[1] + search_position - 1
     search_position <- bookmark_row
     # Appending the bookmark matching the ToC hyperlink
     rtf[bookmark_row] <- paste0(
@@ -976,11 +973,11 @@ rtf_fix_table_of_contents <- function(filename){
 #' @inherit rtf_postprocess
 #' @return NULL, changes file specified as an argument in place
 #'
-rtf_center_images <- function(filename){
+rtf_center_images <- function(filename) {
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
   image_lines <- grep("{\\pict", rtf, fixed = TRUE)
-  for (i in image_lines){
+  for (i in image_lines) {
     rtf[i] <- gsub("\\ql", "\\qc", rtf[i], fixed = TRUE)
   }
   writeLines(rtf, file_conn)
@@ -989,14 +986,14 @@ rtf_center_images <- function(filename){
 }
 
 #' Fix the RTF file
-#' 
+#'
 #' It is not possible to set some options using markdown syntax. Also, there seems to be a bug
 #' in pandoc which breaks the TOC (links are not working)
 #' @param filename name of file to convert
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @return NULL, changes file specified as an argument in place
 
-rtf_postprocess <- function (filename, report_version){
+rtf_postprocess <- function(filename, report_version) {
   rtf_fix_table_of_contents(filename)
   rtf_center_images(filename)
 }
@@ -1018,7 +1015,7 @@ add_path_to_graphs <- function(x) {
       "\\1\\2"
     ),
     x,
-    perl=T
+    perl = T
   )
 }
 
@@ -1041,18 +1038,18 @@ get_executive_summary_scenarios <- function(scenarios, exposure_classes, aggrega
     )
     risk <- scenario$exec_short
     risk_intensity <- scenario[[risk]]
-    if (exposure_exec){
-      if (nrow(aggregated_inputs) > 1){
+    if (exposure_exec) {
+      if (nrow(aggregated_inputs) > 1) {
         warning("Multiple sectors not compatible with this executive summary layout, using the first sector only")
       }
       item <- aggregated_inputs$item[1]
       materiality <- aggregated_inputs$materiality[1]
-      if (materiality == "High"){
+      if (materiality == "High") {
         text <- exposure_classes[[item]][[risk]][[risk_intensity]][["always"]]
-      } else if (materiality %in% c("Medium", "Low")){
+      } else if (materiality %in% c("Medium", "Low")) {
         text <- exposure_classes[[item]][[risk]][[risk_intensity]]["exec_description"]
       } else {
-        stop (paste("Unknown materiality level: ", materiality))
+        stop(paste("Unknown materiality level: ", materiality))
       }
       out <- paste0(
         out,
@@ -1082,13 +1079,13 @@ get_executive_summary_scenarios <- function(scenarios, exposure_classes, aggrega
 #'
 get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_inputs, inputs, scenario_no, layout=1){
   out_0 <- "# Executive summary\n\n"
-  exec <- data.frame(low = rep(FALSE,2), high = rep(FALSE,2))
+  exec <- data.frame(low = rep(FALSE, 2), high = rep(FALSE, 2))
   rownames(exec) <- c("transition", "physical")
-  for (i in scenario_no){
+  for (i in scenario_no) {
     risk <- scenarios[[i]][["exec_short"]]
     exec[risk, scenarios[[i]][[risk]]] <- TRUE
   }
-  if (layout == 1){
+  if (layout == 1) {
     out_1 <- get_executive_summary_inputs(tabs, aggregated_inputs, inputs)
     out_2 <- get_executive_summary_scenarios(scenarios, exposure_classes, aggregated_inputs, inputs, scenario_no)
     out_3 <- get_executive_summary_exposures(exposure_classes, aggregated_inputs, inputs, scenario_no, exec)
@@ -1109,7 +1106,7 @@ get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_
 #' @param is_rtf bool whether to include sections that are for RTF only
 #' @return vector of integers
 #'
-get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf){
+get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
   if (report_scenario_selection == ""){
     scenario_no <- which(sapply(scenarios, function(sce) !is.null(sce$name)))
   } else {
@@ -1122,7 +1119,7 @@ get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf){
 #'
 #' @inherit get_scenario_no
 #'
-get_section_no <- function(sections, is_rtf){
+get_section_no <- function(sections, is_rtf) {
   if (is_rtf){
     indicator_function <- function(s) s$include_in_RTF
   } else {
@@ -1154,7 +1151,7 @@ get_report_contents <- function(
   is_rtf,
   exec_summary_layout=1,
   include_exposures
-){
+) {
   aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(scenarios, report_scenario_selection, is_rtf)
   section_no <- get_section_no(sections, is_rtf)
@@ -1171,7 +1168,7 @@ get_report_contents <- function(
       ))
     )
   }
-  for (section in sections[section_no]){
+  for (section in sections[section_no]) {
     out <- c(
         out,
         list(get_section_descriptions(
@@ -1212,14 +1209,14 @@ get_executive_summary_exposures <- function(
   inputs,
   scenario_no,
   exec
-){
+) {
   out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
   for (i in 1:nrow(aggregated_inputs)) {
-    item <- aggregated_inputs[i,1]
-    materiality = aggregated_inputs[i,2]
-    if (materiality == "High"){
+    item <- aggregated_inputs[i, 1]
+    materiality <- aggregated_inputs[i, 2]
+    if (materiality == "High") {
       high_counter <- high_counter + 1
       out_exp <- paste0(
         out_exp,
@@ -1227,9 +1224,9 @@ get_executive_summary_exposures <- function(
         exposure_classes[[item]][["name"]],
         "\n\n"
       )
-      for (risk in rownames(exec)){
-        for (risk_intensity in colnames(exec)){
-          if (exec[risk, risk_intensity]){
+      for (risk in rownames(exec)) {
+        for (risk_intensity in colnames(exec)) {
+          if (exec[risk, risk_intensity]) {
             out_exp <- paste0(
               out_exp,
               exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
@@ -1240,21 +1237,21 @@ get_executive_summary_exposures <- function(
       }
     }
   }
-  if (high_counter == 0 ){
+  if (high_counter == 0) {
     out_exp <- paste0(out_exp, "None\n\n")
   }
   out_exp <- paste0(out_exp, "### Other exposures\n\n")
-  less_material <- aggregated_inputs[aggregated_inputs[,2] != "High",]
-  if (nrow(less_material)){
+  less_material <- aggregated_inputs[aggregated_inputs[, 2] != "High", ]
+  if (nrow(less_material)) {
     less_material$risk.description <- rep(NA, nrow(less_material))
     less_material$name <- rep(NA, nrow(less_material))
-    for (i in 1:nrow(less_material)){
+    for (i in 1:nrow(less_material)) {
       item <- less_material[i, 1]
       less_material$name[i] <- exposure_classes[[item]][["name"]]
       risk_description <- ""
-      for (risk in rownames(exec)){
-        for (risk_intensity in colnames(exec)){
-          if (exec[risk, risk_intensity]){
+      for (risk in rownames(exec)) {
+        for (risk_intensity in colnames(exec)) {
+          if (exec[risk, risk_intensity]) {
             risk_description <- paste(
               risk_description,
               exposure_classes[[item]][[risk]][[risk_intensity]][["exec_description"]],
@@ -1263,16 +1260,16 @@ get_executive_summary_exposures <- function(
           }
         }
       }
-      risk_description <- substring(risk_description,5)
+      risk_description <- substring(risk_description, 5)
       less_material$risk.description[i] <- risk_description
     }
-    for (i in 1:ncol(less_material)){
+    for (i in 1:ncol(less_material)) {
       colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
     }
     out_exp <- paste0(
       out_exp,
       table_to_markdown_multiline(
-        less_material[,c("Name", "Materiality", "Risk.description")],
+        less_material[, c("Name", "Materiality", "Risk.description")],
         col_widths = c(20, 20, 60)
       )
     )
@@ -1289,17 +1286,17 @@ get_executive_summary_exposures <- function(
 #' @param ignore_cols indices of columns which should be ignored for emptiness check
 #' @return input object without rows and columns where all entries are empty (i.e. NA or "")
 #'
-delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), ignore_cols=c()){
+delete_empty_rows_and_columns <- function(data, empty_strings = list("", "N/A"), ignore_cols = c()) {
   data <- as.data.frame(data)
   empty_strings <- unlist(empty_strings)
   use_cols <- setdiff(1:ncol(data), ignore_cols)
-  empty_columns <- apply(data, 2, function(x) all(is.na(x) | x %in% empty_strings ))
+  empty_columns <- apply(data, 2, function(x) all(is.na(x) | x %in% empty_strings))
   empty_rows <- apply(data, 1, function(x) all(is.na(x[use_cols]) | x[use_cols] %in% empty_strings))
-  if (all(empty_columns[use_cols])){
+  if (all(empty_columns[use_cols])) {
     return(NULL)
   } else {
     data[, empty_columns] <- NULL
-    if (sum(!empty_rows) > 1){
+    if (sum(!empty_rows) > 1) {
       colnames(data)[1] <- ""
       return(data[!empty_rows, ])
     } else {
@@ -1315,23 +1312,23 @@ delete_empty_rows_and_columns <- function(data, empty_strings=list("", "N/A"), i
 #'
 #' @inherit get_executive_summary
 #'
-get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs){
+get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
   out <- "## Inputs\n\n"
   for (tab in tabs){
     if (!is.null(tab$exposure)){
       ids <- get_input_ids(tab=tab)
       values <- get_input_values(inputs, ids)
       values <- cbind(tab$exposure[, 1], values)
-      values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols=1)
-      if (!is.null(values_trimmed)){
+      values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols = 1)
+      if (!is.null(values_trimmed)) {
         transpose <- (ncol(tab$exposure) > 3)
-        if (transpose){
+        if (transpose) {
           values_trimmed <- as.data.frame(t(values_trimmed))
           row_names <- rownames(values_trimmed)
           row_names <- gsub(".", " ", row_names, fixed = TRUE)
           values_trimmed <- cbind(row_names, values_trimmed)
-          colnames(values_trimmed) <- values_trimmed[1,]
-          values_trimmed <- values_trimmed[-1,]
+          colnames(values_trimmed) <- values_trimmed[1, ]
+          values_trimmed <- values_trimmed[-1, ]
         }
         ncol <- ncol(values_trimmed)
         out <- paste0(
@@ -1342,12 +1339,12 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs){
         )
         # if table has more than 4 columns split it in parts
         nparts <- ceiling((ncol - 1) / 3)
-        for (i in 1:nparts){
+        for (i in 1:nparts) {
           cols_to_use <- c(1, 3 * i + (-1:1))
           cols_to_use <- cols_to_use[cols_to_use <= ncol]
           out <- paste0(
             out,
-            table_to_markdown_multiline(values_trimmed[, cols_to_use], col_widths = c(30,20,20,20))
+            table_to_markdown_multiline(values_trimmed[, cols_to_use], col_widths = c(30, 20, 20, 20))
           )
         }
       }
@@ -1361,7 +1358,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs){
 #'
 #' @param item sector name
 #'
-get_exposure_test_description <- function(exposure_classes, item){
+get_exposure_test_description <- function(exposure_classes, item) {
   exposure_class <- exposure_classes[[item]]
   out <- paste0(
     "## ",
@@ -1371,8 +1368,8 @@ get_exposure_test_description <- function(exposure_classes, item){
     "\n\n"
   )
 
-  for (risk in c("transition", "physical")){
-    for (risk_intensity in c("low", "high")){
+  for (risk in c("transition", "physical")) {
+    for (risk_intensity in c("low", "high")) {
       out <- paste0(
         out,
         get_exposure_risk_description(item, c(), "High", exposure_classes, risk, risk_intensity, TRUE)
@@ -1384,9 +1381,9 @@ get_exposure_test_description <- function(exposure_classes, item){
 
 #' Karnan's request for easier change comparison - loop over all sectors
 #'
-get_test_report <- function(exposure_classes){
+get_test_report <- function(exposure_classes) {
   out <- "# Test report\n\n"
-  for (i in 1:length(exposure_classes)){
+  for (i in 1:length(exposure_classes)) {
     exposure_class <- exposure_classes[[i]]
     out <- paste0(out, get_exposure_test_description(exposure_classes, names(exposure_classes)[i]))
     out <- paste0(out, get_exposure_appendix(names(exposure_classes)[i]), exposure_classes)
@@ -1402,19 +1399,19 @@ get_test_report <- function(exposure_classes){
 #' @param aggregate bool, whether to aggregate the inputs by sector
 #' @param override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
 #'
-get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALSE, override_materiality=""){
+get_inputs <- function(all_inputs_table, inst_type = "", sector = "", aggregate = FALSE, override_materiality = "") {
   out <- all_inputs_table
-  if (override_materiality != ""){
-    out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered=T)
+  if (override_materiality != "") {
+    out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
     out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
   }
-  if (inst_type != ""){
+  if (inst_type != "") {
     out <- out[(which(out$type == inst_type & out$materiality != "N/A")), ]
   }
-  if (sector != ""){
+  if (sector != "") {
     out <- out[out$item == sector, ]
   }
-  if (aggregate){
+  if (aggregate) {
     out <- aggregate_inputs(out)
   }
   return(out)
@@ -1424,7 +1421,7 @@ get_inputs <- function(all_inputs_table, inst_type="", sector="", aggregate=FALS
 #'
 #' @param inputs data frame of all inputs (usually the reactive expression all_inputs or its subset)
 #'
-aggregate_inputs <- function(inputs){
+aggregate_inputs <- function(inputs) {
   aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = inputs)
   aggregated_inputs_numeric <- stats::aggregate(
     materiality_num ~ item,
@@ -1454,7 +1451,7 @@ aggregate_inputs <- function(inputs){
 #'
 #' @importFrom markdown markdownToHTML
 #'
-include_markdown_section <- function(output, output_name, section_name){
+include_markdown_section <- function(output, output_name, section_name) {
   text <- unlist(
     strsplit(
       global$sections[[section_name]]$description,
@@ -1464,28 +1461,28 @@ include_markdown_section <- function(output, output_name, section_name){
   output[[output_name]] <- renderUI({
     HTML(
       markdown::markdownToHTML(
-        text=text,
+        text = text,
         fragment.only = TRUE
       )
     )
   })
 }
 
-render_rtf <- function(input_file, output_file, res_path, report_version){
+render_rtf <- function(input_file, output_file, res_path, report_version) {
   fs <- file.size(input_file)
   rmarkdown::render(
-        input = input_file,
-        output_file = output_file,
-        output_format = rmarkdown::rtf_document(
-          toc = TRUE,
-          toc_depth = 2,
-          number_sections = FALSE,
-          pandoc_args = c(
-            paste0("--resource-path=", res_path),
-            "--self-contained"
-          )
-        )
+    input = input_file,
+    output_file = output_file,
+    output_format = rmarkdown::rtf_document(
+      toc = TRUE,
+      toc_depth = 2,
+      number_sections = FALSE,
+      pandoc_args = c(
+        paste0("--resource-path=", res_path),
+        "--self-contained"
       )
+    )
+  )
   # I found that in some cases the rendering silently overwrites the markdown file
   # Cause unknown, maybe due to some weird blank characters instead of space?
   # Therefore added a control to throw error if the file is truncated in the process
@@ -1494,7 +1491,7 @@ render_rtf <- function(input_file, output_file, res_path, report_version){
   return(invisible(NULL))
 }
 
-render_html <- function(input_file, output_file, report_version, sidebar_toc){
+render_html <- function(input_file, output_file, report_version, sidebar_toc) {
   rmarkdown::render(
     input = input_file,
     output_file = output_file,
@@ -1511,7 +1508,7 @@ render_html <- function(input_file, output_file, report_version, sidebar_toc){
   return(invisible(NULL))
 }
 
-html_postprocess <- function(file, report_version, sidebar_toc){
+html_postprocess <- function(file, report_version, sidebar_toc) {
   # replace back the images links
   file_conn <- file(file)
   temp <- readLines(file_conn)
@@ -1520,17 +1517,17 @@ html_postprocess <- function(file, report_version, sidebar_toc){
     "climate_narrative",
     temp
   )
-  if (report_version >= 2){
+  if (report_version >= 2) {
     temp <- gsub(
       "(<h[1-5]?>)(.*)(</h[1-5]?>)",
       "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
       temp,
-      perl=TRUE
-    )    
+      perl = TRUE
+    )
   }
   # extract the table of contents
   # TODO: fix the toc code below
-  if (sidebar_toc == 1){
+  if (sidebar_toc == 1) {
     toc_start <- grep("<div id=\"TOC\">", temp)
     div_end <- grep("</div>", temp)
     toc_end <- min(div_end[div_end > toc_start])
