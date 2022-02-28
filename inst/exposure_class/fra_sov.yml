@@ -1,4 +1,4 @@
-name: Canada sovereign
+name: France sovereign
 description: |
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
@@ -79,7 +79,7 @@ transition:
       could encourage consumer spending and investment in the use of renewables,
       energy efficiency, energy storage, etc, leading to increases in fiscal
       revenues. The Disorderly transition risk scenarios could also lead to a reduction in
-      GDP growth. This would have a negative impact on Canadian sovereign bonds.
+      GDP growth. This would have a negative impact on French sovereign bonds.
 
     high_materiality: |
       **Carbon tax effect**
@@ -100,17 +100,12 @@ transition:
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      Electricity generation is responsible for around 8% of Canada's emissions; however, 
-      it is projected to contribute the most to emission reductions by 2030 under current 
-      policies, due in large part to the phasing out of coal. Its share of the country's 
-      emissions has been falling since 2015 as Canada shifts away from coal. Canada adopted 
-      performance standards on natural gas-fired power plants in December 2018. It is anticipated 
-      that many of the coal-fired power stations affected by the country's 2030 phase-out, or 
-      that are expected to shut down before that date, will be replaced with new natural gas 
-      plants or coal-to-gas conversions.
-      
-      Canada is significantly less dependent of fossil fuel sectors and consequently has a 
-      higher share of renewable energy compared to other countries.
+      In 2018, the share of renewables in the France power sector increased to 
+      19.6%, (over 3% above the 2017 levels), exceeding the share of electricity 
+      from fossil fuels. On average, 15% of electricity in the EU in 2020 came from 
+      wind energy, exceeding the share of coal in Q4 of 2020. In 2020, electricity 
+      generation from coal decreased by 22% and its share in electricity generation 
+      fell to 13%, (4% below the 2019 level).
 
       ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
 
@@ -127,8 +122,8 @@ transition:
       
       In these scenarios, there is a large mix of physical and transition risks in 2050. 
       Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
-      scenario on the Canadian GDP compared to 2012 would be significant, ranging from 
-      -3% to -3.2% by 2050.
+      scenario on the French GDP compared to 2014 would be significant, ranging 
+      from -2.5% to -3.3% by 2050.
 
       **Downgrading of credit ratings effect**
 
@@ -144,9 +139,9 @@ transition:
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. 
       
-      According to the study, in these scenarios, Canada would have a downgrade below one 
-      notch by 2100, increasing the cost of borrowing for the Canadian government by 
-      approximately US$0.26-0.39bn.
+      According to the study, in these scenarios, France would have a downgrade below one 
+      notch by 2100, increasing the cost of borrowing for the French government by 
+      approximately US$1.35-2.02bn.
 
   low:
     exec_description: |
@@ -168,7 +163,7 @@ transition:
       could encourage consumer spending and investment in the use of renewables, 
       energy efficiency, energy storage, etc, leading to increases in fiscal revenues. 
       These scenarios could also lead to a limited relative reduction in GDP growth. 
-      This would have a limited, neutral impact on Canadian sovereign bonds.
+      This would have a limited, neutral impact on French sovereign bonds.
 
     high_materiality: |
       **Carbon tax effect**
@@ -193,17 +188,12 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      Electricity generation is responsible for around 8% of Canada's emissions; however, 
-      it is projected to contribute the most to emission reductions by 2030 under current 
-      policies, due in large part to the phasing out of coal. Its share of the country's 
-      emissions has been falling since 2015 as Canada shifts away from coal. Canada adopted 
-      performance standards on natural gas-fired power plants in December 2018. It is anticipated 
-      that many of the coal-fired power stations affected by the country's 2030 phase-out, or 
-      that are expected to shut down before that date, will be replaced with new natural gas 
-      plants or coal-to-gas conversions.
-      
-      Canada is significantly less dependent of fossil fuel sectors and consequently has a 
-      higher share of renewable energy compared to other countries.
+      In 2018, the share of renewables in the France power sector increased to 
+      19.6%, (over 3% above the 2017 levels), exceeding the share of electricity 
+      from fossil fuels. On average, 15% of electricity in the EU in 2020 came from 
+      wind energy, exceeding the share of coal in Q4 of 2020. In 2020, electricity 
+      generation from coal decreased by 22% and its share in electricity generation 
+      fell to 13%, (4% below the 2019 level).
 
       ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
 
@@ -223,8 +213,8 @@ transition:
       carbon tax revenues into government investment and lower employment taxes.
       
       Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
-      Orderly Net Zero scenario on the Canadian GDP compared to 2012 would be non-significant, 
-      ranging from +0.3% to +1.6% by 2050.
+      Orderly Net Zero scenario on the French GDP compared to 2014 would be non-significant, 
+      ranging from -0.6% to +0.3% by 2050.
 
       **Downgrading of credit ratings**
 
@@ -240,9 +230,9 @@ transition:
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. 
       
-      According to the study, in a low transition risk (RCP 2.6) scenario, Canada would have
-      a downgrade below one notch by 2100, increasing the cost of borrowing for
-      the Canadian government by approximately US$0.26-0.39bn.
+      According to the study, in a transition risk (RCP 2.6) scenario, France would have 
+      a downgrade below one notch by 2100, increasing the cost of borrowing for the French 
+      government by approximately US$1.35-2.02bn.
 
 physical:
   high:
@@ -265,7 +255,7 @@ physical:
       biodiversity loss, or to industries supply chains and international trade.
 
       The high physical risk scenario could lead to a significant reduction in
-      GDP growth. This would have a negative impact on Canadian sovereign bonds.
+      GDP growth. This would have a negative impact on French sovereign bonds.
 
       As global temperatures rise in a high physical risk scenario, the effects
       of climate change, including coastal flooding, reduced rainfall in
@@ -306,8 +296,8 @@ physical:
       scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
       2050\. World GDP losses from physical risks scale with the rise in
       temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a hot house world scenario on Canada's GDP 
-      compared to 2012 would be significant, ranging from -1% to -1.2% by 2050.
+      Explorer v2.0, the expected impact of a hot house world scenario on France's GDP 
+      compared to 2014 would be significant, ranging from -1.7% to -2.5% by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of 
@@ -329,9 +319,9 @@ physical:
       but greater sensitivity of the top ratings. It is easier to lose an AAA
       rating than a C rating. 
       
-      According to the study, in a high physical risk scenario, Canada would have a downgrade 
-      just over five notches by 2100, increasing the cost of borrowing for the Canadian 
-      government by approximately US$2.3-3.4bn.
+      According to the study, in a high physical risk scenario, France would have a downgrade 
+      above two notches by 2100, increasing the cost of borrowing for the French government 
+      by approximately US$3.94-5.91bn.
 
   low:
     exec_description: |
@@ -350,7 +340,7 @@ physical:
       supply chains and international trade. 
       
       The low physical risk scenario could lead to a reduction in GDP growth. This 
-      would have a negative impact on Canadian sovereign bonds.
+      would have a negative impact on French sovereign bonds.
 
       As global temperatures rise in a low physical risk scenario, the effects
       of climate change, including coastal flooding, reduced rainfall in
@@ -385,8 +375,8 @@ physical:
       be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
       scale with the rise in temperatures in the scenarios over time. Based on
       the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
-      Net Zero scenario on Canadian GDP compared to 2012, would be non-significant, 
-      ranging from +0.3% to +1.6% by 2050.
+      Net Zero scenario on the French GDP compared to 2014, would be non-significant, 
+      ranging from -0.6% to +0.3% by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of economic 
@@ -406,10 +396,9 @@ physical:
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. 
       
-      According to the study, in a low physical risk (RCP 2.6) scenario, Canada would have 
-      a downgrade below one notch by 2100, increasing the cost of borrowing for the Canadian 
-      government by approximately US$0.26-0.39bn.
-
+      According to the study, in a low physical risk (RCP 2.6) scenario, France would have 
+      a downgrade below one notch by 2100, increasing the cost of borrowing for the French 
+      government by approximately US$1.35-2.02bn.
 appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
