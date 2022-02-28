@@ -7,7 +7,7 @@
 #' @import R6
 #' @importFrom yaml read_yaml
 #' @export
-run_shiny_app <- function(secrets_file="secret.yml", ...) {
+run_shiny_app <- function(secrets_file = "secret.yml", ...) {
   load_secrets(secrets_file)
 
   # ordering the scenarios
@@ -35,36 +35,36 @@ run_shiny_app <- function(secrets_file="secret.yml", ...) {
   # Tab names validation check
   # the global$ordered_tabs must be defined first (the QuestionTab constructor relies on this
   # to assign tab numbers), so check consistency of names post hoc
-  if (identical(global$ordered_tabs, sapply(global$tabs, function(x) x$tab_name))){
+  if (identical(global$ordered_tabs, sapply(global$tabs, function(x) x$tab_name))) {
     # OK
-  } else if (setequal(global$ordered_tabs, sapply(global$tabs, function(x) x$tab_name))){
-    warning('Order of global$tabs overwritten by global$ordered_tabs')
+  } else if (setequal(global$ordered_tabs, sapply(global$tabs, function(x) x$tab_name))) {
+    warning("Order of global$tabs overwritten by global$ordered_tabs")
   } else {
-    stop('Names of global$tabs do not match global$ordered_tabs')
+    stop("Names of global$tabs do not match global$ordered_tabs")
   }
   shinyApp(ui = ui(), server = server, ...)
 }
 
-load_secrets <- function(secrets_file="secret.yml") {
+load_secrets <- function(secrets_file = "secret.yml") {
   if (file.exists(secrets_file)) {
     secret_pars <- yaml::read_yaml(secrets_file)
     global$dev <- FALSE
     for (i in 1:length(secret_pars)) global[[names(secret_pars)[i]]] <- secret_pars[[i]]
     # simple validation and some default values
-    if (is.null(global$report_version)){
-      default_version = global$report_versions[1]
-      global$report_version = default_version
+    if (is.null(global$report_version)) {
+      default_version <- global$report_versions[1]
+      global$report_version <- default_version
       warning(paste0("Report version not found in the settings file, defaulting to ", default_version))
-    } else if (!global$report_version %in% global$report_versions){
-      default_version = global$report_versions[1]
-      global$report_version = default_version
+    } else if (!global$report_version %in% global$report_versions) {
+      default_version <- global$report_versions[1]
+      global$report_version <- default_version
       warning(paste0("Invalid report version in the settings file, defaulting to ", default_version))
     }
-    if (is.null(global$progress_bar)){
+    if (is.null(global$progress_bar)) {
       warning("Progress bar setting not found. Defaulting to FALSE")
       global$progress_bar <- FALSE
     }
-    if (is.null(global$sidebar_toc)){
+    if (is.null(global$sidebar_toc)) {
       warning("Sidebar table of contents setting not found. Defaulting to FALSE")
       global$sidebar_toc <- FALSE
     }

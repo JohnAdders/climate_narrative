@@ -19,25 +19,25 @@ server <- function(input, output, session) {
   session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
   session$userData$temp_md_dev_2 <- tempfile(fileext = ".md")
   session$userData$temp_rtf_dev_2 <- tempfile(fileext = ".rtf")
-  if (global$progress_bar){
+  if (global$progress_bar) {
     # progress bar code
-    progress <- Progress$new(session, min=0, max=1, style="old")
+    progress <- Progress$new(session, min = 0, max = 1, style = "old")
     observeEvent(input$wizard, {
       which_tab <- which(input$wizard == sapply(global$tabs, function(tab) tab$id))
       tab_type <- global$tabs[[which_tab]]$type
       tab_number <- global$tabs[[which_tab]]$tab_number
-      if (!is.null(tab_type)){
+      if (!is.null(tab_type)) {
         matching_type <- sapply(
           global$tabs,
-          function(tab) sum(c(is.null(tab$type), tab$type==tab_type))
+          function(tab) sum(c(is.null(tab$type), tab$type == tab_type))
         )
         den <- sum(matching_type)
         num <- sum(matching_type[1:tab_number]) - 1
-        progress$set(value=num/den, message="Questionnaire progress")
+        progress$set(value = num / den, message = "Questionnaire progress")
       } else {
         den <- length(global$tabs) - 1
         num <- tab_number - 1
-        progress$set(value=num/den, message="Questionnaire progress")
+        progress$set(value = num / den, message = "Questionnaire progress")
       }
     })
   }
@@ -75,7 +75,7 @@ server <- function(input, output, session) {
   allow_report <- reactive({
     return(nrow(get_inputs(all_inputs(), input$inst_type)))
   })
-  
+
   report_message <- reactive({
     if (input$rep_type == "inst" && input$report_scenario_selection == "") {
       return("Please select a scenario (optionally a sector as well)")
@@ -91,7 +91,7 @@ server <- function(input, output, session) {
   observeEvent(
     input$wizard,
     {
-      if (input$rep_type == "inst"){
+      if (input$rep_type == "inst") {
         selection_type_filter <- input$inst_type
         name_of_blank_scenario <- ""
         name_of_blank_sector <- "All relevant sectors"
@@ -102,8 +102,8 @@ server <- function(input, output, session) {
       }
       sectors_available <- (names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item)
       sector_choices <- c(
-          "",
-          names(sapply(global$exposure_classes, `[[`, i = "name"))[sectors_available]
+        "",
+        names(sapply(global$exposure_classes, `[[`, i = "name"))[sectors_available]
       )
       names(sector_choices) <- c(
         name_of_blank_sector,
@@ -131,13 +131,13 @@ server <- function(input, output, session) {
   output$html_report_message <- renderText({
     report_message()
   })
-  
+
   output$html_report <- renderUI({
     if (report_message() != "") {
       return("")
     }
     temp_html <- tempfile(fileext = ".html")
-    if (input$rep_type == "inst"){
+    if (input$rep_type == "inst") {
       inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
       include_exposures <- TRUE
       if (input$report_sector_selection == "") {
@@ -167,7 +167,7 @@ server <- function(input, output, session) {
     return(result)
   })
 
-  
+
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
@@ -179,7 +179,7 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (input$rep_type == "inst"){
+      if (input$rep_type == "inst") {
         inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
         include_exposures <- TRUE
         if (input$report_sector_selection == "") {
@@ -238,7 +238,7 @@ server <- function(input, output, session) {
     }
   )
 
-output$dev_report_2 <- downloadHandler(
+  output$dev_report_2 <- downloadHandler(
     filename = "Sectors_Output.rtf",
     content = function(file, res_path = system.file("www", package = "climate.narrative")) {
       showModal(
@@ -261,7 +261,7 @@ output$dev_report_2 <- downloadHandler(
 
   # finally, tab-specific server function collation
   switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
-  report_tab_no <- tab_name_to_number('report')
+  report_tab_no <- tab_name_to_number("report")
   for (tab in global$tabs) {
     # "sum" below is a trick to include NULL case as sum(NULL)=0
     if (sum(tab$next_tab) == report_tab_no) {

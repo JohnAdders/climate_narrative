@@ -34,7 +34,7 @@ QuestionTab <- R6Class(
     type = NULL,
     #' @field subtype subtype of tab within a type of institution (to group the inputs from all tabs)
     subtype = NULL,
-    #' @field ui_settings optional list of parameters to pass to ui function  
+    #' @field ui_settings optional list of parameters to pass to ui function
     ui_settings = NULL,
     #' @description the constructor fills the slots with values given
     #' it also automatically gets ui, server and foot
@@ -103,11 +103,11 @@ QuestionTab <- R6Class(
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
       if (length(self$previous_tab)) {
         observeEvent(
-          input[[paste0(self$id, "_previous")]], 
+          input[[paste0(self$id, "_previous")]],
           switch_page(as.integer(self$previous_tab))
         )
         observeEvent(
-          input[[paste0(self$id, "_previous_duplicate")]], 
+          input[[paste0(self$id, "_previous_duplicate")]],
           switch_page(as.integer(self$previous_tab))
         )
       }
@@ -140,7 +140,7 @@ QuestionTab <- R6Class(
           ))
         )
       }
-      if(!is.null(self$tab_title)){
+      if (!is.null(self$tab_title)) {
         tabpanel_params <- add_param(
           tabpanel_params,
           h2(self$tab_title)
