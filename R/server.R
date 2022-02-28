@@ -138,83 +138,32 @@ server <- function(input, output, session) {
     }
     temp_html <- tempfile(fileext = ".html")
     if (input$rep_type == "inst"){
+      inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
       include_exposures <- TRUE
       if (input$report_sector_selection == "") {
         exec_summary_layout <- 1
       } else {
         exec_summary_layout <- 2
       }
-      write_report_to_file(
-        get_report_contents(
-          get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE),
-          global$report_version,
-          input$report_scenario_selection,
-          FALSE,
-          exec_summary_layout,
-          include_exposures
-        ),
-        session$userData$temp_md_scenario
-      )
     } else {
+      exec_summary_layout <- 2
+      inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
       include_exposures <- FALSE
-      write_report_to_file(
-        get_report_contents(
-          get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
-          global$report_version,
-          input$report_scenario_selection,
-          FALSE,
-          2,
-          include_exposures
-        ),
-        session$userData$temp_md_scenario
-      )
     }
-    rmarkdown::render(
-      input = session$userData$temp_md_scenario,
-      output_file = temp_html,
-      output_format = rmarkdown::html_document(
-        toc = TRUE,
-        toc_float = FALSE,
-        toc_depth = 2,
-        number_sections = FALSE,
-        self_contained = FALSE,
-        fig_caption = FALSE
-      )
+    write_report_to_file(
+      get_report_contents(
+        inputs,
+        global$report_version,
+        input$report_scenario_selection,
+        FALSE,
+        exec_summary_layout,
+        include_exposures
+      ),
+      session$userData$temp_md_scenario,
+      (global$report_version >= 4)
     )
-    # replace back the images links
-    file_conn <- file(temp_html)
-    temp <- readLines(file_conn)
-    temp <- gsub(
-      system.file("www", package = "climate.narrative"),
-      "climate_narrative",
-      temp
-    )
-    if (global$report_version >= 2){
-      temp <- gsub(
-        "(<h[1-5]?>)(.*)(</h[1-5]?>)",
-        "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
-        temp,
-        perl=TRUE
-      )    
-    }
-    # extract the table of contents
-    
-    if (global$sidebar_toc){
-      toc_start <- grep("<div id=\"TOC\">", temp)
-      div_end <- grep("</div>", temp)
-      toc_end <- min(div_end[div_end > toc_start])
-      toc <- temp[toc_start:toc_end]
-      output$html_report_nav <- renderUI(HTML(toc))
-      temp <- temp[-(toc_start:toc_end)]
-    }
-    writeLines(
-      temp,
-      file_conn
-    )
-    close(file_conn)
-
+    render_html(session$userData$temp_md_scenario, temp_html)
     result <- includeHTML(temp_html)
-
     return(result)
   })
 
@@ -231,58 +180,31 @@ server <- function(input, output, session) {
         )
       )
       if (input$rep_type == "inst"){
+        inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
         include_exposures <- TRUE
         if (input$report_sector_selection == "") {
           exec_summary_layout <- 1
         } else {
           exec_summary_layout <- 2
         }
-        write_report_to_file(
-          get_report_contents(
-            get_inputs(all_inputs(), input$inst_type, input$report_sector_selection),
-            global$report_version,
-            input$report_scenario_selection,
-            TRUE,
-            exec_summary_layout,
-            include_exposures
-          ),
-          session$userData$temp_md_scenario_and_commons
-        )
       } else {
+        exec_summary_layout <- 2
+        inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
         include_exposures <- FALSE
-        write_report_to_file(
-          get_report_contents(
-            get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High"),
-            global$report_version,
-            input$report_scenario_selection,
-            TRUE,
-            2,
-            include_exposures
-          ),
-          session$userData$temp_md_scenario_and_commons
-        )
       }
-      fs <- file.size(session$userData$temp_md_scenario_and_commons)
-      rmarkdown::render(
-        input = session$userData$temp_md_scenario_and_commons,
-        output_file = session$userData$temp_rtf,
-        output_format = rmarkdown::rtf_document(
-          toc = TRUE,
-          toc_depth = 2,
-          number_sections = FALSE,
-          pandoc_args = c(
-            paste0("--resource-path=", res_path),
-            "--self-contained"
-          )
-        )
+      write_report_to_file(
+        get_report_contents(
+          inputs,
+          global$report_version,
+          input$report_scenario_selection,
+          TRUE,
+          exec_summary_layout,
+          include_exposures
+        ),
+        session$userData$temp_md_scenario_and_commons,
+        (global$report_version >= 4)
       )
-      # I found that in some cases the rendering silently overwrites the markdown file
-      # Cause unknown, maybe due to some weird blank characters instead of space?
-      # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(session$userData$temp_md_scenario_and_commons) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-      # by default the table of contents in pandoc output does not work, fixing it manually
-      rtf_fix_table_of_contents(session$userData$temp_rtf)
-      rtf_center_images(session$userData$temp_rtf)
+      render_rtf(session$userData$temp_md_scenario_and_commons, session$userData$temp_rtf, res_path)
       removeModal()
       file.copy(session$userData$temp_rtf, file)
     }
@@ -307,29 +229,10 @@ server <- function(input, output, session) {
           1,
           TRUE
         ),
-        session$userData$temp_md_dev
+        session$userData$temp_md_dev,
+        (global$report_version >= 4)
       )
-      fs <- file.size(session$userData$temp_md_dev)
-      rmarkdown::render(
-        input = session$userData$temp_md_dev,
-        output_file = session$userData$temp_rtf_dev,
-        output_format = rmarkdown::rtf_document(
-          toc = TRUE,
-          toc_depth = 2,
-          number_sections = FALSE,
-          pandoc_args = c(
-            paste0("--resource-path=", res_path),
-            "--self-contained"
-          )
-        )
-      )
-      # I found that in some cases the rendering silently overwrites the markdown file
-      # Cause unknown, maybe due to some weird blank characters instead of space?
-      # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(session$userData$temp_md_dev) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-      # by default the table of contents in pandoc output does not work, fixing it manually
-      rtf_fix_table_of_contents(session$userData$temp_rtf_dev)
-      rtf_center_images(session$userData$temp_rtf_dev)
+      render_rtf(session$userData$temp_md_dev, session$userData$temp_rtf_dev, res_path)
       removeModal()
       file.copy(session$userData$temp_rtf_dev, file)
     }
@@ -347,29 +250,10 @@ output$dev_report_2 <- downloadHandler(
       )
       write_report_to_file(
         get_test_report(),
-        session$userData$temp_md_dev_2
+        session$userData$temp_md_dev_2,
+        (global$report_version >= 4)
       )
-      fs <- file.size(session$userData$temp_md_dev_2)
-      rmarkdown::render(
-        input = session$userData$temp_md_dev_2,
-        output_file = session$userData$temp_rtf_dev_2,
-        output_format = rmarkdown::rtf_document(
-          toc = TRUE,
-          toc_depth = 2,
-          number_sections = FALSE,
-          pandoc_args = c(
-            paste0("--resource-path=", res_path),
-            "--self-contained"
-          )
-        )
-      )
-      # I found that in some cases the rendering silently overwrites the markdown file
-      # Cause unknown, maybe due to some weird blank characters instead of space?
-      # Therefore added a control to throw error if the file is truncated in the process
-      if (file.size(session$userData$temp_md_dev_2) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-      # by default the table of contents in pandoc output does not work, fixing it manually
-      rtf_fix_table_of_contents(session$userData$temp_rtf_dev_2)
-      rtf_center_images(session$userData$temp_rtf_dev_2)
+      render_rtf(session$userData$temp_md_dev_2, session$userData$temp_rtf_dev_2, res_path)
       removeModal()
       file.copy(session$userData$temp_rtf_dev_2, file)
     }

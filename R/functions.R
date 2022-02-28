@@ -876,36 +876,47 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' this is necessary as markdown::render takes file as an argument
 #' @param report_contents the content to write
 #' @param tempfile where to write the report
+#' @param fix_image_width whether to set all the images to fixed width
 #' @return NULL, output is a file as specified in the argument
-write_report_to_file <- function(report_contents, tempfile){
+write_report_to_file <- function(report_contents, tempfile, fix_image_width=FALSE){
   file_conn <- file(tempfile)
   writeLines(
     report_contents,
     file_conn
   )
   close(file_conn)
+  if (fix_image_width){
+    ensure_images_fit_page(tempfile, 6, "in", TRUE)
+  }
   return(invisible(NULL))
 }
 
 #' Go through the markdown file, find all png images and scale down where relevant
 #'
-#' @param filename the path to file to convert
-#' @param max_width_inch maximum width of image in inches (wider will be scaled down to this value)
+#' @param filename markdown file to process
+#' @param target_width target width of images
 #' default is 7 inches which roughly matches vertical A4 page with margins
+#' @param target_width_units either "in" for inches of "%"
+#' @param fix_width if TRUE all images will be scaled exactly to target_width. otherwise,
+#' only the larger images will be scaled down
+#' @param min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
+#' this is to prevent ugly look of upscaled low resolution images
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-ensure_images_fit_page <- function(filename, max_width_inch=7){
+ensure_images_fit_page <- function(filename, target_width=7, target_width_units=c("in","%"), fix_width, min_pixels_to_rescale=300){
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[",markdown)
   for (i in graph_lines){
     image_name <- substring(stringi::stri_match_first(markdown[i], regex="\\([[:graph:]]*.png"),2)
-    image_attributes <- attributes(png::readPNG(paste0(system.file("www", package = "climate.narrative"), "/", image_name), info=TRUE))$info
+    image_attributes <- attributes(png::readPNG(paste0(image_name), info=TRUE))$info
     if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
-    if (image_attributes$dim[1]/image_attributes$dpi[1] > max_width_inch){
-      warning(paste0("image ", image_name, " has width > ", max_width_inch, "inch, resizing"))
-      markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch,"in }")
+    if (fix_width && image_attributes$dim[1] > min_pixels_to_rescale){
+      markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
+    } else if (target_width_units == "in" && image_attributes$dim[1]/image_attributes$dpi[1] > target_width){
+      warning(paste0("image ", image_name, " has width > ", target_width, target_width_units, ", resizing"))
+      markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch, target_width_units, " }")
     }
   }
   writeLines(markdown, file_conn)
@@ -918,7 +929,7 @@ ensure_images_fit_page <- function(filename, max_width_inch=7){
 #' ToC in pandoc output is not working out of the box. The ToC is a list of hyperlinks,
 #' but there are no corresponding bookmarks in headers of respective sections
 #'
-#' @param filename name of file to convert
+#' @inherit rtf_postprocess
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
@@ -961,7 +972,7 @@ rtf_fix_table_of_contents <- function(filename){
 #'
 #' By default pandoc rtf aligns pictures left, to center them (consistently with HTML)
 #' manual intervention is required
-#' @param filename name of file to convert
+#' @inherit rtf_postprocess
 #' @return NULL, changes file specified as an argument in place
 #'
 rtf_center_images <- function(filename){
@@ -974,6 +985,19 @@ rtf_center_images <- function(filename){
   writeLines(rtf, file_conn)
   close(file_conn)
   return(invisible(NULL))
+}
+
+#' Fix the RTF file
+#' 
+#' It is not possible to set some options using markdown syntax. Also, there seems to be a bug
+#' in pandoc which breaks the TOC (links are not working)
+#' @param filename name of file to convert
+#' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
+#' @return NULL, changes file specified as an argument in place
+
+rtf_postprocess <- function (filename, report_version){
+  rtf_fix_table_of_contents(filename)
+  rtf_center_images(filename)
 }
 
 #' Add path to graphs
@@ -1428,4 +1452,79 @@ include_markdown_section <- function(output, output_name, section_name){
       )
     )
   })
+}
+
+render_rtf <- function(input_file, output_file, res_path){
+  fs <- file.size(input_file)
+  rmarkdown::render(
+        input = input_file,
+        output_file = output_file,
+        output_format = rmarkdown::rtf_document(
+          toc = TRUE,
+          toc_depth = 2,
+          number_sections = FALSE,
+          pandoc_args = c(
+            paste0("--resource-path=", res_path),
+            "--self-contained"
+          )
+        )
+      )
+  # I found that in some cases the rendering silently overwrites the markdown file
+  # Cause unknown, maybe due to some weird blank characters instead of space?
+  # Therefore added a control to throw error if the file is truncated in the process
+  if (file.size(input_file) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
+  rtf_postprocess(output_file, global$report_version)
+  return(invisible(NULL))
+}
+
+render_html <- function(input_file, output_file){
+  rmarkdown::render(
+    input = input_file,
+    output_file = output_file,
+    output_format = rmarkdown::html_document(
+      toc = TRUE,
+      toc_float = FALSE,
+      toc_depth = 2,
+      number_sections = FALSE,
+      self_contained = FALSE,
+      fig_caption = FALSE
+    )
+  )
+  html_postprocess(output_file, global$report_version)
+  return(invisible(NULL))
+}
+
+html_postprocess <- function(file, report_version){
+  # replace back the images links
+  file_conn <- file(file)
+  temp <- readLines(file_conn)
+  temp <- gsub(
+    system.file("www", package = "climate.narrative"),
+    "climate_narrative",
+    temp
+  )
+  if (report_version >= 2){
+    temp <- gsub(
+      "(<h[1-5]?>)(.*)(</h[1-5]?>)",
+      "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
+      temp,
+      perl=TRUE
+    )    
+  }
+  # extract the table of contents
+  # disabled for a moment
+  if (global$sidebar_toc){
+    toc_start <- grep("<div id=\"TOC\">", temp)
+    div_end <- grep("</div>", temp)
+    toc_end <- min(div_end[div_end > toc_start])
+    toc <- temp[toc_start:toc_end]
+    output$html_report_nav <- renderUI(HTML(toc))
+    temp <- temp[-(toc_start:toc_end)]
+  }
+  writeLines(
+    temp,
+    file_conn
+  )
+  close(file_conn)
+  return(invisible(NULL))
 }
