@@ -34,7 +34,7 @@ QuestionTab <- R6Class(
     type = NULL,
     #' @field subtype subtype of tab within a type of institution (to group the inputs from all tabs)
     subtype = NULL,
-    #' @field ui_settings optional list of parameters to pass to ui function
+    #' @field ui_settings optional list of parameters to pass to ui function  
     ui_settings = NULL,
     #' @description the constructor fills the slots with values given
     #' it also automatically gets ui, server and foot
