@@ -16,34 +16,34 @@ tab_report_ui <- function() {
     sector_options,
     selectize = FALSE
   )
-  
-  if (global$dev){
+
+  if (global$dev) {
     dropdown_3 <- selectInput(
       "version_selection",
       "Select the report version",
       global$report_versions,
       global$report_version,
-      selectize=FALSE
+      selectize = FALSE
     )
     out <- list(
-      #div(
-        fluidRow(
-          column(4, dropdown_1),
-          column(4, dropdown_2),
-          column(4, dropdown_3)
-        )#,
-        #id = "report_page_top"
-      #)
+      # div(
+      fluidRow(
+        column(4, dropdown_1),
+        column(4, dropdown_2),
+        column(4, dropdown_3)
+      ) # ,
+      # id = "report_page_top"
+      # )
     )
   } else {
     out <- list(
-      #div(
-        fluidRow(
-          column(6, dropdown_1),
-          column(6, dropdown_2)
-        )#,
+      # div(
+      fluidRow(
+        column(6, dropdown_1),
+        column(6, dropdown_2)
+      ) # ,
       #  id = "report_page_top"
-      #)
+      # )
     )
   }
   if (!rmarkdown::pandoc_available()) {
@@ -59,7 +59,7 @@ tab_report_ui <- function() {
       downloadButton("report", "Download the selected report as RTF")
     )
     button_3 <- actionButton("update_yamls", "Update the report text files")
-    if (global$dev){
+    if (global$dev) {
       out <- c(out, list(
         fluidRow(
           column(4, button_1),
@@ -75,7 +75,7 @@ tab_report_ui <- function() {
         )
       ))
     }
-    if (global$sidebar_toc){
+    if (global$sidebar_toc) {
       out <- c(
         out,
         list(
@@ -108,7 +108,7 @@ tab_report_server <- function(input, output, session, tab) {
   observeEvent(
     list(input$inst_type, input$rep_type),
     {
-      if (input$rep_type == "inst"){
+      if (input$rep_type == "inst") {
         tab$previous_tab <- tab_name_to_number(
           switch(input$inst_type,
             insurance = "ins_sov",
@@ -123,8 +123,8 @@ tab_report_server <- function(input, output, session, tab) {
   )
   observeEvent(
     list(
-      input[[paste0("page_",  tab_name_to_number("report"), "_previous")]],
-      input[[paste0("page_",  tab_name_to_number("report"), "_previous_duplicate")]]
+      input[[paste0("page_", tab_name_to_number("report"), "_previous")]],
+      input[[paste0("page_", tab_name_to_number("report"), "_previous_duplicate")]]
     ),
     {
       updateSelectInput(session, "report_scenario_selection", selected = "")

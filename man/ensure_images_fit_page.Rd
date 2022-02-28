@@ -4,13 +4,27 @@
 \alias{ensure_images_fit_page}
 \title{Go through the markdown file, find all png images and scale down where relevant}
 \usage{
-ensure_images_fit_page(filename, max_width_inch = 7)
+ensure_images_fit_page(
+  filename,
+  target_width = 7,
+  target_width_units = c("in", "\%"),
+  fix_width,
+  min_pixels_to_rescale = 300
+)
 }
 \arguments{
-\item{filename}{the path to file to convert}
+\item{filename}{markdown file to process}
 
-\item{max_width_inch}{maximum width of image in inches (wider will be scaled down to this value)
+\item{target_width}{target width of images
 default is 7 inches which roughly matches vertical A4 page with margins}
+
+\item{target_width_units}{either "in" for inches of "\%"}
+
+\item{fix_width}{if TRUE all images will be scaled exactly to target_width. otherwise,
+only the larger images will be scaled down}
+
+\item{min_pixels_to_rescale}{for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
+this is to prevent ugly look of upscaled low resolution images}
 }
 \value{
 NULL, changes file specified as an argument in place

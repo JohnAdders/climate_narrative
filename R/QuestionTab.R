@@ -103,11 +103,11 @@ QuestionTab <- R6Class(
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
       if (length(self$previous_tab)) {
         observeEvent(
-          input[[paste0(self$id, "_previous")]], 
+          input[[paste0(self$id, "_previous")]],
           switch_page(as.integer(self$previous_tab))
         )
         observeEvent(
-          input[[paste0(self$id, "_previous_duplicate")]], 
+          input[[paste0(self$id, "_previous_duplicate")]],
           switch_page(as.integer(self$previous_tab))
         )
       }
@@ -140,7 +140,7 @@ QuestionTab <- R6Class(
           ))
         )
       }
-      if(!is.null(self$tab_title)){
+      if (!is.null(self$tab_title)) {
         tabpanel_params <- add_param(
           tabpanel_params,
           h2(self$tab_title)

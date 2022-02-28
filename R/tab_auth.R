@@ -69,16 +69,16 @@ tab_auth_ui <- function(captcha_code) {
   list(
     div(
       class = "disclaimer", id = "disclaimer_1",
-      p("This tool is currently under development and is only being made available to 
-		selected users for testing purposes. It represents output from the cross-industry 
-		Scenario Analysis Working Group of the Prudential Regulation Authority and Financial 
-		Conduct Authority's Climate Financial Risk Forum (CFRF)."),
+      p("This tool is currently under development and is only being made available to
+        selected users for testing purposes. It represents output from the cross-industry
+        Scenario Analysis Working Group of the Prudential Regulation Authority and Financial
+        Conduct Authority's Climate Financial Risk Forum (CFRF)."),
       p("The PRA and FCA have convened and facilitated CFRF discussions but do not accept
         liability for the views expressed in this guide which do not necessarily represent
         the view of the regulators and in any case do not constitute regulatory guidance."),
-      p("The information contained in this tool has been written by industry, for industry. 
-		The recommendations in this guide do not constitute financial or other professional 
-		advice and should not be relied upon as such."),
+      p("The information contained in this tool has been written by industry, for industry.
+        The recommendations in this guide do not constitute financial or other professional
+        advice and should not be relied upon as such."),
       p("The information contained in any reports can be reproduced or re-disseminated
         in any form as long as this disclaimer is not removed, the source is identified
         as the Climate Financial Risk Forum's Climate Narrative Tool and any changes from
