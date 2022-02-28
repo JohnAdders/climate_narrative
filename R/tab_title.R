@@ -2,7 +2,7 @@ tab_title_ui <- function() {
   out <- list(
     img(src = "climate_narrative/title.png", alt = "CFRF logo4", width = "70%")
   )
-  if (global$dev){
+  if (global$dev) {
     out <- c(
       out,
       list(
@@ -18,7 +18,7 @@ tab_title_ui <- function() {
 }
 
 tab_title_server <- function(input, output, session, tab) {
-  if (global$dev == TRUE){
+  if (global$dev == TRUE) {
     tab$next_tab <- tab_name_to_number("intro")
   }
 }
