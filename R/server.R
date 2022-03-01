@@ -310,11 +310,10 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        warning("sector by sector report still TODO")
-        settings <- get_report_settings(session$userData$temp_rtf, "rtf", global$report_version, global$sidebar_toc, "sector", "", "", "")
-        produce_report(all_inputs(), settings)
+        settings <- get_report_settings(session$userData$temp_rtf_dev_2, "rtf", global$report_version, global$sidebar_toc, "test", "", "", "")
+        produce_report(NULL, settings)
         removeModal()
-        file.copy(session$userData$temp_rtf, file)
+        file.copy(session$userData$temp_rtf_dev_2, file)
       } else {
         temp <- get_test_report(global$exposure_classes)
         write_report_to_file(

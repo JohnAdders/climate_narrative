@@ -135,18 +135,28 @@ filter_inputs <- function(all_inputs_table, filter_settings) {
 }
 
 get_report_contents_2 <- function(content_files, inputs, content_settings) {
-  get_report_contents(
-    content_files$tabs,
-    content_files$scenarios,
-    content_files$sections,
-    content_files$exposure_classes,
-    inputs,
-    content_settings$report_version,
-    content_settings$report_scenario_selection,
-    content_settings$is_rtf,
-    content_settings$exec_summary_layout,
-    content_settings$include_exposures
-  )
+  if(content_settings$rep_type %in% c("inst", "sector")) {
+    return(
+      get_report_contents(
+        content_files$tabs,
+        content_files$scenarios,
+        content_files$sections,
+        content_files$exposure_classes,
+        inputs,
+        content_settings$report_version,
+        content_settings$report_scenario_selection,
+        content_settings$is_rtf,
+        content_settings$exec_summary_layout,
+        content_settings$include_exposures
+      )
+    )
+  } else { # test all sector report
+    return(
+      get_test_report(
+        content_files$exposure_classes
+      )
+    )
+  }
 }
 
 format_images <- function(md_file, image_settings) {
