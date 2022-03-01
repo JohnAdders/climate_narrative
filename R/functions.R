@@ -368,6 +368,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     headers <- gsub(".", " ", headers, fixed = TRUE)
   }
   for (i in 1:ncol(table)) {
+    headers[i] <- string_format_lines(headers[i], col_widths[i] - 2)
     table[, i] <- as.character(table[, i])
     table[, i] <- gsub("\n", " ", table[, i])
     for (j in 1:nrow(table)) {
@@ -389,7 +390,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
   sepline[1] <- paste0("+", sepline[1])
   rowsout <- matrix(emptyline, nrow = split_rows[1], ncol = length(emptyline), byrow = F)
   for (i in 1:ncol(out)) {
-    cell_text <- string_format_lines(headers[i], col_widths[i] - 2)
+    cell_text <- headers[i]
     cell_text <- paste0(
       cell_text,
       paste(rep(" ", (col_widths[i] - 2) * split_rows[1] - nchar(cell_text)), collapse = "")
@@ -404,6 +405,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     }
   }
   out <- rbind(out, rowsout, gsub("-", "=", sepline))
+  print("under header")
   for (j in 1:nrow(table)) {
     rowsout <- matrix(emptyline, nrow = split_rows[j + 1], ncol = length(emptyline), byrow = F)
     for (i in 1:ncol(out)) {
@@ -1134,6 +1136,7 @@ get_report_contents <- function(tabs,
   section_no <- get_section_no(sections, is_rtf)
   out <- list()
   for (scenario in scenarios[scenario_no]) {
+    print(scenario$name)
     out <- c(
       out,
       list(get_scenario_descriptions(
@@ -1319,7 +1322,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
           cols_to_use <- cols_to_use[cols_to_use <= ncol]
           out <- paste0(
             out,
-            table_to_markdown_multiline(values_trimmed[, cols_to_use], col_widths = c(30, 20, 20, 20))
+            table_to_markdown_multiline(values_trimmed[, cols_to_use], col_widths = c(30, rep(20, length(cols_to_use)-1)))
           )
         }
       }

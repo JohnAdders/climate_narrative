@@ -100,7 +100,7 @@ server <- function(input, output, session) {
         name_of_blank_scenario <- "All relevant scenarios"
         name_of_blank_sector <- ""
       }
-      sectors_available <- (names(global$exposure_classes) %in% get_inputs(NULL, all_inputs(), selection_type_filter)$item)
+      sectors_available <- (names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item)
       sector_choices <- c(
         "",
         names(sapply(global$exposure_classes, `[[`, i = "name"))[sectors_available]
