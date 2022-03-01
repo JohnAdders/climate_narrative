@@ -137,10 +137,18 @@ server <- function(input, output, session) {
       return("")
     }
     temp_html <- tempfile(fileext = ".html")
+    showModal(
+        modalDialog(
+          "Report rendering in progress... when complete it will show automatically",
+          title = "Climate Report",
+          footer = NULL
+        )
+      )
     if (global$report_version >= 5) {
       settings <- get_report_settings(temp_html, "html", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
       produce_report(all_inputs(), settings)
       result <- includeHTML(temp_html)
+      removeModal()
       return(result)
     } # old code below
     if (input$rep_type == "inst") {
@@ -194,6 +202,7 @@ server <- function(input, output, session) {
     )
     render_html(session$userData$temp_md_scenario, temp_html, global$report_version, global$sidebar_toc)
     result <- includeHTML(temp_html)
+    removeModal()
     return(result)
   })
 

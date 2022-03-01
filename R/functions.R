@@ -1462,7 +1462,7 @@ html_postprocess <- function(file, report_version, sidebar_toc) {
     )
   }
   # extract the table of contents
-  # TODO: fix the toc code below
+  # TODO: fix the toc code below (side effect output$html_report_nav) or remove it
   if (sidebar_toc == 1) {
     toc_start <- grep("<div id=\"TOC\">", temp)
     div_end <- grep("</div>", temp)
