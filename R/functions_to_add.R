@@ -106,31 +106,26 @@ produce_report <- function(all_inputs, settings) {
   render_settings <- settings$render_settings
   image_settings <- settings$image_settings
   postprocess_settings <- settings$postprocess_settings
-  print(1)
   inputs <- filter_inputs(all_inputs, filter_settings)
   report_contents <- get_report_contents_2(
     content_files,
     inputs,
     content_settings
   )
-  print(2)
   file_conn <- file(render_settings$md_file)
   writeLines(
     report_contents,
     file_conn
   )
   close(file_conn)
-  print(3)
   if (image_settings$image_width_fix) {
     format_images(render_settings$md_file, image_settings)
   }
-  print(4)
   rmarkdown::render(
     input = render_settings$md_file,
     output_file = render_settings$output_file,
     output_format = render_settings$output_format
   )
-  print(5)
   postprocess(postprocess_settings)
   return(invisible(NULL))
 }
@@ -141,9 +136,7 @@ filter_inputs <- function(all_inputs_table, filter_settings) {
 }
 
 get_report_contents_2 <- function(content_files, inputs, content_settings) {
-  print(11)
   if(content_settings$rep_type %in% c("inst", "sector")) {
-    print(12)
     return(
       get_report_contents(
         content_files$tabs,
@@ -159,7 +152,6 @@ get_report_contents_2 <- function(content_files, inputs, content_settings) {
       )
     )
   } else { # test all sector report
-    print(13)
     return(
       get_test_report(
         content_files$exposure_classes
