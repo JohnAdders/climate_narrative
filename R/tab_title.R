@@ -10,7 +10,7 @@ tab_title_ui <- function() {
         h3("Development version report download"),
         downloadButton("dev_report", "Download the complete output as RTF"),
         downloadButton("dev_report_2", "Download the sector by sector test RTF report"),
-        actionButton("testbutton","test"),
+        actionButton("testbutton", "test"),
         hr(),
         uiOutput("test")
       )

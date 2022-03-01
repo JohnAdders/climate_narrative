@@ -1,15 +1,13 @@
-get_report_settings <- function(
-  output_file,
-  file_format,
-  report_version,
-  sidebar_toc, 
-  rep_type,
-  inst_type, 
-  report_sector_selection,
-  report_scenario_selection
-){
+get_report_settings <- function(output_file,
+                                file_format,
+                                report_version,
+                                sidebar_toc,
+                                rep_type,
+                                inst_type,
+                                report_sector_selection,
+                                report_scenario_selection) {
   # translating the parameters to complete setup
-  if (rep_type == "inst"){
+  if (rep_type == "inst") {
     override_materiality <- ""
     include_exposures <- TRUE
     if (report_sector_selection == "") {
@@ -22,7 +20,7 @@ get_report_settings <- function(
     override_materiality <- "High"
     include_exposures <- FALSE
   }
-  if (file_format == "html"){
+  if (file_format == "html") {
     output_format <- rmarkdown::html_document(
       toc = TRUE,
       toc_float = FALSE,
@@ -45,8 +43,8 @@ get_report_settings <- function(
   image_width <- 6
   image_width_unit <- "in"
   image_width_fix <- TRUE
-  md_file <- tempfile(fileext=".md")
-  
+  md_file <- tempfile(fileext = ".md")
+
   # hierarchical structure
   content_files <- list(
     tabs = global$tabs,
@@ -54,7 +52,7 @@ get_report_settings <- function(
     sections = global$sections,
     exposure_classes = global$exposure_classes
   )
-  
+
   filter_settings <- list(
     inst_type = inst_type,
     report_sector_selection = report_sector_selection,
@@ -63,7 +61,7 @@ get_report_settings <- function(
 
   content_settings <- list(
     report_version = report_version,
-    is_rtf = (output_format=="rtf"),
+    is_rtf = (output_format == "rtf"),
     rep_type = rep_type,
     report_scenario_selection = report_scenario_selection,
     include_exposures = include_exposures,
@@ -71,24 +69,24 @@ get_report_settings <- function(
   )
 
   render_settings <- list(
-    md_file = tempfile(fileext=".md"),
+    md_file = tempfile(fileext = ".md"),
     output_file = output_file,
     output_format = output_format
   )
 
-  image_settings = list(
-      image_width = 6,
-      image_width_unit = "in",
-      image_width_fix = TRUE
-    )
-  
+  image_settings <- list(
+    image_width = 6,
+    image_width_unit = "in",
+    image_width_fix = TRUE
+  )
+
   postprocess_settings <- list(
     file_format = file_format,
     output_file = output_file,
     report_version = report_version,
     sidebar_toc = sidebar_toc
   )
-  
+
   settings <- list(
     content_files = content_files,
     filter_settings = filter_settings,
@@ -100,9 +98,9 @@ get_report_settings <- function(
   return(settings)
 }
 
-produce_report <- function(all_inputs, settings){ 
+produce_report <- function(all_inputs, settings) {
   content_files <- settings$content_files
-  filter_settings <- settings$filter_settings,
+  filter_settings <- settings$filter_settings
   content_settings <- settings$content_settings
   render_settings <- settings$render_settings
   postprocess_settings <- settings$postprocess_settings
@@ -119,7 +117,7 @@ produce_report <- function(all_inputs, settings){
     file_conn
   )
   close(file_conn)
-  if (image_settings$image_width_fix){
+  if (image_settings$image_width_fix) {
     format_images(render_settings$md_file, image_settings)
   }
   rmarkdown::render(
@@ -132,11 +130,11 @@ produce_report <- function(all_inputs, settings){
 }
 
 # refactored parameter version of existing functions
-filter_inputs <- function(all_inputs_table, filter_settings){
+filter_inputs <- function(all_inputs_table, filter_settings) {
   get_inputs(all_inputs_table, filter_settings$inst_type, filter_settings$sector, FALSE, filter_settings$override_materiality)
 }
 
-get_report_contents_2 <- function(content_files, inputs, content_settings){
+get_report_contents_2 <- function(content_files, inputs, content_settings) {
   get_report_contents(
     content_files$tabs,
     content_files$scenarios,
@@ -151,12 +149,12 @@ get_report_contents_2 <- function(content_files, inputs, content_settings){
   )
 }
 
-format_images <- function(md_file, image_settings){
+format_images <- function(md_file, image_settings) {
   ensure_images_fit_page(md_file, image_settings$image_width, image_settings$image_width_unit, image_settings$image_width_fix)
 }
 
-postprocess <- function(postprocess_settings){
-  if (postprocess_settings$file_format == "rtf"){
+postprocess <- function(postprocess_settings) {
+  if (postprocess_settings$file_format == "rtf") {
     rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
   } else {
     html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version, postprocess_settings$sidebar_toc)

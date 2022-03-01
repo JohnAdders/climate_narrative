@@ -156,8 +156,8 @@ server <- function(input, output, session) {
       inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
       include_exposures <- FALSE
     }
-    if (global$sidebar_toc != 2){
-      output_format = rmarkdown::html_document(
+    if (global$sidebar_toc != 2) {
+      output_format <- rmarkdown::html_document(
         toc = TRUE,
         toc_float = FALSE,
         toc_depth = 2,
@@ -166,9 +166,9 @@ server <- function(input, output, session) {
         fig_caption = FALSE
       )
     } else {
-      output_format = rmarkdown::html_document(
+      output_format <- rmarkdown::html_document(
         toc = TRUE,
-        toc_float = list(collapsed=FALSE),
+        toc_float = list(collapsed = FALSE),
         theme = "sandstone",
         toc_depth = 2,
         number_sections = FALSE,
@@ -223,38 +223,38 @@ server <- function(input, output, session) {
         removeModal()
         file.copy(session$userData$temp_rtf, file)
       } else { # old code below
-      if (input$rep_type == "inst") {
-        inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
-        include_exposures <- TRUE
-        if (input$report_sector_selection == "") {
-          exec_summary_layout <- 1
+        if (input$rep_type == "inst") {
+          inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
+          include_exposures <- TRUE
+          if (input$report_sector_selection == "") {
+            exec_summary_layout <- 1
+          } else {
+            exec_summary_layout <- 2
+          }
         } else {
           exec_summary_layout <- 2
+          inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
+          include_exposures <- FALSE
         }
-      } else {
-        exec_summary_layout <- 2
-        inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
-        include_exposures <- FALSE
-      }
-      write_report_to_file(
-        get_report_contents(
-          global$tabs,
-          global$scenarios,
-          global$sections,
-          global$exposure_classes,
-          inputs,
-          global$report_version,
-          input$report_scenario_selection,
-          TRUE,
-          exec_summary_layout,
-          include_exposures
-        ),
-        session$userData$temp_md_scenario_and_commons,
-        (global$report_version >= 4)
-      )
-      render_rtf(session$userData$temp_md_scenario_and_commons, session$userData$temp_rtf, res_path, global$report_version)
-      removeModal()
-      file.copy(session$userData$temp_rtf, file)
+        write_report_to_file(
+          get_report_contents(
+            global$tabs,
+            global$scenarios,
+            global$sections,
+            global$exposure_classes,
+            inputs,
+            global$report_version,
+            input$report_scenario_selection,
+            TRUE,
+            exec_summary_layout,
+            include_exposures
+          ),
+          session$userData$temp_md_scenario_and_commons,
+          (global$report_version >= 4)
+        )
+        render_rtf(session$userData$temp_md_scenario_and_commons, session$userData$temp_rtf, res_path, global$report_version)
+        removeModal()
+        file.copy(session$userData$temp_rtf, file)
       }
     }
   )
@@ -269,32 +269,32 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (global$report_version >= 5){
+      if (global$report_version >= 5) {
         settings <- get_report_settings(session$userData$temp_rtf, "rtf", global$report_version, global$sidebar_toc, "inst", "", "", "")
         produce_report(all_inputs(), settings)
         removeModal()
         file.copy(session$userData$temp_rtf, file)
       } else {
-      write_report_to_file(
-        get_report_contents(
-          global$tabs,
-          global$scenarios,
-          global$sections,
-          global$exposure_classes,
-          all_inputs(),
-          global$report_version,
-          input$report_scenario_selection,
-          TRUE,
-          1,
-          TRUE
-        ),
-        session$userData$temp_md_dev,
-        (global$report_version >= 4)
-      )
-      render_rtf(session$userData$temp_md_dev, session$userData$temp_rtf_dev, res_path, global$report_version)
-      removeModal()
-      file.copy(session$userData$temp_rtf_dev, file)
-    }
+        write_report_to_file(
+          get_report_contents(
+            global$tabs,
+            global$scenarios,
+            global$sections,
+            global$exposure_classes,
+            all_inputs(),
+            global$report_version,
+            input$report_scenario_selection,
+            TRUE,
+            1,
+            TRUE
+          ),
+          session$userData$temp_md_dev,
+          (global$report_version >= 4)
+        )
+        render_rtf(session$userData$temp_md_dev, session$userData$temp_rtf_dev, res_path, global$report_version)
+        removeModal()
+        file.copy(session$userData$temp_rtf_dev, file)
+      }
     }
   )
 
@@ -308,22 +308,22 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (global$report_version >= 5){
+      if (global$report_version >= 5) {
         warning("sector by sector report still TODO")
         settings <- get_report_settings(session$userData$temp_rtf, "rtf", global$report_version, global$sidebar_toc, "sector", "", "", "")
         produce_report(all_inputs(), settings)
         removeModal()
         file.copy(session$userData$temp_rtf, file)
       } else {
-      write_report_to_file(
-        get_test_report(global$exposure_classes),
-        session$userData$temp_md_dev_2,
-        (global$report_version >= 4)
-      )
-      render_rtf(session$userData$temp_md_dev_2, session$userData$temp_rtf_dev_2, res_path, global$report_version)
-      removeModal()
-      file.copy(session$userData$temp_rtf_dev_2, file)
-    }
+        write_report_to_file(
+          get_test_report(global$exposure_classes),
+          session$userData$temp_md_dev_2,
+          (global$report_version >= 4)
+        )
+        render_rtf(session$userData$temp_md_dev_2, session$userData$temp_rtf_dev_2, res_path, global$report_version)
+        removeModal()
+        file.copy(session$userData$temp_rtf_dev_2, file)
+      }
     }
   )
 

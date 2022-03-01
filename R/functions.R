@@ -577,15 +577,13 @@ get_exposure_appendix <- function(item, exposure_classes) {
 #' @param high_or_low Is scenario high or low
 #' @param include_oneliner FALSE by default, normally oneliner is for executive summary
 #'
-get_exposure_risk_description <- function(
-  item,
-  products,
-  materiality,
-  exposure_classes,
-  physical_or_transition,
-  high_or_low,
-  include_oneliner=FALSE
-) {
+get_exposure_risk_description <- function(item,
+                                          products,
+                                          materiality,
+                                          exposure_classes,
+                                          physical_or_transition,
+                                          high_or_low,
+                                          include_oneliner = FALSE) {
   if (high_or_low == FALSE) {
     return("")
   }
@@ -869,25 +867,6 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
   )
 }
 
-#' Function that writes a (full or selective) report to a (temporary) file
-#'
-#' this is necessary as markdown::render takes file as an argument
-#' @param report_contents the content to write
-#' @param tempfile where to write the report
-#' @param fix_image_width whether to set all the images to fixed width
-#' @return NULL, output is a file as specified in the argument
-write_report_to_file <- function(report_contents, tempfile, fix_image_width = FALSE) {
-  file_conn <- file(tempfile)
-  writeLines(
-    report_contents,
-    file_conn
-  )
-  close(file_conn)
-  if (fix_image_width) {
-    ensure_images_fit_page(tempfile, 6, "in", TRUE)
-  }
-  return(invisible(NULL))
-}
 
 #' Go through the markdown file, find all png images and scale down where relevant
 #'
@@ -1025,7 +1004,7 @@ add_path_to_graphs <- function(x) {
 #' @param exposure_exec bool whether to include a short description for the sector
 #' (applicable in single sector context only)
 #'
-get_executive_summary_scenarios <- function(scenarios, exposure_classes, aggregated_inputs, inputs, scenario_no, exposure_exec = FALSE){
+get_executive_summary_scenarios <- function(scenarios, exposure_classes, aggregated_inputs, inputs, scenario_no, exposure_exec = FALSE) {
   out <- ""
   for (scenario in scenarios[scenario_no]) {
     out <- paste0(
@@ -1077,7 +1056,7 @@ get_executive_summary_scenarios <- function(scenarios, exposure_classes, aggrega
 #' 2 for one subsection (scenarios, including also exposures)
 #' @return string - executive summary text
 #'
-get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_inputs, inputs, scenario_no, layout=1){
+get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_inputs, inputs, scenario_no, layout = 1) {
   out_0 <- "# Executive summary\n\n"
   exec <- data.frame(low = rep(FALSE, 2), high = rep(FALSE, 2))
   rownames(exec) <- c("transition", "physical")
@@ -1107,7 +1086,7 @@ get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_
 #' @return vector of integers
 #'
 get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
-  if (report_scenario_selection == ""){
+  if (report_scenario_selection == "") {
     scenario_no <- which(sapply(scenarios, function(sce) !is.null(sce$name)))
   } else {
     scenario_no <- which(sapply(scenarios, `[[`, i = "name") == report_scenario_selection)
@@ -1120,7 +1099,7 @@ get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
 #' @inherit get_scenario_no
 #'
 get_section_no <- function(sections, is_rtf) {
-  if (is_rtf){
+  if (is_rtf) {
     indicator_function <- function(s) s$include_in_RTF
   } else {
     indicator_function <- function(s) s$include_in_HTML
@@ -1140,18 +1119,16 @@ get_section_no <- function(sections, is_rtf) {
 #' @param include_exposures whether to include tables with contributing exposures
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #'
-get_report_contents <- function(
-  tabs,
-  scenarios,
-  sections,
-  exposure_classes,
-  inputs,
-  report_version,
-  report_scenario_selection,
-  is_rtf,
-  exec_summary_layout=1,
-  include_exposures
-) {
+get_report_contents <- function(tabs,
+                                scenarios,
+                                sections,
+                                exposure_classes,
+                                inputs,
+                                report_version,
+                                report_scenario_selection,
+                                is_rtf,
+                                exec_summary_layout = 1,
+                                include_exposures) {
   aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(scenarios, report_scenario_selection, is_rtf)
   section_no <- get_section_no(sections, is_rtf)
@@ -1170,21 +1147,21 @@ get_report_contents <- function(
   }
   for (section in sections[section_no]) {
     out <- c(
-        out,
-        list(get_section_descriptions(
-          section,
-          list(
-            report_version=report_version,
-            aggregated_inputs=aggregated_inputs,
-            inputs=inputs,
-            scenario_no=scenario_no,
-            exec_summary_layout=exec_summary_layout,
-            scenarios=scenarios,
-            exposure_classes=exposure_classes,
-            tabs=tabs
-          )
-        ))
-      )
+      out,
+      list(get_section_descriptions(
+        section,
+        list(
+          report_version = report_version,
+          aggregated_inputs = aggregated_inputs,
+          inputs = inputs,
+          scenario_no = scenario_no,
+          exec_summary_layout = exec_summary_layout,
+          scenarios = scenarios,
+          exposure_classes = exposure_classes,
+          tabs = tabs
+        )
+      ))
+    )
   }
   # order the scenario and non-scenario sections
   scenario_pos <- sapply(scenarios, function(sce) sce$position)[scenario_no]
@@ -1203,13 +1180,11 @@ get_report_contents <- function(
 #' Rows denote risks (physical/transition)
 #' Columns denote risk intensity (high/low)
 #'
-get_executive_summary_exposures <- function(
-  exposure_classes,
-  aggregated_inputs,
-  inputs,
-  scenario_no,
-  exec
-) {
+get_executive_summary_exposures <- function(exposure_classes,
+                                            aggregated_inputs,
+                                            inputs,
+                                            scenario_no,
+                                            exec) {
   out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
@@ -1279,7 +1254,7 @@ get_executive_summary_exposures <- function(
   return(out_exp)
 }
 
-#' Helpder function - the name is self-explanatory
+#' Helper function - the name is self-explanatory
 #'
 #' @param data matrix or data.frame, possibly containing missing value
 #' @param empty_strings which strings should be considered as "empty"?
@@ -1314,9 +1289,9 @@ delete_empty_rows_and_columns <- function(data, empty_strings = list("", "N/A"),
 #'
 get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
   out <- "## Inputs\n\n"
-  for (tab in tabs){
-    if (!is.null(tab$exposure)){
-      ids <- get_input_ids(tab=tab)
+  for (tab in tabs) {
+    if (!is.null(tab$exposure)) {
+      ids <- get_input_ids(tab = tab)
       values <- get_input_values(inputs, ids)
       values <- cbind(tab$exposure[, 1], values)
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols = 1)
@@ -1466,46 +1441,6 @@ include_markdown_section <- function(output, output_name, section_name) {
       )
     )
   })
-}
-
-render_rtf <- function(input_file, output_file, res_path, report_version) {
-  fs <- file.size(input_file)
-  rmarkdown::render(
-    input = input_file,
-    output_file = output_file,
-    output_format = rmarkdown::rtf_document(
-      toc = TRUE,
-      toc_depth = 2,
-      number_sections = FALSE,
-      pandoc_args = c(
-        paste0("--resource-path=", res_path),
-        "--self-contained"
-      )
-    )
-  )
-  # I found that in some cases the rendering silently overwrites the markdown file
-  # Cause unknown, maybe due to some weird blank characters instead of space?
-  # Therefore added a control to throw error if the file is truncated in the process
-  if (file.size(input_file) != fs) stop("Rtf rendering issue - md file invisibly truncated!")
-  rtf_postprocess(output_file, report_version)
-  return(invisible(NULL))
-}
-
-render_html <- function(input_file, output_file, report_version, sidebar_toc) {
-  rmarkdown::render(
-    input = input_file,
-    output_file = output_file,
-    output_format = rmarkdown::html_document(
-      toc = TRUE,
-      toc_float = FALSE,
-      toc_depth = 2,
-      number_sections = FALSE,
-      self_contained = FALSE,
-      fig_caption = FALSE
-    )
-  )
-  html_postprocess(output_file, report_version, sidebar_toc)
-  return(invisible(NULL))
 }
 
 html_postprocess <- function(file, report_version, sidebar_toc) {
