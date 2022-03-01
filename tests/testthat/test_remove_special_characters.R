@@ -22,7 +22,7 @@ test_that("remove_special_characters produces correct result", {
     )
   )
   correct_res$default <- correct_res$camel
-  
+
   # Call the function.
   res_no_camel <- remove_special_characters(test_strings, FALSE)
   res_camel <- remove_special_characters(test_strings, TRUE)
@@ -32,7 +32,7 @@ test_that("remove_special_characters produces correct result", {
     camel = res_camel,
     default = res_default
   )
-  
+
   # Compare test data vs function outputs.
   expect_equal(fn_res, correct_res)
 })
