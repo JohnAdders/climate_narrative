@@ -1368,6 +1368,7 @@ get_test_report <- function() {
     out <- paste0(out, get_exposure_test_description(names(global$exposure_classes)[i]))
     out <- paste0(out, get_exposure_appendix(names(global$exposure_classes)[i]))
   }
+  out <- add_path_to_graphs(out)
   return(out)
 }
 
