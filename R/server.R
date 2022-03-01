@@ -77,6 +77,9 @@ server <- function(input, output, session) {
   })
 
   report_message <- reactive({
+    if (input$wizard != paste0("page_", tab_name_to_number("report"))) {
+      return("Tab not visible")
+    }
     if (input$rep_type == "inst" && input$report_scenario_selection == "") {
       return("Please select a scenario (optionally a sector as well)")
     }
@@ -87,9 +90,13 @@ server <- function(input, output, session) {
     }
   })
 
-  # update the available sectors, only after tab switch
+  # update the available sectors
   observeEvent(
-    input$wizard,
+    #input$wizard,
+    list(
+      input$rep_type,
+      input$inst_type
+    ),
     {
       if (input$rep_type == "inst") {
         selection_type_filter <- input$inst_type
@@ -132,79 +139,100 @@ server <- function(input, output, session) {
     report_message()
   })
 
-  output$html_report <- renderUI({
-    if (report_message() != "") {
-      return("")
-    }
-    temp_html <- tempfile(fileext = ".html")
-    showModal(
-        modalDialog(
-          "Report rendering in progress... when complete it will show automatically",
-          title = "Climate Report",
-          footer = NULL
-        )
-      )
-    if (global$report_version >= 5) {
-      settings <- get_report_settings(temp_html, "html", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
-      produce_report(all_inputs(), settings)
-      result <- includeHTML(temp_html)
-      removeModal()
-      return(result)
-    } # old code below
-    if (input$rep_type == "inst") {
-      inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
-      include_exposures <- TRUE
-      if (input$report_sector_selection == "") {
-        exec_summary_layout <- 1
+  observeEvent(
+    {
+      list(
+        input$wizard == paste0("page_", tab_name_to_number("report")), 
+        input$report_scenario_selection, input$report_sector_selection, report_message())
+      #if (input$wizard == paste0("page_", tab_name_to_number("report"))) {
+      #  list(input$report_scenario_selection, input$report_sector_selection, report_message())
+      #} else {
+      #  FALSE
+      #}
+    },
+    {
+      print("wrapper observe")
+      #output$html_report <- renderUI({
+      print(Sys.time())
+      print("rendering html report")
+      print(report_message())
+      if (report_message() != "") {
+        output$html_report <- renderUI("") # used to be: return("")
       } else {
-        exec_summary_layout <- 2
+        temp_html <- tempfile(fileext = ".html")
+        showModal(
+          modalDialog(
+            "Report rendering in progress... when complete it will show automatically",
+            title = "Climate Report",
+            footer = NULL
+          )
+        )
+        if (global$report_version >= 5) {
+          settings <- get_report_settings(temp_html, "html", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+          produce_report(all_inputs(), settings)
+          result <- includeHTML(temp_html)
+          removeModal()
+          print(Sys.time())
+          print("rendering html report complete")  
+          output$html_report <- renderUI(result) # used to be: return(result)
+        } else {# old code below
+          if (input$rep_type == "inst") {
+            inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
+            include_exposures <- TRUE
+            if (input$report_sector_selection == "") {
+              exec_summary_layout <- 1
+            } else {
+              exec_summary_layout <- 2
+            }
+          } else {
+            exec_summary_layout <- 2
+            inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
+            include_exposures <- FALSE
+          }
+          if (global$sidebar_toc != 2) {
+            output_format <- rmarkdown::html_document(
+              toc = TRUE,
+              toc_float = FALSE,
+              toc_depth = 2,
+              number_sections = FALSE,
+              self_contained = FALSE,
+              fig_caption = FALSE
+            )
+          } else {
+            output_format <- rmarkdown::html_document(
+              toc = TRUE,
+              toc_float = list(collapsed = FALSE),
+              theme = "sandstone",
+              toc_depth = 2,
+              number_sections = FALSE,
+              self_contained = TRUE,
+              fig_caption = FALSE
+            )
+          }
+          write_report_to_file(
+            get_report_contents(
+              global$tabs,
+              global$scenarios,
+              global$sections,
+              global$exposure_classes,
+              inputs,
+              global$report_version,
+              input$report_scenario_selection,
+              FALSE,
+              exec_summary_layout,
+              include_exposures
+            ),
+            session$userData$temp_md_scenario,
+            (global$report_version >= 4)
+          )
+          render_html(session$userData$temp_md_scenario, temp_html, global$report_version, global$sidebar_toc)
+          result <- includeHTML(temp_html)
+          removeModal()
+          output$html_report <- renderUI(result) # used to be: return(result)
+        }
       }
-    } else {
-      exec_summary_layout <- 2
-      inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
-      include_exposures <- FALSE
     }
-    if (global$sidebar_toc != 2) {
-      output_format <- rmarkdown::html_document(
-        toc = TRUE,
-        toc_float = FALSE,
-        toc_depth = 2,
-        number_sections = FALSE,
-        self_contained = FALSE,
-        fig_caption = FALSE
-      )
-    } else {
-      output_format <- rmarkdown::html_document(
-        toc = TRUE,
-        toc_float = list(collapsed = FALSE),
-        theme = "sandstone",
-        toc_depth = 2,
-        number_sections = FALSE,
-        self_contained = TRUE,
-        fig_caption = FALSE
-      )
-    }
-    write_report_to_file(
-      get_report_contents(
-        global$tabs,
-        global$scenarios,
-        global$sections,
-        global$exposure_classes,
-        inputs,
-        global$report_version,
-        input$report_scenario_selection,
-        FALSE,
-        exec_summary_layout,
-        include_exposures
-      ),
-      session$userData$temp_md_scenario,
-      (global$report_version >= 4)
-    )
-    render_html(session$userData$temp_md_scenario, temp_html, global$report_version, global$sidebar_toc)
-    result <- includeHTML(temp_html)
-    removeModal()
-    return(result)
-  })
+  )
 
   observeEvent(input$testbutton, {
     output$test <- renderUI({
@@ -338,7 +366,9 @@ server <- function(input, output, session) {
   )
 
   # finally, tab-specific server function collation
-  switch_page <- function(i) updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
+  switch_page <- function(i) {
+    updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
+  }
   report_tab_no <- tab_name_to_number("report")
   for (tab in global$tabs) {
     # "sum" below is a trick to include NULL case as sum(NULL)=0
