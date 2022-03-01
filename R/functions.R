@@ -405,7 +405,6 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     }
   }
   out <- rbind(out, rowsout, gsub("-", "=", sepline))
-  print("under header")
   for (j in 1:nrow(table)) {
     rowsout <- matrix(emptyline, nrow = split_rows[j + 1], ncol = length(emptyline), byrow = F)
     for (i in 1:ncol(out)) {
@@ -1136,7 +1135,6 @@ get_report_contents <- function(tabs,
   section_no <- get_section_no(sections, is_rtf)
   out <- list()
   for (scenario in scenarios[scenario_no]) {
-    print(scenario$name)
     out <- c(
       out,
       list(get_scenario_descriptions(
@@ -1362,10 +1360,10 @@ get_exposure_test_description <- function(exposure_classes, item) {
 get_test_report <- function(exposure_classes) {
   out <- "# Test report\n\n"
   for (i in 1:length(exposure_classes)) {
-    exposure_class <- exposure_classes[[i]]
     out <- paste0(out, get_exposure_test_description(exposure_classes, names(exposure_classes)[i]))
-    out <- paste0(out, get_exposure_appendix(names(exposure_classes)[i]), exposure_classes)
+    out <- paste0(out, get_exposure_appendix(names(exposure_classes)[i], exposure_classes))
   }
+  out <- add_path_to_graphs(out)
   return(out)
 }
 

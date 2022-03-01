@@ -275,8 +275,7 @@ server <- function(input, output, session) {
         removeModal()
         file.copy(session$userData$temp_rtf, file)
       } else {
-        write_report_to_file(
-          get_report_contents(
+        temp <- get_report_contents(
             global$tabs,
             global$scenarios,
             global$sections,
@@ -287,7 +286,9 @@ server <- function(input, output, session) {
             TRUE,
             1,
             TRUE
-          ),
+        )
+        write_report_to_file(
+          temp,
           session$userData$temp_md_dev,
           (global$report_version >= 4)
         )
@@ -315,8 +316,9 @@ server <- function(input, output, session) {
         removeModal()
         file.copy(session$userData$temp_rtf, file)
       } else {
+        temp <- get_test_report(global$exposure_classes)
         write_report_to_file(
-          get_test_report(global$exposure_classes),
+          temp,
           session$userData$temp_md_dev_2,
           (global$report_version >= 4)
         )
