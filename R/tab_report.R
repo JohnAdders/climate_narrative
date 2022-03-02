@@ -26,24 +26,18 @@ tab_report_ui <- function() {
       selectize = FALSE
     )
     out <- list(
-      # div(
       fluidRow(
         column(4, dropdown_1),
         column(4, dropdown_2),
         column(4, dropdown_3)
-      ) # ,
-      # id = "report_page_top"
-      # )
+      )
     )
   } else {
     out <- list(
-      # div(
       fluidRow(
         column(6, dropdown_1),
         column(6, dropdown_2)
-      ) # ,
-      #  id = "report_page_top"
-      # )
+      )
     )
   }
   if (!rmarkdown::pandoc_available()) {
@@ -75,29 +69,12 @@ tab_report_ui <- function() {
         )
       ))
     }
-    if (global$sidebar_toc) {
-      out <- c(
-        out,
-        list(
-          textOutput("html_report_message"),
-          sidebarLayout(
-            sidebarPanel(
-              div(id = "html_toc_div", uiOutput("html_report_nav")),
-              width = 3
-            ),
-            mainPanel(
-              div(id = "html_report_div", uiOutput("html_report")),
-              width = 9
-            )
-          )
-        )
-      )
-    } else {
-      out <- c(out, list(
+    out <- c(out, 
+      list(
         textOutput("html_report_message"),
         uiOutput("html_report")
-      ))
-    }
+      )
+    )
   }
 }
 
