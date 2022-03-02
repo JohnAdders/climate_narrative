@@ -1,0 +1,282 @@
+name: Energy Underwriting Class
+description: |
+  Unsecured retail lending in this context refers to finance provided to individuals 
+  where the amount borrowed is based upon the affordability of the applicant(s), on 
+  a capital repayment basis, and covers three broad product types:
+  
+  - Credit Cards
+  
+  - Unsecured Personal Loans (UPL)
+  
+  - Personal Current Accounts in the form of Overdrafts (PCA)
+
+transition:
+  high:
+    exec_description: |
+      In Disorderly transition risk scenarios, unsecured retail lenders are likely to 
+      be impacted through macro-economic effects typically associated with unsecured 
+      losses, as well as a decline in affordability as customers' cost of living increases.
+    always: |
+      In Disorderly transition risk scenarios, where the economy experiences a sharp 
+      shock, typical drivers of unsecured losses, for example unemployment, are likely 
+      to worsen, generating significant losses for unsecured retail lending.
+      
+      These scenarios could also result in changes to affordability, which may generate 
+      further losses. For example, changing patterns in energy generation may increase 
+      energy costs, and changes to minimum Efficiency Performance Certificate (EPC) standards 
+      could create retrofitting costs for property owners, affecting customers' ability to 
+      repay balances. 
+
+    high_materiality: |
+      The following examples show how the Unsecured retail lending exposure could be impacted 
+      in a Disorderly transition risk scenario:
+      
+      - Macro-economic effects, such as slower GDP growth, projected in Disorderly transition 
+        risk scenarios are associated with typical drivers of unsecured losses (for example 
+        unemployment). However, this may be somewhat mitigated by the bank base rate outlook 
+        in these scenarios which can ease the strain on affordability.
+      
+      - Steeply rising energy costs are likely to put a significant strain on affordability, 
+        which poses a risk to customers' ability to repay balances. Customers may resort to 
+        increasing utilisation on their Credit Cards and PCA which increases indebtedness on 
+        the book and, over time, will likely result in an increase in defaults. 
+        
+        In Disorderly transition risk scenarios, electricity price increases in the short term, 
+        peaking around 2035 in the Delayed transition scenario and 2030 in the Divergent Net Zero 
+        scenario. Oil and gas prices increase throughout, both more than tripling by 2050 in the 
+        Delayed transition scenario, and more than doubling by 2050 in the Divergent Net Zero scenario.
+        
+        ![Residential and Commercial Price](Residential_Energy_Price_Disorderly.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      - Retrofitting costs could also put a strain on affordability and generate significant 
+        losses (if not mitigated by government subsidy) as consumers are required to spend 
+        significant sums to upgrade their properties to minimum EPC standards. Currently proposed 
+        legislation would require all residential property to have an EPC C rating by 2035, 
+        with ~70% of properties needing retrofits to achieve this. Clearly this presents an 
+        opportunity to firms that are able to support the unsecured financing of retrofitting 
+        products, but from a risk perspective this is likely to have a short-term shock effect, 
+        particularly for highly indebted customers that would not ordinarily meet minimum lending 
+        criteria to receive further credit.
+      
+      Historic data could be used to assess whether customers are more likely to prioritise 
+      maintaining payments on their secured lending when affordability is stretched. If 
+      this was the case, it may lead to unsecured portfolios experiencing losses first 
+      in this these scenarios.
+      
+      Since many of the risk factors are shared across unsecured and secured lending, where 
+      possible, it is prudent to look at the interaction effects between the portfolios. 
+      For example, it may be possible to identify pockets of mortgage customers that are 
+      susceptible to certain types of climate-related transition risk (e.g. older properties 
+      with high retrofitting costs) and infer that this could result in contagion effects 
+      which would adversely affect other exposures the bank has to the customer. 
+      
+      While it is important to consider the interacting effects between unsecured and secured 
+      lending, it should be considered that not all unsecured customers will also have 
+      mortgages. There may be other distinct groups that would be indirectly affected by 
+      climate-related transition risks in different ways (for example tenants who are unable 
+      to mitigate rising energy costs by improving their home's insulation).
+  low:
+    exec_description: |
+      In Orderly transition risk scenarios, unsecured retail lenders are likely to be 
+      impacted mainly due to a decline in affordability as customers' cost of living 
+      increases.
+    always: |
+      In Orderly transition risk scenarios, changes in affordability could generate 
+      losses for unsecured retail lending. For example, changing patterns in energy 
+      generation may increase energy costs, and changes to minimum Efficiency Performance 
+      Certificate (EPC) standards could create retrofitting costs for property owners, 
+      affecting customers' ability to repay balances. 
+    high_materiality: |
+      The following examples show how the Unsecured retail lending exposure could be 
+      impacted in an Orderly transition risk scenario:
+      
+      - Rising energy costs are likely to put a strain on affordability which poses a 
+        risk to customers' ability to repay balances. Customers may resort to increasing 
+        utilisation on their Credit Cards and PCA which increases indebtedness on the book 
+        and, over time, will likely result in an increase in defaults. 
+        
+        In Orderly transition risk scenarios, electricity price increases in the short term, 
+        peaking around 2030, whilst oil and gas prices increase throughout, both more than 
+        tripling by 2050 in the Net Zero 2050 scenario, and more than doubling by 2050 in the 
+        Below 2&deg;C scenario.
+        
+      ![Residential and Commercial Price](Residential_Energy_Price_Orderly.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      - Retrofitting costs could also put a strain on affordability and generate significant 
+        losses (if not mitigated by government subsidy) as consumers are required to spend 
+        significant sums to upgrade their properties to minimum EPC standards. Currently proposed 
+        legislation would require all residential property to have an EPC C rating by 2035, 
+        with ~70% of properties needing retrofits to achieve this. Clearly this presents an 
+        opportunity to firms that are able to support the unsecured financing of retrofitting 
+        products, but from a risk perspective this is likely to have a short-term shock effect, 
+        particularly for highly indebted customers that would not ordinarily meet minimum lending 
+        criteria to receive further credit.
+      
+      Historic data could be used to assess whether customers are more likely to prioritise 
+      maintaining payments on their secured lending when affordability is stretched. If 
+      this was the case, it may lead to unsecured portfolios experiencing losses first 
+      in this these scenarios.
+      
+      Since many of the risk factors are shared across unsecured and secured lending, where 
+      possible, it is prudent to look at the interaction effects between the portfolios. 
+      For example, it may be possible to identify pockets of mortgage customers that are 
+      susceptible to certain types of climate-related transition risk (e.g. older properties 
+      with high retrofitting costs) and infer that this could result in contagion effects 
+      which would adversely affect other exposures the bank has to the customer. 
+      
+      While it is important to consider the interacting effects between unsecured and secured 
+      lending, it should be considered that not all unsecured customers will also have 
+      mortgages. There may be other distinct groups that would be indirectly affected by 
+      climate-related transition risks in different ways (for example tenants who are unable 
+      to mitigate rising energy costs by improving their home's insulation).
+
+physical:
+  high:
+    exec_description: |
+      In High physical risk scenarios, unsecured retail lenders are likely to be impacted 
+      through macro-economic effects typically associated with unsecured losses, as well 
+      as changes to affordability as customers' cost of living increases.
+    always: |
+      Chronic effects (e.g. rising sea-levels) and acute effects due to changes in the 
+      frequency and severity of weather events such as heatwaves, droughts, wildfires, 
+      tropical cyclones and flooding are projected to have macro-economic impacts, with 
+      an adverse effect on world GDP assumed in these scenarios, which could result in 
+      losses for unsecured lending. 
+      
+      Physical risks may also impact affordability as customers' cost of living increases 
+      (due to, for example, increased insurance costs), and indirectly results in further 
+      losses for unsecured lending. 
+
+    high_materiality: |
+      The following examples illustrate how the Unsecured retail lending exposure could be 
+      impacted in a high physical risk scenario:
+      
+      - Macro-economic effects, such as slower GDP growth, projected in high physical risk 
+        scenarios are associated with typical drivers of unsecured losses (for example unemployment). 
+        However, this may be somewhat mitigated by the bank base rate outlook in these scenarios 
+        which can ease the strain on affordability.
+      
+      - Widespread increases to insurance premiums are likely, which could affect customers' 
+        ability to repay balances as a result of more income being spent on insurance, potentially 
+        increasing probabilities of default, although this will vary significantly based on 
+        geographical and external factors such as FloodRe. Also, as some properties become 
+        uninsurable, or as customers elect not to prioritise premiums, the risk of one-off 
+        events occurring that would severely impact on customers' abilities to service outstanding 
+        debt will increase.
+        
+      As well as considering each of these factors in isolation, a comprehensive review of 
+      climate risk on the Unsecured portfolio should measure interactions between factors 
+      which could exacerbate losses. Particular attention should be paid to pockets of 
+      concentration risk (e.g. customers within geographical regions subject to severe flood 
+      risks or types of business) which may not be visible under a high-level approach which 
+      doesn't model behaviour at an account level. It may also be useful to compare 
+      correlations between susceptibility to climate risks and traditional risk factors 
+      measured through PD scores or bureau information which would increase risk of losses.
+      
+      Since many of the risk factors are shared across unsecured and secured lending, where 
+      possible, it is prudent to look at the interaction effects between the portfolios. For 
+      example, it may be possible to identify pockets of mortgage customers that are susceptible 
+      to certain types of physical risk (e.g. high flood risk area) and infer that this could 
+      result in contagion effects which would adversely affect other exposures the bank has to 
+      the customer. 
+      
+      While it is important to consider the interacting effects between unsecured and secured 
+      lending, it should be considered that not all unsecured customers will also have 
+      mortgages. There may be other distinct groups that would be affected by physical risks 
+      in different ways (for example tenants who are unable to adapt to climate change by 
+      improving their home's flood defences).
+  low:
+    exec_description: |
+      n/a
+    always: |
+      Chronic effects (e.g. rising sea-levels) and acute effects due to changes in the 
+      frequency and severity of weather events such as heatwaves, droughts, wildfires, 
+      tropical cyclones and flooding could impact affordability as customers' cost of 
+      living increases (due to, for example, increased insurance costs) and indirectly 
+      result in losses for unsecured retail lending. 
+      
+      The low physical risk scenarios could also lead to a limited relative reduction in 
+      GDP growth, which could result in further losses for unsecured lending.
+
+    high_materiality: |
+      The following examples illustrate how the Unsecured retail lending exposure could 
+      be impacted in a low physical risk scenario:
+      
+      - Widespread increases to insurance premiums are likely, which could affect customers' 
+        ability to repay balances as a result of more income being spent on insurance, 
+        potentially increasing probabilities of default, although this will vary significantly 
+        based on geographical and external factors such as FloodRe. Also, as some properties 
+        become uninsurable, or as customers elect not to prioritise premiums, the risk of one-off 
+        events occurring that would severely impact on customers' abilities to service outstanding 
+        debt will increase.
+      
+      - Macro-economic effects, such as slower GDP growth, projected in low physical risk 
+        scenarios are associated with typical drivers of unsecured losses (for example unemployment). 
+        However, this may be somewhat mitigated by the bank base rate outlook in these scenarios 
+        which can ease the strain on affordability.
+      
+      As well as considering each of these factors (in addition to transition risk factors) 
+      in isolation, a comprehensive review of climate risk on the Unsecured portfolio should 
+      measure interactions between factors which could exacerbate losses. Particular attention 
+      should be paid to pockets of concentration risk (e.g. customers within geographical 
+      regions subject to severe flood risks or types of business) which may not be visible 
+      under a high-level approach which doesn't model behaviour at an account level. It may 
+      also be useful to compare correlations between susceptibility to climate risks and 
+      traditional risk factors measured through PD scores or bureau information which would 
+      increase risk of losses.
+      
+      Since many of the risk factors are shared across unsecured and secured lending, where 
+      possible, it is prudent to look at the interaction effects between the portfolios. For 
+      example, it may be possible to identify pockets of mortgage customers that are susceptible 
+      to certain types of physical risk (e.g. high flood risk area) and infer that this could 
+      result in contagion effects which would adversely affect other exposures the bank has to 
+      the customer. 
+      
+      While it is important to consider the interacting effects between unsecured and secured 
+      lending, it should be considered that not all unsecured customers will also have 
+      mortgages. There may be other distinct groups that would be affected by physical risks 
+      in different ways (for example tenants who are unable to adapt to climate change by 
+      improving their home's flood defences).
+
+appendix: |
+  As will be discussed throughout this section, it can be challenging to produce granular results 
+  in terms of climate risk quantification for the Unsecured lending asset class.  As a result, 
+  a suitable modelling approach could be to focus on high level climate-adjusted input variables 
+  in the core modelling (e.g. macroeconomic variables) overlaid with additional risk 
+  considerations such as cost of retrofitting and higher utilisation due to rising energy 
+  prices. 
+  
+  The following examples identify some general challenges around modelling Climate Risk for 
+  unsecured portfolios:
+  
+  - Relatively high default rates on these products (compared to Mortgages for example) means 
+    that extrapolating annual PDs over a long time horizon results in a high proportion of 
+    the book in default at the end of scenario, especially in a static balance sheet exercise 
+    where defaulting is an absorbing state. This raises an interesting challenge around the 
+    concept of 'survivorship bias' and how to accurately estimate default rates several decades 
+    into the future. The natural rate of defaulting, which occurs irrespective of the prevailing 
+    economic conditions, may outweigh the signal from climate specific impacts in any given 
+    scenario.
+  
+  - Account-level modelling over a significant time horizon on high volume portfolios 
+    (e.g. PCA, Consumer Cards) can pose a challenge in terms of required processing power 
+    which may require simplifications to the modelling approach.
+
+  - As discussed, an accurate view of interaction effects between Secured and Unsecured risk 
+    factors requires a single customer view which may require linking together data across 
+    various platforms, products and models, which may present operational challenges.
+  
+  - Modelling losses on a closed book over a significant time horizon for products that have 
+    relatively short product life (e.g. UPL) can create difficulties in interpreting results, 
+    particularly as it is not possible to account for proactive or reactive changes in lending 
+    strategy that would occur as economic circumstances change. 
+
+  - Even in cases where account level data is available, it is not always possible to discern 
+    how funds from new lending are being spent. This makes it difficult to assess whether there 
+    are any additional first-order climate impacts that should be accounted for.
