@@ -151,11 +151,7 @@ server <- function(input, output, session) {
       #}
     },
     {
-      print("wrapper observe")
       #output$html_report <- renderUI({
-      print(Sys.time())
-      print("rendering html report")
-      print(report_message())
       if (report_message() != "") {
         output$html_report <- renderUI("") # used to be: return("")
       } else {
@@ -172,10 +168,8 @@ server <- function(input, output, session) {
           produce_report(all_inputs(), settings)
           result <- includeHTML(temp_html)
           removeModal()
-          print(Sys.time())
-          print("rendering html report complete")  
           output$html_report <- renderUI(result) # used to be: return(result)
-        } else {# old code below
+        } else { # old code below
           if (input$rep_type == "inst") {
             inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
             include_exposures <- TRUE

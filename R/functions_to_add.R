@@ -21,14 +21,26 @@ get_report_settings <- function(output_file,
     include_exposures <- FALSE
   }
   if (file_format == "html") {
-    output_format <- rmarkdown::html_document(
-      toc = TRUE,
-      toc_float = FALSE,
-      toc_depth = 2,
-      number_sections = FALSE,
-      self_contained = FALSE,
-      fig_caption = FALSE
-    )
+    if (sidebar_toc) {
+      output_format <- rmarkdown::html_document(
+        toc = TRUE,
+        toc_depth = 2,
+        toc_float = list(collapsed = FALSE),
+        theme = "sandstone",
+        number_sections = FALSE,
+        self_contained = TRUE,
+        fig_caption = FALSE
+      )
+    } else {
+      output_format <- rmarkdown::html_document(
+        toc = TRUE,
+        toc_float = FALSE,
+        toc_depth = 2,
+        number_sections = FALSE,
+        self_contained = FALSE,
+        fig_caption = FALSE
+      )
+    }
   } else {
     output_format <- rmarkdown::rtf_document(
       toc = TRUE,
@@ -136,7 +148,7 @@ filter_inputs <- function(all_inputs_table, filter_settings) {
 }
 
 get_report_contents_2 <- function(content_files, inputs, content_settings) {
-  if(content_settings$rep_type %in% c("inst", "sector")) {
+  if (content_settings$rep_type %in% c("inst", "sect")) {
     return(
       get_report_contents(
         content_files$tabs,
