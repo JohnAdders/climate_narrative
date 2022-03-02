@@ -183,7 +183,7 @@ server <- function(input, output, session) {
             inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
             include_exposures <- FALSE
           }
-          if (global$sidebar_toc != 2) {
+          if (!global$sidebar_toc) {
             output_format <- rmarkdown::html_document(
               toc = TRUE,
               toc_float = FALSE,

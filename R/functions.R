@@ -1453,23 +1453,13 @@ html_postprocess <- function(file, report_version, sidebar_toc) {
     "climate_narrative",
     temp
   )
-  if (report_version >= 2) {
+  if (report_version >= 2 && !sidebar_toc) {
     temp <- gsub(
       "(<h[1-5]?>)(.*)(</h[1-5]?>)",
       "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
       temp,
       perl = TRUE
     )
-  }
-  # extract the table of contents
-  # TODO: fix the toc code below (side effect output$html_report_nav) or remove it
-  if (sidebar_toc == 1) {
-    toc_start <- grep("<div id=\"TOC\">", temp)
-    div_end <- grep("</div>", temp)
-    toc_end <- min(div_end[div_end > toc_start])
-    toc <- temp[toc_start:toc_end]
-    output$html_report_nav <- renderUI(HTML(toc))
-    temp <- temp[-(toc_start:toc_end)]
   }
   writeLines(
     temp,

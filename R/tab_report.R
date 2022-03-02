@@ -75,29 +75,10 @@ tab_report_ui <- function() {
         )
       ))
     }
-    if (global$sidebar_toc == 1) {
-      out <- c(
-        out,
-        list(
-          textOutput("html_report_message"),
-          sidebarLayout(
-            sidebarPanel(
-              div(id = "html_toc_div", uiOutput("html_report_nav")),
-              width = 3
-            ),
-            mainPanel(
-              div(id = "html_report_div", uiOutput("html_report")),
-              width = 9
-            )
-          )
-        )
-      )
-    } else {
-      out <- c(out, list(
-        textOutput("html_report_message"),
-        uiOutput("html_report")
-      ))
-    }
+    out <- c(out, list(
+      textOutput("html_report_message"),
+      uiOutput("html_report")
+    ))
   }
 }
 
