@@ -4,7 +4,7 @@ description: |
   provide a variety of economic services, such as investing, managing and
   lending money, insurance and capital and debt markets. Central banking, also
   part of this sector, is outside the scope of this tool. More formally, the
-  Credit Intermediation and Related Activities subsector covers business that
+  Credit Intermediation and Related Activities subsector covers business that:
 
   - lend funds, which might be raised from depositors, credit market borrowing
     or by borrowing from other financial intermediaries. This covers firms like
@@ -177,7 +177,7 @@ transition:
       ![CO2 Emissions Residential and Commercial](CO2_emissions_Residential_and_Commercial_Orderly.png)
       
       **Source:**
-      [IIASA NGFS Scenarios Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       * **Rapid technological change**, such as the development of electric vehicles 
       or renewable energy technology, affecting the value of financial assets in the 

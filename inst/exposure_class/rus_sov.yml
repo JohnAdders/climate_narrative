@@ -1,4 +1,4 @@
-name: UK sovereign
+name: Russia sovereign
 description: |
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
@@ -79,7 +79,7 @@ transition:
       could encourage consumer spending and investment in the use of renewables,
       energy efficiency, energy storage, etc, leading to increases in fiscal
       revenues. The Disorderly transition risk scenarios could also lead to a reduction in
-      GDP growth. This would have a negative impact on UK sovereign bonds.
+      GDP growth. This would have a negative impact on Russian sovereign bonds.
 
     high_materiality: |
       **Carbon tax effect**
@@ -100,19 +100,33 @@ transition:
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      The UK electricity sector has been rapidly decarbonising in recent years,
-      with a sharp drop in coal-based electricity production, which in 2020
-      amounted to just 1.7% of total generation. Generation from low carbon
-      sources reached 59% in 2020 (up from 54.6% in 2019), despite a drop in
-      nuclear generation, thanks to record output from renewables. With coal now
-      close to being eliminated from the UK power sector, natural gas, which
-      accounted for 36.5% of generation in 2020, could consequently need to be
-      scaled down considerably over the next decade for the UK to meet its
-      emission reduction targets. In 2020, the share of renewable energy in
-      total electricity generation rose steeply from 37% in 2019 to almost 43%,
-      with renewables producing more electricity than coal and gas generation
-      combined for the first time ever. Wind generation, fuelled by new offshore
-      capacity, increased its share of total generation by 4.4% to 24.2%.
+      Russia's energy sector accounted for nearly 80% of all emissions in 2019. In 2020, 
+      Russia saw its third consecutive year of increasing flaring volumes, maintaining its 
+      position as the world’s largest gas flaring nation (Global Gas Flaring Reduction Partnership, 
+      2021). At 25 billion cubic metres, Russia flared over 40% more gas in 2020 than the next 
+      highest country, Iraq.
+      
+      Natural gas made up 54% of Russia's total primary energy demand in 2020, and this is 
+      projected to increase slightly to 55% by 2030 under current policies, mostly at the 
+      expense of coal.
+      
+      Installed renewable power generation capacity sat at approximately 57 GW by the end 
+      of 2019, equivalent to 21% of the country’s total power generation capacity, with 
+      hydropower representing by far the majority of the installed renewable energy capacity 
+      (54 GW).
+      
+      A recent positive development is Russia's decision in late 2019 to extend the support 
+      programme for renewable energy beyond 2024, with 400 billion roubles (5.6 billion USD) 
+      allocated to construct 5.3 GW of renewable energy capacity between 2025 and 2035. This 
+      is roughly double the 2024 renewable energy capacity target under the previous scheme of 
+      5.6 GW.
+      
+      There is a slight upward trend in the share of renewable sources in primary energy demand, 
+      from around 3.3% in 2017 to 4.5% by 2030. Russia has a 2.5% renewable energy target for 2020 
+      and a 4.5% target for 2024 (excluding large hydropower) for the electricity sector, which 
+      would increase the share of renewable energy sources slightly to 4.5% of primary energy demand 
+      by 2030. However, in 2019, just 0.16% of Russia's electricity came from non-hydro renewables 
+      compared to the global average of over 10%.
 
       ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
 
@@ -125,15 +139,11 @@ transition:
       revenue it receives. Assuming taxation rates remain unchanged, a decrease
       in GDP could lead to a reduction in fiscal revenue. According to estimates
       from the NGFS, disorderly transition could result in significant GDP
-      losses. In these scenarios, world GDP losses from both physical and
-      transition risk are estimated to be between -4.2% and -4.8% by 2050. World
-      GDP impacts from transition risk are negative as the speed of the
-      transition combines with investment uncertainty and affects consumption
-      and investment.
-
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a
-      Disorderly scenario on UK GDP compared to 2018, would be significant,
-      ranging from -2.2% to -2.4% by 2050.
+      losses. 
+      
+      In these scenarios, there is a large mix of physical and transition risks in 2050. 
+      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
+      scenario on Russia's GDP compared to 2016 would be significant, ranging from -2.7% to -2.9% by 2050.
 
       **Downgrading of credit ratings effect**
 
@@ -147,10 +157,10 @@ transition:
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. According to the study, 
-      in these scenarios, the UK would have a downgrade of around 
-      one notch by 2100, increasing the cost of borrowing for the UK government by 
-      approximately US$2-3bn.
+      ratings. It is easier to lose an AAA rating than a C rating. 
+      
+      According to the study, in these scenarios, Russia would not have a climate 
+      induced sovereign downgrade.
 
   low:
     exec_description: |
@@ -166,12 +176,13 @@ transition:
       fiscal revenues in countries with a strong level of dependence on fossil
       fuel energy sources. Industries that are negatively impacted by transition
       risk, such as mining, oil and gas could have reduced revenues from lower
-      fossil fuel demand and increased costs from higher carbon taxes. On the other hand, 
-      government spending (through subsidies and investment) could encourage consumer 
-      spending and investment in the use of renewables, energy efficiency, energy 
-      storage, etc, leading to increases in fiscal revenues. These scenarios could 
-      also lead to a limited relative reduction in GDP growth. This would have a 
-      limited, neutral impact on UK sovereign bonds.
+      fossil fuel demand and increased costs from higher carbon taxes. 
+      
+      On the other hand, government spending (through subsidies and investment) 
+      could encourage consumer spending and investment in the use of renewables, 
+      energy efficiency, energy storage, etc, leading to increases in fiscal revenues. 
+      These scenarios could also lead to a limited relative reduction in GDP growth. 
+      This would have a limited, neutral impact on Russian sovereign bonds.
 
     high_materiality: |
       **Carbon tax effect**
@@ -196,19 +207,33 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      The UK electricity sector has been rapidly decarbonising in recent years,
-      with a sharp drop in coal-based electricity production, which in 2020
-      amounted to just 1.7% of total generation. Generation from low carbon
-      sources reached 59% in 2020, despite a drop in nuclear generation, thanks
-      to record output from renewables. With coal now close to being eliminated
-      from the UK power sector, natural gas, which accounted for 36.5% of
-      generation in 2020, could consequently need to be scaled down considerably
-      over the next decade for the UK to meet its emission reduction targets. In
-      2020, the share of renewable energy in total electricity generation rose
-      steeply from 37% in 2019 to almost 43%, with renewables producing more
-      electricity than coal and gas generation combined for the first time ever.
-      Wind generation, fuelled by new offshore capacity, increased its share of
-      total generation by 4.4% to 24.2%.
+      Russia's energy sector accounted for nearly 80% of all emissions in 2019. In 2020, 
+      Russia saw its third consecutive year of increasing flaring volumes, maintaining its 
+      position as the world’s largest gas flaring nation (Global Gas Flaring Reduction Partnership, 
+      2021). At 25 billion cubic metres, Russia flared over 40% more gas in 2020 than the next 
+      highest country, Iraq.
+      
+      Natural gas made up 54% of Russia's total primary energy demand in 2020, and this is 
+      projected to increase slightly to 55% by 2030 under current policies, mostly at the 
+      expense of coal.
+      
+      Installed renewable power generation capacity sat at approximately 57 GW by the end 
+      of 2019, equivalent to 21% of the country’s total power generation capacity, with 
+      hydropower representing by far the majority of the installed renewable energy capacity 
+      (54 GW).
+      
+      A recent positive development is Russia's decision in late 2019 to extend the support 
+      programme for renewable energy beyond 2024, with 400 billion roubles (5.6 billion USD) 
+      allocated to construct 5.3 GW of renewable energy capacity between 2025 and 2035. This 
+      is roughly double the 2024 renewable energy capacity target under the previous scheme of 
+      5.6 GW.
+      
+      There is a slight upward trend in the share of renewable sources in primary energy demand, 
+      from around 3.3% in 2017 to 4.5% by 2030. Russia has a 2.5% renewable energy target for 2020 
+      and a 4.5% target for 2024 (excluding large hydropower) for the electricity sector, which 
+      would increase the share of renewable energy sources slightly to 4.5% of primary energy demand 
+      by 2030. However, in 2019, just 0.16% of Russia's electricity came from non-hydro renewables 
+      compared to the global average of over 10%.
 
       ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
 
@@ -227,9 +252,9 @@ transition:
       carbon prices and energy costs are more than offset by the recycling of
       carbon tax revenues into government investment and lower employment taxes.
       
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the
-      Orderly Net Zero scenario on UK GDP compared to 2018 would be
-      non-significant, ranging from -0.24% to -0.48% by 2050.
+      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
+      Orderly Net Zero scenario on Russia's GDP compared to 2016 would be non-significant, 
+      ranging from +0.1% to +0.5% by 2050.
 
       **Downgrading of credit ratings**
 
@@ -243,11 +268,10 @@ transition:
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. According to
-      the study, in a low transition risk (RCP 2.6) scenario, the UK would have
-      a downgrade of around one notch by 2100, increasing the cost of borrowing for
-      the UK government by approximately US$2-3bn.
-
+      ratings. It is easier to lose an AAA rating than a C rating. 
+      
+      According to the study, in a transition risk (RCP 2.6) scenario, Russia would not 
+      have a climate induced sovereign downgrade.  
 physical:
   high:
     exec_description: |
@@ -269,7 +293,7 @@ physical:
       biodiversity loss, or to industries supply chains and international trade.
 
       The high physical risk scenario could lead to a significant reduction in
-      GDP growth. This would have a negative impact on UK sovereign bonds.
+      GDP growth. This would have a negative impact on Russian sovereign bonds.
 
       As global temperatures rise in a high physical risk scenario, the effects
       of climate change, including coastal flooding, reduced rainfall in
@@ -310,9 +334,13 @@ physical:
       scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
       2050\. World GDP losses from physical risks scale with the rise in
       temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a hot house world scenario on UK GDP
-      compared to 2018 would be significant, ranging from -1.35% to -1.75% by
-      2050\.
+      Explorer v2.0, the expected impact of a hot house world scenario on Russia's 
+      GDP compared to 2016 would be non-significant, ranging from -0.6% to -0.8% by 2050.
+      
+      Opportunities could arise from mitigation actions, including climate resilience 
+      investments (e.g. to cope with flooding risks that would propel the growth of 
+      economic sectors providing the underlying solutions in terms of products and 
+      services). 
 
       **Downgrading of credit ratings effect**
 
@@ -327,10 +355,11 @@ physical:
       2100. Most downgrades would be among top-rated countries. This does not
       necessarily reflect increased climate-related risks for these top-rated countries,
       but greater sensitivity of the top ratings. It is easier to lose an AAA
-      rating than a C rating. According to the study, in a high physical risk
-      scenario, the UK would have a downgrade exceeding three notches by 2100,
-      increasing the cost of borrowing for the UK government by approximately
-      US$7.6-11.3bn.
+      rating than a C rating. 
+      
+      According to the study, in a high physical risk scenario, Russia would have a downgrade 
+      below one notch by 2100, increasing the cost of borrowing for the Russian government by 
+      approximately US$0.08-0.12bn.
 
   low:
     exec_description: |
@@ -341,16 +370,15 @@ physical:
       lower productivity of the workforce, damages to infrastructure, etc.
       Chronic and acute risks could result in lower tax revenues or higher
       insurance premiums. This could result in a negative impact on GDP globally
-      by 2100 and hit governments' finances.
-
-      Extreme weather events such as wildfires, floods, and heat waves could become 
-      more prevalent, impacting households, businesses, cities and states. There
-      are also likely indirect risks, such as those caused by international
-      migration (e.g. increased inequalities, labour right issues, social
-      conflicts), or via biodiversity loss, or to industries supply chains and
-      international trade. The low physical risk scenario could lead to a
-      reduction in GDP growth. This would have a negative impact on UK sovereign
-      bonds.
+      by 2100 and hit governments' finances. Extreme weather events such as wildfires, 
+      floods, and heat waves could become more prevalent, impacting households, 
+      businesses, cities and states. There are also likely indirect risks, such as 
+      those caused by international migration (e.g. increased inequalities, labour 
+      right issues, social conflicts), or via biodiversity loss, or to industries 
+      supply chains and international trade. 
+      
+      The low physical risk scenario could lead to a reduction in GDP growth. This 
+      would have a negative impact on Russian sovereign bonds.
 
       As global temperatures rise in a low physical risk scenario, the effects
       of climate change, including coastal flooding, reduced rainfall in
@@ -385,8 +413,12 @@ physical:
       be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
       scale with the rise in temperatures in the scenarios over time. Based on
       the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
-      Net Zero scenario on UK GDP compared to 2018 would be non-significant,
-      ranging from -0.24% to -0.48% by 2050.
+      Net Zero scenario on Russia's GDP compared to 2016, would be non-significant, 
+      ranging from +0.1% to +0.5% by 2050.
+      
+      Opportunities could arise from mitigation actions, including climate resilience 
+      investments (e.g. to cope with flooding risks that would propel the growth of economic 
+      sectors providing the underlying solutions in terms of products and services). 
 
       **Downgrading of credit ratings**
 
@@ -400,11 +432,10 @@ physical:
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. According to
-      the study, in a low physical risk (RCP 2.6) scenario, the UK would have a
-      downgrade of around one notch by 2100, increasing the cost of borrowing for
-      the UK government by approximately US$2-3bn.
-
+      ratings. It is easier to lose an AAA rating than a C rating. 
+      
+      According to the study, in a low physical risk (RCP 2.6) scenario, Russia would not 
+      have a climate induced sovereign downgrade.
 appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 

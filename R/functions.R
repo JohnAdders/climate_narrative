@@ -1461,6 +1461,7 @@ html_postprocess <- function(file, report_version, sidebar_toc) {
       perl = TRUE
     )
   }
+
   writeLines(
     temp,
     file_conn
