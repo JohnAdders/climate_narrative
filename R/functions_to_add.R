@@ -1,4 +1,5 @@
 get_report_settings <- function(output_file,
+                                md_file,
                                 file_format,
                                 report_version,
                                 sidebar_toc,
@@ -55,7 +56,7 @@ get_report_settings <- function(output_file,
   image_width <- 6
   image_width_unit <- "in"
   image_width_fix <- TRUE
-  md_file <- tempfile(fileext = ".md")
+  # md_file <- tempfile(fileext = ".md")
 
   # hierarchical structure
   content_files <- list(
@@ -81,7 +82,7 @@ get_report_settings <- function(output_file,
   )
 
   render_settings <- list(
-    md_file = tempfile(fileext = ".md"),
+    md_file = md_file,
     output_file = output_file,
     output_format = output_format
   )

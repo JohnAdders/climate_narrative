@@ -14,6 +14,7 @@ server <- function(input, output, session) {
   session$userData$temp_md_full <- tempfile(fileext = ".md")
   session$userData$temp_md_scenario <- tempfile(fileext = ".md")
   session$userData$temp_md_scenario_and_commons <- tempfile(fileext = ".md")
+  session$userData$temp_html <- tempfile(fileext = ".html")
   session$userData$temp_rtf <- tempfile(fileext = ".rtf")
   session$userData$temp_md_dev <- tempfile(fileext = ".md")
   session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
@@ -71,11 +72,9 @@ server <- function(input, output, session) {
     out <- out[!is.na(out$type), ]
     return(out)
   })
-
   allow_report <- reactive({
     return(nrow(get_inputs(all_inputs(), input$inst_type)))
   })
-
   report_message <- reactive({
     if (input$wizard != paste0("page_", tab_name_to_number("report"))) {
       return("Tab not visible")
@@ -155,7 +154,8 @@ server <- function(input, output, session) {
       if (report_message() != "") {
         output$html_report <- renderUI("") # used to be: return("")
       } else {
-        temp_html <- tempfile(fileext = ".html")
+        # temp_html <- tempfile(fileext = ".html")
+        temp_html <- session$userData$temp_html
         showModal(
           modalDialog(
             "Report rendering in progress... when complete it will show automatically",
@@ -164,7 +164,7 @@ server <- function(input, output, session) {
           )
         )
         if (global$report_version >= 5) {
-          settings <- get_report_settings(temp_html, "html", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+          settings <- get_report_settings(temp_html, session$userData$temp_md_scenario, "html", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
           produce_report(all_inputs(), settings)
           result <- includeHTML(temp_html)
           removeModal()
@@ -230,7 +230,7 @@ server <- function(input, output, session) {
 
   observeEvent(input$testbutton, {
     output$test <- renderUI({
-      settings <- get_report_settings("C:/Users/kopalski/Desktop/temp/temp.html", "html", 4, 0, "inst", "bank", "", "")
+      settings <- get_report_settings("C:/Users/kopalski/Desktop/temp/temp.html", "C:/Users/kopalski/Desktop/temp/temp.md","html", 4, 0, "inst", "bank", "", "")
       produce_report(all_inputs(), settings)
       result <- includeHTML("C:/Users/kopalski/Desktop/temp/temp.html")
       return(result)
@@ -249,7 +249,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(session$userData$temp_rtf, "rtf", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+        settings <- get_report_settings(session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
         produce_report(all_inputs(), settings)
         removeModal()
         file.copy(session$userData$temp_rtf, file)
@@ -301,7 +301,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(session$userData$temp_rtf, "rtf", global$report_version, global$sidebar_toc, "inst", "", "", "")
+        settings <- get_report_settings(session$userData$temp_rtf, session$userData$temp_md_dev, "rtf", global$report_version, global$sidebar_toc, "inst", "", "", "")
         produce_report(all_inputs(), settings)
         removeModal()
         file.copy(session$userData$temp_rtf, file)
@@ -341,7 +341,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(session$userData$temp_rtf_dev_2, "rtf", global$report_version, global$sidebar_toc, "test", "", "", "")
+        settings <- get_report_settings(session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$report_version, global$sidebar_toc, "test", "", "", "")
         produce_report(NULL, settings)
         removeModal()
         file.copy(session$userData$temp_rtf_dev_2, file)
