@@ -1507,15 +1507,6 @@ html_postprocess <- function(file, report_version) {
     )
   }
   # extract the table of contents
-  # disabled for a moment
-  if (global$sidebar_toc) {
-    toc_start <- grep("<div id=\"TOC\">", temp)
-    div_end <- grep("</div>", temp)
-    toc_end <- min(div_end[div_end > toc_start])
-    toc <- temp[toc_start:toc_end]
-    output$html_report_nav <- renderUI(HTML(toc))
-    temp <- temp[-(toc_start:toc_end)]
-  }
   writeLines(
     temp,
     file_conn

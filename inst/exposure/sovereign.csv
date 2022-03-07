@@ -2,3 +2,12 @@ Type,product,Sovereigns
 UK,bond_like,uk_sov
 Europe,bond_like,eu_sov
 US,bond_like,us_sov
+Canada,bond_like,can_sov
+France,bond_like,fra_sov
+Japan,bond_like,jap_sov
+Germany,bond_like,ger_sov
+Italy,bond_like,itl_sov
+China,bond_like,chi_sov
+India,bond_like,ind_sov
+Russia,bond_like,rus_sov
+Brazil,bond_like,bra_sov
