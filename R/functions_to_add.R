@@ -67,7 +67,7 @@ get_report_settings <- function(output_file,
   )
 
   filter_settings <- list(
-    inst_type = inst_type,
+    inst_type = ifelse(rep_type=="inst", inst_type, ""),
     report_sector_selection = report_sector_selection,
     override_materiality = override_materiality
   )
