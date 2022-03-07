@@ -1,8 +1,7 @@
 testthat::test_that("agriculture sector report", {
   shiny::testServer(run_shiny_app(), {
 
-    # Tests whether ...
-
+    # Tests whether the reports are not unintentionally changed or corrupt
 
     # Construct test mock session
     load_secrets(system.file("secret.yml", package = "climate.narrative"))
@@ -17,6 +16,7 @@ testthat::test_that("agriculture sector report", {
       bank_C_subordinatedDebtAndEquity_bondLike_agriculture_agriculture = "Medium",
       report = 0
     )
+    # change the further inputs step by step to mock real user actions
     session$setInputs(wizard = paste0("page_", 2))
     session$setInputs(wizard = paste0("page_", tab_name_to_number("report")))
     session$setInputs(report_sector_selection = "agriculture")
