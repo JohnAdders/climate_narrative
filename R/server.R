@@ -301,10 +301,10 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(session$userData$temp_rtf, session$userData$temp_md_dev, "rtf", global$report_version, global$sidebar_toc, "inst", "", "", "")
+        settings <- get_report_settings(session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$report_version, global$sidebar_toc, "inst", "", "", "")
         produce_report(all_inputs(), settings)
         removeModal()
-        file.copy(session$userData$temp_rtf, file)
+        file.copy(session$userData$temp_rtf_dev, file)
       } else {
         temp <- get_report_contents(
             global$tabs,
