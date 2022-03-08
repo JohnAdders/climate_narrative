@@ -1,7 +1,6 @@
-test_that("remove_special_characters produces correct result", {
+test_that("function remove_special_characters produces correct result", {
 
   # Tests that the function produces exactly expected results.
-
 
   # Construct test data - artificial examples
   test_strings <- c(

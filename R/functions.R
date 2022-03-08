@@ -87,12 +87,12 @@ restore_spaces <- function(camelcase) {
   s <- gsub("([A-Z])([a-z])", " \\1\\L\\2", camelcase, perl = TRUE)
   s <- sub("^ ", "", s) # remove first space
   # ensure no space after opening parenthesis "("
-  s <- gsub("( ", "(", s, fixed = TRUE)
+  s <- gsub("( ", " (", s, fixed = TRUE)
   s <- capitalize(s)
   # manually substitute texts with where simple capitalisation rule fails
   substitutions <- data.frame(
-    from = c("Sme", "Smes", "Uk", "Us", "And", "To", "To(non-sme)", "to(non-sme)"),
-    to = c("SME", "SMEs", "UK", "US", "and", "to", "to (non-SME)", "to (non-SME)")
+    from = c("Sme", "Smes", "Uk", "Us", "And", "To"),
+    to = c("SME", "SMEs", "UK", "US", "and", "to")
   )
   for (i in 1:nrow(substitutions)) {
     s <- gsub(substitutions$from[i], substitutions$to[i], s, fixed = TRUE)
