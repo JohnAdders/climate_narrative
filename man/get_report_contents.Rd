@@ -5,6 +5,10 @@
 \title{Function that generates a markdown content of the report}
 \usage{
 get_report_contents(
+  tabs,
+  scenarios,
+  sections,
+  exposure_classes,
   inputs,
   report_version,
   report_scenario_selection,
@@ -14,6 +18,14 @@ get_report_contents(
 )
 }
 \arguments{
+\item{tabs}{List of tabs (required for the executive summary)}
+
+\item{scenarios}{List of scenarios}
+
+\item{sections}{List of non-scenario report sections}
+
+\item{exposure_classes}{List of exposure classes (sectors)}
+
 \item{inputs}{data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)}
 
 \item{report_version}{enables different versions of the reports within a single code, see global file for possible choices and their meaning}

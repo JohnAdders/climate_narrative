@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{delete_empty_rows_and_columns}
 \alias{delete_empty_rows_and_columns}
-\title{Helpder function - the name is self-explanatory}
+\title{Helper function - the name is self-explanatory}
 \usage{
 delete_empty_rows_and_columns(
   data,
@@ -21,5 +21,5 @@ delete_empty_rows_and_columns(
 input object without rows and columns where all entries are empty (i.e. NA or "")
 }
 \description{
-Helpder function - the name is self-explanatory
+Helper function - the name is self-explanatory
 }

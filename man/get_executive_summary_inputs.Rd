@@ -4,9 +4,11 @@
 \alias{get_executive_summary_inputs}
 \title{One of the functions comprising the executive summary text}
 \usage{
-get_executive_summary_inputs(aggregated_inputs, inputs)
+get_executive_summary_inputs(tabs, aggregated_inputs, inputs)
 }
 \arguments{
+\item{tabs}{List of tabs (required for summary of user inputs)}
+
 \item{aggregated_inputs}{data frame of aggregated inputs (implemented in the reactive expression)}
 
 \item{inputs}{data frame of all inputs (implemented in the reactive expression)}

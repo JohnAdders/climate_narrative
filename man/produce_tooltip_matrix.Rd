@@ -5,10 +5,14 @@
 \title{Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
 and product-specific text (if any)}
 \usage{
-produce_tooltip_matrix(exposure_matrix)
+produce_tooltip_matrix(exposure_matrix, products, exposure_classes)
 }
 \arguments{
 \item{exposure_matrix}{Exposure matrix to show}
+
+\item{products}{List of products}
+
+\item{exposure_classes}{List of sectors}
 }
 \description{
 Produce a matrix of tooltips (strings) by concatenating column-specific (if any)

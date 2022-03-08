@@ -104,6 +104,8 @@ restore_spaces <- function(camelcase) {
 #' and product-specific text (if any)
 #'
 #' @inherit exposure_grid_server
+#' @param products List of products
+#' @param exposure_classes List of sectors
 #'
 produce_tooltip_matrix <- function(exposure_matrix, products, exposure_classes) {
   out <- matrix(
@@ -291,8 +293,8 @@ get_input_values <- function(inputs, ids_matrix) {
 #'
 #' @param string String to break
 #' @param line_width Width of line
-#' @param location starting column
-#' @param n_char Number of characters
+#' @param location Position of the (first character of) the break in the string
+#' @param n_char Number of characters that are to be replaced with a (manual space-based) linebreak
 #'
 string_break_line_with_spaces <- function(string, line_width, location, n_char = 1) {
   paste0(
@@ -478,9 +480,10 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 
 #' Produce report content for a given item
 #'
-#' @param item name of item for which a report is to be produced
-#' @param type_item_inputs table of (disaggregated) inputs to produce a table of contributing rows
-#' @param include_exposures whether to include tables with contributing exposures
+#' @param item Name of item for which a report is to be produced
+#' @param type_item_inputs Table of (disaggregated) inputs to produce a table of contributing rows
+#' @param exposure_classes List of sectors from which the texts are extracted
+#' @param include_exposures Whether to include tables with contributing exposures
 #' @return markdown-formatted report section (h2)
 #'
 #' @importFrom stats aggregate
@@ -549,8 +552,9 @@ get_exposure_description <- function(item, type_item_inputs, exposure_classes, i
 
 #' Produce appendix for a given item
 #'
-#' @param item name of item for which appendix is to be produced
-#' @return markdown-formatted appendix section (h3)
+#' @param item Name of item for which appendix is to be produced
+#' @param exposure_classes List of sectors from which the appendix text are extracted
+#' @return Markdown-formatted appendix section (h3)
 #'
 get_exposure_appendix <- function(item, exposure_classes) {
   appendix <- exposure_classes[[item]][["appendix"]]
@@ -571,6 +575,7 @@ get_exposure_appendix <- function(item, exposure_classes) {
 #' Lower level report helper function responsible for single risk
 #' (transition/physical) description.
 #'
+#' @inherit get_report_contents
 #' @param item Exposure class name
 #' @param products Product name
 #' @param materiality Materiality of item
@@ -651,7 +656,8 @@ get_exposure_risk_description <- function(item,
 #' @param aggregated_table Table of all possible items
 #' @param type_inputs Drop box items
 #' @param scenario Scenario name
-#' @param include_exposures whether to include tables with contributing exposures
+#' @param include_exposures Flag whether to include tables with contributing exposures
+#' @param exposure_classes List of exposure classes (sectors) from which the texts are extracted
 #'
 get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, exposure_classes, include_exposures) {
   if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
@@ -713,6 +719,7 @@ get_section_descriptions <- function(section, additional_pars = list()) {
 
 #' Function to produce references section (for all items)
 #'
+#' @inherit get_report_contents
 #' @param items vector of items to get references for
 #' @return markdown-formatted references section (h2)
 #'
@@ -894,7 +901,7 @@ ensure_images_fit_page <- function(filename, target_width = 7, target_width_unit
       markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
     } else if (target_width_units == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
       warning(paste0("image ", image_name, " has width > ", target_width, target_width_units, ", resizing"))
-      markdown[i] <- paste0(markdown[i], "{ width=", max_width_inch, target_width_units, " }")
+      markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
     }
   }
   writeLines(markdown, file_conn)
@@ -1048,6 +1055,9 @@ get_executive_summary_scenarios <- function(scenarios, exposure_classes, aggrega
 
 #' Function to combine an executive summary from lower level functions
 #'
+#' @param tabs List of tabs (required for summary of user inputs)
+#' @param scenarios List of scenarios
+#' @param exposure_classes List of sectors
 #' @param aggregated_inputs data frame of aggregated inputs (implemented in the reactive expression)
 #' @param inputs data frame of all inputs (implemented in the reactive expression)
 #' @param scenario_no integer or vector of integers indicating which of the global$scenarios should be included
@@ -1082,8 +1092,9 @@ get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_
 
 #' Helper function that translate the value of input field to the scenario number(s)
 #'
-#' @param report_scenario_selection value of the input
-#' @param is_rtf bool whether to include sections that are for RTF only
+#' @param scenarios List of scenarios
+#' @param report_scenario_selection Value of the input (scenario or empty string)
+#' @param is_rtf Flag whether to include sections that are for RTF only
 #' @return vector of integers
 #'
 get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
@@ -1098,6 +1109,7 @@ get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
 #' Helper function that returns non-scenario section number(s)
 #'
 #' @inherit get_scenario_no
+#' @param sections List of non-scenario report sections
 #'
 get_section_no <- function(sections, is_rtf) {
   if (is_rtf) {
@@ -1110,6 +1122,10 @@ get_section_no <- function(sections, is_rtf) {
 
 #' Function that generates a markdown content of the report
 #'
+#' @param tabs List of tabs (required for the executive summary)
+#' @param scenarios List of scenarios
+#' @param sections List of non-scenario report sections
+#' @param exposure_classes List of exposure classes (sectors)
 #' @param inputs data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
@@ -1332,6 +1348,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
 
 #' Karnan's request for easier change comparison - single sector
 #'
+#' @inherit get_report_contents
 #' @param item sector name
 #'
 get_exposure_test_description <- function(exposure_classes, item) {
@@ -1357,6 +1374,8 @@ get_exposure_test_description <- function(exposure_classes, item) {
 
 #' Karnan's request for easier change comparison - loop over all sectors
 #'
+#' @inherit get_report_contents
+#' 
 get_test_report <- function(exposure_classes) {
   out <- "# Test report\n\n"
   for (i in 1:length(exposure_classes)) {

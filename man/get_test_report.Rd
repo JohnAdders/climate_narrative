@@ -4,7 +4,13 @@
 \alias{get_test_report}
 \title{Karnan's request for easier change comparison - loop over all sectors}
 \usage{
-get_test_report()
+get_test_report(exposure_classes)
+}
+\arguments{
+\item{exposure_classes}{List of exposure classes (sectors)}
+}
+\value{
+vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 }
 \description{
 Karnan's request for easier change comparison - loop over all sectors

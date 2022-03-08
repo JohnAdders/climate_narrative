@@ -1,3 +1,4 @@
+library(testthat)
 testthat::test_that("report files", {
   shiny::testServer(run_shiny_app(), {
 

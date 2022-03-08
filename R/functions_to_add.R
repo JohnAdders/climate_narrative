@@ -1,3 +1,16 @@
+#' Create a single list of settings from simple arguments
+#' 
+#' @param output_file Path and filenamename of report to write
+#' @param md_file Path and filename of intermediate markdown file
+#' @param file_format Currently either "html" or "rtf"
+#' @param report_version Integer controlling the version of the code used in report generating functions
+#' @param sidebar_toc Flag whether to include a floating sidebar table of content (relevant for HTML only)
+#' @param rep_type Either "inst" for institutional report or "sect" for sectoral report
+#' @param inst_type Institution type (relevant for institutional report only)
+#' @param report_sector_selection Input used to filter report contents
+#' @param report_scenario_selection Input used to filter report contents
+#' @return list of lists
+#' 
 get_report_settings <- function(output_file,
                                 md_file,
                                 file_format,
@@ -112,6 +125,12 @@ get_report_settings <- function(output_file,
   return(settings)
 }
 
+#' The highest level function for report production. Takes only two arguments
+#' 
+#' @param all_inputs Table of user inputs 
+#' @param settings list of lists containing all necessary settings
+#' @return NULL, report produced to file
+#' 
 produce_report <- function(all_inputs, settings) {
   content_files <- settings$content_files
   filter_settings <- settings$filter_settings

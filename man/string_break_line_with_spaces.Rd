@@ -11,9 +11,9 @@ string_break_line_with_spaces(string, line_width, location, n_char = 1)
 
 \item{line_width}{Width of line}
 
-\item{location}{starting column}
+\item{location}{Position of the (first character of) the break in the string}
 
-\item{n_char}{Number of characters}
+\item{n_char}{Number of characters that are to be replaced with a (manual space-based) linebreak}
 }
 \description{
 Insert spaces to the string so that line has exactly given number of characters.
