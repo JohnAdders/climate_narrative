@@ -56,7 +56,7 @@ read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_
 
 #' Helper function to enable using names to refer tabs instead of numbers
 #'
-#' @param tab_name name of the tab to convert
+#' @param tab_name Name of the tab to convert
 tab_name_to_number <- function(tab_name) {
   as.integer(factor(tab_name, global$ordered_tabs))
 }
@@ -324,7 +324,11 @@ string_add_spaces_to_make_equal_lines <- function(string, line_width) {
     } else {
       space_locations <- stringi::stri_locate_all(out, fixed = " ")[[1]][, 1]
       last_space <- na.omit(max(space_locations[space_locations <= 1 + line_width * i]))
-      if (length(last_space)) out <- string_break_line_with_spaces(out, line_width, last_space, 1)
+      if (length(last_space)) {
+        out <- string_break_line_with_spaces(out, line_width, last_space, 1)
+      } else {
+        warning(paste0("too long text to break: ", string))
+      }
       newline_locations <- na.omit(stringi::stri_locate_all(out, fixed = "<br>")[[1]][, 1])
     }
     i <- i + 1
