@@ -91,7 +91,6 @@ server <- function(input, output, session) {
 
   # update the available sectors
   observeEvent(
-    #input$wizard,
     list(
       input$rep_type,
       input$inst_type
@@ -139,22 +138,14 @@ server <- function(input, output, session) {
   })
 
   observeEvent(
+    list(
+      input$wizard == paste0("page_", tab_name_to_number("report")),
+      input$report_scenario_selection, input$report_sector_selection, report_message()
+    ),
     {
-      list(
-        input$wizard == paste0("page_", tab_name_to_number("report")), 
-        input$report_scenario_selection, input$report_sector_selection, report_message())
-      #if (input$wizard == paste0("page_", tab_name_to_number("report"))) {
-      #  list(input$report_scenario_selection, input$report_sector_selection, report_message())
-      #} else {
-      #  FALSE
-      #}
-    },
-    {
-      #output$html_report <- renderUI({
       if (report_message() != "") {
         output$html_report <- renderUI("") # used to be: return("")
       } else {
-        # temp_html <- tempfile(fileext = ".html")
         temp_html <- session$userData$temp_html
         showModal(
           modalDialog(
@@ -230,7 +221,7 @@ server <- function(input, output, session) {
 
   observeEvent(input$testbutton, {
     output$test <- renderUI({
-      settings <- get_report_settings("C:/Users/kopalski/Desktop/temp/temp.html", "C:/Users/kopalski/Desktop/temp/temp.md","html", 4, 0, "inst", "bank", "", "")
+      settings <- get_report_settings("C:/Users/kopalski/Desktop/temp/temp.html", "C:/Users/kopalski/Desktop/temp/temp.md", "html", 4, 0, "inst", "bank", "", "")
       produce_report(all_inputs(), settings)
       result <- includeHTML("C:/Users/kopalski/Desktop/temp/temp.html")
       return(result)
@@ -307,16 +298,16 @@ server <- function(input, output, session) {
         file.copy(session$userData$temp_rtf_dev, file)
       } else {
         temp <- get_report_contents(
-            global$tabs,
-            global$scenarios,
-            global$sections,
-            global$exposure_classes,
-            all_inputs(),
-            global$report_version,
-            input$report_scenario_selection,
-            TRUE,
-            1,
-            TRUE
+          global$tabs,
+          global$scenarios,
+          global$sections,
+          global$exposure_classes,
+          all_inputs(),
+          global$report_version,
+          input$report_scenario_selection,
+          TRUE,
+          1,
+          TRUE
         )
         write_report_to_file(
           temp,

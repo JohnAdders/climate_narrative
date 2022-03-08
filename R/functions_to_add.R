@@ -1,5 +1,5 @@
 #' Create a single list of settings from simple arguments
-#' 
+#'
 #' @param output_file Path and filenamename of report to write
 #' @param md_file Path and filename of intermediate markdown file
 #' @param file_format Currently either "html" or "rtf"
@@ -10,7 +10,7 @@
 #' @param report_sector_selection Input used to filter report contents
 #' @param report_scenario_selection Input used to filter report contents
 #' @return list of lists
-#' 
+#'
 get_report_settings <- function(output_file,
                                 md_file,
                                 file_format,
@@ -80,7 +80,7 @@ get_report_settings <- function(output_file,
   )
 
   filter_settings <- list(
-    inst_type = ifelse(rep_type=="inst", inst_type, ""),
+    inst_type = ifelse(rep_type == "inst", inst_type, ""),
     report_sector_selection = report_sector_selection,
     override_materiality = override_materiality
   )
@@ -126,11 +126,11 @@ get_report_settings <- function(output_file,
 }
 
 #' The highest level function for report production. Takes only two arguments
-#' 
-#' @param all_inputs Table of user inputs 
+#'
+#' @param all_inputs Table of user inputs
 #' @param settings list of lists containing all necessary settings
 #' @return NULL, report produced to file
-#' 
+#'
 produce_report <- function(all_inputs, settings) {
   content_files <- settings$content_files
   filter_settings <- settings$filter_settings

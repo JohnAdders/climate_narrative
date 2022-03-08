@@ -1336,7 +1336,10 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
           cols_to_use <- cols_to_use[cols_to_use <= ncol]
           out <- paste0(
             out,
-            table_to_markdown_multiline(values_trimmed[, cols_to_use], col_widths = c(30, rep(20, length(cols_to_use)-1)))
+            table_to_markdown_multiline(
+              values_trimmed[, cols_to_use],
+              col_widths = c(30, rep(20, length(cols_to_use) - 1))
+            )
           )
         }
       }
@@ -1375,7 +1378,7 @@ get_exposure_test_description <- function(exposure_classes, item) {
 #' Karnan's request for easier change comparison - loop over all sectors
 #'
 #' @inherit get_report_contents
-#' 
+#'
 get_test_report <- function(exposure_classes) {
   out <- "# Test report\n\n"
   for (i in 1:length(exposure_classes)) {

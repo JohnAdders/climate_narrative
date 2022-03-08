@@ -69,7 +69,8 @@ tab_report_ui <- function() {
         )
       ))
     }
-    out <- c(out, 
+    out <- c(
+      out,
       list(
         textOutput("html_report_message"),
         uiOutput("html_report")

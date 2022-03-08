@@ -43,7 +43,7 @@ load_secrets <- function(secrets_file = "secret.yml") {
   }
 }
 
-initialise_globals <- function(){
+initialise_globals <- function() {
   # ordering the scenarios
   global$scenarios <- global$scenarios[order(sapply(global$scenarios, `[[`, i = "position"))]
 
