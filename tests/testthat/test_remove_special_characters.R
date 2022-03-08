@@ -1,4 +1,4 @@
-library(testthat)
+library(climate.narrative)
 testthat::test_that("function remove_special_characters produces correct result", {
 
   # Tests that the function produces exactly expected results.

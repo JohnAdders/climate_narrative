@@ -1,4 +1,4 @@
-library(testthat)
+library(climate.narrative)
 testthat::test_that("function restore_spaces produces correct result", {
 
   # Tests that the function produces exactly expected results.

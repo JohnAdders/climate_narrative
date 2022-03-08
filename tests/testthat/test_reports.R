@@ -1,4 +1,4 @@
-library(testthat)
+library(climate.narrative)
 testthat::test_that("report files", {
   shiny::testServer(run_shiny_app(), {
 
@@ -7,7 +7,7 @@ testthat::test_that("report files", {
     # Construct test mock session
     load_secrets(system.file("secret.yml", package = "climate.narrative"))
     initialise_globals()
-  
+
     session$setInputs(
       wizard = "page_1",
       rep_type = "sect",
@@ -25,16 +25,16 @@ testthat::test_that("report files", {
     session$setInputs(report_sector_selection = "agriculture")
     output$report
     session$setInputs(report = input$report + 1)
-    
+
     temp_filenames <- c(
       session$userData$temp_html,
       session$userData$temp_rtf,
       session$userData$temp_rtf_dev_2
     )
     comparison_filenames <- c(
-      "test_agriculture.html",
-      "test_agriculture.rtf",
-      "test_sectors_output.rtf"
+      "report_agriculture.html",
+      "report_agriculture.rtf",
+      "report_sectors_output.rtf"
     )
     comparison_filenames <- sapply(
       comparison_filenames, function(filename) {
@@ -53,7 +53,7 @@ testthat::test_that("report files", {
       comparison_files <- c(comparison_files, list(readLines(file_conn)))
       close(file_conn)
     }
-    
+
     # Compare test data vs function outputs.
     # at most one row (title, which is random for temp file) should differ
     for (i in 1:length(report_files)) {
@@ -65,7 +65,7 @@ testthat::test_that("report files", {
           )
         ),
         1
-      )  
+      )
     }
   })
 })
