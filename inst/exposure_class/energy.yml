@@ -1,14 +1,14 @@
 name: Energy Underwriting Class
 description: |
   The **Energy** underwriting class involves insuring companies engaging in 
-  economic activity related to the supply of energy. This includes both upstream 
-  (exploration, extraction) and downstream (storage, refinement, power generation, 
-  distribution) operations.
+  economic activity related to the supply of energy, including those in oil, gas, 
+  coal, nuclear and renewable industries. Where relevant, this includes insuring upstream 
+  energy operations, such as exploration and extraction, as well as downstream operations, 
+  such as storage (e.g. tank farms and terminals), refinement, power generation (e.g.
+  power plants, renewables), and distribution operations.
   
-  Firms in the energy sector operate in an extremely risky environment, depending 
-  on complex and expensive infrastructure, often sited in hostile locations. Typical 
-  energy insurance policies cover property damage, liability, and business interruption.
-
+  Firms in the energy sector very often operate in an extremely risky environment, depending 
+  on complex and expensive infrastructure, in many cases sited in hostile locations. 
 transition:
   high:
     exec_description: |
@@ -92,16 +92,17 @@ transition:
       decreasing, with rising pressure on insurers to decline cover. Demand for 
       insurance covering renewable energy is likely to increase.
     always: |
-      The changing patterns in energy consumption, driven by immediate policy 
-      reaction, societal change, national energy strategies, and carbon legislation, 
-      are likely to have a significant and long-term impact on the energy sector 
+      The changing patterns in energy consumption and consumer demand, driven by 
+      immediate policy reaction, societal change, national energy strategies, and carbon 
+      legislation, are likely to have a significant impact on the energy sector 
       and therefore on the associated insurance products' pricing, terms and conditions 
       and coverage, and could generate fast-changing requirements and opportunities.
       
-      Demand for cover in carbon intensive energy industries, such as oil and gas, 
-      could decline, posing a risk to energy insurers without adequate transition plans, 
-      whilst demand for cover in the renewables industry could increase, presenting an 
-      opportunity for energy insurers.
+      Demand for carbon intensive energy forms, such as fossil fuels, 
+      could decline, posing a risk to firms without adequate transition plans, 
+      and result in an associated decline in demand for insurance covering these energy forms. 
+      Demand for renewables and sustainable energy forms, such as solar, wind, hydro and 
+      biomass, could increase, presenting an opportunity for these types of energy insurers.
     high_materiality: |
       The changes in carbon pricing, energy demand/mix and energy prices could
       potentially result in one or more of the following impacts to the energy 
