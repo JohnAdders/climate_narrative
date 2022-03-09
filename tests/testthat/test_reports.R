@@ -1,13 +1,20 @@
 library(climate.narrative)
 testthat::test_that("report files", {
-  shiny::testServer(run_shiny_app(), {
-
-    # Tests whether the reports are not unintentionally changed or corrupt
-
+  # Tests whether the reports are not unintentionally changed or corrupt
+  shiny::testServer(
+    # First define a test function - a server function with correct initialisation
+    function(input, output, session){
+      initialise_globals()
+      # emulate the secret file
+      global$dev <- TRUE
+      global$report_version <- 5
+      global$progress_bar <- TRUE
+      global$sidebar_toc <- TRUE
+      # the server function itself
+      server(input, output, session)
+    },
+  {  
     # Construct test mock session
-    load_secrets(system.file("secret.yml", package = "climate.narrative"))
-    initialise_globals()
-
     session$setInputs(
       wizard = "page_1",
       rep_type = "sect",
