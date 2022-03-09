@@ -64,7 +64,7 @@ transition:
       CO<sub>2</sub> emissions increase until 2030 before policies drive a
       sharp decrease after 2030 to compensate for the inaction beforehand. This
       results in smaller increases in carbon taxes compared to Orderly
-      transition scenarios until 2030, but significantly higher carbon taxes
+      transition risk scenarios until 2030, but significantly higher carbon taxes
       thereafter as countries attempt to make up lost ground. In the Divergent
       Net Zero scenario the reduction in CO<sub>2</sub> emissions starts to
       occur earlier and as a result is more gradual.
@@ -102,20 +102,19 @@ transition:
 
       The COVID-19 pandemic led to a lockdown of economic activity in China in 2020, 
       with carbon-intensive manufacturing, construction, and transportation sectors 
-      heavily affected. This resulted in emissions drop of approximately 25% for CO<sub>2</sub> 
-      and over 30% for nitrous oxide and particulate matter in Q1 2020. By the end 
-      of the year, China recorded a GDP growth of 2.3% and an increase in total energy 
-      consumption of 2.2%. However, in the second half of 2020, coal consumption rose 
+      heavily affected. This resulted in an emissions drop of approximately 25% for CO<sub>2</sub>.
+      However, in the second half of 2020, coal consumption rose 
       by 3.2%, oil consumption by 6.5%, and gas consumption by 8.4%. Cement and steel 
       production rose by 8.4 and 12.6% respectively.
       
-      Coal trends in China have gone in the opposite direction to global trends since 
-      2018. While major global economies such as the US and the EU retired a record 
-      number of coal-fired power plants in 2020, China commissioned 38.4 GW of new 
-      plants, out of a global total of 50.3 GW commissioned. Since 2016, the country 
-      has added 34 GW of coal-fired power plants per year on average, while added coal 
-      capacity outside China has been declining since 2018.
-      
+      The share of renewables in China's electricity generation mix has been in line with 
+      the global average since the 1990s, reaching ~25% in 2017. 
+
+      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+
+      **Source:**
+      [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
+
       Globally, coal in primary energy will need to decrease by 97% below 2010 levels 
       by 2050 to be compatible with a 1.5&deg;C pathway, while for China, a phase-out before 
       2040 would be needed.
@@ -125,19 +124,17 @@ transition:
       and India still consume a large share of coal in the power sector and will need to 
       decrease coal's share in electricity generation substantially in the next decade to 
       stay sector-aligned with long-term Paris temperature goals. 
-
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
-
-      **Source:**
-      [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
-
+      
       **GDP growth effect**
 
       A change in a country's GDP could have an impact on the level of fiscal
       revenue it receives. Assuming taxation rates remain unchanged, a decrease
       in GDP could lead to a reduction in fiscal revenue. According to estimates
       from the NGFS, disorderly transition could result in significant GDP
-      losses. 
+      losses. In these scenarios, world GDP losses from both physical and transition risk 
+      are estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from transition 
+      risks are negative as the speed of the transition combines with investment uncertainty 
+      and affects consumption and investment.
       
       In these scenarios, there is a large mix of physical and transition risks in 2050. 
       Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
@@ -157,9 +154,9 @@ transition:
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. 
       
-      According to the study, in these scenarios, China would have a downgrade above 
+      According to the study, in a transition risk (RCP 2.6) scenario, China would have a downgrade above 
       two notches by 2100, increasing the cost of borrowing for the Chinese government 
-      by approximately US$4.04-6.06bn.
+      by approximately US$4.03-6.05bn.
 
   low:
     exec_description: |
@@ -208,20 +205,18 @@ transition:
 
       The COVID-19 pandemic led to a lockdown of economic activity in China in 2020, 
       with carbon-intensive manufacturing, construction, and transportation sectors 
-      heavily affected. This resulted in emissions drop of approximately 25% for CO<sub>2</sub> 
-      and over 30% for nitrous oxide and particulate matter in Q1 2020. By the end 
-      of the year, China recorded a GDP growth of 2.3% and an increase in total energy 
-      consumption of 2.2%. However, in the second half of 2020, coal consumption rose 
-      by 3.2%, oil consumption by 6.5%, and gas consumption by 8.4%. Cement and steel 
-      production rose by 8.4 and 12.6% respectively.
+      heavily affected. This resulted in an emissions drop of approximately 25% for CO<sub>2</sub>. 
+      However, in the second half of 2020, coal consumption rose by 3.2%, oil consumption by 6.5%, 
+      and gas consumption by 8.4%. Cement and steel production rose by 8.4 and 12.6% respectively.
       
-      Coal trends in China have gone in the opposite direction to global trends since 
-      2018. While major global economies such as the US and the EU retired a record 
-      number of coal-fired power plants in 2020, China commissioned 38.4 GW of new 
-      plants, out of a global total of 50.3 GW commissioned. Since 2016, the country 
-      has added 34 GW of coal-fired power plants per year on average, while added coal 
-      capacity outside China has been declining since 2018.
-      
+      The share of renewables in China's electricity generation mix has been in line with the global 
+      average since the 1990s, reaching ~25% in 2017. 
+
+      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+
+      **Source:**
+      [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
+
       Globally, coal in primary energy will need to decrease by 97% below 2010 levels 
       by 2050 to be compatible with a 1.5&deg;C pathway, while for China, a phase-out before 
       2040 would be needed.
@@ -231,12 +226,7 @@ transition:
       and India still consume a large share of coal in the power sector and will need to 
       decrease coal's share in electricity generation substantially in the next decade to 
       stay sector-aligned with long-term Paris temperature goals. 
-
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
-
-      **Source:**
-      [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
-
+      
       **GDP growth effect**
 
       A change in a country's GDP could have an impact on the level of fiscal
@@ -246,8 +236,8 @@ transition:
       limit GDP losses. The world GDP losses are estimated to be between -1.5%
       and -2.5% by 2050. World GDP impacts from transition risk are slightly positive
       in the Net Zero 2050 scenario as negative impacts on demand from higher
-      carbon prices and energy costs are more than offset by the recycling of
-      carbon tax revenues into government investment and lower employment taxes.
+      carbon tax prices and energy costs are more than offset by the recycling of
+      carbon revenues into government investment and lower employment taxes.
       
       Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
       Orderly Net Zero scenario on China's GDP compared to 2015 would be significant, 
@@ -260,8 +250,8 @@ transition:
       although rating agencies anticipate that climate trends could have
       implications for ratings in coming decades. According to the 2021 "Rising
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
-      Creditworthiness" working paper from the University of Cambridge, in an
-      Orderly transition risk scenario, most developed countries would be
+      Creditworthiness" working paper from the University of Cambridge, in
+      Orderly transition risk scenarios, most developed countries would be
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
@@ -269,7 +259,7 @@ transition:
       
       According to the study, in a transition risk (RCP 2.6) scenario, China would have 
       a downgrade above two notches by 2100, increasing the cost of borrowing for the 
-      Chinese government by approximately US$4.04-6.06bn.
+      Chinese government by approximately US$4.03-6.05bn.
 physical:
   high:
     exec_description: |
@@ -288,7 +278,7 @@ physical:
       impacting households, businesses, cities and states. There are also likely
       indirect risks, such as those caused by international migration (e.g.
       increased inequalities, labour right issues, social conflicts), or via
-      biodiversity loss, or to industries supply chains and international trade.
+      biodiversity loss, or to industries' supply chains and international trade.
 
       The high physical risk scenario could lead to a significant reduction in
       GDP growth. This would have a negative impact on Chinese sovereign bonds.
@@ -333,7 +323,7 @@ physical:
       2050\. World GDP losses from physical risks scale with the rise in
       temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
       Explorer v2.0, the expected impact of a hot house world scenario on China's 
-      GDP compared to 2015 would be significant, ranging from -2.0% to -4.6% by 2050.
+      GDP compared to 2015 would be significant, ranging from -2.1% to -4.6% by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of 
@@ -355,7 +345,7 @@ physical:
       but greater sensitivity of the top ratings. It is easier to lose an AAA
       rating than a C rating. 
       
-      According to the study, in a high physical risk scenario, China would have a 
+      According to the study, in a high physical risk (RCP 8.5) scenario, China would have a 
       downgrade above six notches by 2100, increasing the cost of borrowing for the 
       Chinese government by approximately US$12.91-19.37bn.
 
@@ -372,7 +362,7 @@ physical:
       floods, and heat waves could become more prevalent, impacting households, 
       businesses, cities and states. There are also likely indirect risks, such as 
       those caused by international migration (e.g. increased inequalities, labour 
-      right issues, social conflicts), or via biodiversity loss, or to industries 
+      right issues, social conflicts), or via biodiversity loss, or to industries' 
       supply chains and international trade. 
       
       The low physical risk scenario could lead to a reduction in GDP growth. This 
@@ -410,7 +400,7 @@ physical:
       world GDP losses from both physical and transition risk are estimated to
       be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
       scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
+      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly 
       Net Zero scenario on China's GDP compared to 2015, would be significant, 
       ranging from -1.3% to -1.9% by 2050.
       
@@ -434,7 +424,7 @@ physical:
       
       According to the study, in a low physical risk (RCP 2.6) scenario, China would have 
       a downgrade above two notches by 2100, increasing the cost of borrowing for the Chinese 
-      government by approximately US$4.04-6.06bn.
+      government by approximately US$4.03-6.05bn.
 appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
