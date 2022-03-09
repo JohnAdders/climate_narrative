@@ -155,7 +155,7 @@ server <- function(input, output, session) {
           )
         )
         if (global$report_version >= 5) {
-          settings <- get_report_settings(temp_html, session$userData$temp_md_scenario, "html", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+          settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
           produce_report(all_inputs(), settings)
           result <- includeHTML(temp_html)
           removeModal()
@@ -231,7 +231,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+        settings <- get_report_settings(global$content_files, session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
         produce_report(all_inputs(), settings)
         removeModal()
         file.copy(session$userData$temp_rtf, file)
@@ -283,7 +283,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$report_version, global$sidebar_toc, "inst", "", "", "")
+        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$report_version, global$sidebar_toc, "inst", "", "", "")
         produce_report(all_inputs(), settings)
         removeModal()
         file.copy(session$userData$temp_rtf_dev, file)
@@ -323,7 +323,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$report_version, global$sidebar_toc, "test", "", "", "")
+        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$report_version, global$sidebar_toc, "test", "", "", "")
         produce_report(NULL, settings)
         removeModal()
         file.copy(session$userData$temp_rtf_dev_2, file)

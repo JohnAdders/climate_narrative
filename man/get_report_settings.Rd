@@ -5,6 +5,7 @@
 \title{Create a single list of settings from simple arguments}
 \usage{
 get_report_settings(
+  content_files,
   output_file,
   md_file,
   file_format,
@@ -17,6 +18,8 @@ get_report_settings(
 )
 }
 \arguments{
+\item{content_files}{List of necessary global lists with report contents}
+
 \item{output_file}{Path and filenamename of report to write}
 
 \item{md_file}{Path and filename of intermediate markdown file}

@@ -77,4 +77,13 @@ initialise_globals <- function() {
   } else {
     stop("Names of global$tabs do not match global$ordered_tabs")
   }
+
+  # combining all the globals required by function get_report_settings in a single list
+  # in order to make code more transparent
+  global$content_files <- list(
+    tabs = global$tabs,
+    scenarios = global$scenarios,
+    sections = global$sections,
+    exposure_classes = global$exposure_classes
+  )
 }

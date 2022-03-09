@@ -1,5 +1,6 @@
 #' Create a single list of settings from simple arguments
 #'
+#' @param content_files List of necessary global lists with report contents
 #' @param output_file Path and filenamename of report to write
 #' @param md_file Path and filename of intermediate markdown file
 #' @param file_format Currently either "html" or "rtf"
@@ -11,7 +12,8 @@
 #' @param report_scenario_selection Input used to filter report contents
 #' @return list of lists
 #'
-get_report_settings <- function(output_file,
+get_report_settings <- function(content_files,
+                                output_file,
                                 md_file,
                                 file_format,
                                 report_version,
@@ -69,15 +71,9 @@ get_report_settings <- function(output_file,
   image_width <- 6
   image_width_unit <- "in"
   image_width_fix <- TRUE
-  # md_file <- tempfile(fileext = ".md")
 
   # hierarchical structure
-  content_files <- list(
-    tabs = global$tabs,
-    scenarios = global$scenarios,
-    sections = global$sections,
-    exposure_classes = global$exposure_classes
-  )
+  content_files <- content_files
 
   filter_settings <- list(
     inst_type = ifelse(rep_type == "inst", inst_type, ""),

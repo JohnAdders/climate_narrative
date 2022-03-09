@@ -7,7 +7,7 @@
 tab_name_to_number(tab_name)
 }
 \arguments{
-\item{tab_name}{name of the tab to convert}
+\item{tab_name}{Name of the tab to convert}
 }
 \description{
 Helper function to enable using names to refer tabs instead of numbers
