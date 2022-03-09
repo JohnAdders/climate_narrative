@@ -219,15 +219,6 @@ server <- function(input, output, session) {
     }
   )
 
-  observeEvent(input$testbutton, {
-    output$test <- renderUI({
-      settings <- get_report_settings("C:/Users/kopalski/Desktop/temp/temp.html", "C:/Users/kopalski/Desktop/temp/temp.md", "html", 4, 0, "inst", "bank", "", "")
-      produce_report(all_inputs(), settings)
-      result <- includeHTML("C:/Users/kopalski/Desktop/temp/temp.html")
-      return(result)
-    })
-  })
-
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
