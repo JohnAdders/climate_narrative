@@ -172,11 +172,11 @@ physical:
 
     high_materiality: |
       The unsecured retail lending exposure could be impacted in a low physical risk scenario. For 
-      example, by widespread increases to insurance premiums, which could affect customers’ ability 
+      example, by widespread increases to insurance premiums, which could affect customers' ability 
       to repay balances as a result of more income being spent on insurance, potentially increasing 
       probabilities of default, although this will vary significantly based on geographical and external 
       factors such as FloodRe. Also, as some properties become uninsurable, or as customers elect not to 
-      prioritise premiums, the risk of one-off events occurring that would severely impact on customers’ 
+      prioritise premiums, the risk of one-off events occurring that would severely impact on customers' 
       abilities to service outstanding debt will increase.
 
 appendix: |
@@ -191,7 +191,7 @@ appendix: |
   on the Unsecured portfolio should measure interactions between factors which could exacerbate losses. 
   Particular attention should be paid to pockets of concentration risk (e.g. customers within geographical 
   regions subject to severe flood risks or types of business) which may not be visible under a high-level 
-  approach which doesn’t model behaviour at an account level.  It may also be useful to compare correlations 
+  approach which doesn't model behaviour at an account level.  It may also be useful to compare correlations 
   between susceptibility to climate risks and traditional risk factors measured through PD scores or bureau 
   information which would increase risk of losses.
   
