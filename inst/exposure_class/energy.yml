@@ -3,9 +3,9 @@ description: |
   The **Energy** underwriting class involves insuring companies engaging in 
   economic activity related to the supply of energy, including those in oil, gas, 
   coal, nuclear and renewable industries. Where relevant, this includes insuring upstream 
-  energy operations, such as exploration and extraction, as well as downstream operations, 
+  energy operations, such as exploration and extraction, as well as downstream operations 
   such as storage (e.g. tank farms and terminals), refinement, power generation (e.g.
-  power plants, renewables), and distribution operations.
+  power plants, renewables), and distribution (e.g. gas pipelines) operations.
   
   Firms in the energy sector very often operate in an extremely risky environment, depending 
   on complex and expensive infrastructure, in many cases sited in hostile locations. 
@@ -115,7 +115,7 @@ transition:
         low carbon/electrified alternatives for cars, heating etc, demand for 
         fossil fuels decreases, with knock on effects for cover of carbon intensive 
         energy industries. In Orderly scenarios the demand for coal, oil and gas 
-        falls, from over 450 EJ a year to between 100 and 200 EJ a year, with coal 
+        falls, from over 450 exajoules (EJ) a year to between 100 and 200 EJ a year, with coal 
         demand almost completely phased out between 2035 and 2045.
 
       ![Primary Energy](Primary_Energy_Orderly_Mining.png)
@@ -127,13 +127,14 @@ transition:
         including fossil fuel activities and assets. Non-compliant insurers may face 
         increased regulatory oversight and sanctions. There is also potential legal or 
         other liability risks, and associated reputational risks, due to inadequate transition 
-        strategies. 
+        strategies. These risks have already prompted a number of insurers to stop insuring coal.
         
       - **Inability to secure reinsurance coverage** (either availability of capital, or 
         exclusions) for insured risks which are not in line with industry Net Zero commitments.
       
       - **Opportunities for new products or lines of business** from new risk transfer 
-        requirements for the renewable energy industry. 
+        requirements for the renewable energy industry (comprehensive products are required 
+        for renewables due to their complex financing and ownership structures). 
       
       - **Changing consumer behaviour**. Although widespread electrification is likely to increase 
         demand for electricity in these scenarios, there may be a shift in the supply business as 
