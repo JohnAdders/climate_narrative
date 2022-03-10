@@ -5,7 +5,6 @@
 #' @param md_file Path and filename of intermediate markdown file
 #' @param file_format Currently either "html" or "rtf"
 #' @param report_version Integer controlling the version of the code used in report generating functions
-#' @param sidebar_toc Flag whether to include a floating sidebar table of content (relevant for HTML only)
 #' @param rep_type Either "inst" for institutional report or "sect" for sectoral report
 #' @param inst_type Institution type (relevant for institutional report only)
 #' @param report_sector_selection Input used to filter report contents
@@ -17,7 +16,6 @@ get_report_settings <- function(content_files,
                                 md_file,
                                 file_format,
                                 report_version,
-                                sidebar_toc,
                                 rep_type,
                                 inst_type,
                                 report_sector_selection,
@@ -37,7 +35,7 @@ get_report_settings <- function(content_files,
     include_exposures <- FALSE
   }
   if (file_format == "html") {
-    if (sidebar_toc) {
+    if (report_version >= 6) {
       output_format <- rmarkdown::html_document(
         toc = TRUE,
         toc_depth = 2,
@@ -105,8 +103,7 @@ get_report_settings <- function(content_files,
   postprocess_settings <- list(
     file_format = file_format,
     output_file = output_file,
-    report_version = report_version,
-    sidebar_toc = sidebar_toc
+    report_version = report_version
   )
 
   settings <- list(
@@ -196,6 +193,6 @@ postprocess <- function(postprocess_settings) {
   if (postprocess_settings$file_format == "rtf") {
     rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
   } else {
-    html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version, postprocess_settings$sidebar_toc)
+    html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
   }
 }

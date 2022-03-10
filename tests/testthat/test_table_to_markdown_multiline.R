@@ -20,7 +20,7 @@ testthat::test_that("function table_to_markdown_multiline produces correct resul
   )
 
   # Call the function.
-  res <- table_to_markdown_multiline(test_df, col_widths = c(7,7,7))
+  res <- table_to_markdown_multiline(test_df, col_widths = c(7, 7, 7))
 
   # Compare test data vs function outputs.
   expect_equal(res, correct_res)

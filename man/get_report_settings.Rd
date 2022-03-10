@@ -10,7 +10,6 @@ get_report_settings(
   md_file,
   file_format,
   report_version,
-  sidebar_toc,
   rep_type,
   inst_type,
   report_sector_selection,
@@ -27,8 +26,6 @@ get_report_settings(
 \item{file_format}{Currently either "html" or "rtf"}
 
 \item{report_version}{Integer controlling the version of the code used in report generating functions}
-
-\item{sidebar_toc}{Flag whether to include a floating sidebar table of content (relevant for HTML only)}
 
 \item{rep_type}{Either "inst" for institutional report or "sect" for sectoral report}
 

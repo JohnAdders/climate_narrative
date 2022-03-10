@@ -42,7 +42,7 @@ render_rtf <- function(input_file, output_file, res_path, report_version) {
   return(invisible(NULL))
 }
 
-render_html <- function(input_file, output_file, report_version, sidebar_toc) {
+render_html <- function(input_file, output_file, report_version) {
   rmarkdown::render(
     input = input_file,
     output_file = output_file,
@@ -55,6 +55,6 @@ render_html <- function(input_file, output_file, report_version, sidebar_toc) {
       fig_caption = FALSE
     )
   )
-  html_postprocess(output_file, report_version, sidebar_toc)
+  html_postprocess(output_file, report_version)
   return(invisible(NULL))
 }

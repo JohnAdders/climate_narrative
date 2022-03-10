@@ -155,7 +155,7 @@ server <- function(input, output, session) {
           )
         )
         if (global$report_version >= 5) {
-          settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+          settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
           produce_report(all_inputs(), settings)
           result <- includeHTML(temp_html)
           removeModal()
@@ -174,7 +174,7 @@ server <- function(input, output, session) {
             inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
             include_exposures <- FALSE
           }
-          if (!global$sidebar_toc) {
+          if (global$report_version <= 5) {
             output_format <- rmarkdown::html_document(
               toc = TRUE,
               toc_float = FALSE,
@@ -210,7 +210,7 @@ server <- function(input, output, session) {
             session$userData$temp_md_scenario,
             (global$report_version >= 4)
           )
-          render_html(session$userData$temp_md_scenario, temp_html, global$report_version, global$sidebar_toc)
+          render_html(session$userData$temp_md_scenario, temp_html, global$report_version)
           result <- includeHTML(temp_html)
           removeModal()
           output$html_report <- renderUI(result) # used to be: return(result)
@@ -231,7 +231,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$report_version, global$sidebar_toc, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+        settings <- get_report_settings(global$content_files, session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
         produce_report(all_inputs(), settings)
         removeModal()
         file.copy(session$userData$temp_rtf, file)
@@ -283,7 +283,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$report_version, global$sidebar_toc, "inst", "", "", "")
+        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$report_version, "inst", "", "", "")
         produce_report(all_inputs(), settings)
         removeModal()
         file.copy(session$userData$temp_rtf_dev, file)
@@ -323,7 +323,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$report_version, global$sidebar_toc, "test", "", "", "")
+        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$report_version, "test", "", "", "")
         produce_report(NULL, settings)
         removeModal()
         file.copy(session$userData$temp_rtf_dev_2, file)

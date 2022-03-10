@@ -17,7 +17,7 @@ testthat::test_that("function string_format_lines produces correct result", {
 
   # Call the function.
   res <- test_strings
-  for (i in 1: length(res)) {
+  for (i in 1:length(res)) {
     res[i] <- string_format_lines(test_strings[i], 6)
   }
 

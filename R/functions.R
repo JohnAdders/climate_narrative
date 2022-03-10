@@ -899,7 +899,7 @@ ensure_images_fit_page <- function(filename, target_width = 7, target_width_unit
   graph_lines <- grep("^!\\[", markdown)
   for (i in graph_lines) {
     image_name <- substring(stringi::stri_match_first(markdown[i], regex = "\\([[:graph:]]*.png"), 2)
-    if(file.exists(image_name)) {
+    if (file.exists(image_name)) {
       image_attributes <- attributes(png::readPNG(paste0(image_name), info = TRUE))$info
       if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
       if (fix_width && image_attributes$dim[1] > min_pixels_to_rescale) {
@@ -909,7 +909,7 @@ ensure_images_fit_page <- function(filename, target_width = 7, target_width_unit
         markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
       }
     } else {
-      warning(paste0("Image file ",image_name," does not exist"))
+      warning(paste0("Image file ", image_name, " does not exist"))
     }
   }
   writeLines(markdown, file_conn)
@@ -1474,7 +1474,7 @@ include_markdown_section <- function(output, output_name, section_name) {
   })
 }
 
-html_postprocess <- function(file, report_version, sidebar_toc) {
+html_postprocess <- function(file, report_version) {
   # replace back the images links
   file_conn <- file(file)
   temp <- readLines(file_conn)
@@ -1483,7 +1483,7 @@ html_postprocess <- function(file, report_version, sidebar_toc) {
     "climate_narrative",
     temp
   )
-  if (report_version >= 2 && !sidebar_toc) {
+  if (report_version >= 2 && report_version <= 5) {
     temp <- gsub(
       "(<h[1-5]?>)(.*)(</h[1-5]?>)",
       "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",

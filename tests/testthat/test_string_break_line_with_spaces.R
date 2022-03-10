@@ -15,7 +15,7 @@ testthat::test_that("function string_break_line_with_spaces produces correct res
 
   # Call the function.
   res <- test_strings
-  for (i in 1: length(res)) {
+  for (i in 1:length(res)) {
     res[i] <- string_break_line_with_spaces(test_strings[i], 5, 3)
   }
 

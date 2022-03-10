@@ -32,14 +32,9 @@ load_secrets <- function(secrets_file = "secret.yml") {
       warning("Progress bar setting not found. Defaulting to FALSE")
       global$progress_bar <- FALSE
     }
-    if (is.null(global$sidebar_toc)) {
-      warning("Sidebar table of contents setting not found. Defaulting to FALSE")
-      global$sidebar_toc <- FALSE
-    }
   } else {
     global$dev <- TRUE
     global$progress_bar <- FALSE
-    global$sidebar_toc <- FALSE
   }
 }
 
