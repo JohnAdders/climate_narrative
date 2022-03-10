@@ -8,6 +8,8 @@
 #' @export
 #'
 server <- function(input, output, session) {
+  print(system.file("www", package = "climate.narrative"))
+  print(dir(system.file("www", package = "climate.narrative"))
   heartbeat(input, output, session)
   session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
   session$userData$captcha_validated <- FALSE
