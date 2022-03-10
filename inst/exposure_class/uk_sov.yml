@@ -73,12 +73,10 @@ transition:
       countries with a strong level of dependence on fossil fuel energy sources.
       Industries that are negatively impacted by transition risk, such as
       mining, oil and gas could have reduced revenues from lower fossil fuel
-      demand and increased costs from significantly higher carbon taxes.
-
-      On the other hand, government spending (through subsidies and investment)
-      could encourage consumer spending and investment in the use of renewables,
-      energy efficiency, energy storage, etc, leading to increases in fiscal
-      revenues. The Disorderly transition risk scenarios could also lead to a reduction in
+      demand and increased costs from significantly higher carbon taxes. On the other hand, 
+      government spending (through subsidies and investment) could encourage consumer spending 
+      and investment in the use of renewables, energy efficiency, energy storage, etc, leading to 
+      increases in fiscal revenues. The Disorderly transition risk scenarios could also lead to a reduction in
       GDP growth. This would have a negative impact on UK sovereign bonds.
 
     high_materiality: |
@@ -114,7 +112,7 @@ transition:
       combined for the first time ever. Wind generation, fuelled by new offshore
       capacity, increased its share of total generation by 4.4% to 24.2%.
 
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+      ![Share of Renewable Electricity Generation](UK_sov.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
@@ -148,7 +146,7 @@ transition:
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. According to the study, 
-      in these scenarios, the UK would have a downgrade of around 
+      in a transition risk (RCP 2.6) scenario, the UK would have a downgrade of around 
       one notch by 2100, increasing the cost of borrowing for the UK government by 
       approximately US$2-3bn.
 
@@ -184,7 +182,7 @@ transition:
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
-      The impact from the Orderly transition risk scenarios on fiscal revenues
+      The impact of Orderly transition risk scenarios on fiscal revenues
       is largely dependent on the efficiency of government spending in trying to
       mitigate these risks. While the use of taxes to incentivize more
       environmentally friendly production, transportation and consumption
@@ -210,7 +208,7 @@ transition:
       Wind generation, fuelled by new offshore capacity, increased its share of
       total generation by 4.4% to 24.2%.
 
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+      ![Share of Renewable Electricity Generation](UK_sov.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
@@ -244,7 +242,7 @@ transition:
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. According to
-      the study, in a low transition risk (RCP 2.6) scenario, the UK would have
+      the study, in a transition risk (RCP 2.6) scenario, the UK would have
       a downgrade of around one notch by 2100, increasing the cost of borrowing for
       the UK government by approximately US$2-3bn.
 
@@ -266,7 +264,7 @@ physical:
       impacting households, businesses, cities and states. There are also likely
       indirect risks, such as those caused by international migration (e.g.
       increased inequalities, labour right issues, social conflicts), or via
-      biodiversity loss, or to industries supply chains and international trade.
+      biodiversity loss, or to industries' supply chains and international trade.
 
       The high physical risk scenario could lead to a significant reduction in
       GDP growth. This would have a negative impact on UK sovereign bonds.
@@ -328,7 +326,7 @@ physical:
       necessarily reflect increased climate-related risks for these top-rated countries,
       but greater sensitivity of the top ratings. It is easier to lose an AAA
       rating than a C rating. According to the study, in a high physical risk
-      scenario, the UK would have a downgrade exceeding three notches by 2100,
+      (RCP 8.5) scenario, the UK would have a downgrade exceeding three notches by 2100,
       increasing the cost of borrowing for the UK government by approximately
       US$7.6-11.3bn.
 
@@ -347,7 +345,7 @@ physical:
       more prevalent, impacting households, businesses, cities and states. There
       are also likely indirect risks, such as those caused by international
       migration (e.g. increased inequalities, labour right issues, social
-      conflicts), or via biodiversity loss, or to industries supply chains and
+      conflicts), or via biodiversity loss, or to industries' supply chains and
       international trade. The low physical risk scenario could lead to a
       reduction in GDP growth. This would have a negative impact on UK sovereign
       bonds.
