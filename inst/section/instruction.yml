@@ -17,7 +17,7 @@ description: |
   of the firm and the materiality of different lending exposure types, underwriting classes,
   asset classes, and economic sectors for the firm. These descriptions draw on data 
   from the NGFS scenarios which were updated in June 2021. Users who wish to learn more about 
-  the NGFS scenarios are directed to the [NGFS scenario portal](https://www.ngfs.net/ngfs-scenarios-portal/){target="\_blank"}.
+  the NGFS scenarios are directed to the [NGFS scenario portal](https://www.ngfs.net/ngfs-scenarios-portal/).
 
   ## How to use the tool?
 
@@ -111,9 +111,6 @@ description: |
 
   ### What is next?
 
-  The Centre for Greening Finance and Investment have agreed to house the tool on
-  their IT platform.  The tool will be released publically in Q2 2022 after further testing.
-
-  During the remainder of 2022, the Climate Financial Risk Forum
-  Scenario Analysis Working Group will continue to collect feedback from users and will update the
-  tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.
+  The tool is housed on the Centre for Greening Finance and Investment climate and environmental data and analytics platform. 
+  During 2022, the Climate Financial Risk Forum Scenario Analysis Working Group will continue to collect feedback from users 
+  on this beta version of the tool and will update the tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.
