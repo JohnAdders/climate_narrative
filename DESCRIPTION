@@ -34,5 +34,6 @@ Imports:
     uuid,
     yaml,
     png,
-    markdown,
+    markdown
+Suggests:
     testthat
