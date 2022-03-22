@@ -8,6 +8,7 @@ get_scenario_descriptions(
   aggregated_table,
   type_inputs,
   scenario,
+  exposure_classes,
   include_exposures
 )
 }
@@ -18,7 +19,9 @@ get_scenario_descriptions(
 
 \item{scenario}{Scenario name}
 
-\item{include_exposures}{whether to include tables with contributing exposures}
+\item{exposure_classes}{List of exposure classes (sectors) from which the texts are extracted}
+
+\item{include_exposures}{Flag whether to include tables with contributing exposures}
 }
 \description{
 Lower level report helper function responsible for single scenario description

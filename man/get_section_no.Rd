@@ -4,10 +4,12 @@
 \alias{get_section_no}
 \title{Helper function that returns non-scenario section number(s)}
 \usage{
-get_section_no(is_rtf)
+get_section_no(sections, is_rtf)
 }
 \arguments{
-\item{is_rtf}{bool whether to include sections that are for RTF only}
+\item{sections}{List of non-scenario report sections}
+
+\item{is_rtf}{Flag whether to include sections that are for RTF only}
 }
 \value{
 vector of integers

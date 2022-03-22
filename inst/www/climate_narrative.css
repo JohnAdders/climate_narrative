@@ -34,12 +34,6 @@ table td, table th {
     overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
 }
 
-#html_report_div,
-#html_toc_div {
-    height: 300px;
-    overflow-y: scroll;
-}
-
 .inline a,
 .inline h1,
 .inline h2,
@@ -47,4 +41,12 @@ table td, table th {
 .inline h4,
 .inline h5 {
   display: inline;
+}
+
+.not_too_wide_2col {
+    max-width: 600px;
+}
+
+.not_too_wide_3col {
+    max-width: 900px;
 }

@@ -26,17 +26,23 @@ tab_report_ui <- function() {
       selectize = FALSE
     )
     out <- list(
-      fluidRow(
-        column(4, dropdown_1),
-        column(4, dropdown_2),
-        column(4, dropdown_3)
+      div(
+        class="not_too_wide_3col",
+        fluidRow(
+          column(4, dropdown_1),
+          column(4, dropdown_2),
+          column(4, dropdown_3)
+        )
       )
     )
   } else {
     out <- list(
-      fluidRow(
-        column(6, dropdown_1),
-        column(6, dropdown_2)
+      div(
+        class="not_too_wide_2col",
+        fluidRow(
+          column(6, dropdown_1),
+          column(6, dropdown_2)
+        )
       )
     )
   }
@@ -55,21 +61,28 @@ tab_report_ui <- function() {
     button_3 <- actionButton("update_yamls", "Update the report text files")
     if (global$dev) {
       out <- c(out, list(
-        fluidRow(
-          column(4, button_1),
-          column(4, button_2),
-          column(4, button_3)
+        div(
+          class="not_too_wide_3col",
+          fluidRow(
+            column(4, button_1),
+            column(4, button_2),
+            column(4, button_3)
+          )
         )
       ))
     } else {
       out <- c(out, list(
-        fluidRow(
-          column(4, button_1),
-          column(4, button_2)
+        div(
+          class="not_too_wide_2col",
+          fluidRow(
+            column(4, button_1),
+            column(4, button_2)
+          )
         )
       ))
     }
-    out <- c(out, 
+    out <- c(
+      out,
       list(
         textOutput("html_report_message"),
         uiOutput("html_report")

@@ -4,9 +4,17 @@
 \alias{get_executive_summary_exposures}
 \title{One of the functions comprising the executive summary text}
 \usage{
-get_executive_summary_exposures(aggregated_inputs, inputs, scenario_no, exec)
+get_executive_summary_exposures(
+  exposure_classes,
+  aggregated_inputs,
+  inputs,
+  scenario_no,
+  exec
+)
 }
 \arguments{
+\item{exposure_classes}{List of sectors}
+
 \item{aggregated_inputs}{data frame of aggregated inputs (implemented in the reactive expression)}
 
 \item{inputs}{data frame of all inputs (implemented in the reactive expression)}
