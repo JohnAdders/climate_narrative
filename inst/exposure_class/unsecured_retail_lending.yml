@@ -130,9 +130,9 @@ physical:
     always: |
       Chronic effects (e.g. rising sea-levels) and acute effects due to changes in the 
       frequency and severity of weather events such as heatwaves, droughts, wildfires, 
-      tropical cyclones and flooding are projected to have macro-economic impacts, with 
-      an adverse effect on world GDP assumed in these scenarios, which could result in 
-      losses for unsecured lending. Physical risks may also impact affordability as customers' 
+      cyclones and flooding are projected to have macro-economic impacts, with an adverse 
+      effect on world GDP assumed in these scenarios, which could result in losses for 
+      unsecured lending. Physical risks may also impact affordability as customers' 
       cost of living increases (due to, for example, increased insurance costs), and indirectly 
       results in further losses for unsecured lending. 
 
@@ -166,8 +166,8 @@ physical:
     always: |
       Chronic effects (e.g. rising sea-levels) and acute effects due to changes in the 
       frequency and severity of weather events such as heatwaves, droughts, wildfires, 
-      tropical cyclones and flooding could impact affordability as customers' cost of 
-      living increases (due to, for example, increased insurance costs) and indirectly 
+      cyclones and flooding could impact affordability as customers' cost of living 
+      increases (due to, for example, increased insurance costs) and indirectly 
       result in losses for unsecured retail lending.
 
     high_materiality: |
