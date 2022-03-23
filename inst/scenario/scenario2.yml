@@ -4,10 +4,13 @@ transition: high
 physical: low
 exec_short: transition
 exec_description: |
-  In the Divergent Net Zero scenario the reduction in CO<sub>2</sub> 
-  emissions starts to occur earlier and as a result is more gradual, 
-  and carbon prices rise at a smoother rate. The investments in energy 
-  efficiency and low carbon technologies are projected to increase (e.g. annual investment 
+  Disorderly transition risk scenarios assume the introduction of effective policy change 
+  is delayed or divergent across countries and sectors. In the Delayed transition scenario, 
+  CO2 emissions do not decrease until 2030, and steep increase in the carbon price is required 
+  thereafter to compensate for this inaction.In the Divergent Net Zero scenario the reduction 
+  in CO<sub>2</sub> emissions starts to occur earlier and as a result is more gradual, 
+  and carbon prices rise at a smoother rate. In Disorderly transition risk scnearios, the investments 
+  in energy efficiency and low carbon technologies are projected to increase (e.g. annual investment 
   in low carbon technologies increases from ~750 billion USD to ~3 trillion USD 
   by 2050). Global mean temperatures are projected to increase across the world 
   by 1.6&deg;C to 1.8&deg;C, compared to pre-industrial levels, by 2050.
@@ -17,7 +20,7 @@ exec_description: |
   productivity due to the reduced capacity of the human body to perform physical 
   labour under hot and humid climate conditions), agriculture, ecosystems, and 
   sea-level rise. It can also further change the frequency and severity of weather 
-  events such as heatwaves, droughts, wildfires, tropical cyclones, and flooding. 
+  events such as heatwaves, droughts, wildfires, cyclones, and flooding. 
   The total cumulative relative GDP impact is estimated to be between -4.2% 
   and -4.8% by 2050.
 
@@ -92,15 +95,14 @@ description: |
   
   Observed climate change has already increased global mean temperatures above 
   1.2&deg;C, compared to pre-industrial levels, and both the global land area and 
-  the global population annually exposed to river flood, crop failure, tropical 
-  cyclones, wildfire, drought and heatwaves has already more than doubled 
-  (See Kaufman, D. et al. (2020).). The increasing concentrations of carbon dioxide, 
-  methane and nitrous oxide in the atmosphere are unprecedented in at least the 
-  last 800,000 years and are extremely likely to have been the dominant cause of 
-  warming since the mid-20th century. In these scenarios global mean temperatures 
-  are projected to increase across the world by 1.6&deg;C to 1.8&deg;C, above 
-  pre-industrial levels, by 2050 with land warming faster than oceans and high latitudes 
-  experiencing higher warming.
+  the global population annually exposed to river flood, crop failure, cyclones, wildfire, 
+  drought and heatwaves has already more than doubled (See Kaufman, D. et al. (2020).). 
+  The increasing concentrations of carbon dioxide, methane and nitrous oxide in the atmosphere 
+  are unprecedented in at least the  last 800,000 years and are extremely likely to have been 
+  the dominant cause of warming since the mid-20th century. In these scenarios global mean 
+  temperatures are projected to increase across the world by 1.6&deg;C to 1.8&deg;C, above 
+  pre-industrial levels, by 2050 (with land warming faster than oceans and high latitudes 
+  experiencing higher warming) giving rise to low physical risks.
 
   ![Global mean temp rise](Global_mean_temperature_Disorderly.png)
 
@@ -110,7 +112,7 @@ description: |
   These changes could lead to chronic changes in living conditions affecting
   health, labour productivity, agriculture, ecosystems, and sea-level rise. It
   can also further change the frequency and severity of weather events such as
-  heatwaves, droughts, wildfires, tropical cyclones, and flooding. For example, 
+  heatwaves, droughts, wildfires, cyclones, and flooding. For example, 
   in the delayed transition risk scenario we could see the following:
   
   * A decrease in labour productivity due to the reduced capacity of the human 
@@ -123,7 +125,7 @@ description: |
   
   * The annual economic damages from river floods are projected to increase, 
     peaking at a ~140% over a  1986-2006 reference period around 2035, and 
-    remaining around this level thereafter. Annual economic damages from tropical 
+    remaining around this level thereafter. Annual economic damages from 
     cyclones are also projected to increase, but to a lesser extent; peaking at 
     ~20% above reference period levels around 2050.
     
