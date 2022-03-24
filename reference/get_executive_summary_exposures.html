@@ -50,12 +50,20 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_executive_summary_exposures</span><span class="op">(</span><span class="va">aggregated_inputs</span>, <span class="va">inputs</span>, <span class="va">scenario_no</span>, <span class="va">exec</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_executive_summary_exposures</span><span class="op">(</span>
+  <span class="va">exposure_classes</span>,
+  <span class="va">aggregated_inputs</span>,
+  <span class="va">inputs</span>,
+  <span class="va">scenario_no</span>,
+  <span class="va">exec</span>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>aggregated_inputs</dt>
+    <dl><dt>exposure_classes</dt>
+<dd><p>List of sectors</p></dd>
+<dt>aggregated_inputs</dt>
 <dd><p>data frame of aggregated inputs (implemented in the reactive expression)</p></dd>
 <dt>inputs</dt>
 <dd><p>data frame of all inputs (implemented in the reactive expression)</p></dd>

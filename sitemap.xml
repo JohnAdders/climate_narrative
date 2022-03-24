@@ -31,6 +31,9 @@
     <loc>/reference/delete_empty_rows_and_columns.html</loc>
   </url>
   <url>
+    <loc>/reference/dot-onAttach.html</loc>
+  </url>
+  <url>
     <loc>/reference/ensure_images_fit_page.html</loc>
   </url>
   <url>
@@ -85,6 +88,9 @@
     <loc>/reference/get_report_contents.html</loc>
   </url>
   <url>
+    <loc>/reference/get_report_settings.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_scenario_descriptions.html</loc>
   </url>
   <url>
@@ -110,6 +116,9 @@
   </url>
   <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/produce_report.html</loc>
   </url>
   <url>
     <loc>/reference/produce_tooltip_matrix.html</loc>

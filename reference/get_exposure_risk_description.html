@@ -59,6 +59,7 @@
   <span class="va">item</span>,
   <span class="va">products</span>,
   <span class="va">materiality</span>,
+  <span class="va">exposure_classes</span>,
   <span class="va">physical_or_transition</span>,
   <span class="va">high_or_low</span>,
   include_oneliner <span class="op">=</span> <span class="cn">FALSE</span>
@@ -73,6 +74,8 @@
 <dd><p>Product name</p></dd>
 <dt>materiality</dt>
 <dd><p>Materiality of item</p></dd>
+<dt>exposure_classes</dt>
+<dd><p>List of exposure classes (sectors)</p></dd>
 <dt>physical_or_transition</dt>
 <dd><p>Type of scenario</p></dd>
 <dt>high_or_low</dt>
@@ -80,6 +83,10 @@
 <dt>include_oneliner</dt>
 <dd><p>FALSE by default, normally oneliner is for executive summary</p></dd>
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    <p>vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)</p>
+    </div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
