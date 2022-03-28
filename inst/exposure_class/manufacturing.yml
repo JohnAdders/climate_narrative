@@ -3,7 +3,7 @@ description: |
   The **Manufacturing** sector involves the transformation of (mainly) raw
   materials or substances into new products by way of mechanical, physical, or
   chemical processes. Manufactured products derived from the assembly of
-  component parts also comprise the manufacturing sector unless otherwise
+  component parts also comprise the manufacturing sector - unless otherwise
   specified. Manufacturing establishments are typically referred to as mills,
   factories or plants and tend to use power-driven machinery or handling
   equipment in the manufacturing process, however it is not unusual for some
@@ -13,37 +13,75 @@ description: |
   always obvious (Hence, the inclusion of miscellaneous manufacturing as the
   twelfth sub-sector). The North American Industrial Code (NAIC) system breaks
   down the manufacturing factor into the following sub-sectors:
+  
+  - Pharmaceutical and Medicine Manufacturing
+  
+  - Paint, Coating, and Adhesive Manufacturing
+  
+  - Soap, Cleaning Compound, and Toilet Preparation Manufacturing
+  
+  - Other Chemical Product and Preparation Manufacturing
+  
+  - Plastics Product Manufacturing
+  
+  - Rubber Product Manufacturing
+  
+  - Glass and Glass Product Manufacturing
+  
+  - Clay Product and Refractory Manufacturing
+  
+  - Cement and Concrete Product Manufacturing
+  
+  - Lime and Gypsum Product Manufacturing
+  
+  - Other Nonmetallic Mineral Product Manufacturing
+  
+  - Iron and Steel Mills and Ferroalloy Manufacturing
+  
+  - Steel Product Manufacturing from Purchased Steel
+  
+  - Alumina and Aluminum Production and Processing
+  
+  - Nonferrous Metal (except Aluminum) Production and Processing
+  
+  - Agriculture, Construction, and Mining Machinery Manufacturing
 
-  - Food manufacturing.
+  - Food manufacturing
 
-  - Beverage and tobacco product manufacturing.
+  - Beverage and tobacco product manufacturing
 
   - Textile manufacturing (including textile product mills, apparel
-    manufacturing and leather and allied product manufacturing).
+    manufacturing and leather and allied product manufacturing)
 
   - Wood product manufacturing (including paper manufacturing and printing and
-    related support activities).
+    related support activities)
 
-  - Petroleum and coal products manufacturing.
+  - Petroleum and coal products manufacturing
+  
+  - Pharmaceutical and Medicine Manufacturing (including Medical Equipment and Supplies Manufacturing)
 
   - Chemical manufacturing (including plastics and rubber products
-    manufacturing).
+    manufacturing)
 
-  - Non-metallic mineral product manufacturing.
+  - Non-metallic mineral product manufacturing
 
   - Primary metal manufacturing (including fabricated metal product
-    manufacturing and machinery manufacturing).
+    manufacturing and machinery manufacturing)
 
   - Computer and electronic product manufacturing (including electrical
-    equipment, appliance, and component manufacturing).
+    equipment, appliance, and component manufacturing)
 
-  - Transportation equipment manufacturing.
+  - Transportation equipment manufacturing (including Motor, Railroad Rolling Stock, Aerospace Product, Ship and Boat manufacturing)
 
   - Furniture and related product manufacturing.
 
   - Miscellaneous manufacturing.
   
-  - Technology and electronics manufacturing.
+  - Engine, Turbine, and Power Transmission Equipment Manufacturing
+  
+  - Technology, electric and electronics manufacturing (including Ventilation, Heating, Air-Conditioning, 
+    Household Appliance, Commercial Refrigeration, Computer and Peripheral Equipment, Communications Equipment, 
+    Audio and Video Equipment, etc)
 transition:
   high:
     exec_description: |
@@ -144,12 +182,7 @@ transition:
         
       - Reduce demand for high-temperature processes.
       
-      - Support the transition of large technical systems through long-term investment cycles.
-      
-      Additionally, critics suggest the effectiveness of carbon pricing schemes 
-      in facilitating abatement in the manufacturing sector is highly dependent 
-      upon whether the price of carbon adequately causes polluters to address the 
-      negative externalities they generate. 
+      - Support the transition of large technical systems through long-term investment cycles. 
   low:
     exec_description: |
       In Orderly transition risk scenarios, manufacturers could benefit 
