@@ -4,10 +4,12 @@
 \alias{get_references}
 \title{Function to produce references section (for all items)}
 \usage{
-get_references(items)
+get_references(items, exposure_classes)
 }
 \arguments{
 \item{items}{vector of items to get references for}
+
+\item{exposure_classes}{List of exposure classes (sectors)}
 }
 \value{
 markdown-formatted references section (h2)

@@ -9,6 +9,7 @@ get_exposure_risk_description(
   item,
   products,
   materiality,
+  exposure_classes,
   physical_or_transition,
   high_or_low,
   include_oneliner = FALSE
@@ -21,11 +22,16 @@ get_exposure_risk_description(
 
 \item{materiality}{Materiality of item}
 
+\item{exposure_classes}{List of exposure classes (sectors)}
+
 \item{physical_or_transition}{Type of scenario}
 
 \item{high_or_low}{Is scenario high or low}
 
 \item{include_oneliner}{FALSE by default, normally oneliner is for executive summary}
+}
+\value{
+vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 }
 \description{
 Lower level report helper function responsible for single risk

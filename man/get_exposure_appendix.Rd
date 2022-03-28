@@ -4,13 +4,15 @@
 \alias{get_exposure_appendix}
 \title{Produce appendix for a given item}
 \usage{
-get_exposure_appendix(item)
+get_exposure_appendix(item, exposure_classes)
 }
 \arguments{
-\item{item}{name of item for which appendix is to be produced}
+\item{item}{Name of item for which appendix is to be produced}
+
+\item{exposure_classes}{List of sectors from which the appendix text are extracted}
 }
 \value{
-markdown-formatted appendix section (h3)
+Markdown-formatted appendix section (h3)
 }
 \description{
 Produce appendix for a given item
