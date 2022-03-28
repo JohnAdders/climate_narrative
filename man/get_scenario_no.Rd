@@ -4,12 +4,14 @@
 \alias{get_scenario_no}
 \title{Helper function that translate the value of input field to the scenario number(s)}
 \usage{
-get_scenario_no(report_scenario_selection, is_rtf)
+get_scenario_no(scenarios, report_scenario_selection, is_rtf)
 }
 \arguments{
-\item{report_scenario_selection}{value of the input}
+\item{scenarios}{List of scenarios}
 
-\item{is_rtf}{bool whether to include sections that are for RTF only}
+\item{report_scenario_selection}{Value of the input (scenario or empty string)}
+
+\item{is_rtf}{Flag whether to include sections that are for RTF only}
 }
 \value{
 vector of integers

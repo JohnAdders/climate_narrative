@@ -9,10 +9,40 @@
 #' @export
 run_shiny_app <- function(secrets_file = "secret.yml", ...) {
   load_secrets(secrets_file)
+  initialise_globals()
+  shinyApp(ui = ui(), server = server, ...)
+}
 
+load_secrets <- function(secrets_file = "secret.yml") {
+  if (file.exists(secrets_file)) {
+    secret_pars <- yaml::read_yaml(secrets_file)
+    global$dev <- FALSE
+    for (i in 1:length(secret_pars)) global[[names(secret_pars)[i]]] <- secret_pars[[i]]
+    # simple validation and some default values
+    if (is.null(global$report_version)) {
+      default_version <- global$report_versions[1]
+      global$report_version <- default_version
+      warning(paste0("Report version not found in the settings file, defaulting to ", default_version))
+    } else if (!global$report_version %in% global$report_versions) {
+      default_version <- global$report_versions[1]
+      global$report_version <- default_version
+      warning(paste0("Invalid report version in the settings file, defaulting to ", default_version))
+    }
+    if (is.null(global$progress_bar)) {
+      warning("Progress bar setting not found. Defaulting to FALSE")
+      global$progress_bar <- FALSE
+    }
+  } else {
+    global$dev <- TRUE
+    global$progress_bar <- FALSE
+  }
+}
+
+initialise_globals <- function() {
   # ordering the scenarios
   global$scenarios <- global$scenarios[order(sapply(global$scenarios, `[[`, i = "position"))]
 
+  # defining tab structure
   global$tabs <- list(
     QuestionTab$new("title", NULL, NULL, "auth", FALSE, FALSE),
     QuestionTab$new("auth", NULL, "title", NULL, ui_settings = list(captcha_code = global$captcha_code)),
@@ -42,35 +72,13 @@ run_shiny_app <- function(secrets_file = "secret.yml", ...) {
   } else {
     stop("Names of global$tabs do not match global$ordered_tabs")
   }
-  shinyApp(ui = ui(), server = server, ...)
-}
 
-load_secrets <- function(secrets_file = "secret.yml") {
-  if (file.exists(secrets_file)) {
-    secret_pars <- yaml::read_yaml(secrets_file)
-    global$dev <- FALSE
-    for (i in 1:length(secret_pars)) global[[names(secret_pars)[i]]] <- secret_pars[[i]]
-    # simple validation and some default values
-    if (is.null(global$report_version)) {
-      default_version <- global$report_versions[1]
-      global$report_version <- default_version
-      warning(paste0("Report version not found in the settings file, defaulting to ", default_version))
-    } else if (!global$report_version %in% global$report_versions) {
-      default_version <- global$report_versions[1]
-      global$report_version <- default_version
-      warning(paste0("Invalid report version in the settings file, defaulting to ", default_version))
-    }
-    if (is.null(global$progress_bar)) {
-      warning("Progress bar setting not found. Defaulting to FALSE")
-      global$progress_bar <- FALSE
-    }
-    if (is.null(global$sidebar_toc)) {
-      warning("Sidebar table of contents setting not found. Defaulting to FALSE")
-      global$sidebar_toc <- FALSE
-    }
-  } else {
-    global$dev <- TRUE
-    global$progress_bar <- FALSE
-    global$sidebar_toc <- FALSE
-  }
+  # combining all the globals required by function get_report_settings in a single list
+  # in order to make code more transparent
+  global$content_files <- list(
+    tabs = global$tabs,
+    scenarios = global$scenarios,
+    sections = global$sections,
+    exposure_classes = global$exposure_classes
+  )
 }

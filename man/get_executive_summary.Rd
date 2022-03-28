@@ -4,9 +4,23 @@
 \alias{get_executive_summary}
 \title{Function to combine an executive summary from lower level functions}
 \usage{
-get_executive_summary(aggregated_inputs, inputs, scenario_no, layout = 1)
+get_executive_summary(
+  tabs,
+  scenarios,
+  exposure_classes,
+  aggregated_inputs,
+  inputs,
+  scenario_no,
+  layout = 1
+)
 }
 \arguments{
+\item{tabs}{List of tabs (required for summary of user inputs)}
+
+\item{scenarios}{List of scenarios}
+
+\item{exposure_classes}{List of sectors}
+
 \item{aggregated_inputs}{data frame of aggregated inputs (implemented in the reactive expression)}
 
 \item{inputs}{data frame of all inputs (implemented in the reactive expression)}

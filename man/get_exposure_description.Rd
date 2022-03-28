@@ -4,14 +4,21 @@
 \alias{get_exposure_description}
 \title{Produce report content for a given item}
 \usage{
-get_exposure_description(item, type_item_inputs, include_exposures)
+get_exposure_description(
+  item,
+  type_item_inputs,
+  exposure_classes,
+  include_exposures
+)
 }
 \arguments{
-\item{item}{name of item for which a report is to be produced}
+\item{item}{Name of item for which a report is to be produced}
 
-\item{type_item_inputs}{table of (disaggregated) inputs to produce a table of contributing rows}
+\item{type_item_inputs}{Table of (disaggregated) inputs to produce a table of contributing rows}
 
-\item{include_exposures}{whether to include tables with contributing exposures}
+\item{exposure_classes}{List of sectors from which the texts are extracted}
+
+\item{include_exposures}{Whether to include tables with contributing exposures}
 }
 \value{
 markdown-formatted report section (h2)
