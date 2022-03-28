@@ -6,7 +6,7 @@ exec_short: transition
 exec_description: |
   Disorderly transition risk scenarios assume the introduction of effective policy change 
   is delayed or divergent across countries and sectors. In the Delayed transition scenario, 
-  CO2 emissions do not decrease until 2030, and steep increase in the carbon price is required 
+  CO<sub>2</sub> emissions do not decrease until 2030, and steep increase in the carbon price is required 
   thereafter to compensate for this inaction.In the Divergent Net Zero scenario the reduction 
   in CO<sub>2</sub> emissions starts to occur earlier and as a result is more gradual, 
   and carbon prices rise at a smoother rate. In Disorderly transition risk scnearios, the investments 
