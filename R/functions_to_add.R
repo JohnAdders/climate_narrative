@@ -30,7 +30,13 @@ get_report_settings <- function(content_files,
       exec_summary_layout <- 2
     }
   } else {
-    exec_summary_layout <- 2
+    if (report_sector_selection == "") {
+      # scenario report
+      exec_summary_layout <- 3
+    } else {
+      # sector report
+      exec_summary_layout <- 2
+    }
     override_materiality <- "High"
     include_exposures <- FALSE
   }
@@ -75,7 +81,8 @@ get_report_settings <- function(content_files,
 
   filter_settings <- list(
     inst_type = ifelse(rep_type == "inst", inst_type, ""),
-    report_sector_selection = report_sector_selection,
+    # sector report exception: no sector filter means no sector, not all sectors
+    report_sector_selection = ifelse(rep_type == "sect" && report_sector_selection == "", "dummy", report_sector_selection),
     override_materiality = override_materiality
   )
 

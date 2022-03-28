@@ -82,8 +82,8 @@ server <- function(input, output, session) {
     if (input$rep_type == "inst" && input$report_scenario_selection == "") {
       return("Please select a scenario (optionally a sector as well)")
     }
-    if (input$rep_type == "sect" && input$report_sector_selection == "") {
-      return("Please select a sector")
+    if (input$rep_type == "sect" && input$report_sector_selection == "" && input$report_scenario_selection == "") {
+      return("Please select a sector (or a scenario for a scenario-only report)")
     } else {
       return("")
     }
