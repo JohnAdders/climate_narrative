@@ -302,7 +302,7 @@ physical:
       to these physical risks. To determine the nature of physical risks requires 
       information on the geographic location of assets. Assessing the risks to these 
       assets requires insights on the vulnerability (for example, how reliant is the 
-      asset on climate sensitive supplies?), the likelihood of a ‘damage event’ (e.g. flooding 
+      asset on climate sensitive supplies?), the likelihood of a 'damage event' (e.g. flooding 
       or heat-related failures), and the exposure (i.e. the amount invested in that location).
   low:
     exec_description: |
@@ -378,7 +378,7 @@ physical:
       to these physical risks. To determine the nature of physical risks requires information 
       on the geographic location of assets. Assessing the risks to these assets requires insights 
       on the vulnerability (for example, how reliant is the asset on climate sensitive supplies?), 
-      the likelihood of a ‘damage event’ (e.g. flooding or heat-related failures), and the exposure 
+      the likelihood of a 'damage event' (e.g. flooding or heat-related failures), and the exposure 
       (i.e. the amount invested in that location). 
       
 references: |
