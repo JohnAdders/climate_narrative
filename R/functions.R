@@ -538,7 +538,7 @@ get_exposure_description <- function(item, type_item_inputs, exposure_classes, i
   ordered_aggregate_inputs <- merge(ordered_aggregate_inputs_text, ordered_aggregate_inputs_num)
   colnames(ordered_aggregate_inputs)[3:5] <- c("Exposure.row", "Materiality", "Product materiality")
   out <- paste0(
-    "## ",
+    "### ",
     exposure_classes[[item]][["name"]],
     "\n\n",
     global$exposure_classes[[item]][["description"]]
@@ -567,7 +567,7 @@ get_exposure_appendix <- function(item, exposure_classes) {
   } else {
     return(
       paste0(
-        "### Appendix",
+        "#### Appendix",
         "\n\n",
         exposure_classes[[item]][["appendix"]],
         "\n\n"
@@ -620,7 +620,7 @@ get_exposure_risk_description <- function(item,
   out <- ""
   if (include_oneliner) {
     out <- paste0(
-      "### ",
+      "#### ",
       header_text,
       " --- One-liner\n\n",
       content[["exec_description"]],
@@ -629,7 +629,7 @@ get_exposure_risk_description <- function(item,
   }
   out <- paste0(
     out,
-    "### ",
+    "#### ",
     header_text,
     " --- Summary\n\n",
     content[["always"]],
@@ -638,7 +638,7 @@ get_exposure_risk_description <- function(item,
   if (materiality == "High") {
     out <- paste0(
       out,
-      "### ",
+      "#### ",
       header_text,
       " --- Details\n\n",
       content[["high_materiality"]],
@@ -673,7 +673,16 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
   if (!is.null(name)) out <- paste0("# ", name, "\n\n")
   if (!is.null(description)) out <- paste0(out, description, "\n\n")
   if (nrow(aggregated_table)) {
+    A_or_L_header <- (length(unique(aggregated_table$A_or_L)) > 1)
     for (i in 1:nrow(aggregated_table)) {
+      if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])){
+        out <- paste0(
+          out,
+          "## ",
+          ifelse(aggregated_table$A_or_L[i] == "A", "Assets", "Liabilities"),
+          "\n\n"
+        )
+      }
       item <- aggregated_table$item[i]
       materiality <- aggregated_table$materiality_num[i]
       type_item_inputs <- type_inputs[type_inputs$item == item, ]
@@ -738,7 +747,7 @@ get_references <- function(items, exposure_classes) {
       if (length(exposure_classes[[item]][["references"]])) {
         out <- paste0(
           out,
-          "\n\n## ",
+          "\n\n### ",
           exposure_classes[[item]][["name"]],
           "\n\n",
           exposure_classes[[item]][["references"]]
@@ -1219,9 +1228,17 @@ get_executive_summary_exposures <- function(exposure_classes,
   out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
+  A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)  
   for (i in 1:nrow(aggregated_inputs)) {
-    item <- aggregated_inputs[i, 1]
-    materiality <- aggregated_inputs[i, 2]
+    if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])){
+      out_exp <- paste0(
+        out_exp, 
+        "###",
+        ifelse(aggregated_inputs$A_or_L[i] == "A", "Assets", "Liabilities"),
+        "\n\n")
+    }
+    item <- aggregated_inputs$item[i]
+    materiality <- aggregated_inputs$materiality[i]
     if (materiality == "High") {
       high_counter <- high_counter + 1
       out_exp <- paste0(
@@ -1247,12 +1264,12 @@ get_executive_summary_exposures <- function(exposure_classes,
     out_exp <- paste0(out_exp, "None\n\n")
   }
   out_exp <- paste0(out_exp, "### Other exposures\n\n")
-  less_material <- aggregated_inputs[aggregated_inputs[, 2] != "High", ]
+  less_material <- aggregated_inputs[aggregated_inputs$materiality != "High", ]
   if (nrow(less_material)) {
     less_material$risk.description <- rep(NA, nrow(less_material))
     less_material$name <- rep(NA, nrow(less_material))
     for (i in 1:nrow(less_material)) {
-      item <- less_material[i, 1]
+      item <- less_material$item[i]
       less_material$name[i] <- exposure_classes[[item]][["name"]]
       risk_description <- ""
       for (risk in rownames(exec)) {
@@ -1443,9 +1460,9 @@ aggregate_inputs <- function(inputs) {
       )
     )
   }
-  aggregated_inputs_factor <- stats::aggregate(materiality ~ item, FUN = max, data = inputs)
+  aggregated_inputs_factor <- stats::aggregate(materiality ~ A_or_L + item, FUN = max, data = inputs)
   aggregated_inputs_numeric <- stats::aggregate(
-    materiality_num ~ item,
+    materiality_num ~ A_or_L + item,
     FUN = function(x) {
       cut(
         sum(x),
@@ -1456,7 +1473,7 @@ aggregate_inputs <- function(inputs) {
     data = inputs
   )
   out <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
-  out <- out[order(out$materiality, out$materiality_num, decreasing = TRUE), ]
+  out <- out[order(out$A_or_L, out$materiality, out$materiality_num, decreasing = TRUE), ]
   return(out)
 }
 
