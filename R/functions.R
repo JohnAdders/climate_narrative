@@ -1097,8 +1097,14 @@ get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_
     out_2 <- get_executive_summary_scenarios(scenarios, exposure_classes, aggregated_inputs, inputs, scenario_no)
     out_3 <- get_executive_summary_exposures(exposure_classes, aggregated_inputs, inputs, scenario_no, exec)
   } else if (layout == 2) {
+    # sector report - no inputs and no exposures
     out_1 <- ""
     out_2 <- get_executive_summary_scenarios(scenarios, exposure_classes, aggregated_inputs, inputs, scenario_no, TRUE)
+    out_3 <- ""
+  } else if (layout == 3) {
+    # scenario report - no inputs and no exposures
+    out_1 <- ""
+    out_2 <- get_executive_summary_scenarios(scenarios, exposure_classes, aggregated_inputs, inputs, scenario_no)
     out_3 <- ""
   } else {
     stop("Invalid layout parameter")
@@ -1445,6 +1451,15 @@ get_inputs <- function(all_inputs_table, inst_type = "", sector = "", aggregate 
 #' @param inputs data frame of all inputs (usually the reactive expression all_inputs or its subset)
 #'
 aggregate_inputs <- function(inputs) {
+  if (nrow(inputs) == 0) {
+    return(
+      data.frame(
+        item=character(),
+        materiality=character(),
+        materiality_num=character()
+      )
+    )
+  }
   aggregated_inputs_factor <- stats::aggregate(materiality ~ A_or_L + item, FUN = max, data = inputs)
   aggregated_inputs_numeric <- stats::aggregate(
     materiality_num ~ A_or_L + item,
