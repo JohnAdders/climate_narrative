@@ -48,7 +48,8 @@ get_report_settings <- function(content_files,
         toc_float = list(collapsed = FALSE),
         theme = "sandstone",
         number_sections = FALSE,
-        self_contained = TRUE,
+        self_contained = FALSE,
+        lib_dir = "lib",
         fig_caption = FALSE
       )
     } else {
