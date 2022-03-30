@@ -30,7 +30,7 @@ transition:
     exec_description: |
       In Disorderly transition risk scenarios, the utility sector may 
       benefit from increased revenue as the global energy system becomes more 
-      electrified, but face a rising carbon price which could increase production 
+      electrified, but faces a rising carbon price which could increase production 
       costs for carbon intensive utilities without adequate transition plans.
     always: |
       The Disorderly transition scenarios are primarily characterised by their 
@@ -132,11 +132,13 @@ transition:
       The supporting pillars for the types of accelerated transitions envisaged 
       in the Orderly scenarios would involve radical changes in climate policy, 
       via significant increases in carbon prices, as well as much more stringent 
-      regulatory 'command and control' policies. While the average utility company 
+      regulatory 'command and control' policies. While the average electric utility company 
       could perform well under these scenarios, thanks largely to the demand 
       creation from electrification, there would be considerable dispersion of 
-      impacts across firms, depending on the carbon intensity of their production 
-      processes.
+      impacts across these firms, depending on the carbon intensity of their production 
+      processes. Gas utilities could face increased operating costs due to an increase 
+      in the carbon price, and decreased demand, due to electrification. Water utilities are 
+      also likely to be affected by increases in the carbon price through rising energy costs.
 
     high_materiality: |
       Changes in carbon pricing, electricity demand, the energy mix and energy prices 
@@ -145,21 +147,25 @@ transition:
       and gas, the company's transition plans and how this compares to the sector
       average. For example:
 
-      - **Increased revenue** for the utility sector as a whole as the global 
-        energy system becomes more electrified, with revenue gains strongest for 
-        zero and low carbon intensive utilities.
+      - **Increased revenue** for electric utilities as the global energy system becomes more 
+        electrified, with revenue gains strongest for firms with zero and low carbon intensive 
+        production processes.
       
       - **Reduced revenue** for carbon intensive utilities as consumers switch
         to low carbon/electrified alternatives for heating and become more
         energy autonomous.
 
-      - **Increased costs** from paying a price on carbon emissions via tax or
-        cap & trade clearing price, albeit with considerable dispersion in the 
-        ability to pass carbon prices on to end-users depending on the carbon 
-        intensity of a firm's operations.
+      - **Increased costs** for gas and electric utilities from paying a price on carbon 
+        emissions via tax or cap & trade clearing price, albeit with considerable dispersion 
+        in the ability to pass carbon prices on to end-users depending on the carbon 
+        intensity of a firm's operations. For water utilities, higher carbon prices are likely to 
+        increase energy prices, resulting in increased operating costs.
 
       - **Readjusted capital expenditures** including new investments required
-        to pivot business model towards renewable electricity generation.
+        to pivot business model towards renewable electricity generation. Water utilities could be 
+        required to invest in becoming energy autonomous to combat rising energy prices, for example 
+        using biogas Combined Heat and Power engines, which utilise biogas produced through anaerobic 
+        digestion of sewage sludge at water recycling centres. 
 
       Risks are heavily concentrated in carbon intensive utilities that do not have 
       adequate transition plans, whilst opportunities exist for utilities drawing 
@@ -249,7 +255,7 @@ physical:
       
       The physical effects of climate change on utilities can be decomposed into the 
       chronic, such as raised sea-levels and acute changes in the frequency and severity 
-      of weather events such as heatwaves, droughts, wildfires, tropical cyclones and flooding. 
+      of weather events such as heatwaves, droughts, wildfires, cyclones and flooding. 
       These effects will definitionally be larger in high physical risk scenarios than low 
       physical risk scenarios, with significant disruptions to the utility sector. Effects 
       on profitability and valuations through this channel will be highly dependent on the 
@@ -257,13 +263,17 @@ physical:
 
     high_materiality: |
       The following examples illustrate how the utilities sector could be impacted in a 
-      low physical risk scenario:
+      high physical risk scenario:
       
       **Chronic Impacts**:
       
       - **Higher average temperatures** could reduce demand for energy used for
         heating, particularly natural gas demand. Performance of combined-cycle
-        power stations could decrease with an increase in temperature.
+        power stations could decrease with an increase in temperature. Water supply could 
+        also be strained, with drier summers (along with a limited capacity to store an increase 
+        in winter rainfall) affecting water availability, and an increased demand for water in a 
+        more arid climate. Higher temperatures could also result in increased frequency and 
+        duration of algal blooms, increasing treatment costs for water utilities.
         
       - **Higher average sea levels** could render the existing locations of 
         some utilities unviable, particularly those that are in low-lying coastal 
@@ -275,9 +285,9 @@ physical:
         can cause water contamination, damage overhead powerlines and other 
         infrastructure, and disrupt operations. The utilities sector in particular 
         is especially susceptible to these events; a lot of generating infrastructure 
-        is located in areas exposed to increased flooding risk as well as tropical 
-        cyclone effects, and a large proportion of the value of most utilities is 
-        comprised of tangible (physical) capital.
+        is located in areas exposed to increased flooding risk as well as cyclone effects, 
+        and a large proportion of the value of most utilities is comprised of tangible 
+        (physical) capital.
       
       There are many adaptation actions that companies can take to reduce the 
       physical risks mentioned above. These include, investing in resilient solutions 
@@ -313,14 +323,13 @@ physical:
     always: |
       Low physical risk scenarios capture all of the Orderly and Disorderly 
       transition risk scenarios that keep long-term temperature increases below 
-      2&deg;C, with physical risks naturally being lowest, though not entirely 
-      absent, in the 1.5&deg;C scenarios (Net Zero 2050 and Divergent Net Zero).
+      2&deg;C.
       
       The physical effects of climate change on utilities can be decomposed into 
       the chronic, such as raised sea-levels and acute changes in the frequency 
       and severity of weather events such as heatwaves, droughts, wildfires, 
-      tropical cyclones and flooding. These effects will definitionally be smaller 
-      in lower physical risk scenarios than high physical risk scenarios, but there 
+      cyclones and flooding. These effects will definitionally be smaller in 
+      lower physical risk scenarios than high physical risk scenarios, but there 
       would still likely be disruptions to the utility sector, with effects on 
       profitability and valuations through this channel highly dependent on the 
       locational characteristics of the underlying assets.
@@ -333,7 +342,12 @@ physical:
 
       - **Higher average temperatures** could reduce demand for energy used for
         heating, particularly natural gas demand. Performance of combined-cycle
-        power stations could decrease with an increase in temperature.
+        power stations could decrease with an increase in temperature. Water supply 
+        could also be strained, with drier summers (along with a limited capacity to 
+        store an increase in winter rainfall) affecting water availability, and an 
+        increased demand for water in a more arid climate. Higher temperatures could 
+        also result in increased frequency and duration of algal blooms, increasing 
+        treatment costs for water utilities.
         
       - **Higher average sea levels** could render the existing locations of 
         some utilities unviable, particularly those that are in low-lying coastal 
@@ -346,9 +360,8 @@ physical:
         infrastructure, and disrupt operations. The utilities sector in
         particular is especially susceptible to these events; a lot of
         generating infrastructure is located in areas exposed to increased
-        flooding risk as well as tropical cyclone effects, and a large
-        proportion of the value of most utilities is comprised of tangible
-        (physical) capital.
+        flooding risk as well as cyclone effects, and a large proportion of the value
+        of most utilities is comprised of tangible (physical) capital.
 
       There are many adaptation actions that companies can take to reduce the
       physical risks mentioned above. These include investing in resilient
