@@ -50,7 +50,7 @@ server <- function(input, output, session) {
       values = unlist(x, use.names = FALSE),
       stringsAsFactors = FALSE
     )
-    new_col_names <- c("type", "subtype", "rowname", "product", "colname", "item", "product_description", "product_text")
+    new_col_names <- c("type", "subtype", "rowname", "product", "colname", "item", "product_description", "product_text", "A_or_L")
     out <- cbind(out, matrix(NA, nrow = nrow(out), ncol = length(new_col_names)))
     colnames(out) <- c("names", "values", new_col_names)
     splitted_names <- strsplit(out$names, "_", fixed = TRUE)
@@ -62,6 +62,7 @@ server <- function(input, output, session) {
         } else {
           out$product_description[i] <- global$products[[out$product[i]]]$description
           out$product_text[i] <- global$products[[out$product[i]]]$text
+          out$A_or_L[i] <- global$products[[out$product[i]]]$A_or_L
         }
       } else if (length(splitted_names[[i]]) > 6) {
         warning(paste0("Unexpectedly large number of underscores in ", out$names[i]))
@@ -82,8 +83,8 @@ server <- function(input, output, session) {
     if (input$rep_type == "inst" && input$report_scenario_selection == "") {
       return("Please select a scenario (optionally a sector as well)")
     }
-    if (input$rep_type == "sect" && input$report_sector_selection == "") {
-      return("Please select a sector")
+    if (input$rep_type == "sect" && input$report_sector_selection == "" && input$report_scenario_selection == "") {
+      return("Please select a sector (or a scenario for a scenario-only report)")
     } else {
       return("")
     }
