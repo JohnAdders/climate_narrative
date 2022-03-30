@@ -36,11 +36,8 @@ description: |
     established in the US, where these bonds are known as municipal bonds. Other
     developed markets also issue provincial/local government bonds.
 
-  Governments that issue sovereign bonds are exposed to various risks from
-  climate change, including changes to fiscal revenues, higher government
-  spending, changes in GDP growth and potential downgrades in credit rating. In
-  this paper a '20-notch' sovereign bond rating scale translated from
-  S&P's alphabetical standardized rating scale (see Appendix) is used to outline 
+  In this paper we refer to a '20-notch' sovereign bond rating scale translated from
+  S&P's alphabetical standardized rating scale (see Appendix), which is used to outline 
   changes to sovereign bond ratings, as is common in surrounding literature. 
   Impacts of climate change on sovereign bond ratings are discussed in reference 
   to the 2021 working paper titled "Rising Temperatures, Falling Ratings: The 
@@ -271,13 +268,13 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C, with land warming faster than oceans and
-      high latitudes experiencing higher warming. These changes will lead to
-      chronic changes in living conditions affecting health, labour
-      productivity, agriculture, ecosystems, and sea-level rise, which will
-      consequently impact the rate of growth in GDP. It can also change the
-      frequency and severity of weather events such as heatwaves, droughts,
-      wildfires, tropical cyclones, and flooding.
+      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      (with land warming faster than oceans and high latitudes experiencing higher 
+      warming). These changes will lead to chronic changes in living conditions 
+      affecting health, labour productivity, agriculture, ecosystems, and sea-level 
+      rise, which will consequently impact the rate of growth in GDP. It can also 
+      change the frequency and severity of weather events such as heatwaves, droughts,
+      wildfires, cyclones, and flooding.
 
       Research from Burke et al (2015) indicates there is a non-linear effect of
       increasing temperature on economic output, with productivity peaking at an
@@ -362,7 +359,7 @@ physical:
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
-      heatwaves, droughts, wildfires, tropical cyclones, and flooding.
+      heatwaves, droughts, wildfires, cyclones, and flooding.
 
       This declining productivity would affect GDP and government income, as tax
       revenues are dependent on economic output. Adaptation costs would cause
