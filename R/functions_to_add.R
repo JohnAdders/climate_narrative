@@ -184,7 +184,7 @@ check_required_libraries <- function(render_settings){
     recursive = TRUE
   )
   missing_libs <- setdiff(rendered_libs, render_settings$available_libs)
-  if (length(missing_libs) {
+  if (length(missing_libs)) {
     stop(
       paste0(
         length(missing_libs),
