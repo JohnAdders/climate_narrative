@@ -1,14 +1,14 @@
 name: Energy Underwriting Class
 description: |
   The **Energy** underwriting class involves insuring companies engaging in 
-  economic activity related to the supply of energy. This includes both upstream 
-  (exploration, extraction) and downstream (storage, refinement, power generation, 
-  distribution) operations.
+  economic activity related to the supply of energy, including those in oil, gas, 
+  coal, nuclear and renewable industries. Where relevant, this includes insuring upstream 
+  energy operations, such as exploration and extraction, as well as downstream operations 
+  such as storage (e.g. tank farms and terminals), refinement, power generation (e.g.
+  power plants, renewables), and distribution (e.g. gas pipelines) operations.
   
-  Firms in the energy sector operate in an extremely risky environment, depending 
-  on complex and expensive infrastructure, often sited in hostile locations. Typical 
-  energy insurance policies cover property damage, liability, and business interruption.
-
+  Firms in the energy sector very often operate in an extremely risky environment, depending 
+  on complex and expensive infrastructure, in many cases sited in hostile locations. 
 transition:
   high:
     exec_description: |
@@ -27,17 +27,19 @@ transition:
       and conditions and coverage, and could generate fast-changing requirements and 
       opportunities.
       
-      Demand for cover in carbon intensive energy industries, such as oil and gas, 
-      could decline, posing a risk to energy insurers without adequate transition 
-      plans, whilst demand for cover in the renewables industry could increase, 
-      presenting an opportunity for energy insurers.
+      Demand for carbon intensive energy forms, such as fossil fuels, 
+      could decline, posing a risk to firms without adequate transition 
+      plans, and result in an associated decline in demand for insurance covering these 
+      energy forms. Demand for renewables and sustainable energy forms, such as solar, wind 
+      hydro and biomass, could increase, presenting an opportunity for these types of energy 
+      insurers.
       
       These scenarios could also lead to a limited relative reduction in GDP growth. 
       This could result in changes in the rate of growth in demand for the energy 
       sector and its associated underwriting class. 
 
     high_materiality: |
-      The changes in carbon pricing, energy demand/mix and energy prices could
+      The changes in carbon pricing, energy demand/mix and legislation could
       potentially result in one or more of the following impacts to the energy 
       underwriting class:
 
@@ -45,7 +47,7 @@ transition:
         low carbon/electrified alternatives for cars, heating etc, demand for 
         fossil fuels decreases, with knock on effects for cover of carbon intensive 
         energy industries. In Disorderly transition risk scenarios the demand for coal, 
-        oil and gas falls, from over 450 EJ a year to ~100 EJ a year, 
+        oil and gas falls, from over 450 exajoules (EJ) a year to ~100 EJ a year, 
         with coal demand almost completely phased out between 2035 and 2040.
 
       ![Primary Energy](Primary_Energy_Disorderly_Mining.png)
@@ -57,13 +59,14 @@ transition:
         including fossil fuel activities and assets. Non-compliant insurers may face 
         increased regulatory oversight and sanctions. There is also potential legal or 
         other liability risks, and associated reputational risks, due to inadequate transition 
-        strategies. 
+        strategies. These risks have already prompted a number of insurers to stop insuring coal.
         
       - **Inability to secure reinsurance coverage** (either availability of capital, or 
         exclusions) for insured risks which are not in line with industry Net Zero commitments.
       
       - **Opportunities for new products or lines of business** from new risk transfer 
-        requirements for the renewable energy industry. 
+        requirements for the renewable energy industry (comprehensive products are required for 
+        renewables due to their complex financing and ownership structures).
       
       - **Changing consumer behaviour**. Although widespread electrification is likely to increase 
         demand for electricity in these scenarios, there may be a shift in the supply business as 
@@ -76,7 +79,7 @@ transition:
       actions. For example: 
       
       - Developing a clear net-zero underwriting strategy based on industry standards 
-        such as a Net Zero Insurance Alliance (https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
+        such as a [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
       
       - Ensuring underwriting rules and policies are aligned to corporate and industry 
         wide Net Zero objectives.
@@ -92,16 +95,17 @@ transition:
       decreasing, with rising pressure on insurers to decline cover. Demand for 
       insurance covering renewable energy is likely to increase.
     always: |
-      The changing patterns in energy consumption, driven by immediate policy 
-      reaction, societal change, national energy strategies, and carbon legislation, 
-      are likely to have a significant and long-term impact on the energy sector 
+      The changing patterns in energy consumption and consumer demand, driven by 
+      immediate policy reaction, societal change, national energy strategies, and carbon 
+      legislation, are likely to have a significant impact on the energy sector 
       and therefore on the associated insurance products' pricing, terms and conditions 
       and coverage, and could generate fast-changing requirements and opportunities.
       
-      Demand for cover in carbon intensive energy industries, such as oil and gas, 
-      could decline, posing a risk to energy insurers without adequate transition plans, 
-      whilst demand for cover in the renewables industry could increase, presenting an 
-      opportunity for energy insurers.
+      Demand for carbon intensive energy forms, such as fossil fuels, 
+      could decline, posing a risk to firms without adequate transition plans, 
+      and result in an associated decline in demand for insurance covering these energy forms. 
+      Demand for renewables and sustainable energy forms, such as solar, wind, hydro and 
+      biomass, could increase, presenting an opportunity for these types of energy insurers.
     high_materiality: |
       The changes in carbon pricing, energy demand/mix and energy prices could
       potentially result in one or more of the following impacts to the energy 
@@ -111,7 +115,7 @@ transition:
         low carbon/electrified alternatives for cars, heating etc, demand for 
         fossil fuels decreases, with knock on effects for cover of carbon intensive 
         energy industries. In Orderly scenarios the demand for coal, oil and gas 
-        falls, from over 450 EJ a year to between 100 and 200 EJ a year, with coal 
+        falls, from over 450 exajoules (EJ) a year to between 100 and 200 EJ a year, with coal 
         demand almost completely phased out between 2035 and 2045.
 
       ![Primary Energy](Primary_Energy_Orderly_Mining.png)
@@ -123,13 +127,14 @@ transition:
         including fossil fuel activities and assets. Non-compliant insurers may face 
         increased regulatory oversight and sanctions. There is also potential legal or 
         other liability risks, and associated reputational risks, due to inadequate transition 
-        strategies. 
+        strategies. These risks have already prompted a number of insurers to stop insuring coal.
         
       - **Inability to secure reinsurance coverage** (either availability of capital, or 
         exclusions) for insured risks which are not in line with industry Net Zero commitments.
       
       - **Opportunities for new products or lines of business** from new risk transfer 
-        requirements for the renewable energy industry. 
+        requirements for the renewable energy industry (comprehensive products are required 
+        for renewables due to their complex financing and ownership structures). 
       
       - **Changing consumer behaviour**. Although widespread electrification is likely to increase 
         demand for electricity in these scenarios, there may be a shift in the supply business as 
@@ -142,7 +147,7 @@ transition:
       actions. For example: 
       
       - Developing a clear net-zero underwriting strategy based on industry standards 
-        such as a Net Zero Insurance Alliance (https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
+        such as a [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
       
       - Ensuring underwriting rules and policies are aligned to corporate and industry 
         wide Net Zero objectives.
@@ -157,14 +162,13 @@ physical:
     exec_description: |
       In the high physical risk scenario, the projected increase in weather 
       variation and resulting damage and disruption to energy firms could impact 
-      associated insurance products' pricing, terms and conditions, and coverage.
+      associated insurance products' pricing, terms and conditions, as well as coverage.
     always: |
       The energy sector and its associated underwriting class are exposed to 
       physical risk. Chronic effects (e.g. raised sea-levels and mean temperatures) 
       and acute effects due to changes to frequency and severity of weather events 
-      such as heatwaves, wildfires, tropical cyclones, and flooding could damage 
-      infrastructure and cause widespread disruptions with negative effects on 
-      costs and earnings. 
+      such as heatwaves, wildfires, cyclones, and flooding could damage infrastructure 
+      and cause widespread disruptions with negative effects on costs and earnings. 
       
       Whilst the energy sector is used to responding to and managing changing 
       weather conditions, in the high physical risk scenario, climate change and 
@@ -188,7 +192,7 @@ physical:
       
       - **Rising sea levels** could cause disruption to offshore and coastal 
         infrastructure especially when compounded with storm surge events, such as those 
-        generated by tropical cyclones. For example, hurricane Katrina caused the total 
+        generated by cyclones. For example, hurricane Katrina caused the total 
         shutdown of oil production in the Gulf of Mexico for 6 months (for further detail 
         see [IIGCC oil and gas document](https://iigcc.org.au/wp-content/uploads/2020/06/Oil-and-Gas.pdf){target="\_blank"}).
       
@@ -222,7 +226,7 @@ physical:
       to wildfires; wind turbines are most effective in high wind areas susceptible to storms).
       
       Uncertainty surrounding the future changes in frequency and intensity of weather events 
-      could also lead to increased technical rates and premiums, and potentially unaffordability 
+      could lead to increased technical rates and premiums, and potentially unaffordability 
       of insurance. At the same time, there is also an increased risk of reinsurance failure 
       due to underestimation of potential losses, particularly aggregate loss from multiple 
       occurring extremes.
@@ -236,10 +240,6 @@ physical:
       climate change to minimise the risk of damage caused by flooding. However, adaptation 
       becomes more difficult and costly the greater the extent of the temperature rises and 
       climate change, especially as the consequences become harder to predict.
-      
-      The high physical risk scenarios also present opportunities for new products or lines 
-      of business reflecting changing patterns of hazard and demand for insurance cover, e.g., 
-      for climate related business interruption policies.
   low:
     exec_description: |
       n/a
@@ -247,9 +247,8 @@ physical:
       The energy sector and its associated underwriting class are exposed to 
       physical risk. Chronic effects (e.g. raised sea-levels and mean temperatures) 
       and acute effects due to changes to frequency and severity of weather events 
-      such as heatwaves, wildfires, tropical cyclones, and flooding could damage 
-      infrastructure and cause widespread disruptions with negative effects on 
-      costs and earnings. 
+      such as heatwaves, wildfires, cyclones, and flooding could damage infrastructure 
+      and cause widespread disruptions with negative effects on costs and earnings. 
       
       Whilst the energy sector is used to responding to and managing changing 
       weather conditions, in the low physical risk scenario, climate change and 
@@ -268,7 +267,7 @@ physical:
       
       - **Rising sea levels** could cause disruption to offshore and coastal 
         infrastructure especially when compounded with storm surge events, such as those 
-        generated by tropical cyclones. For example, hurricane Katrina caused the total 
+        generated by cyclones. For example, hurricane Katrina caused the total 
         shutdown of oil production in the Gulf of Mexico for 6 months (for further detail 
         see [IIGCC oil and gas document](https://iigcc.org.au/wp-content/uploads/2020/06/Oil-and-Gas.pdf){target="\_blank"}).
       
@@ -302,7 +301,7 @@ physical:
       to wildfires; wind turbines are most effective in high wind areas susceptible to storms).
       
       Uncertainty surrounding the future changes in frequency and intensity of weather events 
-      could also lead to increased technical rates and premiums, and potentially unaffordability 
+      could lead to increased technical rates and premiums, and potentially unaffordability 
       of insurance. At the same time, there is also an increased risk of reinsurance failure 
       due to underestimation of potential losses, particularly aggregate loss from multiple 
       occurring extremes.
@@ -314,10 +313,6 @@ physical:
       power line networks) as well as more robust design and construction standards. To 
       reduce the impact of rising sea levels, the position of new facilities should consider 
       climate change to minimise the risk of damage caused by flooding. 
-      
-      The low physical risk scenarios also present opportunities for new products or lines 
-      of business reflecting changing patterns of hazard and demand for insurance cover, e.g., 
-      for climate related business interruption policies.
 
 references: |
   - [Energy Insurance](https://www.chubb.com/uk-en/chubb-global-markets/energy-insurance.html ){target="\_blank"}

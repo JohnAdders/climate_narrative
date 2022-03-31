@@ -39,32 +39,25 @@ transition:
       energy prices, regulations, consumer behaviour etc. could impact financial 
       firms. However, the extent will depend on their business model, regions 
       in which they operate as well as the industries/sectors that they provide 
-      financial services to.
+      financial services to (e.g. those providing services to fossil fuel industries 
+      are potentially more exposed).
     always: |
       Financial firms are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
       funds towards their most productive use and play a critical role in 
-      mitigating risk. The risks from climate change will largely depend 
-      on the business model of the financial firm and the regions in which 
-      it operates. 
+      mitigating risk.
       
       Because they have relatively low greenhouse gas emissions, 
-      the main financial risk for most financial firms is from their 
+      the main climate-related transition risks for most financial firms are from their 
       counterparties (that is, firms they lend to, invest in and/or insure 
-      such as corporates and households) and/or the assets they manage.
+      such as corporates and households) and/or the assets they manage. Therefore, to determine 
+      the nature of the transition risks for financial firms, it is necessary to examine the 
+      industries/sectors of their underlying exposures. 
 
-      Where the increases in carbon and energy prices in the Disorderly transition
-      risk scenarios could potentially result in financial impacts; the extent
-      of these will depend on the industries/sectors of financial firms' underlying
-      exposures. These scenarios can affect real financial asset valuations significantly, 
-      with considerable regional differences. Sectors with high emissions are arguably most 
-      exposed to transition risk. To determine the nature of the transition risks for financial 
-      firms, it is necessary to examine the industries/sectors of their underlying 
-      exposures. 
-
-      In these scenarios, we expect to see a change in regulation, laws, consumer 
-      behaviour and/or technological development. Sectors that are most vulnerable 
-      to this change tend to be in the carbon intensive sectors or have limited 
+      In Disorderly scenarios, we expect to see a change in regulation, laws, consumer 
+      behaviour and/or technological development. These changes could affect real financial 
+      asset valuations significantly, with considerable regional differences. Sectors that are most 
+      vulnerable to these changes tend to be in the carbon intensive sectors or have limited 
       ability to pass price increases to customers. Hence, concentrations of lending 
       or underwriting to these sectors could be more highly exposed.
     high_materiality: |
@@ -139,31 +132,26 @@ transition:
       In Orderly transition risk scenarios, the change to carbon and energy 
       prices, regulations, consumer behaviour etc. could impact financial firms. 
       However, the extent will depend on their business model, regions in which they 
-      operate as well as the industries/sectors that they provide financial services to.
+      operate as well as the industries/sectors that they provide financial services to
+      (e.g. those providing services to fossil fuel industries are potentially more exposed).
     always: |
       Financial firms are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
       funds towards their most productive use and play a critical role in 
-      mitigating risk. The risks from climate change will largely depend 
-      on the business model of the financial firm and the regions in which 
-      it operates. 
+      mitigating risk.  
       
       Because they generally have relatively low greenhouse gas emissions, 
-      the main climate-related risks for most financial firms is from
+      the main climate-related transition risks for most financial firms are from
       their counterparties (that is, firms they lend to, invest in and/or 
-      insure such as corporates and households) and/or the assets they manage.
-
-      Where the increases in carbon and energy prices in the Orderly
-      transition risk scenarios could potentially result in financial impacts,
-      the extent could depend on the industries/sectors of financial firms'
-      underlying exposures. To determine the nature of the transition risks for
-      financial firms, it is necessary to examine the industries/sectors of
-      their underlying exposures. In these scenarios, we expect to see a change 
-      in regulation, laws, consumer behaviour and/or technological development. 
-      Sectors that are most vulnerable to this change tend to be in the carbon 
-      intensive sectors or have limited ability to pass price increases to 
-      customers. Hence, concentrations of lending or underwriting to these 
-      sectors could be more highly exposed.
+      insure such as corporates and households) and/or the assets they manage. Therefore, 
+      to determine the nature of the transition risks for financial firms, it is necessary 
+      to examine the industries/sectors of their underlying exposures. 
+      
+      In Orderly scenarios, we expect to see a change in regulation, laws, consumer 
+      behaviour and/or technological development. Sectors that are most vulnerable 
+      to these changes tend to be in the carbon intensive sectors or have limited ability 
+      to pass price increases to customers. Hence, concentrations of lending or underwriting 
+      to these sectors could be more highly exposed.
     high_materiality: |
       Changes in policy, carbon pricing, energy demand/mix and energy 
       prices could impact financial firms. For example:
@@ -247,29 +235,22 @@ physical:
       Financial firms are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
       funds towards their most productive use and play a critical role in 
-      mitigating risk. The risks from climate change could largely depend 
-      on the business model of the financial firm and the regions in which it 
-      operates. Because they have relatively low greenhouse gas emissions, 
-      the main financial risk for most financial firms is from the 
-      impact of physical (and transition) risks on their counterparties 
-      (that is, firms they lend to invest in and/or insure such as 
-      corporates and households) and/or the assets they manage.
-
-      To determine the nature of physical risks requires information on the
-      geographic location of assets. Assessing the risks to these assets
-      requires insights on the vulnerability (for example, how reliant is the
-      asset on climate sensitive supplies?), the likelihood of a 'damage event'
-      (e.g. flooding or heat-related failures), and the exposure (i.e. the
-      amount invested in that location). A high physical risk scenario could be
-      associated with chronic changes in living conditions affecting health,
-      labour productivity, agriculture, ecosystems, and sea-level rise. It can
-      also change the frequency and severity of weather events such as
-      heatwaves, droughts, wildfires, tropical cyclones, and flooding. Financial
-      firms could need to consider how to adapt their physical operations to
-      ensure the safety of their staff and more general business continuity
-      concerns. But their main financial risk could arise from the impact on
-      their counterparties, which could be largely a function of their
-      geographic location.
+      mitigating risk.
+      
+      Financial firms could need to consider how to adapt their physical operations 
+      to ensure the safety of their staff and more general business continuity concerns. 
+      However, because their own inherent operations only require a relatively small amount 
+      of tangible (physical) capital, the main climate-related physical risks for most financial 
+      firms are from their counterparties (that is, firms they lend to invest in and/or insure 
+      such as corporates and households) and/or the assets they manage. Therefore, to determine 
+      the nature of physical risks for financial firms, it is necessary to examine the 
+      industries/sectors of their underlying exposures.
+      
+      A high physical risk scenario could be associated with chronic changes in living conditions 
+      affecting health, labour productivity, agriculture, ecosystems, and sea-level rise. It can also 
+      change the frequency and severity of weather events such as heatwaves, droughts, wildfires, cyclones, 
+      and flooding. These changes could negatively affect counterparties and impact real financial asset 
+      valuations, with considerable regional differences. 
     high_materiality: |
       Financial firms are highly exposed to physical risks, particularly 
       those with concentrations of lending, insurance underwriting, asset 
@@ -315,9 +296,14 @@ physical:
       uninsurable. That could have knock on consequences for other companies in
       the financial system. Counterparties' supply chains may also be vulnerable
       to physical impacts, affecting their sales, profit and loss, and balance
-      sheets. Financial firms could need to identity whether their portfolio 
-      has exposures to these types of climate impacts, and also assess 
-      the extent to which there are local defences, which reduce the risk.
+      sheets. 
+      
+      Financial firms could need to identity whether their portfolio has exposures 
+      to these physical risks. To determine the nature of physical risks requires 
+      information on the geographic location of assets. Assessing the risks to these 
+      assets requires insights on the vulnerability (for example, how reliant is the 
+      asset on climate sensitive supplies?), the likelihood of a 'damage event' (e.g. flooding 
+      or heat-related failures), and the exposure (i.e. the amount invested in that location).
   low:
     exec_description: |
       n/a
@@ -325,30 +311,22 @@ physical:
       Financial firms are at the heart of our economy, they serve as a 
       facilitator and intermediary for encouraging, mobilising and allocating 
       funds towards their most productive use and play a critical role in 
-      mitigating risk. The risks from climate change will largely depend on 
-      the business model of the financial firm and the regions in which it 
-      operates. Because they have relatively low greenhouse gas emissions, 
-      the main financial risk for most financial firms is from the 
-      impact of physical (and transition) risks on their counterparties 
-      (that is, firms they lend to invest in and/or insure such as corporates 
-      and households) and/or the assets they manage.
+      mitigating risk. 
 
-      To determine the nature of physical risks requires information on the
-      geographic location of assets. Assessing the risks to these assets
-      requires insights on the vulnerability (for example, how reliant is the
-      asset on climate sensitive supplies?), the likelihood of a 'damage event'
-      (e.g. flooding or heat-related failures), and the exposure (i.e. the
-      amount invested in that location). Financial firms could need to consider
-      how to adapt their physical operations to ensure the safety of their staff
-      and more general business continuity concerns. But their main financial
-      risk could arise from the impact on their counterparties, which could be
-      largely a function of their geographic location.
+      Financial firms could need to consider how to adapt their physical operations 
+      to ensure the safety of their staff and more general business continuity concerns. 
+      However, because their own inherent operations only require a relatively small amount 
+      of tangible (physical) capital, the main climate-related physical risks for most financial 
+      firms are from their counterparties (that is, firms they lend to invest in and/or insure 
+      such as corporates and households) and/or the assets they manage. Therefore, to determine 
+      the nature of physical risks for financial firms, it is necessary to examine the industries/sectors 
+      of their underlying exposures.
 
-      A low physical risk scenario could be associated with slow, consistent
-      changes in living conditions affecting health, labour productivity,
-      agriculture, ecosystems, and sea-level rise. It can also change the
-      frequency and severity of weather events such as heatwaves, droughts,
-      wildfires, tropical cyclones, and flooding.
+      A low physical risk scenario could be associated with slow, consistent changes in living conditions 
+      affecting health, labour productivity, agriculture, ecosystems, and sea-level rise. It can also change 
+      the frequency and severity of weather events such as heatwaves, droughts, wildfires, cyclones, and flooding. 
+      These changes could negatively affect counterparties and impact real financial asset valuations, with considerable 
+      regional differences. 
     high_materiality: |
       Financial firms are highly exposed to physical risks, particularly
       those with concentrations of lending, insurance underwriting, asset 
@@ -394,10 +372,14 @@ physical:
       become uninsurable. That could have knock on consequences for other
       companies in the financial system. Counterparties' supply chains may also
       be vulnerable to physical impacts, affecting their sales, profit and loss,
-      and balance sheets. Financial firms could need to identity whether their 
-      portfolio has exposures to these types of climate impacts, and also
-      assess the extent to which there are local defences, which reduce the
-      risk.
+      and balance sheets. 
+      
+      Financial firms could need to identity whether their portfolio has exposures 
+      to these physical risks. To determine the nature of physical risks requires information 
+      on the geographic location of assets. Assessing the risks to these assets requires insights 
+      on the vulnerability (for example, how reliant is the asset on climate sensitive supplies?), 
+      the likelihood of a 'damage event' (e.g. flooding or heat-related failures), and the exposure 
+      (i.e. the amount invested in that location). 
       
 references: |
   - [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf){target="\_blank"}

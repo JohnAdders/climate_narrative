@@ -15,23 +15,24 @@ description: |
   The tool summarises the relevant climate-related risks and opportunities for banks,
   insurers and asset managers based on the business activities, products, or risks
   of the firm and the materiality of different lending exposure types, underwriting classes,
-  asset classes, and economic sectors for the firm. These descriptions are based on
-  the NGFS scenarios which were updated in June 2021.
+  asset classes, and economic sectors for the firm. These descriptions draw on data 
+  from the NGFS scenarios which were updated in June 2021. Users who wish to learn more about 
+  the NGFS scenarios are directed to the [NGFS scenario portal](https://www.ngfs.net/ngfs-scenarios-portal/).
 
   ## How to use the tool?
 
-  The tool can generate 2 types of report:
+  The tool can generate two types of report:
 
     - an Institutional Report which gives a report tailored to your institution
     - a Sector Report which allows users to see the content for an individual sector
 
   ### Institutional Report
 
-  Selecting this report type will then take to to a series of screens where you need
-  to input some basic information regarding your firms business activities,
+  Selecting this report type will take you to a series of screens where you need
+  to input some basic information regarding your firm's business activities,
   products, and materiality of exposures to an asset class, sector, or liability class.
 
-  Matriality is entered based on:
+  Materiality is entered based on:
 
   - High: One of your top 5 exposures or more than 10% of total assets
   - Medium: 5% - 10% of total assets
@@ -79,43 +80,37 @@ description: |
 
   ## Limitations
 
-  There are a number of uncertainties and limitations associated with the CFRF Online Scenario
-  Analysis Narrative Tool; for example: The tool is not updated on an ongoing basis. It draws
-  heavily on the NGFS scenarios (updated in June 2021). The results are in turn underpinned by
-  a single energy systems model --- REMIND --- which makes particular assumptions about long-term
-  technology pathways that are of course highly uncertain.
+  There are a number of uncertainties and limitations associated with the tool; for example: The tool 
+  is not updated on an ongoing basis. It draws heavily on the NGFS scenarios (updated in June 2021). 
+  The results are in turn underpinned by a single energy systems model --- REMIND --- which makes particular 
+  assumptions about long-term technology pathways that are of course highly uncertain.
 
-  This tool is very useful for climate reporting and risk assessments. However, a limitation
-  for those seeking to embed climate-related risks and opportunities into their investment
-  decision making and risk management framework is that it does not specify a baseline related
+  This tool may be useful for climate reporting and risk assessments. However, a limitation
+  for those seeking to embed climate-related risks and opportunities into their rsik management framework 
+  and investment decision making is that it does not specify a baseline related
   directly to what is priced into assets today. It also does not allow for meaningful variation
   in the implementation of climate policies across geographies and sectors, nor alternative
   technology pathways.
 
   For example, the Orderly Below 2&deg;C scenario generates a common carbon price for the global
-  power and transportation sectors, as well as between, say EU and US and China. Similarly, the
-  tool does not provide a mechanism to really test how financial exposures may differ if the very
+  power and transportation sectors. Whereas in the Net Zero 2050 scenario there are regional differences in carbon price, 
+  and in the Divergent Net Zero scenario there are sectoral differences in carbon price. Similarly, the
+  tool does not provide a mechanism to test how financial exposures may differ if the
   solar PV friendly technology pathways of the REMIND model do not come to pass. Relaxing these
   policy and technology universality assumptions will naturally generate quite different assessments
   of the climate exposures of different financial securities and assets.
 
-  There are many potential ways to incorporate more plausible policy pathways and a wider range of
-  technology pathways into climate scenario analyses. One of these has been designed by abrdn in
-  partnership with Planetrics. This approach creates scenarios that allow for climate policy objectives
-  to vary across the major emitting regions and sectors. It also allows for the interaction between
-  these plausible policy variations and alternative technology pathways to be explored. All financial
-  impairment estimates are then calculated relative to a baseline assessment of what is priced into
-  assets at any given point in time.
-
-  This framework also has the virtue of filling in some of the 'probability mass' that sits between
-  transition-heavy scenarios that are strongly or weakly aligned with the objectives of the Paris
-  Agreement and those that are dominated by physical risks.
+  There are many potential ways to incorporate alternative plausible policy pathways and a wider range of
+  technology pathways into climate scenario analyses. See, for example, section 6 of the CFRF 2021 Scenario Analysis 
+  Guide which discusses one approach based on some work done by Abrdn  (a UK-based global investment company). Such 
+  approaches create a richer set of scenarios that allow, for example, for climate policy objectives to vary across 
+  the major emitting regions and sectors and for some of the 'probability mass' that sits between transition-heavy scenarios 
+  that are strongly or weakly aligned with the objectives of the Paris Agreement and those that are dominated by physical risks. 
+  This in turn enables financial impairment estimates to be calculated relative to a baseline assessment of what is priced into assets 
+  at any given point in time.
 
   ### What is next?
 
-  The Centre for Greening Finance and Investment have agreed to house the tool on
-  their IT platform.  The tool will be released publically in Q2 2022 after further testing.
-
-  During the remainder of 2022, the Climate Financial Risk Forum
-  Scenario Analysis Working Group will continue to collect feedback from users and will update the
-  tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.
+  The tool is housed on the Centre for Greening Finance and Investment climate and environmental data and analytics platform. 
+  During 2022, the Climate Financial Risk Forum Scenario Analysis Working Group will continue to collect feedback from users 
+  on this beta version of the tool and will update the tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.

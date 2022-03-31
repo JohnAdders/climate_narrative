@@ -85,43 +85,9 @@ transition:
       significant impact on the inherent practices of retail companies, upstream
       manufacturers and consumer demand, which could affect profitability of
       individual retail companies and the sector overall.
-
-      For larger players in the Retail Trade, there is also increasing focus on
-      disclosure from both a political and end-user perspective. With
-      homogenisation of taxonomies, comparability and accountability of
-      disclosures could increase, with which comes reputational and litigation
-      risk.
-
-      In adapting to these transitions, retailers within the consumer products
-      sector must overcome and adapt to challenges and associated costs. This
-      includes consideration of:
-
-      - **Distribution**: changing fleets to electric vehicles, higher
-        local-produce demand leading to reduced catchment areas
-
-      - **Property**: potential differential loan availability and pricing for
-        higher EPCs on commercial property
-
-      - **Product choices**: changes to product lines to include accommodate
-        more environmentally friendly consumer preferences (for example, the
-        recent increased demand for vegan foods in the UK)
-
-      - **Utility choices**: green energy supplies and the instillation of
-        energy-efficient lighting, refrigeration, and heating
-
-      - **Packaging**: moving away from single use and high-carbon intensive
-        products
-
-      - **Governance**: disclosure and accountability
-
-      In overcoming these challenges and considerations, retailers have
-      opportunities to position themselves to have both greater appeal to the
-      climate conscious consumer and play an integral part in a full end-to-end
-      supply-chain view of product level carbon intensity analysis.
     high_materiality: |
-      The following risks and margin compression may crystallise as retailers
-      adapt to these transitional challenges, or if they fail to respond to the
-      hazards listed above:
+      In Disorderly transition risk scenarios, the following risks and margin compression may 
+      crystallise:
 
       - **Increased fixed costs** due to higher product purchase costs resulting
         from decarbonisation in the supply chain, especially on imports (c.f. EU
@@ -146,11 +112,11 @@ transition:
 
       - **Higher variable costs**: resulting from more expensive environmentally
         friendly packaging solutions (moving away from single use and
-        high-carbon intensive products), change of product lines, new
-        advertising of new product lines, and higher energy tariffs resulting
-        from higher carbon prices on fossil fuels and/or a switch to potentially
-        more expensive renewable energy supplies. Such costs could be managed by
-        slow phasing-in of these initiatives, or by passing the costs through.
+        high-carbon intensive products), change of product lines (to accommodate more 
+        environmentally friendly consumer preferences), new advertising of new product lines, 
+        and higher energy tariffs resulting from higher carbon prices on fossil fuels and/or a 
+        switch to potentially more expensive renewable energy supplies. Such costs could be managed 
+        by slow phasing-in of these initiatives, or by passing the costs through.
 
       - **Lower revenues**: if retailers fail to adapt to consumer-side demand
         for lower carbon intensive products (for example, the recent increased
@@ -227,37 +193,9 @@ transition:
       impact on these inherent practices of retail companies, upstream
       manufacturers and consumer demand, which could affect profitability of
       individual companies and the sector overall.
-
-      In adapting to these transitions, retailers within the consumer products
-      sector must overcome one or more of the following and adapt to challenges
-      and associated costs, such as:
-
-      1. **Distribution**: changing fleets to electric vehicles, higher
-         local-produce demand leading to reduced catchment areas
-
-      1. **Property**: potential differential loan availability and pricing for
-         higher EPCs on commercial property
-
-      1. **Product choices**: changes to product lines to include accommodate
-         more environmentally friendly consumer preferences (for example, the
-         recent increased demand for vegan foods in the UK)
-
-      1. **Utility choices**: green energy supplies and the instillation of
-         energy-efficient lighting, refrigeration, and heating
-
-      1. **Packaging**: moving away from single use and high-carbon intensive
-         products
-
-      1. **Governance**: disclosure and accountability
-
-      In overcoming these challenges and considerations, retailers have
-      opportunities to position themselves to have both greater appeal to the
-      climate conscious consumer and play an integral part in a full end-to-end
-      supply-chain view of product level carbon intensity analysis.
     high_materiality: |
-      The following risks and margin compression may crystallise as retailers
-      adapt to these transitional challenges, or if they fail to respond to the
-      hazards listed above:
+      In Orderly transition risk scenarios, the following risks and margin compression may
+      crystallise:
 
       - **Increased fixed costs** due to higher product purchase costs resulting
         from decarbonisation in the supply chain, especially on imports (c.f. EU
@@ -282,11 +220,12 @@ transition:
 
       - **Higher variable costs** resulting from more expensive environmentally
         friendly packaging solutions (moving away from single use and
-        high-carbon intensive products), change of product lines, new
-        advertising of new product lines, and higher energy tariffs resulting
-        from higher carbon prices on fossil fuels and/or a switch to potentially
-        more expensive renewable energy supplies. Such costs could be managed by
-        slow phasing-in of these initiatives, or by passing the costs through.
+        high-carbon intensive products), change of product lines (to accommodate more
+        environmentally friendly consumer preferences), new advertising of new product 
+        lines, and higher energy tariffs resulting from higher carbon prices on fossil 
+        fuels and/or a switch to potentially more expensive renewable energy supplies. 
+        Such costs could be managed by slow phasing-in of these initiatives, or by passing 
+        the costs through.
 
       - **Lower revenues**. If retailers fail to adapt to consumer-side demand
         for lower carbon intensive products (for example, the recent increased
@@ -344,7 +283,7 @@ physical:
       climate change including both the chronic effects (e.g. raised sea-levels
       and global mean temperatures) and acute effects due to changes in the
       frequency and severity of weather events such as heatwaves, droughts,
-      wildfires, tropical cyclones and flooding. Whilst the consumer products
+      wildfires, cyclones and flooding. Whilst the consumer products
       sector is used to responding to and managing changing weather conditions,
       in the high physical risk scenario, climate change and global warming
       could increase weather variations. This could lead to increasing
@@ -467,7 +406,7 @@ physical:
       climate change including both the chronic effects (e.g. raised sea-levels
       and global mean temperatures) and acute effects due to changes in the
       frequency and severity of weather events such as heatwaves, droughts,
-      wildfires, tropical cyclones and flooding.
+      wildfires, cyclones and flooding.
 
       Whilst the consumer products sector is used to responding to and managing
       changing weather conditions, in the low physical risk scenario, climate

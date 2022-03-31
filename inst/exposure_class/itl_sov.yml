@@ -36,11 +36,8 @@ description: |
     established in the US, where these bonds are known as municipal bonds. Other
     developed markets also issue provincial/local government bonds.
 
-  Governments that issue sovereign bonds are exposed to various risks from
-  climate change, including changes to fiscal revenues, higher government
-  spending, changes in GDP growth and potential downgrades in credit rating. In
-  this paper a '20-notch' sovereign bond rating scale translated from
-  S&P's alphabetical standardized rating scale (see Appendix) is used to outline 
+  In this paper we refer to a '20-notch' sovereign bond rating scale translated from
+  S&P's alphabetical standardized rating scale (see Appendix), which is used to outline 
   changes to sovereign bond ratings, as is common in surrounding literature. 
   Impacts of climate change on sovereign bond ratings are discussed in reference 
   to the 2021 working paper titled "Rising Temperatures, Falling Ratings: The 
@@ -64,7 +61,7 @@ transition:
       CO<sub>2</sub> emissions increase until 2030 before policies drive a
       sharp decrease after 2030 to compensate for the inaction beforehand. This
       results in smaller increases in carbon taxes compared to Orderly
-      transition scenarios until 2030, but significantly higher carbon taxes
+      transition risk scenarios until 2030, but significantly higher carbon taxes
       thereafter as countries attempt to make up lost ground. In the Divergent
       Net Zero scenario the reduction in CO<sub>2</sub> emissions starts to
       occur earlier and as a result is more gradual.
@@ -100,14 +97,12 @@ transition:
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      In 2018, the share of renewables in the Italian power sector increased to 39.7%, 
+      In 2018, the share of renewables in the Italian power sector increased to ~40%, 
       (over 4% above the 2017 levels), exceeding the share of electricity from fossil 
-      fuels. On average, 15% of electricity in the EU in 2020 came from wind energy, 
-      exceeding the share of coal in Q4 of 2020. In 2020, electricity generation from 
-      coal decreased by 22% and its share in electricity generation fell to 13%, (4% 
-      below the 2019 level).
+      fuels. The share of renewables in Italy's electricity generation mix exceed global 
+      and EU averages.
 
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+      ![Share of Renewable Electricity Generation](Italy_sov.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
@@ -118,7 +113,10 @@ transition:
       revenue it receives. Assuming taxation rates remain unchanged, a decrease
       in GDP could lead to a reduction in fiscal revenue. According to estimates
       from the NGFS, disorderly transition could result in significant GDP
-      losses. 
+      losses. In these scenarios, world GDP losses from both physical and transition 
+      risk are estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from 
+      transition risks are negative as the speed of the transition combines with investment 
+      uncertainty and affects consumption and investment. 
       
       In these scenarios, there is a large mix of physical and transition risks in 2050. 
       Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
@@ -138,7 +136,7 @@ transition:
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. 
       
-      According to the study, in these scenarios, Italy would not have a climate 
+      According to the study, in a transition risk (RCP 2.6) scenario, Italy would not have a climate 
       induced sovereign downgrade.
   low:
     exec_description: |
@@ -185,14 +183,12 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      In 2018, the share of renewables in the Italian power sector increased to 39.7%, 
+      In 2018, the share of renewables in the Italian power sector increased to ~40%, 
       (over 4% above the 2017 levels), exceeding the share of electricity from fossil 
-      fuels. On average, 15% of electricity in the EU in 2020 came from wind energy, 
-      exceeding the share of coal in Q4 of 2020. In 2020, electricity generation from 
-      coal decreased by 22% and its share in electricity generation fell to 13%, (4% 
-      below the 2019 level).
+      fuels. The share of renewables in Italy's electricity generation mix exceed global
+      and EU averages.
 
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+      ![Share of Renewable Electricity Generation](Italy_sov.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
@@ -206,8 +202,8 @@ transition:
       limit GDP losses. The world GDP losses are estimated to be between -1.5%
       and -2.5% by 2050. World GDP impacts from transition risk are slightly positive
       in the Net Zero 2050 scenario as negative impacts on demand from higher
-      carbon prices and energy costs are more than offset by the recycling of
-      carbon tax revenues into government investment and lower employment taxes.
+      carbon tax prices and energy costs are more than offset by the recycling of
+      carbon revenues into government investment and lower employment taxes.
       
       Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
       Orderly Net Zero scenario on Italy's GDP compared to 2015 would be significant, 
@@ -220,8 +216,8 @@ transition:
       although rating agencies anticipate that climate trends could have
       implications for ratings in coming decades. According to the 2021 "Rising
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
-      Creditworthiness" working paper from the University of Cambridge, in an
-      Orderly transition risk scenario, most developed countries would be
+      Creditworthiness" working paper from the University of Cambridge, in 
+      Orderly transition risk scenarios, most developed countries would be
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
@@ -247,7 +243,7 @@ physical:
       impacting households, businesses, cities and states. There are also likely
       indirect risks, such as those caused by international migration (e.g.
       increased inequalities, labour right issues, social conflicts), or via
-      biodiversity loss, or to industries supply chains and international trade.
+      biodiversity loss, or to industries' supply chains and international trade.
 
       The high physical risk scenario could lead to a significant reduction in
       GDP growth. This would have a negative impact on Italian sovereign bonds.
@@ -267,13 +263,13 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C, with land warming faster than oceans and
-      high latitudes experiencing higher warming. These changes will lead to
-      chronic changes in living conditions affecting health, labour
-      productivity, agriculture, ecosystems, and sea-level rise, which will
-      consequently impact the rate of growth in GDP. It can also change the
-      frequency and severity of weather events such as heatwaves, droughts,
-      wildfires, tropical cyclones, and flooding.
+      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      (with land warming faster than oceans and high latitudes experiencing higher 
+      warming). These changes will lead to chronic changes in living conditions 
+      affecting health, labour productivity, agriculture, ecosystems, and sea-level 
+      rise, which will consequently impact the rate of growth in GDP. It can also 
+      change the frequency and severity of weather events such as heatwaves, droughts,
+      wildfires, cyclones, and flooding.
 
       Research from Burke et al (2015) indicates there is a non-linear effect of
       increasing temperature on economic output, with productivity peaking at an
@@ -314,7 +310,7 @@ physical:
       but greater sensitivity of the top ratings. It is easier to lose an AAA
       rating than a C rating. 
       
-      According to the study, in a high physical risk scenario, Italy would have a downgrade 
+      According to the study, in a high physical risk (RCP 8.5) scenario, Italy would have a downgrade 
       below one notch by 2100, increasing the cost of borrowing for the Italian government by 
       approximately US$0.53-0.80bn.
 
@@ -331,7 +327,7 @@ physical:
       floods, and heat waves could become more prevalent, impacting households, 
       businesses, cities and states. There are also likely indirect risks, such as 
       those caused by international migration (e.g. increased inequalities, labour 
-      right issues, social conflicts), or via biodiversity loss, or to industries 
+      right issues, social conflicts), or via biodiversity loss, or to industries' 
       supply chains and international trade. 
       
       The low physical risk scenario could lead to a reduction in GDP growth. This 
@@ -358,7 +354,7 @@ physical:
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
-      heatwaves, droughts, wildfires, tropical cyclones, and flooding.
+      heatwaves, droughts, wildfires, cyclones, and flooding.
 
       This declining productivity would affect GDP and government income, as tax
       revenues are dependent on economic output. Adaptation costs would cause
@@ -369,7 +365,7 @@ physical:
       world GDP losses from both physical and transition risk are estimated to
       be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
       scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
+      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly 
       Net Zero scenario on Italy's GDP compared to 2015, would be significant, 
       ranging from +0.6% to +3.6% by 2050.
       

@@ -36,11 +36,8 @@ description: |
     established in the US, where these bonds are known as municipal bonds. Other
     developed markets also issue provincial/local government bonds.
 
-  Governments that issue sovereign bonds are exposed to various risks from
-  climate change, including changes to fiscal revenues, higher government
-  spending, changes in GDP growth and potential downgrades in credit rating. In
-  this paper a '20-notch' sovereign bond rating scale translated from
-  S&P's alphabetical standardized rating scale (see Appendix) is used to outline 
+  In this paper we refer to a '20-notch' sovereign bond rating scale translated from
+  S&P's alphabetical standardized rating scale (see Appendix), which is used to outline 
   changes to sovereign bond ratings, as is common in surrounding literature. 
   Impacts of climate change on sovereign bond ratings are discussed in reference 
   to the 2021 working paper titled "Rising Temperatures, Falling Ratings: 
@@ -114,7 +111,7 @@ transition:
       consequently has a lower share of renewable energy compared to the UK or
       its European counterparts.
 
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+      ![Share of Renewable Electricity Generation](US_sov.png)
 
       **Source:** [Climate Action Tracker](https://climateactiontracker.org/)
 
@@ -147,7 +144,7 @@ transition:
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. According to
-      the study, in these scenarios, the US would have a downgrade below one notch 
+      the study, in a transition risk (RCP 2.6) scenario, the US would have a downgrade below one notch 
       by 2100, increasing the cost of borrowing for the US government by
       approximately US$7.35-11.03bn.
   low:
@@ -190,7 +187,7 @@ transition:
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
-      The impact of an Orderly transition risk scenario on fiscal revenues is
+      The impact of Orderly transition risk scenarios on fiscal revenues is
       largely dependent on the efficiency of government spending in trying to
       mitigate these risks. While the use of taxes to incentivize more
       environmentally friendly production, transportation and consumption
@@ -206,7 +203,7 @@ transition:
       consequently has a lower share of renewable energy compared to the UK or
       its European counterparts.
 
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+      ![Share of Renewable Electricity Generation](US_sov.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
@@ -242,7 +239,7 @@ transition:
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating.
 
-      According to the study, in an Orderly transition risk (RCP 2.6) scenario,
+      According to the study, in a transition risk (RCP 2.6) scenario,
       the US would have a downgrade below one notch by 2100, increasing the cost
       of borrowing for the US government by approximately US$7.35-11.03bn.
 physical:
@@ -263,7 +260,7 @@ physical:
       impacting households, businesses, cities and states. There are also likely
       indirect risks, such as those caused by international migration (e.g.
       increased inequalities, labour right issues, social conflicts), or via
-      biodiversity loss, or to industries supply chains and international trade.
+      biodiversity loss, or to industries' supply chains and international trade.
 
       The high physical risk scenario could lead to a significant reduction in
       GDP growth. This would have a negative impact on US sovereign bonds.
@@ -283,18 +280,18 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C, with land warming faster than oceans and
-      high latitudes experiencing higher warming. These changes will lead to
-      chronic changes in living conditions affecting health, labour
-      productivity, agriculture, ecosystems, and sea-level rise, which will
-      consequently impact the rate of growth in GDP. It can also change the
-      frequency and severity of weather events such as heatwaves, droughts,
-      wildfires, tropical cyclones, and flooding.
+      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      (with land warming faster than oceans and high latitudes experiencing higher 
+      warming). These changes will lead to chronic changes in living conditions 
+      affecting health, labour productivity, agriculture, ecosystems, and sea-level 
+      rise, which will consequently impact the rate of growth in GDP. It can also 
+      change the frequency and severity of weather events such as heatwaves, droughts,
+      wildfires, cyclones, and flooding.
 
       Research from Burke et al (2015) indicates there is a non-linear effect of
       increasing temperature on economic output, with productivity peaking at an
       annual average temperature of 13&deg;C and declining strongly at higher
-      temperatures. In a high physical risk scenario, unmitigated warming is
+      temperatures. In a high physical risk (RCP 8.5) scenario, unmitigated warming is
       expected to reshape the global economy by reducing average global incomes
       by roughly 23% by 2100, relative to scenarios without climate change.
 
@@ -357,7 +354,7 @@ physical:
       more prevalent, impacting households, businesses, cities and states. There
       are also likely indirect risks, such as those caused by international
       migration (e.g. increased inequalities, labour right issues, social
-      conflicts), or via biodiversity loss, or to industries supply chains and
+      conflicts), or via biodiversity loss, or to industries' supply chains and
       international trade. The low physical risk scenario could lead to a
       reduction in GDP growth. This would have a negative impact on US sovereign
       bonds.
@@ -383,7 +380,7 @@ physical:
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
-      heatwaves, droughts, wildfires, tropical cyclones, and flooding.
+      heatwaves, droughts, wildfires, cyclones, and flooding.
 
       This declining productivity would affect GDP and government income, as tax
       revenues are dependent on economic output. Adaptation costs would cause

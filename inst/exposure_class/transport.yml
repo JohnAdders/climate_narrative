@@ -1,15 +1,16 @@
-name: Transport Underwriting Class
+name: Transport
 description: |
   The **Transport** sector includes companies primarily engaged in providing 
   services to move people or goods, as well as transportation infrastructure. 
   The transport sector consists of subsectors for each mode of transport; air, 
   rail, water, road, and pipeline, as well as a subsector for establishments 
-  providing support activities for transport, such as packing and crating. 
+  providing support activities for transport, such as packing, crating, warehousing 
+  and storage. 
   
   Excluded from this sector are establishments primarily engaged in providing 
   travel services that support transport, such as travel agents and hotels, 
   as well as establishments primarily engaged in providing rental and leasing 
-  of transport equipment without operator.
+  of transport equipment without operators.
   
   Companies in the transport sector may, for example, be involved in one or 
   more of the following: trucking, shipping, airline operation, logistics, scenic 
@@ -19,13 +20,13 @@ transition:
   high:
     exec_description: |
       In Disorderly transition risk scenarios, the transport sector could 
-      face increasing operating costs through carbon taxation as well as falling 
-      asset values as older and less efficient infrastructure could have to be retired 
-      earlier than originally planned and lower demand as consumers become more 
+      face increasing operating costs through carbon taxation, falling 
+      asset values as older and less efficient infrastructure becomes increasingly obsolete
+      , and lower demand as consumers become more 
       conscious of the environmental impacts of services they use. This is likely 
       to have an impact on the profitability of this sector.
     always: |
-      The transport sector could continue to play a role in facilitating global 
+      The transport sector will continue to play a role in facilitating global 
       trade and meeting customer demand for the coming years. The changing patterns 
       in energy generation in Disorderly transition scenarios, driven by late 
       policy action enabling a "fossil recovery" out of the economic crisis brought 
@@ -51,7 +52,7 @@ transition:
 
       - **Increased operating costs.** The sharp rise in carbon and energy prices is 
         likely to result in financial impacts, as transport firms' carbon emissions face 
-        a rising price in the form a carbon tax or cap and trade clearing price, 
+        a rising price in the form a carbon tax or cap & trade clearing price, 
         especially for firms reliant on fossil-based fuels. 
         
         In Disorderly transition risk scenarios, the price per gigajoule of liquid 
@@ -66,7 +67,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
-      - **Change in regulations covering energy efficiency standards would lead
+      - **Change in regulations covering energy efficiency standards could lead
         to increasing compliance requirements.** These changes may require firms 
         to adapt their service, potentially reducing sales (e.g. cruise operators 
         may face efficiency-based speed limits for ships, leading to a less 
@@ -99,8 +100,8 @@ transition:
         Slowed GDP growth could further impact demand for transport through its effect 
         on individuals' disposable income. 
         
-        There is also significant dependence of other sectors on the services of the 
-        transport sector, which plays a key role in other firms' supply chains. This 
+        There is also significant dependence of other sectors on the 
+        transport sector as it plays a key role in other firms' supply chains. This 
         magnifies the importance of decarbonising the transport sector as companies who 
         have a high carbon step in their supply chain could lose customers as consumer 
         preferences change. Without decarbonisation of the transport sector, consumers 
@@ -111,7 +112,7 @@ transition:
         could also depend on the relevant companies proactively investing in innovation and 
         new technology. For example:
         
-        - Alternative fuel sources (e.g. hydrogen and electric powered vehicles). In these 
+        - Hydrogen and electric powered vehicles. In these 
           scenarios, sources of final energy used in the transport sector change dramatically. 
           As use of oil declines, electricity becomes the dominant source of final energy 
           by the end of the century.
@@ -125,7 +126,7 @@ transition:
         lubrication in watercraft) and supporting infrastructure (e.g. more 
         efficient lighting and heating in hangars and airports).
 
-      - Intelligent routing and smart technologies optimize routes and speeds 
+      - Intelligent routing and smart technologies which optimize routes and speeds 
         to minimise emissions.
         
       In Disorderly transition risk scenarios, these innovations could contribute 
@@ -137,27 +138,25 @@ transition:
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The Disorderly transition risk scenarios also present opportunities 
-      for the aviation sector. Proactively investing in the above innovations 
+      for the transport sector. Proactively investing in the above innovations 
       could lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
-      proactively seek out businesses with an incorporated green strategy as
-      well as potentially have knock-on impacts for insurance pricing, terms and
-      conditions and coverage.
+      proactively seek out businesses with an incorporated green strategy.
   low:
     exec_description: |
       In Orderly transition risk scenarios, the transport sector could face 
       increasing operating costs through carbon taxation, falling asset values 
-      as older and less efficient infrastructure could have to be retired earlier 
-      than originally planned, and lower demand as consumers become more conscious 
+      as older and less efficient infrastructure becomes increasingly obsolete
+      , and lower demand as consumers become more conscious 
       of the environmental impacts of services they use. This is likely to have an 
       impact on the profitability of this sector.
     always: |
-      The transport sector could continue to play a role in facilitating global 
+      The transport sector will continue to play a role in facilitating global 
       trade and meeting customer demand for the coming years. The changing patterns 
       in energy generation in Orderly transition scenarios, driven by immediate policy 
       reaction, societal change, national energy strategies, and carbon legislation, 
       could lead to an immediate and smooth reduction in CO<sub>2</sub> emissions by 2050 and 
-      increase in the carbon price. 
+      an increase in the carbon price. 
       
       This is likely to have an impact on the profitability of this sector. Firms 
       could face higher fuel costs, especially those using high carbon fuels. Capital 
@@ -185,11 +184,11 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
-      - **Change in regulations covering energy efficiency standards would lead
+      - **Change in regulations covering energy efficiency standards could lead
         to increasing compliance requirements.** These changes may require firms
-        to adapt their service, potentially reducing sales (e.g. cruise operators 
+        to adapt their services, potentially reducing sales (e.g. cruise operators 
         may face efficiency-based speed limits for ships, leading to a less appealing 
-        service with reduced itinerary and more sea days).
+        service with reduced itineraries and more sea days).
         
       - **Readjusted capital expenditures**. New investments could be required to 
         modify or replace current transport infrastructure to pivot business models 
@@ -215,8 +214,8 @@ transition:
         as (high speed) rail, provided rail operators have the infrastructure in place 
         to serve the same destinations. 
 
-      There is also significant dependence of other sectors on the services of the transport 
-      sector, which plays a key role in other firms' supply chains. This magnifies the importance 
+      There is also significant dependence of other sectors on the transport 
+      sector as it plays a key role in other firms' supply chains. This magnifies the importance 
       of decarbonising the transport sector as companies who have a high carbon step in their 
       supply chain could lose customers as consumer preferences change. Without decarbonisation 
       of the transport sector, consumers may prefer local alternative goods which rely less 
@@ -226,10 +225,9 @@ transition:
       also depend on the relevant companies proactively investing in innovation and new 
       technology. For example: 
 
-      - Alternative fuel sources (e.g. hydrogen and electric powered vehicles). In 
-        Orderly transition risk scenarios, sources of final energy used in the transport 
-        sector change dramatically. As the use of oil gradually declines, electricity 
-        becomes the dominant source of final energy by the end of the century.
+      - Hydrogen and electric powered vehicles. In these scenarios, sources of final energy used 
+        could change dramatically. As the use of oil gradually declines, electricity 
+        could become the dominant source of final energy by the end of the century.
       
       ![Transportation Final Energy](Transportation_Final_Energy_Orderly.png)
       
@@ -240,7 +238,7 @@ transition:
         lubrication in watercraft) and supporting infrastructure (e.g. more 
         efficient lighting and heating in hangars and airports).
 
-      - Intelligent routing and smart technologies optimize routes and speeds 
+      - Intelligent routing and smart technologies which optimize routes and speeds 
         to minimise emissions.
         
       In Orderly transition risk scenarios, these innovations could contribute 
@@ -251,8 +249,8 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      The Orderly transition risk scenarios also present opportunities for 
-      the transportation sector. Proactively investing in the above innovations could 
+      These scenarios also present opportunities for 
+      the transport sector. Proactively investing in the above innovations could 
       lead to positive gains in commercial reputation and therefore magnify demand 
       and overall revenue as consumers could proactively seek out businesses with 
       an incorporated green strategy.
@@ -268,7 +266,7 @@ physical:
       operate on networks, with physical facilities, labour forces, and equipment spread 
       over an extensive geographic area. Chronic effects (e.g. raised sea-level and mean 
       temperatures) and acute effects due to changes to frequency and severity of weather 
-      events such as heatwaves, wildfires, tropical cyclones, and flooding could affect 
+      events such as heatwaves, wildfires, cyclones, and flooding could affect 
       vehicle performance, disrupt operations through frequent re-routings and temporary 
       route closures, as well as damage infrastructure with effects on costs and earnings. 
       Whilst the transport sector is used to responding to and managing changing weather 
@@ -321,7 +319,7 @@ physical:
       operate on networks, with physical facilities, labour forces, and equipment spread 
       over an extensive geographic area. Chronic effects (e.g. raised sea-level and mean 
       temperatures) and acute effects due to changes to frequency and severity of weather 
-      events such as heatwaves, wildfires, tropical cyclones, and flooding could affect 
+      events such as heatwaves, wildfires, cyclones, and flooding could affect 
       vehicle performance, disrupt operations through frequent re-routings and temporary 
       route closures, as well as damage infrastructure with effects on costs and earnings. 
       Whilst the transport sector is used to responding to and managing changing weather 
