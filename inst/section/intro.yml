@@ -14,14 +14,16 @@ description: |
   
   This report summarises the relevant climate-related risks and opportunities for a firm based 
   on the materiality of exposures to different lending exposure types, underwriting classes, 
-  asset classes, and economic sectors selected. These narratives are based on the NGFS scenarios 
-  which were updated in June 2021.
+  asset classes, and economic sectors selected. These narratives draw on data from the NGFS scenarios 
+  which were updated in June 2021. Users who wish to learn more about the NGFS scenarios are directed to 
+  the [NGFS scenario portal](https://www.ngfs.net/ngfs-scenarios-portal/){target="\_blank"}.
   
   ## Introduction to the Sector or Liability Report
   
   This report provides a stand-alone description for a selected underwriting class or economic sector 
-  for a particular NGFS scenario. These narratives are based on the NGFS scenarios which were updated 
-  in June 2021.
+  for a particular NGFS scenario. These narratives draw on data from the NGFS scenarios which were updated 
+  in June 2021. Users who wish to learn more about the NGFS scenarios are directed to 
+  the [NGFS scenario portal](https://www.ngfs.net/ngfs-scenarios-portal/){target="\_blank"}.
   
   ### How can the report be used?
   
@@ -39,7 +41,7 @@ description: |
   There are a number of uncertainties and limitations associated with the tool; for example: The 
   tool is not updated on an ongoing basis. It draws 
   heavily on the NGFS scenarios (updated in June 2021). The results are in turn underpinned by 
-  a single energy systems model (REMIND)which makes particular assumptions about long-term 
+  a single energy systems model (REMIND) which makes particular assumptions about long-term 
   technology pathways that are of course highly uncertain.
   
   This tool may be useful for climate reporting and risk assessments. However, a limitation 
@@ -50,29 +52,24 @@ description: |
   technology pathways.
 
   For example, the Orderly Below 2&deg;C scenario generates a common carbon price for the global
-  power and transportation sectors, as well as between, say EU and US and China. Similarly, the
-  tool does not provide a mechanism to really test how financial exposures may differ if the very
+  power and transportation sectors. Whereas in the Net Zero 2050 scenario there are regional differences in 
+  carbon price, and in the Divergent Net Zero scenario there are sectoral differences in carbon price. 
+  Similarly, the tool does not provide a mechanism to test how financial exposures may differ if the 
   solar PV friendly technology pathways of the REMIND model do not come to pass. Relaxing these
   policy and technology universality assumptions will naturally generate quite different assessments
   of the climate exposures of different financial securities and assets.
 
-  There are many potential ways to incorporate more plausible policy pathways and a wider range of
-  technology pathways into climate scenario analyses. One of these has been designed by abrdn in
-  partnership with Planetrics. This approach creates scenarios that allow for climate policy objectives
-  to vary across the major emitting regions and sectors. It also allows for the interaction between
-  these plausible policy variations and alternative technology pathways to be explored. All financial
-  impairment estimates are then calculated relative to a baseline assessment of what is priced into
-  assets at any given point in time.
-
-  This framework also has the virtue of filling in some of the 'probability mass' that sits between
-  transition-heavy scenarios that are strongly or weakly aligned with the objectives of the Paris
-  Agreement and those that are dominated by physical risks.
+  There are many potential ways to incorporate alternative plausible policy pathways and a wider range of
+  technology pathways into climate scenario analyses. See, for example, section 6 of the CFRF 2021 Scenario 
+  Analysis Guide which discusses one approach based on some work done by Abrdn  (a UK-based global investment 
+  company). Such approaches create a richer set of scenarios that allow, for example, for climate policy objectives 
+  to vary across the major emitting regions and sectors and for some of the 'probability mass' that sits between 
+  transition-heavy scenarios that are strongly or weakly aligned with the objectives of the Paris Agreement and 
+  those that are dominated by physical risks. This in turn enables financial impairment estimates to be calculated 
+  relative to a baseline assessment of what is priced into assets at any given point in time.
 
   ### What is next?
 
-  The Centre for Greening Finance and Investment have agreed to house the tool on
-  their IT platform.  The tool will be released publically in Q2 2022 after further testing.
-
-  During the remainder of 2022, the Climate Financial Risk Forum
-  Scenario Analysis Working Group will continue to collect feedback from users and will update the
-  tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.
+  The tool is housed on the Centre for Greening Finance and Investment climate and environmental data and analytics platform. 
+  During 2022, the Climate Financial Risk Forum Scenario Analysis Working Group will continue to collect feedback from users 
+  on this beta version of the tool and will update the tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.

@@ -17,7 +17,7 @@ description: |
 transition:
   high:
     exec_description: |
-      Savings and Retirement underwriting exposures could be impacted in the 
+      Savings and Retirement underwriting exposures could be impacted in 
       Disorderly transition risk scenarios, as the moderate to severe 
       reduction in GDP could reduce real household income. The reduction in 
       CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
@@ -247,7 +247,7 @@ physical:
     always: |
       Under high physical risk scenarios, climate change is likely to result in 
       severe temperature increases and large increases in both the frequency and 
-      severity of weather events that could have significant impact on the saving 
+      severity of weather events that could have a significant impact on the saving 
       and retirement underwriting class. 
       
       Chronic gradual impacts (such as higher average temperatures and rises 

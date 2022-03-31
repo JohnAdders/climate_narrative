@@ -238,7 +238,7 @@ physical:
       The aviation sector and its associated underwriting class are also exposed
       to physical risk. Chronic effects (e.g. raised sea-level and mean
       temperatures) and acute effects due to changes to frequency and severity
-      of weather events such as heatwaves, wildfires, tropical cyclones, and
+      of weather events such as heatwaves, wildfires, cyclones, and
       flooding could severely affect aircraft performance, significantly disrupt
       operations through frequent re-routings and temporary closures of airspace
       and airports, as well as damage infrastructure and aircraft with
@@ -301,7 +301,7 @@ physical:
       The aviation sector and its associated underwriting class are also exposed
       to physical risk. Chronic effects (e.g. raised sea-levels and mean
       temperatures) and acute effects due to changes to frequency and severity
-      of weather events such as heatwaves, wildfires, tropical cyclones, and
+      of weather events such as heatwaves, wildfires, cyclones, and
       flooding could affect aircraft performance, cause re-routings and
       temporary closure of airspace and airports as well as damage to
       infrastructure and aircraft with negative effects on costs and earnings.
@@ -333,7 +333,7 @@ physical:
         to increase at an accelerating rate and by 2050 it is as much as 2.5 times 
         higher compared to 1986-2006.
       
-      ![River Flood Depth](River_Flood_Depth_Low_Physical.png)
+      ![River Flood Depth](aviation_river_flood_depth.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}

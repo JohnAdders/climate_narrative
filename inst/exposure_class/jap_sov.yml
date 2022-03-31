@@ -36,11 +36,8 @@ description: |
     established in the US, where these bonds are known as municipal bonds. Other
     developed markets also issue provincial/local government bonds.
 
-  Governments that issue sovereign bonds are exposed to various risks from
-  climate change, including changes to fiscal revenues, higher government
-  spending, changes in GDP growth and potential downgrades in credit rating. In
-  this paper a '20-notch' sovereign bond rating scale translated from
-  S&P's alphabetical standardized rating scale (see Appendix) is used to outline 
+  In this paper we refer to a '20-notch' sovereign bond rating scale translated from
+  S&P's alphabetical standardized rating scale (see Appendix), which is used to outline 
   changes to sovereign bond ratings, as is common in surrounding literature. 
   Impacts of climate change on sovereign bond ratings are discussed in reference 
   to the 2021 working paper titled "Rising Temperatures, Falling Ratings: The 
@@ -64,7 +61,7 @@ transition:
       CO<sub>2</sub> emissions increase until 2030 before policies drive a
       sharp decrease after 2030 to compensate for the inaction beforehand. This
       results in smaller increases in carbon taxes compared to Orderly
-      transition scenarios until 2030, but significantly higher carbon taxes
+      transition risk scenarios until 2030, but significantly higher carbon taxes
       thereafter as countries attempt to make up lost ground. In the Divergent
       Net Zero scenario the reduction in CO<sub>2</sub> emissions starts to
       occur earlier and as a result is more gradual.
@@ -99,29 +96,32 @@ transition:
       carbon taxes would impact, positively or negatively, firms' profitability, 
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
-
-      In October 2021, Japan approved a new Basic Energy Plan, with a revised 2030 
-      electricity mix target of 36-38% renewable electricity (previously 22-24%), 
-      20-22% nuclear (unchanged), 20% gas (previously 27%) and 19% coal (previously 26%) 
-      to align with the updated 2030 climate target.
       
       Renewable electricity generation has grown steadily in recent years. The share of 
       renewable energy in total electricity generation in Japan has increased from 10% in 
-      2010 to 19% in 2019, but still remains below the OECD average. 
+      2010 to 19% in 2019, but still remains below the global average. 
 
 
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+      ![Share of Renewable Electricity Generation](Japan_sov.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
-
+      
+      In October 2021, Japan approved a new Basic Energy Plan, with a revised 2030 
+      electricity mix target of 36-38% renewable electricity (previous target of 22-24%), 
+      20-22% nuclear (unchanged), 20% gas (previous target of 27%) and 19% coal (previous 
+      target of 26%) to align with the updated 2030 climate target.
+      
       **GDP growth effect**
 
       A change in a country's GDP could have an impact on the level of fiscal
       revenue it receives. Assuming taxation rates remain unchanged, a decrease
       in GDP could lead to a reduction in fiscal revenue. According to estimates
       from the NGFS, disorderly transition could result in significant GDP
-      losses. 
+      losses. In these scenarios, world GDP losses from both physical and transition risk 
+      are estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from transition 
+      risks are negative as the speed of the transition combines with investment uncertainty 
+      and affects consumption and investment.
       
       In these scenarios, there is a large mix of physical and transition risks in 2050. 
       Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
@@ -141,9 +141,9 @@ transition:
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. 
       
-      According to the study, in these scenarios, Japan would have a downgrade below 
+      According to the study, in a transition risk (RCP 2.6) scenario, Japan would have a downgrade below 
       one notch by 2100, increasing the cost of borrowing for the Japanese government 
-      by approximately US$2.99-4.49bn.
+      by approximately US$2.96-4.44bn.
 
   low:
     exec_description: |
@@ -189,21 +189,21 @@ transition:
       positively or negatively, firms' profitability, which would, in turn,
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
-
-      In October 2021, Japan approved a new Basic Energy Plan, with a revised 2030 
-      electricity mix target of 36-38% renewable electricity (previously 22-24%), 
-      20-22% nuclear (unchanged), 20% gas (previously 27%) and 19% coal (previously 26%) 
-      to align with the updated 2030 climate target.
       
       Renewable electricity generation has grown steadily in recent years. The share of 
       renewable energy in total electricity generation in Japan has increased from 10% in 
-      2010 to 19% in 2019, but still remains below the OECD average.
+      2010 to 19% in 2019, but still remains below the global average.
 
-      ![Share of Renewable Electricity Generation](Share_of_Renewable_Electricity_Generation_Soverign.png)
+      ![Share of Renewable Electricity Generation](Japan_sov.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
-
+      
+      In October 2021, Japan approved a new Basic Energy Plan, with a revised 2030 
+      electricity mix target of 36-38% renewable electricity (previous target of 22-24%), 
+      20-22% nuclear (unchanged), 20% gas (previous target of 27%) and 19% coal (previous target
+      of 26%) to align with the updated 2030 climate target.
+      
       **GDP growth effect**
 
       A change in a country's GDP could have an impact on the level of fiscal
@@ -213,8 +213,8 @@ transition:
       limit GDP losses. The world GDP losses are estimated to be between -1.5%
       and -2.5% by 2050. World GDP impacts from transition risk are slightly positive
       in the Net Zero 2050 scenario as negative impacts on demand from higher
-      carbon prices and energy costs are more than offset by the recycling of
-      carbon tax revenues into government investment and lower employment taxes.
+      carbon tax prices and energy costs are more than offset by the recycling of
+      carbon revenues into government investment and lower employment taxes.
       
       Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
       Orderly Net Zero scenario on Japan's GDP compared to 2015 would be non-significant, 
@@ -227,8 +227,8 @@ transition:
       although rating agencies anticipate that climate trends could have
       implications for ratings in coming decades. According to the 2021 "Rising
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
-      Creditworthiness" working paper from the University of Cambridge, in an
-      Orderly transition risk scenario, most developed countries would be
+      Creditworthiness" working paper from the University of Cambridge, in 
+      Orderly transition risk scenarios, most developed countries would be
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
@@ -236,7 +236,7 @@ transition:
       
       According to the study, in a transition risk (RCP 2.6) scenario, Japan would have 
       a downgrade below one notch by 2100, increasing the cost of borrowing for the 
-      Japanese government by approximately US$2.99-4.49bn. 
+      Japanese government by approximately US$2.96-4.44bn. 
 
 physical:
   high:
@@ -256,7 +256,7 @@ physical:
       impacting households, businesses, cities and states. There are also likely
       indirect risks, such as those caused by international migration (e.g.
       increased inequalities, labour right issues, social conflicts), or via
-      biodiversity loss, or to industries supply chains and international trade.
+      biodiversity loss, or to industries' supply chains and international trade.
 
       The high physical risk scenario could lead to a significant reduction in
       GDP growth. This would have a negative impact on Japanese sovereign bonds.
@@ -276,13 +276,13 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C, with land warming faster than oceans and
-      high latitudes experiencing higher warming. These changes will lead to
-      chronic changes in living conditions affecting health, labour
-      productivity, agriculture, ecosystems, and sea-level rise, which will
-      consequently impact the rate of growth in GDP. It can also change the
-      frequency and severity of weather events such as heatwaves, droughts,
-      wildfires, tropical cyclones, and flooding.
+      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      (with land warming faster than oceans and high latitudes experiencing higher 
+      warming). These changes will lead to chronic changes in living conditions 
+      affecting health, labour productivity, agriculture, ecosystems, and sea-level 
+      rise, which will consequently impact the rate of growth in GDP. It can also 
+      change the frequency and severity of weather events such as heatwaves, droughts,
+      wildfires, cyclones, and flooding.
 
       Research from Burke et al (2015) indicates there is a non-linear effect of
       increasing temperature on economic output, with productivity peaking at an
@@ -323,7 +323,7 @@ physical:
       but greater sensitivity of the top ratings. It is easier to lose an AAA
       rating than a C rating. 
       
-      According to the study, in a high physical risk scenario, Japan would have a downgrade 
+      According to the study, in a high physical risk (RCP 8.5) scenario, Japan would have a downgrade 
       above two notches by 2100, increasing the cost of borrowing for the Japanese government 
       by approximately US$19.88-29.82bn.
 
@@ -340,7 +340,7 @@ physical:
       floods, and heat waves could become more prevalent, impacting households, 
       businesses, cities and states. There are also likely indirect risks, such as 
       those caused by international migration (e.g. increased inequalities, labour 
-      right issues, social conflicts), or via biodiversity loss, or to industries 
+      right issues, social conflicts), or via biodiversity loss, or to industries' 
       supply chains and international trade. 
       
       The low physical risk scenario could lead to a reduction in GDP growth. This 
@@ -367,7 +367,7 @@ physical:
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
-      heatwaves, droughts, wildfires, tropical cyclones, and flooding.
+      heatwaves, droughts, wildfires, cyclones, and flooding.
 
       This declining productivity would affect GDP and government income, as tax
       revenues are dependent on economic output. Adaptation costs would cause
@@ -378,7 +378,7 @@ physical:
       world GDP losses from both physical and transition risk are estimated to
       be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
       scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
+      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly 
       Net Zero scenario on Japan's GDP compared to 2015, would be non-significant, 
       ranging from -0.6% to +1.1% by 2050.
       
@@ -402,7 +402,7 @@ physical:
       
       According to the study, in a low physical risk (RCP 2.6) scenario, Japan would have 
       a downgrade below one notch by 2100, increasing the cost of borrowing for the Japanese 
-      government by approximately US$2.99-4.49bn.
+      government by approximately US$2.96-4.44bn.
 appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 

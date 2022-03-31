@@ -28,7 +28,7 @@ transition:
     always: |
       Lending on residential property remains a key focus and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
-      with it being expected that supply could outstrip demand for the
+      with it being expected that demand could outstrip supply for the
       foreseeable future. The quality of residential stock could be the key
       challenge on the mortgage lending sector.
 
@@ -111,8 +111,11 @@ transition:
       - Landlords exiting the buy to let market in certain locations where the
         rental yield doesn't justify the cost of retrofitting
 
-      - Credit worthiness of customers: potential mortgage prisoners
-
+      - Mortgage customers who cannot afford to retrofit their property may become 
+        mortgage prisoners - unable to re-mortgage or sell, as lenders avoid offering 
+        mortgages on properties with poor EPC ratings and therefore their property value 
+        could fall.
+        
       - Potential impact on securitisation/covered bond and BoE collateral,
         minimum EPC or increased haircut for below EPC C properties
 
@@ -227,7 +230,7 @@ transition:
     always: |
       Lending on residential property remains a key focus, and the UK housing
       market is a strategic cornerstone to continue to support the UK economy,
-      with it being expected that supply could outstrip demand for the
+      with it being expected that demand could outstrip supply for the
       foreseeable future. The quality of residential stock could be the key
       challenge for the mortgage lending sector over the next 15 years, as
       transitional legislation is implemented.
@@ -274,7 +277,10 @@ transition:
       - Landlords exiting the buy to let market in certain locations where the
         rental yield doesn't justify the cost of retrofitting
 
-      - Credit worthiness of customers: potential mortgage prisoners
+      - Mortgage customers who cannot afford to retrofit their property may become  
+        mortgage prisoners - unable to re-mortgage or sell, as lenders avoid offering 
+        mortgages on properties with poor EPC ratings and therefore their property value 
+        could fall.
 
       - Potential impact on securitisation/covered bond and BoE collateral,
         minimum EPC or increased haircut for below EPC C properties
@@ -385,7 +391,7 @@ physical:
       The mortgage market has the potential to be one of the most exposed
       sectors to physical impacts of climate change due to changes to frequency
       and severity of coastal erosion, subsidence, and weather events such as 
-      tropical cyclones and flooding.
+      cyclones and flooding.
 
       The mortgage market doesn't have the experience of responding to and
       managing changing weather conditions (as this is often covered by if a
@@ -405,7 +411,7 @@ physical:
       impacted in a low physical risk scenario and potential considerations at
       mortgage origination that firms might not review today:
 
-      - **Tropical cyclones or storms** should be considered when reviewing
+      - **Cyclones or storms** should be considered when reviewing
         acceptable construction types and the nature of insurance that is
         available given the potential damage to property and impact on market
         value.
@@ -442,7 +448,9 @@ physical:
       - Increased impairments and arrears: increased voids in tenancy/insurance
         premiums/cost of repair if insurance is unavailable
 
-      - Credit worthiness of customers: potential mortgage prisoners
+      - Mortgage customers whose properties are highly exposed to physical risk may 
+        become mortgage prisoners - unable to re-mortgage or sell, as lenders avoid 
+        offering mortgages on highly exposed properties and their property value falls.
 
       - Increasing competition for lower-risk properties
 
@@ -476,7 +484,7 @@ physical:
       The mortgage market has the potential to be one of the most exposed
       sectors to physical impacts of climate change due to changes to frequency
       and severity of coastal erosion, subsidence, and weather events such as
-      tropical cyclones and flooding.
+      cyclones and flooding.
 
       The mortgage market doesn't have the experience of responding to and
       managing changing weather conditions (as this is often covered by if a
@@ -495,7 +503,7 @@ physical:
       impacted in a low physical risk scenario and potential considerations at
       mortgage origination that firms might not review today:
 
-      - **Tropical cyclones or storms** should be considered when reviewing
+      - **Cyclones or storms** should be considered when reviewing
         acceptable construction types and the nature of insurance that is
         available given the potential damage to property and impact on market
         value.
@@ -510,7 +518,7 @@ physical:
         In the Delayed transition scenario, the fraction of land annually 
         exposed to river floods reaches ~0.06% by the end of the century.
         
-      ![River Flood Land Fraction](River_Flood_Land_Low_Physical.png)
+      ![River Flood Land Fraction](mortgage_river_flood_coverage.png)
       
       **Source:** 
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}  
@@ -534,7 +542,9 @@ physical:
       - Increased impairments and arrears: increased voids in tenancy/insurance
         premiums/cost of repair if insurance is unavailable
 
-      - Credit worthiness of customers: potential mortgage prisoners
+      - Mortgage customers whose properties are highly exposed to physical risk may 
+        become mortgage prisoners - unable to re-mortgage or sell, as lenders avoid 
+        offering mortgages on highly exposed properties and their property value falls.
 
       - Increasing competition for lower-risk properties
 
