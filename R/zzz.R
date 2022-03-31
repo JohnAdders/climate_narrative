@@ -12,4 +12,8 @@
     "climate_narrative",
     system.file("www", package = "climate.narrative")
   )
+  addResourcePath(
+    "lib",
+    system.file("www/lib", package = "climate.narrative")
+  )
 }

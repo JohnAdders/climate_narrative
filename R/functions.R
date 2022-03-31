@@ -675,7 +675,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
   if (nrow(aggregated_table)) {
     A_or_L_header <- (length(unique(aggregated_table$A_or_L)) > 1)
     for (i in 1:nrow(aggregated_table)) {
-      if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])){
+      if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])) {
         out <- paste0(
           out,
           "## ",
@@ -1228,14 +1228,15 @@ get_executive_summary_exposures <- function(exposure_classes,
   out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
-  A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)  
+  A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)
   for (i in 1:nrow(aggregated_inputs)) {
-    if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])){
+    if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])) {
       out_exp <- paste0(
-        out_exp, 
+        out_exp,
         "###",
         ifelse(aggregated_inputs$A_or_L[i] == "A", "Assets", "Liabilities"),
-        "\n\n")
+        "\n\n"
+      )
     }
     item <- aggregated_inputs$item[i]
     materiality <- aggregated_inputs$materiality[i]
@@ -1454,9 +1455,9 @@ aggregate_inputs <- function(inputs) {
   if (nrow(inputs) == 0) {
     return(
       data.frame(
-        item=character(),
-        materiality=character(),
-        materiality_num=character()
+        item = character(),
+        materiality = character(),
+        materiality_num = character()
       )
     )
   }
