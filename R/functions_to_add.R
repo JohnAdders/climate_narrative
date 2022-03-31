@@ -99,7 +99,14 @@ get_report_settings <- function(content_files,
   render_settings <- list(
     md_file = md_file,
     output_file = output_file,
-    output_format = output_format
+    output_format = output_format,
+    available_libs = list.files(
+      system.file(
+        "www/lib",
+        package = "climate.narrative"
+      ),
+      recursive = TRUE
+    )
   )
 
   image_settings <- list(
@@ -159,8 +166,34 @@ produce_report <- function(all_inputs, settings) {
     output_file = render_settings$output_file,
     output_format = render_settings$output_format
   )
+  check_required_libraries(render_settings)
   postprocess(postprocess_settings)
   return(invisible(NULL))
+}
+
+#' Check if the files (e.g. javascript) required by the report are available in the main package
+#' 
+#' @param render_settings the list containing available_libs (vector of files in the package)
+#' and output_file (path of the rendered report, where directory "lib" is searched)
+check_required_libraries <- function(render_settings){
+  rendered_libs <- list.files(
+    paste0(
+      dirname(render_settings$output_file),
+      "/lib"
+    ),
+    recursive = TRUE
+  )
+  missing_libs <- setdiff(rendered_libs, render_settings$available_libs)
+  if (length(missing_libs) {
+    stop(
+      paste0(
+        length(missing_libs),
+        " library files are missing in the package www/lib directory. First of the missing files is: ",
+        missing_libs[1]
+      )
+    )
+  }
+  return(NULL)
 }
 
 # refactored parameter version of existing functions
