@@ -49,14 +49,14 @@ get_report_settings <- function(content_files,
         theme = "sandstone",
         number_sections = FALSE,
         self_contained = FALSE,
-        lib_dir = "lib",
-        fig_caption = FALSE
+        fig_caption = FALSE,
+        lib_dir = "lib"
       )
     } else {
       output_format <- rmarkdown::html_document(
         toc = TRUE,
-        toc_float = FALSE,
         toc_depth = 2,
+        toc_float = FALSE,
         number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
@@ -172,10 +172,10 @@ produce_report <- function(all_inputs, settings) {
 }
 
 #' Check if the files (e.g. javascript) required by the report are available in the main package
-#' 
+#'
 #' @param render_settings the list containing available_libs (vector of files in the package)
 #' and output_file (path of the rendered report, where directory "lib" is searched)
-check_required_libraries <- function(render_settings){
+check_required_libraries <- function(render_settings) {
   rendered_libs <- list.files(
     paste0(
       dirname(render_settings$output_file),
@@ -185,10 +185,10 @@ check_required_libraries <- function(render_settings){
   )
   missing_libs <- setdiff(rendered_libs, render_settings$available_libs)
   if (length(missing_libs)) {
-    stop(
+    warning(
       paste0(
         length(missing_libs),
-        " library files are missing in the package www/lib directory. First of the missing files is: ",
+        " library files are contained in the report but not in the package www/lib directory. First of the missing files is: ",
         missing_libs[1]
       )
     )
