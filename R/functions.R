@@ -434,7 +434,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     paste(sepline, collapse = ""),
     "\n",
     paste(apply(out, 1, paste, collapse = ""), collapse = "\n"),
-    "\n"
+    "\n\n"
   )
   return(out2)
 }
