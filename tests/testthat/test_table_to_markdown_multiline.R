@@ -16,7 +16,8 @@ testthat::test_that("function table_to_markdown_multiline produces correct resul
     "+=======+=======+=======+\n",
     "| abc   | def   | foo   |\n",
     "|       | ghijk |       |\n",
-    "+-------+-------+-------+\n"
+    "+-------+-------+-------+\n",
+    "\n"
   )
 
   # Call the function.

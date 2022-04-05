@@ -27,7 +27,7 @@ tab_report_ui <- function() {
     )
     out <- list(
       div(
-        class="not_too_wide_3col",
+        class = "not_too_wide_3col",
         fluidRow(
           column(4, dropdown_1),
           column(4, dropdown_2),
@@ -38,7 +38,7 @@ tab_report_ui <- function() {
   } else {
     out <- list(
       div(
-        class="not_too_wide_2col",
+        class = "not_too_wide_2col",
         fluidRow(
           column(6, dropdown_1),
           column(6, dropdown_2)
@@ -62,7 +62,7 @@ tab_report_ui <- function() {
     if (global$dev) {
       out <- c(out, list(
         div(
-          class="not_too_wide_3col",
+          class = "not_too_wide_3col",
           fluidRow(
             column(4, button_1),
             column(4, button_2),
@@ -73,7 +73,7 @@ tab_report_ui <- function() {
     } else {
       out <- c(out, list(
         div(
-          class="not_too_wide_2col",
+          class = "not_too_wide_2col",
           fluidRow(
             column(4, button_1),
             column(4, button_2)
