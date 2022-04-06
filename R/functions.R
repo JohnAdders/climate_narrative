@@ -245,11 +245,11 @@ exposure_grid_server <- function(input,
 get_input_ids <- function(exposure_matrix, label, tab = NULL) {
   if (!is.null(tab)) {
     exposure_matrix <- tab$exposure
-    for (i in 1:ncol(exposure_matrix)) {
-      exposure_matrix[, i] <- as.character(exposure_matrix[, i])
-    }
     label <- paste(tab$type, tab$subtype, sep = "_")
   }
+  for (i in 1:ncol(exposure_matrix)) {
+      exposure_matrix[, i] <- as.character(exposure_matrix[, i])
+    }
   input_ids <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 2)
   input_ids <- as.data.frame(input_ids)
   colnames(input_ids) <- colnames(exposure_matrix)[-(1:2)]
