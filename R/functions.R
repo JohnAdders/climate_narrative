@@ -247,12 +247,12 @@ get_input_ids <- function(exposure_matrix, label, tab = NULL) {
     exposure_matrix <- tab$exposure
     label <- paste(tab$type, tab$subtype, sep = "_")
   }
-  for (i in 1:ncol(exposure_matrix)) {
-    exposure_matrix[, i] <- as.character(exposure_matrix[, i])
-  }
   input_ids <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 2)
   input_ids <- as.data.frame(input_ids, stringsAsFactors = FALSE)
-  colnames(input_ids) <- colnames(exposure_matrix)[-(1:2)]
+  for (i in 1:ncol(input_ids)) {
+    input_ids[, i] <- as.character(input_ids[, i])
+  }
+  colnames(input_ids) <- as.character(colnames(exposure_matrix)[-(1:2)])
   for (i in 1:nrow(input_ids)) {
     for (j in 1:ncol(input_ids)) {
       if (exposure_matrix[i, j + 2] != "") {
