@@ -4,12 +4,12 @@
 \alias{get_input_values}
 \title{Produce a matrix of input values from a matrix of input names (simple double loop)}
 \usage{
-get_input_values(inputs, ids_matrix)
+get_input_values(inputs, ids)
 }
 \arguments{
 \item{inputs}{dataframe of (all) inputs to look for}
 
-\item{ids_matrix}{matrix of ids}
+\item{ids}{dataframe of ids}
 }
 \description{
 Produce a matrix of input values from a matrix of input names (simple double loop)

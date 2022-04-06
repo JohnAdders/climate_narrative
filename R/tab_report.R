@@ -98,7 +98,7 @@ tab_report_server <- function(input, output, session, tab) {
       if (input$rep_type == "inst") {
         tab$previous_tab <- tab_name_to_number(
           switch(input$inst_type,
-            insurance = "ins_sov",
+            insurance = "ins_re",
             asset = "am_re",
             bank = "bank_sov"
           )
