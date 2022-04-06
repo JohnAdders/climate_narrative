@@ -92,10 +92,7 @@ server <- function(input, output, session) {
 
   # update the available sectors
   observeEvent(
-    list(
-      input$rep_type,
-      input$inst_type
-    ),
+    input$wizard == paste0("page_", tab_name_to_number("report")),
     {
       if (input$rep_type == "inst") {
         selection_type_filter <- input$inst_type

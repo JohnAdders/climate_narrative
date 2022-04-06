@@ -248,6 +248,7 @@ get_input_ids <- function(exposure_matrix, label, tab = NULL) {
     label <- paste(tab$type, tab$subtype, sep = "_")
   }
   input_ids <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 2)
+  input_ids <- as.data.frame(input_ids)
   colnames(input_ids) <- colnames(exposure_matrix)[-(1:2)]
   for (i in 1:nrow(input_ids)) {
     for (j in 1:ncol(input_ids)) {
@@ -269,13 +270,13 @@ get_input_ids <- function(exposure_matrix, label, tab = NULL) {
 #' Produce a matrix of input values from a matrix of input names (simple double loop)
 #'
 #' @param inputs dataframe of (all) inputs to look for
-#' @param ids_matrix matrix of ids
+#' @param ids dataframe of ids
 #'
-get_input_values <- function(inputs, ids_matrix) {
-  values <- ids_matrix
+get_input_values <- function(inputs, ids) {
+  values <- ids
   for (i in 1:nrow(values)) {
     for (j in 1:ncol(values)) {
-      id <- ids_matrix[i, j]
+      id <- ids[i, j]
       if (id != "") {
         value <- inputs[inputs$names == id, "values"]
         if (length(value)) {
@@ -1343,6 +1344,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
       ids <- get_input_ids(tab = tab)
       values <- get_input_values(inputs, ids)
       values <- cbind(tab$exposure[, 1], values)
+      colnames(values)[1] <- ""
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols = 1)
       if (!is.null(values_trimmed)) {
         transpose <- (ncol(tab$exposure) > 3)
