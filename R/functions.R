@@ -1230,7 +1230,7 @@ get_executive_summary_exposures <- function(exposure_classes,
   high_counter <- 0
   A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)
   for (i in 1:nrow(aggregated_inputs)) {
-    if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])) {
+    if (A_or_L_header && (i == 1 || aggregated_inputs$A_or_L[i] != aggregated_inputs$A_or_L[i - 1])) {
       out_exp <- paste0(
         out_exp,
         "###",
