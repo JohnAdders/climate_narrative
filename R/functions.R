@@ -248,7 +248,11 @@ get_input_ids <- function(exposure_matrix, label, tab = NULL) {
     label <- paste(tab$type, tab$subtype, sep = "_")
   }
   input_ids <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 2)
-  colnames(input_ids) <- colnames(exposure_matrix)[-(1:2)]
+  input_ids <- as.data.frame(input_ids, stringsAsFactors = FALSE)
+  for (i in 1:ncol(input_ids)) {
+    input_ids[, i] <- as.character(input_ids[, i])
+  }
+  colnames(input_ids) <- as.character(colnames(exposure_matrix)[-(1:2)])
   for (i in 1:nrow(input_ids)) {
     for (j in 1:ncol(input_ids)) {
       if (exposure_matrix[i, j + 2] != "") {
@@ -269,13 +273,13 @@ get_input_ids <- function(exposure_matrix, label, tab = NULL) {
 #' Produce a matrix of input values from a matrix of input names (simple double loop)
 #'
 #' @param inputs dataframe of (all) inputs to look for
-#' @param ids_matrix matrix of ids
+#' @param ids dataframe of ids
 #'
-get_input_values <- function(inputs, ids_matrix) {
-  values <- ids_matrix
+get_input_values <- function(inputs, ids) {
+  values <- ids
   for (i in 1:nrow(values)) {
     for (j in 1:ncol(values)) {
-      id <- ids_matrix[i, j]
+      id <- ids[i, j]
       if (id != "") {
         value <- inputs[inputs$names == id, "values"]
         if (length(value)) {
@@ -434,7 +438,7 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     paste(sepline, collapse = ""),
     "\n",
     paste(apply(out, 1, paste, collapse = ""), collapse = "\n"),
-    "\n"
+    "\n\n"
   )
   return(out2)
 }
@@ -675,7 +679,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
   if (nrow(aggregated_table)) {
     A_or_L_header <- (length(unique(aggregated_table$A_or_L)) > 1)
     for (i in 1:nrow(aggregated_table)) {
-      if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])){
+      if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])) {
         out <- paste0(
           out,
           "## ",
@@ -1228,14 +1232,15 @@ get_executive_summary_exposures <- function(exposure_classes,
   out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
-  A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)  
+  A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)
   for (i in 1:nrow(aggregated_inputs)) {
-    if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])){
+    if (A_or_L_header && (i == 1 || aggregated_inputs$A_or_L[i] != aggregated_inputs$A_or_L[i - 1])) {
       out_exp <- paste0(
-        out_exp, 
+        out_exp,
         "###",
         ifelse(aggregated_inputs$A_or_L[i] == "A", "Assets", "Liabilities"),
-        "\n\n")
+        "\n\n"
+      )
     }
     item <- aggregated_inputs$item[i]
     materiality <- aggregated_inputs$materiality[i]
@@ -1342,6 +1347,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
       ids <- get_input_ids(tab = tab)
       values <- get_input_values(inputs, ids)
       values <- cbind(tab$exposure[, 1], values)
+      colnames(values)[1] <- ""
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols = 1)
       if (!is.null(values_trimmed)) {
         transpose <- (ncol(tab$exposure) > 3)
@@ -1454,9 +1460,9 @@ aggregate_inputs <- function(inputs) {
   if (nrow(inputs) == 0) {
     return(
       data.frame(
-        item=character(),
-        materiality=character(),
-        materiality_num=character()
+        item = character(),
+        materiality = character(),
+        materiality_num = character()
       )
     )
   }

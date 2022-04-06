@@ -92,10 +92,7 @@ server <- function(input, output, session) {
 
   # update the available sectors
   observeEvent(
-    list(
-      input$rep_type,
-      input$inst_type
-    ),
+    input$wizard == paste0("page_", tab_name_to_number("report")),
     {
       if (input$rep_type == "inst") {
         selection_type_filter <- input$inst_type
@@ -158,8 +155,8 @@ server <- function(input, output, session) {
         if (global$report_version >= 5) {
           settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
           produce_report(all_inputs(), settings)
-          result <- includeHTML(temp_html)
           removeModal()
+          result <- includeHTML(temp_html)
           output$html_report <- renderUI(result) # used to be: return(result)
         } else { # old code below
           if (input$rep_type == "inst") {
