@@ -16,4 +16,5 @@
     "lib",
     system.file("www/lib", package = "climate.narrative")
   )
+  options(stringsAsFactors = FALSE)
 }
