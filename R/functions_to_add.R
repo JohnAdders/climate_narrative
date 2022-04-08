@@ -47,7 +47,6 @@ get_report_settings <- function(content_files,
         toc_depth = 3,
         toc_float = list(collapsed = FALSE),
         theme = "sandstone",
-        number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE,
         lib_dir = "lib"
@@ -57,7 +56,6 @@ get_report_settings <- function(content_files,
         toc = TRUE,
         toc_depth = 3,
         toc_float = FALSE,
-        number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
       )
@@ -66,7 +64,6 @@ get_report_settings <- function(content_files,
     output_format <- rmarkdown::rtf_document(
       toc = TRUE,
       toc_depth = 3,
-      number_sections = FALSE,
       pandoc_args = c(
         paste0("--resource-path=", system.file("www", package = "climate.narrative")),
         "--self-contained"
