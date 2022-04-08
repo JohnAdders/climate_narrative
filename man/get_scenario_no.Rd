@@ -9,9 +9,13 @@ get_scenario_no(scenarios, report_scenario_selection, is_rtf)
 \arguments{
 \item{scenarios}{List of scenarios}
 
-\item{report_scenario_selection}{Value of the input (scenario or empty string)}
+\item{report_scenario_selection}{(user-friendly) scenario name (or empty string)}
 
-\item{is_rtf}{Flag whether to include sections that are for RTF only}
+\item{is_rtf}{a flag that triggers several format specific settings:
+\itemize{
+\item TRUE: include non-scenario sections (e.g. intro)
+\item FALSE: include the links to page top (note requires proper report_version as well)
+}}
 }
 \value{
 vector of integers
