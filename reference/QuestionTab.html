@@ -120,6 +120,10 @@ This is a wrapper over any ui and server that handles switching to previous/next
 <dd><p>optional list of parameters to pass to ui function</p></dd>
 
 
+<dt><code>bottom_offset</code></dt>
+<dd><p>move the buttons and footer to the right by this fraction of page</p></dd>
+
+
 </dl><p></p></div>
     </div>
     <div id="methods">
@@ -148,7 +152,8 @@ from the relevant functions (or makes it empty if the function does not exist)</
   exposure <span class="op">=</span> <span class="cn">NULL</span>,
   type <span class="op">=</span> <span class="cn">NULL</span>,
   subtype <span class="op">=</span> <span class="cn">NULL</span>,
-  ui_settings <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>
+  ui_settings <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,
+  bottom_offset <span class="op">=</span> <span class="fl">0</span>
 <span class="op">)</span></code></pre></div><p></p></div>
 </div>
 
@@ -192,6 +197,10 @@ from the relevant functions (or makes it empty if the function does not exist)</
 
 <dt><code>ui_settings</code></dt>
 <dd><p>(optional) list of arguments to pass to tab_ui</p></dd>
+
+
+<dt><code>bottom_offset</code></dt>
+<dd><p>(optional) move the buttons and footer to the right by this fraction of page</p></dd>
 
 
 </dl><p></p></div>
