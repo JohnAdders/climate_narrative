@@ -51,6 +51,7 @@ QuestionTab <- R6Class(
     #' @param type type of issuers for which the inputs are applicable
     #' @param subtype unique reference of tab within a type of issuers
     #' @param ui_settings (optional) list of arguments to pass to tab_ui
+    #' @param bottom_offset (optional) move the buttons and footer to the right by this fraction of page
     initialize = function(tab_name, tab_title, previous_tab, next_tab, add_header = TRUE,
                           add_footer = TRUE, exposure = NULL, type = NULL, subtype = NULL,
                           ui_settings = list(), bottom_offset = 0) {
