@@ -12,8 +12,8 @@ QuestionTab <- R6Class(
     tab_title = NULL,
     #' @field tab_ui specific UI function, may take any number of arguments
     tab_ui = NULL,
-    #' @field tab_ui_foot specific UI function to be used in footer (without arguments)
-    tab_ui_foot = NULL,
+    #' @field tab_ui_helper specific UI function to be used in helper (without arguments)
+    tab_ui_helper = NULL,
     #' @field tab_server specific server function
     tab_server = NULL,
     #' @field tab_number number assigned automatically based on 'ordered_tabs' vector of names
@@ -54,7 +54,7 @@ QuestionTab <- R6Class(
       self$tab_name <- tab_name
       self$tab_title <- tab_title
       self$tab_ui <- get0(paste0("tab_", tab_name, "_ui"))
-      self$tab_ui_foot <- get0(paste0("tab_", tab_name, "_foot"))
+      self$tab_ui_helper <- get0(paste0("tab_", tab_name, "_helper"))
       self$tab_server <- get0(paste0("tab_", tab_name, "_server"))
       self$tab_number <- tab_name_to_number(tab_name)
       self$previous_tab <- tab_name_to_number(previous_tab)
@@ -146,6 +146,11 @@ QuestionTab <- R6Class(
           h2(self$tab_title)
         )
       }
+      if (!is.null(self$tab_ui_helper)) {
+        tabpanel_params <- add_param(
+          tabpanel_params, self$tab_ui_helper()
+        )
+      }
       if (!is.null(self$tab_ui)) {
         tabpanel_params <- add_param(
           tabpanel_params, do.call(self$tab_ui, self$ui_settings)
@@ -171,12 +176,6 @@ QuestionTab <- R6Class(
           tabpanel_params, textOutput(paste0(self$id, "_next_result"))
         )
       }
-      if (!is.null(self$tab_ui_foot)) {
-        tabpanel_params <- add_param(
-          tabpanel_params, self$tab_ui_foot()
-        )
-      }
-
       if (self$add_footer) {
         tabpanel_params <- add_param(
           tabpanel_params, heartbeat_footer()

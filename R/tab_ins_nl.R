@@ -1,3 +1,3 @@
-tab_ins_nl_foot <- function() {
-  generic_footer("liability")
+tab_ins_nl_helper <- function() {
+  generic_helper("liability")
 }

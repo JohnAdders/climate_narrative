@@ -862,12 +862,12 @@ recaptcha_server <- function(secret_key, recaptcha_response) {
   }
 }
 
-#' Produce a footer HTML text explaining materiality levels.
+#' Produce a helper HTML text explaining materiality levels.
 #'
 #' @param asset_or_liability A string with the type of exposure page
 #' @param is_asset_mananger Is this display for an asset manager
 #'
-generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
+generic_helper <- function(asset_or_liability, is_asset_mananger = FALSE) {
   if (asset_or_liability == "asset") {
     case_name <- "asset class and sector"
     if (is_asset_mananger) {
@@ -879,7 +879,7 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
     case_name <- "liability class"
     total_name <- "premium income"
   }
-  p(
+  helpText(
     list(
       paste0("Enter your firm's exposures by ", case_name, " using the following definitions:"),
       tags$ul(
