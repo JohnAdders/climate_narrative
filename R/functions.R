@@ -969,6 +969,11 @@ rtf_fix_table_of_contents <- function(filename) {
       bookmark_text,
       "}"
     )
+    # Limit of 40 characters!
+    if (nchar(bookmark_text) > 40){
+      warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
+      rtf <- gsub(bookmark_text, substr(bookmark_text,1,40), rtf)
+    }
   }
   writeLines(rtf, file_conn)
   close(file_conn)
