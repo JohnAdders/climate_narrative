@@ -4,12 +4,16 @@
 \alias{get_section_no}
 \title{Helper function that returns non-scenario section number(s)}
 \usage{
-get_section_no(sections, is_rtf)
+get_section_no(sections, is_rtf, rep_type)
 }
 \arguments{
 \item{sections}{List of non-scenario report sections}
 
-\item{is_rtf}{Flag whether to include sections that are for RTF only}
+\item{is_rtf}{a flag that triggers several format specific settings:
+\itemize{
+\item TRUE: include non-scenario sections (e.g. intro)
+\item FALSE: include the links to page top (note requires proper report_version as well)
+}}
 }
 \value{
 vector of integers

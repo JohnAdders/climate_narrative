@@ -90,7 +90,8 @@ get_report_settings <- function(content_files,
     rep_type = rep_type,
     report_scenario_selection = report_scenario_selection,
     include_exposures = include_exposures,
-    exec_summary_layout = exec_summary_layout
+    exec_summary_layout = exec_summary_layout,
+    rep_type = rep_type
   )
 
   render_settings <- list(
@@ -211,7 +212,8 @@ get_report_contents_2 <- function(content_files, inputs, content_settings) {
         content_settings$report_scenario_selection,
         content_settings$is_rtf,
         content_settings$exec_summary_layout,
-        content_settings$include_exposures
+        content_settings$include_exposures,
+        content_settings$rep_type
       )
     )
   } else { # test all sector report

@@ -1125,9 +1125,7 @@ get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_
 
 #' Helper function that translate the value of input field to the scenario number(s)
 #'
-#' @param scenarios List of scenarios
-#' @param report_scenario_selection Value of the input (scenario or empty string)
-#' @param is_rtf Flag whether to include sections that are for RTF only
+#' @inherit get_report_contents
 #' @return vector of integers
 #'
 get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
@@ -1144,13 +1142,29 @@ get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
 #' @inherit get_scenario_no
 #' @param sections List of non-scenario report sections
 #'
-get_section_no <- function(sections, is_rtf) {
+get_section_no <- function(sections, is_rtf, rep_type) {
+  print(rep_type)
   if (is_rtf) {
     indicator_function <- function(s) s$include_in_RTF
   } else {
     indicator_function <- function(s) s$include_in_HTML
   }
-  return(which(sapply(sections, indicator_function)))
+  # if relevant, additionally check rep_type condition
+  if (!is.null(rep_type)){
+    indicator_function_2 <- function(s) {
+      if (is.null(s$rep_type)) {
+        return(indicator_function(s))
+      } else if (s$rep_type == rep_type) {
+        return(indicator_function(s))
+      } else {
+        return(FALSE)
+      }
+    }
+  } else {
+    # otherwise do not change the function
+    indicator_function_2 <- indicator_function
+  }
+  return(which(sapply(sections, indicator_function_2)))
 }
 
 #' Function that generates a markdown content of the report
@@ -1167,6 +1181,7 @@ get_section_no <- function(sections, is_rtf) {
 #' - FALSE: include the links to page top (note requires proper report_version as well)
 #' @param exec_summary_layout determines the structure of the executive summary (see get_executive_summary function)
 #' @param include_exposures whether to include tables with contributing exposures
+#' @param rep_type additional possibility to filter report sections, by default (NULL) no filtering
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #'
 get_report_contents <- function(tabs,
@@ -1178,10 +1193,11 @@ get_report_contents <- function(tabs,
                                 report_scenario_selection,
                                 is_rtf,
                                 exec_summary_layout = 1,
-                                include_exposures) {
+                                include_exposures,
+                                rep_type = NULL) {
   aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(scenarios, report_scenario_selection, is_rtf)
-  section_no <- get_section_no(sections, is_rtf)
+  section_no <- get_section_no(sections, is_rtf, rep_type)
   out <- list()
   for (scenario in scenarios[scenario_no]) {
     out <- c(
