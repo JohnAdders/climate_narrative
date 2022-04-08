@@ -1143,7 +1143,6 @@ get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
 #' @param sections List of non-scenario report sections
 #'
 get_section_no <- function(sections, is_rtf, rep_type) {
-  print(rep_type)
   if (is_rtf) {
     indicator_function <- function(s) s$include_in_RTF
   } else {
