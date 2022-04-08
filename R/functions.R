@@ -545,12 +545,13 @@ get_exposure_description <- function(item, type_item_inputs, exposure_classes, i
     "### ",
     exposure_classes[[item]][["name"]],
     "\n\n",
-    global$exposure_classes[[item]][["description"]]
+    global$exposure_classes[[item]][["description"]],
+    "\n\n"
   )
   if (include_exposures) {
     out <- paste0(
       out,
-      "\n\nThe following rows contribute: \n\n",
+      "The following rows contribute: \n\n",
       table_to_markdown_multiline(ordered_aggregate_inputs[, 1:4], TRUE, c(15, 30, 25, 15)),
       "\n\n"
     )
