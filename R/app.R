@@ -57,7 +57,7 @@ initialise_globals <- function() {
     QuestionTab$new("ins_c", "Insurance: Corporate Assets", "ins_nl", "ins_sov", TRUE, TRUE, global$exposures$insuranceCorporate, "insurance", "C"),
     QuestionTab$new("ins_sov", "Insurance: Sovereign Assets", "ins_c", "ins_re", TRUE, TRUE, global$exposures$sovereign, "insurance", "S"),
     QuestionTab$new("ins_re", "Insurance: Real Estate Exposures", "ins_sov", "report", TRUE, TRUE, global$exposures$insuranceRe, "insurance", "R"),
-    QuestionTab$new("am_c", "Asset Manager / Owner / Fund: Corporate Assets", "rep_type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
+    QuestionTab$new("am_c", "Asset Manager / Owner / Fund: Corporate Assets", "inst_type", "am_sov", TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
     QuestionTab$new("am_sov", "Asset Manager / Owner / Fund: Sovereign Assets", "am_c", "am_re", TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
     QuestionTab$new("am_re", "Asset Manager/ Owner / Fund: Real Estate Assets", "am_sov", "report", TRUE, TRUE, global$exposures$amRe, "asset", "R"),
     QuestionTab$new("report", NULL, "rep_type", NULL)

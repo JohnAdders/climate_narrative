@@ -862,12 +862,12 @@ recaptcha_server <- function(secret_key, recaptcha_response) {
   }
 }
 
-#' Produce a footer HTML text explaining materiality levels.
+#' Produce a helper HTML text explaining materiality levels.
 #'
 #' @param asset_or_liability A string with the type of exposure page
 #' @param is_asset_mananger Is this display for an asset manager
 #'
-generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
+generic_helper <- function(asset_or_liability, is_asset_mananger = FALSE) {
   if (asset_or_liability == "asset") {
     case_name <- "asset class and sector"
     if (is_asset_mananger) {
@@ -879,7 +879,7 @@ generic_footer <- function(asset_or_liability, is_asset_mananger = FALSE) {
     case_name <- "liability class"
     total_name <- "premium income"
   }
-  p(
+  helpText(
     list(
       paste0("Enter your firm's exposures by ", case_name, " using the following definitions:"),
       tags$ul(
@@ -1235,9 +1235,13 @@ get_executive_summary_exposures <- function(exposure_classes,
   A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)
   for (i in 1:nrow(aggregated_inputs)) {
     if (A_or_L_header && (i == 1 || aggregated_inputs$A_or_L[i] != aggregated_inputs$A_or_L[i - 1])) {
+      if (high_counter == 0 && i > 1){
+        out_exp <- paste0(out_exp, "None\n\n")
+      }
+      high_counter <- 0
       out_exp <- paste0(
         out_exp,
-        "###",
+        "#### ",
         ifelse(aggregated_inputs$A_or_L[i] == "A", "Assets", "Liabilities"),
         "\n\n"
       )
@@ -1248,7 +1252,7 @@ get_executive_summary_exposures <- function(exposure_classes,
       high_counter <- high_counter + 1
       out_exp <- paste0(
         out_exp,
-        "#### ",
+        "##### ",
         exposure_classes[[item]][["name"]],
         "\n\n"
       )
@@ -1362,7 +1366,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
         ncol <- ncol(values_trimmed)
         out <- paste0(
           out,
-          "### ",
+          "#### ",
           tab$tab_title,
           "\n\n"
         )

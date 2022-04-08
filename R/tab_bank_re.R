@@ -1,3 +1,3 @@
-tab_bank_re_foot <- function() {
-  generic_footer("asset")
+tab_bank_re_helper <- function() {
+  generic_helper("asset")
 }

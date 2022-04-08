@@ -22,7 +22,7 @@ This is a wrapper over any ui and server that handles switching to previous/next
 
 \item{\code{tab_ui}}{specific UI function, may take any number of arguments}
 
-\item{\code{tab_ui_foot}}{specific UI function to be used in footer (without arguments)}
+\item{\code{tab_ui_helper}}{specific UI function to be used in helper (without arguments)}
 
 \item{\code{tab_server}}{specific server function}
 

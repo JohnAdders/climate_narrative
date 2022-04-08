@@ -1,0 +1,10 @@
+position: 100
+include_in_HTML: yes
+include_in_RTF: no
+comment: 
+  This is to overwrite the div produced by tocify library, which results in large
+  blank space at the end of report. 
+  See https://community.rstudio.com/t/floating-table-of-contents-and-plots-produce-extra-whitespace-at-bottom/12606/7
+description: |
+  <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+

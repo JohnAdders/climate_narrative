@@ -44,10 +44,9 @@ get_report_settings <- function(content_files,
     if (report_version >= 6) {
       output_format <- rmarkdown::html_document(
         toc = TRUE,
-        toc_depth = 2,
+        toc_depth = 3,
         toc_float = list(collapsed = FALSE),
         theme = "sandstone",
-        number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE,
         lib_dir = "lib"
@@ -55,9 +54,8 @@ get_report_settings <- function(content_files,
     } else {
       output_format <- rmarkdown::html_document(
         toc = TRUE,
-        toc_depth = 2,
+        toc_depth = 3,
         toc_float = FALSE,
-        number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
       )
@@ -65,8 +63,7 @@ get_report_settings <- function(content_files,
   } else {
     output_format <- rmarkdown::rtf_document(
       toc = TRUE,
-      toc_depth = 2,
-      number_sections = FALSE,
+      toc_depth = 3,
       pandoc_args = c(
         paste0("--resource-path=", system.file("www", package = "climate.narrative")),
         "--self-contained"
