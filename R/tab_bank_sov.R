@@ -1,3 +1,3 @@
-tab_bank_sov_foot <- function() {
-  generic_footer("asset")
+tab_bank_sov_helper <- function() {
+  generic_helper("asset")
 }

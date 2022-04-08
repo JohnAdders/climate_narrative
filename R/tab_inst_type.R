@@ -25,7 +25,7 @@ tab_inst_type_server <- function(input, output, session, tab) {
   )
 }
 
-tab_inst_type_foot <- function() {
+tab_inst_type_helper <- function() {
   list(
     helpText("Please select your firm's type")
   )
