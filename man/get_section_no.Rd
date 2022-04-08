@@ -14,9 +14,11 @@ get_section_no(sections, is_rtf, rep_type)
 \item TRUE: include non-scenario sections (e.g. intro)
 \item FALSE: include the links to page top (note requires proper report_version as well)
 }}
+
+\item{rep_type}{additional possibility to filter report sections, by default (NULL) no filtering}
 }
 \value{
-vector of integers
+vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 }
 \description{
 Helper function that returns non-scenario section number(s)

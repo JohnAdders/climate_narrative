@@ -1139,7 +1139,7 @@ get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
 
 #' Helper function that returns non-scenario section number(s)
 #'
-#' @inherit get_scenario_no
+#' @inherit get_report_contents
 #' @param sections List of non-scenario report sections
 #'
 get_section_no <- function(sections, is_rtf, rep_type) {
