@@ -2,29 +2,6 @@ position: -1
 include_in_HTML: no
 include_in_RTF: yes
 description: |
-  ```{=rtf}
-    \page
-  ```
-
-  ## Disclaimer
-
-  ![Disclaimer](Disclaimer.png)
-  
-  ## Introduction to the Executive Summary and the long form Report
-  
-  This report summarises the relevant climate-related risks and opportunities for a firm based 
-  on the materiality of exposures to different lending exposure types, underwriting classes, 
-  asset classes, and economic sectors selected. These narratives draw on data from the NGFS scenarios 
-  which were updated in June 2021. Users who wish to learn more about the NGFS scenarios are directed to 
-  the [NGFS scenario portal](https://www.ngfs.net/ngfs-scenarios-portal/){target="\_blank"}.
-  
-  ## Introduction to the Sector or Liability Report
-  
-  This report provides a stand-alone description for a selected underwriting class or economic sector 
-  for a particular NGFS scenario. These narratives draw on data from the NGFS scenarios which were updated 
-  in June 2021. Users who wish to learn more about the NGFS scenarios are directed to 
-  the [NGFS scenario portal](https://www.ngfs.net/ngfs-scenarios-portal/){target="\_blank"}.
-  
   ### How can the report be used?
   
   The information provided by the CFRF Online Scenario Analysis Narrative Tool and its 

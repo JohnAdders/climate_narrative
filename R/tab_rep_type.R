@@ -23,7 +23,7 @@ tab_rep_type_server <- function(input, output, session, tab) {
   )
 }
 
-tab_rep_type_foot <- function() {
+tab_rep_type_helper <- function() {
   list(
     helpText("Please select the report type.")
   )

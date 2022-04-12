@@ -22,7 +22,7 @@ This is a wrapper over any ui and server that handles switching to previous/next
 
 \item{\code{tab_ui}}{specific UI function, may take any number of arguments}
 
-\item{\code{tab_ui_foot}}{specific UI function to be used in footer (without arguments)}
+\item{\code{tab_ui_helper}}{specific UI function to be used in helper (without arguments)}
 
 \item{\code{tab_server}}{specific server function}
 
@@ -45,6 +45,8 @@ This is a wrapper over any ui and server that handles switching to previous/next
 \item{\code{subtype}}{subtype of tab within a type of institution (to group the inputs from all tabs)}
 
 \item{\code{ui_settings}}{optional list of parameters to pass to ui function}
+
+\item{\code{bottom_offset}}{move the buttons and footer to the right by this fraction of page}
 }
 \if{html}{\out{</div>}}
 }
@@ -75,7 +77,8 @@ from the relevant functions (or makes it empty if the function does not exist)
   exposure = NULL,
   type = NULL,
   subtype = NULL,
-  ui_settings = list()
+  ui_settings = list(),
+  bottom_offset = 0
 )}\if{html}{\out{</div>}}
 }
 
@@ -101,6 +104,8 @@ from the relevant functions (or makes it empty if the function does not exist)
 \item{\code{subtype}}{unique reference of tab within a type of issuers}
 
 \item{\code{ui_settings}}{(optional) list of arguments to pass to tab_ui}
+
+\item{\code{bottom_offset}}{(optional) move the buttons and footer to the right by this fraction of page}
 }
 \if{html}{\out{</div>}}
 }

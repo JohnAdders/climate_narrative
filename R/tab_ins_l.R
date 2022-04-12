@@ -1,6 +1,6 @@
-tab_ins_l_foot <- function() {
+tab_ins_l_helper <- function() {
   list(
-    p("If you only have property & casualty exposures, click next."),
-    generic_footer("liability")
+    helpText("If you only have property & casualty exposures, click next."),
+    generic_helper("liability")
   )
 }

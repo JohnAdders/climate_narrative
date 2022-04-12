@@ -177,7 +177,6 @@ server <- function(input, output, session) {
               toc = TRUE,
               toc_float = FALSE,
               toc_depth = 2,
-              number_sections = FALSE,
               self_contained = FALSE,
               fig_caption = FALSE
             )
@@ -187,7 +186,6 @@ server <- function(input, output, session) {
               toc_float = list(collapsed = FALSE),
               theme = "sandstone",
               toc_depth = 2,
-              number_sections = FALSE,
               self_contained = TRUE,
               fig_caption = FALSE
             )

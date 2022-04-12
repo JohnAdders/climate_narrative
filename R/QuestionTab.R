@@ -12,8 +12,8 @@ QuestionTab <- R6Class(
     tab_title = NULL,
     #' @field tab_ui specific UI function, may take any number of arguments
     tab_ui = NULL,
-    #' @field tab_ui_foot specific UI function to be used in footer (without arguments)
-    tab_ui_foot = NULL,
+    #' @field tab_ui_helper specific UI function to be used in helper (without arguments)
+    tab_ui_helper = NULL,
     #' @field tab_server specific server function
     tab_server = NULL,
     #' @field tab_number number assigned automatically based on 'ordered_tabs' vector of names
@@ -36,6 +36,8 @@ QuestionTab <- R6Class(
     subtype = NULL,
     #' @field ui_settings optional list of parameters to pass to ui function
     ui_settings = NULL,
+    #' @field bottom_offset move the buttons and footer to the right by this fraction of page
+    bottom_offset = NULL,
     #' @description the constructor fills the slots with values given
     #' it also automatically gets ui, server and foot
     #' from the relevant functions (or makes it empty if the function does not exist)
@@ -49,12 +51,14 @@ QuestionTab <- R6Class(
     #' @param type type of issuers for which the inputs are applicable
     #' @param subtype unique reference of tab within a type of issuers
     #' @param ui_settings (optional) list of arguments to pass to tab_ui
-    initialize = function(tab_name, tab_title, previous_tab, next_tab, add_header = TRUE, add_footer = TRUE,
-                          exposure = NULL, type = NULL, subtype = NULL, ui_settings = list()) {
+    #' @param bottom_offset (optional) move the buttons and footer to the right by this fraction of page
+    initialize = function(tab_name, tab_title, previous_tab, next_tab, add_header = TRUE,
+                          add_footer = TRUE, exposure = NULL, type = NULL, subtype = NULL,
+                          ui_settings = list(), bottom_offset = 0) {
       self$tab_name <- tab_name
       self$tab_title <- tab_title
       self$tab_ui <- get0(paste0("tab_", tab_name, "_ui"))
-      self$tab_ui_foot <- get0(paste0("tab_", tab_name, "_foot"))
+      self$tab_ui_helper <- get0(paste0("tab_", tab_name, "_helper"))
       self$tab_server <- get0(paste0("tab_", tab_name, "_server"))
       self$tab_number <- tab_name_to_number(tab_name)
       self$previous_tab <- tab_name_to_number(previous_tab)
@@ -66,6 +70,7 @@ QuestionTab <- R6Class(
       self$type <- type
       self$subtype <- subtype
       self$ui_settings <- ui_settings
+      self$bottom_offset <- bottom_offset
     },
     #' @description Tab server function that combines:
     #' 1. server side of exposure input table (if given in the constructor)
@@ -146,6 +151,11 @@ QuestionTab <- R6Class(
           h2(self$tab_title)
         )
       }
+      if (!is.null(self$tab_ui_helper)) {
+        tabpanel_params <- add_param(
+          tabpanel_params, self$tab_ui_helper()
+        )
+      }
       if (!is.null(self$tab_ui)) {
         tabpanel_params <- add_param(
           tabpanel_params, do.call(self$tab_ui, self$ui_settings)
@@ -158,30 +168,32 @@ QuestionTab <- R6Class(
         )
       }
       tabpanel_params <- add_param(tabpanel_params, br())
+      ui_bottom <- list()
       if (length(self$previous_tab)) {
-        tabpanel_params <- add_param(
-          tabpanel_params, actionButton(paste0(self$id, "_previous"), "prev")
+        ui_bottom <- add_param(
+          ui_bottom, actionButton(paste0(self$id, "_previous"), "prev")
         )
       }
       if (length(self$next_tab)) {
-        tabpanel_params <- add_param(
-          tabpanel_params, actionButton(paste0(self$id, "_next"), "next")
+        ui_bottom <- add_param(
+          ui_bottom, actionButton(paste0(self$id, "_next"), "next")
         )
-        tabpanel_params <- add_param(
-          tabpanel_params, textOutput(paste0(self$id, "_next_result"))
-        )
-      }
-      if (!is.null(self$tab_ui_foot)) {
-        tabpanel_params <- add_param(
-          tabpanel_params, self$tab_ui_foot()
+        ui_bottom <- add_param(
+          ui_bottom, textOutput(paste0(self$id, "_next_result"))
         )
       }
-
       if (self$add_footer) {
-        tabpanel_params <- add_param(
-          tabpanel_params, heartbeat_footer()
+        ui_bottom <- add_param(
+          ui_bottom, heartbeat_footer()
         )
       }
+      bottom_offset_int <- floor(self$bottom_offset * 12)
+      tabpanel_params <- add_param(
+        tabpanel_params,
+        fluidRow(
+          column(12 - bottom_offset_int, ui_bottom, offset = bottom_offset_int)
+        )
+      )
       do.call(tabPanel, tabpanel_params)
     }
   ),

@@ -27,7 +27,6 @@ render_rtf <- function(input_file, output_file, res_path, report_version) {
     output_format = rmarkdown::rtf_document(
       toc = TRUE,
       toc_depth = 2,
-      number_sections = FALSE,
       pandoc_args = c(
         paste0("--resource-path=", res_path),
         "--self-contained"
@@ -50,7 +49,6 @@ render_html <- function(input_file, output_file, report_version) {
       toc = TRUE,
       toc_float = FALSE,
       toc_depth = 2,
-      number_sections = FALSE,
       self_contained = FALSE,
       fig_caption = FALSE
     )

@@ -44,10 +44,9 @@ get_report_settings <- function(content_files,
     if (report_version >= 6) {
       output_format <- rmarkdown::html_document(
         toc = TRUE,
-        toc_depth = 2,
+        toc_depth = 3,
         toc_float = list(collapsed = FALSE),
         theme = "sandstone",
-        number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE,
         lib_dir = "lib"
@@ -55,9 +54,8 @@ get_report_settings <- function(content_files,
     } else {
       output_format <- rmarkdown::html_document(
         toc = TRUE,
-        toc_depth = 2,
+        toc_depth = 3,
         toc_float = FALSE,
-        number_sections = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
       )
@@ -65,8 +63,7 @@ get_report_settings <- function(content_files,
   } else {
     output_format <- rmarkdown::rtf_document(
       toc = TRUE,
-      toc_depth = 2,
-      number_sections = FALSE,
+      toc_depth = 3,
       pandoc_args = c(
         paste0("--resource-path=", system.file("www", package = "climate.narrative")),
         "--self-contained"
@@ -93,7 +90,8 @@ get_report_settings <- function(content_files,
     rep_type = rep_type,
     report_scenario_selection = report_scenario_selection,
     include_exposures = include_exposures,
-    exec_summary_layout = exec_summary_layout
+    exec_summary_layout = exec_summary_layout,
+    rep_type = rep_type
   )
 
   render_settings <- list(
@@ -214,7 +212,8 @@ get_report_contents_2 <- function(content_files, inputs, content_settings) {
         content_settings$report_scenario_selection,
         content_settings$is_rtf,
         content_settings$exec_summary_layout,
-        content_settings$include_exposures
+        content_settings$include_exposures,
+        content_settings$rep_type
       )
     )
   } else { # test all sector report

@@ -1,3 +1,3 @@
-tab_ins_c_foot <- function() {
-  generic_footer("asset")
+tab_ins_c_helper <- function() {
+  generic_helper("asset")
 }

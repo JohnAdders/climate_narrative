@@ -14,7 +14,8 @@ get_report_contents(
   report_scenario_selection,
   is_rtf,
   exec_summary_layout = 1,
-  include_exposures
+  include_exposures,
+  rep_type = NULL
 )
 }
 \arguments{
@@ -41,6 +42,8 @@ get_report_contents(
 \item{exec_summary_layout}{determines the structure of the executive summary (see get_executive_summary function)}
 
 \item{include_exposures}{whether to include tables with contributing exposures}
+
+\item{rep_type}{additional possibility to filter report sections, by default (NULL) no filtering}
 }
 \value{
 vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
