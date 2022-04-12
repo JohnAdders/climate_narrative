@@ -12,7 +12,8 @@ get_exposure_risk_description(
   exposure_classes,
   physical_or_transition,
   high_or_low,
-  include_oneliner = FALSE
+  include_oneliner = FALSE,
+  header_level = 4
 )
 }
 \arguments{
@@ -29,6 +30,8 @@ get_exposure_risk_description(
 \item{high_or_low}{Is scenario high or low}
 
 \item{include_oneliner}{FALSE by default, normally oneliner is for executive summary}
+
+\item{header_level}{what level of markdown header should be produced}
 }
 \value{
 vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)

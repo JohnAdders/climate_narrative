@@ -492,6 +492,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 #' @param type_item_inputs Table of (disaggregated) inputs to produce a table of contributing rows
 #' @param exposure_classes List of sectors from which the texts are extracted
 #' @param include_exposures Whether to include tables with contributing exposures
+#' @param header_level what level of markdown header should be produced
 #' @return markdown-formatted report section (h2)
 #'
 #' @importFrom stats aggregate
@@ -592,6 +593,7 @@ get_exposure_appendix <- function(item, exposure_classes) {
 #' @param physical_or_transition Type of scenario
 #' @param high_or_low Is scenario high or low
 #' @param include_oneliner FALSE by default, normally oneliner is for executive summary
+#' @param header_level what level of markdown header should be produced
 #'
 get_exposure_risk_description <- function(item,
                                           products,
