@@ -20,7 +20,7 @@ testthat::test_that("report files", {
         inst_type = "bank",
         report_scenario_selection = "",
         report_sector_selection = "",
-        bank_C_subordinatedDebtAndEquity_bondLike_agriculture_agriculture = "Medium",
+        bank_C_subordinatedDebtAndEquity_corporateBonds_agriculture_agriculture = "Medium",
         report = 0
       )
       # change the further inputs step by step to mock real user actions
