@@ -58,7 +58,7 @@ server <- function(input, output, session) {
       if (length(splitted_names[[i]]) == 6) {
         out[i, 3:8] <- splitted_names[[i]]
         if (is.null(global$products[[out$product[i]]])) {
-          warning(paste("Issue with", out[i, ], "No product description for", out$product[i]))
+          warning(paste("Issue with", out[i, ], "No product description for", out$product[i], "\n"))
         } else {
           out$product_description[i] <- global$products[[out$product[i]]]$description
           out$product_text[i] <- global$products[[out$product[i]]]$text
