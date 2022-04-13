@@ -703,8 +703,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
         out,
         get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 3, 1)),
         get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
-        get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical),
-        get_exposure_appendix(item, exposure_classes)
+        get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
       )
     }
   }
@@ -731,6 +730,11 @@ get_section_descriptions <- function(section, additional_pars = list()) {
       out <- paste0(
         out,
         get_references(additional_pars$aggregated_inputs$item, additional_pars$exposure_classes)
+      )
+    } else if (content_function == "get_appendices") {
+      out <- paste0(
+        out,
+        get_appendices(additional_pars$aggregated_inputs$item, additional_pars$exposure_classes)
       )
     } else {
       stop(paste("Invalid content function name", content_function))
@@ -769,6 +773,36 @@ get_references <- function(items, exposure_classes) {
   }
   # Do not show the section if there are no references
   if (out == "# References\n\n") {
+    out <- ""
+  }
+  return(out)
+}
+
+#' Function to produce appendices (as references)
+#'
+#' @inherit get_references
+#'
+get_appendices <- function(items, exposure_classes) {
+  out <- ""
+  if (length(items)) {
+    out <- paste0(
+      out,
+      "# Appendices\n\n"
+    )
+    for (item in items) {
+      if (length(exposure_classes[[item]][["appendix"]])) {
+        out <- paste0(
+          out,
+          "\n\n### ",
+          exposure_classes[[item]][["name"]],
+          "\n\n",
+          exposure_classes[[item]][["appendix"]]
+        )
+      }
+    }
+  }
+  # Do not show the section if there are no references
+  if (out == "# Appendices\n\n") {
     out <- ""
   }
   return(out)
