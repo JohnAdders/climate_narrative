@@ -1278,7 +1278,7 @@ get_executive_summary_exposures <- function(exposure_classes,
       )
     }
     item <- aggregated_inputs$item[i]
-    materiality <- aggregated_inputs$materiality[i]
+    materiality <- aggregated_inputs$materiality_num[i]
     if (materiality == "High") {
       high_counter <- high_counter + 1
       out_exp <- paste0(
