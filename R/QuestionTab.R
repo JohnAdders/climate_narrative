@@ -140,9 +140,12 @@ QuestionTab <- R6Class(
       if (self$add_header) {
         tabpanel_params <- add_param(
           tabpanel_params,
-          tag("header", list(
-            img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
-          ))
+          tags$header(
+            #class="stickytop", 
+            list(
+              img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
+            )
+          )
         )
       }
       if (!is.null(self$tab_title)) {

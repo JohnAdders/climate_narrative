@@ -492,11 +492,12 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 #' @param type_item_inputs Table of (disaggregated) inputs to produce a table of contributing rows
 #' @param exposure_classes List of sectors from which the texts are extracted
 #' @param include_exposures Whether to include tables with contributing exposures
+#' @param header_level what level of markdown header should be produced
 #' @return markdown-formatted report section (h2)
 #'
 #' @importFrom stats aggregate
 #'
-get_exposure_description <- function(item, type_item_inputs, exposure_classes, include_exposures) {
+get_exposure_description <- function(item, type_item_inputs, exposure_classes, include_exposures, header_level=2) {
   if (is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
@@ -542,7 +543,8 @@ get_exposure_description <- function(item, type_item_inputs, exposure_classes, i
   ordered_aggregate_inputs <- merge(ordered_aggregate_inputs_text, ordered_aggregate_inputs_num)
   colnames(ordered_aggregate_inputs)[3:5] <- c("Exposure.row", "Materiality", "Product materiality")
   out <- paste0(
-    "### ",
+    strrep("#", header_level),
+    " ",
     exposure_classes[[item]][["name"]],
     "\n\n",
     global$exposure_classes[[item]][["description"]],
@@ -591,6 +593,7 @@ get_exposure_appendix <- function(item, exposure_classes) {
 #' @param physical_or_transition Type of scenario
 #' @param high_or_low Is scenario high or low
 #' @param include_oneliner FALSE by default, normally oneliner is for executive summary
+#' @param header_level what level of markdown header should be produced
 #'
 get_exposure_risk_description <- function(item,
                                           products,
@@ -598,7 +601,8 @@ get_exposure_risk_description <- function(item,
                                           exposure_classes,
                                           physical_or_transition,
                                           high_or_low,
-                                          include_oneliner = FALSE) {
+                                          include_oneliner = FALSE,
+                                          header_level = 4) {
   if (high_or_low == FALSE) {
     return("")
   }
@@ -625,7 +629,8 @@ get_exposure_risk_description <- function(item,
   out <- ""
   if (include_oneliner) {
     out <- paste0(
-      "#### ",
+      strrep("#", header_level),
+      " ",
       header_text,
       " --- One-liner\n\n",
       content[["exec_description"]],
@@ -634,7 +639,8 @@ get_exposure_risk_description <- function(item,
   }
   out <- paste0(
     out,
-    "#### ",
+    strrep("#", header_level),
+    " ",
     header_text,
     " --- Summary\n\n",
     content[["always"]],
@@ -643,7 +649,8 @@ get_exposure_risk_description <- function(item,
   if (materiality == "High") {
     out <- paste0(
       out,
-      "#### ",
+      strrep("#", header_level),
+      " ",
       header_text,
       " --- Details\n\n",
       content[["high_materiality"]],
@@ -694,10 +701,9 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
       products <- unique(type_item_inputs$product)
       out <- paste0(
         out,
-        get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures),
+        get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 3, 1)),
         get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
-        get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical),
-        get_exposure_appendix(item, exposure_classes)
+        get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
       )
     }
   }
@@ -724,6 +730,11 @@ get_section_descriptions <- function(section, additional_pars = list()) {
       out <- paste0(
         out,
         get_references(additional_pars$aggregated_inputs$item, additional_pars$exposure_classes)
+      )
+    } else if (content_function == "get_appendices") {
+      out <- paste0(
+        out,
+        get_appendices(additional_pars$aggregated_inputs$item, additional_pars$exposure_classes)
       )
     } else {
       stop(paste("Invalid content function name", content_function))
@@ -762,6 +773,36 @@ get_references <- function(items, exposure_classes) {
   }
   # Do not show the section if there are no references
   if (out == "# References\n\n") {
+    out <- ""
+  }
+  return(out)
+}
+
+#' Function to produce appendices (as references)
+#'
+#' @inherit get_references
+#'
+get_appendices <- function(items, exposure_classes) {
+  out <- ""
+  if (length(items)) {
+    out <- paste0(
+      out,
+      "# Appendices\n\n"
+    )
+    for (item in items) {
+      if (length(exposure_classes[[item]][["appendix"]])) {
+        out <- paste0(
+          out,
+          "\n\n### ",
+          exposure_classes[[item]][["name"]],
+          "\n\n",
+          exposure_classes[[item]][["appendix"]]
+        )
+      }
+    }
+  }
+  # Do not show the section if there are no references
+  if (out == "# Appendices\n\n") {
     out <- ""
   }
   return(out)
@@ -1046,6 +1087,7 @@ get_executive_summary_scenarios <- function(scenarios, exposure_classes, aggrega
       out,
       "## ",
       scenario$name,
+      "{.unlisted .unnumbered}",
       "\n\n",
       scenario$exec_description,
       "\n\n"
@@ -1250,7 +1292,7 @@ get_executive_summary_exposures <- function(exposure_classes,
                                             inputs,
                                             scenario_no,
                                             exec) {
-  out_exp <- "## Exposures\n\nThis report considers the following exposures:\n\n"
+  out_exp <- "## Exposures{.unlisted .unnumbered}\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
   A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)
@@ -1268,7 +1310,7 @@ get_executive_summary_exposures <- function(exposure_classes,
       )
     }
     item <- aggregated_inputs$item[i]
-    materiality <- aggregated_inputs$materiality[i]
+    materiality <- aggregated_inputs$materiality_num[i]
     if (materiality == "High") {
       high_counter <- high_counter + 1
       out_exp <- paste0(
@@ -1366,7 +1408,7 @@ delete_empty_rows_and_columns <- function(data, empty_strings = list("", "N/A"),
 #' @inherit get_executive_summary
 #'
 get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
-  out <- "## Inputs\n\n"
+  out <- "## Inputs{.unlisted .unnumbered}\n\n"
   for (tab in tabs) {
     if (!is.null(tab$exposure)) {
       ids <- get_input_ids(tab = tab)
