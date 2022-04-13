@@ -77,6 +77,7 @@ server <- function(input, output, session) {
     return(nrow(get_inputs(all_inputs(), input$inst_type)))
   })
   report_message <- reactive({
+    req(input$wizard, input$rep_type)
     if (input$wizard != paste0("page_", tab_name_to_number("report"))) {
       return("Tab not visible")
     }
@@ -94,6 +95,7 @@ server <- function(input, output, session) {
   observeEvent(
     input$wizard == paste0("page_", tab_name_to_number("report")),
     {
+      req(input$wizard, input$rep_type)
       if (input$rep_type == "inst") {
         selection_type_filter <- input$inst_type
         name_of_blank_scenario <- ""

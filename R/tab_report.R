@@ -25,7 +25,8 @@ tab_report_ui <- function() {
       global$report_version,
       selectize = FALSE
     )
-    out <- list(
+    head <- tags$header(
+      img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50),
       div(
         class = "not_too_wide_3col",
         fluidRow(
@@ -36,7 +37,8 @@ tab_report_ui <- function() {
       )
     )
   } else {
-    out <- list(
+    head <- tags$header(
+      img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50),
       div(
         class = "not_too_wide_2col",
         fluidRow(
@@ -46,6 +48,8 @@ tab_report_ui <- function() {
       )
     )
   }
+  # head <- tagAppendAttributes(head, class="fixed")
+  # out <- list(head, div(class="fixheight"))
   if (!rmarkdown::pandoc_available()) {
     warning("Pandoc (required to render rtf) not available, hiding download report button")
     out <- c(out, list(uiOutput("html_report")))
