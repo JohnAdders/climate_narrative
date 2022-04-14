@@ -965,10 +965,6 @@ format_images <- function(filename, target_width = 7, target_width_units = c("in
       width_in <- width_px / image_attributes$dpi[1]
       height_in <- height_px / image_attributes$dpi[2]
       target_width_after_max <- pmin(target_width, max_height/height_in*width_in)
-      if(target_width_after_max!=target_width){
-        print(image_name)
-        print(target_width_after_max)
-      }
       if (fix_width && width_px > min_pixels_to_rescale) {
         markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
       } else if (target_width_units == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
@@ -1075,8 +1071,8 @@ rtf_postprocess <- function(filename, report_version) {
 add_path_to_graphs <- function(x) {
   path <- system.file("www", package = "climate.narrative")
   if (path == "") {
-    path <- "/inst/www"
-    #path <- paste0(getwd(), "/inst/www")
+    #path <- "/inst/www"
+    path <- paste0(getwd(), "/inst/www")
   }
   gsub(
     "\\(([[:graph:]]*)(.png)",
