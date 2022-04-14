@@ -169,7 +169,6 @@ produce_report <- function(all_inputs, settings) {
   if (image_settings$image_width_fix) {
     format_images(render_settings$md_file, image_settings)
   }
-  print(render_settings)
   rmarkdown::render(
     input = render_settings$md_file,
     output_file = render_settings$output_file,
