@@ -1064,11 +1064,15 @@ rtf_postprocess <- function(filename, report_version) {
 #' @return updated text
 #'
 add_path_to_graphs <- function(x) {
+  path <- system.file("www", package = "climate.narrative")
+  if (path == "") {
+    path <- paste0(getwd(), "/inst/www")
+  }
   gsub(
     "\\(([[:graph:]]*)(.png)",
     paste0(
       "(",
-      system.file("www", package = "climate.narrative"),
+      path,
       "/",
       "\\1\\2"
     ),
