@@ -4,7 +4,14 @@
 \alias{format_images}
 \title{Go through the markdown file, find all png images and scale down where relevant}
 \usage{
-format_images(md_file, image_settings)
+format_images(
+  filename,
+  target_width = 7,
+  target_width_units = c("in", "\%"),
+  fix_width,
+  min_pixels_to_rescale = 300,
+  max_height = 4
+)
 }
 \arguments{
 \item{filename}{markdown file to process}
