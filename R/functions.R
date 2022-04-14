@@ -690,7 +690,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
       if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])) {
         out <- paste0(
           out,
-          "## ",
+          "# ",
           ifelse(aggregated_table$A_or_L[i] == "A", "Assets", "Liabilities"),
           "\n\n"
         )
@@ -701,7 +701,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
       products <- unique(type_item_inputs$product)
       out <- paste0(
         out,
-        get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 3, 1)),
+        get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 2, 1)),
         get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
         get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
       )
