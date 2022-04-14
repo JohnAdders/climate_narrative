@@ -1597,19 +1597,13 @@ html_postprocess <- function(file, report_version) {
   temp <- readLines(file_conn)
   www_path <- system.file("www", package = "climate.narrative")
   if (www_path == ""){
-    # workaround as path search not possible
-    temp <- gsub(
-      'img src="',
-      'img src="climate_narrative',
-      temp
-    )
-  } else {
-    temp <- gsub(
-      www_path,
-      "climate_narrative",
-      temp
-    )
-  }
+    www_path <- paste0(getwd(), "/inst/www")
+  } 
+  temp <- gsub(
+    www_path,
+    "climate_narrative",
+    temp
+  )
   if (report_version >= 2 && report_version <= 5) {
     temp <- gsub(
       "(<h[1-5]?>)(.*)(</h[1-5]?>)",
