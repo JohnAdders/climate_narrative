@@ -954,6 +954,9 @@ ensure_images_fit_page <- function(filename, target_width = 7, target_width_unit
   graph_lines <- grep("^!\\[", markdown)
   for (i in graph_lines) {
     image_name <- substring(stringi::stri_match_first(markdown[i], regex = "\\([[:graph:]]*.png"), 2)
+    if (!file.exists(image_name)) {
+      image_name <- paste0("inst/www", image_name)
+    }
     if (file.exists(image_name)) {
       image_attributes <- attributes(png::readPNG(paste0(image_name), info = TRUE))$info
       if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
