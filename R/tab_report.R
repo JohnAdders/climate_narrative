@@ -90,7 +90,7 @@ tab_report_ui <- function() {
       list(
         textOutput("html_report_message"),
         uiOutput("html_report")
-        ))
+      )
     )
   }
 }
