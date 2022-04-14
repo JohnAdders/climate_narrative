@@ -948,7 +948,7 @@ generic_helper <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-ensure_images_fit_page <- function(filename, target_width = 7, target_width_units = c("in", "%"), fix_width, min_pixels_to_rescale = 300) {
+format_images <- function(filename, target_width = 7, target_width_units = c("in", "%"), fix_width, min_pixels_to_rescale = 300, max_height = 4) {
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[", markdown)
@@ -960,11 +960,20 @@ ensure_images_fit_page <- function(filename, target_width = 7, target_width_unit
     if (file.exists(image_name)) {
       image_attributes <- attributes(png::readPNG(paste0(image_name), info = TRUE))$info
       if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
-      if (fix_width && image_attributes$dim[1] > min_pixels_to_rescale) {
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
+      width_px <- image_attributes$dim[1]
+      height_px <- image_attributes$dim[2]
+      width_in <- width_px / image_attributes$dpi[1]
+      height_in <- height_px / image_attributes$dpi[2]
+      target_width_after_max <- pmin(target_width, max_height/height_in*width_in)
+      if(target_width_after_max!=target_width){
+        print(image_name)
+        print(target_width_after_max)
+      }
+      if (fix_width && width_px > min_pixels_to_rescale) {
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
       } else if (target_width_units == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
-        warning(paste0("image ", image_name, " has width > ", target_width, target_width_units, ", resizing"))
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
+        warning(paste0("image ", image_name, " has width > ", target_width_after_max, target_width_units, ", resizing"))
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
       }
     } else {
       warning(paste0("Image file ", image_name, " does not exist"))

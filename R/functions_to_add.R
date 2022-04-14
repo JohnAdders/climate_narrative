@@ -167,7 +167,7 @@ produce_report <- function(all_inputs, settings) {
   )
   close(file_conn)
   if (image_settings$image_width_fix) {
-    format_images(render_settings$md_file, image_settings)
+    format_images_2(render_settings$md_file, image_settings)
   }
   rmarkdown::render(
     input = render_settings$md_file,
@@ -235,8 +235,8 @@ get_report_contents_2 <- function(content_files, inputs, content_settings) {
   }
 }
 
-format_images <- function(md_file, image_settings) {
-  ensure_images_fit_page(md_file, image_settings$image_width, image_settings$image_width_unit, image_settings$image_width_fix)
+format_images_2 <- function(md_file, image_settings) {
+  format_images(md_file, image_settings$image_width, image_settings$image_width_unit, image_settings$image_width_fix)
 }
 
 postprocess <- function(postprocess_settings) {
