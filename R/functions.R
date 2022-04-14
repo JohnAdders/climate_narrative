@@ -1307,7 +1307,7 @@ get_executive_summary_exposures <- function(exposure_classes,
   out_exp <- "## Exposures{.unlisted .unnumbered}\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
-  A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)
+  A_or_L_header <- (length(unique(aggregated_inputs$A_or_L[aggregated_inputs$materiality_num == "High"])) > 1)
   for (i in 1:nrow(aggregated_inputs)) {
     if (A_or_L_header && (i == 1 || aggregated_inputs$A_or_L[i] != aggregated_inputs$A_or_L[i - 1])) {
       if (high_counter == 0 && i > 1){
