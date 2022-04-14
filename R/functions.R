@@ -25,7 +25,7 @@ remove_special_characters <- function(text, make_camelcase = TRUE) {
 #' @importFrom utils read.csv
 #' @importFrom yaml read_yaml
 #'
-read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_special_characters_from_names = TRUE) {
+read_dir <- function(directory, file_format = "auto", in_package = system.file(directory, package = "climate.narrative") != "", remove_special_characters_from_names = TRUE) {
   if (in_package) directory <- system.file(directory, package = "climate.narrative")
   file_list <- dir(path = directory)
   file_format <- tolower(file_format)
@@ -1583,11 +1583,21 @@ html_postprocess <- function(file, report_version) {
   # replace back the images links
   file_conn <- file(file)
   temp <- readLines(file_conn)
-  temp <- gsub(
-    system.file("www", package = "climate.narrative"),
-    "climate_narrative",
-    temp
-  )
+  image_path <- system.file("www", package = "climate.narrative")
+  if (image_path == ""){
+    # workaround as path search not possible
+    temp <- gsub(
+      'img src="',
+      'img src="climate_narrative',
+      temp
+    )
+  } else {
+    temp <- gsub(
+      image_path,
+      "climate_narrative",
+      temp
+    )
+  }
   if (report_version >= 2 && report_version <= 5) {
     temp <- gsub(
       "(<h[1-5]?>)(.*)(</h[1-5]?>)",

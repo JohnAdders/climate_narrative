@@ -61,11 +61,15 @@ get_report_settings <- function(content_files,
       )
     }
   } else {
+    www_path <- system.file("www", package = "climate.narrative")
+    if (www_path == "") {
+      www_path <- "inst/www"
+    }
     output_format <- rmarkdown::rtf_document(
       toc = TRUE,
       toc_depth = 2,
       pandoc_args = c(
-        paste0("--resource-path=", system.file("www", package = "climate.narrative")),
+        paste0("--resource-path=", www_path),
         "--self-contained"
       )
     )
@@ -93,7 +97,13 @@ get_report_settings <- function(content_files,
     exec_summary_layout = exec_summary_layout,
     rep_type = rep_type
   )
-
+  lib_path <- system.file(
+    "www/lib",
+    package = "climate.narrative"
+  )
+  if (lib_path == "") {
+    lib_path <- "inst/www/lib"
+  }
   render_settings <- list(
     md_file = md_file,
     output_file = output_file,
