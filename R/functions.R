@@ -964,7 +964,7 @@ format_images <- function(filename, target_width = 7, target_width_units = c("in
       height_px <- image_attributes$dim[2]
       width_in <- width_px / image_attributes$dpi[1]
       height_in <- height_px / image_attributes$dpi[2]
-      target_width_after_max <- pmin(target_width, max_height/height_in*width_in)
+      target_width_after_max <- round(pmin(target_width, max_height / height_in * width_in), 2)
       if (fix_width && width_px > min_pixels_to_rescale) {
         markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
       } else if (target_width_units == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
@@ -1069,16 +1069,15 @@ rtf_postprocess <- function(filename, report_version) {
 #' @return updated text
 #'
 add_path_to_graphs <- function(x) {
-  path <- system.file("www", package = "climate.narrative")
-  if (path == "") {
-    #path <- "/inst/www"
-    path <- paste0(getwd(), "/inst/www")
+  www_path <- system.file("www", package = "climate.narrative")
+  if (www_path == "") {
+    www_path <- paste0(getwd(), "/inst/www")
   }
   gsub(
     "\\(([[:graph:]]*)(.png)",
     paste0(
       "(",
-      path,
+      www_path,
       "/",
       "\\1\\2"
     ),
@@ -1596,8 +1595,8 @@ html_postprocess <- function(file, report_version) {
   # replace back the images links
   file_conn <- file(file)
   temp <- readLines(file_conn)
-  image_path <- system.file("www", package = "climate.narrative")
-  if (image_path == ""){
+  www_path <- system.file("www", package = "climate.narrative")
+  if (www_path == ""){
     # workaround as path search not possible
     temp <- gsub(
       'img src="',
@@ -1606,7 +1605,7 @@ html_postprocess <- function(file, report_version) {
     )
   } else {
     temp <- gsub(
-      image_path,
+      www_path,
       "climate_narrative",
       temp
     )
