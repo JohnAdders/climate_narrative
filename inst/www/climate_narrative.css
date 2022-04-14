@@ -62,3 +62,10 @@ div.main-container{
 .fixheight{
     height: 100px;
 }
+
+.scrollable {
+    /*height: 400px;*/
+    height: 50vh;
+    overflow-y: scroll;
+    color:darkred;
+}

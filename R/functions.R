@@ -194,7 +194,7 @@ exposure_grid_server <- function(input,
                                  label,
                                  dev = FALSE,
                                  width = NULL) {
-  transpose <- (ncol(exposure_matrix) > 3)
+  transpose <- (ncol(exposure_matrix) > 3 & nrow(exposure_matrix) > 1)
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
   input_ids <- get_input_ids(exposure_matrix, label)
@@ -1348,7 +1348,7 @@ get_executive_summary_exposures <- function(exposure_classes,
     out_exp <- paste0(out_exp, "None\n\n")
   }
   out_exp <- paste0(out_exp, "### Other exposures\n\n")
-  less_material <- aggregated_inputs[aggregated_inputs$materiality != "High", ]
+  less_material <- aggregated_inputs[aggregated_inputs$materiality_num != "High", ]
   if (nrow(less_material)) {
     less_material$risk.description <- rep(NA, nrow(less_material))
     less_material$name <- rep(NA, nrow(less_material))
@@ -1429,7 +1429,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
       colnames(values)[1] <- ""
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols = 1)
       if (!is.null(values_trimmed)) {
-        transpose <- (ncol(tab$exposure) > 3)
+        transpose <- (ncol(tab$exposure) > 3 & nrow(tab$exposure) > 1)
         if (transpose) {
           values_trimmed <- as.data.frame(t(values_trimmed))
           row_names <- rownames(values_trimmed)
