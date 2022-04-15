@@ -84,7 +84,8 @@ tab_report_ui <- function() {
   head <- tags$header(
     img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50),
     dropdown_part,
-    button_part
+    button_part,
+    p(HTML("&nbsp;"))
   )
   head <- tagAppendAttributes(head, class="fixed")
   out <- list(

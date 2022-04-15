@@ -57,7 +57,7 @@ div.main-container{
 
 .fixed{
     position: fixed;
-    height: 160px;
+    height: 14em;
     width: 100%;
     background-color: white;
     z-index: 2;
@@ -68,5 +68,9 @@ div.main-container{
 }
 
 .fixheight{
-    height: 180px;
+    height: 15em;
+}
+
+div.tocify{
+    max-height: 60%;
 }
