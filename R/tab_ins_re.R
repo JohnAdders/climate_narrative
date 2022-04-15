@@ -1,3 +1,3 @@
-tab_bank_re_helper <- function() {
+tab_ins_re_helper <- function() {
   generic_helper("asset")
 }
