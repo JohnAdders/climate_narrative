@@ -57,15 +57,16 @@ div.main-container{
 
 .fixed{
     position: fixed;
+    height: 160px;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+}
+
+.bottomlayer{
+    z-index: 1;
 }
 
 .fixheight{
-    height: 100px;
-}
-
-.scrollable {
-    /*height: 400px;*/
-    height: 50vh;
-    overflow-y: scroll;
-    color:darkred;
+    height: 180px;
 }
