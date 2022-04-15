@@ -945,6 +945,8 @@ generic_helper <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' only the larger images will be scaled down
 #' @param min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
 #' this is to prevent ugly look of upscaled low resolution images
+#' @param max_height maximum height of picture after rescaling. Another mechanism to prevent
+#' too large upscaled pictures (in particular square or portrait layout)
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'

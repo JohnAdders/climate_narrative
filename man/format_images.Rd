@@ -26,6 +26,9 @@ only the larger images will be scaled down}
 
 \item{min_pixels_to_rescale}{for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
 this is to prevent ugly look of upscaled low resolution images}
+
+\item{max_height}{maximum height of picture after rescaling. Another mechanism to prevent
+too large upscaled pictures (in particular square or portrait layout)}
 }
 \value{
 NULL, changes file specified as an argument in place
