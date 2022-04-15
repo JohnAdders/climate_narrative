@@ -497,7 +497,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 #'
 #' @importFrom stats aggregate
 #'
-get_exposure_description <- function(item, type_item_inputs, exposure_classes, include_exposures, header_level=2) {
+get_exposure_description <- function(item, type_item_inputs, exposure_classes, include_exposures, header_level = 2) {
   if (is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
@@ -1019,9 +1019,9 @@ rtf_fix_table_of_contents <- function(filename) {
       "}"
     )
     # Limit of 40 characters!
-    if (nchar(bookmark_text) > 40){
+    if (nchar(bookmark_text) > 40) {
       warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
-      rtf <- gsub(bookmark_text, substr(bookmark_text,1,40), rtf)
+      rtf <- gsub(bookmark_text, substr(bookmark_text, 1, 40), rtf)
     }
   }
   writeLines(rtf, file_conn)
@@ -1203,7 +1203,7 @@ get_section_no <- function(sections, is_rtf, rep_type) {
     indicator_function <- function(s) s$include_in_HTML
   }
   # if relevant, additionally check rep_type condition
-  if (!is.null(rep_type)){
+  if (!is.null(rep_type)) {
     indicator_function_2 <- function(s) {
       if (is.null(s$rep_type)) {
         return(indicator_function(s))
@@ -1310,7 +1310,7 @@ get_executive_summary_exposures <- function(exposure_classes,
   A_or_L_header <- (length(unique(aggregated_inputs$A_or_L[aggregated_inputs$materiality_num == "High"])) > 1)
   for (i in 1:nrow(aggregated_inputs)) {
     if (A_or_L_header && (i == 1 || aggregated_inputs$A_or_L[i] != aggregated_inputs$A_or_L[i - 1])) {
-      if (high_counter == 0 && i > 1){
+      if (high_counter == 0 && i > 1) {
         out_exp <- paste0(out_exp, "None\n\n")
       }
       high_counter <- 0
@@ -1596,9 +1596,9 @@ html_postprocess <- function(file, report_version) {
   file_conn <- file(file)
   temp <- readLines(file_conn)
   www_path <- system.file("www", package = "climate.narrative")
-  if (www_path == ""){
+  if (www_path == "") {
     www_path <- paste0(getwd(), "/inst/www")
-  } 
+  }
   temp <- gsub(
     www_path,
     "climate_narrative",

@@ -220,7 +220,7 @@ server <- function(input, output, session) {
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
-    content = function(file, res_path = ifelse(system.file("www", package = "climate.narrative")=="", "inst/www", system.file("www", package = "climate.narrative"))) {
+    content = function(file, res_path = ifelse(system.file("www", package = "climate.narrative") == "", "inst/www", system.file("www", package = "climate.narrative"))) {
       showModal(
         modalDialog(
           "Report rendering in progress... when complete your download will start automatically",
@@ -272,7 +272,7 @@ server <- function(input, output, session) {
 
   output$dev_report <- downloadHandler(
     filename = "All_Outputs.rtf",
-    content = function(file, res_path = ifelse(system.file("www", package = "climate.narrative")=="", "inst/www", system.file("www", package = "climate.narrative"))) {
+    content = function(file, res_path = ifelse(system.file("www", package = "climate.narrative") == "", "inst/www", system.file("www", package = "climate.narrative"))) {
       showModal(
         modalDialog(
           "Report rendering in progress... when complete your download will start automatically",
@@ -312,7 +312,7 @@ server <- function(input, output, session) {
 
   output$dev_report_2 <- downloadHandler(
     filename = "Sectors_Output.rtf",
-    content = function(file, res_path = ifelse(system.file("www", package = "climate.narrative")=="", "inst/www", system.file("www", package = "climate.narrative"))) {
+    content = function(file, res_path = ifelse(system.file("www", package = "climate.narrative") == "", "inst/www", system.file("www", package = "climate.narrative"))) {
       showModal(
         modalDialog(
           "Report rendering in progress... when complete your download will start automatically",

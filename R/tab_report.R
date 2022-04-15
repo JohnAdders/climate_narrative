@@ -42,10 +42,9 @@ tab_report_ui <- function() {
       )
     )
   }
-  empty_space <- div(class="fixheight")
+  empty_space <- div(class = "fixheight")
   if (!rmarkdown::pandoc_available()) {
     stop("Pandoc (required to render rtf) not available")
-  
   }
   button_1 <- conditionalPanel(
     'output.html_report_message == ""',
@@ -87,7 +86,7 @@ tab_report_ui <- function() {
     button_part,
     p(HTML("&nbsp;"))
   )
-  head <- tagAppendAttributes(head, class="fixed")
+  head <- tagAppendAttributes(head, class = "fixed")
   out <- list(
     head,
     empty_space,
