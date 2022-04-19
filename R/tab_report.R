@@ -62,7 +62,6 @@ tab_report_ui <- function() {
       )
     )
   }
-  empty_space <- div(class = "fixheight")
   main_part <- div(
     class = "bottomlayer",
     list(
@@ -74,12 +73,20 @@ tab_report_ui <- function() {
     img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50),
     dropdown_part
   )
-  head <- tagAppendAttributes(head, class = "fixed")
-  out <- list(
-    head,
-    empty_space,
-    main_part
-  )
+  if (global$report_version >= 6) {
+    empty_space <- div(class = "fixheight")
+    head <- tagAppendAttributes(head, class = "fixed")
+    out <- list(
+      head,
+      empty_space,
+      main_part
+    )
+  } else {
+    out <- list(
+      head,
+      main_part
+    )
+  }
 }
 
 tab_report_server <- function(input, output, session, tab) {
