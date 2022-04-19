@@ -25,7 +25,7 @@ remove_special_characters <- function(text, make_camelcase = TRUE) {
 #' @importFrom utils read.csv
 #' @importFrom yaml read_yaml
 #'
-read_dir <- function(directory, file_format = "auto", in_package = TRUE, remove_special_characters_from_names = TRUE) {
+read_dir <- function(directory, file_format = "auto", in_package = system.file(directory, package = "climate.narrative") != "", remove_special_characters_from_names = TRUE) {
   if (in_package) directory <- system.file(directory, package = "climate.narrative")
   file_list <- dir(path = directory)
   file_format <- tolower(file_format)
@@ -194,7 +194,7 @@ exposure_grid_server <- function(input,
                                  label,
                                  dev = FALSE,
                                  width = NULL) {
-  transpose <- (ncol(exposure_matrix) > 3)
+  transpose <- (ncol(exposure_matrix) > 3 & nrow(exposure_matrix) > 1)
   layout <- matrix("", nrow = nrow(exposure_matrix), ncol = ncol(exposure_matrix) - 1)
   colnames(layout) <- colnames(exposure_matrix)[-(2)]
   input_ids <- get_input_ids(exposure_matrix, label)
@@ -497,7 +497,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 #'
 #' @importFrom stats aggregate
 #'
-get_exposure_description <- function(item, type_item_inputs, exposure_classes, include_exposures, header_level=2) {
+get_exposure_description <- function(item, type_item_inputs, exposure_classes, include_exposures, header_level = 2) {
   if (is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
   # conversion from factor back to string to ensure proper printing below
@@ -690,7 +690,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
       if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])) {
         out <- paste0(
           out,
-          "## ",
+          "# ",
           ifelse(aggregated_table$A_or_L[i] == "A", "Assets", "Liabilities"),
           "\n\n"
         )
@@ -701,7 +701,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
       products <- unique(type_item_inputs$product)
       out <- paste0(
         out,
-        get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 3, 1)),
+        get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 2, 1)),
         get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
         get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
       )
@@ -945,23 +945,33 @@ generic_helper <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' only the larger images will be scaled down
 #' @param min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
 #' this is to prevent ugly look of upscaled low resolution images
+#' @param max_height maximum height of picture after rescaling. Another mechanism to prevent
+#' too large upscaled pictures (in particular square or portrait layout)
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-ensure_images_fit_page <- function(filename, target_width = 7, target_width_units = c("in", "%"), fix_width, min_pixels_to_rescale = 300) {
+format_images <- function(filename, target_width = 7, target_width_units = c("in", "%"), fix_width, min_pixels_to_rescale = 300, max_height = 4) {
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[", markdown)
   for (i in graph_lines) {
     image_name <- substring(stringi::stri_match_first(markdown[i], regex = "\\([[:graph:]]*.png"), 2)
+    if (!file.exists(image_name)) {
+      image_name <- paste0("inst/www", image_name)
+    }
     if (file.exists(image_name)) {
       image_attributes <- attributes(png::readPNG(paste0(image_name), info = TRUE))$info
       if (is.null(image_attributes$dpi)) image_attributes$dpi <- c(96, 96)
-      if (fix_width && image_attributes$dim[1] > min_pixels_to_rescale) {
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
+      width_px <- image_attributes$dim[1]
+      height_px <- image_attributes$dim[2]
+      width_in <- width_px / image_attributes$dpi[1]
+      height_in <- height_px / image_attributes$dpi[2]
+      target_width_after_max <- round(pmin(target_width, max_height / height_in * width_in), 2)
+      if (fix_width && width_px > min_pixels_to_rescale) {
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
       } else if (target_width_units == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
-        warning(paste0("image ", image_name, " has width > ", target_width, target_width_units, ", resizing"))
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width, target_width_units, " }")
+        warning(paste0("image ", image_name, " has width > ", target_width_after_max, target_width_units, ", resizing"))
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
       }
     } else {
       warning(paste0("Image file ", image_name, " does not exist"))
@@ -1011,9 +1021,9 @@ rtf_fix_table_of_contents <- function(filename) {
       "}"
     )
     # Limit of 40 characters!
-    if (nchar(bookmark_text) > 40){
+    if (nchar(bookmark_text) > 40) {
       warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
-      rtf <- gsub(bookmark_text, substr(bookmark_text,1,40), rtf)
+      rtf <- gsub(bookmark_text, substr(bookmark_text, 1, 40), rtf)
     }
   }
   writeLines(rtf, file_conn)
@@ -1061,11 +1071,15 @@ rtf_postprocess <- function(filename, report_version) {
 #' @return updated text
 #'
 add_path_to_graphs <- function(x) {
+  www_path <- system.file("www", package = "climate.narrative")
+  if (www_path == "") {
+    www_path <- paste0(getwd(), "/inst/www")
+  }
   gsub(
     "\\(([[:graph:]]*)(.png)",
     paste0(
       "(",
-      system.file("www", package = "climate.narrative"),
+      www_path,
       "/",
       "\\1\\2"
     ),
@@ -1191,7 +1205,7 @@ get_section_no <- function(sections, is_rtf, rep_type) {
     indicator_function <- function(s) s$include_in_HTML
   }
   # if relevant, additionally check rep_type condition
-  if (!is.null(rep_type)){
+  if (!is.null(rep_type)) {
     indicator_function_2 <- function(s) {
       if (is.null(s$rep_type)) {
         return(indicator_function(s))
@@ -1295,10 +1309,10 @@ get_executive_summary_exposures <- function(exposure_classes,
   out_exp <- "## Exposures{.unlisted .unnumbered}\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
-  A_or_L_header <- (length(unique(aggregated_inputs$A_or_L)) > 1)
+  A_or_L_header <- (length(unique(aggregated_inputs$A_or_L[aggregated_inputs$materiality_num == "High"])) > 1)
   for (i in 1:nrow(aggregated_inputs)) {
     if (A_or_L_header && (i == 1 || aggregated_inputs$A_or_L[i] != aggregated_inputs$A_or_L[i - 1])) {
-      if (high_counter == 0 && i > 1){
+      if (high_counter == 0 && i > 1) {
         out_exp <- paste0(out_exp, "None\n\n")
       }
       high_counter <- 0
@@ -1336,7 +1350,7 @@ get_executive_summary_exposures <- function(exposure_classes,
     out_exp <- paste0(out_exp, "None\n\n")
   }
   out_exp <- paste0(out_exp, "### Other exposures\n\n")
-  less_material <- aggregated_inputs[aggregated_inputs$materiality != "High", ]
+  less_material <- aggregated_inputs[aggregated_inputs$materiality_num != "High", ]
   if (nrow(less_material)) {
     less_material$risk.description <- rep(NA, nrow(less_material))
     less_material$name <- rep(NA, nrow(less_material))
@@ -1417,7 +1431,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
       colnames(values)[1] <- ""
       values_trimmed <- delete_empty_rows_and_columns(values, ignore_cols = 1)
       if (!is.null(values_trimmed)) {
-        transpose <- (ncol(tab$exposure) > 3)
+        transpose <- (ncol(tab$exposure) > 3 & nrow(tab$exposure) > 1)
         if (transpose) {
           values_trimmed <- as.data.frame(t(values_trimmed))
           row_names <- rownames(values_trimmed)
@@ -1583,8 +1597,12 @@ html_postprocess <- function(file, report_version) {
   # replace back the images links
   file_conn <- file(file)
   temp <- readLines(file_conn)
+  www_path <- system.file("www", package = "climate.narrative")
+  if (www_path == "") {
+    www_path <- paste0(getwd(), "/inst/www")
+  }
   temp <- gsub(
-    system.file("www", package = "climate.narrative"),
+    www_path,
     "climate_narrative",
     temp
   )

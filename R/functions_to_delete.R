@@ -13,7 +13,7 @@ write_report_to_file <- function(report_contents, tempfile, fix_image_width = FA
   )
   close(file_conn)
   if (fix_image_width) {
-    ensure_images_fit_page(tempfile, 6, "in", TRUE)
+    format_images(tempfile, 6, "in", TRUE)
   }
   return(invisible(NULL))
 }

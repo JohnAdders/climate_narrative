@@ -8,7 +8,7 @@ Handles yaml/csv/R files.}
 read_dir(
   directory,
   file_format = "auto",
-  in_package = TRUE,
+  in_package = system.file(directory, package = "climate.narrative") != "",
   remove_special_characters_from_names = TRUE
 )
 }

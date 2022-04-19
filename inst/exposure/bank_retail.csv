@@ -1,3 +1,2 @@
-Type,product,Unsecured Retail Lending
-Revenue generating,loans,unsecured_retail_lending
-Non revenue generating,loans,unsecured_retail_lending
+Type,product,Revenue generating,Non revenue generating
+Unsecured Retail Lending,loans,unsecured_retail_lending,unsecured_retail_lending
