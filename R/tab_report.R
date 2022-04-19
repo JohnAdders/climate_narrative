@@ -25,70 +25,73 @@ tab_report_ui <- function() {
       global$report_version,
       selectize = FALSE
     )
-    out <- list(
-      div(
-        class = "not_too_wide_3col",
-        fluidRow(
-          column(4, dropdown_1),
-          column(4, dropdown_2),
-          column(4, dropdown_3)
-        )
+    dropdown_part <- div(
+      class = "not_too_wide_3col",
+      fluidRow(
+        column(4, dropdown_1),
+        column(4, dropdown_2),
+        column(4, dropdown_3)
       )
     )
   } else {
-    out <- list(
-      div(
-        class = "not_too_wide_2col",
-        fluidRow(
-          column(6, dropdown_1),
-          column(6, dropdown_2)
-        )
+    dropdown_part <- div(
+      class = "not_too_wide_2col",
+      fluidRow(
+        column(6, dropdown_1),
+        column(6, dropdown_2)
       )
     )
   }
+  empty_space <- div(class = "fixheight")
   if (!rmarkdown::pandoc_available()) {
-    warning("Pandoc (required to render rtf) not available, hiding download report button")
-    out <- c(out, list(uiOutput("html_report")))
+    stop("Pandoc (required to render rtf) not available")
+  }
+  button_1 <- conditionalPanel(
+    'output.html_report_message == ""',
+    actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
+  )
+  button_2 <- conditionalPanel(
+    'output.html_report_message == ""',
+    downloadButton("report", "Download the selected report as RTF")
+  )
+  button_3 <- actionButton("update_yamls", "Update the report text files")
+  if (global$dev) {
+    button_part <- div(
+      class = "not_too_wide_3col",
+      fluidRow(
+        column(4, button_1),
+        column(4, button_2),
+        column(4, button_3)
+      )
+    )
   } else {
-    button_1 <- conditionalPanel(
-      'output.html_report_message == ""',
-      actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
-    )
-    button_2 <- conditionalPanel(
-      'output.html_report_message == ""',
-      downloadButton("report", "Download the selected report as RTF")
-    )
-    button_3 <- actionButton("update_yamls", "Update the report text files")
-    if (global$dev) {
-      out <- c(out, list(
-        div(
-          class = "not_too_wide_3col",
-          fluidRow(
-            column(4, button_1),
-            column(4, button_2),
-            column(4, button_3)
-          )
-        )
-      ))
-    } else {
-      out <- c(out, list(
-        div(
-          class = "not_too_wide_2col",
-          fluidRow(
-            column(4, button_1),
-            column(4, button_2)
-          )
-        )
-      ))
-    }
-    out <- c(
-      out,
-      list(
-        textOutput("html_report_message"),
-        uiOutput("html_report")
+    button_part <- div(
+      class = "not_too_wide_2col",
+      fluidRow(
+        column(4, button_1),
+        column(4, button_2)
       )
     )
   }
+  main_part <- div(
+    class = "bottomlayer",
+    list(
+      textOutput("html_report_message"),
+      uiOutput("html_report")
+    )
+  )
+  head <- tags$header(
+    img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50),
+    dropdown_part,
+    button_part,
+    p(HTML("&nbsp;"))
+  )
+  head <- tagAppendAttributes(head, class = "fixed")
+  out <- list(
+    head,
+    empty_space,
+    main_part
+  )
 }
 
 tab_report_server <- function(input, output, session, tab) {

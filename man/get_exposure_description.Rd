@@ -8,7 +8,8 @@ get_exposure_description(
   item,
   type_item_inputs,
   exposure_classes,
-  include_exposures
+  include_exposures,
+  header_level = 2
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ get_exposure_description(
 \item{exposure_classes}{List of sectors from which the texts are extracted}
 
 \item{include_exposures}{Whether to include tables with contributing exposures}
+
+\item{header_level}{what level of markdown header should be produced}
 }
 \value{
 markdown-formatted report section (h2)

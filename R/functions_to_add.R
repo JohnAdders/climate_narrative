@@ -44,7 +44,7 @@ get_report_settings <- function(content_files,
     if (report_version >= 6) {
       output_format <- rmarkdown::html_document(
         toc = TRUE,
-        toc_depth = 3,
+        toc_depth = 2,
         toc_float = list(collapsed = FALSE),
         theme = "sandstone",
         self_contained = FALSE,
@@ -54,18 +54,22 @@ get_report_settings <- function(content_files,
     } else {
       output_format <- rmarkdown::html_document(
         toc = TRUE,
-        toc_depth = 3,
+        toc_depth = 2,
         toc_float = FALSE,
         self_contained = FALSE,
         fig_caption = FALSE
       )
     }
   } else {
+    www_path <- system.file("www", package = "climate.narrative")
+    if (www_path == "") {
+      www_path <- paste0(getwd(), "/inst/www")
+    }
     output_format <- rmarkdown::rtf_document(
       toc = TRUE,
-      toc_depth = 3,
+      toc_depth = 2,
       pandoc_args = c(
-        paste0("--resource-path=", system.file("www", package = "climate.narrative")),
+        paste0("--resource-path=", www_path),
         "--self-contained"
       )
     )
@@ -93,7 +97,13 @@ get_report_settings <- function(content_files,
     exec_summary_layout = exec_summary_layout,
     rep_type = rep_type
   )
-
+  lib_path <- system.file(
+    "www/lib",
+    package = "climate.narrative"
+  )
+  if (lib_path == "") {
+    lib_path <- "inst/www/lib"
+  }
   render_settings <- list(
     md_file = md_file,
     output_file = output_file,
@@ -157,7 +167,7 @@ produce_report <- function(all_inputs, settings) {
   )
   close(file_conn)
   if (image_settings$image_width_fix) {
-    format_images(render_settings$md_file, image_settings)
+    format_images_2(render_settings$md_file, image_settings)
   }
   rmarkdown::render(
     input = render_settings$md_file,
@@ -225,8 +235,8 @@ get_report_contents_2 <- function(content_files, inputs, content_settings) {
   }
 }
 
-format_images <- function(md_file, image_settings) {
-  ensure_images_fit_page(md_file, image_settings$image_width, image_settings$image_width_unit, image_settings$image_width_fix)
+format_images_2 <- function(md_file, image_settings) {
+  format_images(md_file, image_settings$image_width, image_settings$image_width_unit, image_settings$image_width_fix)
 }
 
 postprocess <- function(postprocess_settings) {

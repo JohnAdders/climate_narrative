@@ -54,3 +54,23 @@ table td, table th {
 div.main-container{
     max-width: 9999px; /* Override default setting of 1200 in order to use entire wide screen*/
 }
+
+.fixed{
+    position: fixed;
+    height: 14em;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+}
+
+.bottomlayer{
+    z-index: 1;
+}
+
+.fixheight{
+    height: 15em;
+}
+
+div.tocify{
+    max-height: 60%;
+}

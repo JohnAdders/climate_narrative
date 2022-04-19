@@ -1,7 +1,7 @@
 Type,product,Exposure
-Aviation,insurance,aviation
-Casualty,insurance,casualty
-Energy,insurance,energy
-Marine,insurance,marine
-Motor,insurance,motor
-Property,insurance,property
+Aviation,insurance_nonlife,aviation
+Casualty,insurance_nonlife,casualty
+Energy,insurance_nonlife,energy
+Marine,insurance_nonlife,marine
+Motor,insurance_nonlife,motor
+Property,insurance_nonlife,property

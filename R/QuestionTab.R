@@ -3,7 +3,7 @@
 #' Instances are tabs of the questionnaire.
 #' This is a wrapper over any ui and server that handles switching to previous/next tab if relevant
 #' (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).
-QuestionTab <- R6Class(
+QuestionTab <- R6::R6Class(
   "QuestionTab",
   public = list(
     #' @field tab_name name of the tab
@@ -140,9 +140,11 @@ QuestionTab <- R6Class(
       if (self$add_header) {
         tabpanel_params <- add_param(
           tabpanel_params,
-          tag("header", list(
-            img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
-          ))
+          tags$header(
+            list(
+              img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50)
+            )
+          )
         )
       }
       if (!is.null(self$tab_title)) {

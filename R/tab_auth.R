@@ -76,6 +76,9 @@ tab_auth_ui <- function(captcha_code) {
       p("The PRA and FCA have convened and facilitated CFRF discussions but do not accept
         liability for the views expressed in this guide which do not necessarily represent
         the view of the regulators and in any case do not constitute regulatory guidance."),
+      p("The tool references data from the NGFS scenarios which were updated in June 2021.
+        However, the tool has not been endorsed by the NGFS. Users who wish to learn more
+        about the NGFS scenarios are directed to the NGFS scenario portal."),
       p("The information contained in this tool has been written by industry, for industry.
         The recommendations in this guide do not constitute financial or other professional
         advice and should not be relied upon as such."),
