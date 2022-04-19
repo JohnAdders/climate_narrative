@@ -37,9 +37,6 @@
     <loc>/reference/dot-onAttach.html</loc>
   </url>
   <url>
-    <loc>/reference/ensure_images_fit_page.html</loc>
-  </url>
-  <url>
     <loc>/reference/exposure_grid_cell.html</loc>
   </url>
   <url>
@@ -49,7 +46,13 @@
     <loc>/reference/exposure_grid_ui.html</loc>
   </url>
   <url>
+    <loc>/reference/format_images.html</loc>
+  </url>
+  <url>
     <loc>/reference/generic_helper.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_appendices.html</loc>
   </url>
   <url>
     <loc>/reference/get_executive_summary.html</loc>
