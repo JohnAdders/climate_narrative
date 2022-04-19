@@ -1005,11 +1005,17 @@ rtf_fix_table_of_contents <- function(filename) {
   for (i in hyperlink_lines) {
     bookmark_text <- stringi::stri_match_first(rtf[i], regex = "HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
     bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text) - 4)
-    bookmark_row <- grep(
-      paste0(" ", rtf[i + 1], "\\p"),
+    bookmark_rows <- grep(
+      paste0("[[:digit:]]", " ", rtf[i + 1], "\\\\p"),
       rtf[search_position:length(rtf)],
-      fixed = TRUE,
-    )[1] + search_position - 1
+      perl = TRUE
+    )
+    if (length(bookmark_rows) > 1) {
+      warning(paste0("Ambiguous table of content entry. Header ", bookmark_text," is not unique, using the first match. Please check the table of content"))
+    } else if (length(bookmark_rows) == 0) {
+      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text," not found"))
+    }
+    bookmark_row <- bookmark_rows[1] + search_position - 1
     search_position <- bookmark_row
     # Appending the bookmark matching the ToC hyperlink
     rtf[bookmark_row] <- paste0(
