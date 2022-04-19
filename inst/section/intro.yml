@@ -29,13 +29,13 @@ description: |
   technology pathways.
 
   For example, the Orderly Below 2&deg;C scenario generates a common carbon price for the global
-  power and transportation sectors. Whereas in the Net Zero 2050 scenario there are regional differences in 
-  carbon price, and in the Divergent Net Zero scenario there are sectoral differences in carbon price. 
-  Similarly, the tool does not provide a mechanism to test how financial exposures may differ if the 
-  solar PV friendly technology pathways of the REMIND model do not come to pass. Relaxing these
-  policy and technology universality assumptions will naturally generate quite different assessments
-  of the climate exposures of different financial securities and assets.
-
+  power and transportation sectors. Whereas in the Net Zero 2050 scenario there are regional differences in carbon price, 
+  and in the Divergent Net Zero scenario there are sectoral differences in carbon price, as well as between, say EU and US 
+  and China. Similarly, the tool does not provide a mechanism to test how financial exposures may differ if the
+  solar PV friendly technology pathways of the REMIND model do not come to pass. Relaxing these policy and technology 
+  universality assumptions will naturally generate quite different assessments of the climate exposures of different financial 
+  securities and assets.
+  
   There are many potential ways to incorporate alternative plausible policy pathways and a wider range of
   technology pathways into climate scenario analyses. See, for example, section 6 of the CFRF 2021 Scenario 
   Analysis Guide which discusses one approach based on some work done by Abrdn  (a UK-based global investment 
@@ -45,6 +45,9 @@ description: |
   those that are dominated by physical risks. This in turn enables financial impairment estimates to be calculated 
   relative to a baseline assessment of what is priced into assets at any given point in time.
 
+  Note that the tool draws transition and physical variables from the NGFS database, which are  just examples of climate impacts and 
+  views across the scientific community are still evolving in some areas. 
+  
   ### What is next?
 
   The tool is housed on the Centre for Greening Finance and Investment climate and environmental data and analytics platform. 
