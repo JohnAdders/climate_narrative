@@ -1,4 +1,7 @@
 tab_report_ui <- function() {
+  if (!rmarkdown::pandoc_available()) {
+    stop("Pandoc (required to render rtf) not available")
+  }
   scenario_options <- c(
     "",
     unname(unlist(lapply(global$scenarios, function(x) x$name)))
@@ -16,8 +19,16 @@ tab_report_ui <- function() {
     sector_options,
     selectize = FALSE
   )
-
+  button_1 <- conditionalPanel(
+    'output.html_report_message == ""',
+    actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
+  )
+  button_2 <- conditionalPanel(
+    'output.html_report_message == ""',
+    downloadButton("report", "Download the selected report as RTF")
+  )
   if (global$dev) {
+    button_3 <- actionButton("update_yamls", "Update the report text files")
     dropdown_3 <- selectInput(
       "version_selection",
       "Select the report version",
@@ -31,6 +42,11 @@ tab_report_ui <- function() {
         column(4, dropdown_1),
         column(4, dropdown_2),
         column(4, dropdown_3)
+      ),
+      fluidRow(
+        column(4, button_1),
+        column(4, button_2),
+        column(4, button_3)
       )
     )
   } else {
@@ -39,40 +55,14 @@ tab_report_ui <- function() {
       fluidRow(
         column(6, dropdown_1),
         column(6, dropdown_2)
-      )
-    )
-  }
-  empty_space <- div(class = "fixheight")
-  if (!rmarkdown::pandoc_available()) {
-    stop("Pandoc (required to render rtf) not available")
-  }
-  button_1 <- conditionalPanel(
-    'output.html_report_message == ""',
-    actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
-  )
-  button_2 <- conditionalPanel(
-    'output.html_report_message == ""',
-    downloadButton("report", "Download the selected report as RTF")
-  )
-  button_3 <- actionButton("update_yamls", "Update the report text files")
-  if (global$dev) {
-    button_part <- div(
-      class = "not_too_wide_3col",
-      fluidRow(
-        column(4, button_1),
-        column(4, button_2),
-        column(4, button_3)
-      )
-    )
-  } else {
-    button_part <- div(
-      class = "not_too_wide_2col",
+      ),
       fluidRow(
         column(4, button_1),
         column(4, button_2)
       )
     )
   }
+  empty_space <- div(class = "fixheight")
   main_part <- div(
     class = "bottomlayer",
     list(
@@ -82,9 +72,7 @@ tab_report_ui <- function() {
   )
   head <- tags$header(
     img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50),
-    dropdown_part,
-    button_part,
-    p(HTML("&nbsp;"))
+    dropdown_part
   )
   head <- tagAppendAttributes(head, class = "fixed")
   out <- list(

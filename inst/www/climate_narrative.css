@@ -65,6 +65,7 @@ div.main-container{
 
 .bottomlayer{
     z-index: 1;
+    min-width: 1000px;
 }
 
 .fixheight{
