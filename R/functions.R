@@ -1759,7 +1759,7 @@ get_report_settings <- function(content_files,
     image_width = 6,
     image_width_unit = "in",
     image_width_fix = TRUE,
-    image_min_pixels_to_rescale = 300
+    image_min_pixels_to_rescale = 300,
     image_max_height = 4
   )
 
