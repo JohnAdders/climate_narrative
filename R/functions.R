@@ -951,8 +951,7 @@ generic_helper <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-format_images <- function(image_settings) {
-  filename <- image_settings$md_file
+format_images <- function(filename, image_settings) {
   target_width <- image_settings$image_width
   target_width_unit <- image_settings$image_width_unit
   fix_width <- image_settings$image_width_fix
@@ -975,10 +974,10 @@ format_images <- function(image_settings) {
       height_in <- height_px / image_attributes$dpi[2]
       target_width_after_max <- round(pmin(target_width, max_height / height_in * width_in), 2)
       if (fix_width && width_px > min_pixels_to_rescale) {
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
-      } else if (target_width_units == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
-        warning(paste0("image ", image_name, " has width > ", target_width_after_max, target_width_units, ", resizing"))
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_unit, " }")
+      } else if (target_width_unit == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
+        warning(paste0("image ", image_name, " has width > ", target_width_after_max, target_width_unit, ", resizing"))
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_unit, " }")
       }
     } else {
       warning(paste0("Image file ", image_name, " does not exist"))
