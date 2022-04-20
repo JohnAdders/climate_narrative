@@ -74,7 +74,7 @@ server <- function(input, output, session) {
     return(out)
   })
   allow_report <- reactive({
-    #return(nrow(get_inputs(all_inputs(), input$inst_type)))
+    # return(nrow(get_inputs(all_inputs(), input$inst_type)))
     return(
       nrow(
         filter_inputs(
@@ -117,7 +117,7 @@ server <- function(input, output, session) {
         name_of_blank_scenario <- "All relevant scenarios"
         name_of_blank_sector <- ""
       }
-      all_relevant_inputs = filter_inputs(
+      all_relevant_inputs <- filter_inputs(
         all_inputs(),
         list(
           inst_type = selection_type_filter,

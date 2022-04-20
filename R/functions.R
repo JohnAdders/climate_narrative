@@ -955,8 +955,8 @@ format_images <- function(filename, image_settings) {
   target_width <- image_settings$image_width
   target_width_unit <- image_settings$image_width_unit
   fix_width <- image_settings$image_width_fix
-  min_pixels_to_rescale = image_settings$image_min_pixels_to_rescale
-  max_height = image_settings$image_min_pixels_to_rescale
+  min_pixels_to_rescale <- image_settings$image_min_pixels_to_rescale
+  max_height <- image_settings$image_min_pixels_to_rescale
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[", markdown)
@@ -1017,9 +1017,9 @@ rtf_fix_table_of_contents <- function(filename) {
       perl = TRUE
     )
     if (length(bookmark_rows) > 1) {
-      warning(paste0("Ambiguous table of content entry. Header ", bookmark_text," is not unique, using the first match. Please check the table of content"))
+      warning(paste0("Ambiguous table of content entry. Header ", bookmark_text, " is not unique, using the first match. Please check the table of content"))
     } else if (length(bookmark_rows) == 0) {
-      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text," not found"))
+      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text, " not found"))
     }
     bookmark_row <- bookmark_rows[1] + search_position - 1
     search_position <- bookmark_row
@@ -1252,16 +1252,16 @@ get_section_no <- function(sections, is_rtf, rep_type) {
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #'
 get_standard_report_contents <- function(tabs,
-                                scenarios,
-                                sections,
-                                exposure_classes,
-                                inputs,
-                                report_version,
-                                report_scenario_selection,
-                                is_rtf,
-                                exec_summary_layout = 1,
-                                include_exposures,
-                                rep_type = NULL) {
+                                         scenarios,
+                                         sections,
+                                         exposure_classes,
+                                         inputs,
+                                         report_version,
+                                         report_scenario_selection,
+                                         is_rtf,
+                                         exec_summary_layout = 1,
+                                         include_exposures,
+                                         rep_type = NULL) {
   aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(scenarios, report_scenario_selection, is_rtf)
   section_no <- get_section_no(sections, is_rtf, rep_type)
@@ -1606,6 +1606,13 @@ include_markdown_section <- function(output, output_name, section_name) {
   })
 }
 
+#' Process the HTML file manually to correct some known issues
+#'
+#' Includes fixing image links (so they work in shiny)
+#' and adding arrow to all headers (report version 5 only)
+#'
+#' @param file the location of HTML file
+#' @param report_version the parameter driving the changes
 html_postprocess <- function(file, report_version) {
   # replace back the images links
   file_conn <- file(file)
