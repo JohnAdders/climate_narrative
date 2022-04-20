@@ -586,7 +586,7 @@ get_exposure_appendix <- function(item, exposure_classes) {
 #' Lower level report helper function responsible for single risk
 #' (transition/physical) description.
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param item Exposure class name
 #' @param products Product name
 #' @param materiality Materiality of item
@@ -748,7 +748,7 @@ get_section_descriptions <- function(section, additional_pars = list()) {
 
 #' Function to produce references section (for all items)
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param items vector of items to get references for
 #' @return markdown-formatted references section (h2)
 #'
@@ -1193,7 +1193,7 @@ get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_
 
 #' Helper function that translate the value of input field to the scenario number(s)
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @return vector of integers
 #'
 get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
@@ -1207,7 +1207,7 @@ get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
 
 #' Helper function that returns non-scenario section number(s)
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param sections List of non-scenario report sections
 #'
 get_section_no <- function(sections, is_rtf, rep_type) {
@@ -1251,7 +1251,7 @@ get_section_no <- function(sections, is_rtf, rep_type) {
 #' @param rep_type additional possibility to filter report sections, by default (NULL) no filtering
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #'
-get_report_contents <- function(tabs,
+get_standard_report_contents <- function(tabs,
                                 scenarios,
                                 sections,
                                 exposure_classes,
@@ -1481,7 +1481,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
 
 #' Karnan's request for easier change comparison - single sector
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param item sector name
 #'
 get_exposure_test_description <- function(exposure_classes, item) {
@@ -1507,7 +1507,7 @@ get_exposure_test_description <- function(exposure_classes, item) {
 
 #' Karnan's request for easier change comparison - loop over all sectors
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #'
 get_test_report <- function(exposure_classes) {
   out <- "# Test report\n\n"
@@ -1794,7 +1794,7 @@ produce_report <- function(all_inputs, settings) {
   image_settings <- settings$image_settings
   postprocess_settings <- settings$postprocess_settings
   inputs <- filter_inputs(all_inputs, filter_settings)
-  report_contents <- get_report_contents_2(
+  report_contents <- get_report_contents(
     content_files,
     inputs,
     content_settings
@@ -1848,10 +1848,10 @@ filter_inputs <- function(all_inputs_table, filter_settings) {
   get_inputs(all_inputs_table, filter_settings$inst_type, filter_settings$report_sector_selection, FALSE, filter_settings$override_materiality)
 }
 
-get_report_contents_2 <- function(content_files, inputs, content_settings) {
+get_report_contents <- function(content_files, inputs, content_settings) {
   if (content_settings$rep_type %in% c("inst", "sect")) {
     return(
-      get_report_contents(
+      get_standard_report_contents(
         content_files$tabs,
         content_files$scenarios,
         content_files$sections,
