@@ -161,57 +161,7 @@ server <- function(input, output, session) {
           result <- includeHTML(temp_html)
           output$html_report <- renderUI(result) # used to be: return(result)
         } else { # old code below
-          if (input$rep_type == "inst") {
-            inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection, FALSE)
-            include_exposures <- TRUE
-            if (input$report_sector_selection == "") {
-              exec_summary_layout <- 1
-            } else {
-              exec_summary_layout <- 2
-            }
-          } else {
-            exec_summary_layout <- 2
-            inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
-            include_exposures <- FALSE
-          }
-          if (global$report_version <= 5) {
-            output_format <- rmarkdown::html_document(
-              toc = TRUE,
-              toc_float = FALSE,
-              toc_depth = 2,
-              self_contained = FALSE,
-              fig_caption = FALSE
-            )
-          } else {
-            output_format <- rmarkdown::html_document(
-              toc = TRUE,
-              toc_float = list(collapsed = FALSE),
-              theme = "sandstone",
-              toc_depth = 2,
-              self_contained = TRUE,
-              fig_caption = FALSE
-            )
-          }
-          write_report_to_file(
-            get_report_contents(
-              global$tabs,
-              global$scenarios,
-              global$sections,
-              global$exposure_classes,
-              inputs,
-              global$report_version,
-              input$report_scenario_selection,
-              FALSE,
-              exec_summary_layout,
-              include_exposures
-            ),
-            session$userData$temp_md_scenario,
-            (global$report_version >= 4)
-          )
-          render_html(session$userData$temp_md_scenario, temp_html, global$report_version)
-          result <- includeHTML(temp_html)
-          removeModal()
-          output$html_report <- renderUI(result) # used to be: return(result)
+          stop("Error. Report version < 5 removed")
         }
       }
     }
@@ -234,38 +184,7 @@ server <- function(input, output, session) {
         removeModal()
         file.copy(session$userData$temp_rtf, file)
       } else { # old code below
-        if (input$rep_type == "inst") {
-          inputs <- get_inputs(all_inputs(), input$inst_type, input$report_sector_selection)
-          include_exposures <- TRUE
-          if (input$report_sector_selection == "") {
-            exec_summary_layout <- 1
-          } else {
-            exec_summary_layout <- 2
-          }
-        } else {
-          exec_summary_layout <- 2
-          inputs <- get_inputs(all_inputs(), "", input$report_sector_selection, FALSE, "High")
-          include_exposures <- FALSE
-        }
-        write_report_to_file(
-          get_report_contents(
-            global$tabs,
-            global$scenarios,
-            global$sections,
-            global$exposure_classes,
-            inputs,
-            global$report_version,
-            input$report_scenario_selection,
-            TRUE,
-            exec_summary_layout,
-            include_exposures
-          ),
-          session$userData$temp_md_scenario_and_commons,
-          (global$report_version >= 4)
-        )
-        render_rtf(session$userData$temp_md_scenario_and_commons, session$userData$temp_rtf, res_path, global$report_version)
-        removeModal()
-        file.copy(session$userData$temp_rtf, file)
+        stop("Error. Report version < 5 removed")
       }
     }
   )
@@ -286,26 +205,7 @@ server <- function(input, output, session) {
         removeModal()
         file.copy(session$userData$temp_rtf_dev, file)
       } else {
-        temp <- get_report_contents(
-          global$tabs,
-          global$scenarios,
-          global$sections,
-          global$exposure_classes,
-          all_inputs(),
-          global$report_version,
-          input$report_scenario_selection,
-          TRUE,
-          1,
-          TRUE
-        )
-        write_report_to_file(
-          temp,
-          session$userData$temp_md_dev,
-          (global$report_version >= 4)
-        )
-        render_rtf(session$userData$temp_md_dev, session$userData$temp_rtf_dev, res_path, global$report_version)
-        removeModal()
-        file.copy(session$userData$temp_rtf_dev, file)
+        stop("Error. Report version < 5 removed")
       }
     }
   )
@@ -326,15 +226,7 @@ server <- function(input, output, session) {
         removeModal()
         file.copy(session$userData$temp_rtf_dev_2, file)
       } else {
-        temp <- get_test_report(global$exposure_classes)
-        write_report_to_file(
-          temp,
-          session$userData$temp_md_dev_2,
-          (global$report_version >= 4)
-        )
-        render_rtf(session$userData$temp_md_dev_2, session$userData$temp_rtf_dev_2, res_path, global$report_version)
-        removeModal()
-        file.copy(session$userData$temp_rtf_dev_2, file)
+        stop("Error. Report version < 5 removed")
       }
     }
   )
