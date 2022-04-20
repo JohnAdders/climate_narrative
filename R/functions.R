@@ -938,19 +938,26 @@ generic_helper <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' Go through the markdown file, find all png images and scale down where relevant
 #'
 #' @param filename markdown file to process
-#' @param target_width target width of images
+#' @param image_settings the list of necessary setting, comprising of:
+#' - target_width target width of images
 #' default is 7 inches which roughly matches vertical A4 page with margins
-#' @param target_width_units either "in" for inches of "%"
-#' @param fix_width if TRUE all images will be scaled exactly to target_width. otherwise,
+#' - target_width_units either "in" for inches of "%"
+#' - fix_width if TRUE all images will be scaled exactly to target_width. otherwise,
 #' only the larger images will be scaled down
-#' @param min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
+#' - min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
 #' this is to prevent ugly look of upscaled low resolution images
-#' @param max_height maximum height of picture after rescaling. Another mechanism to prevent
+#' - max_height maximum height of picture after rescaling. Another mechanism to prevent
 #' too large upscaled pictures (in particular square or portrait layout)
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-format_images <- function(filename, target_width = 7, target_width_units = c("in", "%"), fix_width, min_pixels_to_rescale = 300, max_height = 4) {
+format_images <- function(image_settings) {
+  filename <- image_settings$md_file
+  target_width <- image_settings$image_width
+  target_width_unit <- image_settings$image_width_unit
+  fix_width <- image_settings$image_width_fix
+  min_pixels_to_rescale = image_settings$image_min_pixels_to_rescale
+  max_height = image_settings$image_min_pixels_to_rescale
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[", markdown)
@@ -1751,7 +1758,9 @@ get_report_settings <- function(content_files,
   image_settings <- list(
     image_width = 6,
     image_width_unit = "in",
-    image_width_fix = TRUE
+    image_width_fix = TRUE,
+    image_min_pixels_to_rescale = 300
+    image_max_height = 4
   )
 
   postprocess_settings <- list(
@@ -1798,7 +1807,7 @@ produce_report <- function(all_inputs, settings) {
   )
   close(file_conn)
   if (image_settings$image_width_fix) {
-    format_images_2(render_settings$md_file, image_settings)
+    format_images(render_settings$md_file, image_settings)
   }
   rmarkdown::render(
     input = render_settings$md_file,
@@ -1866,9 +1875,6 @@ get_report_contents_2 <- function(content_files, inputs, content_settings) {
   }
 }
 
-format_images_2 <- function(md_file, image_settings) {
-  format_images(md_file, image_settings$image_width, image_settings$image_width_unit, image_settings$image_width_fix)
-}
 
 postprocess <- function(postprocess_settings) {
   if (postprocess_settings$file_format == "rtf") {
