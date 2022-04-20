@@ -1522,12 +1522,16 @@ get_test_report <- function(exposure_classes) {
 #' Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities
 #'
 #' @param all_inputs_table data frame of all inputs (usually the reactive expression all_inputs)
-#' @param inst_type institution type to filter (or "" for no filtering)
-#' @param sector sector to filter (or "" for no filtering)
-#' @param aggregate bool, whether to aggregate the inputs by sector
-#' @param override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
+#' @param filter_settings list of relevant setting, comprising of:
+#' - inst_type institution type to filter (or "" for no filtering)
+#' - sector sector to filter (or "" for no filtering)
+#' - aggregate bool, whether to aggregate the inputs by sector
+#' - override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
 #'
-get_inputs <- function(all_inputs_table, inst_type = "", sector = "", aggregate = FALSE, override_materiality = "") {
+filter_inputs <- function(all_inputs_table, filter_settings) {
+  inst_type <- filter_settings$inst_type
+  sector <- filter_settings$report_sector_selection
+  override_materiality <- filter_settings$override_materiality
   out <- all_inputs_table
   if (override_materiality != "") {
     out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
@@ -1538,9 +1542,6 @@ get_inputs <- function(all_inputs_table, inst_type = "", sector = "", aggregate 
   }
   if (sector != "") {
     out <- out[out$item == sector, ]
-  }
-  if (aggregate) {
-    out <- aggregate_inputs(out)
   }
   return(out)
 }
@@ -1843,11 +1844,11 @@ check_required_libraries <- function(render_settings) {
   return(NULL)
 }
 
-# refactored parameter version of existing functions
-filter_inputs <- function(all_inputs_table, filter_settings) {
-  get_inputs(all_inputs_table, filter_settings$inst_type, filter_settings$report_sector_selection, FALSE, filter_settings$override_materiality)
-}
-
+#' Gets either a standard or test report contents
+#'
+#' @param content_files list of all yaml content files
+#' @param inputs user dropdown choices
+#' @param content_settings all configuration options (see get_standard_report_content for details)
 get_report_contents <- function(content_files, inputs, content_settings) {
   if (content_settings$rep_type %in% c("inst", "sect")) {
     return(
@@ -1874,7 +1875,11 @@ get_report_contents <- function(content_files, inputs, content_settings) {
   }
 }
 
-
+#' Wrapper calling either rtf_postprocess or html_postprocess
+#'
+#' @param postprocess_settings a list with:
+#' - file_format (either "rtf" or "html")
+#' - report_version, which is then translated to relevant postprocessing options at lower level
 postprocess <- function(postprocess_settings) {
   if (postprocess_settings$file_format == "rtf") {
     rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)

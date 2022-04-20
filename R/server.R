@@ -74,7 +74,19 @@ server <- function(input, output, session) {
     return(out)
   })
   allow_report <- reactive({
-    return(nrow(get_inputs(all_inputs(), input$inst_type)))
+    #return(nrow(get_inputs(all_inputs(), input$inst_type)))
+    return(
+      nrow(
+        filter_inputs(
+          all_inputs(),
+          list(
+            inst_type = input$inst_type,
+            report_sector_selection = "",
+            override_materiality = ""
+          )
+        )
+      )
+    )
   })
   report_message <- reactive({
     req(input$wizard, input$rep_type)
@@ -105,7 +117,15 @@ server <- function(input, output, session) {
         name_of_blank_scenario <- "All relevant scenarios"
         name_of_blank_sector <- ""
       }
-      sectors_available <- (names(global$exposure_classes) %in% get_inputs(all_inputs(), selection_type_filter)$item)
+      all_relevant_inputs = filter_inputs(
+        all_inputs(),
+        list(
+          inst_type = selection_type_filter,
+          report_sector_selection = "",
+          override_materiality = ""
+        )
+      )
+      sectors_available <- (names(global$exposure_classes) %in% all_relevant_inputs$item)
       sector_choices <- c(
         "",
         names(sapply(global$exposure_classes, `[[`, i = "name"))[sectors_available]

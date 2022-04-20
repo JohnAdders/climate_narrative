@@ -2,52 +2,17 @@
 % Please edit documentation in R/functions.R
 \name{get_report_contents}
 \alias{get_report_contents}
-\title{Function that generates a markdown content of the report}
+\title{Gets either a standard or test report contents}
 \usage{
-get_report_contents(
-  tabs,
-  scenarios,
-  sections,
-  exposure_classes,
-  inputs,
-  report_version,
-  report_scenario_selection,
-  is_rtf,
-  exec_summary_layout = 1,
-  include_exposures,
-  rep_type = NULL
-)
+get_report_contents(content_files, inputs, content_settings)
 }
 \arguments{
-\item{tabs}{List of tabs (required for the executive summary)}
+\item{content_files}{list of all yaml content files}
 
-\item{scenarios}{List of scenarios}
+\item{inputs}{user dropdown choices}
 
-\item{sections}{List of non-scenario report sections}
-
-\item{exposure_classes}{List of exposure classes (sectors)}
-
-\item{inputs}{data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)}
-
-\item{report_version}{enables different versions of the reports within a single code, see global file for possible choices and their meaning}
-
-\item{report_scenario_selection}{(user-friendly) scenario name (or empty string)}
-
-\item{is_rtf}{a flag that triggers several format specific settings:
-\itemize{
-\item TRUE: include non-scenario sections (e.g. intro)
-\item FALSE: include the links to page top (note requires proper report_version as well)
-}}
-
-\item{exec_summary_layout}{determines the structure of the executive summary (see get_executive_summary function)}
-
-\item{include_exposures}{whether to include tables with contributing exposures}
-
-\item{rep_type}{additional possibility to filter report sections, by default (NULL) no filtering}
-}
-\value{
-vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
+\item{content_settings}{all configuration options (see get_standard_report_content for details)}
 }
 \description{
-Function that generates a markdown content of the report
+Gets either a standard or test report contents
 }
