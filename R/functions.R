@@ -838,7 +838,12 @@ heartbeat_footer <- function() {
           " | ",
           a(href = "https://github.com/JohnAdders/climate_narrative/issues?q=is%3Aissue+is%3Aopen+label%3Abug", "Known Issues", target = "_blank"),
           " | ",
-          a(href = "https://github.com/JohnAdders/climate_narrative/wiki/Contributors", "Contributors", target = "_blank")
+          a(href = "https://github.com/JohnAdders/climate_narrative/wiki/Contributors", "Contributors", target = "_blank"),
+          " | ",
+          a(
+            href = "climate_narrative/climate-financial-risk-forum-climate-risk-product-providers-2021.xlsx",
+            "CFRF - Data and Tools Providers"
+          )
         )
       )
     )
@@ -1005,11 +1010,17 @@ rtf_fix_table_of_contents <- function(filename) {
   for (i in hyperlink_lines) {
     bookmark_text <- stringi::stri_match_first(rtf[i], regex = "HYPERLINK \"#[[:graph:]]*\"\\}\\}\\{")
     bookmark_text <- substring(bookmark_text, 13, nchar(bookmark_text) - 4)
-    bookmark_row <- grep(
-      paste0(" ", rtf[i + 1], "\\p"),
+    bookmark_rows <- grep(
+      paste0("[[:digit:]]", " ", rtf[i + 1], "\\\\p"),
       rtf[search_position:length(rtf)],
-      fixed = TRUE,
-    )[1] + search_position - 1
+      perl = TRUE
+    )
+    if (length(bookmark_rows) > 1) {
+      warning(paste0("Ambiguous table of content entry. Header ", bookmark_text," is not unique, using the first match. Please check the table of content"))
+    } else if (length(bookmark_rows) == 0) {
+      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text," not found"))
+    }
+    bookmark_row <- bookmark_rows[1] + search_position - 1
     search_position <- bookmark_row
     # Appending the bookmark matching the ToC hyperlink
     rtf[bookmark_row] <- paste0(
@@ -1099,7 +1110,7 @@ get_executive_summary_scenarios <- function(scenarios, exposure_classes, aggrega
   for (scenario in scenarios[scenario_no]) {
     out <- paste0(
       out,
-      "## ",
+      "## Summary of ",
       scenario$name,
       "{.unlisted .unnumbered}",
       "\n\n",
@@ -1123,7 +1134,7 @@ get_executive_summary_scenarios <- function(scenarios, exposure_classes, aggrega
       }
       out <- paste0(
         out,
-        "##### ",
+        "##### Summary of ",
         exposure_classes[[item]][["name"]],
         "\n\n",
         exposure_classes[[item]][[risk]][[risk_intensity]]["always"],
@@ -1306,7 +1317,7 @@ get_executive_summary_exposures <- function(exposure_classes,
                                             inputs,
                                             scenario_no,
                                             exec) {
-  out_exp <- "## Exposures{.unlisted .unnumbered}\n\nThis report considers the following exposures:\n\n"
+  out_exp <- "## Summary of exposures{.unlisted .unnumbered}\n\nThis report considers the following exposures:\n\n"
   out_exp <- paste0(out_exp, "### High materiality exposures\n\n")
   high_counter <- 0
   A_or_L_header <- (length(unique(aggregated_inputs$A_or_L[aggregated_inputs$materiality_num == "High"])) > 1)
@@ -1318,7 +1329,7 @@ get_executive_summary_exposures <- function(exposure_classes,
       high_counter <- 0
       out_exp <- paste0(
         out_exp,
-        "#### ",
+        "#### Summary of ",
         ifelse(aggregated_inputs$A_or_L[i] == "A", "Assets", "Liabilities"),
         "\n\n"
       )
@@ -1329,7 +1340,7 @@ get_executive_summary_exposures <- function(exposure_classes,
       high_counter <- high_counter + 1
       out_exp <- paste0(
         out_exp,
-        "##### ",
+        "##### Summary of ",
         exposure_classes[[item]][["name"]],
         "\n\n"
       )
@@ -1422,7 +1433,7 @@ delete_empty_rows_and_columns <- function(data, empty_strings = list("", "N/A"),
 #' @inherit get_executive_summary
 #'
 get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
-  out <- "## Inputs{.unlisted .unnumbered}\n\n"
+  out <- "## Summary of inputs{.unlisted .unnumbered}\n\n"
   for (tab in tabs) {
     if (!is.null(tab$exposure)) {
       ids <- get_input_ids(tab = tab)
