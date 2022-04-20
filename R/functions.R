@@ -838,7 +838,12 @@ heartbeat_footer <- function() {
           " | ",
           a(href = "https://github.com/JohnAdders/climate_narrative/issues?q=is%3Aissue+is%3Aopen+label%3Abug", "Known Issues", target = "_blank"),
           " | ",
-          a(href = "https://github.com/JohnAdders/climate_narrative/wiki/Contributors", "Contributors", target = "_blank")
+          a(href = "https://github.com/JohnAdders/climate_narrative/wiki/Contributors", "Contributors", target = "_blank"),
+          " | ",
+          a(
+            href = "climate_narrative/climate-financial-risk-forum-climate-risk-product-providers-2021.xlsx",
+            "CFRF - Data and Tools Providers"
+          )
         )
       )
     )
