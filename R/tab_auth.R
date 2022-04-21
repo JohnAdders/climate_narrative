@@ -5,7 +5,7 @@ passes_captcha <- function(input, session) {
   } else {
     print(
       paste0(
-        "Failed captcha attempt. Details: success "
+        "Failed captcha attempt. Details: success ",
         result$success,
         "score ",
         result$score,
