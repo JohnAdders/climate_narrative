@@ -133,7 +133,13 @@ tab_auth_server <- function(input, output, session, tab) {
     input$responseReceived,
     {
       if (session$userData$captcha_validated == FALSE) {
-        session$userData$captcha_validated <- passes_captcha(input, session)
+        captcha_result <- passes_captcha(input, session)
+        if (captcha_result == FALSE) {
+          warning("Captcha verification failed")
+          output$code_verification_result <- renderText("Catpcha verification failed")
+        } else {
+          session$userData$captcha_validated <- TRUE
+        }
       }
       if (session$userData$captcha_validated == TRUE) {
         if (!is.null(global$beta_code)) {
