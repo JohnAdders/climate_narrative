@@ -136,7 +136,7 @@ tab_auth_server <- function(input, output, session, tab) {
         captcha_result <- passes_captcha(input, session)
         if (captcha_result == FALSE) {
           warning("Captcha verification failed")
-          output$code_verification_result <- renderText("Catpcha verification failed")
+          output$code_verification_result <- renderText("Captcha verification failed")
         } else {
           session$userData$captcha_validated <- TRUE
         }
