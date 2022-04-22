@@ -547,7 +547,7 @@ get_exposure_description <- function(item, type_item_inputs, exposure_classes, i
     " ",
     exposure_classes[[item]][["name"]],
     "\n\n",
-    global$exposure_classes[[item]][["description"]],
+    exposure_classes[[item]][["description"]],
     "\n\n"
   )
   if (include_exposures) {
@@ -702,6 +702,7 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
       out <- paste0(
         out,
         get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 2, 1)),
+        # TODO: for all items in group
         get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
         get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
       )
@@ -723,18 +724,18 @@ get_section_descriptions <- function(section, additional_pars = list()) {
       if (additional_pars$report_version >= 3) {
         out <- paste0(
           out,
-          get_executive_summary(additional_pars$tabs, additional_pars$scenarios, additional_pars$exposure_classes, additional_pars$aggregated_inputs, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
+          get_executive_summary(additional_pars$tabs, additional_pars$scenarios, additional_pars$exposure_classes, additional_pars$aggregated_inputs_by_item, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
         )
       }
     } else if (content_function == "get_references") {
       out <- paste0(
         out,
-        get_references(additional_pars$aggregated_inputs$item, additional_pars$exposure_classes)
+        get_references(additional_pars$aggregated_inputs_by_group$item, additional_pars$exposure_classes)
       )
     } else if (content_function == "get_appendices") {
       out <- paste0(
         out,
-        get_appendices(additional_pars$aggregated_inputs$item, additional_pars$exposure_classes)
+        get_appendices(additional_pars$aggregated_inputs_by_group$item, additional_pars$exposure_classes)
       )
     } else {
       stop(paste("Invalid content function name", content_function))
@@ -750,7 +751,7 @@ get_section_descriptions <- function(section, additional_pars = list()) {
 #'
 #' @inherit get_standard_report_contents
 #' @param items vector of items to get references for
-#' @return markdown-formatted references section (h2)
+#' @return markdown-formatted references section(h1)
 #'
 get_references <- function(items, exposure_classes) {
   out <- ""
@@ -961,7 +962,7 @@ format_images <- function(filename, image_settings) {
   target_width_unit <- image_settings$image_width_unit
   fix_width <- image_settings$image_width_fix
   min_pixels_to_rescale <- image_settings$image_min_pixels_to_rescale
-  max_height <- image_settings$image_min_pixels_to_rescale
+  max_height <- image_settings$image_max_height
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[", markdown)
@@ -1267,7 +1268,8 @@ get_standard_report_contents <- function(tabs,
                                          exec_summary_layout = 1,
                                          include_exposures,
                                          rep_type = NULL) {
-  aggregated_inputs <- aggregate_inputs(inputs)
+  aggregated_inputs_by_item <- aggregate_inputs(inputs)
+  aggregated_inputs_by_group <- aggregate_inputs(inputs, "group")
   scenario_no <- get_scenario_no(scenarios, report_scenario_selection, is_rtf)
   section_no <- get_section_no(sections, is_rtf, rep_type)
   out <- list()
@@ -1275,7 +1277,8 @@ get_standard_report_contents <- function(tabs,
     out <- c(
       out,
       list(get_scenario_descriptions(
-        aggregated_inputs,
+        aggregated_inputs_by_item,
+        #aggregated_inputs_by_group,
         inputs,
         scenario,
         exposure_classes,
@@ -1290,7 +1293,8 @@ get_standard_report_contents <- function(tabs,
         section,
         list(
           report_version = report_version,
-          aggregated_inputs = aggregated_inputs,
+          aggregated_inputs_by_item = aggregated_inputs_by_item,
+          aggregated_inputs_by_group = aggregated_inputs_by_group,
           inputs = inputs,
           scenario_no = scenario_no,
           exec_summary_layout = exec_summary_layout,
@@ -1368,12 +1372,36 @@ get_executive_summary_exposures <- function(exposure_classes,
   }
   out_exp <- paste0(out_exp, "### Other exposures\n\n")
   less_material <- aggregated_inputs[aggregated_inputs$materiality_num != "High", ]
+  groups <- setdiff(unique(less_material$exposure_group), "")
   if (nrow(less_material)) {
     less_material$risk.description <- rep(NA, nrow(less_material))
     less_material$name <- rep(NA, nrow(less_material))
     for (i in 1:nrow(less_material)) {
       item <- less_material$item[i]
       less_material$name[i] <- exposure_classes[[item]][["name"]]
+    } 
+    for (i in 1:ncol(less_material)) {
+      colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
+    }
+    for (i in 1:length(groups)) {
+      group_rows <- less_material$Exposure_group==groups[i]
+      group_data <- less_material[group_rows,]
+      group_data$Materiality <- as.character(group_data$Materiality)
+      group_data$Materiality_num <- as.character(group_data$Materiality_num)
+      aggregate_row <- stats::aggregate(
+        cbind(Materiality,Materiality_num,Name) ~ A_or_L + Exposure_group,
+        data=group_data,
+        FUN=function(x) paste(as.character(x),collapse="<br>")
+      )
+      aggregate_row$Item <- groups[i]
+      aggregate_row$Risk.description = NA
+      less_material <- rbind(
+        less_material[!less_material$Exposure_group==groups[i],],
+        aggregate_row
+      )
+    }
+    for (i in 1:nrow(less_material)) {
+      item <- less_material$Item[i]
       risk_description <- ""
       for (risk in rownames(exec)) {
         for (risk_intensity in colnames(exec)) {
@@ -1387,10 +1415,7 @@ get_executive_summary_exposures <- function(exposure_classes,
         }
       }
       risk_description <- substring(risk_description, 5)
-      less_material$risk.description[i] <- risk_description
-    }
-    for (i in 1:ncol(less_material)) {
-      colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
+      less_material$Risk.description[i] <- risk_description
     }
     out_exp <- paste0(
       out_exp,
@@ -1554,20 +1579,29 @@ filter_inputs <- function(all_inputs_table, filter_settings) {
 #' Aggregate the inputs by sector
 #'
 #' @param inputs data frame of all inputs (usually the reactive expression all_inputs or its subset)
-#'
-aggregate_inputs <- function(inputs) {
+#' @param by level of aggregation (by default "item" ie sector, also possible "group")
+aggregate_inputs <- function(inputs, by="item") {
   if (nrow(inputs) == 0) {
     return(
       data.frame(
+        A_or_L = character(),
         item = character(),
+        exposure_group = character(),
         materiality = character(),
         materiality_num = character()
       )
     )
   }
-  aggregated_inputs_factor <- stats::aggregate(materiality ~ A_or_L + item, FUN = max, data = inputs)
+  if (by == "group") {
+    for (i in 1:nrow(inputs)) {
+      if (inputs$exposure_group[i] != "") {
+        inputs$item[i] <- inputs$exposure_group[i]
+      }
+    }
+  }
+  aggregated_inputs_factor <- stats::aggregate(materiality ~ A_or_L + item + exposure_group, FUN = max, data = inputs)
   aggregated_inputs_numeric <- stats::aggregate(
-    materiality_num ~ A_or_L + item,
+    materiality_num ~ A_or_L + item + exposure_group,
     FUN = function(x) {
       cut(
         sum(x),
