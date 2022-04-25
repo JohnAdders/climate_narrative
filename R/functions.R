@@ -669,13 +669,14 @@ get_exposure_risk_description <- function(item,
 
 #' Lower level report helper function responsible for single scenario description
 #'
-#' @param aggregated_table Table of all possible items
+#' @param aggregated_table_by_item Table of all possible items
+#' @param aggregated_table_by_group As above but less granular
 #' @param type_inputs Drop box items
 #' @param scenario Scenario name
 #' @param include_exposures Flag whether to include tables with contributing exposures
 #' @param exposure_classes List of exposure classes (sectors) from which the texts are extracted
 #'
-get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, exposure_classes, include_exposures) {
+get_scenario_descriptions <- function(aggregated_table_by_item, aggregated_table_by_group, type_inputs, scenario, exposure_classes, include_exposures) {
   if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
   description <- scenario$description
@@ -684,28 +685,32 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
   out <- ""
   if (!is.null(name)) out <- paste0("# ", name, "\n\n")
   if (!is.null(description)) out <- paste0(out, description, "\n\n")
-  if (nrow(aggregated_table)) {
-    A_or_L_header <- (length(unique(aggregated_table$A_or_L)) > 1)
-    for (i in 1:nrow(aggregated_table)) {
-      if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])) {
+  if (nrow(aggregated_table_by_group)) {
+    A_or_L_header <- (length(unique(aggregated_table_by_group$A_or_L)) > 1)
+    for (i in 1:nrow(aggregated_table_by_group)) {
+      if (A_or_L_header && (i == 1 || aggregated_table_by_group$A_or_L[i] != aggregated_table_by_group$A_or_L[i - 1])) {
         out <- paste0(
           out,
           "# ",
-          ifelse(aggregated_table$A_or_L[i] == "A", "Assets", "Liabilities"),
+          ifelse(aggregated_table_by_group$A_or_L[i] == "A", "Assets", "Liabilities"),
           "\n\n"
         )
       }
-      item <- aggregated_table$item[i]
-      materiality <- aggregated_table$materiality_num[i]
-      type_item_inputs <- type_inputs[type_inputs$item == item, ]
-      products <- unique(type_item_inputs$product)
+      group <- aggregated_table_by_group$item[i]
+      materiality <- aggregated_table_by_group$materiality_num[i]
+      type_group_inputs <- type_inputs[(type_inputs$exposure_group == group) | (type_inputs$item == group), ]
+      products <- unique(type_group_inputs$product)
       out <- paste0(
         out,
-        get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 2, 1)),
-        # TODO: for all items in group
-        get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
-        get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
+        get_exposure_description(group, type_group_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 2, 1))
       )
+      for (item in unique(type_group_inputs$item)) {
+        out <- paste0(
+          out,
+          get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
+          get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
+        )
+      }
     }
   }
   return(out)
@@ -1278,7 +1283,7 @@ get_standard_report_contents <- function(tabs,
       out,
       list(get_scenario_descriptions(
         aggregated_inputs_by_item,
-        #aggregated_inputs_by_group,
+        aggregated_inputs_by_group,
         inputs,
         scenario,
         exposure_classes,
