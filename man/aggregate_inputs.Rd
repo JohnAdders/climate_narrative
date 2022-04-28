@@ -4,10 +4,12 @@
 \alias{aggregate_inputs}
 \title{Aggregate the inputs by sector}
 \usage{
-aggregate_inputs(inputs)
+aggregate_inputs(inputs, by = "item")
 }
 \arguments{
 \item{inputs}{data frame of all inputs (usually the reactive expression all_inputs or its subset)}
+
+\item{by}{level of aggregation (by default "item" ie sector, also possible "group")}
 }
 \description{
 Aggregate the inputs by sector

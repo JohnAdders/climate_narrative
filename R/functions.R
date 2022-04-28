@@ -500,7 +500,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 get_exposure_description <- function(item, type_item_inputs, exposure_classes, include_exposures, header_level = 2) {
   if (is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
-  # conversion from factor back to string to ensure proper printing below
+  # explicit conversion from factor back to string to avoid implicit conversion to number below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
   # add unique identifier if rownames are not unique (i.e. the same item in multiple columns)
   ordered_type_item_inputs$rowname_unique <- ordered_type_item_inputs$rowname
@@ -606,7 +606,6 @@ get_exposure_risk_description <- function(item,
   if (high_or_low == FALSE) {
     return("")
   }
-
   # define header depending on physical/transition and low/high
   if (physical_or_transition == "transition") {
     riskname <- switch(high_or_low,
@@ -1045,7 +1044,9 @@ rtf_fix_table_of_contents <- function(filename) {
     )
     # Limit of 40 characters!
     if (nchar(bookmark_text) > 40) {
-      warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
+      if (global$dev) {
+        warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
+      }
       rtf <- gsub(bookmark_text, substr(bookmark_text, 1, 40), rtf)
     }
   }
@@ -1388,7 +1389,7 @@ get_executive_summary_exposures <- function(exposure_classes,
     for (i in 1:ncol(less_material)) {
       colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
     }
-    for (i in 1:length(groups)) {
+    for (i in seq_along(groups)) {
       group_rows <- less_material$Exposure_group==groups[i]
       group_data <- less_material[group_rows,]
       group_data$Materiality <- as.character(group_data$Materiality)
@@ -1610,7 +1611,7 @@ aggregate_inputs <- function(inputs, by="item") {
     FUN = function(x) {
       cut(
         sum(x),
-        breaks = c(0, 4.5, 9.5, 100),
+        breaks = c(0, 4.5, 9.5, 1000),
         labels = c("Low", "Medium", "High")
       )
     },
