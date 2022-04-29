@@ -586,7 +586,7 @@ get_exposure_appendix <- function(item, exposure_classes) {
 #' Lower level report helper function responsible for single risk
 #' (transition/physical) description.
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param item Exposure class name
 #' @param products Product name
 #' @param materiality Materiality of item
@@ -748,7 +748,7 @@ get_section_descriptions <- function(section, additional_pars = list()) {
 
 #' Function to produce references section (for all items)
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param items vector of items to get references for
 #' @return markdown-formatted references section (h2)
 #'
@@ -943,19 +943,25 @@ generic_helper <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' Go through the markdown file, find all png images and scale down where relevant
 #'
 #' @param filename markdown file to process
-#' @param target_width target width of images
+#' @param image_settings the list of necessary setting, comprising of:
+#' - target_width target width of images
 #' default is 7 inches which roughly matches vertical A4 page with margins
-#' @param target_width_units either "in" for inches of "%"
-#' @param fix_width if TRUE all images will be scaled exactly to target_width. otherwise,
+#' - target_width_units either "in" for inches of "%"
+#' - fix_width if TRUE all images will be scaled exactly to target_width. otherwise,
 #' only the larger images will be scaled down
-#' @param min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
+#' - min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
 #' this is to prevent ugly look of upscaled low resolution images
-#' @param max_height maximum height of picture after rescaling. Another mechanism to prevent
+#' - max_height maximum height of picture after rescaling. Another mechanism to prevent
 #' too large upscaled pictures (in particular square or portrait layout)
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-format_images <- function(filename, target_width = 7, target_width_units = c("in", "%"), fix_width, min_pixels_to_rescale = 300, max_height = 4) {
+format_images <- function(filename, image_settings) {
+  target_width <- image_settings$image_width
+  target_width_unit <- image_settings$image_width_unit
+  fix_width <- image_settings$image_width_fix
+  min_pixels_to_rescale <- image_settings$image_min_pixels_to_rescale
+  max_height <- image_settings$image_min_pixels_to_rescale
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[", markdown)
@@ -973,10 +979,10 @@ format_images <- function(filename, target_width = 7, target_width_units = c("in
       height_in <- height_px / image_attributes$dpi[2]
       target_width_after_max <- round(pmin(target_width, max_height / height_in * width_in), 2)
       if (fix_width && width_px > min_pixels_to_rescale) {
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
-      } else if (target_width_units == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
-        warning(paste0("image ", image_name, " has width > ", target_width_after_max, target_width_units, ", resizing"))
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_unit, " }")
+      } else if (target_width_unit == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
+        warning(paste0("image ", image_name, " has width > ", target_width_after_max, target_width_unit, ", resizing"))
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_unit, " }")
       }
     } else {
       warning(paste0("Image file ", image_name, " does not exist"))
@@ -1018,7 +1024,7 @@ rtf_fix_table_of_contents <- function(filename) {
     if (length(bookmark_rows) > 1 && global$dev) {
       warning(paste0("Ambiguous table of content entry. Header ", bookmark_text, " is not unique, using the first match. Please check the table of content"))
     } else if (length(bookmark_rows) == 0) {
-      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text," not found"))
+      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text, " not found"))
     }
     bookmark_row <- bookmark_rows[1] + search_position - 1
     search_position <- bookmark_row
@@ -1192,7 +1198,7 @@ get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_
 
 #' Helper function that translate the value of input field to the scenario number(s)
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @return vector of integers
 #'
 get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
@@ -1206,7 +1212,7 @@ get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
 
 #' Helper function that returns non-scenario section number(s)
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param sections List of non-scenario report sections
 #'
 get_section_no <- function(sections, is_rtf, rep_type) {
@@ -1250,17 +1256,17 @@ get_section_no <- function(sections, is_rtf, rep_type) {
 #' @param rep_type additional possibility to filter report sections, by default (NULL) no filtering
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #'
-get_report_contents <- function(tabs,
-                                scenarios,
-                                sections,
-                                exposure_classes,
-                                inputs,
-                                report_version,
-                                report_scenario_selection,
-                                is_rtf,
-                                exec_summary_layout = 1,
-                                include_exposures,
-                                rep_type = NULL) {
+get_standard_report_contents <- function(tabs,
+                                         scenarios,
+                                         sections,
+                                         exposure_classes,
+                                         inputs,
+                                         report_version,
+                                         report_scenario_selection,
+                                         is_rtf,
+                                         exec_summary_layout = 1,
+                                         include_exposures,
+                                         rep_type = NULL) {
   aggregated_inputs <- aggregate_inputs(inputs)
   scenario_no <- get_scenario_no(scenarios, report_scenario_selection, is_rtf)
   section_no <- get_section_no(sections, is_rtf, rep_type)
@@ -1480,7 +1486,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
 
 #' Karnan's request for easier change comparison - single sector
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param item sector name
 #'
 get_exposure_test_description <- function(exposure_classes, item) {
@@ -1506,7 +1512,7 @@ get_exposure_test_description <- function(exposure_classes, item) {
 
 #' Karnan's request for easier change comparison - loop over all sectors
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #'
 get_test_report <- function(exposure_classes) {
   out <- "# Test report\n\n"
@@ -1521,12 +1527,16 @@ get_test_report <- function(exposure_classes) {
 #' Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities
 #'
 #' @param all_inputs_table data frame of all inputs (usually the reactive expression all_inputs)
-#' @param inst_type institution type to filter (or "" for no filtering)
-#' @param sector sector to filter (or "" for no filtering)
-#' @param aggregate bool, whether to aggregate the inputs by sector
-#' @param override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
+#' @param filter_settings list of relevant setting, comprising of:
+#' - inst_type institution type to filter (or "" for no filtering)
+#' - sector sector to filter (or "" for no filtering)
+#' - aggregate bool, whether to aggregate the inputs by sector
+#' - override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
 #'
-get_inputs <- function(all_inputs_table, inst_type = "", sector = "", aggregate = FALSE, override_materiality = "") {
+filter_inputs <- function(all_inputs_table, filter_settings) {
+  inst_type <- filter_settings$inst_type
+  sector <- filter_settings$report_sector_selection
+  override_materiality <- filter_settings$override_materiality
   out <- all_inputs_table
   if (override_materiality != "") {
     out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
@@ -1537,9 +1547,6 @@ get_inputs <- function(all_inputs_table, inst_type = "", sector = "", aggregate 
   }
   if (sector != "") {
     out <- out[out$item == sector, ]
-  }
-  if (aggregate) {
-    out <- aggregate_inputs(out)
   }
   return(out)
 }
@@ -1604,6 +1611,13 @@ include_markdown_section <- function(output, output_name, section_name) {
   })
 }
 
+#' Process the HTML file manually to correct some known issues
+#'
+#' Includes fixing image links (so they work in shiny)
+#' and adding arrow to all headers (report version 5 only)
+#'
+#' @param file the location of HTML file
+#' @param report_version the parameter driving the changes
 html_postprocess <- function(file, report_version) {
   # replace back the images links
   file_conn <- file(file)
@@ -1632,4 +1646,256 @@ html_postprocess <- function(file, report_version) {
   )
   close(file_conn)
   return(invisible(NULL))
+}
+
+#' Create a single list of settings from simple arguments
+#'
+#' @param content_files List of necessary global lists with report contents
+#' @param output_file Path and filenamename of report to write
+#' @param md_file Path and filename of intermediate markdown file
+#' @param file_format Currently either "html" or "rtf"
+#' @param report_version Integer controlling the version of the code used in report generating functions
+#' @param rep_type Either "inst" for institutional report or "sect" for sectoral report
+#' @param inst_type Institution type (relevant for institutional report only)
+#' @param report_sector_selection Input used to filter report contents
+#' @param report_scenario_selection Input used to filter report contents
+#' @return list of lists
+#'
+get_report_settings <- function(content_files,
+                                output_file,
+                                md_file,
+                                file_format,
+                                report_version,
+                                rep_type,
+                                inst_type,
+                                report_sector_selection,
+                                report_scenario_selection) {
+  # translating the parameters to complete setup
+  if (rep_type == "inst") {
+    override_materiality <- ""
+    include_exposures <- TRUE
+    if (report_sector_selection == "") {
+      exec_summary_layout <- 1
+    } else {
+      exec_summary_layout <- 2
+    }
+  } else {
+    if (report_sector_selection == "") {
+      # scenario report
+      exec_summary_layout <- 3
+    } else {
+      # sector report
+      exec_summary_layout <- 2
+    }
+    override_materiality <- "High"
+    include_exposures <- FALSE
+  }
+  if (file_format == "html") {
+    if (report_version >= 6) {
+      output_format <- rmarkdown::html_document(
+        toc = TRUE,
+        toc_depth = 2,
+        toc_float = list(collapsed = FALSE),
+        theme = "sandstone",
+        self_contained = FALSE,
+        fig_caption = FALSE,
+        lib_dir = "lib"
+      )
+    } else {
+      output_format <- rmarkdown::html_document(
+        toc = TRUE,
+        toc_depth = 2,
+        toc_float = FALSE,
+        self_contained = FALSE,
+        fig_caption = FALSE
+      )
+    }
+  } else {
+    www_path <- system.file("www", package = "climate.narrative")
+    if (www_path == "") {
+      www_path <- paste0(getwd(), "/inst/www")
+    }
+    output_format <- rmarkdown::rtf_document(
+      toc = TRUE,
+      toc_depth = 2,
+      pandoc_args = c(
+        paste0("--resource-path=", www_path),
+        "--self-contained"
+      )
+    )
+  }
+  image_width <- 6
+  image_width_unit <- "in"
+  image_width_fix <- TRUE
+
+  # hierarchical structure
+  content_files <- content_files
+
+  filter_settings <- list(
+    inst_type = ifelse(rep_type == "inst", inst_type, ""),
+    # sector report exception: no sector filter means no sector, not all sectors
+    report_sector_selection = ifelse(rep_type == "sect" && report_sector_selection == "", "dummy", report_sector_selection),
+    override_materiality = override_materiality
+  )
+
+  content_settings <- list(
+    report_version = report_version,
+    is_rtf = (file_format == "rtf"),
+    rep_type = rep_type,
+    report_scenario_selection = report_scenario_selection,
+    include_exposures = include_exposures,
+    exec_summary_layout = exec_summary_layout,
+    rep_type = rep_type
+  )
+  lib_path <- system.file(
+    "www/lib",
+    package = "climate.narrative"
+  )
+  if (lib_path == "") {
+    lib_path <- "inst/www/lib"
+  }
+  render_settings <- list(
+    md_file = md_file,
+    output_file = output_file,
+    output_format = output_format,
+    available_libs = list.files(
+      system.file(
+        "www/lib",
+        package = "climate.narrative"
+      ),
+      recursive = TRUE
+    )
+  )
+
+  image_settings <- list(
+    image_width = 6,
+    image_width_unit = "in",
+    image_width_fix = TRUE,
+    image_min_pixels_to_rescale = 300,
+    image_max_height = 4
+  )
+
+  postprocess_settings <- list(
+    file_format = file_format,
+    output_file = output_file,
+    report_version = report_version
+  )
+
+  settings <- list(
+    content_files = content_files,
+    filter_settings = filter_settings,
+    content_settings = content_settings,
+    render_settings = render_settings,
+    image_settings = image_settings,
+    postprocess_settings = postprocess_settings
+  )
+
+  return(settings)
+}
+
+#' The highest level function for report production. Takes only two arguments
+#'
+#' @param all_inputs Table of user inputs
+#' @param settings list of lists containing all necessary settings
+#' @return NULL, report produced to file
+#'
+produce_report <- function(all_inputs, settings) {
+  content_files <- settings$content_files
+  filter_settings <- settings$filter_settings
+  content_settings <- settings$content_settings
+  render_settings <- settings$render_settings
+  image_settings <- settings$image_settings
+  postprocess_settings <- settings$postprocess_settings
+  inputs <- filter_inputs(all_inputs, filter_settings)
+  report_contents <- get_report_contents(
+    content_files,
+    inputs,
+    content_settings
+  )
+  file_conn <- file(render_settings$md_file)
+  writeLines(
+    report_contents,
+    file_conn
+  )
+  close(file_conn)
+  if (image_settings$image_width_fix) {
+    format_images(render_settings$md_file, image_settings)
+  }
+  rmarkdown::render(
+    input = render_settings$md_file,
+    output_file = render_settings$output_file,
+    output_format = render_settings$output_format
+  )
+  check_required_libraries(render_settings)
+  postprocess(postprocess_settings)
+  return(invisible(NULL))
+}
+
+#' Check if the files (e.g. javascript) required by the report are available in the main package
+#'
+#' @param render_settings the list containing available_libs (vector of files in the package)
+#' and output_file (path of the rendered report, where directory "lib" is searched)
+check_required_libraries <- function(render_settings) {
+  rendered_libs <- list.files(
+    paste0(
+      dirname(render_settings$output_file),
+      "/lib"
+    ),
+    recursive = TRUE
+  )
+  missing_libs <- setdiff(rendered_libs, render_settings$available_libs)
+  if (length(missing_libs)) {
+    warning(
+      paste0(
+        length(missing_libs),
+        " library files are contained in the report but not in the package www/lib directory. First of the missing files is: ",
+        missing_libs[1]
+      )
+    )
+  }
+  return(NULL)
+}
+
+#' Gets either a standard or test report contents
+#'
+#' @param content_files list of all yaml content files
+#' @param inputs user dropdown choices
+#' @param content_settings all configuration options (see get_standard_report_content for details)
+get_report_contents <- function(content_files, inputs, content_settings) {
+  if (content_settings$rep_type %in% c("inst", "sect")) {
+    return(
+      get_standard_report_contents(
+        content_files$tabs,
+        content_files$scenarios,
+        content_files$sections,
+        content_files$exposure_classes,
+        inputs,
+        content_settings$report_version,
+        content_settings$report_scenario_selection,
+        content_settings$is_rtf,
+        content_settings$exec_summary_layout,
+        content_settings$include_exposures,
+        content_settings$rep_type
+      )
+    )
+  } else { # test all sector report
+    return(
+      get_test_report(
+        content_files$exposure_classes
+      )
+    )
+  }
+}
+
+#' Wrapper calling either rtf_postprocess or html_postprocess
+#'
+#' @param postprocess_settings a list with:
+#' - file_format (either "rtf" or "html")
+#' - report_version, which is then translated to relevant postprocessing options at lower level
+postprocess <- function(postprocess_settings) {
+  if (postprocess_settings$file_format == "rtf") {
+    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
+  } else {
+    html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
+  }
 }
