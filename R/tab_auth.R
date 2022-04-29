@@ -1,11 +1,25 @@
 passes_captcha <- function(input, session) {
-  result <- GreCAPTCHAv3Server(session$userData$captcha_secret, input$responseReceived)
-  return(result$success && result$score > 0.5)
+  result <- recaptcha_server(global$captcha_secret, input$responseReceived)
+  if(result$success && result$score > 0.5){
+    return(TRUE)
+  } else {
+    print(
+      paste0(
+        "Failed captcha attempt. Details: success ",
+        result$success,
+        "score ",
+        result$score,
+        "hostname ",
+        result$hostname
+      )
+    )
+    return(FALSE)
+  }
 }
 
 request_captcha <- function(output, session) {
-  if (!is.null(session$userData$captcha_code) && !is.null(session$userData$captcha_secret)) {
-    GreCAPTCHAv3js(session$userData$captcha_code, "homepage", "responseReceived")
+  if (!is.null(global$captcha_code) && !is.null(global$captcha_secret)) {
+    recaptcha_js(global$captcha_code, "homepage", "responseReceived")
   } else {
     output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
   }
@@ -13,7 +27,7 @@ request_captcha <- function(output, session) {
 
 process_progress <- function(output, should_continue) {
   if (should_continue) {
-    next_tab <- as.integer(factor("type", ordered_tabs))
+    next_tab <- tab_name_to_number("intro")
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
   } else {
     output$code_verification_result <- renderText("Code incorrect, please double check")
@@ -21,30 +35,34 @@ process_progress <- function(output, should_continue) {
 }
 
 render_dynamic_auth_ui <- function(output, session) {
-  if (!is.null(session$userData$beta_code)) {
-    output$first_column <- renderUI({NULL})
-    output$auth_text <- renderUI({p("Enter the beta code you have been sent")})
+  if (!is.null(global$beta_code)) {
+    output$first_column <- renderUI({
+      NULL
+    })
+    output$auth_text <- renderUI({
+      p("Enter the beta code you have been sent")
+    })
   } else {
-    output$first_column <- renderUI(
-      {
-        column(
-          6,
-          p("Enter your email address to receive the verification code"),
-          textInput(
-            inputId = "email",
-            label = tagList(icon("user"), "Email"),
-            placeholder = "Enter your email here"
-          ),
-          actionButton(
-            inputId = "button_send_code",
-            label = "Send the code"
-          ),
-          tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
-          textOutput("code_send_result")
-        )
-      }
-    )
-    output$auth_text <- renderUI({p("Enter the verification code received in your email")})
+    output$first_column <- renderUI({
+      column(
+        6,
+        p("Enter your email address to receive the verification code"),
+        textInput(
+          inputId = "email",
+          label = tagList(icon("user"), "Email"),
+          placeholder = "Enter your email here"
+        ),
+        actionButton(
+          inputId = "button_send_code",
+          label = "Send the code"
+        ),
+        tippy::tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
+        textOutput("code_send_result")
+      )
+    })
+    output$auth_text <- renderUI({
+      p("Enter the verification code received in your email")
+    })
   }
 }
 
@@ -52,38 +70,45 @@ send_auth_code_email <- function(input, output, session) {
   output$code_send_result <- renderText(
     paste(
       "TODO: send the actual email from",
-      session$userData$email_server,
+      global$email_server,
       "to",
       input$email,
       "containing the code:",
-      session$userData$verification_code
+      global$verification_code
     )
   )
 }
 
-tab_auth_ui <- function() {
+tab_auth_ui <- function(captcha_code) {
   list(
     div(
       class = "disclaimer", id = "disclaimer_1",
-      p("This tool and its contents represent the output from the cross-industry
-      Scenario Analysis Working Group of the Prudential Regulation Authority
-      and Financial Conduct Authority's Climate Financial Risk Forum (CFRF).
-      The tool aims to promote understanding, consistency, and comparability
-      by providing guidance on how to use scenario analysis to assess financial impacts
-      and inform strategy/business decisions."),
-      p("The tool has not been endorsed or approved by the PRA, FCA, the Climate Financial Risk Forum
-      or any of its members, and no reliance should be placed on the accuracy or
-      completeness of any information herein."),
-      p("The software is provided \"as is\" without warranty of any kind, express or
-      implied, including but not limited to the warranties or merchantability, fitness
-      for a particular purpose and noninfringement.  In no event shall the authors
-      or copyright holders be liable for any claim, damages or other liability,
-      whether in an action of contract, tort or otherwise arising from, out of or in
-      connection with the software or the use or other dealings in the software."),
-      p(strong("Copyright 2021 The Climate Financial Risk Forum"))
+      p("This tool is currently under development and is only being made available to
+        selected users for testing purposes. It represents output from the cross-industry
+        Scenario Analysis Working Group of the Prudential Regulation Authority and Financial
+        Conduct Authority's Climate Financial Risk Forum (CFRF)."),
+      p("The PRA and FCA have convened and facilitated CFRF discussions but do not accept
+        liability for the views expressed in this guide which do not necessarily represent
+        the view of the regulators and in any case do not constitute regulatory guidance."),
+      p("The tool references data from the NGFS scenarios which were updated in June 2021.
+        However, the tool has not been endorsed by the NGFS. Users who wish to learn more
+        about the NGFS scenarios are directed to the NGFS scenario portal."),
+      p("The information contained in this tool has been written by industry, for industry.
+        The recommendations in this guide do not constitute financial or other professional
+        advice and should not be relied upon as such."),
+      p("The information contained in any reports can be reproduced or re-disseminated
+        in any form as long as this disclaimer is not removed, the source is identified
+        as the Climate Financial Risk Forum's Climate Narrative Tool and any changes from
+        the original text are clearly marked."),
+      p("The content in this tool is provided \"as is\" without warranty of any kind, express or implied,
+        including but not limited to the warranties or merchantability, fitness for a particular
+        purpose and non-infringement. In no event shall the authors or copyright holders be
+        liable for any claim, damages or other liability, whether in an action of contract,
+        tort or otherwise arising from, out of or in connection with the report."),
+      p(strong("Copyright 2022 The Climate Financial Risk Forum"))
     ),
     hr(),
-    GreCAPTCHAv3Ui("6LfQwf8cAAAAAGsbrln3KpFJ69IoSdZPaCGLiUzP"),
+    recaptcha_ui(captcha_code),
     fluidRow(
       uiOutput("first_column"),
       column(
@@ -98,7 +123,7 @@ tab_auth_ui <- function() {
           inputId = "button_check_code",
           label = "Validate the code"
         ),
-        tippy_this("button_check_code", 'Click to proceed (if the code is correct)'),
+        tippy::tippy_this("button_check_code", "Click to proceed (if the code is correct)"),
         textOutput("code_verification_result")
       )
     )
@@ -121,12 +146,18 @@ tab_auth_server <- function(input, output, session, tab) {
   observeEvent(
     input$responseReceived,
     {
-      if(session$userData$captcha_validated == FALSE) {
-        session$userData$captcha_validated <- passes_captcha(input, session)
+      if (session$userData$captcha_validated == FALSE) {
+        captcha_result <- passes_captcha(input, session)
+        if (captcha_result == FALSE) {
+          warning("Captcha verification failed")
+          output$code_verification_result <- renderText("Captcha verification failed")
+        } else {
+          session$userData$captcha_validated <- TRUE
+        }
       }
-      if(session$userData$captcha_validated == TRUE) {
-        if(!is.null(session$userData$beta_code)) {
-          process_progress(output, input$code == session$userData$beta_code)
+      if (session$userData$captcha_validated == TRUE) {
+        if (!is.null(global$beta_code)) {
+          process_progress(output, input$code == global$beta_code)
         } else {
           send_auth_code_email(input, output, session)
         }
@@ -137,14 +168,14 @@ tab_auth_server <- function(input, output, session, tab) {
   observeEvent(
     input$button_check_code,
     {
-      if(!is.null(session$userData$beta_code)) {
+      if (!is.null(global$beta_code)) {
         request_captcha(output, session)
       } else {
         process_progress(
           output,
           (
-            input$code == session$userData$verification_code &&
-            session$userData$captcha_validated == TRUE
+            input$code == global$verification_code &&
+              session$userData$captcha_validated == TRUE
           )
         )
       }

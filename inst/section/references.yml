@@ -1,0 +1,4 @@
+position: 99
+include_in_HTML: yes
+include_in_RTF: yes
+special_content_function: get_references

@@ -1,0 +1,77 @@
+img{
+    display: block;
+    margin: auto;
+}
+
+.verticalcenter {
+    display: table-cell;
+    height: 3em;
+    vertical-align: middle;
+}
+
+.disclaimer {
+    background-color: greenyellow;
+    margin: 2em;
+    padding: 2em;
+    border: solid;
+}
+
+.shiny-input-container {
+    margin-bottom: 0px;
+    padding: 0px;
+    line-height: 1;
+}
+
+.form-control {
+    padding: 5px;
+}
+
+a {
+    color: blue;
+}
+
+table td, table th {
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}
+
+.inline a,
+.inline h1,
+.inline h2,
+.inline h3,
+.inline h4,
+.inline h5 {
+  display: inline;
+}
+
+.not_too_wide_2col {
+    max-width: 600px;
+}
+
+.not_too_wide_3col {
+    max-width: 900px;
+}
+
+div.main-container{
+    max-width: 9999px; /* Override default setting of 1200 in order to use entire wide screen*/
+}
+
+.fixed{
+    position: fixed;
+    height: 14em;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+}
+
+.bottomlayer{
+    z-index: 1;
+    min-width: 1000px;
+}
+
+.fixheight{
+    height: 15em;
+}
+
+div.tocify{
+    max-height: 60%;
+}

@@ -1,0 +1,4 @@
+* text=auto
+*.png binary
+*.Rd text eol=lf
+NAMESPACE text eol=lf

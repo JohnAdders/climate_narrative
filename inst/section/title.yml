@@ -1,0 +1,16 @@
+position: -2
+include_in_HTML: no
+include_in_RTF: yes
+description: |
+  ---
+  title: |
+    Climate report
+
+    ![](title.png)
+
+    ```{=rtf}
+    \page
+    ```
+
+  ---
+

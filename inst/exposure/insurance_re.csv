@@ -1,0 +1,5 @@
+Type,product,Commercial Real Estate,Mortgages
+Bonds,corporate_bonds,commercial_real_estate,
+Equity,equities,commercial_real_estate,
+Commercial Mortgages,mortgages,,mortgages
+Residential Mortgages including ERM,mortgages,,mortgages

@@ -1,0 +1,162 @@
+name: NGFS Orderly Scenarios
+position: 1
+transition: low
+physical: low
+exec_short: transition
+exec_description: |
+  The Orderly transition risk scenarios could result in a gradual 
+  reduction in CO<sub>2</sub> emissions and an increase in the carbon price. 
+  The investments in energy efficiency and low carbon technologies are projected to increase 
+  (e.g. annual investment in low carbon increases from ~750 billion USD to between 
+  ~2 trillion USD and ~3 trillion USD by 2030). Global mean temperatures are 
+  projected to increase across the world by 1.6&deg;C to 1.7&deg;C, compared to 
+  pre-industrial levels, by 2050. 
+  
+  These scenarios could lead to chronic changes in living conditions affecting 
+  health, labour productivity (a decrease in labour productivity due to the reduced 
+  capacity of the human body to perform physical labour under hot and humid climate conditions), 
+  agriculture, ecosystems, and sea-level rise. It can also further change the frequency and 
+  severity of weather events such as heatwaves, droughts, wildfires, cyclones, and flooding. 
+  The total cumulative relative GDP impact is estimated to be between -1.5% and -2.5% by 2050.
+
+description: |
+  These Orderly transition risk scenarios assume that effective policy
+  changes are introduced in a timely manner.
+
+  ![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)
+
+  **Source:**
+  [NGFS Climate Scenarios, June2021](https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf){target="\_blank"}
+
+  The NGFS have defined two orderly scenarios:
+
+  - **Net Zero 2050** limits global warming to 1.5&deg;C through stringent climate
+    policies and innovation, reaching global Net Zero CO<sub>2</sub> emissions
+    around 2050. Some jurisdictions such as the US, EU and Japan reach Net Zero
+    for all GHGs.
+
+  - **Below 2&deg;C** gradually increases the stringency of climate policies, giving
+    a 67% chance of limiting global warming to below 2&deg;C.
+
+  ### Key assumptions and parameters
+
+  In these scenarios the reduction in CO<sub>2</sub> emissions occurs gradually.
+  This is achieved by an immediate and smooth policy reaction decarbonising the
+  energy supply, accelerating electrification and switching to low-carbon fuels
+  in industry, transport and buildings, deploying bioenergy with carbon capture
+  and storage and increasing afforestation and reforestation.
+
+  ![CO2 emissions](CO2_emissions_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+  The price of carbon is higher in a Net Zero 2050 scenario compared to a Below
+  2&deg;C scenario, this is due to more rigorous targets of limiting global warming
+  to a maximum of 1.5&deg;C set in the Net Zero 2050 scenario. In both the scenarios
+  the gradual but significant rise in emission prices gives rise to transition
+  risk.
+
+  ![Carbon price](Carbon_Price_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+  The investments in energy efficiency and low carbon technologies are projected to increase 
+  in Orderly transition risk scenarios. These are expected to be higher 
+  in a Net Zero 2050 scenario compared to a Below 2&deg;C scenario. Overall, firms 
+  could be required to readjust their capital expenditure in line with these 
+  trends; developing more efficient and less carbon intensive products and 
+  services in order to adhere to carbon pricing policies. The technologies 
+  that result from these investments could also adjust asset valuations of 
+  relatively older technology. Annual investment in energy efficiency increases 
+  from ~200 billion USD (inflation adjusted to 2010 baseline) to between ~500 
+  billion USD and ~750 billion USD by 2050, whilst annual investment in low 
+  carbon technologies increases from ~750 billion USD to between ~2.5 trillion USD and ~3 
+  trillion USD by 2050. 
+  
+  ![Energy Efficiency Investment](Investment_Energy_Efficiency_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  
+  ![Low Carbon Investment](Investment_Low_Carbon_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  
+  Observed climate change has already increased global mean temperatures above
+  1.2&deg;C, compared to pre-industrial levels, and both the global land area and
+  the global population annually exposed to river flood, crop failure, cyclones, 
+  wildfire, drought and heatwaves has more than doubled. (See Kaufman, D. et al. (2020)).
+
+  The increasing concentrations of carbon dioxide, methane and nitrous oxide in
+  the atmosphere are unprecedented in at least the last 800,000 years and are
+  extremely likely to have been the dominant cause of warming since the mid-20th
+  century. In these scenarios global mean temperatures are projected to increase 
+  across the world by 1.6&deg;C to 1.7&deg;C, compared to pre-industrial levels by 2050, 
+  with land warming faster than oceans and high latitudes experiencing higher warming 
+  giving rise to low physical risk.
+
+  ![Global mean temp rise](Global_mean_temperature_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer, NGFS Scenario Data IAM outputs v2.2 REMIND-MAgPIE 2.1-4.2 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+  These changes could lead to chronic changes in living conditions affecting
+  health, labour productivity, agriculture, ecosystems, and sea-level rise. It
+  can also further change the frequency and severity of weather events such as
+  heatwaves, droughts, wildfires, cyclones, and flooding. For example, 
+  in the Net Zero 2050 scenario, we could see the following:
+  
+  * A decrease in labour productivity due to the reduced capacity of the human 
+  body to perform physical labour under hot and humid climate conditions.
+  
+  ![Labour Productivity](Labour_Productivity_Heat_Orderly.png)
+
+  **Source:** 
+  [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+  
+  * The annual economic damages from river floods are projected to increase, 
+  peaking at a ~140% increase over a 1986-2006 reference period around 2050, 
+  and remaining ~120% above the reference period thereafter. Annual economic 
+  damages from cyclones are also projected to increase, but to a lesser extent; 
+  ~10% above reference period levels from 2030 onwards.
+  
+  ![River Flood Damage](River_Flood_Damage_Orderly.png)
+
+  **Source:** 
+  [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+  
+  ![Tropical Cyclone Damage](orderly_cyclone_damage.png)
+
+  **Source:** 
+  [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+  
+  In these scenarios the total cumulative relative GDP impact is estimated to be 
+  between -1.5% and-2.5% by 2050. World GDP losses from physical risks scale with 
+  the rise in temperatures in the scenarios over time. GDP impacts from transition risk are
+  slightly positive in the Net Zero 2050 scenario as negative impacts on demand
+  from higher carbon prices and energy costs are more than offset by the
+  recycling of carbon tax revenues into government investment and lower
+  employment taxes.
+  
+  ![GDP](GDP_Orderly.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer, NGFS Scenario Data NIGEM v2.0 NiGEM NGFS v1.21 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+  Overall, these are relatively optimistic scenarios as both transition and
+  physical risks are limited. Any policies that are either introduced or changed
+  are assumed to take place efficiently with little variation between countries
+  and sectors. Similarly, the development and deployment of alternative
+  technologies are expected to take place without significant difficulty. For
+  example, the availability of Carbon dioxide removal technologies which
+  involves removing carbon from the atmosphere through increasing forest cover
+  and soil sequestration or growing crops for bioenergy doesn't pose a
+  significant challenge in either orderly scenario.
+
+  ![Orderly scenarios](Orderly_Scenarios.png)
+
+  **Source:**
+  [NGFS Climate Scenarios, June2021](https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf){target="\_blank"}

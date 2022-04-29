@@ -1,0 +1,6 @@
+Type,product,Agriculture,Construction,Consumer Products,Financial Services,Manufacturing,Mining,Oil and Gas,Telecommunications,Transport,Utilities
+General Exposures to (Non-SME) Corporates,loans,agriculture,construction,consumer_products,,manufacturing,metals_and_mining,oil_and_gas,telecoms,transport,utilities
+Retail Exposure to SMEs,loans,agriculture,construction,consumer_products,,manufacturing,metals_and_mining,oil_and_gas,telecoms,transport,utilities
+Bank Exposures,loans,,,,financials,,,,
+Other Financial Institutions,corporate_bonds,,,,financials,,,,
+Subordinated Debt and Equity,equities,agriculture,construction,consumer_products,,manufacturing,metals_and_mining,oil_and_gas,telecoms,transport,utilities

@@ -1,7 +1,3 @@
-tab_bank_sov_ui <- function() {
-  list(
-    h2("Bank: Sovereign Exposures")
-  )
+tab_bank_sov_helper <- function() {
+  generic_helper("asset")
 }
-
-tab_bank_sov_foot <- generic_asset_footer

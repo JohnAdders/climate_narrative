@@ -1,0 +1,14 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.lintr$
+^.*\.code-workspace$
+^.Rhistory$
+^\.gitignore$
+^..Rcheck$
+^\.git$
+^.*\.cmd$
+^.*\.tar\.gz$
+^secret\.yml$
+^rsconnect$
+^\.github$
+^helpers$

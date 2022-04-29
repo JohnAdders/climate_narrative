@@ -1,0 +1,3 @@
+Type,product,Agriculture,Construction,Consumer Products,Financial Services,Manufacturing,Mining,Oil and Gas,Telecommunications,Transport,Utilities
+Bonds,corporate_bonds,agriculture,construction,consumer_products,financials,manufacturing,metals_and_mining,oil_and_gas,telecoms,transport,utilities
+Equity,equities,agriculture,construction,consumer_products,financials,manufacturing,metals_and_mining,oil_and_gas,telecoms,transport,utilities

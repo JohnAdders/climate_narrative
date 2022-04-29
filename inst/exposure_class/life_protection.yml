@@ -1,0 +1,413 @@
+name: Life Protection
+description: |
+  The **Life Protection** underwriting class covers term assurance, whole life
+  assurance, mortgage protection, income protection and critical illness written
+  on either an individual or group basis.
+
+  Life assurance policies generally pay out a one-off payment of the cover
+  amount on death of the life assured. Policies may be written on whole of life
+  basis, or cover may last for a specified term. The cover amount can be flat
+  over the term of the policy or may decrease over the policy duration.
+
+  Critical illness policies provide the pay out on the occurrence of one of a
+  set of predetermined conditions. Depending on the definition, payment may
+  occur on diagnosis, when the condition has progressed to a specified severity
+  or when certain treatments are performed.
+
+  Income protection provides a regular income for policyholders who are unable
+  to work due to illness or injury. Payments may last until the policyholder
+  recovers or may be for a predetermined length of time. The main risks covered
+  by Life Protection businesses for consumers are mortality and morbidity. The
+  other key risks life protection businesses are exposed to are expenses, lapses
+  and catastrophes.
+transition:
+  high:
+    exec_description: |
+      Life Protection underwriting exposures could be impacted in the Disorderly 
+      transition risk scenarios, as mortality and morbidity could be affected by 
+      both a reduction in pollution which could in turn result in a reduction in 
+      cancer (especially lung), respiratory diseases, heart attack and stroke as well as 
+      potentially a decrease in healthcare spending. 
+    always: |
+      Life Protection underwriting exposures could be impacted by the transition
+      effects related to changes in pollution levels. In Disorderly
+      transition risk scenarios, the Delayed transition driven by a late policy
+      action enables a "fossil recovery" out of the economic crisis
+      brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
+      until 2030 and a decrease in CO<sub>2</sub> emissions after 2030 to
+      compensate for the inaction beforehand. The Divergent scenario results in
+      an immediate by divergent reduction in CO<sub>2</sub> emissions. This
+      could lead to a significant reduction in CO<sub>2</sub> emissions by 2050,
+      probably associated with a drive towards cleaner air (due to for example,
+      an increase in electric vehicles replacing vehicles with internal
+      combustion engines). This would cause a reduction in pollution which could
+      in turn result into a reduction in cancer (especially lung), respiratory
+      diseases, heart attack and stroke.
+
+      These scenarios could also lead to a limited reduction in GDP growth. This 
+      could lead to significant changes in the rate of growth in healthcare spending 
+      that could negatively impact mortality and morbidity.
+    high_materiality: |
+      **Pollution effect**
+
+      It seems reasonable to assume that a general drive towards reducing
+      greenhouse gases could probably be associated with a drive towards cleaner
+      air, and therefore positive outcomes for health. However, it is important
+      to differentiate between the production of greenhouse gases (such as
+      CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
+      directly impact health, and the production of pollutants (such as
+      particulate matter and oxides of nitrogen (NOx)) that are more directly harmful
+      to health.
+      
+      In these scenarios, emissions of hazardous pollutants, for example 
+      black carbon, volatile organic compounds, and oxides of nitrogen, 
+      are projected to decrease. Emission trajectories for oxides of nitrogen 
+      (NOx) can be seen here, but other hazardous pollutants in the NGFS could 
+      equally be referenced as a guide as these have broadly similar trajectories. 
+      
+      ![NOx Emissions](Emissions_NOx_Disorderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
+
+      Whilst it may be the case that advances in one are correlated with
+      advancements in the other (for example if diesel cars are replaced with
+      electric cars where the marginal electricity is generated from renewable
+      sources), some climate outcomes may achieve one and not the other. For
+      example:
+
+      - If we replace diesel cars with electric cars but continue to rely on
+        fossil fuels to generate the electricity, then this could address the
+        particulates but not the greenhouse effect.
+
+      - If we increase biomass burning this may reduce greenhouse effect but
+        actually contribute to local particulate pollution.
+
+      - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
+        but without global buy-in, then this could also reduce the correlation.
+
+      In the Disorderly transition risk scenarios, there is potential
+      for fewer deaths and a positive outcome for health relating to air
+      pollution, the reduction of pollution could result into a reduction of
+      cancers (especially lung) and respiratory diseases (e.g. asthma,
+      respiratory allergic disease, chronic obstructive pulmonary disease and
+      respiratory tract infections, but also cardiovascular disease ), although
+      we note that this is very much dependent on the fuel mix generating
+      electrical power for the grid. For example, whilst waste-to-energy plants
+      have similar particulate outputs to gas-fired power stations, biomass
+      plants such as wood pellet fired facilities, for their many positives,
+      produce significantly more particulates than gas-fired power stations
+      (Hajat et al., 2014).
+
+      **GDP growth effect**
+
+      GDP growth impacts the ability of individuals and government to spend more
+      on factors that can impact the nation's health and thus indirectly levels
+      of mortality and morbidity claims. The specific scenario would depend on
+      how government and society chose to allocate any GDP growth.
+
+      The Disorderly transition risk scenarios could lead to a
+      moderate to severe fall in GDP growth. A slower GDP growth would
+      potentially constrain the growth in spending on NHS, public health, social
+      care, medical research etc. Assuming that greater funding is correlated to
+      some extent with mortality and morbidity outcomes, this means any climate
+      scenario could have an impact on mortality and morbidity via its impact on
+      GDP.
+
+      This could impact across the range of protection products. Although the
+      precise impact may differ between products depending on the scenario (for
+      example, income protection claims experience might suffer more if there
+      was a reduction in spending on musculoskeletal conditions, whilst critical
+      illness would be more sensitive to trajectories in cancer diagnosis
+      techniques), it may be more appropriate to view this at the "overall"
+      level rather than spuriously defining specific GDP allocation scenarios.
+
+      **Impact on pricing or product design**
+
+      To the extent that there is an impact on mortality, the
+      Disorderly transition risk scenarios could have an impact on the
+      pricing of life protection products, although this is likely to be modest.
+  low:
+    exec_description: |
+      Life Protection underwriting exposures could be impacted in the Orderly 
+      transition risk scenarios, as mortality and morbidity could decrease due to 
+      a reduction in pollution which could in turn result in a reduction in 
+      cancer (especially lung), respiratory diseases, heart attack and stroke.
+    always: |
+      Life Protection underwriting exposures could be impacted by the transition
+      effects related to changes in pollution levels. In Orderly
+      transition risk scenarios, immediate policy reaction, societal change,
+      national energy strategies, and carbon legislation could lead to an
+      immediate and smooth reduction in CO<sub>2</sub> emissions by 2050, and
+      this would probably be associated with a drive towards cleaner air (due to
+      for example, an increase in electric vehicles replacing vehicles with
+      internal combustion engines). This would cause a reduction in pollution
+      which could in turn result into a reduction in cancer (especially lung),
+      respiratory diseases, heart attack and stroke.
+
+      The Orderly transition risk scenarios could also lead to a limited
+      fall in GDP. This could result in changes in the rate of growth in
+      healthcare spending, which could impact mortality and morbidity.
+    high_materiality: |
+      **Pollution effect**
+
+      It seems reasonable to assume that a general drive towards reducing
+      greenhouse gases could probably be associated with a drive towards cleaner
+      air, and therefore positive outcomes for health. However, it is important
+      to differentiate between the production of greenhouse gases (such as
+      CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
+      directly impact health, and the production of pollutants (such as
+      particulate matter and oxides of nitrogen) that are more directly harmful
+      to health.
+
+      Whilst it may be the case that advances in one are correlated with
+      advancements in the other (for example if diesel cars are replaced with
+      electric cars where the marginal electricity is generated from renewable
+      sources), some climate outcomes may achieve one and not the other. For
+      example:
+
+      - If we replace diesel cars with electric cars but continue to rely on
+        fossil fuels to generate the electricity, then this could address the
+        particulates but not the greenhouse effect.
+
+      - If we increase biomass burning this may reduce greenhouse effect but
+        actually contribute to local particulate pollution.
+
+      - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
+        but without global buy-in, then this could also reduce the correlation.
+
+      In Orderly transition risk scenarios, there is potential for
+      fewer deaths and a positive outcome for health relating to air pollution.
+      The reduction in pollution could result in a reduction of cancers
+      (especially lung) and respiratory diseases (e.g. asthma, respiratory
+      allergic disease, chronic obstructive pulmonary disease and respiratory
+      tract infections), but also cardiovascular disease, although we note that
+      this is very much dependent on the fuel mix generating electrical power
+      for the grid. For example, whilst waste-to-energy plants have similar
+      particulate outputs to gas-fired power stations, biomass plants such as
+      wood pellet fired facilities, for their many positives, produce
+      significantly more particulates than gas-fired power stations (Hajat et
+      al., 2014).
+      
+      In these scenarios, emissions of hazardous pollutants, for example black 
+      carbon, volatile organic compounds, and oxides of nitrogen, are projected 
+      to decrease. Emission trajectories for oxides of nitrogen (NOx) can be 
+      seen here, but other hazardous pollutants in the NGFS could equally be 
+      referenced as a guide as these have broadly similar trajectories.
+
+      ![NOx Emissions](Emissions_NOx_Orderly.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      **Impact on pricing or product design**
+
+      To the extent that there is an impact on mortality, the Orderly
+      transition risk scenarios could have an impact on the pricing of life
+      protection products, although this is likely to be modest.
+physical:
+  high:
+    exec_description: |
+      In high physical risk scenarios, climate change is likely to result in 
+      increased disruption that could have an impact on the life protection 
+      underwriting class, as mortality and morbidity could be affected by both a 
+      reduction in healthcare spending and an increase in a myriad of health 
+      problems due to higher temperatures.
+    always: |
+      In the high physical risk scenario, climate change is likely to result in
+      increased disruption that could have an impact on the life protection
+      underwriting class. Chronic gradual impacts (such as higher average
+      temperatures and rises in the spread of vector-borne diseases) and acute
+      effects due to changes in the frequency and severity of weather events
+      (such as floods, droughts, bushfires and extreme heat and cold) could
+      impact mortality and morbidity risks, although this is dependent on
+      location and may not be as material in the UK. This could result in future
+      prospective policyholders becoming more expensive to insure.
+
+      Adverse impacts on world GDP from physical risks are assumed in the
+      scenarios and these scale with the rise in temperatures in the scenarios
+      over time. The high physical risk scenario could therefore also lead to a
+      significant GDP impact which could negatively impact mortality and
+      morbidity.
+    high_materiality: |
+      **GDP growth effect**
+
+      GDP growth impacts the ability of individuals and government to spend more
+      on factors that can impact the nation's health and thus indirectly levels
+      of mortality and morbidity claims. The specific scenario would depend on
+      how government and society chose to allocate any GDP growth. However,
+      higher GDP would give a bigger pot to potentially support higher spending
+      on the NHS, public health, social care, medical research etc. and so it is
+      reasonable to assume the funding for these areas would be greater "on
+      average" if GDP is greater (without having to specifically predict how
+      spending is allocated by any future government). Similarly, a lower GDP
+      would potentially constrain the growth in spending on these areas.
+      Assuming that greater funding is correlated to some extent with mortality
+      and morbidity outcomes, this means any climate scenario could have an
+      impact on mortality and morbidity via its impact on GDP.
+
+      This could impact across the range of protection products. Although the
+      precise impact may differ between products depending on the scenario (for
+      example, income protection claims experience might suffer more if there
+      was a reduction in spending on musculoskeletal conditions, whilst critical
+      illness would be more sensitive to trajectories in cancer diagnosis
+      techniques), it may be more appropriate to view this at the "overall"
+      level rather than spuriously defining specific GDP allocation scenarios.
+
+      **Temperature and weather effect**
+
+      In a high physical risk scenario, the increases in chronic climate effects
+      such as temperature variation and weather events could pose significant
+      challenges that in turn could impact the life protection underwriting
+      class. For example:
+
+      - **Mortality**: A level increase in temperature in the UK could lead to a
+        reduction in deaths since the reduction in excess deaths due to cold
+        weather may outweigh any increase excess deaths due to warmer weather
+        and the risk of prolonged heat waves. However, to the extent that any
+        increase in temperatures comes with an increase in the variability of
+        temperatures, we could see an increase in both Winter and Summer excess
+        mortality. In addition, the impact is not the same for all ages, with
+        children and older people likely to be the most affected - given that
+        life assurance is predominantly bought by people of working age, the
+        exposure to higher mortality for children and older people is likely to
+        be more limited.
+
+      - **Morbidity**: A rise in temperatures could lead to an increase in the
+        incidence rates of skin cancer, a condition often covered by critical
+        illness products. The prevalence of skin cancer is dependent on
+        geographic location so any increased prevalence may also differ by
+        location. Furthermore, research indicates a link between high
+        temperatures and high temperature changes with increased cardiovascular
+        risk, e.g. heart attacks which could lead to higher critical illness
+        claims or income protection claims.
+
+      In the Current Policies scenario, mean air temperatures, as well as mean 
+      daily minimum and maximum air temperatures, are projected to increase.
+      
+      ![Air Temperature](Air_Temp_High_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+      
+      **Impact on pricing or product design**
+
+      To the extent that there is an impact on mortality and morbidity, the low
+      physical risk scenario could have an impact on the pricing of life
+      protection products.
+
+      There are several mitigating actions that could be taken against the
+      potential mortality and morbidity impacts due to the physical risks
+      mentioned above to build resiliency against extreme weather events. For
+      example, investing in more resilient solutions for heating/cooling
+      technologies across homes and businesses, as well as integrating climate
+      change into the medical curriculum to better equip health professionals in
+      the face of climate change driven emergencies and extreme weather events.
+  low:
+    exec_description: |
+      n/a
+    always: |
+      In the low physical risk scenario, climate change is likely to result in
+      increased disruption that could have an impact on life protection
+      underwriting class. Chronic gradual impacts (such as higher average global
+      temperatures and potentially rises in the spread of vector-borne diseases)
+      and acute effects due to changes in the frequency and severity of weather
+      events (such as floods, droughts, bushfires and extreme heat and cold)
+      could impact mortality and morbidity risks, although this is dependent on
+      location and may not be as material in the UK. This could result in future
+      policyholders becoming more expensive to insure.
+
+      Adverse impacts on world GDP from physical risks are assumed in the
+      scenarios and these scale with the rise in temperatures in the scenarios
+      over time. The low physical risk scenario could therefore also lead to a
+      GDP impact which could negatively impact mortality and morbidity.
+    high_materiality: |
+      **GDP growth effect**
+
+      GDP growth impacts the ability of individuals and government to spend more
+      on factors that can impact the nation's health and thus indirectly levels
+      of mortality and morbidity claims. The specific scenario would depend on
+      how government and society chose to allocate any GDP growth. However,
+      higher GDP would give a bigger pot to potentially support higher spending
+      on the NHS, public health, social care, medical research etc. and so it is
+      reasonable to assume the funding for these areas would be greater "on
+      average" if GDP is greater (without having to specifically predict how
+      spending is allocated by any future government). Similarly, a lower GDP
+      would potentially constrain the growth in spending on these areas.
+      Assuming that greater funding is correlated to some extent with mortality
+      and morbidity outcomes, this means any climate scenario could have an
+      impact on mortality and morbidity via its impact on GDP.
+
+      This could impact across the range of protection products. Although the
+      precise impact may differ between products depending on the scenario (for
+      example, income protection claims experience might suffer more if there
+      was a reduction in spending on musculoskeletal conditions, whilst critical
+      illness would be more sensitive to trajectories in cancer diagnosis
+      techniques), it may be more appropriate to view this at the "overall"
+      level rather than spuriously defining specific GDP allocation scenarios.
+
+      **Temperature and weather effect**
+
+      Even in a low physical risk scenario, the increases in chronic climate
+      effects such as temperature variation and weather events could pose
+      significant challenges that in turn could impact the life protection
+      underwriting class. For example:
+
+      - **Mortality**: A level increase in temperature in the UK could lead to a
+        reduction in deaths since the reduction in excess deaths due to cold
+        weather may outweigh any increase excess deaths due to warmer weather
+        and the risk of prolonged heat waves. However, to the extent that any
+        increase in temperatures comes with an increase in the variability of
+        temperatures, we could see an increase in both Winter and Summer excess
+        mortality. In addition, the impact is not the same for all ages, with
+        children and older people likely to be the most affected - given that
+        life assurance is predominantly bought by people of working age, the
+        exposure to higher mortality for children and older people is likely to
+        be more limited.
+
+      - **Morbidity**: A rise in temperatures could lead to an increase in the
+        incidence rates of skin cancer, a condition often covered by critical
+        illness products. The prevalence of skin cancer is dependent on
+        geographic location so any increased prevalence may also differ by
+        location. Furthermore, research indicates a link between high
+        temperatures and high temperature changes with increased cardiovascular
+        risk, e.g. heart attacks which could potentially lead to higher critical
+        illness claims or income protection claims.
+        
+        In the Net Zero 2050 and Delayed transition scenarios, mean air temperatures, 
+        as well as mean daily minimum and maximum air temperatures, are projected 
+        to increase.
+        
+      ![Air Temperature](Air_Temp_Low_Physical.png)
+      
+      **Source:**
+      [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+
+      **Impact on pricing or product design**
+
+      To the extent that there is an impact on mortality and morbidity, the low
+      physical risk scenario could have an impact on the pricing of life
+      protection products, although this is likely to be modest.
+
+      There are several mitigating actions that could be taken against the
+      potential mortality and morbidity impacts due to the physical risks
+      mentioned above to build resiliency against extreme weather events. For
+      example, investing in more resilient solutions for heating/cooling
+      technologies across homes and businesses, as well as integrating climate
+      change into the medical curriculum to better equip health professionals in
+      the face of climate change driven emergencies and extreme weather events.
+
+references: |
+  - [Importance of Climate-Related Risks for Actuaries - International Actuarial Association, June 2020](https://www.actuaries.org/IAA/Documents/CMTE_EXEC/Meetings/2020_23_07/CRTF_ImportanceOfClimateRelatedRisksforActuaries_15July2020_clean.pdf){target="\_blank"}
+
+  - [The impact of climate change on mortality and retirement incomes in Australia - Actuaries Institute, September 2019](https://actuaries.asn.au/Library/Opinion/2019/TheDialogue10ClimateWEBLres.pdf){target="\_blank"}
+
+  - [Aviva's Climate-Related Financial Disclosure 2020](https://www.aviva.com/sustainability/reporting/climate-related-financial-disclosure/){target="\_blank"}
+
+  - [Aviva Adviser: Life Insurance+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/life-insurance-plus/){target="\_blank"}
+
+  - [Aviva Adviser: Critical illness+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/critical-illness-plus/){target="\_blank"}
+
+  - [Aviva Adviser: Income Protection+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/income-protection-plus/){target="\_blank"}
+
+  - [Case Studies of Environmental Risk Analysis Methodologies - NGFS, September 2020](https://www.ngfs.net/sites/default/files/medias/documents/case_studies_of_environmental_risk_analysis_methodologies.pdf){target="\_blank"}
