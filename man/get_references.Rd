@@ -12,7 +12,7 @@ get_references(items, exposure_classes)
 \item{exposure_classes}{List of exposure classes (sectors)}
 }
 \value{
-markdown-formatted references section (h2)
+markdown-formatted references section(h1)
 }
 \description{
 Function to produce references section (for all items)

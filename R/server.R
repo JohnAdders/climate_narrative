@@ -70,6 +70,14 @@ server <- function(input, output, session) {
     }
     out$materiality <- factor(out$values, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
     out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
+    out$exposure_group <- sapply(out$item, function(class) {
+      group_or_null <- global$exposure_classes[[class]]$group
+      if (is.null(group_or_null)) {
+        return("")
+      } else{
+        return(group_or_null)
+      }
+    })
     out <- out[!is.na(out$type), ]
     return(out)
   })

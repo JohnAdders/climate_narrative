@@ -5,7 +5,8 @@
 \title{Lower level report helper function responsible for single scenario description}
 \usage{
 get_scenario_descriptions(
-  aggregated_table,
+  aggregated_table_by_item,
+  aggregated_table_by_group,
   type_inputs,
   scenario,
   exposure_classes,
@@ -13,7 +14,9 @@ get_scenario_descriptions(
 )
 }
 \arguments{
-\item{aggregated_table}{Table of all possible items}
+\item{aggregated_table_by_item}{Table of all possible items}
+
+\item{aggregated_table_by_group}{As above but less granular}
 
 \item{type_inputs}{Drop box items}
 
