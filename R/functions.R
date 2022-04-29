@@ -1671,7 +1671,7 @@ html_postprocess <- function(file, report_version) {
     "climate_narrative",
     temp
   )
-  if (report_version >= 2 && report_version <= 5) {
+  if (report_version >= 2) {
     temp <- gsub(
       "(<h[1-5]?>)(.*)(</h[1-5]?>)",
       "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
@@ -1679,12 +1679,16 @@ html_postprocess <- function(file, report_version) {
       perl = TRUE
     )
   }
-
-  writeLines(
-    temp,
-    file_conn
-  )
-  close(file_conn)
+  if (report_version >= 6){
+    close(file_conn)
+    separate_toc(file, temp)
+  } else {
+    writeLines(
+      temp,
+      file_conn
+    )
+    close(file_conn)
+  }
   return(invisible(NULL))
 }
 
@@ -1731,25 +1735,13 @@ get_report_settings <- function(content_files,
     include_exposures <- FALSE
   }
   if (file_format == "html") {
-    if (report_version >= 6) {
-      output_format <- rmarkdown::html_document(
-        toc = TRUE,
-        toc_depth = 2,
-        toc_float = list(collapsed = FALSE),
-        theme = "sandstone",
-        self_contained = FALSE,
-        fig_caption = FALSE,
-        lib_dir = "lib"
-      )
-    } else {
-      output_format <- rmarkdown::html_document(
-        toc = TRUE,
-        toc_depth = 2,
-        toc_float = FALSE,
-        self_contained = FALSE,
-        fig_caption = FALSE
-      )
-    }
+    output_format <- rmarkdown::html_document(
+      toc = TRUE,
+      toc_depth = 2,
+      toc_float = FALSE,
+      self_contained = FALSE,
+      fig_caption = FALSE
+    )
   } else {
     www_path <- system.file("www", package = "climate.narrative")
     if (www_path == "") {
@@ -1866,34 +1858,8 @@ produce_report <- function(all_inputs, settings) {
     output_file = render_settings$output_file,
     output_format = render_settings$output_format
   )
-  check_required_libraries(render_settings)
   postprocess(postprocess_settings)
   return(invisible(NULL))
-}
-
-#' Check if the files (e.g. javascript) required by the report are available in the main package
-#'
-#' @param render_settings the list containing available_libs (vector of files in the package)
-#' and output_file (path of the rendered report, where directory "lib" is searched)
-check_required_libraries <- function(render_settings) {
-  rendered_libs <- list.files(
-    paste0(
-      dirname(render_settings$output_file),
-      "/lib"
-    ),
-    recursive = TRUE
-  )
-  missing_libs <- setdiff(rendered_libs, render_settings$available_libs)
-  if (length(missing_libs)) {
-    warning(
-      paste0(
-        length(missing_libs),
-        " library files are contained in the report but not in the package www/lib directory. First of the missing files is: ",
-        missing_libs[1]
-      )
-    )
-  }
-  return(NULL)
 }
 
 #' Gets either a standard or test report contents
@@ -1938,4 +1904,29 @@ postprocess <- function(postprocess_settings) {
   } else {
     html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
   }
+}
+
+
+separate_toc <- function(filename, file_contents=NULL) {
+  if (is.null(file_contents)){
+    file_conn <- file(html_fie)
+    file_contents <- readLines(file_conn)
+    close(file_conn)
+  }
+  toc_start <- grep("<div id=\"TOC\">", file_contents)
+  div_end <- grep("</div>", file_contents)
+  toc_end <- min(div_end[div_end > toc_start])
+  toc <- file_contents[toc_start:toc_end]
+  no_toc <- file_contents[-(toc_start:toc_end)]
+  #file_conn <- file(paste0(substr(filename, 1, nchar(filename) - 5), ".html"))
+  file_conn <- file(filename)
+  writeLines(no_toc, file_conn)
+  close(file_conn)
+  file_conn <- file(paste0(substr(filename, 1, nchar(filename) - 5), "_toc.html"))
+  writeLines(toc, file_conn)
+  close(file_conn)
+  return(invisible(NULL))
+  #output$html_report_message <- renderText("")
+  #output$html_report <- renderUI(includeHTML("testreport_no_toc.html"))
+  #output$html_report_nav <- renderUI(includeHTML("testreport_toc.html"))
 }

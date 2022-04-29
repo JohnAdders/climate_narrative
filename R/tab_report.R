@@ -21,14 +21,19 @@ tab_report_ui <- function() {
   )
   button_1 <- conditionalPanel(
     'output.html_report_message == ""',
-    actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
+    actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev"),
+    class = "inline2"
   )
   button_2 <- conditionalPanel(
     'output.html_report_message == ""',
-    downloadButton("report", "Download the selected report as RTF")
+    downloadButton("report", "Download as RTF"),
+    class = "inline2"
   )
   if (global$dev) {
-    button_3 <- actionButton("update_yamls", "Update the report text files")
+    button_3 <- #div(
+      actionButton("update_yamls", "Update the report text files")#,
+      #class="inline2"
+    #)
     dropdown_3 <- selectInput(
       "version_selection",
       "Select the report version",
@@ -62,26 +67,52 @@ tab_report_ui <- function() {
       )
     )
   }
-  main_part <- div(
-    class = "bottomlayer",
-    list(
-      textOutput("html_report_message"),
-      uiOutput("html_report")
-    )
-  )
-  head <- tags$header(
-    img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50),
-    dropdown_part
-  )
+  
   if (global$report_version >= 6) {
-    empty_space <- div(class = "fixheight")
-    head <- tagAppendAttributes(head, class = "fixed")
-    out <- list(
-      head,
-      empty_space,
+    if (global$dev) {
+      button_part <- column(8, button_1, button_2, button_3)
+    } else {
+      button_part <- column(8, button_1, button_2)
+    }
+    head_part <- tags$header(
+      fluidRow(
+        column(4, img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50, class="inline2")),
+        button_part
+      )
+    )
+    head_part <- tagAppendAttributes(head_part, class = "report_head")
+    main_part <- sidebarLayout(
+      tagAppendAttributes(
+        sidebarPanel(
+          dropdown_1,
+          dropdown_2,
+          uiOutput("html_report_nav")
+        ),
+        class="h100"
+      ),
+      mainPanel(
+        textOutput('html_report_message'),
+        uiOutput("html_report"),
+        heartbeat_footer()
+      )
+    )
+    main_part <- tagAppendAttributes(main_part, class = "report_main")
+    out <- div(class="report_page",
+      head_part,
       main_part
     )
   } else {
+    main_part <- div(
+      class = "bottomlayer",
+      list(
+        textOutput("html_report_message"),
+        uiOutput("html_report")
+      )
+    )
+    head <- tags$header(
+      img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50),
+      dropdown_part
+    )
     out <- list(
       head,
       main_part
