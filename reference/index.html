@@ -92,6 +92,10 @@
         </td>
         <td><p>Grid table of inputs (everything happens in matching server function)</p></td>
       </tr><tr><td>
+          <p><code><a href="filter_inputs.html">filter_inputs()</a></code> </p>
+        </td>
+        <td><p>Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities</p></td>
+      </tr><tr><td>
           <p><code><a href="format_images.html">format_images()</a></code> </p>
         </td>
         <td><p>Go through the markdown file, find all png images and scale down where relevant</p></td>
@@ -145,17 +149,13 @@
         </td>
         <td><p>Produce a matrix of input values from a matrix of input names (simple double loop)</p></td>
       </tr><tr><td>
-          <p><code><a href="get_inputs.html">get_inputs()</a></code> </p>
-        </td>
-        <td><p>Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities</p></td>
-      </tr><tr><td>
           <p><code><a href="get_references.html">get_references()</a></code> </p>
         </td>
         <td><p>Function to produce references section (for all items)</p></td>
       </tr><tr><td>
           <p><code><a href="get_report_contents.html">get_report_contents()</a></code> </p>
         </td>
-        <td><p>Function that generates a markdown content of the report</p></td>
+        <td><p>Gets either a standard or test report contents</p></td>
       </tr><tr><td>
           <p><code><a href="get_report_settings.html">get_report_settings()</a></code> </p>
         </td>
@@ -177,6 +177,10 @@
         </td>
         <td><p>Helper function that returns non-scenario section number(s)</p></td>
       </tr><tr><td>
+          <p><code><a href="get_standard_report_contents.html">get_standard_report_contents()</a></code> </p>
+        </td>
+        <td><p>Function that generates a markdown content of the report</p></td>
+      </tr><tr><td>
           <p><code><a href="get_test_report.html">get_test_report()</a></code> </p>
         </td>
         <td><p>Karnan's request for easier change comparison - loop over all sectors</p></td>
@@ -189,9 +193,17 @@
         </td>
         <td><p>Heartbeat function (ui part) to prevent app closing due to inactivity</p></td>
       </tr><tr><td>
+          <p><code><a href="html_postprocess.html">html_postprocess()</a></code> </p>
+        </td>
+        <td><p>Process the HTML file manually to correct some known issues</p></td>
+      </tr><tr><td>
           <p><code><a href="include_markdown_section.html">include_markdown_section()</a></code> </p>
         </td>
         <td><p>Read the markdown section from relevant yaml file and save as output</p></td>
+      </tr><tr><td>
+          <p><code><a href="postprocess.html">postprocess()</a></code> </p>
+        </td>
+        <td><p>Wrapper calling either rtf_postprocess or html_postprocess</p></td>
       </tr><tr><td>
           <p><code><a href="produce_report.html">produce_report()</a></code> </p>
         </td>
@@ -276,10 +288,6 @@ without breaking words.</p></td>
           <p><code><a href="ui.html">ui()</a></code> </p>
         </td>
         <td><p>Main Shiny User Interface function</p></td>
-      </tr><tr><td>
-          <p><code><a href="write_report_to_file.html">write_report_to_file()</a></code> </p>
-        </td>
-        <td><p>Function that writes a (full or selective) report to a (temporary) file</p></td>
       </tr></tbody></table></div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

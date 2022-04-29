@@ -46,6 +46,9 @@
     <loc>/reference/exposure_grid_ui.html</loc>
   </url>
   <url>
+    <loc>/reference/filter_inputs.html</loc>
+  </url>
+  <url>
     <loc>/reference/format_images.html</loc>
   </url>
   <url>
@@ -85,9 +88,6 @@
     <loc>/reference/get_input_values.html</loc>
   </url>
   <url>
-    <loc>/reference/get_inputs.html</loc>
-  </url>
-  <url>
     <loc>/reference/get_references.html</loc>
   </url>
   <url>
@@ -109,6 +109,9 @@
     <loc>/reference/get_section_no.html</loc>
   </url>
   <url>
+    <loc>/reference/get_standard_report_contents.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_test_report.html</loc>
   </url>
   <url>
@@ -118,10 +121,16 @@
     <loc>/reference/heartbeat_footer.html</loc>
   </url>
   <url>
+    <loc>/reference/html_postprocess.html</loc>
+  </url>
+  <url>
     <loc>/reference/include_markdown_section.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/postprocess.html</loc>
   </url>
   <url>
     <loc>/reference/produce_report.html</loc>
@@ -182,8 +191,5 @@
   </url>
   <url>
     <loc>/reference/ui.html</loc>
-  </url>
-  <url>
-    <loc>/reference/write_report_to_file.html</loc>
   </url>
 </urlset>
