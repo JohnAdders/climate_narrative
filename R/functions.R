@@ -1021,7 +1021,7 @@ rtf_fix_table_of_contents <- function(filename) {
       rtf[search_position:length(rtf)],
       perl = TRUE
     )
-    if (length(bookmark_rows) > 1) {
+    if (length(bookmark_rows) > 1 && global$dev) {
       warning(paste0("Ambiguous table of content entry. Header ", bookmark_text, " is not unique, using the first match. Please check the table of content"))
     } else if (length(bookmark_rows) == 0) {
       stop(paste0("Error in fixing RTF table of content, header ", bookmark_text, " not found"))

@@ -1,6 +1,20 @@
 passes_captcha <- function(input, session) {
   result <- recaptcha_server(global$captcha_secret, input$responseReceived)
-  return(result$success && result$score > 0.5)
+  if(result$success && result$score > 0.5){
+    return(TRUE)
+  } else {
+    print(
+      paste0(
+        "Failed captcha attempt. Details: success ",
+        result$success,
+        "score ",
+        result$score,
+        "hostname ",
+        result$hostname
+      )
+    )
+    return(FALSE)
+  }
 }
 
 request_captcha <- function(output, session) {
@@ -133,7 +147,13 @@ tab_auth_server <- function(input, output, session, tab) {
     input$responseReceived,
     {
       if (session$userData$captcha_validated == FALSE) {
-        session$userData$captcha_validated <- passes_captcha(input, session)
+        captcha_result <- passes_captcha(input, session)
+        if (captcha_result == FALSE) {
+          warning("Captcha verification failed")
+          output$code_verification_result <- renderText("Captcha verification failed")
+        } else {
+          session$userData$captcha_validated <- TRUE
+        }
       }
       if (session$userData$captcha_validated == TRUE) {
         if (!is.null(global$beta_code)) {

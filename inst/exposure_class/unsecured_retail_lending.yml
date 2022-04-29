@@ -68,6 +68,11 @@ transition:
       with high retrofitting costs) and infer that this could adversely affect unsecured lending 
       exposures the bank has to the customer. However, it should be considered that not all unsecured 
       customers will also have mortgages.
+      
+      Interconnectedness with other relevant client segments, products and risk types could also be considered 
+      for a holistic assessment of potential losses arising from manifestation of climate risks. For example, 
+      if climate risks manifest materially in the unsecured portfolios, sources of retail liquidity might be 
+      challenged as well. 
   low:
     exec_description: |
       In Orderly transition risk scenarios, unsecured retail lenders are likely to be 
@@ -120,6 +125,11 @@ transition:
       with high retrofitting costs) and infer that this could adversely affect unsecured lending 
       exposures the bank has to the customer. However, it should be considered that not all 
       unsecured customers will also have mortgages. 
+      
+      Interconnectedness with other relevant client segments, products and risk types could also be 
+      considered for a holistic assessment of potential losses arising from manifestation of climate 
+      risks. For example, if climate risks manifest materially in the unsecured portfolios, sources 
+      of retail liquidity might be challenged as well. 
 
 physical:
   high:
@@ -193,7 +203,10 @@ appendix: |
   regions subject to severe flood risks or types of business) which may not be visible under a high-level 
   approach which doesn't model behaviour at an account level.  It may also be useful to compare correlations 
   between susceptibility to climate risks and traditional risk factors measured through PD scores or bureau 
-  information which would increase risk of losses.
+  information which would increase risk of losses. On a forward-looking basis, interconnectedness with 
+  potential losses from other segments, products or risk types could also be considered to manage climate 
+  risks holistically (e.g. if climate risks manifest materially in the unsecured portfolios, sources of retail 
+  liquidity might be challenged).
   
   The following examples identify some general challenges around modelling Climate Risk for 
   unsecured portfolios:
