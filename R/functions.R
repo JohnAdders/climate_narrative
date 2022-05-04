@@ -1671,7 +1671,7 @@ html_postprocess <- function(file, report_version) {
     "climate_narrative",
     temp
   )
-  if (report_version >= 2) {
+  if (report_version >= 2 && report_version <= 5) {
     temp <- gsub(
       "(<h[1-5]?>)(.*)(</h[1-5]?>)",
       "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
@@ -1906,10 +1906,16 @@ postprocess <- function(postprocess_settings) {
   }
 }
 
+#' Helper function to separate the table of contents from the main document
+#'
+#' @param filename HTML file to parse
+#' @param file_contents (optionally) conents of the HTML file (if already parsed, to avoid duplicating this work)
+#' @return NULL. The HTML file given as argument filename is updated as file without ToC, 
+#' which is saved as a separate HTML in the same directory as filename (with the name appended with "_toc")
 
 separate_toc <- function(filename, file_contents=NULL) {
   if (is.null(file_contents)){
-    file_conn <- file(html_fie)
+    file_conn <- file(filename)
     file_contents <- readLines(file_conn)
     close(file_conn)
   }

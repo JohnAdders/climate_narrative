@@ -38,6 +38,8 @@ This is a wrapper over any ui and server that handles switching to previous/next
 
 \item{\code{add_header}}{bool argument whether to include the standard header}
 
+\item{\code{add_buttons}}{bool argument whether to include the standard prev/next buttons}
+
 \item{\code{exposure}}{optional table of exposures, if present a grid of inputs will be prepared}
 
 \item{\code{type}}{type of institution (to group the inputs from all tabs)}
@@ -73,6 +75,7 @@ from the relevant functions (or makes it empty if the function does not exist)
   next_tab,
   add_header = TRUE,
   add_footer = TRUE,
+  add_buttons = TRUE,
   exposure = NULL,
   type = NULL,
   subtype = NULL,
@@ -95,6 +98,8 @@ from the relevant functions (or makes it empty if the function does not exist)
 \item{\code{add_header}}{whether to add a standard header}
 
 \item{\code{add_footer}}{whether to add a standard footer}
+
+\item{\code{add_buttons}}{whether to add a standard prev/next buttons}
 
 \item{\code{exposure}}{(optional) table of exposure to construct grid of inputs}
 
