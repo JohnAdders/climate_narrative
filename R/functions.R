@@ -1924,7 +1924,6 @@ separate_toc <- function(filename, file_contents=NULL) {
   toc_end <- min(div_end[div_end > toc_start])
   toc <- file_contents[toc_start:toc_end]
   no_toc <- file_contents[-(toc_start:toc_end)]
-  #file_conn <- file(paste0(substr(filename, 1, nchar(filename) - 5), ".html"))
   file_conn <- file(filename)
   writeLines(no_toc, file_conn)
   close(file_conn)
@@ -1932,7 +1931,4 @@ separate_toc <- function(filename, file_contents=NULL) {
   writeLines(toc, file_conn)
   close(file_conn)
   return(invisible(NULL))
-  #output$html_report_message <- renderText("")
-  #output$html_report <- renderUI(includeHTML("testreport_no_toc.html"))
-  #output$html_report_nav <- renderUI(includeHTML("testreport_toc.html"))
 }
