@@ -1385,24 +1385,24 @@ get_executive_summary_exposures <- function(exposure_classes,
     for (i in 1:nrow(less_material)) {
       item <- less_material$item[i]
       less_material$name[i] <- exposure_classes[[item]][["name"]]
-    } 
+    }
     for (i in 1:ncol(less_material)) {
       colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
     }
     for (i in seq_along(groups)) {
-      group_rows <- less_material$Exposure_group==groups[i]
-      group_data <- less_material[group_rows,]
+      group_rows <- less_material$Exposure_group == groups[i]
+      group_data <- less_material[group_rows, ]
       group_data$Materiality <- as.character(group_data$Materiality)
       group_data$Materiality_num <- as.character(group_data$Materiality_num)
       aggregate_row <- stats::aggregate(
-        cbind(Materiality,Materiality_num,Name) ~ A_or_L + Exposure_group,
-        data=group_data,
-        FUN=function(x) paste(as.character(x),collapse="<br>")
+        cbind(Materiality, Materiality_num, Name) ~ A_or_L + Exposure_group,
+        data = group_data,
+        FUN = function(x) paste(as.character(x), collapse = "<br>")
       )
       aggregate_row$Item <- groups[i]
-      aggregate_row$Risk.description = NA
+      aggregate_row$Risk.description <- NA
       less_material <- rbind(
-        less_material[!less_material$Exposure_group==groups[i],],
+        less_material[!less_material$Exposure_group == groups[i], ],
         aggregate_row
       )
     }
@@ -1586,7 +1586,7 @@ filter_inputs <- function(all_inputs_table, filter_settings) {
 #'
 #' @param inputs data frame of all inputs (usually the reactive expression all_inputs or its subset)
 #' @param by level of aggregation (by default "item" ie sector, also possible "group")
-aggregate_inputs <- function(inputs, by="item") {
+aggregate_inputs <- function(inputs, by = "item") {
   if (nrow(inputs) == 0) {
     return(
       data.frame(
@@ -1679,7 +1679,7 @@ html_postprocess <- function(file, report_version) {
       perl = TRUE
     )
   }
-  if (report_version >= 6){
+  if (report_version >= 6) {
     close(file_conn)
     separate_toc(file, temp)
   } else {
@@ -1910,11 +1910,11 @@ postprocess <- function(postprocess_settings) {
 #'
 #' @param filename HTML file to parse
 #' @param file_contents (optionally) conents of the HTML file (if already parsed, to avoid duplicating this work)
-#' @return NULL. The HTML file given as argument filename is updated as file without ToC, 
+#' @return NULL. The HTML file given as argument filename is updated as file without ToC,
 #' which is saved as a separate HTML in the same directory as filename (with the name appended with "_toc")
 
-separate_toc <- function(filename, file_contents=NULL) {
-  if (is.null(file_contents)){
+separate_toc <- function(filename, file_contents = NULL) {
+  if (is.null(file_contents)) {
     file_conn <- file(filename)
     file_contents <- readLines(file_conn)
     close(file_conn)

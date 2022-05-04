@@ -30,10 +30,10 @@ tab_report_ui <- function() {
     class = "inline2"
   )
   if (global$dev) {
-    button_3 <- #div(
-      actionButton("update_yamls", "Update the report text files")#,
-      #class="inline2"
-    #)
+    button_3 <- # div(
+      actionButton("update_yamls", "Update the report text files") # ,
+    # class="inline2"
+    # )
     dropdown_3 <- selectInput(
       "version_selection",
       "Select the report version",
@@ -67,7 +67,7 @@ tab_report_ui <- function() {
       )
     )
   }
-  
+
   if (global$report_version >= 6) {
     if (global$dev) {
       button_part <- column(8, button_1, button_2, button_3)
@@ -76,7 +76,7 @@ tab_report_ui <- function() {
     }
     head_part <- tags$header(
       fluidRow(
-        column(4, img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50, class="inline2")),
+        column(4, img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50, class = "inline2")),
         button_part
       )
     )
@@ -88,16 +88,17 @@ tab_report_ui <- function() {
           dropdown_2,
           uiOutput("html_report_nav")
         ),
-        class="h100"
+        class = "h100"
       ),
       mainPanel(
-        textOutput('html_report_message'),
+        textOutput("html_report_message"),
         uiOutput("html_report"),
         heartbeat_footer()
       )
     )
     main_part <- tagAppendAttributes(main_part, class = "report_main")
-    out <- div(class="report_page",
+    out <- div(
+      class = "report_page",
       head_part,
       main_part
     )

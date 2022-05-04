@@ -74,7 +74,7 @@ server <- function(input, output, session) {
       group_or_null <- global$exposure_classes[[class]]$group
       if (is.null(group_or_null)) {
         return("")
-      } else{
+      } else {
         return(group_or_null)
       }
     })
@@ -189,7 +189,7 @@ server <- function(input, output, session) {
           result <- includeHTML(temp_html)
           output$html_report <- renderUI(result) # used to be: return(result)
           if (global$report_version >= 6) {
-            output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html)-5),"_toc.html")))
+            output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
           }
         } else { # old code below
           stop("Error. Report version < 5 removed")
