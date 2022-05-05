@@ -19,21 +19,19 @@ tab_report_ui <- function() {
     sector_options,
     selectize = FALSE
   )
-  button_1 <- conditionalPanel(
+  button_1_conditional <- conditionalPanel(
     'output.html_report_message == ""',
     actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev"),
     class = "inline2"
   )
+  button_1_unconditional <- actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
   button_2 <- conditionalPanel(
     'output.html_report_message == ""',
     downloadButton("report", "Download as RTF"),
     class = "inline2"
   )
   if (global$dev) {
-    button_3 <- # div(
-      actionButton("update_yamls", "Update the report text files") # ,
-    # class="inline2"
-    # )
+    button_3 <- actionButton("update_yamls", "Update the report text files")
     dropdown_3 <- selectInput(
       "version_selection",
       "Select the report version",
@@ -49,7 +47,7 @@ tab_report_ui <- function() {
         column(4, dropdown_3)
       ),
       fluidRow(
-        column(4, button_1),
+        column(4, button_1_conditional),
         column(4, button_2),
         column(4, button_3)
       )
@@ -62,7 +60,7 @@ tab_report_ui <- function() {
         column(6, dropdown_2)
       ),
       fluidRow(
-        column(4, button_1),
+        column(4, button_1_conditional),
         column(4, button_2)
       )
     )
@@ -70,9 +68,9 @@ tab_report_ui <- function() {
 
   if (global$report_version >= 6) {
     if (global$dev) {
-      button_part <- column(8, button_1, button_2, button_3)
+      button_part <- column(8, button_1_unconditional, button_2, button_3)
     } else {
-      button_part <- column(8, button_1, button_2)
+      button_part <- column(8, button_1_unconditional, button_2)
     }
     head_part <- tags$header(
       fluidRow(
