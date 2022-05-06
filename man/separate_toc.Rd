@@ -4,12 +4,14 @@
 \alias{separate_toc}
 \title{Helper function to separate the table of contents from the main document}
 \usage{
-separate_toc(filename, file_contents = NULL)
+separate_toc(filename, file_contents = NULL, toc_label = "Table of contents")
 }
 \arguments{
 \item{filename}{HTML file to parse}
 
 \item{file_contents}{(optionally) conents of the HTML file (if already parsed, to avoid duplicating this work)}
+
+\item{toc_label}{a string to label the table of contents (or NULL for no label)}
 }
 \value{
 NULL. The HTML file given as argument filename is updated as file without ToC,

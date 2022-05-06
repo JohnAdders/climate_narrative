@@ -1910,10 +1910,11 @@ postprocess <- function(postprocess_settings) {
 #'
 #' @param filename HTML file to parse
 #' @param file_contents (optionally) conents of the HTML file (if already parsed, to avoid duplicating this work)
+#' @param toc_label a string to label the table of contents (or NULL for no label)
 #' @return NULL. The HTML file given as argument filename is updated as file without ToC,
 #' which is saved as a separate HTML in the same directory as filename (with the name appended with "_toc")
 
-separate_toc <- function(filename, file_contents = NULL, toc_title = "Table of contents") {
+separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of contents") {
   if (is.null(file_contents)) {
     file_conn <- file(filename)
     file_contents <- readLines(file_conn)
@@ -1923,10 +1924,10 @@ separate_toc <- function(filename, file_contents = NULL, toc_title = "Table of c
   div_end <- grep("</div>", file_contents)
   toc_end <- min(div_end[div_end > toc_start])
   toc <- file_contents[toc_start:toc_end]
-  if (!is.null(toc_title)){
+  if (!is.null(toc_label)){
     toc <- c(
       "<label>",
-      toc_title,
+      toc_label,
       "</label>",
       toc
     )
