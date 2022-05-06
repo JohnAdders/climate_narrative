@@ -1913,7 +1913,7 @@ postprocess <- function(postprocess_settings) {
 #' @return NULL. The HTML file given as argument filename is updated as file without ToC,
 #' which is saved as a separate HTML in the same directory as filename (with the name appended with "_toc")
 
-separate_toc <- function(filename, file_contents = NULL) {
+separate_toc <- function(filename, file_contents = NULL, toc_title = "Table of contents") {
   if (is.null(file_contents)) {
     file_conn <- file(filename)
     file_contents <- readLines(file_conn)
@@ -1923,6 +1923,14 @@ separate_toc <- function(filename, file_contents = NULL) {
   div_end <- grep("</div>", file_contents)
   toc_end <- min(div_end[div_end > toc_start])
   toc <- file_contents[toc_start:toc_end]
+  if (!is.null(toc_title)){
+    toc <- c(
+      "<label>",
+      toc_title,
+      "</label>",
+      toc
+    )
+  }
   no_toc <- file_contents[-(toc_start:toc_end)]
   file_conn <- file(filename)
   writeLines(no_toc, file_conn)

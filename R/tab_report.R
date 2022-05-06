@@ -83,7 +83,9 @@ tab_report_ui <- function() {
       tagAppendAttributes(
         sidebarPanel(
           dropdown_1,
+          hr(),
           dropdown_2,
+          hr(),
           uiOutput("html_report_nav")
         ),
         class = "h100"
