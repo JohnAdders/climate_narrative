@@ -1,6 +1,6 @@
 passes_captcha <- function(input, session) {
   result <- recaptcha_server(global$captcha_secret, input$responseReceived)
-  if(result$success && result$score > 0.5){
+  if (result$success && result$score > 0.5) {
     return(TRUE)
   } else {
     print(
@@ -37,47 +37,35 @@ process_progress <- function(output, should_continue) {
 render_dynamic_auth_ui <- function(output, session) {
   if (!is.null(global$beta_code)) {
     output$first_column <- renderUI({
-      NULL
-    })
-    output$auth_text <- renderUI({
-      p("Enter the beta code you have been sent")
-    })
-  } else {
-    output$first_column <- renderUI({
-      column(
-        6,
-        p("Enter your email address to receive the verification code"),
+      div(
+        p("Enter the beta code you have been sent"),
         textInput(
-          inputId = "email",
-          label = tagList(icon("user"), "Email"),
-          placeholder = "Enter your email here"
+          inputId = "code",
+          label = tagList(icon("unlock-alt"), "Verification code"),
+          placeholder = "Enter your verification code"
         ),
         actionButton(
-          inputId = "button_send_code",
-          label = "Send the code"
+          inputId = "button_check_code",
+          label = "Validate the code"
         ),
-        tippy::tippy_this("button_send_code", "Delivering the email may take several minutes, please also check your spam folder"),
-        textOutput("code_send_result")
+        tippy::tippy_this("button_check_code", "Click to proceed (if the code is correct)"),
+        textOutput("code_verification_result")
       )
-    })
-    output$auth_text <- renderUI({
-      p("Enter the verification code received in your email")
-    })
+     })
+  } else {
+    output$first_column <- renderUI({
+      div(
+        actionButton(
+          inputId = "button_check_code",
+          label = "I am not a robot"
+        ),
+        tippy::tippy_this("button_check_code", "Click to proceed"),
+        textOutput("code_verification_result")
+      )
+     })
   }
 }
 
-send_auth_code_email <- function(input, output, session) {
-  output$code_send_result <- renderText(
-    paste(
-      "TODO: send the actual email from",
-      global$email_server,
-      "to",
-      input$email,
-      "containing the code:",
-      global$verification_code
-    )
-  )
-}
 
 tab_auth_ui <- function(captcha_code) {
   list(
@@ -110,38 +98,13 @@ tab_auth_ui <- function(captcha_code) {
     hr(),
     recaptcha_ui(captcha_code),
     fluidRow(
-      uiOutput("first_column"),
-      column(
-        6,
-        uiOutput("auth_text"),
-        textInput(
-          inputId = "code",
-          label = tagList(icon("unlock-alt"), "Verification code"),
-          placeholder = "Enter your verification code"
-        ),
-        actionButton(
-          inputId = "button_check_code",
-          label = "Validate the code"
-        ),
-        tippy::tippy_this("button_check_code", "Click to proceed (if the code is correct)"),
-        textOutput("code_verification_result")
-      )
+      uiOutput("first_column")
     )
   )
 }
 
 tab_auth_server <- function(input, output, session, tab) {
   render_dynamic_auth_ui(output, session)
-  observeEvent(
-    input$button_send_code,
-    {
-      if (grepl("@", input$email, fixed = TRUE)) {
-        request_captcha(output, session)
-      } else {
-        output$code_send_result <- renderText("Please provide a valid email")
-      }
-    }
-  )
 
   observeEvent(
     input$responseReceived,
@@ -159,26 +122,13 @@ tab_auth_server <- function(input, output, session, tab) {
         if (!is.null(global$beta_code)) {
           process_progress(output, input$code == global$beta_code)
         } else {
-          send_auth_code_email(input, output, session)
+          process_progress(output, TRUE)
         }
       }
     }
   )
 
-  observeEvent(
-    input$button_check_code,
-    {
-      if (!is.null(global$beta_code)) {
-        request_captcha(output, session)
-      } else {
-        process_progress(
-          output,
-          (
-            input$code == global$verification_code &&
-              session$userData$captcha_validated == TRUE
-          )
-        )
-      }
-    }
-  )
+  observeEvent(input$button_check_code, {
+    request_captcha(output, session)
+  })
 }

@@ -74,7 +74,7 @@ server <- function(input, output, session) {
       group_or_null <- global$exposure_classes[[class]]$group
       if (is.null(group_or_null)) {
         return("")
-      } else{
+      } else {
         return(group_or_null)
       }
     })
@@ -172,7 +172,10 @@ server <- function(input, output, session) {
     ),
     {
       if (report_message() != "") {
-        output$html_report <- renderUI("") # used to be: return("")
+        output$html_report <- renderUI("")
+        if (global$report_version >= 6){
+          output$html_report_nav <- renderUI("")
+        }
       } else {
         temp_html <- session$userData$temp_html
         showModal(
@@ -187,8 +190,11 @@ server <- function(input, output, session) {
           produce_report(all_inputs(), settings)
           removeModal()
           result <- includeHTML(temp_html)
-          output$html_report <- renderUI(result) # used to be: return(result)
-        } else { # old code below
+          output$html_report <- renderUI(result)
+          if (global$report_version >= 6) {
+            output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
+          }
+        } else {
           stop("Error. Report version < 5 removed")
         }
       }

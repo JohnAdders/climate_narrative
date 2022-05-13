@@ -28,6 +28,8 @@ QuestionTab <- R6::R6Class(
     add_footer = NULL,
     #' @field add_header bool argument whether to include the standard header
     add_header = NULL,
+    #' @field add_buttons bool argument whether to include the standard prev/next buttons
+    add_buttons = NULL,
     #' @field exposure optional table of exposures, if present a grid of inputs will be prepared
     exposure = NULL,
     #' @field type type of institution (to group the inputs from all tabs)
@@ -47,13 +49,14 @@ QuestionTab <- R6::R6Class(
     #' @param next_tab name of the next tab
     #' @param add_header whether to add a standard header
     #' @param add_footer whether to add a standard footer
+    #' @param add_buttons whether to add a standard prev/next buttons
     #' @param exposure (optional) table of exposure to construct grid of inputs
     #' @param type type of issuers for which the inputs are applicable
     #' @param subtype unique reference of tab within a type of issuers
     #' @param ui_settings (optional) list of arguments to pass to tab_ui
     #' @param bottom_offset (optional) move the buttons and footer to the right by this fraction of page
     initialize = function(tab_name, tab_title, previous_tab, next_tab, add_header = TRUE,
-                          add_footer = TRUE, exposure = NULL, type = NULL, subtype = NULL,
+                          add_footer = TRUE, add_buttons = TRUE, exposure = NULL, type = NULL, subtype = NULL,
                           ui_settings = list(), bottom_offset = 0) {
       self$tab_name <- tab_name
       self$tab_title <- tab_title
@@ -66,6 +69,7 @@ QuestionTab <- R6::R6Class(
       self$id <- paste0("page_", self$tab_number)
       self$add_header <- add_header
       self$add_footer <- add_footer
+      self$add_buttons <- add_buttons
       self$exposure <- exposure
       self$type <- type
       self$subtype <- subtype
@@ -171,12 +175,12 @@ QuestionTab <- R6::R6Class(
       }
       tabpanel_params <- add_param(tabpanel_params, br())
       ui_bottom <- list()
-      if (length(self$previous_tab)) {
+      if (length(self$previous_tab) & self$add_buttons) {
         ui_bottom <- add_param(
           ui_bottom, actionButton(paste0(self$id, "_previous"), "prev")
         )
       }
-      if (length(self$next_tab)) {
+      if (length(self$next_tab) & self$add_buttons) {
         ui_bottom <- add_param(
           ui_bottom, actionButton(paste0(self$id, "_next"), "next")
         )
