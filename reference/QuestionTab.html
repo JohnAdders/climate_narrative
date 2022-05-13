@@ -104,6 +104,10 @@ This is a wrapper over any ui and server that handles switching to previous/next
 <dd><p>bool argument whether to include the standard header</p></dd>
 
 
+<dt><code>add_buttons</code></dt>
+<dd><p>bool argument whether to include the standard prev/next buttons</p></dd>
+
+
 <dt><code>exposure</code></dt>
 <dd><p>optional table of exposures, if present a grid of inputs will be prepared</p></dd>
 
@@ -149,6 +153,7 @@ from the relevant functions (or makes it empty if the function does not exist)</
   <span class="va">next_tab</span>,
   add_header <span class="op">=</span> <span class="cn">TRUE</span>,
   add_footer <span class="op">=</span> <span class="cn">TRUE</span>,
+  add_buttons <span class="op">=</span> <span class="cn">TRUE</span>,
   exposure <span class="op">=</span> <span class="cn">NULL</span>,
   type <span class="op">=</span> <span class="cn">NULL</span>,
   subtype <span class="op">=</span> <span class="cn">NULL</span>,
@@ -181,6 +186,10 @@ from the relevant functions (or makes it empty if the function does not exist)</
 
 <dt><code>add_footer</code></dt>
 <dd><p>whether to add a standard footer</p></dd>
+
+
+<dt><code>add_buttons</code></dt>
+<dd><p>whether to add a standard prev/next buttons</p></dd>
 
 
 <dt><code>exposure</code></dt>
