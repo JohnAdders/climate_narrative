@@ -618,6 +618,7 @@ get_exposure_risk_description <- function(item,
       low = "Low physical risk"
     )
   }
+
   header_text <- paste0(
     exposure_classes[[item]][["name"]],
     " --- ",
@@ -1514,6 +1515,13 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
   return(out)
 }
 
+paste_recursive <- function(l1, l2, n1, n2){
+        if (length(l1) > 1) {
+          return(mapply(paste_recursive, l1, l2, MoreArgs = list(n1=n1, n2=n2), SIMPLIFY=FALSE))
+        } else {
+          return (paste0(n1, "\n\n", l1, "\n\n", n2, "\n\n", l2))
+        }
+      }
 
 #' Karnan's request for easier change comparison - single sector
 #'
@@ -1536,12 +1544,18 @@ get_exposure_test_description <- function(exposure_classes, item_name, subitem_n
 
   for (risk in c("transition", "physical")) {
     for (risk_intensity in c("low", "high")) {
-      for (subitem in subitem_names){
-        out <- paste0(
-          out,
-          get_exposure_risk_description(subitem, c(), "High", exposure_classes, risk, risk_intensity, TRUE)
-        )
+      exposure_classes[["temp"]] <- exposure_classes[[subitem_names[1]]]
+      if (length(subitem_names) > 1) {
+        for (subitem in subitem_names[-1]){
+          exposure_classes[["temp"]] <- mapply(paste_recursive, exposure_classes[["temp"]], exposure_classes[[subitem]], MoreArgs = list(n1 = "", n2 = exposure_classes[[subitem]][["name"]]), SIMPLIFY=FALSE)
+        }
+        exposure_classes[["temp"]][["name"]] <- gsub("\n", " ", exposure_classes[["temp"]][["name"]], fixed=TRUE)
       }
+      out <- paste0(
+        out,
+        get_exposure_risk_description("temp", c(), "High", exposure_classes, risk, risk_intensity, TRUE)
+      )
+      exposure_classes[["temp"]] <- NULL
     }
   }
   return(out)
