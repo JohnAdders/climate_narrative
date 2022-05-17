@@ -1515,18 +1515,27 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
   return(out)
 }
 
-paste_recursive <- function(l1, l2, n1, n2){
-        if (length(l1) > 1) {
-          return(mapply(paste_recursive, l1, l2, MoreArgs = list(n1=n1, n2=n2), SIMPLIFY=FALSE))
-        } else {
-          return (paste0(n1, "\n\n", l1, "\n\n", n2, "\n\n", l2))
-        }
-      }
+#' Helper function to merge lists of lists with the same (possibly nested) structure, ultimately containing strings
+#'
+#' @param list_1 list 1
+#' @param list_2 list 2
+#' @param name_1 first name (to be appended at the lowest level)
+#' @param name_2 second name (to be appended at the lowest level)
+#' @param sep separator between names and list contents
+#'
+paste_recursive <- function(list_1, list_2, name_1, name_2, sep="\n\n"){
+  if (length(l1) > 1) {
+    return(mapply(paste_recursive, list_1, list_2, MoreArgs = list(name_1=name_1, name_2=name_2), SIMPLIFY=FALSE))
+  } else {
+    return (paste0(name_1, sep, list_1, sep, name_2, sep, list_2))
+  }
+}
 
 #' Karnan's request for easier change comparison - single sector
 #'
 #' @inherit get_standard_report_contents
-#' @param item sector name
+#' @param item sector name (group level)
+#' @param subitem_names names of the sectors (lower level), by default empty vector corresponding to no subitems
 #'
 get_exposure_test_description <- function(exposure_classes, item_name, subitem_names = c()) {
   exposure_class <- exposure_classes[[item_name]]
