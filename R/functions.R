@@ -1523,11 +1523,11 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
 #' @param name_2 second name (to be appended at the lowest level)
 #' @param sep separator between names and list contents
 #'
-paste_recursive <- function(list_1, list_2, name_1, name_2, sep="\n\n"){
+paste_recursive <- function(list_1, list_2, name_1, name_2, sep = "\n\n") {
   if (length(l1) > 1) {
-    return(mapply(paste_recursive, list_1, list_2, MoreArgs = list(name_1=name_1, name_2=name_2), SIMPLIFY=FALSE))
+    return(mapply(paste_recursive, list_1, list_2, MoreArgs = list(name_1 = name_1, name_2 = name_2), SIMPLIFY = FALSE))
   } else {
-    return (paste0(name_1, sep, list_1, sep, name_2, sep, list_2))
+    return(paste0(name_1, sep, list_1, sep, name_2, sep, list_2))
   }
 }
 
@@ -1547,7 +1547,7 @@ get_exposure_test_description <- function(exposure_classes, item_name, subitem_n
     "\n\n"
   )
 
-  if (length(subitem_names) == 0){
+  if (length(subitem_names) == 0) {
     subitem_names <- item_name
   }
 
@@ -1555,10 +1555,10 @@ get_exposure_test_description <- function(exposure_classes, item_name, subitem_n
     for (risk_intensity in c("low", "high")) {
       exposure_classes[["temp"]] <- exposure_classes[[subitem_names[1]]]
       if (length(subitem_names) > 1) {
-        for (subitem in subitem_names[-1]){
-          exposure_classes[["temp"]] <- mapply(paste_recursive, exposure_classes[["temp"]], exposure_classes[[subitem]], MoreArgs = list(n1 = "", n2 = exposure_classes[[subitem]][["name"]]), SIMPLIFY=FALSE)
+        for (subitem in subitem_names[-1]) {
+          exposure_classes[["temp"]] <- mapply(paste_recursive, exposure_classes[["temp"]], exposure_classes[[subitem]], MoreArgs = list(n1 = "", n2 = exposure_classes[[subitem]][["name"]]), SIMPLIFY = FALSE)
         }
-        exposure_classes[["temp"]][["name"]] <- gsub("\n", " ", exposure_classes[["temp"]][["name"]], fixed=TRUE)
+        exposure_classes[["temp"]][["name"]] <- gsub("\n", " ", exposure_classes[["temp"]][["name"]], fixed = TRUE)
       }
       out <- paste0(
         out,
@@ -1962,7 +1962,7 @@ separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of c
   div_end <- grep("</div>", file_contents)
   toc_end <- min(div_end[div_end > toc_start])
   toc <- file_contents[toc_start:toc_end]
-  if (!is.null(toc_label)){
+  if (!is.null(toc_label)) {
     toc <- c(
       "<label>",
       toc_label,
