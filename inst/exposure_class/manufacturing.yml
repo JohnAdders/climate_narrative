@@ -1,4 +1,5 @@
 name: Manufacturing
+test_report_position: 3
 description: |
   The **Manufacturing** sector involves the transformation of (mainly) raw
   materials or substances into new products by way of mechanical, physical, or

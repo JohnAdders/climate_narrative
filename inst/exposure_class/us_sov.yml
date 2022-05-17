@@ -1,4 +1,5 @@
 name: US sovereign
+test_report_position: 25
 group: sovereigns
 description: |
   Sovereign (or government) bonds are debt securities issued by governments to

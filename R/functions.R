@@ -1520,8 +1520,8 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
 #' @inherit get_standard_report_contents
 #' @param item sector name
 #'
-get_exposure_test_description <- function(exposure_classes, item) {
-  exposure_class <- exposure_classes[[item]]
+get_exposure_test_description <- function(exposure_classes, item_name, subitem_names = c()) {
+  exposure_class <- exposure_classes[[item_name]]
   out <- paste0(
     "## ",
     exposure_class$name,
@@ -1530,12 +1530,18 @@ get_exposure_test_description <- function(exposure_classes, item) {
     "\n\n"
   )
 
+  if (length(subitem_names) == 0){
+    subitem_names <- item_name
+  }
+
   for (risk in c("transition", "physical")) {
     for (risk_intensity in c("low", "high")) {
-      out <- paste0(
-        out,
-        get_exposure_risk_description(item, c(), "High", exposure_classes, risk, risk_intensity, TRUE)
-      )
+      for (subitem in subitem_names){
+        out <- paste0(
+          out,
+          get_exposure_risk_description(subitem, c(), "High", exposure_classes, risk, risk_intensity, TRUE)
+        )
+      }
     }
   }
   return(out)
@@ -1547,9 +1553,18 @@ get_exposure_test_description <- function(exposure_classes, item) {
 #'
 get_test_report <- function(exposure_classes) {
   out <- "# Test report\n\n"
-  for (i in 1:length(exposure_classes)) {
-    out <- paste0(out, get_exposure_test_description(exposure_classes, names(exposure_classes)[i]))
-    out <- paste0(out, get_exposure_appendix(names(exposure_classes)[i], exposure_classes))
+  test_report_positions <- sapply(exposure_classes, function(ec) ec$test_report_position)
+  test_order <- order(test_report_positions)
+  for (i in test_order) {
+    if (is.null(exposure_classes[[i]]$group)) {
+      subitem_selection <- sapply(exposure_classes, function(ec) !is.null(ec$group) && ec$group == names(exposure_classes)[i])
+      subitem_names <- names(exposure_classes)[subitem_selection]
+      subitem_positions <- sapply(exposure_classes[subitem_selection], function(ec) ec$test_report_position)
+      subitem_order <- order(subitem_positions)
+      subitem_names <- subitem_names[subitem_order]
+      out <- paste0(out, get_exposure_test_description(exposure_classes, names(exposure_classes)[i], subitem_names))
+      out <- paste0(out, get_exposure_appendix(names(exposure_classes)[i], exposure_classes))
+    }
   }
   out <- add_path_to_graphs(out)
   return(out)
