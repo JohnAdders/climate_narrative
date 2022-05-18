@@ -1556,7 +1556,7 @@ get_exposure_test_description <- function(exposure_classes, item_name, subitem_n
       exposure_classes[["temp"]] <- exposure_classes[[subitem_names[1]]]
       if (length(subitem_names) > 1) {
         for (subitem in subitem_names[-1]) {
-          exposure_classes[["temp"]] <- mapply(paste_recursive, exposure_classes[["temp"]], exposure_classes[[subitem]], MoreArgs = list(n1 = "", n2 = exposure_classes[[subitem]][["name"]]), SIMPLIFY = FALSE)
+          exposure_classes[["temp"]] <- mapply(paste_recursive, exposure_classes[["temp"]], exposure_classes[[subitem]], MoreArgs = list(name_1 = "", name_2 = exposure_classes[[subitem]][["name"]]), SIMPLIFY = FALSE)
         }
         exposure_classes[["temp"]][["name"]] <- gsub("\n", " ", exposure_classes[["temp"]][["name"]], fixed = TRUE)
       }
