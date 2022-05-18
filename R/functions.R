@@ -1534,7 +1534,7 @@ paste_recursive <- function(list_1, list_2, name_1, name_2, sep = "\n\n") {
 #' Karnan's request for easier change comparison - single sector
 #'
 #' @inherit get_standard_report_contents
-#' @param item sector name (group level)
+#' @param item_name sector name (group level)
 #' @param subitem_names names of the sectors (lower level), by default empty vector corresponding to no subitems
 #'
 get_exposure_test_description <- function(exposure_classes, item_name, subitem_names = c()) {
