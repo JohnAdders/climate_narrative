@@ -1524,7 +1524,7 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
 #' @param sep separator between names and list contents
 #'
 paste_recursive <- function(list_1, list_2, name_1, name_2, sep = "\n\n") {
-  if (length(l1) > 1) {
+  if (length(list_1) > 1) {
     return(mapply(paste_recursive, list_1, list_2, MoreArgs = list(name_1 = name_1, name_2 = name_2), SIMPLIFY = FALSE))
   } else {
     return(paste0(name_1, sep, list_1, sep, name_2, sep, list_2))
