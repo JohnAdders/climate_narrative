@@ -1,4 +1,5 @@
 name: Utilities
+test_report_position: 6
 description: |
   The **Utilities** sector comprises companies that provide basic amenities
   such as water, sewage services, electricity, and gas. The sector includes
@@ -137,8 +138,11 @@ transition:
       creation from electrification, there would be considerable dispersion of 
       impacts across these firms, depending on the carbon intensity of their production 
       processes. Gas utilities could face increased operating costs due to an increase 
-      in the carbon price, and decreased demand, due to electrification. Water utilities are 
-      also likely to be affected by increases in the carbon price through rising energy costs.
+      in the carbon price. Gas utilities may also face decreased demand due to electrification, 
+      although the severity of this decrease will depend on the viability of carbon capture and 
+      storage technology to reduce carbon emissions from gas-fired electric power stations. Water 
+      utilities are also likely to be affected by increases in the carbon price through rising 
+      energy costs.
 
     high_materiality: |
       Changes in carbon pricing, electricity demand, the energy mix and energy prices 
@@ -270,10 +274,10 @@ physical:
       - **Higher average temperatures** could reduce demand for energy used for
         heating, particularly natural gas demand. Performance of combined-cycle
         power stations could decrease with an increase in temperature. Water supply could 
-        also be strained, with drier summers (along with a limited capacity to store an increase 
-        in winter rainfall) affecting water availability, and an increased demand for water in a 
-        more arid climate. Higher temperatures could also result in increased frequency and 
-        duration of algal blooms, increasing treatment costs for water utilities.
+        also be strained in some regions, with drier summers (along with a limited capacity 
+        to store an increase in winter rainfall) affecting water availability, and an increased 
+        demand for water in a more arid climate. Higher temperatures could also result in increased 
+        requency and duration of algal blooms, increasing treatment costs for water utilities.
         
       - **Higher average sea levels** could render the existing locations of 
         some utilities unviable, particularly those that are in low-lying coastal 
@@ -343,11 +347,11 @@ physical:
       - **Higher average temperatures** could reduce demand for energy used for
         heating, particularly natural gas demand. Performance of combined-cycle
         power stations could decrease with an increase in temperature. Water supply 
-        could also be strained, with drier summers (along with a limited capacity to 
-        store an increase in winter rainfall) affecting water availability, and an 
-        increased demand for water in a more arid climate. Higher temperatures could 
-        also result in increased frequency and duration of algal blooms, increasing 
-        treatment costs for water utilities.
+        could also be strained in some regions, with drier summers (along with a 
+        limited capacity to store an increase in winter rainfall) affecting water 
+        availability, and an increased demand for water in a more arid climate. Higher 
+        temperatures could also result in increased frequency and duration of algal 
+        blooms, increasing treatment costs for water utilities.
         
       - **Higher average sea levels** could render the existing locations of 
         some utilities unviable, particularly those that are in low-lying coastal 

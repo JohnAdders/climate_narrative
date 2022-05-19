@@ -51,7 +51,7 @@ render_dynamic_auth_ui <- function(output, session) {
         tippy::tippy_this("button_check_code", "Click to proceed (if the code is correct)"),
         textOutput("code_verification_result")
       )
-     })
+    })
   } else {
     output$first_column <- renderUI({
       div(
@@ -62,7 +62,7 @@ render_dynamic_auth_ui <- function(output, session) {
         tippy::tippy_this("button_check_code", "Click to proceed"),
         textOutput("code_verification_result")
       )
-     })
+    })
   }
 }
 

@@ -173,7 +173,7 @@ server <- function(input, output, session) {
     {
       if (report_message() != "") {
         output$html_report <- renderUI("")
-        if (global$report_version >= 6){
+        if (global$report_version >= 6) {
           output$html_report_nav <- renderUI("")
         }
       } else {

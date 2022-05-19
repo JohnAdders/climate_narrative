@@ -618,6 +618,7 @@ get_exposure_risk_description <- function(item,
       low = "Low physical risk"
     )
   }
+
   header_text <- paste0(
     exposure_classes[[item]][["name"]],
     " --- ",
@@ -1514,14 +1515,30 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
   return(out)
 }
 
+#' Helper function to merge lists of lists with the same (possibly nested) structure, ultimately containing strings
+#'
+#' @param list_1 list 1
+#' @param list_2 list 2
+#' @param name_1 first name (to be appended at the lowest level)
+#' @param name_2 second name (to be appended at the lowest level)
+#' @param sep separator between names and list contents
+#'
+paste_recursive <- function(list_1, list_2, name_1, name_2, sep = "\n\n") {
+  if (length(list_1) > 1) {
+    return(mapply(paste_recursive, list_1, list_2, MoreArgs = list(name_1 = name_1, name_2 = name_2), SIMPLIFY = FALSE))
+  } else {
+    return(paste0(name_1, sep, list_1, sep, name_2, sep, list_2))
+  }
+}
 
 #' Karnan's request for easier change comparison - single sector
 #'
 #' @inherit get_standard_report_contents
-#' @param item sector name
+#' @param item_name sector name (group level)
+#' @param subitem_names names of the sectors (lower level), by default empty vector corresponding to no subitems
 #'
-get_exposure_test_description <- function(exposure_classes, item) {
-  exposure_class <- exposure_classes[[item]]
+get_exposure_test_description <- function(exposure_classes, item_name, subitem_names = c()) {
+  exposure_class <- exposure_classes[[item_name]]
   out <- paste0(
     "## ",
     exposure_class$name,
@@ -1530,12 +1547,24 @@ get_exposure_test_description <- function(exposure_classes, item) {
     "\n\n"
   )
 
+  if (length(subitem_names) == 0) {
+    subitem_names <- item_name
+  }
+
   for (risk in c("transition", "physical")) {
     for (risk_intensity in c("low", "high")) {
+      exposure_classes[["temp"]] <- exposure_classes[[subitem_names[1]]]
+      if (length(subitem_names) > 1) {
+        for (subitem in subitem_names[-1]) {
+          exposure_classes[["temp"]] <- mapply(paste_recursive, exposure_classes[["temp"]], exposure_classes[[subitem]], MoreArgs = list(name_1 = "", name_2 = exposure_classes[[subitem]][["name"]]), SIMPLIFY = FALSE)
+        }
+        exposure_classes[["temp"]][["name"]] <- gsub("\n", " ", exposure_classes[["temp"]][["name"]], fixed = TRUE)
+      }
       out <- paste0(
         out,
-        get_exposure_risk_description(item, c(), "High", exposure_classes, risk, risk_intensity, TRUE)
+        get_exposure_risk_description("temp", c(), "High", exposure_classes, risk, risk_intensity, TRUE)
       )
+      exposure_classes[["temp"]] <- NULL
     }
   }
   return(out)
@@ -1547,9 +1576,18 @@ get_exposure_test_description <- function(exposure_classes, item) {
 #'
 get_test_report <- function(exposure_classes) {
   out <- "# Test report\n\n"
-  for (i in 1:length(exposure_classes)) {
-    out <- paste0(out, get_exposure_test_description(exposure_classes, names(exposure_classes)[i]))
-    out <- paste0(out, get_exposure_appendix(names(exposure_classes)[i], exposure_classes))
+  test_report_positions <- sapply(exposure_classes, function(ec) ec$test_report_position)
+  test_order <- order(test_report_positions)
+  for (i in test_order) {
+    if (is.null(exposure_classes[[i]]$group)) {
+      subitem_selection <- sapply(exposure_classes, function(ec) !is.null(ec$group) && ec$group == names(exposure_classes)[i])
+      subitem_names <- names(exposure_classes)[subitem_selection]
+      subitem_positions <- sapply(exposure_classes[subitem_selection], function(ec) ec$test_report_position)
+      subitem_order <- order(subitem_positions)
+      subitem_names <- subitem_names[subitem_order]
+      out <- paste0(out, get_exposure_test_description(exposure_classes, names(exposure_classes)[i], subitem_names))
+      out <- paste0(out, get_exposure_appendix(names(exposure_classes)[i], exposure_classes))
+    }
   }
   out <- add_path_to_graphs(out)
   return(out)
@@ -1924,7 +1962,7 @@ separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of c
   div_end <- grep("</div>", file_contents)
   toc_end <- min(div_end[div_end > toc_start])
   toc <- file_contents[toc_start:toc_end]
-  if (!is.null(toc_label)){
+  if (!is.null(toc_label)) {
     toc <- c(
       "<label>",
       toc_label,
