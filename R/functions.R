@@ -849,6 +849,12 @@ heartbeat_footer <- function() {
           a(
             href = "climate_narrative/climate-financial-risk-forum-climate-risk-product-providers-2021.xlsx",
             "CFRF - Data and Tools Providers"
+          ),
+          " | ",
+          a(
+            href = "https://github.com/JohnAdders/climate_narrative/wiki/NGFS-Scenario-Data-used-in-Charts-and-Graphs",
+            "Data used in Charts",
+            target = "_blank")
           )
         )
       )
