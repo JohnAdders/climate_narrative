@@ -29,17 +29,16 @@ tab_rep_type_helper <- function() {
       list(
         "The tool can generate two types of report:",
         tags$ul(
-          tags$li("an ", strong("\"Institutional Report\""), ", which gives a report tailored to your institution"),
-          tags$li("a ", strong("\"Sector Report\""), ", which allows users to see the content for an individual sector")
+          tags$li("an ", strong("\"Institutional Report\""), ", which produces a report tailored to your institution"),
+          tags$li("a ", strong("\"Sector Report\""), ", which produces a report for an individual sector")
         ),
         paste0(
-          "Selecting \"Institutional Report\" will take you to a series of screens where you need to input some basic information ",
-          "regarding your firm's business activities, products, and materiality of exposures to an asset class, sector, ",
-          "or liability class."
+          "Selecting \"Institutional Report\" will take you to a series of screens where you are asked for some basic information ",
+          "regarding your firm's business activities."
         ),
         paste0(
-          "Selecting \"Sector Report\" will take you straight to the final report page which will allow you to select the detailed ",
-          "narrative by sector and climate scenario."
+          "Selecting \"Sector Report\" will take you straight to the final report page which will allow you to select ",
+          "a sector and climate scenario to report on."
         )
       )
     ),
