@@ -11,13 +11,13 @@ check_link_recursive <- function(arg) {
     arg <- unlist(arg)
     links <- arg[grep("http", arg)]
     n <- length(links)
-    if (n > 0){
-        good_links <- rep(FALSE, n)
-        good_links <- good_links | grepl('{target="\\_blank"}', links, fixed = TRUE)
-        good_links <- good_links | grepl('.pdf', links, fixed = TRUE)
-        return(links[!good_links])
+    if (n > 0) {
+      good_links <- rep(FALSE, n)
+      good_links <- good_links | grepl('{target="\\_blank"}', links, fixed = TRUE)
+      good_links <- good_links | grepl(".pdf", links, fixed = TRUE)
+      return(links[!good_links])
     } else {
-        return(character(0))
+      return(character(0))
     }
   }
 }
