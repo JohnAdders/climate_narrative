@@ -125,8 +125,6 @@ tab_report_server <- function(input, output, session, tab) {
   observeEvent(
     list(input$inst_type, input$rep_type),
     {
-      print("update")
-      print(input$rep_type)
       if (input$rep_type == "inst") {
         tab$previous_tab <- tab_name_to_number(
           switch(input$inst_type,
