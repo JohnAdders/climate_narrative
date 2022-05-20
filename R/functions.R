@@ -840,7 +840,7 @@ heartbeat_footer <- function() {
         p(
           a(href = "https://github.com/JohnAdders/climate_narrative", "Source Code", target = "_blank"),
           " | ",
-          a(href = "mailto:john.adcock@aviva.com?subject=Climate%20Narrative%20support%20request", "Beta Support"),
+          a(href = "mailto:john.adcock@aviva.com?subject=Climate%20Narrative%20support%20request", "Support"),
           " | ",
           a(href = "https://github.com/JohnAdders/climate_narrative/issues?q=is%3Aissue+is%3Aopen+label%3Abug", "Known Issues", target = "_blank"),
           " | ",
