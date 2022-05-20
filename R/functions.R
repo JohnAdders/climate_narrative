@@ -854,7 +854,7 @@ heartbeat_footer <- function() {
           a(
             href = "https://github.com/JohnAdders/climate_narrative/wiki/NGFS-Scenario-Data-used-in-Charts-and-Graphs",
             "Data used in Charts",
-            target = "_blank")
+            target = "_blank"
           )
         )
       )
