@@ -15,7 +15,7 @@ tab_report_ui <- function() {
   sector_options <- ""
   dropdown_2 <- selectInput(
     "report_sector_selection",
-    "Select the sector to show",
+    "Select the sector/asset class to show",
     sector_options,
     selectize = FALSE
   )
@@ -125,6 +125,8 @@ tab_report_server <- function(input, output, session, tab) {
   observeEvent(
     list(input$inst_type, input$rep_type),
     {
+      print("update")
+      print(input$rep_type)
       if (input$rep_type == "inst") {
         tab$previous_tab <- tab_name_to_number(
           switch(input$inst_type,
@@ -133,8 +135,22 @@ tab_report_server <- function(input, output, session, tab) {
             bank = "bank_sov"
           )
         )
+        updateSelectInput(
+          session = session,
+          inputId = "report_sector_selection",
+          label = switch(input$inst_type,
+            insurance = "Select the sector/asset class/liability class to show",
+            asset = "Select the sector/asset class to show",
+            bank = "Select the sector/asset class to show"
+          )
+        )
       } else {
         tab$previous_tab <- tab_name_to_number("rep_type")
+        updateSelectInput(
+          session = session,
+          inputId = "report_sector_selection",
+          label = "Select the sector/asset class/liability class to show"
+        )
       }
     }
   )
