@@ -33,12 +33,12 @@ tab_rep_type_helper <- function() {
           tags$li("a ", strong("\"Sector Report\""), ", which allows users to see the content for an individual sector")
         ),
         paste0(
-          "Selecting \"Institutional Report\" will take you to a series of screens where you need to input some basic information",
-          "regarding your firm's business activities, products, and materiality of exposures to an asset class, sector,",
+          "Selecting \"Institutional Report\" will take you to a series of screens where you need to input some basic information ",
+          "regarding your firm's business activities, products, and materiality of exposures to an asset class, sector, ",
           "or liability class."
         ),
         paste0(
-          "Selecting \"Sector Report\" will take you straight to the final report page which will allow you to select the detailed",
+          "Selecting \"Sector Report\" will take you straight to the final report page which will allow you to select the detailed ",
           "narrative by sector and climate scenario."
         )
       )
