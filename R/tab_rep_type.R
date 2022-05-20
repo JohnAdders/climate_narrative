@@ -34,7 +34,7 @@ tab_rep_type_helper <- function() {
         ),
         paste0(
           "Selecting \"Institutional Report\" will take you to a series of screens where you need to input some basic information",
-          "regarding your firm’s business activities, products, and materiality of exposures to an asset class, sector,",
+          "regarding your firm's business activities, products, and materiality of exposures to an asset class, sector,",
           "or liability class."
         ),
         paste0(
