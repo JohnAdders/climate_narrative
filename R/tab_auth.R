@@ -63,7 +63,7 @@ render_dynamic_auth_ui <- function(output, session) {
         ),
         actionButton(
           inputId = "button_check_code",
-          label = "next"
+          label = "Next"
         ),
         tippy::tippy_this("button_check_code", "Click to proceed"),
         textOutput("code_verification_result")
@@ -77,8 +77,11 @@ tab_auth_ui <- function(captcha_code) {
   list(
     div(
       class = "disclaimer", id = "disclaimer_1",
-      p("This tool is currently under development and is only being made available to
-        selected users for testing purposes. It represents output from the cross-industry
+      p("This tool is currently under development. This tool is currently under development.
+        During 2022, the Climate Financial Risk Forum Scenario Analysis Working Group will
+        continue to collect feedback from users on this beta version of the tool up to Q3 2022
+        and will update the tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.
+        It represents output from the cross-industry
         Scenario Analysis Working Group of the Prudential Regulation Authority and Financial
         Conduct Authority's Climate Financial Risk Forum (CFRF)."),
       p("The PRA and FCA have convened and facilitated CFRF discussions but do not accept
