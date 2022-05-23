@@ -37,7 +37,8 @@ process_progress <- function(output, should_continue) {
 render_dynamic_auth_ui <- function(output, session) {
   if (!is.null(global$beta_code)) {
     output$first_column <- renderUI({
-      div(
+      column(
+        12,
         p("Enter the beta code you have been sent"),
         textInput(
           inputId = "code",
@@ -54,7 +55,12 @@ render_dynamic_auth_ui <- function(output, session) {
     })
   } else {
     output$first_column <- renderUI({
-      div(
+      column(
+        12,
+        actionButton(
+          paste0("page_", tab_name_to_number("auth"), "_previous_duplicate"),
+          "prev"
+        ),
         actionButton(
           inputId = "button_check_code",
           label = "Next"
