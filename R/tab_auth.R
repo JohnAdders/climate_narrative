@@ -77,7 +77,7 @@ tab_auth_ui <- function(captcha_code) {
   list(
     div(
       class = "disclaimer", id = "disclaimer_1",
-      p("This tool is currently under development. This tool is currently under development.
+      p("This tool is currently under development.
         During 2022, the Climate Financial Risk Forum Scenario Analysis Working Group will
         continue to collect feedback from users on this beta version of the tool up to Q3 2022
         and will update the tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.
