@@ -32,6 +32,10 @@ load_secrets <- function(secrets_file = "secret.yml") {
       warning("Progress bar setting not found. Defaulting to FALSE")
       global$progress_bar <- FALSE
     }
+    if (is.null(global$captcha_threshold)) {
+      warning("Captcha threshold setting not found. Defaulting to 0,5")
+      global$captcha_threshold <- 0.5
+    }
   } else {
     global$dev <- TRUE
     global$progress_bar <- FALSE

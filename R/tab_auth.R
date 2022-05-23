@@ -1,6 +1,6 @@
 passes_captcha <- function(input, session) {
   result <- recaptcha_server(global$captcha_secret, input$responseReceived)
-  if (result$success && result$score > 0.5) {
+  if (result$success && result$score > global$captcha_threshold) {
     return(TRUE)
   } else {
     print(
