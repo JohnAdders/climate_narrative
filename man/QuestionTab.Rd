@@ -10,7 +10,7 @@ QuestionTab class definition
 }
 \details{
 Instances are tabs of the questionnaire.
-This is a wrapper over any ui and server that handles switching to previous/next tab if relevant
+This is a wrapper over any ui and server
 (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).
 }
 \section{Public fields}{
@@ -121,18 +121,11 @@ Tab server function that combines:
 \enumerate{
 \item server side of exposure input table (if given in the constructor)
 \item any other server tab_server (if given in the constructor)
-\item possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
 additionally, a boolean function may be passed to allow going next only conditionally
 (by default the condition is always true)
 }
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{QuestionTab$server(
-  input,
-  output,
-  session,
-  switch_page,
-  allow_next = function() {     TRUE }
-)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{QuestionTab$server(input, output, session)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -143,11 +136,6 @@ additionally, a boolean function may be passed to allow going next only conditio
 \item{\code{output}}{regular shiny parameter}
 
 \item{\code{session}}{regular shiny parameter}
-
-\item{\code{switch_page}}{function to be passed that changes the active tab
-(used in prev/next buttons)}
-
-\item{\code{allow_next}}{(optional) additional condition to be checked before going to next tab}
 }
 \if{html}{\out{</div>}}
 }

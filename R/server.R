@@ -91,7 +91,7 @@ server <- function(input, output, session) {
             list(
               inst_type = input$inst_type,
               report_sector_selection = "",
-              override_materiality = "" 
+              override_materiality = ""
             )
           )
         )
@@ -284,7 +284,7 @@ server <- function(input, output, session) {
 
   # tab switching buttons
   sapply(
-    global$tabs, 
+    global$tabs,
     function(tab) {
       if (length(tab$previous_tab)) {
         observeEvent(
