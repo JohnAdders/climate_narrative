@@ -17,4 +17,5 @@ include_markdown_section(output, output_name, section_name)
 \description{
 This function should be used on the server side.
 Corresponding UI side call should be: uiOutput(output_name)
+All links found in the markdown are modified to be open in the new page (by adding target = "_blank")
 }
