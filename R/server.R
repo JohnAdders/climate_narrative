@@ -277,6 +277,11 @@ server <- function(input, output, session) {
     tab$server(input, output, session)
   }
 
+  # saving previous/next tab to session in order to make them dynamic (and not interfering with other sessions via global)
+  session$userData$prev_tabs <- lapply(global$tabs, function(x) sum(x$previous_tab))
+  session$userData$next_tabs <- lapply(global$tabs, function(x) sum(x$next_tab))
+  names(session$userData$prev_tabs) <- names(session$userData$next_tabs) <- sapply(global$tabs, function(x) x$tab_name)
+
   # tab switching buttons
   sapply(
     global$tabs, 
@@ -284,7 +289,7 @@ server <- function(input, output, session) {
       if (length(tab$previous_tab)) {
         observeEvent(
           input[[paste0(tab$id, "_previous")]],
-          switch_page(tab$previous_tab)
+          switch_page(session$userData$prev_tabs[[tab$tab_name]])
         )
       }
       if (length(tab$next_tab)) {
@@ -292,7 +297,7 @@ server <- function(input, output, session) {
           input[[paste0(tab$id, "_next")]],
           {
             if (sum(tab$next_tab) != tab_name_to_number("report") || allow_report()) {
-              switch_page(tab$next_tab)
+              switch_page(session$userData$next_tabs[[tab$tab_name]])
             }
           }
         )

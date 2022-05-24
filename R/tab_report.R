@@ -121,12 +121,12 @@ tab_report_ui <- function() {
   }
 }
 
-tab_report_server <- function(input, output, session, tab) {
+tab_report_server <- function(input, output, session) {
   observeEvent(
     list(input$inst_type, input$rep_type),
     {
       if (input$rep_type == "inst") {
-        tab$previous_tab <- tab_name_to_number(
+        session$userData$prev_tabs[["report"]] <- tab_name_to_number(
           switch(input$inst_type,
             insurance = "ins_re",
             asset = "am_re",
@@ -143,7 +143,7 @@ tab_report_server <- function(input, output, session, tab) {
           )
         )
       } else {
-        tab$previous_tab <- tab_name_to_number("rep_type")
+        session$userData$prev_tabs[["report"]] <- tab_name_to_number("rep_type")
         updateSelectInput(
           session = session,
           inputId = "report_sector_selection",

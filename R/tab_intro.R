@@ -5,9 +5,9 @@ tab_intro_ui <- function() {
   out
 }
 
-tab_intro_server <- function(input, output, session, tab) {
+tab_intro_server <- function(input, output, session) {
   include_markdown_section(output, "intro_text", "instruction")
   if (global$dev == TRUE) {
-    tab$previous_tab <- tab_name_to_number("title")
+    session$userData$prev_tabs[["intro"]] <- tab_name_to_number("title")
   }
 }

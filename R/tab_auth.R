@@ -113,7 +113,7 @@ tab_auth_ui <- function(captcha_code) {
   )
 }
 
-tab_auth_server <- function(input, output, session, tab) {
+tab_auth_server <- function(input, output, session) {
   render_dynamic_auth_ui(output, session)
 
   observeEvent(

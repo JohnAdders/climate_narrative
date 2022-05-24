@@ -103,7 +103,7 @@ QuestionTab <- R6::R6Class(
         # in order to create a full report without visiting the tabs (e.g. dev mode or sector report):
         outputOptions(output, paste(self$type, self$subtype, sep = "_"), suspendWhenHidden = FALSE)
       }
-      if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
+      if (!is.null(self$tab_server)) self$tab_server(input, output, session)
     },
     #' @description tab UI function that combines:
     #' 1. a common header (unless add_header=FALSE)

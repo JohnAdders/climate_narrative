@@ -17,8 +17,8 @@ tab_title_ui <- function() {
   out
 }
 
-tab_title_server <- function(input, output, session, tab) {
+tab_title_server <- function(input, output, session) {
   if (global$dev == TRUE) {
-    tab$next_tab <- tab_name_to_number("intro")
+    session$userData$next_tabs[["title"]] <- tab_name_to_number("intro")
   }
 }
