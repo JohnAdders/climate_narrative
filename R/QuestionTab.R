@@ -113,11 +113,11 @@ QuestionTab <- R6::R6Class(
       if (length(self$previous_tab)) {
         observeEvent(
           input[[paste0(self$id, "_previous")]],
-          switch_page(as.integer(self$previous_tab))
+          switch_page(self$previous_tab)
         )
         observeEvent(
           input[[paste0(self$id, "_previous_duplicate")]],
-          switch_page(as.integer(self$previous_tab))
+          switch_page(self$previous_tab)
         )
       }
       if (length(self$next_tab)) {
@@ -125,7 +125,7 @@ QuestionTab <- R6::R6Class(
           input[[paste0(self$id, "_next")]],
           {
             if (allow_next()) {
-              switch_page(as.integer(self$next_tab))
+              switch_page(self$next_tab)
             }
           }
         )
