@@ -267,6 +267,7 @@ server <- function(input, output, session) {
 
   # finally, tab-specific server function collation
   switch_page <- function(i) {
+    i <- as.integer(i)
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
   }
   report_tab_no <- tab_name_to_number("report")
