@@ -1,7 +1,7 @@
 #' QuestionTab class definition
 #'
 #' Instances are tabs of the questionnaire.
-#' This is a wrapper over any ui and server that handles switching to previous/next tab if relevant
+#' This is a wrapper over any ui and server
 #' (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).
 QuestionTab <- R6::R6Class(
   "QuestionTab",
@@ -79,18 +79,12 @@ QuestionTab <- R6::R6Class(
     #' @description Tab server function that combines:
     #' 1. server side of exposure input table (if given in the constructor)
     #' 2. any other server tab_server (if given in the constructor)
-    #' 3. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
     #' additionally, a boolean function may be passed to allow going next only conditionally
     #' (by default the condition is always true)
     #' @param input regular shiny parameter
     #' @param output regular shiny parameter
     #' @param session regular shiny parameter
-    #' @param switch_page function to be passed that changes the active tab
-    #' (used in prev/next buttons)
-    #' @param allow_next (optional) additional condition to be checked before going to next tab
-    server = function(input, output, session, switch_page, allow_next = function() {
-                        TRUE
-                      }) {
+    server = function(input, output, session) {
       if (!is.null(self$exposure)) {
         if (ncol(self$exposure) < 5) {
           width <- "12em"
@@ -110,26 +104,6 @@ QuestionTab <- R6::R6Class(
         outputOptions(output, paste(self$type, self$subtype, sep = "_"), suspendWhenHidden = FALSE)
       }
       if (!is.null(self$tab_server)) self$tab_server(input, output, session, self)
-      if (length(self$previous_tab)) {
-        observeEvent(
-          input[[paste0(self$id, "_previous")]],
-          switch_page(self$previous_tab)
-        )
-        observeEvent(
-          input[[paste0(self$id, "_previous_duplicate")]],
-          switch_page(self$previous_tab)
-        )
-      }
-      if (length(self$next_tab)) {
-        observeEvent(
-          input[[paste0(self$id, "_next")]],
-          {
-            if (allow_next()) {
-              switch_page(self$next_tab)
-            }
-          }
-        )
-      }
     },
     #' @description tab UI function that combines:
     #' 1. a common header (unless add_header=FALSE)

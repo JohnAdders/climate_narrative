@@ -58,7 +58,7 @@ render_dynamic_auth_ui <- function(output, session) {
       column(
         12,
         actionButton(
-          paste0("page_", tab_name_to_number("auth"), "_previous_duplicate"),
+          paste0("page_", tab_name_to_number("auth"), "_previous"),
           "prev"
         ),
         actionButton(

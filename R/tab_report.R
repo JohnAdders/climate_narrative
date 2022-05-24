@@ -21,10 +21,10 @@ tab_report_ui <- function() {
   )
   button_1_conditional <- conditionalPanel(
     'output.html_report_message == ""',
-    actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev"),
+    actionButton(paste0("page_", tab_name_to_number("report"), "_previous"), "prev"),
     class = "inline2"
   )
-  button_1_unconditional <- actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
+  button_1_unconditional <- actionButton(paste0("page_", tab_name_to_number("report"), "_previous"), "prev")
   button_2 <- conditionalPanel(
     'output.html_report_message == ""',
     downloadButton("report", "Download as RTF"),

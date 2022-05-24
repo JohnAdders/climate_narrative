@@ -82,15 +82,17 @@ server <- function(input, output, session) {
     return(out)
   })
   allow_report <- reactive({
-    # return(nrow(get_inputs(all_inputs(), input$inst_type)))
     return(
-      nrow(
-        filter_inputs(
-          all_inputs(),
-          list(
-            inst_type = input$inst_type,
-            report_sector_selection = "",
-            override_materiality = ""
+      any(
+        input$rep_type == "sect",
+        nrow(
+          filter_inputs(
+            all_inputs(),
+            list(
+              inst_type = input$inst_type,
+              report_sector_selection = "",
+              override_materiality = "" 
+            )
           )
         )
       )
@@ -270,13 +272,31 @@ server <- function(input, output, session) {
     i <- as.integer(i)
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
   }
-  report_tab_no <- tab_name_to_number("report")
+
   for (tab in global$tabs) {
-    # "sum" below is a trick to include NULL case as sum(NULL)=0
-    if (sum(tab$next_tab) == report_tab_no) {
-      tab$server(input, output, session, switch_page, allow_report)
-    } else {
-      tab$server(input, output, session, switch_page)
-    }
+    tab$server(input, output, session)
   }
+
+  # tab switching buttons
+  sapply(
+    global$tabs, 
+    function(tab) {
+      if (length(tab$previous_tab)) {
+        observeEvent(
+          input[[paste0(tab$id, "_previous")]],
+          switch_page(tab$previous_tab)
+        )
+      }
+      if (length(tab$next_tab)) {
+        observeEvent(
+          input[[paste0(tab$id, "_next")]],
+          {
+            if (sum(tab$next_tab) != tab_name_to_number("report") || allow_report()) {
+              switch_page(tab$next_tab)
+            }
+          }
+        )
+      }
+    }
+  )
 }
