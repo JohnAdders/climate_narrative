@@ -769,10 +769,11 @@ get_references <- function(items, exposure_classes) {
       if (length(exposure_classes[[item]][["references"]])) {
         out <- paste0(
           out,
-          "\n\n### ",
+          "### ",
           exposure_classes[[item]][["name"]],
           "\n\n",
-          exposure_classes[[item]][["references"]]
+          exposure_classes[[item]][["references"]],
+          "\n\n"
         )
       }
     }
@@ -799,10 +800,11 @@ get_appendices <- function(items, exposure_classes) {
       if (length(exposure_classes[[item]][["appendix"]])) {
         out <- paste0(
           out,
-          "\n\n### ",
+          "### ",
           exposure_classes[[item]][["name"]],
           "\n\n",
-          exposure_classes[[item]][["appendix"]]
+          exposure_classes[[item]][["appendix"]],
+          "\n\n"
         )
       }
     }
