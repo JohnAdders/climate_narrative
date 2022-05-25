@@ -16,7 +16,7 @@ tab_inst_type_server <- function(input, output, session) {
   observeEvent(
     input$inst_type,
     {
-      session$userData$next_tabs[["inst"]] <- switch(input$inst_type,
+      session$userData$next_tabs[["inst_type"]] <- switch(input$inst_type,
         insurance = tab_name_to_number("ins_l"),
         asset = tab_name_to_number("am_c"),
         bank = tab_name_to_number("bank_re")
