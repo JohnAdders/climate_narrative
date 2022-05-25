@@ -55,7 +55,7 @@ QuestionTab class definition"><!-- mathjax --><script src="https://cdnjs.cloudfl
     <div id="details">
     <h2>Details</h2>
     <p>Instances are tabs of the questionnaire.
-This is a wrapper over any ui and server that handles switching to previous/next tab if relevant
+This is a wrapper over any ui and server
 (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).</p>
     </div>
     <div id="public-fields">
@@ -218,19 +218,12 @@ from the relevant functions (or makes it empty if the function does not exist)</
 </div><p></p><hr><a id="method-server"></a><div class="section">
 <h3 id="method-server-">Method <code><a href="server.html">server()</a></code><a class="anchor" aria-label="anchor" href="#method-server-"></a></h3>
 <p>Tab server function that combines:</p><ol><li><p>server side of exposure input table (if given in the constructor)</p></li>
-<li><p>any other server tab_server (if given in the constructor)</p></li>
-<li><p>possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
-additionally, a boolean function may be passed to allow going next only conditionally
-(by default the condition is always true)</p></li>
+<li><p>any other server tab_server (if given in the constructor)
+additionally, a boolean function may be passed to allow going next only conditionally</p></li>
+<li><p>possibility of switch to previous/next tab (if applicable), using 'switch_page' function.</p></li>
 </ol><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">QuestionTab</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span>
-  <span class="va">input</span>,
-  <span class="va">output</span>,
-  <span class="va">session</span>,
-  <span class="va">switch_page</span>,
-  allow_next <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>     <span class="cn">TRUE</span> <span class="op">}</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">QuestionTab</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span>, <span class="va">switch_page</span><span class="op">)</span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -250,10 +243,6 @@ additionally, a boolean function may be passed to allow going next only conditio
 <dt><code>switch_page</code></dt>
 <dd><p>function to be passed that changes the active tab
 (used in prev/next buttons)</p></dd>
-
-
-<dt><code>allow_next</code></dt>
-<dd><p>(optional) additional condition to be checked before going to next tab</p></dd>
 
 
 </dl><p></p></div>
