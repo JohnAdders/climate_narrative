@@ -58,7 +58,7 @@ render_dynamic_auth_ui <- function(output, session) {
       column(
         12,
         actionButton(
-          paste0("page_", tab_name_to_number("auth"), "_previous_duplicate"),
+          paste0("page_", tab_name_to_number("auth"), "_previous"),
           "prev"
         ),
         actionButton(
@@ -104,7 +104,6 @@ tab_auth_ui <- function(captcha_code) {
         tort or otherwise arising from, out of or in connection with the report."),
       p(strong("Copyright 2022 The Climate Financial Risk Forum"))
     ),
-    p(strong("Please note you can only open this tool in one window at a time.")),
     hr(),
     recaptcha_ui(captcha_code),
     fluidRow(
@@ -113,7 +112,7 @@ tab_auth_ui <- function(captcha_code) {
   )
 }
 
-tab_auth_server <- function(input, output, session, tab) {
+tab_auth_server <- function(input, output, session) {
   render_dynamic_auth_ui(output, session)
 
   observeEvent(

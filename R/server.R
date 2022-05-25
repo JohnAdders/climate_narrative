@@ -82,20 +82,38 @@ server <- function(input, output, session) {
     return(out)
   })
   allow_report <- reactive({
-    # return(nrow(get_inputs(all_inputs(), input$inst_type)))
     return(
-      nrow(
-        filter_inputs(
-          all_inputs(),
-          list(
-            inst_type = input$inst_type,
-            report_sector_selection = "",
-            override_materiality = ""
+      any(
+        input$rep_type == "sect",
+        nrow(
+          filter_inputs(
+            all_inputs(),
+            list(
+              inst_type = input$inst_type,
+              report_sector_selection = "",
+              override_materiality = ""
+            )
           )
         )
       )
     )
   })
+
+  observeEvent(
+    allow_report(),
+    {
+      if (allow_report()){
+        session$userData$next_tabs$bank_sov <- tab_name_to_number("report")
+        session$userData$next_tabs$ins_re <- tab_name_to_number("report")
+        session$userData$next_tabs$am_re <- tab_name_to_number("report")
+      } else {
+        session$userData$next_tabs$bank_sov <- tab_name_to_number("bank_sov")
+        session$userData$next_tabs$ins_re <- tab_name_to_number("ins_re")
+        session$userData$next_tabs$am_re <- tab_name_to_number("am_re")
+      }
+    }
+  )
+
   report_message <- reactive({
     req(input$wizard, input$rep_type)
     if (input$wizard != paste0("page_", tab_name_to_number("report"))) {
@@ -267,15 +285,17 @@ server <- function(input, output, session) {
 
   # finally, tab-specific server function collation
   switch_page <- function(i) {
+    i <- as.integer(i)
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
   }
-  report_tab_no <- tab_name_to_number("report")
+
   for (tab in global$tabs) {
-    # "sum" below is a trick to include NULL case as sum(NULL)=0
-    if (sum(tab$next_tab) == report_tab_no) {
-      tab$server(input, output, session, switch_page, allow_report)
-    } else {
-      tab$server(input, output, session, switch_page)
-    }
+    tab$server(input, output, session, switch_page)
   }
+
+  # saving previous/next tab to session in order to make them dynamic (and not interfering with other sessions via global)
+  session$userData$prev_tabs <- lapply(global$tabs, function(x) sum(x$initial_previous_tab))
+  session$userData$next_tabs <- lapply(global$tabs, function(x) sum(x$initial_next_tab))
+  names(session$userData$prev_tabs) <- names(session$userData$next_tabs) <- sapply(global$tabs, function(x) x$tab_name)
+
 }

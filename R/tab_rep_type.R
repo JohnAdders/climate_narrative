@@ -11,11 +11,11 @@ tab_rep_type_ui <- function() {
   )
 }
 
-tab_rep_type_server <- function(input, output, session, tab) {
+tab_rep_type_server <- function(input, output, session) {
   observeEvent(
     input$rep_type,
     {
-      tab$next_tab <- switch(input$rep_type,
+      session$userData$next_tabs[["rep_type"]] <- switch(input$rep_type,
         inst = tab_name_to_number("inst_type"),
         sect = tab_name_to_number("report")
       )

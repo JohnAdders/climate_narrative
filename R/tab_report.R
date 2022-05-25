@@ -21,10 +21,10 @@ tab_report_ui <- function() {
   )
   button_1_conditional <- conditionalPanel(
     'output.html_report_message == ""',
-    actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev"),
+    actionButton(paste0("page_", tab_name_to_number("report"), "_previous"), "prev"),
     class = "inline2"
   )
-  button_1_unconditional <- actionButton(paste0("page_", tab_name_to_number("report"), "_previous_duplicate"), "prev")
+  button_1_unconditional <- actionButton(paste0("page_", tab_name_to_number("report"), "_previous"), "prev")
   button_2 <- conditionalPanel(
     'output.html_report_message == ""',
     downloadButton("report", "Download as RTF"),
@@ -121,12 +121,12 @@ tab_report_ui <- function() {
   }
 }
 
-tab_report_server <- function(input, output, session, tab) {
+tab_report_server <- function(input, output, session) {
   observeEvent(
     list(input$inst_type, input$rep_type),
     {
       if (input$rep_type == "inst") {
-        tab$previous_tab <- tab_name_to_number(
+        session$userData$prev_tabs[["report"]] <- tab_name_to_number(
           switch(input$inst_type,
             insurance = "ins_re",
             asset = "am_re",
@@ -143,7 +143,7 @@ tab_report_server <- function(input, output, session, tab) {
           )
         )
       } else {
-        tab$previous_tab <- tab_name_to_number("rep_type")
+        session$userData$prev_tabs[["report"]] <- tab_name_to_number("rep_type")
         updateSelectInput(
           session = session,
           inputId = "report_sector_selection",
@@ -153,9 +153,9 @@ tab_report_server <- function(input, output, session, tab) {
     }
   )
   observeEvent(
+    # make the report empty when going back from the report page
     list(
-      input[[paste0("page_", tab_name_to_number("report"), "_previous")]],
-      input[[paste0("page_", tab_name_to_number("report"), "_previous_duplicate")]]
+      input[[paste0("page_", tab_name_to_number("report"), "_previous")]]
     ),
     {
       updateSelectInput(session, "report_scenario_selection", selected = "")

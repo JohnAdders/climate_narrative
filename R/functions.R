@@ -769,10 +769,11 @@ get_references <- function(items, exposure_classes) {
       if (length(exposure_classes[[item]][["references"]])) {
         out <- paste0(
           out,
-          "\n\n### ",
+          "### ",
           exposure_classes[[item]][["name"]],
           "\n\n",
-          exposure_classes[[item]][["references"]]
+          exposure_classes[[item]][["references"]],
+          "\n\n"
         )
       }
     }
@@ -799,10 +800,11 @@ get_appendices <- function(items, exposure_classes) {
       if (length(exposure_classes[[item]][["appendix"]])) {
         out <- paste0(
           out,
-          "\n\n### ",
+          "### ",
           exposure_classes[[item]][["name"]],
           "\n\n",
-          exposure_classes[[item]][["appendix"]]
+          exposure_classes[[item]][["appendix"]],
+          "\n\n"
         )
       }
     }
@@ -1670,6 +1672,7 @@ aggregate_inputs <- function(inputs, by = "item") {
 #'
 #' This function should be used on the server side.
 #' Corresponding UI side call should be: uiOutput(output_name)
+#' All links found in the markdown are modified to be open in the new page (by adding target = "_blank")
 #'
 #' @param output Shiny output
 #' @param output_name Name of slot created in shiny output (to be used in UI part of shiny app)
@@ -1677,6 +1680,7 @@ aggregate_inputs <- function(inputs, by = "item") {
 #' (description section only, other YAML fields are ignored)
 #'
 #' @importFrom markdown markdownToHTML
+#' @importFrom stringi stri_replace_all_regex
 #'
 include_markdown_section <- function(output, output_name, section_name) {
   text <- unlist(
@@ -1685,13 +1689,13 @@ include_markdown_section <- function(output, output_name, section_name) {
       "\n"
     )
   )
+  html_text <- markdown::markdownToHTML(
+    text = text,
+    fragment.only = TRUE
+  )
+  html_text <- stringi::stri_replace_all_regex(html_text, "(<a href=\"[:graph:]*\")>", "$1 target=\"_blank\" >")
   output[[output_name]] <- renderUI({
-    HTML(
-      markdown::markdownToHTML(
-        text = text,
-        fragment.only = TRUE
-      )
-    )
+    HTML(html_text)
   })
 }
 
