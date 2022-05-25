@@ -110,14 +110,14 @@ QuestionTab <- R6::R6Class(
       if (length(self$previous_tab)) {
         observeEvent(
           input[[paste0(self$id, "_previous")]],
-          switch_page(as.integer(session$userData$prev_tabs[[self$tab_name]]))
+          switch_page(session$userData$prev_tabs[[self$tab_name]])
         )
       }
       if (length(self$next_tab)) {
         observeEvent(
           input[[paste0(self$id, "_next")]],
           {
-            switch_page(as.integer(session$userData$next_tabs[[self$tab_name]]))
+            switch_page(session$userData$next_tabs[[self$tab_name]])
           }
         )
       }
