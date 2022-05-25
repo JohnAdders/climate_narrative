@@ -36,5 +36,5 @@ Imports:
     png,
     markdown
 Suggests:
-    testthat
+    testthat,
     styler
