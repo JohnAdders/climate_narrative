@@ -104,7 +104,6 @@ tab_auth_ui <- function(captcha_code) {
         tort or otherwise arising from, out of or in connection with the report."),
       p(strong("Copyright 2022 The Climate Financial Risk Forum"))
     ),
-    p(strong("Please note you can only open this tool in one window at a time.")),
     hr(),
     recaptcha_ui(captcha_code),
     fluidRow(
