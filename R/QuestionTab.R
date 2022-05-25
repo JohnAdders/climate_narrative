@@ -80,11 +80,14 @@ QuestionTab <- R6::R6Class(
     #' 1. server side of exposure input table (if given in the constructor)
     #' 2. any other server tab_server (if given in the constructor)
     #' additionally, a boolean function may be passed to allow going next only conditionally
-    #' (by default the condition is always true)
+    #' 3. possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
+    #'
     #' @param input regular shiny parameter
     #' @param output regular shiny parameter
     #' @param session regular shiny parameter
-    server = function(input, output, session) {
+    #' @param switch_page function to be passed that changes the active tab
+    #' (used in prev/next buttons)
+    server = function(input, output, session, switch_page) {
       if (!is.null(self$exposure)) {
         if (ncol(self$exposure) < 5) {
           width <- "12em"
@@ -104,6 +107,20 @@ QuestionTab <- R6::R6Class(
         outputOptions(output, paste(self$type, self$subtype, sep = "_"), suspendWhenHidden = FALSE)
       }
       if (!is.null(self$tab_server)) self$tab_server(input, output, session)
+      if (length(self$previous_tab)) {
+        observeEvent(
+          input[[paste0(self$id, "_previous")]],
+          switch_page(as.integer(session$userData$prev_tabs[[self$tab_name]]))
+        )
+      }
+      if (length(self$next_tab)) {
+        observeEvent(
+          input[[paste0(self$id, "_next")]],
+          {
+            switch_page(as.integer(session$userData$next_tabs[[self$tab_name]]))
+          }
+        )
+      }
     },
     #' @description tab UI function that combines:
     #' 1. a common header (unless add_header=FALSE)

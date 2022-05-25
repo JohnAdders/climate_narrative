@@ -153,9 +153,9 @@ tab_report_server <- function(input, output, session) {
     }
   )
   observeEvent(
+    # make the report empty when going back from the report page
     list(
-      input[[paste0("page_", tab_name_to_number("report"), "_previous")]],
-      input[[paste0("page_", tab_name_to_number("report"), "_previous_duplicate")]]
+      input[[paste0("page_", tab_name_to_number("report"), "_previous")]]
     ),
     {
       updateSelectInput(session, "report_scenario_selection", selected = "")

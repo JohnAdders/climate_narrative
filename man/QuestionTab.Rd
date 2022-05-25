@@ -122,10 +122,10 @@ Tab server function that combines:
 \item server side of exposure input table (if given in the constructor)
 \item any other server tab_server (if given in the constructor)
 additionally, a boolean function may be passed to allow going next only conditionally
-(by default the condition is always true)
+\item possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
 }
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{QuestionTab$server(input, output, session)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{QuestionTab$server(input, output, session, switch_page)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -136,6 +136,9 @@ additionally, a boolean function may be passed to allow going next only conditio
 \item{\code{output}}{regular shiny parameter}
 
 \item{\code{session}}{regular shiny parameter}
+
+\item{\code{switch_page}}{function to be passed that changes the active tab
+(used in prev/next buttons)}
 }
 \if{html}{\out{</div>}}
 }

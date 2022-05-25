@@ -98,6 +98,22 @@ server <- function(input, output, session) {
       )
     )
   })
+
+  observeEvent(
+    allow_report(),
+    {
+      if (allow_report()){
+        session$userData$next_tabs$bank_sov <- tab_name_to_number("report")
+        session$userData$next_tabs$ins_re <- tab_name_to_number("report")
+        session$userData$next_tabs$am_re <- tab_name_to_number("report")
+      } else {
+        session$userData$next_tabs$bank_sov <- tab_name_to_number("bank_sov")
+        session$userData$next_tabs$ins_re <- tab_name_to_number("ins_re")
+        session$userData$next_tabs$am_re <- tab_name_to_number("am_re")
+      }
+    }
+  )
+
   report_message <- reactive({
     req(input$wizard, input$rep_type)
     if (input$wizard != paste0("page_", tab_name_to_number("report"))) {
@@ -274,7 +290,7 @@ server <- function(input, output, session) {
   }
 
   for (tab in global$tabs) {
-    tab$server(input, output, session)
+    tab$server(input, output, session, switch_page)
   }
 
   # saving previous/next tab to session in order to make them dynamic (and not interfering with other sessions via global)
@@ -282,26 +298,4 @@ server <- function(input, output, session) {
   session$userData$next_tabs <- lapply(global$tabs, function(x) sum(x$next_tab))
   names(session$userData$prev_tabs) <- names(session$userData$next_tabs) <- sapply(global$tabs, function(x) x$tab_name)
 
-  # tab switching buttons
-  sapply(
-    global$tabs,
-    function(tab) {
-      if (length(tab$previous_tab)) {
-        observeEvent(
-          input[[paste0(tab$id, "_previous")]],
-          switch_page(session$userData$prev_tabs[[tab$tab_name]])
-        )
-      }
-      if (length(tab$next_tab)) {
-        observeEvent(
-          input[[paste0(tab$id, "_next")]],
-          {
-            if (sum(tab$next_tab) != tab_name_to_number("report") || allow_report()) {
-              switch_page(session$userData$next_tabs[[tab$tab_name]])
-            }
-          }
-        )
-      }
-    }
-  )
 }
