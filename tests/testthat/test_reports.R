@@ -64,9 +64,8 @@ testthat::test_that("report files", {
       expect_equal(
         sum(
           report_files[[1]] != comparison_files[[1]] &
-            !grepl("file24c47ab83a7c", comparison_files[[1]]) &
-            !grepl("file24c47f0255a9", comparison_files[[1]]) &
-            !grepl("file24c43d842cad", comparison_files[[1]])
+            !grepl("file2690171a39a5", comparison_files[[1]]) &
+            !grepl("file2690603e396a", comparison_files[[1]])
         ),
         0
       )

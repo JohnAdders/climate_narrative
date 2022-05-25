@@ -37,3 +37,4 @@ Imports:
     markdown
 Suggests:
     testthat
+    styler
