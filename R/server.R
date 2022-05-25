@@ -294,8 +294,8 @@ server <- function(input, output, session) {
   }
 
   # saving previous/next tab to session in order to make them dynamic (and not interfering with other sessions via global)
-  session$userData$prev_tabs <- lapply(global$tabs, function(x) sum(x$previous_tab))
-  session$userData$next_tabs <- lapply(global$tabs, function(x) sum(x$next_tab))
+  session$userData$prev_tabs <- lapply(global$tabs, function(x) sum(x$initial_previous_tab))
+  session$userData$next_tabs <- lapply(global$tabs, function(x) sum(x$initial_next_tab))
   names(session$userData$prev_tabs) <- names(session$userData$next_tabs) <- sapply(global$tabs, function(x) x$tab_name)
 
 }
