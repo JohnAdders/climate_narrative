@@ -39,7 +39,9 @@ table td, table th {
 .inline h2,
 .inline h3,
 .inline h4,
-.inline h5 {
+.inline h5,
+div.inline,
+img.inline {
   display: inline;
 }
 
@@ -74,4 +76,39 @@ div.main-container{
 
 div.tocify{
     max-height: 60%;
+}
+
+[role=complementary]{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+[role=main]{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.report_page{
+    height: 100%;
+}
+
+.report_head{
+    background-color: #51c878;
+    height: 50px;
+}
+
+.report_main{
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%; 
+}
+
+div.inline2, img.inline2 {
+    /* need a second inline class, because need to have inline div with non-inline <a> */
+    display: inline;
 }

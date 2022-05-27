@@ -1,4 +1,5 @@
 name: Property Underwriting Class
+test_report_position: 19
 description: |
   The **Property** underwriting class covers a very wide range of asset types
   and coverages, with risk transfers flowing from the policyholders, through to
@@ -106,7 +107,7 @@ transition:
 
       - Developing a clear net-zero underwriting strategy based on industry
         standards such as a Net Zero Insurance Alliance
-        (https://www.unepfi.org/net-zero-insurance/).
+        (https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
 
       - Applying a range of scenarios reflecting the most likely range of
         socio-economic, legislative technological and consumer futures within
@@ -234,7 +235,7 @@ transition:
 
       - Developing a clear net-zero underwriting strategy based on industry
         standards such as a Net Zero Insurance Alliance
-        (https://www.unepfi.org/net-zero-insurance/).
+        (https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
 
       - Applying a range of scenarios reflecting the most likely range of
         socio-economic, legislative technological and consumer futures within

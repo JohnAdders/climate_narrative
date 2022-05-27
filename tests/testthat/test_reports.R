@@ -6,7 +6,7 @@ testthat::test_that("report files", {
     function(input, output, session) {
       initialise_globals()
       # emulate the secret file
-      global$dev <- TRUE
+      global$dev <- FALSE
       global$report_version <- 6
       global$progress_bar <- TRUE
       # the server function itself
@@ -61,18 +61,24 @@ testthat::test_that("report files", {
       }
 
       # Compare test data vs function outputs.
-      # at most one row (title, which is random for temp file) should differ
-      for (i in 1:length(report_files)) {
-        expect_equal(
-          max(
-            1,
-            sum(
-              report_files[[i]] != comparison_files[[i]]
-            )
-          ),
-          1
-        )
-      }
+      expect_equal(
+        sum(
+          report_files[[1]] != comparison_files[[1]] &
+            !grepl("file2690171a39a5", comparison_files[[1]]) &
+            !grepl("file2690603e396a", comparison_files[[1]])
+        ),
+        0
+      )
+
+      expect_equal(
+        sum(report_files[[2]] != comparison_files[[2]]),
+        0
+      )
+
+      expect_equal(
+        sum(report_files[[3]] != comparison_files[[3]]),
+        0
+      )
     }
   )
 })

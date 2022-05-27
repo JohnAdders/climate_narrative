@@ -1,4 +1,6 @@
 name: US sovereign
+test_report_position: 25
+group: sovereigns
 description: |
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
@@ -113,7 +115,7 @@ transition:
 
       ![Share of Renewable Electricity Generation](US_sov.png)
 
-      **Source:** [Climate Action Tracker](https://climateactiontracker.org/)
+      **Source:** [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
       **GDP growth effect**
 

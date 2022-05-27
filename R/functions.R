@@ -500,7 +500,7 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 get_exposure_description <- function(item, type_item_inputs, exposure_classes, include_exposures, header_level = 2) {
   if (is.null(exposure_classes[[item]])) warning(paste("No exposure class file for ", item))
   ordered_type_item_inputs <- type_item_inputs[order(type_item_inputs$materiality), ]
-  # conversion from factor back to string to ensure proper printing below
+  # explicit conversion from factor back to string to avoid implicit conversion to number below
   ordered_type_item_inputs$materiality <- as.character(ordered_type_item_inputs$materiality)
   # add unique identifier if rownames are not unique (i.e. the same item in multiple columns)
   ordered_type_item_inputs$rowname_unique <- ordered_type_item_inputs$rowname
@@ -547,7 +547,7 @@ get_exposure_description <- function(item, type_item_inputs, exposure_classes, i
     " ",
     exposure_classes[[item]][["name"]],
     "\n\n",
-    global$exposure_classes[[item]][["description"]],
+    exposure_classes[[item]][["description"]],
     "\n\n"
   )
   if (include_exposures) {
@@ -586,7 +586,7 @@ get_exposure_appendix <- function(item, exposure_classes) {
 #' Lower level report helper function responsible for single risk
 #' (transition/physical) description.
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param item Exposure class name
 #' @param products Product name
 #' @param materiality Materiality of item
@@ -606,7 +606,6 @@ get_exposure_risk_description <- function(item,
   if (high_or_low == FALSE) {
     return("")
   }
-
   # define header depending on physical/transition and low/high
   if (physical_or_transition == "transition") {
     riskname <- switch(high_or_low,
@@ -619,6 +618,7 @@ get_exposure_risk_description <- function(item,
       low = "Low physical risk"
     )
   }
+
   header_text <- paste0(
     exposure_classes[[item]][["name"]],
     " --- ",
@@ -669,13 +669,14 @@ get_exposure_risk_description <- function(item,
 
 #' Lower level report helper function responsible for single scenario description
 #'
-#' @param aggregated_table Table of all possible items
+#' @param aggregated_table_by_item Table of all possible items
+#' @param aggregated_table_by_group As above but less granular
 #' @param type_inputs Drop box items
 #' @param scenario Scenario name
 #' @param include_exposures Flag whether to include tables with contributing exposures
 #' @param exposure_classes List of exposure classes (sectors) from which the texts are extracted
 #'
-get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, exposure_classes, include_exposures) {
+get_scenario_descriptions <- function(aggregated_table_by_item, aggregated_table_by_group, type_inputs, scenario, exposure_classes, include_exposures) {
   if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
   description <- scenario$description
@@ -684,27 +685,32 @@ get_scenario_descriptions <- function(aggregated_table, type_inputs, scenario, e
   out <- ""
   if (!is.null(name)) out <- paste0("# ", name, "\n\n")
   if (!is.null(description)) out <- paste0(out, description, "\n\n")
-  if (nrow(aggregated_table)) {
-    A_or_L_header <- (length(unique(aggregated_table$A_or_L)) > 1)
-    for (i in 1:nrow(aggregated_table)) {
-      if (A_or_L_header && (i == 1 || aggregated_table$A_or_L[i] != aggregated_table$A_or_L[i - 1])) {
+  if (nrow(aggregated_table_by_group)) {
+    A_or_L_header <- (length(unique(aggregated_table_by_group$A_or_L)) > 1)
+    for (i in 1:nrow(aggregated_table_by_group)) {
+      if (A_or_L_header && (i == 1 || aggregated_table_by_group$A_or_L[i] != aggregated_table_by_group$A_or_L[i - 1])) {
         out <- paste0(
           out,
           "# ",
-          ifelse(aggregated_table$A_or_L[i] == "A", "Assets", "Liabilities"),
+          ifelse(aggregated_table_by_group$A_or_L[i] == "A", "Assets", "Liabilities"),
           "\n\n"
         )
       }
-      item <- aggregated_table$item[i]
-      materiality <- aggregated_table$materiality_num[i]
-      type_item_inputs <- type_inputs[type_inputs$item == item, ]
-      products <- unique(type_item_inputs$product)
+      group <- aggregated_table_by_group$item[i]
+      materiality <- aggregated_table_by_group$materiality_num[i]
+      type_group_inputs <- type_inputs[(type_inputs$exposure_group == group) | (type_inputs$item == group), ]
+      products <- unique(type_group_inputs$product)
       out <- paste0(
         out,
-        get_exposure_description(item, type_item_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 2, 1)),
-        get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
-        get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
+        get_exposure_description(group, type_group_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 2, 1))
       )
+      for (item in unique(type_group_inputs$item)) {
+        out <- paste0(
+          out,
+          get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
+          get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
+        )
+      }
     }
   }
   return(out)
@@ -723,18 +729,18 @@ get_section_descriptions <- function(section, additional_pars = list()) {
       if (additional_pars$report_version >= 3) {
         out <- paste0(
           out,
-          get_executive_summary(additional_pars$tabs, additional_pars$scenarios, additional_pars$exposure_classes, additional_pars$aggregated_inputs, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
+          get_executive_summary(additional_pars$tabs, additional_pars$scenarios, additional_pars$exposure_classes, additional_pars$aggregated_inputs_by_item, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
         )
       }
     } else if (content_function == "get_references") {
       out <- paste0(
         out,
-        get_references(additional_pars$aggregated_inputs$item, additional_pars$exposure_classes)
+        get_references(additional_pars$aggregated_inputs_by_group$item, additional_pars$exposure_classes)
       )
     } else if (content_function == "get_appendices") {
       out <- paste0(
         out,
-        get_appendices(additional_pars$aggregated_inputs$item, additional_pars$exposure_classes)
+        get_appendices(additional_pars$aggregated_inputs_by_group$item, additional_pars$exposure_classes)
       )
     } else {
       stop(paste("Invalid content function name", content_function))
@@ -748,9 +754,9 @@ get_section_descriptions <- function(section, additional_pars = list()) {
 
 #' Function to produce references section (for all items)
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param items vector of items to get references for
-#' @return markdown-formatted references section (h2)
+#' @return markdown-formatted references section(h1)
 #'
 get_references <- function(items, exposure_classes) {
   out <- ""
@@ -763,10 +769,11 @@ get_references <- function(items, exposure_classes) {
       if (length(exposure_classes[[item]][["references"]])) {
         out <- paste0(
           out,
-          "\n\n### ",
+          "### ",
           exposure_classes[[item]][["name"]],
           "\n\n",
-          exposure_classes[[item]][["references"]]
+          exposure_classes[[item]][["references"]],
+          "\n\n"
         )
       }
     }
@@ -793,10 +800,11 @@ get_appendices <- function(items, exposure_classes) {
       if (length(exposure_classes[[item]][["appendix"]])) {
         out <- paste0(
           out,
-          "\n\n### ",
+          "### ",
           exposure_classes[[item]][["name"]],
           "\n\n",
-          exposure_classes[[item]][["appendix"]]
+          exposure_classes[[item]][["appendix"]],
+          "\n\n"
         )
       }
     }
@@ -834,7 +842,7 @@ heartbeat_footer <- function() {
         p(
           a(href = "https://github.com/JohnAdders/climate_narrative", "Source Code", target = "_blank"),
           " | ",
-          a(href = "mailto:john.adcock@aviva.com?subject=Climate%20Narrative%20support%20request", "Beta Support"),
+          a(href = "mailto:john.adcock@aviva.com?subject=Climate%20Narrative%20support%20request", "Support"),
           " | ",
           a(href = "https://github.com/JohnAdders/climate_narrative/issues?q=is%3Aissue+is%3Aopen+label%3Abug", "Known Issues", target = "_blank"),
           " | ",
@@ -843,6 +851,12 @@ heartbeat_footer <- function() {
           a(
             href = "climate_narrative/climate-financial-risk-forum-climate-risk-product-providers-2021.xlsx",
             "CFRF - Data and Tools Providers"
+          ),
+          " | ",
+          a(
+            href = "https://github.com/JohnAdders/climate_narrative/wiki/NGFS-Scenario-Data-used-in-Charts-and-Graphs",
+            "Data used in Charts",
+            target = "_blank"
           )
         )
       )
@@ -943,19 +957,25 @@ generic_helper <- function(asset_or_liability, is_asset_mananger = FALSE) {
 #' Go through the markdown file, find all png images and scale down where relevant
 #'
 #' @param filename markdown file to process
-#' @param target_width target width of images
+#' @param image_settings the list of necessary setting, comprising of:
+#' - target_width target width of images
 #' default is 7 inches which roughly matches vertical A4 page with margins
-#' @param target_width_units either "in" for inches of "%"
-#' @param fix_width if TRUE all images will be scaled exactly to target_width. otherwise,
+#' - target_width_units either "in" for inches of "%"
+#' - fix_width if TRUE all images will be scaled exactly to target_width. otherwise,
 #' only the larger images will be scaled down
-#' @param min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
+#' - min_pixels_to_rescale for fix_width=TRUE, pictures narrower than this number of pixels are not scaled up
 #' this is to prevent ugly look of upscaled low resolution images
-#' @param max_height maximum height of picture after rescaling. Another mechanism to prevent
+#' - max_height maximum height of picture after rescaling. Another mechanism to prevent
 #' too large upscaled pictures (in particular square or portrait layout)
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-format_images <- function(filename, target_width = 7, target_width_units = c("in", "%"), fix_width, min_pixels_to_rescale = 300, max_height = 4) {
+format_images <- function(filename, image_settings) {
+  target_width <- image_settings$image_width
+  target_width_unit <- image_settings$image_width_unit
+  fix_width <- image_settings$image_width_fix
+  min_pixels_to_rescale <- image_settings$image_min_pixels_to_rescale
+  max_height <- image_settings$image_max_height
   file_conn <- file(filename)
   markdown <- readLines(file_conn)
   graph_lines <- grep("^!\\[", markdown)
@@ -973,10 +993,10 @@ format_images <- function(filename, target_width = 7, target_width_units = c("in
       height_in <- height_px / image_attributes$dpi[2]
       target_width_after_max <- round(pmin(target_width, max_height / height_in * width_in), 2)
       if (fix_width && width_px > min_pixels_to_rescale) {
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
-      } else if (target_width_units == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
-        warning(paste0("image ", image_name, " has width > ", target_width_after_max, target_width_units, ", resizing"))
-        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_units, " }")
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_unit, " }")
+      } else if (target_width_unit == "in" && image_attributes$dim[1] / image_attributes$dpi[1] > target_width) {
+        warning(paste0("image ", image_name, " has width > ", target_width_after_max, target_width_unit, ", resizing"))
+        markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_unit, " }")
       }
     } else {
       warning(paste0("Image file ", image_name, " does not exist"))
@@ -1018,7 +1038,7 @@ rtf_fix_table_of_contents <- function(filename) {
     if (length(bookmark_rows) > 1 && global$dev) {
       warning(paste0("Ambiguous table of content entry. Header ", bookmark_text, " is not unique, using the first match. Please check the table of content"))
     } else if (length(bookmark_rows) == 0) {
-      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text," not found"))
+      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text, " not found"))
     }
     bookmark_row <- bookmark_rows[1] + search_position - 1
     search_position <- bookmark_row
@@ -1033,7 +1053,9 @@ rtf_fix_table_of_contents <- function(filename) {
     )
     # Limit of 40 characters!
     if (nchar(bookmark_text) > 40) {
-      warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
+      if (global$dev) {
+        warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
+      }
       rtf <- gsub(bookmark_text, substr(bookmark_text, 1, 40), rtf)
     }
   }
@@ -1192,7 +1214,7 @@ get_executive_summary <- function(tabs, scenarios, exposure_classes, aggregated_
 
 #' Helper function that translate the value of input field to the scenario number(s)
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @return vector of integers
 #'
 get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
@@ -1206,7 +1228,7 @@ get_scenario_no <- function(scenarios, report_scenario_selection, is_rtf) {
 
 #' Helper function that returns non-scenario section number(s)
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #' @param sections List of non-scenario report sections
 #'
 get_section_no <- function(sections, is_rtf, rep_type) {
@@ -1250,18 +1272,19 @@ get_section_no <- function(sections, is_rtf, rep_type) {
 #' @param rep_type additional possibility to filter report sections, by default (NULL) no filtering
 #' @return vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)
 #'
-get_report_contents <- function(tabs,
-                                scenarios,
-                                sections,
-                                exposure_classes,
-                                inputs,
-                                report_version,
-                                report_scenario_selection,
-                                is_rtf,
-                                exec_summary_layout = 1,
-                                include_exposures,
-                                rep_type = NULL) {
-  aggregated_inputs <- aggregate_inputs(inputs)
+get_standard_report_contents <- function(tabs,
+                                         scenarios,
+                                         sections,
+                                         exposure_classes,
+                                         inputs,
+                                         report_version,
+                                         report_scenario_selection,
+                                         is_rtf,
+                                         exec_summary_layout = 1,
+                                         include_exposures,
+                                         rep_type = NULL) {
+  aggregated_inputs_by_item <- aggregate_inputs(inputs)
+  aggregated_inputs_by_group <- aggregate_inputs(inputs, "group")
   scenario_no <- get_scenario_no(scenarios, report_scenario_selection, is_rtf)
   section_no <- get_section_no(sections, is_rtf, rep_type)
   out <- list()
@@ -1269,7 +1292,8 @@ get_report_contents <- function(tabs,
     out <- c(
       out,
       list(get_scenario_descriptions(
-        aggregated_inputs,
+        aggregated_inputs_by_item,
+        aggregated_inputs_by_group,
         inputs,
         scenario,
         exposure_classes,
@@ -1284,7 +1308,8 @@ get_report_contents <- function(tabs,
         section,
         list(
           report_version = report_version,
-          aggregated_inputs = aggregated_inputs,
+          aggregated_inputs_by_item = aggregated_inputs_by_item,
+          aggregated_inputs_by_group = aggregated_inputs_by_group,
           inputs = inputs,
           scenario_no = scenario_no,
           exec_summary_layout = exec_summary_layout,
@@ -1362,12 +1387,36 @@ get_executive_summary_exposures <- function(exposure_classes,
   }
   out_exp <- paste0(out_exp, "### Other exposures\n\n")
   less_material <- aggregated_inputs[aggregated_inputs$materiality_num != "High", ]
+  groups <- setdiff(unique(less_material$exposure_group), "")
   if (nrow(less_material)) {
     less_material$risk.description <- rep(NA, nrow(less_material))
     less_material$name <- rep(NA, nrow(less_material))
     for (i in 1:nrow(less_material)) {
       item <- less_material$item[i]
       less_material$name[i] <- exposure_classes[[item]][["name"]]
+    }
+    for (i in 1:ncol(less_material)) {
+      colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
+    }
+    for (i in seq_along(groups)) {
+      group_rows <- less_material$Exposure_group == groups[i]
+      group_data <- less_material[group_rows, ]
+      group_data$Materiality <- as.character(group_data$Materiality)
+      group_data$Materiality_num <- as.character(group_data$Materiality_num)
+      aggregate_row <- stats::aggregate(
+        cbind(Materiality, Materiality_num, Name) ~ A_or_L + Exposure_group,
+        data = group_data,
+        FUN = function(x) paste(as.character(x), collapse = "<br>")
+      )
+      aggregate_row$Item <- groups[i]
+      aggregate_row$Risk.description <- NA
+      less_material <- rbind(
+        less_material[!less_material$Exposure_group == groups[i], ],
+        aggregate_row
+      )
+    }
+    for (i in 1:nrow(less_material)) {
+      item <- less_material$Item[i]
       risk_description <- ""
       for (risk in rownames(exec)) {
         for (risk_intensity in colnames(exec)) {
@@ -1381,10 +1430,7 @@ get_executive_summary_exposures <- function(exposure_classes,
         }
       }
       risk_description <- substring(risk_description, 5)
-      less_material$risk.description[i] <- risk_description
-    }
-    for (i in 1:ncol(less_material)) {
-      colnames(less_material)[i] <- capitalize(colnames(less_material)[i])
+      less_material$Risk.description[i] <- risk_description
     }
     out_exp <- paste0(
       out_exp,
@@ -1477,14 +1523,30 @@ get_executive_summary_inputs <- function(tabs, aggregated_inputs, inputs) {
   return(out)
 }
 
+#' Helper function to merge lists of lists with the same (possibly nested) structure, ultimately containing strings
+#'
+#' @param list_1 list 1
+#' @param list_2 list 2
+#' @param name_1 first name (to be appended at the lowest level)
+#' @param name_2 second name (to be appended at the lowest level)
+#' @param sep separator between names and list contents
+#'
+paste_recursive <- function(list_1, list_2, name_1, name_2, sep = "\n\n") {
+  if (length(list_1) > 1) {
+    return(mapply(paste_recursive, list_1, list_2, MoreArgs = list(name_1 = name_1, name_2 = name_2), SIMPLIFY = FALSE))
+  } else {
+    return(paste0(name_1, sep, list_1, sep, name_2, sep, list_2))
+  }
+}
 
 #' Karnan's request for easier change comparison - single sector
 #'
-#' @inherit get_report_contents
-#' @param item sector name
+#' @inherit get_standard_report_contents
+#' @param item_name sector name (group level)
+#' @param subitem_names names of the sectors (lower level), by default empty vector corresponding to no subitems
 #'
-get_exposure_test_description <- function(exposure_classes, item) {
-  exposure_class <- exposure_classes[[item]]
+get_exposure_test_description <- function(exposure_classes, item_name, subitem_names = c()) {
+  exposure_class <- exposure_classes[[item_name]]
   out <- paste0(
     "## ",
     exposure_class$name,
@@ -1493,12 +1555,24 @@ get_exposure_test_description <- function(exposure_classes, item) {
     "\n\n"
   )
 
+  if (length(subitem_names) == 0) {
+    subitem_names <- item_name
+  }
+
   for (risk in c("transition", "physical")) {
     for (risk_intensity in c("low", "high")) {
+      exposure_classes[["temp"]] <- exposure_classes[[subitem_names[1]]]
+      if (length(subitem_names) > 1) {
+        for (subitem in subitem_names[-1]) {
+          exposure_classes[["temp"]] <- mapply(paste_recursive, exposure_classes[["temp"]], exposure_classes[[subitem]], MoreArgs = list(name_1 = "", name_2 = exposure_classes[[subitem]][["name"]]), SIMPLIFY = FALSE)
+        }
+        exposure_classes[["temp"]][["name"]] <- gsub("\n", " ", exposure_classes[["temp"]][["name"]], fixed = TRUE)
+      }
       out <- paste0(
         out,
-        get_exposure_risk_description(item, c(), "High", exposure_classes, risk, risk_intensity, TRUE)
+        get_exposure_risk_description("temp", c(), "High", exposure_classes, risk, risk_intensity, TRUE)
       )
+      exposure_classes[["temp"]] <- NULL
     }
   }
   return(out)
@@ -1506,13 +1580,22 @@ get_exposure_test_description <- function(exposure_classes, item) {
 
 #' Karnan's request for easier change comparison - loop over all sectors
 #'
-#' @inherit get_report_contents
+#' @inherit get_standard_report_contents
 #'
 get_test_report <- function(exposure_classes) {
   out <- "# Test report\n\n"
-  for (i in 1:length(exposure_classes)) {
-    out <- paste0(out, get_exposure_test_description(exposure_classes, names(exposure_classes)[i]))
-    out <- paste0(out, get_exposure_appendix(names(exposure_classes)[i], exposure_classes))
+  test_report_positions <- sapply(exposure_classes, function(ec) ec$test_report_position)
+  test_order <- order(test_report_positions)
+  for (i in test_order) {
+    if (is.null(exposure_classes[[i]]$group)) {
+      subitem_selection <- sapply(exposure_classes, function(ec) !is.null(ec$group) && ec$group == names(exposure_classes)[i])
+      subitem_names <- names(exposure_classes)[subitem_selection]
+      subitem_positions <- sapply(exposure_classes[subitem_selection], function(ec) ec$test_report_position)
+      subitem_order <- order(subitem_positions)
+      subitem_names <- subitem_names[subitem_order]
+      out <- paste0(out, get_exposure_test_description(exposure_classes, names(exposure_classes)[i], subitem_names))
+      out <- paste0(out, get_exposure_appendix(names(exposure_classes)[i], exposure_classes))
+    }
   }
   out <- add_path_to_graphs(out)
   return(out)
@@ -1521,12 +1604,16 @@ get_test_report <- function(exposure_classes) {
 #' Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities
 #'
 #' @param all_inputs_table data frame of all inputs (usually the reactive expression all_inputs)
-#' @param inst_type institution type to filter (or "" for no filtering)
-#' @param sector sector to filter (or "" for no filtering)
-#' @param aggregate bool, whether to aggregate the inputs by sector
-#' @param override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
+#' @param filter_settings list of relevant setting, comprising of:
+#' - inst_type institution type to filter (or "" for no filtering)
+#' - sector sector to filter (or "" for no filtering)
+#' - aggregate bool, whether to aggregate the inputs by sector
+#' - override_materiality ignore the actual inputs and set all materialities to a level (no override by default)
 #'
-get_inputs <- function(all_inputs_table, inst_type = "", sector = "", aggregate = FALSE, override_materiality = "") {
+filter_inputs <- function(all_inputs_table, filter_settings) {
+  inst_type <- filter_settings$inst_type
+  sector <- filter_settings$report_sector_selection
+  override_materiality <- filter_settings$override_materiality
   out <- all_inputs_table
   if (override_materiality != "") {
     out$materiality <- factor(override_materiality, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
@@ -1538,33 +1625,39 @@ get_inputs <- function(all_inputs_table, inst_type = "", sector = "", aggregate 
   if (sector != "") {
     out <- out[out$item == sector, ]
   }
-  if (aggregate) {
-    out <- aggregate_inputs(out)
-  }
   return(out)
 }
 
 #' Aggregate the inputs by sector
 #'
 #' @param inputs data frame of all inputs (usually the reactive expression all_inputs or its subset)
-#'
-aggregate_inputs <- function(inputs) {
+#' @param by level of aggregation (by default "item" ie sector, also possible "group")
+aggregate_inputs <- function(inputs, by = "item") {
   if (nrow(inputs) == 0) {
     return(
       data.frame(
+        A_or_L = character(),
         item = character(),
+        exposure_group = character(),
         materiality = character(),
         materiality_num = character()
       )
     )
   }
-  aggregated_inputs_factor <- stats::aggregate(materiality ~ A_or_L + item, FUN = max, data = inputs)
+  if (by == "group") {
+    for (i in 1:nrow(inputs)) {
+      if (inputs$exposure_group[i] != "") {
+        inputs$item[i] <- inputs$exposure_group[i]
+      }
+    }
+  }
+  aggregated_inputs_factor <- stats::aggregate(materiality ~ A_or_L + item + exposure_group, FUN = max, data = inputs)
   aggregated_inputs_numeric <- stats::aggregate(
-    materiality_num ~ A_or_L + item,
+    materiality_num ~ A_or_L + item + exposure_group,
     FUN = function(x) {
       cut(
         sum(x),
-        breaks = c(0, 4.5, 9.5, 100),
+        breaks = c(0, 4.5, 9.5, 1000),
         labels = c("Low", "Medium", "High")
       )
     },
@@ -1579,6 +1672,7 @@ aggregate_inputs <- function(inputs) {
 #'
 #' This function should be used on the server side.
 #' Corresponding UI side call should be: uiOutput(output_name)
+#' All links found in the markdown are modified to be open in the new page (by adding target = "_blank")
 #'
 #' @param output Shiny output
 #' @param output_name Name of slot created in shiny output (to be used in UI part of shiny app)
@@ -1586,6 +1680,7 @@ aggregate_inputs <- function(inputs) {
 #' (description section only, other YAML fields are ignored)
 #'
 #' @importFrom markdown markdownToHTML
+#' @importFrom stringi stri_replace_all_regex
 #'
 include_markdown_section <- function(output, output_name, section_name) {
   text <- unlist(
@@ -1594,16 +1689,23 @@ include_markdown_section <- function(output, output_name, section_name) {
       "\n"
     )
   )
+  html_text <- markdown::markdownToHTML(
+    text = text,
+    fragment.only = TRUE
+  )
+  html_text <- stringi::stri_replace_all_regex(html_text, "(<a href=\"[:graph:]*\")>", "$1 target=\"_blank\" >")
   output[[output_name]] <- renderUI({
-    HTML(
-      markdown::markdownToHTML(
-        text = text,
-        fragment.only = TRUE
-      )
-    )
+    HTML(html_text)
   })
 }
 
+#' Process the HTML file manually to correct some known issues
+#'
+#' Includes fixing image links (so they work in shiny)
+#' and adding arrow to all headers (report version 5 only)
+#'
+#' @param file the location of HTML file
+#' @param report_version the parameter driving the changes
 html_postprocess <- function(file, report_version) {
   # replace back the images links
   file_conn <- file(file)
@@ -1625,11 +1727,265 @@ html_postprocess <- function(file, report_version) {
       perl = TRUE
     )
   }
+  if (report_version >= 6) {
+    close(file_conn)
+    separate_toc(file, temp)
+  } else {
+    writeLines(
+      temp,
+      file_conn
+    )
+    close(file_conn)
+  }
+  return(invisible(NULL))
+}
 
+#' Create a single list of settings from simple arguments
+#'
+#' @param content_files List of necessary global lists with report contents
+#' @param output_file Path and filenamename of report to write
+#' @param md_file Path and filename of intermediate markdown file
+#' @param file_format Currently either "html" or "rtf"
+#' @param report_version Integer controlling the version of the code used in report generating functions
+#' @param rep_type Either "inst" for institutional report or "sect" for sectoral report
+#' @param inst_type Institution type (relevant for institutional report only)
+#' @param report_sector_selection Input used to filter report contents
+#' @param report_scenario_selection Input used to filter report contents
+#' @return list of lists
+#'
+get_report_settings <- function(content_files,
+                                output_file,
+                                md_file,
+                                file_format,
+                                report_version,
+                                rep_type,
+                                inst_type,
+                                report_sector_selection,
+                                report_scenario_selection) {
+  # translating the parameters to complete setup
+  if (rep_type == "inst") {
+    override_materiality <- ""
+    include_exposures <- TRUE
+    if (report_sector_selection == "") {
+      exec_summary_layout <- 1
+    } else {
+      exec_summary_layout <- 2
+    }
+  } else {
+    if (report_sector_selection == "") {
+      # scenario report
+      exec_summary_layout <- 3
+    } else {
+      # sector report
+      exec_summary_layout <- 2
+    }
+    override_materiality <- "High"
+    include_exposures <- FALSE
+  }
+  if (file_format == "html") {
+    output_format <- rmarkdown::html_document(
+      toc = TRUE,
+      toc_depth = 2,
+      toc_float = FALSE,
+      self_contained = FALSE,
+      fig_caption = FALSE
+    )
+  } else {
+    www_path <- system.file("www", package = "climate.narrative")
+    if (www_path == "") {
+      www_path <- paste0(getwd(), "/inst/www")
+    }
+    output_format <- rmarkdown::rtf_document(
+      toc = TRUE,
+      toc_depth = 2,
+      pandoc_args = c(
+        paste0("--resource-path=", www_path),
+        "--self-contained"
+      )
+    )
+  }
+  image_width <- 6
+  image_width_unit <- "in"
+  image_width_fix <- TRUE
+
+  # hierarchical structure
+  content_files <- content_files
+
+  filter_settings <- list(
+    inst_type = ifelse(rep_type == "inst", inst_type, ""),
+    # sector report exception: no sector filter means no sector, not all sectors
+    report_sector_selection = ifelse(rep_type == "sect" && report_sector_selection == "", "dummy", report_sector_selection),
+    override_materiality = override_materiality
+  )
+
+  content_settings <- list(
+    report_version = report_version,
+    is_rtf = (file_format == "rtf"),
+    rep_type = rep_type,
+    report_scenario_selection = report_scenario_selection,
+    include_exposures = include_exposures,
+    exec_summary_layout = exec_summary_layout,
+    rep_type = rep_type
+  )
+  lib_path <- system.file(
+    "www/lib",
+    package = "climate.narrative"
+  )
+  if (lib_path == "") {
+    lib_path <- "inst/www/lib"
+  }
+  render_settings <- list(
+    md_file = md_file,
+    output_file = output_file,
+    output_format = output_format,
+    available_libs = list.files(
+      system.file(
+        "www/lib",
+        package = "climate.narrative"
+      ),
+      recursive = TRUE
+    )
+  )
+
+  image_settings <- list(
+    image_width = 6,
+    image_width_unit = "in",
+    image_width_fix = TRUE,
+    image_min_pixels_to_rescale = 300,
+    image_max_height = 4
+  )
+
+  postprocess_settings <- list(
+    file_format = file_format,
+    output_file = output_file,
+    report_version = report_version
+  )
+
+  settings <- list(
+    content_files = content_files,
+    filter_settings = filter_settings,
+    content_settings = content_settings,
+    render_settings = render_settings,
+    image_settings = image_settings,
+    postprocess_settings = postprocess_settings
+  )
+
+  return(settings)
+}
+
+#' The highest level function for report production. Takes only two arguments
+#'
+#' @param all_inputs Table of user inputs
+#' @param settings list of lists containing all necessary settings
+#' @return NULL, report produced to file
+#'
+produce_report <- function(all_inputs, settings) {
+  content_files <- settings$content_files
+  filter_settings <- settings$filter_settings
+  content_settings <- settings$content_settings
+  render_settings <- settings$render_settings
+  image_settings <- settings$image_settings
+  postprocess_settings <- settings$postprocess_settings
+  inputs <- filter_inputs(all_inputs, filter_settings)
+  report_contents <- get_report_contents(
+    content_files,
+    inputs,
+    content_settings
+  )
+  file_conn <- file(render_settings$md_file)
   writeLines(
-    temp,
+    report_contents,
     file_conn
   )
+  close(file_conn)
+  if (image_settings$image_width_fix) {
+    format_images(render_settings$md_file, image_settings)
+  }
+  rmarkdown::render(
+    input = render_settings$md_file,
+    output_file = render_settings$output_file,
+    output_format = render_settings$output_format
+  )
+  postprocess(postprocess_settings)
+  return(invisible(NULL))
+}
+
+#' Gets either a standard or test report contents
+#'
+#' @param content_files list of all yaml content files
+#' @param inputs user dropdown choices
+#' @param content_settings all configuration options (see get_standard_report_content for details)
+get_report_contents <- function(content_files, inputs, content_settings) {
+  if (content_settings$rep_type %in% c("inst", "sect")) {
+    return(
+      get_standard_report_contents(
+        content_files$tabs,
+        content_files$scenarios,
+        content_files$sections,
+        content_files$exposure_classes,
+        inputs,
+        content_settings$report_version,
+        content_settings$report_scenario_selection,
+        content_settings$is_rtf,
+        content_settings$exec_summary_layout,
+        content_settings$include_exposures,
+        content_settings$rep_type
+      )
+    )
+  } else { # test all sector report
+    return(
+      get_test_report(
+        content_files$exposure_classes
+      )
+    )
+  }
+}
+
+#' Wrapper calling either rtf_postprocess or html_postprocess
+#'
+#' @param postprocess_settings a list with:
+#' - file_format (either "rtf" or "html")
+#' - report_version, which is then translated to relevant postprocessing options at lower level
+postprocess <- function(postprocess_settings) {
+  if (postprocess_settings$file_format == "rtf") {
+    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
+  } else {
+    html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
+  }
+}
+
+#' Helper function to separate the table of contents from the main document
+#'
+#' @param filename HTML file to parse
+#' @param file_contents (optionally) conents of the HTML file (if already parsed, to avoid duplicating this work)
+#' @param toc_label a string to label the table of contents (or NULL for no label)
+#' @return NULL. The HTML file given as argument filename is updated as file without ToC,
+#' which is saved as a separate HTML in the same directory as filename (with the name appended with "_toc")
+
+separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of contents") {
+  if (is.null(file_contents)) {
+    file_conn <- file(filename)
+    file_contents <- readLines(file_conn)
+    close(file_conn)
+  }
+  toc_start <- grep("<div id=\"TOC\">", file_contents)
+  div_end <- grep("</div>", file_contents)
+  toc_end <- min(div_end[div_end > toc_start])
+  toc <- file_contents[toc_start:toc_end]
+  if (!is.null(toc_label)) {
+    toc <- c(
+      "<label>",
+      toc_label,
+      "</label>",
+      toc
+    )
+  }
+  no_toc <- file_contents[-(toc_start:toc_end)]
+  file_conn <- file(filename)
+  writeLines(no_toc, file_conn)
+  close(file_conn)
+  file_conn <- file(paste0(substr(filename, 1, nchar(filename) - 5), "_toc.html"))
+  writeLines(toc, file_conn)
   close(file_conn)
   return(invisible(NULL))
 }

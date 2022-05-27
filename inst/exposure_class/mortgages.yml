@@ -1,4 +1,5 @@
 name: Mortgage Lending Exposure
+test_report_position: 21
 description: |
   **Mortgages** are a lending exposure type based upon a legal agreement by
   which a bank, building society or other regulated organisation lends money at

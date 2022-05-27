@@ -1,4 +1,6 @@
 name: India sovereign
+test_report_position: 33
+group: sovereigns
 description: |
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the

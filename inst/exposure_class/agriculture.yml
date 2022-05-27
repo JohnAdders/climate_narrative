@@ -1,4 +1,5 @@
 name: Agriculture Sector
+test_report_position: 2
 description: |
   The **Agriculture** sector can be split into crop production and animal
   production.

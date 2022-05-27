@@ -3,53 +3,54 @@ include_in_HTML: no
 include_in_RTF: yes
 description: |
   ### How can the report be used?
-  
-  The information provided by the CFRF Online Scenario Analysis Narrative Tool and its 
-  associated reports aims to help firms start to better understand their potential financial exposures 
-  to climate change. This information could help them to start considering climate-related risks 
-  and opportunities within their governance, strategy, risk management and reporting under the 
-  Task Force on Climate-Related Financial Disclosures' (TCFD) recommendations. The information 
-  provided could also encourage a more in-depth scenario analysis exercise to better understand 
-  the associated impact and support decision making. However, the observations in this report do 
+
+  The information provided by the CFRF Online Scenario Analysis Narrative Tool and its
+  associated reports aims to help firms start to better understand their potential financial exposures
+  to climate change. This information could help them to start considering climate-related risks
+  and opportunities within their governance, strategy, risk management and reporting under the
+  Task Force on Climate-Related Financial Disclosures' (TCFD) recommendations. The information
+  provided could also encourage a more in-depth scenario analysis exercise to better understand
+  the associated impact and support decision making. However, the observations in this report do
   not constitute financial or other professional advice and should not be relied upon as such.
-  
+
   ### Limitations
-  
-  There are a number of uncertainties and limitations associated with the tool; for example: The 
-  tool is not updated on an ongoing basis. It draws 
-  heavily on the NGFS scenarios (updated in June 2021). The results are in turn underpinned by 
-  a single energy systems model (REMIND) which makes particular assumptions about long-term 
+
+  There are a number of uncertainties and limitations associated with the tool; for example: The
+  tool is not updated on an ongoing basis. It draws
+  heavily on the NGFS scenarios (updated in June 2021). The results are in turn underpinned by
+  a single energy systems model (REMIND) which makes particular assumptions about long-term
   technology pathways that are of course highly uncertain.
-  
-  This tool may be useful for climate reporting and risk assessments. However, a limitation 
-  for those seeking to embed climate-related risks and opportunities into their risk management 
-  framework and investment decision making is that it does not specify a baseline related 
-  directly to what is priced into assets today. It also does not allow for meaningful variation 
-  in the implementation of climate policies across geographies and sectors, nor alternative 
+
+  This tool may be useful for climate reporting and risk assessments. However, a limitation
+  for those seeking to embed climate-related risks and opportunities into their risk management
+  framework and investment decision making is that it does not specify a baseline related
+  directly to what is priced into assets today. It also does not allow for meaningful variation
+  in the implementation of climate policies across geographies and sectors, nor alternative
   technology pathways.
 
   For example, the Orderly Below 2&deg;C scenario generates a common carbon price for the global
-  power and transportation sectors. Whereas in the Net Zero 2050 scenario there are regional differences in carbon price, 
-  and in the Divergent Net Zero scenario there are sectoral differences in carbon price, as well as between, say EU and US 
+  power and transportation sectors. Whereas in the Net Zero 2050 scenario there are regional differences in carbon price,
+  and in the Divergent Net Zero scenario there are sectoral differences in carbon price, as well as between, say EU and US
   and China. Similarly, the tool does not provide a mechanism to test how financial exposures may differ if the
-  solar PV friendly technology pathways of the REMIND model do not come to pass. Relaxing these policy and technology 
-  universality assumptions will naturally generate quite different assessments of the climate exposures of different financial 
+  solar PV friendly technology pathways of the REMIND model do not come to pass. Relaxing these policy and technology
+  universality assumptions will naturally generate quite different assessments of the climate exposures of different financial
   securities and assets.
-  
+
   There are many potential ways to incorporate alternative plausible policy pathways and a wider range of
-  technology pathways into climate scenario analyses. See, for example, section 6 of the CFRF 2021 Scenario 
-  Analysis Guide which discusses one approach based on some work done by Abrdn  (a UK-based global investment 
-  company). Such approaches create a richer set of scenarios that allow, for example, for climate policy objectives 
-  to vary across the major emitting regions and sectors and for some of the 'probability mass' that sits between 
-  transition-heavy scenarios that are strongly or weakly aligned with the objectives of the Paris Agreement and 
-  those that are dominated by physical risks. This in turn enables financial impairment estimates to be calculated 
+  technology pathways into climate scenario analyses. See, for example, section 6 of the CFRF 2021 Scenario
+  Analysis Guide which discusses one approach based on some work done by Abrdn  (a UK-based global investment
+  company). Such approaches create a richer set of scenarios that allow, for example, for climate policy objectives
+  to vary across the major emitting regions and sectors and for some of the 'probability mass' that sits between
+  transition-heavy scenarios that are strongly or weakly aligned with the objectives of the Paris Agreement and
+  those that are dominated by physical risks. This in turn enables financial impairment estimates to be calculated
   relative to a baseline assessment of what is priced into assets at any given point in time.
 
-  Note that the tool draws transition and physical variables from the NGFS database, which are  just examples of climate impacts and 
-  views across the scientific community are still evolving in some areas. 
-  
+  Note that the tool draws transition and physical variables from the NGFS database, which are  just examples of climate impacts and
+  views across the scientific community are still evolving in some areas.
+
   ### What is next?
 
-  The tool is housed on the Centre for Greening Finance and Investment climate and environmental data and analytics platform. 
-  During 2022, the Climate Financial Risk Forum Scenario Analysis Working Group will continue to collect feedback from users 
-  on this beta version of the tool and will update the tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.
+  The tool is housed on the Centre for Greening Finance and Investment climate and environmental data and analytics platform.
+  During 2022, the Climate Financial Risk Forum Scenario Analysis Working Group will continue to collect feedback from users
+  on this beta version of the tool up to Q3 2022 and will update the tool to enhance content and reflect the latest NGFS scenarios in Q1 2023.
+  To provide feedback use the support link below.

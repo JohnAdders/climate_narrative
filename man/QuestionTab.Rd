@@ -10,7 +10,7 @@ QuestionTab class definition
 }
 \details{
 Instances are tabs of the questionnaire.
-This is a wrapper over any ui and server that handles switching to previous/next tab if relevant
+This is a wrapper over any ui and server
 (if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).
 }
 \section{Public fields}{
@@ -38,6 +38,8 @@ This is a wrapper over any ui and server that handles switching to previous/next
 
 \item{\code{add_header}}{bool argument whether to include the standard header}
 
+\item{\code{add_buttons}}{bool argument whether to include the standard prev/next buttons}
+
 \item{\code{exposure}}{optional table of exposures, if present a grid of inputs will be prepared}
 
 \item{\code{type}}{type of institution (to group the inputs from all tabs)}
@@ -61,7 +63,6 @@ This is a wrapper over any ui and server that handles switching to previous/next
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 the constructor fills the slots with values given
 it also automatically gets ui, server and foot
@@ -74,6 +75,7 @@ from the relevant functions (or makes it empty if the function does not exist)
   next_tab,
   add_header = TRUE,
   add_footer = TRUE,
+  add_buttons = TRUE,
   exposure = NULL,
   type = NULL,
   subtype = NULL,
@@ -97,6 +99,8 @@ from the relevant functions (or makes it empty if the function does not exist)
 
 \item{\code{add_footer}}{whether to add a standard footer}
 
+\item{\code{add_buttons}}{whether to add a standard prev/next buttons}
+
 \item{\code{exposure}}{(optional) table of exposure to construct grid of inputs}
 
 \item{\code{type}}{type of issuers for which the inputs are applicable}
@@ -112,24 +116,16 @@ from the relevant functions (or makes it empty if the function does not exist)
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-server"></a>}}
-\if{latex}{\out{\hypertarget{method-server}{}}}
 \subsection{Method \code{server()}}{
 Tab server function that combines:
 \enumerate{
 \item server side of exposure input table (if given in the constructor)
 \item any other server tab_server (if given in the constructor)
-\item possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
 additionally, a boolean function may be passed to allow going next only conditionally
-(by default the condition is always true)
+\item possibility of switch to previous/next tab (if applicable), using 'switch_page' function.
 }
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{QuestionTab$server(
-  input,
-  output,
-  session,
-  switch_page,
-  allow_next = function() {     TRUE }
-)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{QuestionTab$server(input, output, session, switch_page)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -143,15 +139,12 @@ additionally, a boolean function may be passed to allow going next only conditio
 
 \item{\code{switch_page}}{function to be passed that changes the active tab
 (used in prev/next buttons)}
-
-\item{\code{allow_next}}{(optional) additional condition to be checked before going to next tab}
 }
 \if{html}{\out{</div>}}
 }
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ui"></a>}}
-\if{latex}{\out{\hypertarget{method-ui}{}}}
 \subsection{Method \code{ui()}}{
 tab UI function that combines:
 \enumerate{
@@ -170,7 +163,6 @@ tab UI function that combines:
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

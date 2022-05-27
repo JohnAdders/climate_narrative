@@ -1,4 +1,5 @@
 name: Savings and Retirement
+test_report_position: 20
 description: |
   The **Savings and Retirement** underwriting class covers products such as
   pensions, investment bonds, with-profits, unit-linked investments and
