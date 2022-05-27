@@ -50,8 +50,8 @@ initialise_globals <- function() {
   global$tabs <- list(
     QuestionTab$new("title", NULL, NULL, "auth", FALSE, FALSE),
     QuestionTab$new("auth", NULL, "title", NULL, add_buttons = FALSE, ui_settings = list(captcha_code = global$captcha_code)),
-    QuestionTab$new("intro", "Introduction to the Tool", "auth", "rep_type"),
-    QuestionTab$new("rep_type", "Report Type Selection", "intro", "inst_type"),
+    QuestionTab$new("instruction", "Introduction to the Tool", "auth", "rep_type"),
+    QuestionTab$new("rep_type", "Report Type Selection", "instruction", "inst_type"),
     QuestionTab$new("inst_type", "Institution Type Selection", "rep_type", "ins_l"),
     QuestionTab$new("bank_re", "Bank: Real Estate Exposures", "inst_type", "bank_c", TRUE, TRUE, TRUE, global$exposures$bankRe, "bank", "R"),
     QuestionTab$new("bank_c", "Bank: Company Exposures", "bank_re", "bank_retail", TRUE, TRUE, TRUE, global$exposures$bankCorporate, "bank", "C"),
