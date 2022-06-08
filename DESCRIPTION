@@ -34,7 +34,9 @@ Imports:
     uuid,
     yaml,
     png,
-    markdown
+    markdown,
+    promises,
+    future
 Suggests:
     testthat,
     styler

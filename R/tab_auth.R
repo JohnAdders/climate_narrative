@@ -89,7 +89,7 @@ tab_auth_ui <- function(captcha_code) {
 
 tab_auth_server <- function(input, output, session) {
   include_markdown_section(output, "disclaimer_text", "disclaimer")
-  
+
   render_dynamic_auth_ui(output, session)
 
   observeEvent(

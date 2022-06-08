@@ -5,6 +5,7 @@
 #' @param session Shiny session
 #'
 #' @importFrom stats aggregate
+#' @importFrom promises %...>%
 #' @export
 #'
 server <- function(input, output, session) {
@@ -102,7 +103,7 @@ server <- function(input, output, session) {
   observeEvent(
     allow_report(),
     {
-      if (allow_report()){
+      if (allow_report()) {
         session$userData$next_tabs$bank_sov <- tab_name_to_number("report")
         session$userData$next_tabs$ins_re <- tab_name_to_number("report")
         session$userData$next_tabs$am_re <- tab_name_to_number("report")
@@ -205,12 +206,21 @@ server <- function(input, output, session) {
         )
         if (global$report_version >= 5) {
           settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
-          produce_report(all_inputs(), settings)
-          removeModal()
-          result <- includeHTML(temp_html)
-          output$html_report <- renderUI(result)
-          if (global$report_version >= 6) {
-            output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
+          if (global$report_version >= 7) {
+            produce_report(all_inputs(), settings, TRUE) %...>% {
+              removeModal()
+              result <- includeHTML(temp_html)
+              output$html_report <- renderUI(result)
+              output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
+            }
+          } else {
+            produce_report(all_inputs(), settings)
+            removeModal()
+            result <- includeHTML(temp_html)
+            output$html_report <- renderUI(result)
+            if (global$report_version >= 6) {
+              output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
+            }
           }
         } else {
           stop("Error. Report version < 5 removed")
@@ -297,5 +307,4 @@ server <- function(input, output, session) {
   session$userData$prev_tabs <- lapply(global$tabs, function(x) sum(x$initial_previous_tab))
   session$userData$next_tabs <- lapply(global$tabs, function(x) sum(x$initial_next_tab))
   names(session$userData$prev_tabs) <- names(session$userData$next_tabs) <- sapply(global$tabs, function(x) x$tab_name)
-
 }

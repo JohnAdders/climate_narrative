@@ -2,18 +2,22 @@
 % Please edit documentation in R/functions.R
 \name{produce_report}
 \alias{produce_report}
-\title{The highest level function for report production. Takes only two arguments}
+\title{The highest level function for report production. Takes only three arguments, passes the first two ones to the actual report
+producing function (either using promise or not, depending on the third argument)}
 \usage{
-produce_report(all_inputs, settings)
+produce_report(all_inputs, settings, async = FALSE)
 }
 \arguments{
 \item{all_inputs}{Table of user inputs}
 
 \item{settings}{list of lists containing all necessary settings}
+
+\item{async}{whether to use promises to delegate report production to a new thread. FALSE by default for backward compatibility}
 }
 \value{
-NULL, report produced to file
+NULL if async=FALSE, promise if async=TRUE. The actual report is produced to file in both cases
 }
 \description{
-The highest level function for report production. Takes only two arguments
+The highest level function for report production. Takes only three arguments, passes the first two ones to the actual report
+producing function (either using promise or not, depending on the third argument)
 }
