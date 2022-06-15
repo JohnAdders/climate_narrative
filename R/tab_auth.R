@@ -1,18 +1,18 @@
 passes_captcha <- function(input, session) {
   result <- recaptcha_server(global$captcha_secret, input$responseReceived)
-  if (result$success && result$score > global$captcha_threshold) {
+  print(
+    paste0(
+      "Captcha attempt. Details: success ",
+      result$success,
+      " | score ",
+      result$score,
+      " | hostname ",
+      result$hostname
+    )
+  )
+  if (result$hostname %in% global$ip_whitelist || (result$success && result$score > global$captcha_threshold)) {
     return(TRUE)
   } else {
-    print(
-      paste0(
-        "Failed captcha attempt. Details: success ",
-        result$success,
-        "score ",
-        result$score,
-        "hostname ",
-        result$hostname
-      )
-    )
     return(FALSE)
   }
 }
@@ -99,7 +99,13 @@ tab_auth_server <- function(input, output, session) {
         captcha_result <- passes_captcha(input, session)
         if (captcha_result == FALSE) {
           warning("Captcha verification failed")
-          output$code_verification_result <- renderText("Captcha verification failed")
+          output$code_verification_result <- renderText(
+            paste0(
+              "Your activity looks suspicious to the bot detection software.
+              If you insist you are a human, please try again, use different browser/device,",
+              "or contact support (the link below)"
+            )
+          )
         } else {
           session$userData$captcha_validated <- TRUE
         }

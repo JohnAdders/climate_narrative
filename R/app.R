@@ -36,6 +36,11 @@ load_secrets <- function(secrets_file = "secret.yml") {
       warning("Captcha threshold setting not found. Defaulting to 0,5")
       global$captcha_threshold <- 0.5
     }
+    if (is.null(global$ip_whitelist)){
+      warning("IP whitelist setting not found. Defaulting to localhost only")
+      global$ip_whitelist <- "127.0.0.1"
+    }
+    global$ip_whitelist <- strsplit(global$ip_whitelist,"\\s+")[[1]]
   } else {
     global$dev <- TRUE
     global$progress_bar <- FALSE
