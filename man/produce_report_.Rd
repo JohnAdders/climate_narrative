@@ -6,6 +6,11 @@
 \usage{
 produce_report_(all_inputs, settings)
 }
+\arguments{
+\item{all_inputs}{Table of user inputs}
+
+\item{settings}{list of lists containing all necessary settings}
+}
 \value{
 NULL, report produced to file
 }

@@ -1883,9 +1883,11 @@ get_report_settings <- function(content_files,
 #'
 produce_report <- function(all_inputs, settings, async = FALSE) {
   if (async) {
-    promises::future_promise({
-      produce_report_(all_inputs, settings)
-    })
+    return(
+      promises::future_promise({
+        produce_report_(all_inputs, settings)
+      })
+    )
   } else {
     produce_report_(all_inputs, settings)
     return(invisible(NULL))
@@ -1894,7 +1896,7 @@ produce_report <- function(all_inputs, settings, async = FALSE) {
 
 #' Function where actual report production takes place
 #'
-#' @inherits produce_report
+#' @inherit produce_report
 #' @return NULL, report produced to file
 #'
 produce_report_ <- function(all_inputs, settings) {
