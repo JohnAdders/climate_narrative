@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">climate.narrative</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.1</span>
       </span>
     </div>
 
@@ -69,32 +69,55 @@
     <h2>Arguments</h2>
     <dl><dt>tabs</dt>
 <dd><p>List of tabs (required for the executive summary)</p></dd>
+
+
 <dt>scenarios</dt>
 <dd><p>List of scenarios</p></dd>
+
+
 <dt>sections</dt>
 <dd><p>List of non-scenario report sections</p></dd>
+
+
 <dt>exposure_classes</dt>
 <dd><p>List of exposure classes (sectors)</p></dd>
+
+
 <dt>inputs</dt>
 <dd><p>data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)</p></dd>
+
+
 <dt>report_version</dt>
 <dd><p>enables different versions of the reports within a single code, see global file for possible choices and their meaning</p></dd>
+
+
 <dt>report_scenario_selection</dt>
 <dd><p>(user-friendly) scenario name (or empty string)</p></dd>
+
+
 <dt>is_rtf</dt>
 <dd><p>a flag that triggers several format specific settings:</p><ul><li><p>TRUE: include non-scenario sections (e.g. intro)</p></li>
 <li><p>FALSE: include the links to page top (note requires proper report_version as well)</p></li>
 </ul></dd>
+
+
 <dt>exec_summary_layout</dt>
 <dd><p>determines the structure of the executive summary (see get_executive_summary function)</p></dd>
+
+
 <dt>include_exposures</dt>
 <dd><p>whether to include tables with contributing exposures</p></dd>
+
+
 <dt>rep_type</dt>
 <dd><p>additional possibility to filter report sections, by default (NULL) no filtering</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)</p>
+    
+
+<p>vector of string - executive summary text (3 items + 1 per scenario + 1 item at the end)</p>
     </div>
 
   </div>
@@ -109,7 +132,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer></div>
