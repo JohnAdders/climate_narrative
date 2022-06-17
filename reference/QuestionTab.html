@@ -56,7 +56,7 @@ QuestionTab class definition"><!-- mathjax --><script src="https://cdnjs.cloudfl
     <h2>Details</h2>
     <p>Instances are tabs of the questionnaire.
 This is a wrapper over any ui and server
-(if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).</p>
+(if the initial_next_tab/initial_previous_tab argument is NULL there is no button and corresponding server logic).</p>
     </div>
     <div id="public-fields">
     <h2>Public fields</h2>
@@ -84,11 +84,11 @@ This is a wrapper over any ui and server
 <dd><p>number assigned automatically based on 'ordered_tabs' vector of names</p></dd>
 
 
-<dt><code>previous_tab</code></dt>
+<dt><code>initial_previous_tab</code></dt>
 <dd><p>name of previous tab (optional)</p></dd>
 
 
-<dt><code>next_tab</code></dt>
+<dt><code>initial_next_tab</code></dt>
 <dd><p>name of previous tab (optional)</p></dd>
 
 
@@ -149,8 +149,8 @@ from the relevant functions (or makes it empty if the function does not exist)</
 <p></p><div class="r"><div class="sourceCode"><pre><code><span class="va"><a href="../reference/QuestionTab.html">QuestionTab</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>
   <span class="va">tab_name</span>,
   <span class="va">tab_title</span>,
-  <span class="va">previous_tab</span>,
-  <span class="va">next_tab</span>,
+  <span class="va">initial_previous_tab</span>,
+  <span class="va">initial_next_tab</span>,
   add_header <span class="op">=</span> <span class="cn">TRUE</span>,
   add_footer <span class="op">=</span> <span class="cn">TRUE</span>,
   add_buttons <span class="op">=</span> <span class="cn">TRUE</span>,
@@ -172,11 +172,11 @@ from the relevant functions (or makes it empty if the function does not exist)</
 <dd><p>title of the tab to be used in the UI</p></dd>
 
 
-<dt><code>previous_tab</code></dt>
+<dt><code>initial_previous_tab</code></dt>
 <dd><p>name of the previous tab</p></dd>
 
 
-<dt><code>next_tab</code></dt>
+<dt><code>initial_next_tab</code></dt>
 <dd><p>name of the next tab</p></dd>
 
 
