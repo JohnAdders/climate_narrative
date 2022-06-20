@@ -486,6 +486,18 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
   return(out)
 }
 
+
+#' Aggregate multiple numerical materiality exposures into a single, qualitative
+#
+# @param x a vector of numeric materialities
+aggregate_quantitative_to_qualitative_materiality <- function(x) {
+  cut(
+    sum(x),
+    breaks = c(0, 4.5, 9.5, 1000),
+    labels = c("Low", "Medium", "High")
+  )
+}
+
 #' Produce report content for a given item
 #'
 #' @param item Name of item for which a report is to be produced
@@ -532,13 +544,7 @@ get_exposure_description <- function(item, type_item_inputs, exposure_classes, i
       Product.description = ordered_type_item_inputs$product_description,
       Product.text = ordered_type_item_inputs$product_text
     ),
-    FUN = function(x) {
-      cut(
-        sum(x),
-        breaks = c(0, 4.5, 9.5, 100),
-        labels = c("Low", "Medium", "High")
-      )
-    }
+    FUN = aggregate_quantitative_to_qualitative_materiality
   )
   ordered_aggregate_inputs <- merge(ordered_aggregate_inputs_text, ordered_aggregate_inputs_num)
   colnames(ordered_aggregate_inputs)[3:5] <- c("Exposure.row", "Materiality", "Product materiality")
@@ -704,7 +710,19 @@ get_scenario_descriptions <- function(aggregated_table_by_item, aggregated_table
         out,
         get_exposure_description(group, type_group_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 2, 1))
       )
-      for (item in unique(type_group_inputs$item)) {
+      unique_items <- unique(type_group_inputs$item)
+      if (length(unique_items) > 1) {
+        # calculate item-specific materiality only if there is more than one item
+        for (item in unique_items) {
+          item_materiality <- aggregate_quantitative_to_qualitative_materiality(type_group_inputs[type_group_inputs$item == item,]$materiality_num)
+          item_products <- unique(type_group_inputs[type_group_inputs$item == item,]$products)
+          out <- paste0(
+            out,
+            get_exposure_risk_description(item, item_products, item_materiality, exposure_classes, "transition", transition),
+            get_exposure_risk_description(item, item_products, item_materiality, exposure_classes, "physical", physical)
+          )
+        }
+      } else {
         out <- paste0(
           out,
           get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
@@ -1654,13 +1672,7 @@ aggregate_inputs <- function(inputs, by = "item") {
   aggregated_inputs_factor <- stats::aggregate(materiality ~ A_or_L + item + exposure_group, FUN = max, data = inputs)
   aggregated_inputs_numeric <- stats::aggregate(
     materiality_num ~ A_or_L + item + exposure_group,
-    FUN = function(x) {
-      cut(
-        sum(x),
-        breaks = c(0, 4.5, 9.5, 1000),
-        labels = c("Low", "Medium", "High")
-      )
-    },
+    FUN = aggregate_quantitative_to_qualitative_materiality,
     data = inputs
   )
   out <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
