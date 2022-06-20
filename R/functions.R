@@ -714,8 +714,8 @@ get_scenario_descriptions <- function(aggregated_table_by_item, aggregated_table
       if (length(unique_items) > 1) {
         # calculate item-specific materiality only if there is more than one item
         for (item in unique_items) {
-          item_materiality <- aggregate_quantitative_to_qualitative_materiality(type_group_inputs[type_group_inputs$item == item,]$materiality_num)
-          item_products <- unique(type_group_inputs[type_group_inputs$item == item,]$products)
+          item_materiality <- aggregate_quantitative_to_qualitative_materiality(type_group_inputs[type_group_inputs$item == item, ]$materiality_num)
+          item_products <- unique(type_group_inputs[type_group_inputs$item == item, ]$products)
           out <- paste0(
             out,
             get_exposure_risk_description(item, item_products, item_materiality, exposure_classes, "transition", transition),
