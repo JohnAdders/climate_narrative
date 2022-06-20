@@ -34,7 +34,7 @@ tab_editor_ui <- function() {
         "editor",
         "Raw input",
         width = "90%",
-        rows=15
+        rows = 15
       )
     ),
     column(
@@ -49,7 +49,7 @@ tab_editor_server <- function(input, output, session) {
   observeEvent(
     input$editor_sector_selection,
     {
-      if(input$editor_sector_selection != ""){
+      if (input$editor_sector_selection != "") {
         section_options <- c(
           "",
           "description",
@@ -79,10 +79,10 @@ tab_editor_server <- function(input, output, session) {
         exposure_class_no <- which(lapply(global$exposure_classes, function(x) x$name) == input$editor_sector_selection)
         exposure_class <- global$exposure_classes[[exposure_class_no]]
         if (input$editor_section_selection %in% c("description", "references")) {
-          subsection_options = c("N/A")
-          editor_value = exposure_class[[input$editor_section_selection]]
+          subsection_options <- c("N/A")
+          editor_value <- exposure_class[[input$editor_section_selection]]
         } else {
-          subsection_options = c("exec_description", "always", "high_materiality")
+          subsection_options <- c("exec_description", "always", "high_materiality")
           editor_value <- ""
         }
       }
@@ -105,7 +105,7 @@ tab_editor_server <- function(input, output, session) {
         if (input$editor_subsection_selection == "N/A") {
           editor_value <- exposure_class[[input$editor_section_selection]]
         } else {
-          risk_and_materiality = strsplit(input$editor_section_selection," / ")[[1]]
+          risk_and_materiality <- strsplit(input$editor_section_selection, " / ")[[1]]
           risk <- risk_and_materiality[1]
           materiality <- risk_and_materiality[2]
           editor_value <- exposure_class[[risk]][[materiality]][[input$editor_subsection_selection]]
@@ -117,9 +117,8 @@ tab_editor_server <- function(input, output, session) {
         value = editor_value,
       )
       # remove target="_blank" because include_markdown_text does not handle it correctly
-      markdown_text = gsub('{target="\\_blank"}','',editor_value, fixed=TRUE)
+      markdown_text <- gsub('{target="\\_blank"}', "", editor_value, fixed = TRUE)
       include_markdown_text(markdown_text, output, "edited", FALSE)
     }
   )
-  
 }

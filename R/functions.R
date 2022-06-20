@@ -714,8 +714,8 @@ get_scenario_descriptions <- function(aggregated_table_by_item, aggregated_table
       if (length(unique_items) > 1) {
         # calculate item-specific materiality only if there is more than one item
         for (item in unique_items) {
-          item_materiality <- aggregate_quantitative_to_qualitative_materiality(type_group_inputs[type_group_inputs$item == item,]$materiality_num)
-          item_products <- unique(type_group_inputs[type_group_inputs$item == item,]$products)
+          item_materiality <- aggregate_quantitative_to_qualitative_materiality(type_group_inputs[type_group_inputs$item == item, ]$materiality_num)
+          item_products <- unique(type_group_inputs[type_group_inputs$item == item, ]$products)
           out <- paste0(
             out,
             get_exposure_risk_description(item, item_products, item_materiality, exposure_classes, "transition", transition),
@@ -1700,7 +1700,6 @@ include_markdown_section <- function(output, output_name, section_name) {
     )
   )
   include_markdown_text(text, output, output_name)
-  
 }
 
 #' Converts text to HTML and passes to the output
@@ -1711,12 +1710,12 @@ include_markdown_section <- function(output, output_name, section_name) {
 #'
 #' @importFrom markdown markdownToHTML
 #' @importFrom stringi stri_replace_all_regex
-include_markdown_text <- function(text, output, output_name, add_new_tab_ref=TRUE){
+include_markdown_text <- function(text, output, output_name, add_new_tab_ref = TRUE) {
   html_text <- markdown::markdownToHTML(
     text = text,
     fragment.only = TRUE
   )
-  if (add_new_tab_ref){
+  if (add_new_tab_ref) {
     html_text <- stringi::stri_replace_all_regex(html_text, "(<a href=\"[:graph:]*\")>", "$1 target=\"_blank\" >")
   }
   output[[output_name]] <- renderUI({
