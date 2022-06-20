@@ -4,11 +4,11 @@ testthat::test_that("report files", {
   shiny::testServer(
     # First define a test function - a server function with correct initialisation
     function(input, output, session) {
-      initialise_globals()
       # emulate the secret file
       global$dev <- FALSE
       global$report_version <- 6
       global$progress_bar <- TRUE
+      initialise_globals()
       # the server function itself
       server(input, output, session)
     },
@@ -60,12 +60,12 @@ testthat::test_that("report files", {
         close(file_conn)
       }
 
-      # Compare test data vs function outputs.
+      # Compare test data vs function outputs
       expect_equal(
         sum(
           report_files[[1]] != comparison_files[[1]] &
-            !grepl("file2690171a39a5", comparison_files[[1]]) &
-            !grepl("file2690603e396a", comparison_files[[1]])
+            !grepl("file38a4d267088", comparison_files[[1]]) &
+            !grepl("file38a43ecf779", comparison_files[[1]])
         ),
         0
       )

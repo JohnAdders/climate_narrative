@@ -11,7 +11,7 @@ QuestionTab class definition
 \details{
 Instances are tabs of the questionnaire.
 This is a wrapper over any ui and server
-(if the next_tab/previous_tab argument is NULL there is no button and corresponding server logic).
+(if the initial_next_tab/initial_previous_tab argument is NULL there is no button and corresponding server logic).
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -28,9 +28,9 @@ This is a wrapper over any ui and server
 
 \item{\code{tab_number}}{number assigned automatically based on 'ordered_tabs' vector of names}
 
-\item{\code{previous_tab}}{name of previous tab (optional)}
+\item{\code{initial_previous_tab}}{name of previous tab (optional)}
 
-\item{\code{next_tab}}{name of previous tab (optional)}
+\item{\code{initial_next_tab}}{name of previous tab (optional)}
 
 \item{\code{id}}{component id in shiny, assigned automatically based on tab number}
 
@@ -71,8 +71,8 @@ from the relevant functions (or makes it empty if the function does not exist)
 \if{html}{\out{<div class="r">}}\preformatted{QuestionTab$new(
   tab_name,
   tab_title,
-  previous_tab,
-  next_tab,
+  initial_previous_tab,
+  initial_next_tab,
   add_header = TRUE,
   add_footer = TRUE,
   add_buttons = TRUE,
@@ -91,9 +91,9 @@ from the relevant functions (or makes it empty if the function does not exist)
 
 \item{\code{tab_title}}{title of the tab to be used in the UI}
 
-\item{\code{previous_tab}}{name of the previous tab}
+\item{\code{initial_previous_tab}}{name of the previous tab}
 
-\item{\code{next_tab}}{name of the next tab}
+\item{\code{initial_next_tab}}{name of the next tab}
 
 \item{\code{add_header}}{whether to add a standard header}
 
