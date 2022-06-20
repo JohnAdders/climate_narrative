@@ -725,8 +725,8 @@ get_scenario_descriptions <- function(aggregated_table_by_item, aggregated_table
       } else {
         out <- paste0(
           out,
-          get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
-          get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
+          get_exposure_risk_description(unique_items, products, materiality, exposure_classes, "transition", transition),
+          get_exposure_risk_description(unique_items, products, materiality, exposure_classes, "physical", physical)
         )
       }
     }
