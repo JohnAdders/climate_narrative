@@ -1679,8 +1679,6 @@ aggregate_inputs <- function(inputs, by = "item") {
 #' @param section_name Name of yaml file within section directory read from
 #' (description section only, other YAML fields are ignored)
 #'
-#' @importFrom markdown markdownToHTML
-#' @importFrom stringi stri_replace_all_regex
 #'
 include_markdown_section <- function(output, output_name, section_name) {
   text <- unlist(
@@ -1689,11 +1687,26 @@ include_markdown_section <- function(output, output_name, section_name) {
       "\n"
     )
   )
+  include_markdown_text(text, output, output_name)
+  
+}
+
+#' Converts text to HTML and passes to the output
+#'
+#' @inherit include_markdown_section
+#' @param text text to be converted
+#' @param add_new_tab_ref if TRUE (the default) all the links will be appended with target="_blank" (to open in the new window)
+#'
+#' @importFrom markdown markdownToHTML
+#' @importFrom stringi stri_replace_all_regex
+include_markdown_text <- function(text, output, output_name, add_new_tab_ref=TRUE){
   html_text <- markdown::markdownToHTML(
     text = text,
     fragment.only = TRUE
   )
-  html_text <- stringi::stri_replace_all_regex(html_text, "(<a href=\"[:graph:]*\")>", "$1 target=\"_blank\" >")
+  if (add_new_tab_ref){
+    html_text <- stringi::stri_replace_all_regex(html_text, "(<a href=\"[:graph:]*\")>", "$1 target=\"_blank\" >")
+  }
   output[[output_name]] <- renderUI({
     HTML(html_text)
   })

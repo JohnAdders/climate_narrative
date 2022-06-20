@@ -54,7 +54,7 @@ initialise_globals <- function() {
 
   # defining tab structure
   global$tabs <- list(
-    QuestionTab$new("title", NULL, NULL, "auth", FALSE, FALSE),
+    QuestionTab$new("title", NULL, NULL, "editor", FALSE, FALSE),
     QuestionTab$new("auth", NULL, "title", NULL, add_buttons = FALSE, ui_settings = list(captcha_code = global$captcha_code)),
     QuestionTab$new("instruction", "Introduction to the Tool", "auth", "rep_type"),
     QuestionTab$new("rep_type", "Report Type Selection", "instruction", "inst_type"),
@@ -71,7 +71,8 @@ initialise_globals <- function() {
     QuestionTab$new("am_c", "Asset Manager / Owner / Fund: Corporate Assets", "inst_type", "am_sov", TRUE, TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
     QuestionTab$new("am_sov", "Asset Manager / Owner / Fund: Sovereign Assets", "am_c", "am_re", TRUE, TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
     QuestionTab$new("am_re", "Asset Manager/ Owner / Fund: Real Estate Assets", "am_sov", "report", TRUE, TRUE, TRUE, global$exposures$amRe, "asset", "R"),
-    QuestionTab$new("report", NULL, "rep_type", NULL, FALSE, FALSE, FALSE)
+    QuestionTab$new("report", NULL, "rep_type", NULL, FALSE, FALSE, FALSE),
+    QuestionTab$new("editor","Content Edition","title",NULL)
   )
   # Tab names validation check
   # the global$ordered_tabs must be defined first (the QuestionTab constructor relies on this
