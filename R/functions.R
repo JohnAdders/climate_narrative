@@ -1760,6 +1760,7 @@ html_postprocess <- function(file, report_version) {
 #' @param md_file Path and filename of intermediate markdown file
 #' @param file_format Currently either "html" or "rtf"
 #' @param report_version Integer controlling the version of the code used in report generating functions
+#' @param dev Development mode flag (used only to decide if a warning is raised in a lower level function)
 #' @param rep_type Either "inst" for institutional report or "sect" for sectoral report
 #' @param inst_type Institution type (relevant for institutional report only)
 #' @param report_sector_selection Input used to filter report contents
