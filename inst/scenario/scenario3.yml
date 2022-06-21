@@ -48,9 +48,13 @@ description: |
   Carbon price is a measure of overall policy intensity. Emission prices are
   sensitive to the timing of policy implementation. With none or relatively
   small additions to current policy, these scenarios have low carbon prices
-  throughout. Therefore, transition risk is not relevant for these scenarios.
+  throughout. Therefore, transition risks ransition risks are much less significant
+  in these scenarios.
 
   ![Carbon price](Carbon_Price_Hothouse.png)
+
+  **Source:**
+  [IIASA NGFS Scenario Explorer. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
   
   The investments in energy efficiency and low carbon technologies are projected 
   to increase in Hot House scenarios. Annual investment in energy efficiency increases 
@@ -124,7 +128,7 @@ description: |
   [IIASA NGFS Scenario Explorer, NGFS Scenario Data NIGEM v2.0 NiGEM NGFS v1.21 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   Overall, these scenarios result in high physical risk including irreversible
-  impacts like sea-level rise. Transition risks are not relevant in these
+  impacts like sea-level rise. Transition risks are much less significant in these
   scenarios as only policies that are already implemented or pledged are in
   place.
 
