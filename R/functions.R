@@ -488,8 +488,8 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 
 
 #' Aggregate multiple numerical materiality exposures into a single, qualitative
-#
-# @param x a vector of numeric materialities
+#'
+#' @param x a vector of numeric materialities
 aggregate_quantitative_to_qualitative_materiality <- function(x) {
   cut(
     sum(x),

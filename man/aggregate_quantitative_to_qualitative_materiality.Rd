@@ -6,6 +6,9 @@
 \usage{
 aggregate_quantitative_to_qualitative_materiality(x)
 }
+\arguments{
+\item{x}{a vector of numeric materialities}
+}
 \description{
 Aggregate multiple numerical materiality exposures into a single, qualitative
 }
