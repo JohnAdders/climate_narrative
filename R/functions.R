@@ -489,7 +489,12 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 
 #' Aggregate multiple numerical materiality exposures into a single, qualitative
 #'
+#' The thresholds are defined so that 10 and above is "high",
+#' anything between 5 (incl.) and 10 (excl.) is medium.
+#' instead of 1000 I could use infinity (but up to at least 100 classes it makes no difference)
+#'
 #' @param x a vector of numeric materialities
+#'
 aggregate_quantitative_to_qualitative_materiality <- function(x) {
   cut(
     sum(x),
