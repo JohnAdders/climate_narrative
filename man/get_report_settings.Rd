@@ -10,6 +10,7 @@ get_report_settings(
   md_file,
   file_format,
   report_version,
+  dev,
   rep_type,
   inst_type,
   report_sector_selection,
