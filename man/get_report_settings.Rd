@@ -10,6 +10,7 @@ get_report_settings(
   md_file,
   file_format,
   report_version,
+  dev,
   rep_type,
   inst_type,
   report_sector_selection,
@@ -26,6 +27,8 @@ get_report_settings(
 \item{file_format}{Currently either "html" or "rtf"}
 
 \item{report_version}{Integer controlling the version of the code used in report generating functions}
+
+\item{dev}{Development mode flag (used only to decide if a warning is raised in a lower level function)}
 
 \item{rep_type}{Either "inst" for institutional report or "sect" for sectoral report}
 

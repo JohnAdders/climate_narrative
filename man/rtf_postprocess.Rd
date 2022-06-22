@@ -4,12 +4,14 @@
 \alias{rtf_postprocess}
 \title{Fix the RTF file}
 \usage{
-rtf_postprocess(filename, report_version)
+rtf_postprocess(filename, report_version, dev)
 }
 \arguments{
 \item{filename}{name of file to convert}
 
 \item{report_version}{enables different versions of the reports within a single code, see global file for possible choices and their meaning}
+
+\item{dev}{developmen mode flag (used only to decide whether a warning is raised)}
 }
 \value{
 NULL, changes file specified as an argument in place

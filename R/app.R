@@ -6,6 +6,7 @@
 #' @import shiny
 #' @import R6
 #' @importFrom yaml read_yaml
+#' @importFrom future plan multisession
 #' @export
 run_shiny_app <- function(secrets_file = "secret.yml", ...) {
   load_secrets(secrets_file)
@@ -36,6 +37,11 @@ load_secrets <- function(secrets_file = "secret.yml") {
       warning("Captcha threshold setting not found. Defaulting to 0,5")
       global$captcha_threshold <- 0.5
     }
+    if (is.null(global$ip_whitelist)) {
+      warning("IP whitelist setting not found. Defaulting to localhost only")
+      global$ip_whitelist <- "127.0.0.1"
+    }
+    global$ip_whitelist <- strsplit(global$ip_whitelist, "\\s+")[[1]]
   } else {
     global$dev <- TRUE
     global$progress_bar <- FALSE
@@ -86,4 +92,9 @@ initialise_globals <- function() {
     sections = global$sections,
     exposure_classes = global$exposure_classes
   )
+
+  # required for async report production
+  if (global$report_version >= 7) {
+    future::plan(future::multisession)
+  }
 }

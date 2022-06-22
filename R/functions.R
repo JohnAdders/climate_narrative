@@ -486,6 +486,23 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
   return(out)
 }
 
+
+#' Aggregate multiple numerical materiality exposures into a single, qualitative
+#'
+#' The thresholds are defined so that 10 and above is "high",
+#' anything between 5 (incl.) and 10 (excl.) is medium.
+#' instead of 1000 I could use infinity (but up to at least 100 classes it makes no difference)
+#'
+#' @param x a vector of numeric materialities
+#'
+aggregate_quantitative_to_qualitative_materiality <- function(x) {
+  cut(
+    sum(x),
+    breaks = c(0, 4.5, 9.5, 1000),
+    labels = c("Low", "Medium", "High")
+  )
+}
+
 #' Produce report content for a given item
 #'
 #' @param item Name of item for which a report is to be produced
@@ -532,13 +549,7 @@ get_exposure_description <- function(item, type_item_inputs, exposure_classes, i
       Product.description = ordered_type_item_inputs$product_description,
       Product.text = ordered_type_item_inputs$product_text
     ),
-    FUN = function(x) {
-      cut(
-        sum(x),
-        breaks = c(0, 4.5, 9.5, 100),
-        labels = c("Low", "Medium", "High")
-      )
-    }
+    FUN = aggregate_quantitative_to_qualitative_materiality
   )
   ordered_aggregate_inputs <- merge(ordered_aggregate_inputs_text, ordered_aggregate_inputs_num)
   colnames(ordered_aggregate_inputs)[3:5] <- c("Exposure.row", "Materiality", "Product materiality")
@@ -704,11 +715,23 @@ get_scenario_descriptions <- function(aggregated_table_by_item, aggregated_table
         out,
         get_exposure_description(group, type_group_inputs, exposure_classes, include_exposures, ifelse(A_or_L_header, 2, 1))
       )
-      for (item in unique(type_group_inputs$item)) {
+      unique_items <- unique(type_group_inputs$item)
+      if (length(unique_items) > 1) {
+        # calculate item-specific materiality only if there is more than one item
+        for (item in unique_items) {
+          item_materiality <- aggregate_quantitative_to_qualitative_materiality(type_group_inputs[type_group_inputs$item == item, ]$materiality_num)
+          item_products <- unique(type_group_inputs[type_group_inputs$item == item, ]$products)
+          out <- paste0(
+            out,
+            get_exposure_risk_description(item, item_products, item_materiality, exposure_classes, "transition", transition),
+            get_exposure_risk_description(item, item_products, item_materiality, exposure_classes, "physical", physical)
+          )
+        }
+      } else {
         out <- paste0(
           out,
-          get_exposure_risk_description(item, products, materiality, exposure_classes, "transition", transition),
-          get_exposure_risk_description(item, products, materiality, exposure_classes, "physical", physical)
+          get_exposure_risk_description(unique_items, products, materiality, exposure_classes, "transition", transition),
+          get_exposure_risk_description(unique_items, products, materiality, exposure_classes, "physical", physical)
         )
       }
     }
@@ -1016,7 +1039,7 @@ format_images <- function(filename, image_settings) {
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-rtf_fix_table_of_contents <- function(filename) {
+rtf_fix_table_of_contents <- function(filename, dev) {
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
   # First identify the table of contents - look for hyperlinks
@@ -1035,7 +1058,7 @@ rtf_fix_table_of_contents <- function(filename) {
       rtf[search_position:length(rtf)],
       perl = TRUE
     )
-    if (length(bookmark_rows) > 1 && global$dev) {
+    if (length(bookmark_rows) > 1 && dev) {
       warning(paste0("Ambiguous table of content entry. Header ", bookmark_text, " is not unique, using the first match. Please check the table of content"))
     } else if (length(bookmark_rows) == 0) {
       stop(paste0("Error in fixing RTF table of content, header ", bookmark_text, " not found"))
@@ -1053,7 +1076,7 @@ rtf_fix_table_of_contents <- function(filename) {
     )
     # Limit of 40 characters!
     if (nchar(bookmark_text) > 40) {
-      if (global$dev) {
+      if (dev) {
         warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
       }
       rtf <- gsub(bookmark_text, substr(bookmark_text, 1, 40), rtf)
@@ -1089,10 +1112,11 @@ rtf_center_images <- function(filename) {
 #' in pandoc which breaks the TOC (links are not working)
 #' @param filename name of file to convert
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
+#' @param dev developmen mode flag (used only to decide whether a warning is raised)
 #' @return NULL, changes file specified as an argument in place
 
-rtf_postprocess <- function(filename, report_version) {
-  rtf_fix_table_of_contents(filename)
+rtf_postprocess <- function(filename, report_version, dev) {
+  rtf_fix_table_of_contents(filename, dev)
   rtf_center_images(filename)
 }
 
@@ -1654,13 +1678,7 @@ aggregate_inputs <- function(inputs, by = "item") {
   aggregated_inputs_factor <- stats::aggregate(materiality ~ A_or_L + item + exposure_group, FUN = max, data = inputs)
   aggregated_inputs_numeric <- stats::aggregate(
     materiality_num ~ A_or_L + item + exposure_group,
-    FUN = function(x) {
-      cut(
-        sum(x),
-        breaks = c(0, 4.5, 9.5, 1000),
-        labels = c("Low", "Medium", "High")
-      )
-    },
+    FUN = aggregate_quantitative_to_qualitative_materiality,
     data = inputs
   )
   out <- merge(aggregated_inputs_factor, aggregated_inputs_numeric)
@@ -1747,6 +1765,7 @@ html_postprocess <- function(file, report_version) {
 #' @param md_file Path and filename of intermediate markdown file
 #' @param file_format Currently either "html" or "rtf"
 #' @param report_version Integer controlling the version of the code used in report generating functions
+#' @param dev Development mode flag (used only to decide if a warning is raised in a lower level function)
 #' @param rep_type Either "inst" for institutional report or "sect" for sectoral report
 #' @param inst_type Institution type (relevant for institutional report only)
 #' @param report_sector_selection Input used to filter report contents
@@ -1758,6 +1777,7 @@ get_report_settings <- function(content_files,
                                 md_file,
                                 file_format,
                                 report_version,
+                                dev,
                                 rep_type,
                                 inst_type,
                                 report_sector_selection,
@@ -1858,7 +1878,8 @@ get_report_settings <- function(content_files,
   postprocess_settings <- list(
     file_format = file_format,
     output_file = output_file,
-    report_version = report_version
+    report_version = report_version,
+    dev = dev
   )
 
   settings <- list(
@@ -1872,14 +1893,34 @@ get_report_settings <- function(content_files,
 
   return(settings)
 }
-
-#' The highest level function for report production. Takes only two arguments
+#' The highest level function for report production. Takes only three arguments, passes the first two ones to the actual report
+#' producing function (either using promise or not, depending on the third argument)
 #'
 #' @param all_inputs Table of user inputs
 #' @param settings list of lists containing all necessary settings
+#' @param async whether to use promises to delegate report production to a new thread. FALSE by default for backward compatibility
+#' @importFrom promises future_promise
+#' @return NULL if async=FALSE, promise if async=TRUE. The actual report is produced to file in both cases
+#'
+produce_report <- function(all_inputs, settings, async = FALSE) {
+  if (async) {
+    return(
+      promises::future_promise({
+        produce_report_(all_inputs, settings)
+      })
+    )
+  } else {
+    produce_report_(all_inputs, settings)
+    return(invisible(NULL))
+  }
+}
+
+#' Function where actual report production takes place
+#'
+#' @inherit produce_report
 #' @return NULL, report produced to file
 #'
-produce_report <- function(all_inputs, settings) {
+produce_report_ <- function(all_inputs, settings) {
   content_files <- settings$content_files
   filter_settings <- settings$filter_settings
   content_settings <- settings$content_settings
@@ -1948,7 +1989,7 @@ get_report_contents <- function(content_files, inputs, content_settings) {
 #' - report_version, which is then translated to relevant postprocessing options at lower level
 postprocess <- function(postprocess_settings) {
   if (postprocess_settings$file_format == "rtf") {
-    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
+    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version, postprocess_settings$dev)
   } else {
     html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
   }
