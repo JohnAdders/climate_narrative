@@ -488,8 +488,13 @@ table_to_markdown <- function(table, additional_spaces = 3, dot_to_space = TRUE)
 
 
 #' Aggregate multiple numerical materiality exposures into a single, qualitative
-#
-# @param x a vector of numeric materialities
+#'
+#' The thresholds are defined so that 10 and above is "high",
+#' anything between 5 (incl.) and 10 (excl.) is medium.
+#' instead of 1000 I could use infinity (but up to at least 100 classes it makes no difference)
+#'
+#' @param x a vector of numeric materialities
+#'
 aggregate_quantitative_to_qualitative_materiality <- function(x) {
   cut(
     sum(x),
@@ -1034,7 +1039,7 @@ format_images <- function(filename, image_settings) {
 #' @return NULL, changes file specified as an argument in place
 #' @importFrom stringi stri_match_first
 #'
-rtf_fix_table_of_contents <- function(filename) {
+rtf_fix_table_of_contents <- function(filename, dev) {
   file_conn <- file(filename)
   rtf <- readLines(file_conn)
   # First identify the table of contents - look for hyperlinks
@@ -1053,7 +1058,7 @@ rtf_fix_table_of_contents <- function(filename) {
       rtf[search_position:length(rtf)],
       perl = TRUE
     )
-    if (length(bookmark_rows) > 1 && global$dev) {
+    if (length(bookmark_rows) > 1 && dev) {
       warning(paste0("Ambiguous table of content entry. Header ", bookmark_text, " is not unique, using the first match. Please check the table of content"))
     } else if (length(bookmark_rows) == 0) {
       stop(paste0("Error in fixing RTF table of content, header ", bookmark_text, " not found"))
@@ -1071,7 +1076,7 @@ rtf_fix_table_of_contents <- function(filename) {
     )
     # Limit of 40 characters!
     if (nchar(bookmark_text) > 40) {
-      if (global$dev) {
+      if (dev) {
         warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
       }
       rtf <- gsub(bookmark_text, substr(bookmark_text, 1, 40), rtf)
@@ -1107,10 +1112,11 @@ rtf_center_images <- function(filename) {
 #' in pandoc which breaks the TOC (links are not working)
 #' @param filename name of file to convert
 #' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
+#' @param dev developmen mode flag (used only to decide whether a warning is raised)
 #' @return NULL, changes file specified as an argument in place
 
-rtf_postprocess <- function(filename, report_version) {
-  rtf_fix_table_of_contents(filename)
+rtf_postprocess <- function(filename, report_version, dev) {
+  rtf_fix_table_of_contents(filename, dev)
   rtf_center_images(filename)
 }
 
@@ -1771,6 +1777,7 @@ html_postprocess <- function(file, report_version) {
 #' @param md_file Path and filename of intermediate markdown file
 #' @param file_format Currently either "html" or "rtf"
 #' @param report_version Integer controlling the version of the code used in report generating functions
+#' @param dev Development mode flag (used only to decide if a warning is raised in a lower level function)
 #' @param rep_type Either "inst" for institutional report or "sect" for sectoral report
 #' @param inst_type Institution type (relevant for institutional report only)
 #' @param report_sector_selection Input used to filter report contents
@@ -1782,6 +1789,7 @@ get_report_settings <- function(content_files,
                                 md_file,
                                 file_format,
                                 report_version,
+                                dev,
                                 rep_type,
                                 inst_type,
                                 report_sector_selection,
@@ -1882,7 +1890,8 @@ get_report_settings <- function(content_files,
   postprocess_settings <- list(
     file_format = file_format,
     output_file = output_file,
-    report_version = report_version
+    report_version = report_version,
+    dev = dev
   )
 
   settings <- list(
@@ -1992,7 +2001,7 @@ get_report_contents <- function(content_files, inputs, content_settings) {
 #' - report_version, which is then translated to relevant postprocessing options at lower level
 postprocess <- function(postprocess_settings) {
   if (postprocess_settings$file_format == "rtf") {
-    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
+    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version, postprocess_settings$dev)
   } else {
     html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
   }

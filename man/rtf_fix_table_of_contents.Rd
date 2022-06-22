@@ -4,10 +4,12 @@
 \alias{rtf_fix_table_of_contents}
 \title{Fix the table of contents in the RTF file}
 \usage{
-rtf_fix_table_of_contents(filename)
+rtf_fix_table_of_contents(filename, dev)
 }
 \arguments{
 \item{filename}{name of file to convert}
+
+\item{dev}{developmen mode flag (used only to decide whether a warning is raised)}
 }
 \value{
 NULL, changes file specified as an argument in place

@@ -10,11 +10,12 @@ passes_captcha <- function(input, session) {
       result$hostname
     )
   )
-  if (result$hostname %in% global$ip_whitelist || (result$success && result$score > global$captcha_threshold)) {
-    return(TRUE)
-  } else {
-    return(FALSE)
-  }
+  return(
+    any(
+      sapply(as.list(global$ip_whitelist), function(x) startsWith(result$hostname, x)),
+      (result$success && result$score > global$captcha_threshold)
+    )
+  )
 }
 
 request_captcha <- function(output, session) {

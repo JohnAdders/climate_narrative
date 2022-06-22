@@ -205,7 +205,7 @@ server <- function(input, output, session) {
           )
         )
         if (global$report_version >= 5) {
-          settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+          settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$report_version, global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
           if (global$report_version >= 7) {
             produce_report(all_inputs(), settings, TRUE) %...>% {
               removeModal()
@@ -241,7 +241,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$report_version, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+        settings <- get_report_settings(global$content_files, session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$report_version, global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
         if (global$report_version >= 7) {
           produce_report(all_inputs(), settings, TRUE) %...>% {
             removeModal()
@@ -269,7 +269,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$report_version, "inst", "", "", "")
+        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$report_version, global$dev, "inst", "", "", "")
         if (global$report_version >= 7) {
           produce_report(all_inputs(), settings, TRUE) %...>% {
             removeModal()
@@ -297,7 +297,7 @@ server <- function(input, output, session) {
         )
       )
       if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$report_version, "test", "", "", "")
+        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$report_version, global$dev, "test", "", "", "")
         if (global$report_version >= 7) {
           produce_report(all_inputs(), settings, TRUE) %...>% {
             removeModal()
