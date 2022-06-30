@@ -1,6 +1,15 @@
 tab_editor_helper <- function() {
   helpText(
-    "This tab allows to edit the content"
+    list(
+      "This tab allows to edit the content (descriptions for each sector/asset class)",
+      tags$ul(
+        "still TODO:",
+        tags$li("more user friendly interface than raw markdown"),
+        tags$li("ensuring that yml is written in the same format as initially (literal style)"),
+        tags$li("upload files (e.g. graphs)"),
+        tags$li("rendering images in the preview")
+      )
+    )
   )
 }
 
@@ -39,6 +48,9 @@ tab_editor_ui <- function() {
     ),
     column(
       6,
+      actionButton("update_preview", "Update preview"),
+      actionButton("save", "Save changes"),
+      helpText("The button saves the changes to the selected sector"),
       h4("Preview"),
       uiOutput("edited")
     )
@@ -119,6 +131,42 @@ tab_editor_server <- function(input, output, session) {
       # remove target="_blank" because include_markdown_text does not handle it correctly
       markdown_text <- gsub('{target="\\_blank"}', "", editor_value, fixed = TRUE)
       include_markdown_text(markdown_text, output, "edited", FALSE)
+    }
+  )
+  observeEvent(
+    input$update_preview,
+    {
+      markdown_text <- gsub('{target="\\_blank"}', "", input$editor, fixed = TRUE)
+      include_markdown_text(markdown_text, output, "edited", FALSE)
+    }
+  )
+  observeEvent(
+    input$save,
+    {
+      if (input$editor_sector_selection != ""){
+        # for a given sector name, find the respective file name
+        exposure_files <- dir(system.file("exposure_class", package = "climate.narrative"))
+        exposure_names <- character(length(exposure_files))
+        exposure_pretty_names <- character(length(exposure_files))
+        for (i in 1:length(exposure_files)){
+          exposure_names[i] <- remove_special_characters(substr(exposure_files[i], 1, nchar(exposure_files[i])-4))
+          exposure_pretty_names[i] <- global$exposure_classes[[exposure_names[i]]]$name
+        }
+        index <- which(exposure_pretty_names == input$editor_sector_selection)
+        if (length(index) != 1){
+          stop("Error in saving the yml file")
+        }
+        yaml::write_yaml(
+          global$exposure_classes[[exposure_names[index]]],
+          file(
+            paste0(
+              system.file("exposure_class", package = "climate.narrative"),
+              "/",
+              exposure_files[index]
+            )
+          )
+        )
+      }
     }
   )
 }

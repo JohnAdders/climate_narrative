@@ -37,6 +37,10 @@ load_secrets <- function(secrets_file = "secret.yml") {
       warning("Captcha threshold setting not found. Defaulting to 0,5")
       global$captcha_threshold <- 0.5
     }
+    if (is.null(global$enable_editor)) {
+      warning("Enable editor setting not found. Defaulting to FALSE")
+      global$enable_editor <- FALSE
+    }
     if (is.null(global$ip_whitelist)) {
       warning("IP whitelist setting not found. Defaulting to localhost only")
       global$ip_whitelist <- "127.0.0.1"
@@ -54,7 +58,7 @@ initialise_globals <- function() {
 
   # defining tab structure
   global$tabs <- list(
-    QuestionTab$new("title", NULL, NULL, "editor", FALSE, FALSE),
+    QuestionTab$new("title", NULL, NULL, "auth", FALSE, FALSE),
     QuestionTab$new("auth", NULL, "title", NULL, add_buttons = FALSE, ui_settings = list(captcha_code = global$captcha_code)),
     QuestionTab$new("instruction", "Introduction to the Tool", "auth", "rep_type"),
     QuestionTab$new("rep_type", "Report Type Selection", "instruction", "inst_type"),
