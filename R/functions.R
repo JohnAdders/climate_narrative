@@ -1911,18 +1911,19 @@ get_report_settings <- function(content_files,
 #' @param all_inputs Table of user inputs
 #' @param settings list of lists containing all necessary settings
 #' @param async whether to use promises to delegate report production to a new thread. FALSE by default for backward compatibility
+#' @param sleep number of seconds to sleep during report production. Useful for checking async functionality
 #' @importFrom promises future_promise
 #' @return NULL if async=FALSE, promise if async=TRUE. The actual report is produced to file in both cases
 #'
-produce_report <- function(all_inputs, settings, async = FALSE) {
+produce_report <- function(all_inputs, settings, async = FALSE, sleep = 0) {
   if (async) {
     return(
       promises::future_promise({
-        produce_report_(all_inputs, settings)
+        produce_report_(all_inputs, settings, sleep)
       })
     )
   } else {
-    produce_report_(all_inputs, settings)
+    produce_report_(all_inputs, settings, sleep)
     return(invisible(NULL))
   }
 }
@@ -1932,7 +1933,8 @@ produce_report <- function(all_inputs, settings, async = FALSE) {
 #' @inherit produce_report
 #' @return NULL, report produced to file
 #'
-produce_report_ <- function(all_inputs, settings) {
+produce_report_ <- function(all_inputs, settings, sleep) {
+  Sys.sleep(sleep)
   content_files <- settings$content_files
   filter_settings <- settings$filter_settings
   content_settings <- settings$content_settings

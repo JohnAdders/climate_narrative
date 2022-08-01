@@ -45,6 +45,10 @@ load_secrets <- function(secrets_file = "secret.yml") {
       warning("IP whitelist setting not found. Defaulting to localhost only")
       global$ip_whitelist <- "127.0.0.1"
     }
+    if (is.null(global$report_sleep)) {
+      warning("Report sleep setting not found. Defaulting to zero.")
+      global$report_sleep <- 0
+    }
     global$ip_whitelist <- strsplit(global$ip_whitelist, "\\s+")[[1]]
   } else {
     global$dev <- TRUE
