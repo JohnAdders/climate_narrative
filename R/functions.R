@@ -2044,3 +2044,96 @@ separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of c
   close(file_conn)
   return(invisible(NULL))
 }
+
+#' Parse the yaml file, replace the selected piece and save (overwrite)
+#'
+#' @param yaml_file_location location of YAML file to update.
+#' @param section_subsection vector of strings - recursively go down the YAML structure to find the desired location.
+#' @param new_text new content.
+
+replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_text){
+  # Read yaml file first
+  file_conn <- file(yaml_file_location)
+  yaml_file <- readLines(file_conn)
+  close(file_conn)
+
+  # Find the (sub)section
+  subsection_location <- find_yaml_subsection(yaml_file, section_subsection)
+  old_text_indented <- paste(yaml_file[subsection_location$start:subsection_location$end], collapse="\n")
+  # Indent the new text appropriately
+  new_text_indented = gsub(
+    "([[:graph:]])((\\n)+)([[:graph:]])",
+    paste0("\\1\\2", subsection_location$indentation, "\\4"),
+    new_text
+  )
+  # Define updated yaml as concatenation of updated subsection and the remaining (unchanged) parts
+  yaml_file_updated <- paste0(subsection_location$indentation, new_text_indented)
+  if (subsection_location$start > 1) {
+    yaml_file_updated <- c(yaml_file[1:(subsection_location$start - 1)], yaml_file_updated)
+  }
+  if (subsection_location$end < length(yaml_file)) {
+   yaml_file_updated <- c(yaml_file_updated, yaml_file[(subsection_location$end + 1):length(yaml_file)])
+  }
+  # Overwrite the previous file
+  file_conn <- file(paste0(yaml_file_location))
+  writeLines(yaml_file_updated, file_conn)
+  close(file_conn)
+}
+
+#' Parse the (subset of) YAML text and find the matching section
+#'
+#' @param string YAML text to parse.
+#' @param start First line of parsing (choose 1 to parse the text from the start)
+#' @param end Last line of parsing (choose length(string) to parse the text to the end)
+#' @param indentation The indentation of the whole block of text to strip first.
+#' @param section_name The header to look for.
+#'
+#' @return List with the following named elements: 
+#'   start (first line of section found, excluding the name),
+#'   end (last line of section found)
+#'   indentation (indentation applied within the section)
+
+find_yaml_section <- function(string, start, end, indentation, section_name){
+  header_rows_1 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "[[:space:]]"), string[start:end])
+  header_rows_2 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "$"), string[start:end])
+  header_rows <- sort(c(header_rows_1, header_rows_2))
+  headers <- gsub(paste0(indentation, "(([[:graph:]]|[[:blank:]])+):([[:graph:]]|[[:blank:]])*$"), "\\1", string[header_rows + start - 1])
+  index <- which(headers == section_name)
+  indentation <- stringr::str_extract(string[header_rows[index] + start], "^(([[:blank:]])*)([[:graph:]])")
+  indentation <- substring(indentation, 1, nchar(indentation) - 1)
+  return(
+    list(
+      start = (header_rows[index] + start),
+      end = (header_rows[index + 1] + start- 2),
+      indentation = indentation
+    )
+  )
+}
+
+#' Recursively applies find_yaml_section function to find the subsection in a nested structure
+#'
+#' @param string String to parse.
+#' @param section_subsection The vector of string. Its lenght represents level of nesting, each value is a name
+#'   of section at corresponding level (starting from the top level)
+
+find_yaml_subsection <- function(string, section_subsection){
+  start <- 1
+  end <- length(string)
+  indentation <- ""
+  for (s in section_subsection){
+    out <- find_yaml_section(string, start, end, indentation, s)
+    start <- out$start
+    end <- out$end
+    indentation <- out$indentation
+  }
+  return(out)
+}
+
+
+if (FALSE){
+  replace_yaml_subsection(
+    "C:\\Users\\kopalski\\dev\\climate.narrative\\inst\\exposure_class\\agriculture.yml",
+    "description",
+    "hello\nworld"
+  )
+}
