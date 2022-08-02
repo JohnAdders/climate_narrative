@@ -1,13 +1,26 @@
 tab_editor_helper <- function() {
   helpText(
     list(
-      "This tab allows to edit the content (descriptions for each sector/asset class)",
+      "This tab allows to edit the content (descriptions for each sector/asset class). Please note that: " ,
       tags$ul(
-        "still TODO:",
-        tags$li("more user friendly interface than raw markdown"),
-        tags$li("ensuring that yml is written in the same format as initially (literal style)"),
-        tags$li("upload files (e.g. graphs)"),
-        tags$li("rendering images in the preview")
+        tags$li(
+          paste0(
+            "The user is not very user friendly, to get a specific formatting you need to use markdown syntax. ",
+            "For example, to get a text in bold please surround it by double asterisks like this: **text**"
+          )
+        ),
+        tags$li(
+          paste0(
+            "Currently there is no possibility to upload files (e.g. graphs). If you need to upload a new file ",
+            "(or modify/delete the existing one), please contact the support ",
+            "(link can be found at the bottom of the webpage)"
+          )
+        ),
+        tags$li(
+          paste0(
+            "The preview window will also not render images properly, even if those are uploaded to the server. "
+          )
+        )
       )
     )
   )
@@ -49,8 +62,9 @@ tab_editor_ui <- function() {
     column(
       6,
       actionButton("update_preview", "Update preview"),
+      helpText("Click this to see below how this section will look like (subject to the limitation listed above)"),
       actionButton("save", "Save changes"),
-      helpText("The button saves the changes to the selected sector"),
+      helpText("This button saves the changes to the selected sector"),
       h4("Preview"),
       uiOutput("edited")
     )
@@ -164,6 +178,18 @@ tab_editor_server <- function(input, output, session) {
           paste0(system.file("exposure_class", package = "climate.narrative"), "/", exposure_files[index]),
           section_subsection,
           input$editor
+        )
+        # Notify the user
+        showModal(
+          modalDialog(
+            paste0(
+              "Changes to the ",
+              exposure_pretty_names[index],
+              " exposure content file saved!"
+            ),
+            title = "Success",
+            footer = modalButton("OK")
+          )
         )
         # Update global as well
         # Note: impacts all users on the server
