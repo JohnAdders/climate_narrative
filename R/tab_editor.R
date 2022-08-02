@@ -5,20 +5,22 @@ tab_editor_helper <- function() {
       tags$ul(
         tags$li(
           paste0(
-            "The user is not very user friendly, to get a specific formatting you need to use markdown syntax. ",
-            "For example, to get a text in bold please surround it by double asterisks like this: **text**"
+            "The input is designed to be as user-friendly as possible, using a third party package for WYSIWYG ",
+            "(what-you-see-is-what-you-get) markdown editor",
+            "However, this third party package is likely a work-in-progress and may not always behave as expected"
           )
         ),
         tags$li(
           paste0(
-            "Currently there is no possibility to upload files (e.g. graphs). If you need to upload a new file ",
-            "(or modify/delete the existing one), please contact the support ",
-            "(link can be found at the bottom of the webpage)"
+            "It is possible to embed graphs into the text. However, it is recommended to add new graphs by contacting ",
+            "the support (link can be found at the bottom of the webpage)."
+            "We are also happy to help modify/delete the existing files as required.",
           )
         ),
         tags$li(
           paste0(
-            "The preview window will also not render images properly, even if those are uploaded to the server. "
+            "At this point, the preview window may not render images properly. ",
+            "Again, when in doubt it is advised to contact the support using the link at the bottom of the page."
           )
         )
       )
