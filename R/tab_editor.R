@@ -156,16 +156,18 @@ tab_editor_server <- function(input, output, session) {
         if (length(index) != 1){
           stop("Error in saving the yml file")
         }
-        yaml::write_yaml(
-          global$exposure_classes[[exposure_names[index]]],
-          file(
-            paste0(
-              system.file("exposure_class", package = "climate.narrative"),
-              "/",
-              exposure_files[index]
-            )
-          )
+        section_subsection <- unlist(strsplit(input$editor_section_selection, " / "))
+        if (input$editor_subsection_selection != "N/A") {
+          section_subsection <- c(section_subsection, input$editor_subsection_selection)
+        }
+        replace_yaml_subsection(
+          paste0(system.file("exposure_class", package = "climate.narrative"), "/", exposure_files[index]),
+          section_subsection
+          input$editor
         )
+        # Update global as well
+        # Note: impacts all users on the server
+        global$exposure_classes <- read_dir("exposure_class")
       }
     }
   )

@@ -2059,6 +2059,11 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
 
   # Find the (sub)section
   subsection_location <- find_yaml_subsection(yaml_file, section_subsection)
+  # Ensure the section is written in literal style (this is implicit assumption of the function so far)
+  section_header <- yaml_file[subsection_location$start - 1]  
+  if (!grepl("|", section_header, fixed=TRUE)) {
+    stop("The section seems not to be written in literal YAML style. Function replace_yaml_subsection will not work as expected")
+  }
   old_text_indented <- paste(yaml_file[subsection_location$start:subsection_location$end], collapse="\n")
   # Indent the new text appropriately
   new_text_indented = gsub(
@@ -2099,6 +2104,21 @@ find_yaml_section <- function(string, start, end, indentation, section_name){
   header_rows <- sort(c(header_rows_1, header_rows_2))
   headers <- gsub(paste0(indentation, "(([[:graph:]]|[[:blank:]])+):([[:graph:]]|[[:blank:]])*$"), "\\1", string[header_rows + start - 1])
   index <- which(headers == section_name)
+  if (length(index) == 0) {
+    stop(
+      paste0(
+        "Function find_yaml_section. No matching section found named: ",
+        section_name
+      )
+    )
+  } else if (length(index) > 1) {
+    warning(
+      paste0(
+        "Multiple matching sections found named: ",
+        section_name
+      )
+    )
+  }
   indentation <- stringr::str_extract(string[header_rows[index] + start], "^(([[:blank:]])*)([[:graph:]])")
   indentation <- substring(indentation, 1, nchar(indentation) - 1)
   return(
@@ -2127,13 +2147,4 @@ find_yaml_subsection <- function(string, section_subsection){
     indentation <- out$indentation
   }
   return(out)
-}
-
-
-if (FALSE){
-  replace_yaml_subsection(
-    "C:\\Users\\kopalski\\dev\\climate.narrative\\inst\\exposure_class\\agriculture.yml",
-    "description",
-    "hello\nworld"
-  )
 }
