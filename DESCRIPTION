@@ -36,7 +36,8 @@ Imports:
     png,
     markdown,
     promises,
-    future
+    future,
+    shinymarkdown
 Suggests:
     testthat,
     styler

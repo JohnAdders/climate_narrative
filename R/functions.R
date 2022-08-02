@@ -1132,7 +1132,7 @@ add_path_to_graphs <- function(x) {
   if (www_path == "") {
     www_path <- paste0(getwd(), "/inst/www")
   }
-  gsub(
+  updated_text <- gsub(
     "\\(([[:graph:]]*)(.png)",
     paste0(
       "(",
@@ -1143,6 +1143,21 @@ add_path_to_graphs <- function(x) {
     x,
     perl = T
   )
+  # transform back pictures that are directly embedded into HTML and so start with data
+  updated_text <- gsub(
+    paste0(
+      "\\(",
+      www_path,
+      "/data:([[:graph:]]*)(.png)"
+    ),
+    paste0(
+      "(",
+      "data:\\1\\2"
+    ),
+    x,
+    perl = T
+  )
+  updated_text
 }
 
 #' One of the functions comprising the executive summary text

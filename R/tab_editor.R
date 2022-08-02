@@ -52,12 +52,7 @@ tab_editor_ui <- function() {
         c(""),
         selectize = FALSE
       ),
-      textAreaInput(
-        "editor",
-        "Raw input",
-        width = "90%",
-        rows = 15
-      )
+      uiOutput("input_field")
     ),
     column(
       6,
@@ -71,6 +66,7 @@ tab_editor_ui <- function() {
   )
 }
 
+#' @importFrom shinymarkdown mdInput
 tab_editor_server <- function(input, output, session) {
   observeEvent(
     input$editor_sector_selection,
@@ -137,11 +133,16 @@ tab_editor_server <- function(input, output, session) {
           editor_value <- exposure_class[[risk]][[materiality]][[input$editor_subsection_selection]]
         }
       }
-      updateTextAreaInput(
-        session = session,
-        inputId = "editor",
-        value = editor_value,
-      )
+      output$input_field <- renderUI({
+        mdInput(
+          inputId = "editor",
+          height = "300px",
+          hide_mode_switch = F,
+          initial_value = editor_value,
+          initial_edit_type	= "wysiwyg"
+        )
+      })
+
       # remove target="_blank" because include_markdown_text does not handle it correctly
       markdown_text <- gsub('{target="\\_blank"}', "", editor_value, fixed = TRUE)
       include_markdown_text(markdown_text, output, "edited", FALSE)
@@ -150,8 +151,9 @@ tab_editor_server <- function(input, output, session) {
   observeEvent(
     input$update_preview,
     {
-      markdown_text <- gsub('{target="\\_blank"}', "", input$editor, fixed = TRUE)
-      include_markdown_text(markdown_text, output, "edited", FALSE)
+      output[["edited"]] <- renderUI({
+        HTML(input$editor_html)
+      })
     }
   )
   observeEvent(
@@ -177,7 +179,7 @@ tab_editor_server <- function(input, output, session) {
         replace_yaml_subsection(
           paste0(system.file("exposure_class", package = "climate.narrative"), "/", exposure_files[index]),
           section_subsection,
-          input$editor
+          input$editor_markdown
         )
         # Notify the user
         showModal(
