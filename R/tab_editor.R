@@ -162,7 +162,7 @@ tab_editor_server <- function(input, output, session) {
         }
         replace_yaml_subsection(
           paste0(system.file("exposure_class", package = "climate.narrative"), "/", exposure_files[index]),
-          section_subsection
+          section_subsection,
           input$editor
         )
         # Update global as well
