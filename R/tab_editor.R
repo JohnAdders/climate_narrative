@@ -13,7 +13,7 @@ tab_editor_helper <- function() {
         tags$li(
           paste0(
             "It is possible to embed graphs into the text. However, it is recommended to add new graphs by contacting ",
-            "the support (link can be found at the bottom of the webpage).",
+            "the support (link can be found at the bottom of the webpage). ",
             "We are also happy to help modify/delete the existing files as required."
           )
         ),
@@ -21,6 +21,11 @@ tab_editor_helper <- function() {
           paste0(
             "At this point, the preview window may not render images properly. ",
             "Again, when in doubt it is advised to contact the support using the link at the bottom of the page."
+          )
+        ),
+        tags$li(
+          paste0(
+            "The editor does not handle properly particular sovereigns update at the moment! "
           )
         )
       )
@@ -59,7 +64,7 @@ tab_editor_ui <- function() {
     column(
       6,
       actionButton("update_preview", "Update preview"),
-      helpText("Click this to see below how this section will look like (subject to the limitation listed above)"),
+      helpText("Click this to see below how this section will look like (subject to the limitations described above)"),
       actionButton("save", "Save changes"),
       helpText("This button saves the changes to the selected sector"),
       h4("Preview"),
@@ -93,30 +98,21 @@ tab_editor_server <- function(input, output, session) {
       )
     }
   )
+  
   observeEvent(
     input$editor_section_selection,
     {
       if (input$editor_section_selection == "") {
         subsection_options <- c("")
-        editor_value <- ""
       } else {
         exposure_class_no <- which(lapply(global$exposure_classes, function(x) x$name) == input$editor_sector_selection)
         exposure_class <- global$exposure_classes[[exposure_class_no]]
         if (input$editor_section_selection %in% c("description", "references")) {
           subsection_options <- c("N/A")
-          editor_value <- exposure_class[[input$editor_section_selection]]
         } else {
           subsection_options <- c("exec_description", "always", "high_materiality")
-          editor_value <- ""
         }
       }
-      # trigger updateSelectInput twice in order to always change the subsector and refresh the input field
-      # (a workaround, for some reason adding input$editor_section_selection to the next observeEvent does not work)
-      updateSelectInput(
-        session = session,
-        inputId = "editor_subsection_selection",
-        choices = c("."),
-      )
       updateSelectInput(
         session = session,
         inputId = "editor_subsection_selection",
@@ -124,43 +120,54 @@ tab_editor_server <- function(input, output, session) {
       )
     }
   )
+
+  default_editor_value <- reactive({
+      if (input$editor_section_selection == "" || input$editor_subsection_selection == "") {
+        editor_value <- ""
+      } else {
+        exposure_class_no <- which(lapply(global$exposure_classes, function(x) x$name) == input$editor_sector_selection)
+        if (length(exposure_class_no)){
+          exposure_class <- global$exposure_classes[[exposure_class_no]]
+          risk_and_materiality <- strsplit(input$editor_section_selection, " / ")[[1]]
+          if (length(risk_and_materiality) == 2) {
+            risk <- risk_and_materiality[1]
+            materiality <- risk_and_materiality[2]
+            editor_value <- exposure_class[[risk]][[materiality]][[input$editor_subsection_selection]]
+          } else {
+            editor_value <- exposure_class[[input$editor_section_selection]]
+          }
+        } else {
+          editor_value <- ""
+        }
+      }
+      # remove target="_blank", they are reinserted later on in include_markdown_text anyway
+      editor_value <- gsub('{target="\\_blank"}', "", editor_value, fixed = TRUE)
+      return (editor_value)
+  })
+
   observeEvent(
     input$editor_subsection_selection,
     {
-      if (input$editor_section_selection == "") {
-        editor_value <- ""
-        edited_html <- ""
-      } else {
-        exposure_class_no <- which(lapply(global$exposure_classes, function(x) x$name) == input$editor_sector_selection)
-        exposure_class <- global$exposure_classes[[exposure_class_no]]
-        if (input$editor_subsection_selection == "N/A") {
-          editor_value <- exposure_class[[input$editor_section_selection]]
-        } else {
-          risk_and_materiality <- strsplit(input$editor_section_selection, " / ")[[1]]
-          risk <- risk_and_materiality[1]
-          materiality <- risk_and_materiality[2]
-          editor_value <- exposure_class[[risk]][[materiality]][[input$editor_subsection_selection]]
-        }
-      }
-      # remove target="_blank" because markdownToHTML does not handle it correctly
-      # they are reinserted later on in include_markdown_text anyway
-      editor_value <- gsub('{target="\\_blank"}', "", editor_value, fixed = TRUE)
       output$input_field <- renderUI({
         mdInput(
           inputId = "editor",
           height = "300px",
           hide_mode_switch = F,
-          initial_value = editor_value,
+          initial_value = default_editor_value(),
           initial_edit_type	= "wysiwyg"
         )
       })
-      include_markdown_text(editor_value, output, "edited", TRUE)
+      include_markdown_text(default_editor_value(), output, "edited", TRUE)
     }
   )
   observeEvent(
     input$update_preview,
     {
-      include_markdown_text(input$editor_markdown, output, "edited", TRUE)
+      markdown_text <- input$editor_markdown
+      if (is.null(markdown_text)){
+        markdown_text <- default_editor_value()
+      }
+      include_markdown_text(markdown_text, output, "edited", TRUE)
     }
   )
   observeEvent(
@@ -177,16 +184,21 @@ tab_editor_server <- function(input, output, session) {
         }
         index <- which(exposure_pretty_names == input$editor_sector_selection)
         if (length(index) != 1){
-          stop("Error in saving the yml file")
+          stop("Error in saving the yml file, unique matching name not found")
         }
         section_subsection <- unlist(strsplit(input$editor_section_selection, " / "))
         if (input$editor_subsection_selection != "N/A") {
           section_subsection <- c(section_subsection, input$editor_subsection_selection)
         }
+        markdown_text <- input$editor_markdown
+        if (is.null(markdown_text)){
+          markdown_text <- default_editor_value()
+        }
+        # TODO: what about updating sovereigns?
         replace_yaml_subsection(
           paste0(system.file("exposure_class", package = "climate.narrative"), "/", exposure_files[index]),
           section_subsection,
-          input$editor_markdown
+          markdown_text
         )
         # Notify the user
         showModal(

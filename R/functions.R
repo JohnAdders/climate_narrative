@@ -2086,14 +2086,18 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
     paste0("\\1\\2", subsection_location$indentation, "\\4"),
     new_text
   )
+  print(old_text_indented)
+  print(new_text_indented)
   # Define updated yaml as concatenation of updated subsection and the remaining (unchanged) parts
   yaml_file_updated <- paste0(subsection_location$indentation, new_text_indented)
+  new_text_indented <- strsplit(new_text_indented, "\n")
   if (subsection_location$start > 1) {
     yaml_file_updated <- c(yaml_file[1:(subsection_location$start - 1)], yaml_file_updated)
   }
   if (subsection_location$end < length(yaml_file)) {
    yaml_file_updated <- c(yaml_file_updated, yaml_file[(subsection_location$end + 1):length(yaml_file)])
   }
+  browser()
   # Overwrite the previous file
   file_conn <- file(paste0(yaml_file_location))
   writeLines(yaml_file_updated, file_conn)
