@@ -6,15 +6,15 @@ tab_editor_helper <- function() {
         tags$li(
           paste0(
             "The input is designed to be as user-friendly as possible, using a third party package for WYSIWYG ",
-            "(what-you-see-is-what-you-get) markdown editor",
-            "However, this third party package is likely a work-in-progress and may not always behave as expected"
+            "(what-you-see-is-what-you-get) markdown editor. ",
+            "However, this third party package is likely a work-in-progress and may not always behave as expected."
           )
         ),
         tags$li(
           paste0(
             "It is possible to embed graphs into the text. However, it is recommended to add new graphs by contacting ",
-            "the support (link can be found at the bottom of the webpage)."
-            "We are also happy to help modify/delete the existing files as required.",
+            "the support (link can be found at the bottom of the webpage).",
+            "We are also happy to help modify/delete the existing files as required."
           )
         ),
         tags$li(
@@ -110,6 +110,13 @@ tab_editor_server <- function(input, output, session) {
           editor_value <- ""
         }
       }
+      # trigger updateSelectInput twice in order to always change the subsector and refresh the input field
+      # (a workaround, for some reason adding input$editor_section_selection to the next observeEvent does not work)
+      updateSelectInput(
+        session = session,
+        inputId = "editor_subsection_selection",
+        choices = c("."),
+      )
       updateSelectInput(
         session = session,
         inputId = "editor_subsection_selection",
@@ -135,6 +142,9 @@ tab_editor_server <- function(input, output, session) {
           editor_value <- exposure_class[[risk]][[materiality]][[input$editor_subsection_selection]]
         }
       }
+      # remove target="_blank" because markdownToHTML does not handle it correctly
+      # they are reinserted later on in include_markdown_text anyway
+      editor_value <- gsub('{target="\\_blank"}', "", editor_value, fixed = TRUE)
       output$input_field <- renderUI({
         mdInput(
           inputId = "editor",
@@ -144,18 +154,13 @@ tab_editor_server <- function(input, output, session) {
           initial_edit_type	= "wysiwyg"
         )
       })
-
-      # remove target="_blank" because include_markdown_text does not handle it correctly
-      markdown_text <- gsub('{target="\\_blank"}', "", editor_value, fixed = TRUE)
-      include_markdown_text(markdown_text, output, "edited", FALSE)
+      include_markdown_text(editor_value, output, "edited", TRUE)
     }
   )
   observeEvent(
     input$update_preview,
     {
-      output[["edited"]] <- renderUI({
-        HTML(input$editor_html)
-      })
+      include_markdown_text(input$editor_markdown, output, "edited", TRUE)
     }
   )
   observeEvent(
