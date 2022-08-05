@@ -22,11 +22,6 @@ tab_editor_helper <- function() {
             "At this point, the preview window may not render images properly. ",
             "Again, when in doubt it is advised to contact the support using the link at the bottom of the page."
           )
-        ),
-        tags$li(
-          paste0(
-            "The editor does not handle properly particular sovereigns update at the moment! "
-          )
         )
       )
     )
@@ -107,10 +102,13 @@ tab_editor_server <- function(input, output, session) {
       } else {
         exposure_class_no <- which(lapply(global$exposure_classes, function(x) x$name) == input$editor_sector_selection)
         exposure_class <- global$exposure_classes[[exposure_class_no]]
-        if (input$editor_section_selection %in% c("description", "references")) {
+        risk_and_materiality <- strsplit(input$editor_section_selection, " / ")[[1]]
+        if (length(risk_and_materiality) == 1) {
           subsection_options <- c("N/A")
         } else {
-          subsection_options <- c("exec_description", "always", "high_materiality")
+          risk <- risk_and_materiality[[1]]
+          materiality <- risk_and_materiality[[2]]
+          subsection_options <- names(global$exposure_classes[[exposure_class_no]][[risk]][[materiality]])
         }
       }
       updateSelectInput(

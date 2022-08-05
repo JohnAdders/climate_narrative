@@ -1129,6 +1129,7 @@ rtf_postprocess <- function(filename, report_version, dev) {
 #'
 add_path_to_graphs <- function(x) {
   www_path <- system.file("www", package = "climate.narrative")
+  print(www_path)
   if (www_path == "") {
     www_path <- paste0(getwd(), "/inst/www")
   }
@@ -1154,7 +1155,7 @@ add_path_to_graphs <- function(x) {
       "(",
       "data:\\1\\2"
     ),
-    x,
+    updated_text,
     perl = T
   )
   updated_text

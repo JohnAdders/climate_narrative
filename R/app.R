@@ -62,7 +62,7 @@ initialise_globals <- function() {
 
   # defining tab structure
   global$tabs <- list(
-    QuestionTab$new("title", NULL, NULL, "rep_type", FALSE, FALSE),
+    QuestionTab$new("title", NULL, NULL, "auth", FALSE, FALSE),
     QuestionTab$new("auth", NULL, "title", NULL, add_buttons = FALSE, ui_settings = list(captcha_code = global$captcha_code)),
     QuestionTab$new("instruction", "Introduction to the Tool", "auth", "rep_type"),
     QuestionTab$new("rep_type", "Report Type Selection", "instruction", "inst_type"),
