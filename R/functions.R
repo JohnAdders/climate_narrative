@@ -1129,7 +1129,6 @@ rtf_postprocess <- function(filename, report_version, dev) {
 #'
 add_path_to_graphs <- function(x) {
   www_path <- system.file("www", package = "climate.narrative")
-  print(www_path)
   if (www_path == "") {
     www_path <- paste0(getwd(), "/inst/www")
   }
@@ -2087,8 +2086,6 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
     paste0("\\1\\2", subsection_location$indentation, "\\4"),
     new_text
   )
-  print(old_text_indented)
-  print(new_text_indented)
   # Define updated yaml as concatenation of updated subsection and the remaining (unchanged) parts
   yaml_file_updated <- paste0(subsection_location$indentation, new_text_indented)
   new_text_indented <- strsplit(new_text_indented, "\n")
