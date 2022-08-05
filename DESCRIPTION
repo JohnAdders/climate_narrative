@@ -43,4 +43,4 @@ Suggests:
     testthat,
     styler
 Remotes:  
-    git::https://github.com/jdtrat/shinymarkdown.git@main
+    jdtrat/shinymarkdown
