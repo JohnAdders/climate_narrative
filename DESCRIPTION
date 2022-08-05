@@ -38,7 +38,9 @@ Imports:
     markdown,
     promises,
     future,
-    shinymarkdown
+    shinymarkdown (>= 0.0.0.9000)
 Suggests:
     testthat,
     styler
+Remotes:  
+    git::https://github.com/jdtrat/shinymarkdown.git@main
