@@ -2066,7 +2066,7 @@ separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of c
 #' @param section_subsection vector of strings - recursively go down the YAML structure to find the desired location.
 #' @param new_text new content.
 
-replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_text){
+replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_text) {
   # Read yaml file first
   file_conn <- file(yaml_file_location)
   yaml_file <- readLines(file_conn)
@@ -2075,13 +2075,13 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
   # Find the (sub)section
   subsection_location <- find_yaml_subsection(yaml_file, section_subsection)
   # Ensure the section is written in literal style (this is implicit assumption of the function so far)
-  section_header <- yaml_file[subsection_location$start - 1]  
-  if (!grepl("|", section_header, fixed=TRUE)) {
+  section_header <- yaml_file[subsection_location$start - 1]
+  if (!grepl("|", section_header, fixed = TRUE)) {
     stop("The section seems not to be written in literal YAML style. Function replace_yaml_subsection will not work as expected")
   }
-  old_text_indented <- paste(yaml_file[subsection_location$start:subsection_location$end], collapse="\n")
+  old_text_indented <- paste(yaml_file[subsection_location$start:subsection_location$end], collapse = "\n")
   # Indent the new text appropriately
-  new_text_indented = gsub(
+  new_text_indented <- gsub(
     "([[:graph:]])((\\n)+)([[:graph:]])",
     paste0("\\1\\2", subsection_location$indentation, "\\4"),
     new_text
@@ -2095,7 +2095,7 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
     yaml_file_updated <- c(yaml_file[1:(subsection_location$start - 1)], yaml_file_updated)
   }
   if (subsection_location$end < length(yaml_file)) {
-   yaml_file_updated <- c(yaml_file_updated, yaml_file[(subsection_location$end + 1):length(yaml_file)])
+    yaml_file_updated <- c(yaml_file_updated, yaml_file[(subsection_location$end + 1):length(yaml_file)])
   }
   browser()
   # Overwrite the previous file
@@ -2111,13 +2111,13 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
 #' @param end Last line of parsing (choose length(string) to parse the text to the end)
 #' @param indentation The indentation of the whole block of text to strip first.
 #' @param section_name The header to look for.
-#'
-#' @return List with the following named elements: 
+#' @importFrom stringr str_extract
+#' @return List with the following named elements:
 #'   start (first line of section found, excluding the name),
 #'   end (last line of section found)
 #'   indentation (indentation applied within the section)
 
-find_yaml_section <- function(string, start, end, indentation, section_name){
+find_yaml_section <- function(string, start, end, indentation, section_name) {
   header_rows_1 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "[[:space:]]"), string[start:end])
   header_rows_2 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "$"), string[start:end])
   header_rows <- sort(c(header_rows_1, header_rows_2))
@@ -2143,7 +2143,7 @@ find_yaml_section <- function(string, start, end, indentation, section_name){
   return(
     list(
       start = (header_rows[index] + start),
-      end = (header_rows[index + 1] + start- 2),
+      end = (header_rows[index + 1] + start - 2),
       indentation = indentation
     )
   )
@@ -2155,11 +2155,11 @@ find_yaml_section <- function(string, start, end, indentation, section_name){
 #' @param section_subsection The vector of string. Its lenght represents level of nesting, each value is a name
 #'   of section at corresponding level (starting from the top level)
 
-find_yaml_subsection <- function(string, section_subsection){
+find_yaml_subsection <- function(string, section_subsection) {
   start <- 1
   end <- length(string)
   indentation <- ""
-  for (s in section_subsection){
+  for (s in section_subsection) {
     out <- find_yaml_section(string, start, end, indentation, s)
     start <- out$start
     end <- out$end

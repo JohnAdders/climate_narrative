@@ -1,7 +1,7 @@
 tab_editor_helper <- function() {
   helpText(
     list(
-      "This tab allows to edit the content (descriptions for each sector/asset class). Please note that: " ,
+      "This tab allows to edit the content (descriptions for each sector/asset class). Please note that: ",
       tags$ul(
         tags$li(
           paste0(
@@ -98,7 +98,7 @@ tab_editor_server <- function(input, output, session) {
       )
     }
   )
-  
+
   observeEvent(
     input$editor_section_selection,
     {
@@ -122,27 +122,27 @@ tab_editor_server <- function(input, output, session) {
   )
 
   default_editor_value <- reactive({
-      if (input$editor_section_selection == "" || input$editor_subsection_selection == "") {
-        editor_value <- ""
-      } else {
-        exposure_class_no <- which(lapply(global$exposure_classes, function(x) x$name) == input$editor_sector_selection)
-        if (length(exposure_class_no)){
-          exposure_class <- global$exposure_classes[[exposure_class_no]]
-          risk_and_materiality <- strsplit(input$editor_section_selection, " / ")[[1]]
-          if (length(risk_and_materiality) == 2) {
-            risk <- risk_and_materiality[1]
-            materiality <- risk_and_materiality[2]
-            editor_value <- exposure_class[[risk]][[materiality]][[input$editor_subsection_selection]]
-          } else {
-            editor_value <- exposure_class[[input$editor_section_selection]]
-          }
+    if (input$editor_section_selection == "" || input$editor_subsection_selection == "") {
+      editor_value <- ""
+    } else {
+      exposure_class_no <- which(lapply(global$exposure_classes, function(x) x$name) == input$editor_sector_selection)
+      if (length(exposure_class_no)) {
+        exposure_class <- global$exposure_classes[[exposure_class_no]]
+        risk_and_materiality <- strsplit(input$editor_section_selection, " / ")[[1]]
+        if (length(risk_and_materiality) == 2) {
+          risk <- risk_and_materiality[1]
+          materiality <- risk_and_materiality[2]
+          editor_value <- exposure_class[[risk]][[materiality]][[input$editor_subsection_selection]]
         } else {
-          editor_value <- ""
+          editor_value <- exposure_class[[input$editor_section_selection]]
         }
+      } else {
+        editor_value <- ""
       }
-      # remove target="_blank", they are reinserted later on in include_markdown_text anyway
-      editor_value <- gsub('{target="\\_blank"}', "", editor_value, fixed = TRUE)
-      return (editor_value)
+    }
+    # remove target="_blank", they are reinserted later on in include_markdown_text anyway
+    editor_value <- gsub('{target="\\_blank"}', "", editor_value, fixed = TRUE)
+    return(editor_value)
   })
 
   observeEvent(
@@ -151,10 +151,9 @@ tab_editor_server <- function(input, output, session) {
       output$input_field <- renderUI({
         mdInput(
           inputId = "editor",
-          height = "300px",
           hide_mode_switch = F,
           initial_value = default_editor_value(),
-          initial_edit_type	= "wysiwyg"
+          initial_edit_type = "wysiwyg"
         )
       })
       include_markdown_text(default_editor_value(), output, "edited", TRUE)
@@ -164,7 +163,7 @@ tab_editor_server <- function(input, output, session) {
     input$update_preview,
     {
       markdown_text <- input$editor_markdown
-      if (is.null(markdown_text)){
+      if (is.null(markdown_text)) {
         markdown_text <- default_editor_value()
       }
       include_markdown_text(markdown_text, output, "edited", TRUE)
@@ -173,17 +172,17 @@ tab_editor_server <- function(input, output, session) {
   observeEvent(
     input$save,
     {
-      if (input$editor_sector_selection != ""){
+      if (input$editor_sector_selection != "") {
         # for a given sector name, find the respective file name
         exposure_files <- dir(system.file("exposure_class", package = "climate.narrative"))
         exposure_names <- character(length(exposure_files))
         exposure_pretty_names <- character(length(exposure_files))
-        for (i in 1:length(exposure_files)){
-          exposure_names[i] <- remove_special_characters(substr(exposure_files[i], 1, nchar(exposure_files[i])-4))
+        for (i in 1:length(exposure_files)) {
+          exposure_names[i] <- remove_special_characters(substr(exposure_files[i], 1, nchar(exposure_files[i]) - 4))
           exposure_pretty_names[i] <- global$exposure_classes[[exposure_names[i]]]$name
         }
         index <- which(exposure_pretty_names == input$editor_sector_selection)
-        if (length(index) != 1){
+        if (length(index) != 1) {
           stop("Error in saving the yml file, unique matching name not found")
         }
         section_subsection <- unlist(strsplit(input$editor_section_selection, " / "))
@@ -191,7 +190,7 @@ tab_editor_server <- function(input, output, session) {
           section_subsection <- c(section_subsection, input$editor_subsection_selection)
         }
         markdown_text <- input$editor_markdown
-        if (is.null(markdown_text)){
+        if (is.null(markdown_text)) {
           markdown_text <- default_editor_value()
         }
         # TODO: what about updating sovereigns?

@@ -1,5 +1,5 @@
 tab_rep_type_ui <- function() {
-  if (global$enable_editor){
+  if (global$enable_editor) {
     report_options <- c(
       "Institutional Report" = "inst",
       "Sector Report" = "sect",

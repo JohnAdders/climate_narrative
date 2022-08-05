@@ -30,6 +30,7 @@ Imports:
     shinyjs,
     shinythemes,
     stringi,
+    stringr,
     tippy,
     uuid,
     yaml,
