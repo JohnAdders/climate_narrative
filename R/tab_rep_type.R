@@ -27,7 +27,7 @@ tab_rep_type_server <- function(input, output, session) {
       session$userData$next_tabs[["rep_type"]] <- switch(input$rep_type,
         inst = tab_name_to_number("inst_type"),
         sect = tab_name_to_number("report"),
-        editor = tab_name_to_number("editor")
+        editor = tab_name_to_number("editor_auth")
       )
     }
   )

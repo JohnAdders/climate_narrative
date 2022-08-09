@@ -80,7 +80,8 @@ initialise_globals <- function() {
     QuestionTab$new("am_sov", "Asset Manager / Owner / Fund: Sovereign Assets", "am_c", "am_re", TRUE, TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
     QuestionTab$new("am_re", "Asset Manager/ Owner / Fund: Real Estate Assets", "am_sov", "report", TRUE, TRUE, TRUE, global$exposures$amRe, "asset", "R"),
     QuestionTab$new("report", NULL, "rep_type", NULL, FALSE, FALSE, FALSE),
-    QuestionTab$new("editor", "Content Edition", "rep_type", NULL)
+    QuestionTab$new("editor_auth", "Content Edition - authorization", "rep_type", NULL, add_buttons = FALSE),
+    QuestionTab$new("editor", "Content Edition", "editor_auth", NULL)
   )
   # Tab names validation check
   # the global$ordered_tabs must be defined first (the QuestionTab constructor relies on this
