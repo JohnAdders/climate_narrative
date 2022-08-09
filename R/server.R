@@ -6,6 +6,7 @@
 #'
 #' @importFrom stats aggregate
 #' @importFrom promises %...>% %...!%
+#' @importFrom uuid UUIDgenerate
 #' @export
 #'
 server <- function(input, output, session) {

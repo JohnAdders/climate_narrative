@@ -434,13 +434,13 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     }
     out <- rbind(out, rowsout, sepline)
   }
-  out2 <- paste0(
+  out_2 <- paste0(
     paste(sepline, collapse = ""),
     "\n",
     paste(apply(out, 1, paste, collapse = ""), collapse = "\n"),
     "\n\n"
   )
-  return(out2)
+  return(out_2)
 }
 
 #' A simple version of function to produce markdown tables from R table
