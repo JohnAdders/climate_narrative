@@ -2169,6 +2169,7 @@ find_yaml_subsection <- function(string, section_subsection) {
 #' Replacement for Sys.sleep()
 #'
 #' @param time Time to sleep (in seconds)
+#' @importFrom stats rnorm
 #'
 alternative_sleep <- function(time) {
   end_time <- Sys.time() + time
