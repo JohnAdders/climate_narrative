@@ -1949,7 +1949,7 @@ produce_report <- function(all_inputs, settings, async = FALSE, sleep = 0) {
 #' @return NULL, report produced to file
 #'
 produce_report_ <- function(all_inputs, settings, sleep) {
-  Sys.sleep(sleep)
+  alternative_sleep(sleep)
   content_files <- settings$content_files
   filter_settings <- settings$filter_settings
   content_settings <- settings$content_settings
@@ -2152,7 +2152,7 @@ find_yaml_section <- function(string, start, end, indentation, section_name) {
 #' @param string String to parse.
 #' @param section_subsection The vector of string. Its lenght represents level of nesting, each value is a name
 #'   of section at corresponding level (starting from the top level)
-
+#'
 find_yaml_subsection <- function(string, section_subsection) {
   start <- 1
   end <- length(string)
@@ -2164,4 +2164,17 @@ find_yaml_subsection <- function(string, section_subsection) {
     indentation <- out$indentation
   }
   return(out)
+}
+
+#' Replacement for Sys.sleep()
+#'
+#' @param time Time to sleep (in seconds)
+#' @importFrom stats rnorm
+#'
+alternative_sleep <- function(time) {
+  end_time <- Sys.time() + time
+  while(Sys.time() < end_time){
+    # some time consuming operation, but preferably not much memory consuming
+    rnorm(1)
+  }
 }
