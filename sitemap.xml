@@ -49,6 +49,12 @@
     <loc>/reference/filter_inputs.html</loc>
   </url>
   <url>
+    <loc>/reference/find_yaml_section.html</loc>
+  </url>
+  <url>
+    <loc>/reference/find_yaml_subsection.html</loc>
+  </url>
+  <url>
     <loc>/reference/format_images.html</loc>
   </url>
   <url>
@@ -127,6 +133,9 @@
     <loc>/reference/include_markdown_section.html</loc>
   </url>
   <url>
+    <loc>/reference/include_markdown_text.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
@@ -158,6 +167,9 @@
   </url>
   <url>
     <loc>/reference/remove_special_characters.html</loc>
+  </url>
+  <url>
+    <loc>/reference/replace_yaml_subsection.html</loc>
   </url>
   <url>
     <loc>/reference/restore_spaces.html</loc>

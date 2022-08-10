@@ -96,6 +96,14 @@
         </td>
         <td><p>Filter the inputs depending on institution type, sector. Optionally aggregate and override all materialities</p></td>
       </tr><tr><td>
+          <p><code><a href="find_yaml_section.html">find_yaml_section()</a></code> </p>
+        </td>
+        <td><p>Parse the (subset of) YAML text and find the matching section</p></td>
+      </tr><tr><td>
+          <p><code><a href="find_yaml_subsection.html">find_yaml_subsection()</a></code> </p>
+        </td>
+        <td><p>Recursively applies find_yaml_section function to find the subsection in a nested structure</p></td>
+      </tr><tr><td>
           <p><code><a href="format_images.html">format_images()</a></code> </p>
         </td>
         <td><p>Go through the markdown file, find all png images and scale down where relevant</p></td>
@@ -201,6 +209,10 @@
         </td>
         <td><p>Read the markdown section from relevant yaml file and save as output</p></td>
       </tr><tr><td>
+          <p><code><a href="include_markdown_text.html">include_markdown_text()</a></code> </p>
+        </td>
+        <td><p>Converts text to HTML and passes to the output</p></td>
+      </tr><tr><td>
           <p><code><a href="paste_recursive.html">paste_recursive()</a></code> </p>
         </td>
         <td><p>Helper function to merge lists of lists with the same (possibly nested) structure, ultimately containing strings</p></td>
@@ -244,6 +256,10 @@ Handles yaml/csv/R files.</p></td>
         </td>
         <td><p>Remove special characters (in particular spaces) from a string
 and optionally make it camelcase.</p></td>
+      </tr><tr><td>
+          <p><code><a href="replace_yaml_subsection.html">replace_yaml_subsection()</a></code> </p>
+        </td>
+        <td><p>Parse the yaml file, replace the selected piece and save (overwrite)</p></td>
       </tr><tr><td>
           <p><code><a href="restore_spaces.html">restore_spaces()</a></code> </p>
         </td>
@@ -314,7 +330,7 @@ without breaking words.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
