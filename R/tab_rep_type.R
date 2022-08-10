@@ -1,12 +1,21 @@
 tab_rep_type_ui <- function() {
+  if (global$enable_editor) {
+    report_options <- c(
+      "Institutional Report" = "inst",
+      "Sector Report" = "sect",
+      "Content Editor" = "editor"
+    )
+  } else {
+    report_options <- c(
+      "Institutional Report" = "inst",
+      "Sector Report" = "sect"
+    )
+  }
   list(
     radioButtons(
       "rep_type",
       "Type of Report:",
-      c(
-        "Institutional Report" = "inst",
-        "Sector Report" = "sect"
-      )
+      report_options
     )
   )
 }
@@ -17,7 +26,8 @@ tab_rep_type_server <- function(input, output, session) {
     {
       session$userData$next_tabs[["rep_type"]] <- switch(input$rep_type,
         inst = tab_name_to_number("inst_type"),
-        sect = tab_name_to_number("report")
+        sect = tab_name_to_number("report"),
+        editor = tab_name_to_number("editor_auth")
       )
     }
   )

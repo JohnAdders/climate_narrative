@@ -12,7 +12,7 @@ global$ordered_tabs <- c(
   "bank_re", "bank_c", "bank_retail", "bank_sov",
   "ins_l", "ins_nl", "ins_c", "ins_sov", "ins_re",
   "am_c", "am_sov", "am_re",
-  "report"
+  "report", "editor_auth", "editor"
 )
 
 # defining possible report versions

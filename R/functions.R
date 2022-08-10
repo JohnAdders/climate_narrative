@@ -434,13 +434,13 @@ table_to_markdown_multiline <- function(table, dot_to_space = TRUE, col_widths =
     }
     out <- rbind(out, rowsout, sepline)
   }
-  out2 <- paste0(
+  out_2 <- paste0(
     paste(sepline, collapse = ""),
     "\n",
     paste(apply(out, 1, paste, collapse = ""), collapse = "\n"),
     "\n\n"
   )
-  return(out2)
+  return(out_2)
 }
 
 #' A simple version of function to produce markdown tables from R table
@@ -1132,7 +1132,7 @@ add_path_to_graphs <- function(x) {
   if (www_path == "") {
     www_path <- paste0(getwd(), "/inst/www")
   }
-  gsub(
+  updated_text <- gsub(
     "\\(([[:graph:]]*)(.png)",
     paste0(
       "(",
@@ -1143,6 +1143,21 @@ add_path_to_graphs <- function(x) {
     x,
     perl = T
   )
+  # transform back pictures that are directly embedded into HTML and so start with data
+  updated_text <- gsub(
+    paste0(
+      "\\(",
+      www_path,
+      "/data:([[:graph:]]*)(.png)"
+    ),
+    paste0(
+      "(",
+      "data:\\1\\2"
+    ),
+    updated_text,
+    perl = T
+  )
+  updated_text
 }
 
 #' One of the functions comprising the executive summary text
@@ -1697,8 +1712,6 @@ aggregate_inputs <- function(inputs, by = "item") {
 #' @param section_name Name of yaml file within section directory read from
 #' (description section only, other YAML fields are ignored)
 #'
-#' @importFrom markdown markdownToHTML
-#' @importFrom stringi stri_replace_all_regex
 #'
 include_markdown_section <- function(output, output_name, section_name) {
   text <- unlist(
@@ -1707,11 +1720,25 @@ include_markdown_section <- function(output, output_name, section_name) {
       "\n"
     )
   )
+  include_markdown_text(text, output, output_name)
+}
+
+#' Converts text to HTML and passes to the output
+#'
+#' @inherit include_markdown_section
+#' @param text text to be converted
+#' @param add_new_tab_ref if TRUE (the default) all the links will be appended with target="_blank" (to open in the new window)
+#'
+#' @importFrom markdown markdownToHTML
+#' @importFrom stringi stri_replace_all_regex
+include_markdown_text <- function(text, output, output_name, add_new_tab_ref = TRUE) {
   html_text <- markdown::markdownToHTML(
     text = text,
     fragment.only = TRUE
   )
-  html_text <- stringi::stri_replace_all_regex(html_text, "(<a href=\"[:graph:]*\")>", "$1 target=\"_blank\" >")
+  if (add_new_tab_ref) {
+    html_text <- stringi::stri_replace_all_regex(html_text, "(<a href=\"[:graph:]*\")>", "$1 target=\"_blank\" >")
+  }
   output[[output_name]] <- renderUI({
     HTML(html_text)
   })
@@ -1899,18 +1926,19 @@ get_report_settings <- function(content_files,
 #' @param all_inputs Table of user inputs
 #' @param settings list of lists containing all necessary settings
 #' @param async whether to use promises to delegate report production to a new thread. FALSE by default for backward compatibility
+#' @param sleep number of seconds to sleep during report production. Useful for checking async functionality
 #' @importFrom promises future_promise
 #' @return NULL if async=FALSE, promise if async=TRUE. The actual report is produced to file in both cases
 #'
-produce_report <- function(all_inputs, settings, async = FALSE) {
+produce_report <- function(all_inputs, settings, async = FALSE, sleep = 0) {
   if (async) {
     return(
       promises::future_promise({
-        produce_report_(all_inputs, settings)
+        produce_report_(all_inputs, settings, sleep)
       })
     )
   } else {
-    produce_report_(all_inputs, settings)
+    produce_report_(all_inputs, settings, sleep)
     return(invisible(NULL))
   }
 }
@@ -1920,7 +1948,8 @@ produce_report <- function(all_inputs, settings, async = FALSE) {
 #' @inherit produce_report
 #' @return NULL, report produced to file
 #'
-produce_report_ <- function(all_inputs, settings) {
+produce_report_ <- function(all_inputs, settings, sleep) {
+  Sys.sleep(sleep)
   content_files <- settings$content_files
   filter_settings <- settings$filter_settings
   content_settings <- settings$content_settings
@@ -2029,4 +2058,110 @@ separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of c
   writeLines(toc, file_conn)
   close(file_conn)
   return(invisible(NULL))
+}
+
+#' Parse the yaml file, replace the selected piece and save (overwrite)
+#'
+#' @param yaml_file_location location of YAML file to update.
+#' @param section_subsection vector of strings - recursively go down the YAML structure to find the desired location.
+#' @param new_text new content.
+
+replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_text) {
+  # Read yaml file first
+  file_conn <- file(yaml_file_location)
+  yaml_file <- readLines(file_conn)
+  close(file_conn)
+
+  # Find the (sub)section
+  subsection_location <- find_yaml_subsection(yaml_file, section_subsection)
+  # Ensure the section is written in literal style (this is implicit assumption of the function so far)
+  section_header <- yaml_file[subsection_location$start - 1]
+  if (!grepl("|", section_header, fixed = TRUE)) {
+    stop("The section seems not to be written in literal YAML style. Function replace_yaml_subsection will not work as expected")
+  }
+  old_text_indented <- paste(yaml_file[subsection_location$start:subsection_location$end], collapse = "\n")
+  # Indent the new text appropriately
+  new_text_indented <- gsub(
+    "([[:graph:]])((\\n)+)([[:graph:]])",
+    paste0("\\1\\2", subsection_location$indentation, "\\4"),
+    new_text
+  )
+  # Define updated yaml as concatenation of updated subsection and the remaining (unchanged) parts
+  yaml_file_updated <- paste0(subsection_location$indentation, new_text_indented)
+  new_text_indented <- strsplit(new_text_indented, "\n")
+  if (subsection_location$start > 1) {
+    yaml_file_updated <- c(yaml_file[1:(subsection_location$start - 1)], yaml_file_updated)
+  }
+  if (subsection_location$end < length(yaml_file)) {
+    yaml_file_updated <- c(yaml_file_updated, yaml_file[(subsection_location$end + 1):length(yaml_file)])
+  }
+  browser()
+  # Overwrite the previous file
+  file_conn <- file(paste0(yaml_file_location))
+  writeLines(yaml_file_updated, file_conn)
+  close(file_conn)
+}
+
+#' Parse the (subset of) YAML text and find the matching section
+#'
+#' @param string YAML text to parse.
+#' @param start First line of parsing (choose 1 to parse the text from the start)
+#' @param end Last line of parsing (choose length(string) to parse the text to the end)
+#' @param indentation The indentation of the whole block of text to strip first.
+#' @param section_name The header to look for.
+#' @importFrom stringr str_extract
+#' @return List with the following named elements:
+#'   start (first line of section found, excluding the name),
+#'   end (last line of section found)
+#'   indentation (indentation applied within the section)
+
+find_yaml_section <- function(string, start, end, indentation, section_name) {
+  header_rows_1 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "[[:space:]]"), string[start:end])
+  header_rows_2 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "$"), string[start:end])
+  header_rows <- sort(c(header_rows_1, header_rows_2))
+  headers <- gsub(paste0(indentation, "(([[:graph:]]|[[:blank:]])+):([[:graph:]]|[[:blank:]])*$"), "\\1", string[header_rows + start - 1])
+  index <- which(headers == section_name)
+  if (length(index) == 0) {
+    stop(
+      paste0(
+        "Function find_yaml_section. No matching section found named: ",
+        section_name
+      )
+    )
+  } else if (length(index) > 1) {
+    warning(
+      paste0(
+        "Multiple matching sections found named: ",
+        section_name
+      )
+    )
+  }
+  indentation <- stringr::str_extract(string[header_rows[index] + start], "^(([[:blank:]])*)([[:graph:]])")
+  indentation <- substring(indentation, 1, nchar(indentation) - 1)
+  return(
+    list(
+      start = (header_rows[index] + start),
+      end = (header_rows[index + 1] + start - 2),
+      indentation = indentation
+    )
+  )
+}
+
+#' Recursively applies find_yaml_section function to find the subsection in a nested structure
+#'
+#' @param string String to parse.
+#' @param section_subsection The vector of string. Its lenght represents level of nesting, each value is a name
+#'   of section at corresponding level (starting from the top level)
+
+find_yaml_subsection <- function(string, section_subsection) {
+  start <- 1
+  end <- length(string)
+  indentation <- ""
+  for (s in section_subsection) {
+    out <- find_yaml_section(string, start, end, indentation, s)
+    start <- out$start
+    end <- out$end
+    indentation <- out$indentation
+  }
+  return(out)
 }

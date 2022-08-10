@@ -37,9 +37,17 @@ load_secrets <- function(secrets_file = "secret.yml") {
       warning("Captcha threshold setting not found. Defaulting to 0,5")
       global$captcha_threshold <- 0.5
     }
+    if (is.null(global$enable_editor)) {
+      warning("Enable editor setting not found. Defaulting to FALSE")
+      global$enable_editor <- FALSE
+    }
     if (is.null(global$ip_whitelist)) {
       warning("IP whitelist setting not found. Defaulting to localhost only")
       global$ip_whitelist <- "127.0.0.1"
+    }
+    if (is.null(global$report_sleep)) {
+      warning("Report sleep setting not found. Defaulting to zero.")
+      global$report_sleep <- 0
     }
     global$ip_whitelist <- strsplit(global$ip_whitelist, "\\s+")[[1]]
   } else {
@@ -71,7 +79,9 @@ initialise_globals <- function() {
     QuestionTab$new("am_c", "Asset Manager / Owner / Fund: Corporate Assets", "inst_type", "am_sov", TRUE, TRUE, TRUE, global$exposures$amCorporate, "asset", "C"),
     QuestionTab$new("am_sov", "Asset Manager / Owner / Fund: Sovereign Assets", "am_c", "am_re", TRUE, TRUE, TRUE, global$exposures$sovereign, "asset", "S"),
     QuestionTab$new("am_re", "Asset Manager/ Owner / Fund: Real Estate Assets", "am_sov", "report", TRUE, TRUE, TRUE, global$exposures$amRe, "asset", "R"),
-    QuestionTab$new("report", NULL, "rep_type", NULL, FALSE, FALSE, FALSE)
+    QuestionTab$new("report", NULL, "rep_type", NULL, FALSE, FALSE, FALSE),
+    QuestionTab$new("editor_auth", "Content Edition - authorization", "rep_type", NULL, add_buttons = FALSE),
+    QuestionTab$new("editor", "Content Edition", "editor_auth", NULL)
   )
   # Tab names validation check
   # the global$ordered_tabs must be defined first (the QuestionTab constructor relies on this
