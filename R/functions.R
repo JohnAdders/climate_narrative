@@ -2173,7 +2173,7 @@ find_yaml_subsection <- function(string, section_subsection) {
 #'
 alternative_sleep <- function(time) {
   end_time <- Sys.time() + time
-  while(Sys.time() < end_time){
+  while (Sys.time() < end_time) {
     # some time consuming operation, but preferably not much memory consuming
     rnorm(1)
   }

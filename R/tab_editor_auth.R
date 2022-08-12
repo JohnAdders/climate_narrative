@@ -1,4 +1,4 @@
-tab_editor_auth_ui <- function(){
+tab_editor_auth_ui <- function() {
   if (!is.null(global$editor_code)) {
     return(
       column(
@@ -37,10 +37,9 @@ tab_editor_auth_ui <- function(){
       )
     )
   }
-  
 }
 
-tab_editor_auth_server <- function(input, output, session){
+tab_editor_auth_server <- function(input, output, session) {
   observeEvent(input$button_check_editor_code, {
     if (!is.null(global$editor_code)) {
       process_progress_editor(output, input$editor_code == global$editor_code)

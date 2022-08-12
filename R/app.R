@@ -107,12 +107,4 @@ initialise_globals <- function() {
   if (global$report_version >= 7) {
     future::plan(future::multisession)
   }
-
-  # explicitly define resource paths for some libraries
-  folder <- system.file("htmlwidgets/lib", package="tippy")
-  addResourcePath(dir(folder), paste0(folder, "/", dir(folder)))
-  addResourcePath(paste0("tippy-binding-", "0.0.1"), system.file("www", package="htmlwidgets"))
-  addResourcePath(paste0("htmlwidgets-", packageVersion("htmlwidgets")), system.file("htmlwidgets", package="tippy"))
-  addResourcePath(paste0("mdInput-", packageVersion("shinymarkdown")), system.file("assets", package="shinymarkdown"))
-
 }
