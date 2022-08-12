@@ -107,6 +107,4 @@ initialise_globals <- function() {
   if (global$report_version >= 7) {
     future::plan(future::multisession)
   }
-
-
 }
