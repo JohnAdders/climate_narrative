@@ -31,7 +31,6 @@ Imports:
     shinythemes,
     stringi,
     stringr,
-    tippy,
     uuid,
     yaml,
     png,

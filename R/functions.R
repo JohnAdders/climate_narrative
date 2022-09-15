@@ -143,8 +143,6 @@ produce_tooltip_matrix <- function(exposure_matrix, products, exposure_classes) 
 #' @param dev Are we in development mode
 #' @param width Width of dropdown
 #'
-#' @importFrom tippy tippy_this
-#'
 exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL) {
   if (id == "") {
     form <- p("")
@@ -159,10 +157,8 @@ exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL)
       width = width
     )
     if (tooltip_text != "") {
-      return(div(
-        form,
-        tippy_this(id, tooltip_text),
-      ))
+      warning("Tooltip text ignored. Tooltips functionality removed to simplify the app")
+      return(form)
     } else {
       return(form)
     }
@@ -749,12 +745,10 @@ get_section_descriptions <- function(section, additional_pars = list()) {
   content_function <- section$special_content_function
   if (!is.null(content_function)) {
     if (content_function == "get_executive_summary") {
-      if (additional_pars$report_version >= 3) {
-        out <- paste0(
-          out,
-          get_executive_summary(additional_pars$tabs, additional_pars$scenarios, additional_pars$exposure_classes, additional_pars$aggregated_inputs_by_item, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
-        )
-      }
+      out <- paste0(
+        out,
+        get_executive_summary(additional_pars$tabs, additional_pars$scenarios, additional_pars$exposure_classes, additional_pars$aggregated_inputs_by_item, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
+      )
     } else if (content_function == "get_references") {
       out <- paste0(
         out,
@@ -1111,11 +1105,10 @@ rtf_center_images <- function(filename) {
 #' It is not possible to set some options using markdown syntax. Also, there seems to be a bug
 #' in pandoc which breaks the TOC (links are not working)
 #' @param filename name of file to convert
-#' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param dev developmen mode flag (used only to decide whether a warning is raised)
 #' @return NULL, changes file specified as an argument in place
 
-rtf_postprocess <- function(filename, report_version, dev) {
+rtf_postprocess <- function(filename, dev) {
   rtf_fix_table_of_contents(filename, dev)
   rtf_center_images(filename)
 }
@@ -1301,11 +1294,10 @@ get_section_no <- function(sections, is_rtf, rep_type) {
 #' @param sections List of non-scenario report sections
 #' @param exposure_classes List of exposure classes (sectors)
 #' @param inputs data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)
-#' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
 #' @param is_rtf a flag that triggers several format specific settings:
 #' - TRUE: include non-scenario sections (e.g. intro)
-#' - FALSE: include the links to page top (note requires proper report_version as well)
+#' - FALSE: include the links to page top
 #' @param exec_summary_layout determines the structure of the executive summary (see get_executive_summary function)
 #' @param include_exposures whether to include tables with contributing exposures
 #' @param rep_type additional possibility to filter report sections, by default (NULL) no filtering
@@ -1316,7 +1308,6 @@ get_standard_report_contents <- function(tabs,
                                          sections,
                                          exposure_classes,
                                          inputs,
-                                         report_version,
                                          report_scenario_selection,
                                          is_rtf,
                                          exec_summary_layout = 1,
@@ -1346,7 +1337,6 @@ get_standard_report_contents <- function(tabs,
       list(get_section_descriptions(
         section,
         list(
-          report_version = report_version,
           aggregated_inputs_by_item = aggregated_inputs_by_item,
           aggregated_inputs_by_group = aggregated_inputs_by_group,
           inputs = inputs,
@@ -1750,8 +1740,7 @@ include_markdown_text <- function(text, output, output_name, add_new_tab_ref = T
 #' and adding arrow to all headers (report version 5 only)
 #'
 #' @param file the location of HTML file
-#' @param report_version the parameter driving the changes
-html_postprocess <- function(file, report_version) {
+html_postprocess <- function(file) {
   # replace back the images links
   file_conn <- file(file)
   temp <- readLines(file_conn)
@@ -1764,24 +1753,8 @@ html_postprocess <- function(file, report_version) {
     "climate_narrative",
     temp
   )
-  if (report_version >= 2 && report_version <= 5) {
-    temp <- gsub(
-      "(<h[1-5]?>)(.*)(</h[1-5]?>)",
-      "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
-      temp,
-      perl = TRUE
-    )
-  }
-  if (report_version >= 6) {
-    close(file_conn)
-    separate_toc(file, temp)
-  } else {
-    writeLines(
-      temp,
-      file_conn
-    )
-    close(file_conn)
-  }
+  close(file_conn)
+  separate_toc(file, temp)
   return(invisible(NULL))
 }
 
@@ -1791,7 +1764,6 @@ html_postprocess <- function(file, report_version) {
 #' @param output_file Path and filenamename of report to write
 #' @param md_file Path and filename of intermediate markdown file
 #' @param file_format Currently either "html" or "rtf"
-#' @param report_version Integer controlling the version of the code used in report generating functions
 #' @param dev Development mode flag (used only to decide if a warning is raised in a lower level function)
 #' @param rep_type Either "inst" for institutional report or "sect" for sectoral report
 #' @param inst_type Institution type (relevant for institutional report only)
@@ -1803,7 +1775,6 @@ get_report_settings <- function(content_files,
                                 output_file,
                                 md_file,
                                 file_format,
-                                report_version,
                                 dev,
                                 rep_type,
                                 inst_type,
@@ -1866,7 +1837,6 @@ get_report_settings <- function(content_files,
   )
 
   content_settings <- list(
-    report_version = report_version,
     is_rtf = (file_format == "rtf"),
     rep_type = rep_type,
     report_scenario_selection = report_scenario_selection,
@@ -1905,7 +1875,6 @@ get_report_settings <- function(content_files,
   postprocess_settings <- list(
     file_format = file_format,
     output_file = output_file,
-    report_version = report_version,
     dev = dev
   )
 
@@ -1994,7 +1963,6 @@ get_report_contents <- function(content_files, inputs, content_settings) {
         content_files$sections,
         content_files$exposure_classes,
         inputs,
-        content_settings$report_version,
         content_settings$report_scenario_selection,
         content_settings$is_rtf,
         content_settings$exec_summary_layout,
@@ -2015,12 +1983,13 @@ get_report_contents <- function(content_files, inputs, content_settings) {
 #'
 #' @param postprocess_settings a list with:
 #' - file_format (either "rtf" or "html")
-#' - report_version, which is then translated to relevant postprocessing options at lower level
+#' - output_file (path to the file)
+#' - dev (flag, TRUE for developer version of the tool)
 postprocess <- function(postprocess_settings) {
   if (postprocess_settings$file_format == "rtf") {
-    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version, postprocess_settings$dev)
+    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$dev)
   } else {
-    html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
+    html_postprocess(postprocess_settings$output_file)
   }
 }
 
