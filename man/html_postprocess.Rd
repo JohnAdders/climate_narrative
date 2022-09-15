@@ -4,12 +4,10 @@
 \alias{html_postprocess}
 \title{Process the HTML file manually to correct some known issues}
 \usage{
-html_postprocess(file, report_version)
+html_postprocess(file)
 }
 \arguments{
 \item{file}{the location of HTML file}
-
-\item{report_version}{the parameter driving the changes}
 }
 \description{
 Includes fixing image links (so they work in shiny)

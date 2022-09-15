@@ -14,7 +14,7 @@ get_scenario_no(scenarios, report_scenario_selection, is_rtf)
 \item{is_rtf}{a flag that triggers several format specific settings:
 \itemize{
 \item TRUE: include non-scenario sections (e.g. intro)
-\item FALSE: include the links to page top (note requires proper report_version as well)
+\item FALSE: include the links to page top
 }}
 }
 \value{

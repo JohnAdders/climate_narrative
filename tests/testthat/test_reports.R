@@ -6,7 +6,6 @@ testthat::test_that("report files", {
     function(input, output, session) {
       # emulate the secret file
       global$dev <- FALSE
-      global$report_version <- 6
       global$progress_bar <- TRUE
       initialise_globals()
       # the server function itself

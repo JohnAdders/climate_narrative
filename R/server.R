@@ -193,9 +193,7 @@ server <- function(input, output, session) {
     {
       if (report_message() != "") {
         output$html_report <- renderUI("")
-        if (global$report_version >= 6) {
-          output$html_report_nav <- renderUI("")
-        }
+        output$html_report_nav <- renderUI("")
       } else {
         temp_html <- session$userData$temp_html
         showModal(
@@ -205,26 +203,12 @@ server <- function(input, output, session) {
             footer = NULL
           )
         )
-        if (global$report_version >= 5) {
-          settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$report_version, global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
-          if (global$report_version >= 7) {
-            produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
-              removeModal()
-              result <- includeHTML(temp_html)
-              output$html_report <- renderUI(result)
-              output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
-            }
-          } else {
-            produce_report(all_inputs(), settings)
-            removeModal()
-            result <- includeHTML(temp_html)
-            output$html_report <- renderUI(result)
-            if (global$report_version >= 6) {
-              output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
-            }
-          }
-        } else {
-          stop("Error. Report version < 5 removed")
+        settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+        produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
+          removeModal()
+          result <- includeHTML(temp_html)
+          output$html_report <- renderUI(result)
+          output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
         }
       }
     }
@@ -241,20 +225,10 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$report_version, global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
-        if (global$report_version >= 7) {
-          produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
-            removeModal()
-            file.copy(session$userData$temp_rtf, file)
-          }
-        } else {
-          produce_report(all_inputs(), settings)
-          removeModal()
-          file.copy(session$userData$temp_rtf, file)
-        }
-      } else { # old code below
-        stop("Error. Report version < 5 removed")
+      settings <- get_report_settings(global$content_files, session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+      produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
+        removeModal()
+        file.copy(session$userData$temp_rtf, file)
       }
     }
   )
@@ -269,20 +243,10 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$report_version, global$dev, "inst", "", "", "")
-        if (global$report_version >= 7) {
-          produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
-            removeModal()
-            file.copy(session$userData$temp_rtf_dev, file)
-          }
-        } else {
-          produce_report(all_inputs(), settings)
-          removeModal()
-          file.copy(session$userData$temp_rtf_dev, file)
-        }
-      } else {
-        stop("Error. Report version < 5 removed")
+      settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$dev, "inst", "", "", "")
+      produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
+        removeModal()
+        file.copy(session$userData$temp_rtf_dev, file)
       }
     }
   )
@@ -297,20 +261,10 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$report_version, global$dev, "test", "", "", "")
-        if (global$report_version >= 7) {
-          produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
-            removeModal()
-            file.copy(session$userData$temp_rtf_dev_2, file)
-          }
-        } else {
-          produce_report(NULL, settings)
-          removeModal()
-          file.copy(session$userData$temp_rtf_dev_2, file)
-        }
-      } else {
-        stop("Error. Report version < 5 removed")
+      settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$dev, "test", "", "", "")
+      produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
+        removeModal()
+        file.copy(session$userData$temp_rtf_dev_2, file)
       }
     }
   )
