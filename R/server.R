@@ -6,45 +6,15 @@
 #'
 #' @importFrom stats aggregate
 #' @importFrom promises %...>% %...!%
-#' @importFrom uuid UUIDgenerate
 #' @export
 #'
 server <- function(input, output, session) {
   heartbeat(input, output, session)
-  session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
-  session$userData$captcha_validated <- FALSE
-  session$userData$temp_md_full <- tempfile(fileext = ".md")
-  session$userData$temp_md_scenario <- tempfile(fileext = ".md")
-  session$userData$temp_md_scenario_and_commons <- tempfile(fileext = ".md")
-  session$userData$temp_html <- tempfile(fileext = ".html")
-  session$userData$temp_rtf <- tempfile(fileext = ".rtf")
-  session$userData$temp_md_dev <- tempfile(fileext = ".md")
-  session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
-  session$userData$temp_md_dev_2 <- tempfile(fileext = ".md")
-  session$userData$temp_rtf_dev_2 <- tempfile(fileext = ".rtf")
+  prepare_user_data(session)
   if (global$progress_bar) {
-    # progress bar code
     progress <- Progress$new(session, min = 0, max = 1, style = "old")
-    observeEvent(input$wizard, {
-      which_tab <- which(input$wizard == sapply(global$tabs, function(tab) tab$id))
-      tab_type <- global$tabs[[which_tab]]$type
-      tab_number <- global$tabs[[which_tab]]$tab_number
-      if (!is.null(tab_type)) {
-        matching_type <- sapply(
-          global$tabs,
-          function(tab) sum(c(is.null(tab$type), tab$type == tab_type))
-        )
-        den <- sum(matching_type)
-        num <- sum(matching_type[1:tab_number]) - 1
-        progress$set(value = num / den, message = "Questionnaire progress")
-      } else {
-        den <- length(global$tabs) - 1
-        num <- tab_number - 1
-        progress$set(value = num / den, message = "Questionnaire progress")
-      }
-    })
   }
-  # the reactive variables
+  # the reactive variables and observers
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
     out <- data.frame(
@@ -83,6 +53,7 @@ server <- function(input, output, session) {
     out <- out[!is.na(out$type), ]
     return(out)
   })
+  
   allow_report <- reactive({
     return(
       any(
@@ -131,10 +102,10 @@ server <- function(input, output, session) {
     }
   })
 
-  # update the available sectors
   observeEvent(
     input$wizard == paste0("page_", tab_name_to_number("report")),
     {
+      # update the available sectors
       req(input$wizard, input$rep_type)
       if (input$rep_type == "inst") {
         selection_type_filter <- input$inst_type
@@ -214,6 +185,28 @@ server <- function(input, output, session) {
     }
   )
 
+  if (global$progress_bar) {
+    # progress bar update
+    observeEvent(input$wizard, {
+      which_tab <- which(input$wizard == sapply(global$tabs, function(tab) tab$id))
+      tab_type <- global$tabs[[which_tab]]$type
+      tab_number <- global$tabs[[which_tab]]$tab_number
+      if (!is.null(tab_type)) {
+        matching_type <- sapply(
+          global$tabs,
+          function(tab) sum(c(is.null(tab$type), tab$type == tab_type))
+        )
+        den <- sum(matching_type)
+        num <- sum(matching_type[1:tab_number]) - 1
+        progress$set(value = num / den, message = "Questionnaire progress")
+      } else {
+        den <- length(global$tabs) - 1
+        num <- tab_number - 1
+        progress$set(value = num / den, message = "Questionnaire progress")
+      }
+    })
+  }
+
   # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
@@ -283,4 +276,22 @@ server <- function(input, output, session) {
   session$userData$prev_tabs <- lapply(global$tabs, function(x) sum(x$initial_previous_tab))
   session$userData$next_tabs <- lapply(global$tabs, function(x) sum(x$initial_next_tab))
   names(session$userData$prev_tabs) <- names(session$userData$next_tabs) <- sapply(global$tabs, function(x) x$tab_name)
+}
+
+#' Helper function creating necessary data in session$userData
+#'
+#' @importFrom uuid UUIDgenerate
+#'
+prepare_user_data <- function(session){
+  session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
+  session$userData$captcha_validated <- FALSE
+  session$userData$temp_md_full <- tempfile(fileext = ".md")
+  session$userData$temp_md_scenario <- tempfile(fileext = ".md")
+  session$userData$temp_md_scenario_and_commons <- tempfile(fileext = ".md")
+  session$userData$temp_html <- tempfile(fileext = ".html")
+  session$userData$temp_rtf <- tempfile(fileext = ".rtf")
+  session$userData$temp_md_dev <- tempfile(fileext = ".md")
+  session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
+  session$userData$temp_md_dev_2 <- tempfile(fileext = ".md")
+  session$userData$temp_rtf_dev_2 <- tempfile(fileext = ".rtf") 
 }

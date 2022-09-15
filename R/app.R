@@ -94,10 +94,11 @@ initialise_globals <- function() {
     exposure_classes = global$exposure_classes
   )
 
-  # required for async report production
-  if (.Platform$OS.type == "windows") {
-    future::plan(future::multisession)
-  } else {
-    future::plan(future::multicore)
-  }
+  # # required for async report production
+  # if (.Platform$OS.type == "windows") {
+  #   future::plan(future::multisession)
+  # } else {
+  #   future::plan(future::multicore)
+  # }
+  future::plan(future::sequential)
 }
