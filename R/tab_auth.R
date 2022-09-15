@@ -50,7 +50,6 @@ render_dynamic_auth_ui <- function(output, session) {
           inputId = "button_check_code",
           label = "Validate the code"
         ),
-        tippy::tippy_this("button_check_code", "Click to proceed (if the code is correct)"),
         textOutput("code_verification_result")
       )
     })
@@ -66,7 +65,6 @@ render_dynamic_auth_ui <- function(output, session) {
           inputId = "button_check_code",
           label = "Next"
         ),
-        tippy::tippy_this("button_check_code", "Click to proceed"),
         textOutput("code_verification_result")
       )
     })

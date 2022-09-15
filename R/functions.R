@@ -143,8 +143,6 @@ produce_tooltip_matrix <- function(exposure_matrix, products, exposure_classes) 
 #' @param dev Are we in development mode
 #' @param width Width of dropdown
 #'
-#' @importFrom tippy tippy_this
-#'
 exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL) {
   if (id == "") {
     form <- p("")
@@ -159,10 +157,8 @@ exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL)
       width = width
     )
     if (tooltip_text != "") {
-      return(div(
-        form,
-        tippy_this(id, tooltip_text),
-      ))
+      warning("Tooltip text ignored. Tooltips functionality removed to simplify the app")
+      return(form)
     } else {
       return(form)
     }

@@ -17,7 +17,6 @@ tab_editor_auth_ui <- function() {
           inputId = "button_check_editor_code",
           label = "Validate the code"
         ),
-        tippy::tippy_this("button_check_editor_code", "Click to proceed (if the code is correct)"),
         textOutput("editor_code_verification_result")
       )
     )
