@@ -8,7 +8,6 @@ exposure_grid_server(
   input,
   output,
   exposure_matrix,
-  tooltip_matrix,
   label,
   dev = FALSE,
   width = NULL
@@ -20,8 +19,6 @@ exposure_grid_server(
 \item{output}{Shiny outputs}
 
 \item{exposure_matrix}{Exposure matrix to show}
-
-\item{tooltip_matrix}{Matrix of tooltips}
 
 \item{label}{Label for grid}
 

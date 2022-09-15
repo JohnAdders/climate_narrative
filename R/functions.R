@@ -100,50 +100,14 @@ restore_spaces <- function(camelcase) {
   s
 }
 
-#' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
-#' and product-specific text (if any)
-#'
-#' @inherit exposure_grid_server
-#' @param products List of products
-#' @param exposure_classes List of sectors
-#'
-produce_tooltip_matrix <- function(exposure_matrix, products, exposure_classes) {
-  out <- matrix(
-    "",
-    nrow = nrow(exposure_matrix),
-    ncol = ncol(exposure_matrix) - 2
-  )
-  for (i in 1:nrow(out)) {
-    row_tooltip <- products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
-    for (j in 1:ncol(out)) {
-      exposure_class <- exposure_matrix[i, j + 2]
-      if (exposure_class != "") {
-        exposure_class_tooltip <- exposure_classes[[exposure_class]][["tooltip"]]
-        if (!is.null(exposure_class_tooltip)) {
-          if (!is.null(row_tooltip)) {
-            out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
-          } else {
-            out[i, j] <- exposure_class_tooltip
-          }
-        } else {
-          if (!is.null(row_tooltip)) {
-            out[i, j] <- row_tooltip
-          }
-        }
-      }
-    }
-  }
-  out
-}
 
 #' Produce the layout of questionnaire tabs (cell, row, whole table)
 #'
 #' @param id unique input id or blank for empty
-#' @param tooltip_text Tooltip text to show
 #' @param dev Are we in development mode
 #' @param width Width of dropdown
 #'
-exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL) {
+exposure_grid_cell <- function(id, dev = FALSE, width = NULL) {
   if (id == "") {
     form <- p("")
   } else {
@@ -156,13 +120,8 @@ exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL)
       selectize = FALSE,
       width = width
     )
-    if (tooltip_text != "") {
-      warning("Tooltip text ignored. Tooltips functionality removed to simplify the app")
-      return(form)
-    } else {
-      return(form)
-    }
   }
+  return(form)
 }
 
 #' Grid table of inputs (everything happens in matching server function)
@@ -178,7 +137,6 @@ exposure_grid_ui <- function(label) {
 #' @param input Shiny inputs
 #' @param output Shiny outputs
 #' @param exposure_matrix Exposure matrix to show
-#' @param tooltip_matrix Matrix of tooltips
 #' @param label Label for grid
 #' @param dev Are we in developement mode
 #' @param width Width of each dropdown
@@ -186,7 +144,6 @@ exposure_grid_ui <- function(label) {
 exposure_grid_server <- function(input,
                                  output,
                                  exposure_matrix,
-                                 tooltip_matrix,
                                  label,
                                  dev = FALSE,
                                  width = NULL) {
@@ -200,7 +157,6 @@ exposure_grid_server <- function(input,
       layout[i, j] <- as.character(
         exposure_grid_cell(
           input_ids[i, j - 1],
-          tooltip_matrix[i, j - 1],
           dev,
           width
         )
