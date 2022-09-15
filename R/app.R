@@ -95,5 +95,9 @@ initialise_globals <- function() {
   )
 
   # required for async report production
-  future::plan(future::multisession)
+  if(.Platform$OS.type == "windows") {
+    future::plan(future::multisession)
+  } else {
+    future::plan(future::multicore)
+  }
 }
