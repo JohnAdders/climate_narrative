@@ -9,11 +9,13 @@
 #' @export
 #'
 server <- function(input, output, session) {
+  # initialisation
   heartbeat(input, output, session)
   prepare_user_data(session)
   if (global$progress_bar) {
     progress <- Progress$new(session, min = 0, max = 1, style = "old")
   }
+
   # the reactive variables and observers
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
@@ -53,7 +55,7 @@ server <- function(input, output, session) {
     out <- out[!is.na(out$type), ]
     return(out)
   })
-  
+
   allow_report <- reactive({
     return(
       any(
@@ -174,7 +176,16 @@ server <- function(input, output, session) {
             footer = NULL
           )
         )
-        settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+        settings <- get_report_settings(
+          global$content_files, temp_html,
+          session$userData$temp_md_scenario,
+          "html",
+          global$dev,
+          input$rep_type,
+          input$inst_type,
+          input$report_sector_selection,
+          input$report_scenario_selection
+        )
         produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
           removeModal()
           result <- includeHTML(temp_html)
@@ -218,7 +229,17 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      settings <- get_report_settings(global$content_files, session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
+      settings <- get_report_settings(
+        global$content_files,
+        session$userData$temp_rtf,
+        session$userData$temp_md_scenario_and_commons,
+        "rtf",
+        global$dev,
+        input$rep_type,
+        input$inst_type,
+        input$report_sector_selection,
+        input$report_scenario_selection
+      )
       produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
         removeModal()
         file.copy(session$userData$temp_rtf, file)
@@ -236,7 +257,16 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$dev, "inst", "", "", "")
+      settings <- get_report_settings(
+        global$content_files,
+        session$userData$temp_rtf_dev,
+        session$userData$temp_md_dev,
+        "rtf", global$dev,
+        "inst",
+        "",
+        "",
+        ""
+      )
       produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
         removeModal()
         file.copy(session$userData$temp_rtf_dev, file)
@@ -254,7 +284,17 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$dev, "test", "", "", "")
+      settings <- get_report_settings(
+        global$content_files,
+        session$userData$temp_rtf_dev_2,
+        session$userData$temp_md_dev_2,
+        "rtf",
+        global$dev,
+        "test",
+        "",
+        "",
+        ""
+      )
       produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
         removeModal()
         file.copy(session$userData$temp_rtf_dev_2, file)
@@ -280,12 +320,12 @@ server <- function(input, output, session) {
 
 #' Helper function creating necessary data in session$userData
 #'
+#' @param session Shiny session.
 #' @importFrom uuid UUIDgenerate
 #'
-prepare_user_data <- function(session){
+prepare_user_data <- function(session) {
   session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
   session$userData$captcha_validated <- FALSE
-  session$userData$temp_md_full <- tempfile(fileext = ".md")
   session$userData$temp_md_scenario <- tempfile(fileext = ".md")
   session$userData$temp_md_scenario_and_commons <- tempfile(fileext = ".md")
   session$userData$temp_html <- tempfile(fileext = ".html")
@@ -293,5 +333,6 @@ prepare_user_data <- function(session){
   session$userData$temp_md_dev <- tempfile(fileext = ".md")
   session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
   session$userData$temp_md_dev_2 <- tempfile(fileext = ".md")
-  session$userData$temp_rtf_dev_2 <- tempfile(fileext = ".rtf") 
+  session$userData$temp_rtf_dev_2 <- tempfile(fileext = ".rtf")
+  return(invisible(NULL))
 }

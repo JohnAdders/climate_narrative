@@ -25,7 +25,10 @@ remove_special_characters <- function(text, make_camelcase = TRUE) {
 #' @importFrom utils read.csv
 #' @importFrom yaml read_yaml
 #'
-read_dir <- function(directory, file_format = "auto", in_package = system.file(directory, package = "climate.narrative") != "", remove_special_characters_from_names = TRUE) {
+read_dir <- function(directory,
+                     file_format = "auto",
+                     in_package = system.file(directory, package = "climate.narrative") != "",
+                     remove_special_characters_from_names = TRUE) {
   if (in_package) directory <- system.file(directory, package = "climate.narrative")
   file_list <- dir(path = directory)
   file_format <- tolower(file_format)
@@ -639,7 +642,12 @@ get_exposure_risk_description <- function(item,
 #' @param include_exposures Flag whether to include tables with contributing exposures
 #' @param exposure_classes List of exposure classes (sectors) from which the texts are extracted
 #'
-get_scenario_descriptions <- function(aggregated_table_by_item, aggregated_table_by_group, type_inputs, scenario, exposure_classes, include_exposures) {
+get_scenario_descriptions <- function(aggregated_table_by_item,
+                                      aggregated_table_by_group,
+                                      type_inputs,
+                                      scenario,
+                                      exposure_classes,
+                                      include_exposures) {
   if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
   description <- scenario$description
@@ -703,7 +711,15 @@ get_section_descriptions <- function(section, additional_pars = list()) {
     if (content_function == "get_executive_summary") {
       out <- paste0(
         out,
-        get_executive_summary(additional_pars$tabs, additional_pars$scenarios, additional_pars$exposure_classes, additional_pars$aggregated_inputs_by_item, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
+        get_executive_summary(
+          additional_pars$tabs,
+          additional_pars$scenarios,
+          additional_pars$exposure_classes,
+          additional_pars$aggregated_inputs_by_item,
+          additional_pars$inputs,
+          additional_pars$scenario_no,
+          additional_pars$exec_summary_layout
+        )
       )
     } else if (content_function == "get_references") {
       out <- paste0(
@@ -1009,9 +1025,21 @@ rtf_fix_table_of_contents <- function(filename, dev) {
       perl = TRUE
     )
     if (length(bookmark_rows) > 1 && dev) {
-      warning(paste0("Ambiguous table of content entry. Header ", bookmark_text, " is not unique, using the first match. Please check the table of content"))
+      warning(
+        paste0(
+          "Ambiguous table of content entry. Header ",
+          bookmark_text,
+          " is not unique, using the first match. Please check the table of content"
+        )
+      )
     } else if (length(bookmark_rows) == 0) {
-      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text, " not found"))
+      stop(
+        paste0(
+          "Error in fixing RTF table of content, header ",
+          bookmark_text,
+          " not found"
+        )
+      )
     }
     bookmark_row <- bookmark_rows[1] + search_position - 1
     search_position <- bookmark_row
@@ -1027,7 +1055,12 @@ rtf_fix_table_of_contents <- function(filename, dev) {
     # Limit of 40 characters!
     if (nchar(bookmark_text) > 40) {
       if (dev) {
-        warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
+        warning(
+          paste0(
+            "Too long header for a bookmark, truncating: ",
+            bookmark_text
+          )
+        )
       }
       rtf <- gsub(bookmark_text, substr(bookmark_text, 1, 40), rtf)
     }
@@ -1658,7 +1691,6 @@ aggregate_inputs <- function(inputs, by = "item") {
 #' @param section_name Name of yaml file within section directory read from
 #' (description section only, other YAML fields are ignored)
 #'
-#'
 include_markdown_section <- function(output, output_name, section_name) {
   text <- unlist(
     strsplit(
@@ -1677,6 +1709,7 @@ include_markdown_section <- function(output, output_name, section_name) {
 #'
 #' @importFrom markdown markdownToHTML
 #' @importFrom stringi stri_replace_all_regex
+#'
 include_markdown_text <- function(text, output, output_name, add_new_tab_ref = TRUE) {
   html_text <- markdown::markdownToHTML(
     text = text,
@@ -1696,6 +1729,7 @@ include_markdown_text <- function(text, output, output_name, add_new_tab_ref = T
 #' and adding arrow to all headers (report version 5 only)
 #'
 #' @param file the location of HTML file
+#'
 html_postprocess <- function(file) {
   # replace back the images links
   file_conn <- file(file)
@@ -1910,6 +1944,7 @@ produce_report_ <- function(all_inputs, settings, sleep) {
 #' @param content_files list of all yaml content files
 #' @param inputs user dropdown choices
 #' @param content_settings all configuration options (see get_standard_report_content for details)
+#'
 get_report_contents <- function(content_files, inputs, content_settings) {
   if (content_settings$rep_type %in% c("inst", "sect")) {
     return(
@@ -1940,7 +1975,8 @@ get_report_contents <- function(content_files, inputs, content_settings) {
 #' @param postprocess_settings a list with:
 #' - file_format (either "rtf" or "html")
 #' - output_file (path to the file)
-#' - dev (flag, TRUE for developer version of the tool)
+#' - dev (flag, TRUE for developer version of the tool, passed to RTF only)
+#'
 postprocess <- function(postprocess_settings) {
   if (postprocess_settings$file_format == "rtf") {
     rtf_postprocess(postprocess_settings$output_file, postprocess_settings$dev)
@@ -1956,7 +1992,7 @@ postprocess <- function(postprocess_settings) {
 #' @param toc_label a string to label the table of contents (or NULL for no label)
 #' @return NULL. The HTML file given as argument filename is updated as file without ToC,
 #' which is saved as a separate HTML in the same directory as filename (with the name appended with "_toc")
-
+#'
 separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of contents") {
   if (is.null(file_contents)) {
     file_conn <- file(filename)
@@ -1987,10 +2023,12 @@ separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of c
 
 #' Parse the yaml file, replace the selected piece and save (overwrite)
 #'
+#' Note: the function currently works for literal style (i.e. header ends with pipe symbol | after the colon)
+#'
 #' @param yaml_file_location location of YAML file to update.
 #' @param section_subsection vector of strings - recursively go down the YAML structure to find the desired location.
 #' @param new_text new content.
-
+#'
 replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_text) {
   # Read yaml file first
   file_conn <- file(yaml_file_location)
@@ -2039,12 +2077,19 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
 #'   start (first line of section found, excluding the name),
 #'   end (last line of section found)
 #'   indentation (indentation applied within the section)
-
+#'
 find_yaml_section <- function(string, start, end, indentation, section_name) {
   header_rows_1 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "[[:space:]]"), string[start:end])
   header_rows_2 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "$"), string[start:end])
   header_rows <- sort(c(header_rows_1, header_rows_2))
-  headers <- gsub(paste0(indentation, "(([[:graph:]]|[[:blank:]])+):([[:graph:]]|[[:blank:]])*$"), "\\1", string[header_rows + start - 1])
+  headers <- gsub(
+    paste0(
+      indentation,
+      "(([[:graph:]]|[[:blank:]])+):([[:graph:]]|[[:blank:]])*$"
+    ),
+    "\\1",
+    string[header_rows + start - 1]
+  )
   index <- which(headers == section_name)
   if (length(index) == 0) {
     stop(

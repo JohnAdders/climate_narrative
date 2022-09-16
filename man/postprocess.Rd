@@ -11,7 +11,7 @@ postprocess(postprocess_settings)
 \itemize{
 \item file_format (either "rtf" or "html")
 \item output_file (path to the file)
-\item dev (flag, TRUE for developer version of the tool)
+\item dev (flag, TRUE for developer version of the tool, passed to RTF only)
 }}
 }
 \description{
