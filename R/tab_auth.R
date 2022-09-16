@@ -100,8 +100,8 @@ tab_auth_server <- function(input, output, session) {
           warning("Captcha verification failed")
           output$code_verification_result <- renderText(
             paste0(
-              "Your activity looks suspicious to the bot detection software.
-              If you insist you are a human, please try again, use different browser/device,",
+              "Your activity looks suspicious to the bot detection software. ",
+              "If you insist you are a human, please try again, use different browser/device,",
               "or contact support (the link below)"
             )
           )

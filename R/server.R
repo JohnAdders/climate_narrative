@@ -43,7 +43,7 @@ server <- function(input, output, session) {
       }
     }
     out$materiality <- factor(out$values, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
-    out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
+    out$materiality_num <- materiality_num(out$materiality)
     out$exposure_group <- sapply(out$item, function(class) {
       group_or_null <- global$exposure_classes[[class]]$group
       if (is.null(group_or_null)) {
@@ -57,6 +57,8 @@ server <- function(input, output, session) {
   })
 
   allow_report <- reactive({
+    # only if this is TRUE it is possible to go to report page
+    # currently requires at least one non-empty input
     return(
       any(
         input$rep_type == "sect",
@@ -158,10 +160,13 @@ server <- function(input, output, session) {
     report_message()
   })
 
+  # HTML report production
   observeEvent(
     list(
       input$wizard == paste0("page_", tab_name_to_number("report")),
-      input$report_scenario_selection, input$report_sector_selection, report_message()
+      input$report_scenario_selection,
+      input$report_sector_selection,
+      report_message()
     ),
     {
       if (report_message() != "") {
@@ -218,7 +223,7 @@ server <- function(input, output, session) {
     })
   }
 
-  # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
+  # download buttons inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
     content = function(file, res_path = ifelse(system.file("www", package = "climate.narrative") == "", "inst/www", system.file("www", package = "climate.narrative"))) {
@@ -302,17 +307,18 @@ server <- function(input, output, session) {
     }
   )
 
-  # finally, tab-specific server function collation
+  # finally, tab-specific contents:
+  # - switching function
   switch_page <- function(i) {
     i <- as.integer(i)
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
   }
-
+  # - server function collation
   for (tab in global$tabs) {
     tab$server(input, output, session, switch_page)
   }
 
-  # saving previous/next tab to session in order to make them dynamic (and not interfering with other sessions via global)
+  # - saving previous/next tab to session in order to make them dynamic (and not interfering with other sessions via global)
   session$userData$prev_tabs <- lapply(global$tabs, function(x) sum(x$initial_previous_tab))
   session$userData$next_tabs <- lapply(global$tabs, function(x) sum(x$initial_next_tab))
   names(session$userData$prev_tabs) <- names(session$userData$next_tabs) <- sapply(global$tabs, function(x) x$tab_name)

@@ -1468,7 +1468,7 @@ get_executive_summary_exposures <- function(exposure_classes,
 #' @param data matrix or data.frame, possibly containing missing value
 #' @param empty_strings which strings should be considered as "empty"?
 #' @param ignore_cols indices of columns which should be ignored for emptiness check
-#' @return input object without rows and columns where all entries are empty (i.e. NA or "")
+#' @return input object without rows and columns where all entries are empty (i.e. NA or ""). NULL when the input is all empty
 #'
 delete_empty_rows_and_columns <- function(data, empty_strings = list("", "N/A"), ignore_cols = c()) {
   data <- as.data.frame(data)
@@ -2147,4 +2147,17 @@ alternative_sleep <- function(time) {
     # some time consuming operation, but preferably not much memory consuming
     rnorm(1)
   }
+}
+
+#' Helper function that transforms descriptive (factor) to numeric materiality
+#'
+#' @param materiality Descriptive materiality, factor with following levels:
+#'   - 1: "N/A"
+#'   - 2: "Low"
+#'   - 3: "Medium"
+#'   - 4: "High"
+#' @return Integer corresponding to the percentage threshold (0, 1, 5, 10 respectively)
+#'
+materiality_num <- function(materiality){
+  (as.integer(materiality) - 1)^2 + (as.integer(materiality) > 2)
 }
