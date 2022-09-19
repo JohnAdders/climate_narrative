@@ -2058,7 +2058,6 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
   if (subsection_location$end < length(yaml_file)) {
     yaml_file_updated <- c(yaml_file_updated, yaml_file[(subsection_location$end + 1):length(yaml_file)])
   }
-  browser()
   # Overwrite the previous file
   file_conn <- file(paste0(yaml_file_location))
   writeLines(yaml_file_updated, file_conn)
