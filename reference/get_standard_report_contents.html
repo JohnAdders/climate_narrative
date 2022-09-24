@@ -56,7 +56,6 @@
 <span>  <span class="va">sections</span>,</span>
 <span>  <span class="va">exposure_classes</span>,</span>
 <span>  <span class="va">inputs</span>,</span>
-<span>  <span class="va">report_version</span>,</span>
 <span>  <span class="va">report_scenario_selection</span>,</span>
 <span>  <span class="va">is_rtf</span>,</span>
 <span>  exec_summary_layout <span class="op">=</span> <span class="fl">1</span>,</span>
@@ -87,17 +86,13 @@
 <dd><p>data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)</p></dd>
 
 
-<dt>report_version</dt>
-<dd><p>enables different versions of the reports within a single code, see global file for possible choices and their meaning</p></dd>
-
-
 <dt>report_scenario_selection</dt>
 <dd><p>(user-friendly) scenario name (or empty string)</p></dd>
 
 
 <dt>is_rtf</dt>
 <dd><p>a flag that triggers several format specific settings:</p><ul><li><p>TRUE: include non-scenario sections (e.g. intro)</p></li>
-<li><p>FALSE: include the links to page top (note requires proper report_version as well)</p></li>
+<li><p>FALSE: include the links to page top</p></li>
 </ul></dd>
 
 
