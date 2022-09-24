@@ -10,7 +10,6 @@ get_standard_report_contents(
   sections,
   exposure_classes,
   inputs,
-  report_version,
   report_scenario_selection,
   is_rtf,
   exec_summary_layout = 1,
@@ -29,14 +28,12 @@ get_standard_report_contents(
 
 \item{inputs}{data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)}
 
-\item{report_version}{enables different versions of the reports within a single code, see global file for possible choices and their meaning}
-
 \item{report_scenario_selection}{(user-friendly) scenario name (or empty string)}
 
 \item{is_rtf}{a flag that triggers several format specific settings:
 \itemize{
 \item TRUE: include non-scenario sections (e.g. intro)
-\item FALSE: include the links to page top (note requires proper report_version as well)
+\item FALSE: include the links to page top
 }}
 
 \item{exec_summary_layout}{determines the structure of the executive summary (see get_executive_summary function)}

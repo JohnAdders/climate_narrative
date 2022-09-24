@@ -14,12 +14,3 @@ global$ordered_tabs <- c(
   "am_c", "am_sov", "am_re",
   "report", "editor_auth", "editor"
 )
-
-# defining possible report versions
-global$report_versions <- 5:7
-names(global$report_versions) <- c(
-  # the names will be displayed in selectInput (dev mode only)
-  "v5 = base version",
-  "v6 = v5 with sidebar table of content in HTML report",
-  "v7 = v6 with async report production"
-)

@@ -4,12 +4,10 @@
 \alias{exposure_grid_cell}
 \title{Produce the layout of questionnaire tabs (cell, row, whole table)}
 \usage{
-exposure_grid_cell(id, tooltip_text = "", dev = FALSE, width = NULL)
+exposure_grid_cell(id, dev = FALSE, width = NULL)
 }
 \arguments{
 \item{id}{unique input id or blank for empty}
-
-\item{tooltip_text}{Tooltip text to show}
 
 \item{dev}{Are we in development mode}
 

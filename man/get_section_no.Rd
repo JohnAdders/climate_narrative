@@ -12,7 +12,7 @@ get_section_no(sections, is_rtf, rep_type)
 \item{is_rtf}{a flag that triggers several format specific settings:
 \itemize{
 \item TRUE: include non-scenario sections (e.g. intro)
-\item FALSE: include the links to page top (note requires proper report_version as well)
+\item FALSE: include the links to page top
 }}
 
 \item{rep_type}{additional possibility to filter report sections, by default (NULL) no filtering}

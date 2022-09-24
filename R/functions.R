@@ -25,7 +25,10 @@ remove_special_characters <- function(text, make_camelcase = TRUE) {
 #' @importFrom utils read.csv
 #' @importFrom yaml read_yaml
 #'
-read_dir <- function(directory, file_format = "auto", in_package = system.file(directory, package = "climate.narrative") != "", remove_special_characters_from_names = TRUE) {
+read_dir <- function(directory,
+                     file_format = "auto",
+                     in_package = system.file(directory, package = "climate.narrative") != "",
+                     remove_special_characters_from_names = TRUE) {
   if (in_package) directory <- system.file(directory, package = "climate.narrative")
   file_list <- dir(path = directory)
   file_format <- tolower(file_format)
@@ -100,52 +103,14 @@ restore_spaces <- function(camelcase) {
   s
 }
 
-#' Produce a matrix of tooltips (strings) by concatenating column-specific (if any)
-#' and product-specific text (if any)
-#'
-#' @inherit exposure_grid_server
-#' @param products List of products
-#' @param exposure_classes List of sectors
-#'
-produce_tooltip_matrix <- function(exposure_matrix, products, exposure_classes) {
-  out <- matrix(
-    "",
-    nrow = nrow(exposure_matrix),
-    ncol = ncol(exposure_matrix) - 2
-  )
-  for (i in 1:nrow(out)) {
-    row_tooltip <- products[[remove_special_characters(exposure_matrix[i, 2])]][["tooltip"]]
-    for (j in 1:ncol(out)) {
-      exposure_class <- exposure_matrix[i, j + 2]
-      if (exposure_class != "") {
-        exposure_class_tooltip <- exposure_classes[[exposure_class]][["tooltip"]]
-        if (!is.null(exposure_class_tooltip)) {
-          if (!is.null(row_tooltip)) {
-            out[i, j] <- paste0(row_tooltip, "<br>", exposure_class_tooltip)
-          } else {
-            out[i, j] <- exposure_class_tooltip
-          }
-        } else {
-          if (!is.null(row_tooltip)) {
-            out[i, j] <- row_tooltip
-          }
-        }
-      }
-    }
-  }
-  out
-}
 
 #' Produce the layout of questionnaire tabs (cell, row, whole table)
 #'
 #' @param id unique input id or blank for empty
-#' @param tooltip_text Tooltip text to show
 #' @param dev Are we in development mode
 #' @param width Width of dropdown
 #'
-#' @importFrom tippy tippy_this
-#'
-exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL) {
+exposure_grid_cell <- function(id, dev = FALSE, width = NULL) {
   if (id == "") {
     form <- p("")
   } else {
@@ -158,15 +123,8 @@ exposure_grid_cell <- function(id, tooltip_text = "", dev = FALSE, width = NULL)
       selectize = FALSE,
       width = width
     )
-    if (tooltip_text != "") {
-      return(div(
-        form,
-        tippy_this(id, tooltip_text),
-      ))
-    } else {
-      return(form)
-    }
   }
+  return(form)
 }
 
 #' Grid table of inputs (everything happens in matching server function)
@@ -182,7 +140,6 @@ exposure_grid_ui <- function(label) {
 #' @param input Shiny inputs
 #' @param output Shiny outputs
 #' @param exposure_matrix Exposure matrix to show
-#' @param tooltip_matrix Matrix of tooltips
 #' @param label Label for grid
 #' @param dev Are we in developement mode
 #' @param width Width of each dropdown
@@ -190,7 +147,6 @@ exposure_grid_ui <- function(label) {
 exposure_grid_server <- function(input,
                                  output,
                                  exposure_matrix,
-                                 tooltip_matrix,
                                  label,
                                  dev = FALSE,
                                  width = NULL) {
@@ -204,7 +160,6 @@ exposure_grid_server <- function(input,
       layout[i, j] <- as.character(
         exposure_grid_cell(
           input_ids[i, j - 1],
-          tooltip_matrix[i, j - 1],
           dev,
           width
         )
@@ -687,7 +642,12 @@ get_exposure_risk_description <- function(item,
 #' @param include_exposures Flag whether to include tables with contributing exposures
 #' @param exposure_classes List of exposure classes (sectors) from which the texts are extracted
 #'
-get_scenario_descriptions <- function(aggregated_table_by_item, aggregated_table_by_group, type_inputs, scenario, exposure_classes, include_exposures) {
+get_scenario_descriptions <- function(aggregated_table_by_item,
+                                      aggregated_table_by_group,
+                                      type_inputs,
+                                      scenario,
+                                      exposure_classes,
+                                      include_exposures) {
   if (is.null(scenario)) warning(paste("No scenario file for ", scenario))
   name <- scenario$name
   description <- scenario$description
@@ -749,12 +709,18 @@ get_section_descriptions <- function(section, additional_pars = list()) {
   content_function <- section$special_content_function
   if (!is.null(content_function)) {
     if (content_function == "get_executive_summary") {
-      if (additional_pars$report_version >= 3) {
-        out <- paste0(
-          out,
-          get_executive_summary(additional_pars$tabs, additional_pars$scenarios, additional_pars$exposure_classes, additional_pars$aggregated_inputs_by_item, additional_pars$inputs, additional_pars$scenario_no, additional_pars$exec_summary_layout)
+      out <- paste0(
+        out,
+        get_executive_summary(
+          additional_pars$tabs,
+          additional_pars$scenarios,
+          additional_pars$exposure_classes,
+          additional_pars$aggregated_inputs_by_item,
+          additional_pars$inputs,
+          additional_pars$scenario_no,
+          additional_pars$exec_summary_layout
         )
-      }
+      )
     } else if (content_function == "get_references") {
       out <- paste0(
         out,
@@ -1059,9 +1025,21 @@ rtf_fix_table_of_contents <- function(filename, dev) {
       perl = TRUE
     )
     if (length(bookmark_rows) > 1 && dev) {
-      warning(paste0("Ambiguous table of content entry. Header ", bookmark_text, " is not unique, using the first match. Please check the table of content"))
+      warning(
+        paste0(
+          "Ambiguous table of content entry. Header ",
+          bookmark_text,
+          " is not unique, using the first match. Please check the table of content"
+        )
+      )
     } else if (length(bookmark_rows) == 0) {
-      stop(paste0("Error in fixing RTF table of content, header ", bookmark_text, " not found"))
+      stop(
+        paste0(
+          "Error in fixing RTF table of content, header ",
+          bookmark_text,
+          " not found"
+        )
+      )
     }
     bookmark_row <- bookmark_rows[1] + search_position - 1
     search_position <- bookmark_row
@@ -1077,7 +1055,12 @@ rtf_fix_table_of_contents <- function(filename, dev) {
     # Limit of 40 characters!
     if (nchar(bookmark_text) > 40) {
       if (dev) {
-        warning(paste0("Too long header for a bookmark, truncating: ", bookmark_text))
+        warning(
+          paste0(
+            "Too long header for a bookmark, truncating: ",
+            bookmark_text
+          )
+        )
       }
       rtf <- gsub(bookmark_text, substr(bookmark_text, 1, 40), rtf)
     }
@@ -1111,11 +1094,10 @@ rtf_center_images <- function(filename) {
 #' It is not possible to set some options using markdown syntax. Also, there seems to be a bug
 #' in pandoc which breaks the TOC (links are not working)
 #' @param filename name of file to convert
-#' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param dev developmen mode flag (used only to decide whether a warning is raised)
 #' @return NULL, changes file specified as an argument in place
 
-rtf_postprocess <- function(filename, report_version, dev) {
+rtf_postprocess <- function(filename, dev) {
   rtf_fix_table_of_contents(filename, dev)
   rtf_center_images(filename)
 }
@@ -1301,11 +1283,10 @@ get_section_no <- function(sections, is_rtf, rep_type) {
 #' @param sections List of non-scenario report sections
 #' @param exposure_classes List of exposure classes (sectors)
 #' @param inputs data frame of all relevant inputs (the reactive expression all_inputs or its subset obtained with get_inputs)
-#' @param report_version enables different versions of the reports within a single code, see global file for possible choices and their meaning
 #' @param report_scenario_selection (user-friendly) scenario name (or empty string)
 #' @param is_rtf a flag that triggers several format specific settings:
 #' - TRUE: include non-scenario sections (e.g. intro)
-#' - FALSE: include the links to page top (note requires proper report_version as well)
+#' - FALSE: include the links to page top
 #' @param exec_summary_layout determines the structure of the executive summary (see get_executive_summary function)
 #' @param include_exposures whether to include tables with contributing exposures
 #' @param rep_type additional possibility to filter report sections, by default (NULL) no filtering
@@ -1316,7 +1297,6 @@ get_standard_report_contents <- function(tabs,
                                          sections,
                                          exposure_classes,
                                          inputs,
-                                         report_version,
                                          report_scenario_selection,
                                          is_rtf,
                                          exec_summary_layout = 1,
@@ -1346,7 +1326,6 @@ get_standard_report_contents <- function(tabs,
       list(get_section_descriptions(
         section,
         list(
-          report_version = report_version,
           aggregated_inputs_by_item = aggregated_inputs_by_item,
           aggregated_inputs_by_group = aggregated_inputs_by_group,
           inputs = inputs,
@@ -1489,7 +1468,7 @@ get_executive_summary_exposures <- function(exposure_classes,
 #' @param data matrix or data.frame, possibly containing missing value
 #' @param empty_strings which strings should be considered as "empty"?
 #' @param ignore_cols indices of columns which should be ignored for emptiness check
-#' @return input object without rows and columns where all entries are empty (i.e. NA or "")
+#' @return input object without rows and columns where all entries are empty (i.e. NA or ""). NULL when the input is all empty
 #'
 delete_empty_rows_and_columns <- function(data, empty_strings = list("", "N/A"), ignore_cols = c()) {
   data <- as.data.frame(data)
@@ -1712,7 +1691,6 @@ aggregate_inputs <- function(inputs, by = "item") {
 #' @param section_name Name of yaml file within section directory read from
 #' (description section only, other YAML fields are ignored)
 #'
-#'
 include_markdown_section <- function(output, output_name, section_name) {
   text <- unlist(
     strsplit(
@@ -1731,6 +1709,7 @@ include_markdown_section <- function(output, output_name, section_name) {
 #'
 #' @importFrom markdown markdownToHTML
 #' @importFrom stringi stri_replace_all_regex
+#'
 include_markdown_text <- function(text, output, output_name, add_new_tab_ref = TRUE) {
   html_text <- markdown::markdownToHTML(
     text = text,
@@ -1750,8 +1729,8 @@ include_markdown_text <- function(text, output, output_name, add_new_tab_ref = T
 #' and adding arrow to all headers (report version 5 only)
 #'
 #' @param file the location of HTML file
-#' @param report_version the parameter driving the changes
-html_postprocess <- function(file, report_version) {
+#'
+html_postprocess <- function(file) {
   # replace back the images links
   file_conn <- file(file)
   temp <- readLines(file_conn)
@@ -1764,24 +1743,8 @@ html_postprocess <- function(file, report_version) {
     "climate_narrative",
     temp
   )
-  if (report_version >= 2 && report_version <= 5) {
-    temp <- gsub(
-      "(<h[1-5]?>)(.*)(</h[1-5]?>)",
-      "<div class=\"inline\"> \\1\\2\\3 <a href='#top'>&uarr;</a> </div>",
-      temp,
-      perl = TRUE
-    )
-  }
-  if (report_version >= 6) {
-    close(file_conn)
-    separate_toc(file, temp)
-  } else {
-    writeLines(
-      temp,
-      file_conn
-    )
-    close(file_conn)
-  }
+  close(file_conn)
+  separate_toc(file, temp)
   return(invisible(NULL))
 }
 
@@ -1791,7 +1754,6 @@ html_postprocess <- function(file, report_version) {
 #' @param output_file Path and filenamename of report to write
 #' @param md_file Path and filename of intermediate markdown file
 #' @param file_format Currently either "html" or "rtf"
-#' @param report_version Integer controlling the version of the code used in report generating functions
 #' @param dev Development mode flag (used only to decide if a warning is raised in a lower level function)
 #' @param rep_type Either "inst" for institutional report or "sect" for sectoral report
 #' @param inst_type Institution type (relevant for institutional report only)
@@ -1803,7 +1765,6 @@ get_report_settings <- function(content_files,
                                 output_file,
                                 md_file,
                                 file_format,
-                                report_version,
                                 dev,
                                 rep_type,
                                 inst_type,
@@ -1866,7 +1827,6 @@ get_report_settings <- function(content_files,
   )
 
   content_settings <- list(
-    report_version = report_version,
     is_rtf = (file_format == "rtf"),
     rep_type = rep_type,
     report_scenario_selection = report_scenario_selection,
@@ -1905,7 +1865,6 @@ get_report_settings <- function(content_files,
   postprocess_settings <- list(
     file_format = file_format,
     output_file = output_file,
-    report_version = report_version,
     dev = dev
   )
 
@@ -1985,6 +1944,7 @@ produce_report_ <- function(all_inputs, settings, sleep) {
 #' @param content_files list of all yaml content files
 #' @param inputs user dropdown choices
 #' @param content_settings all configuration options (see get_standard_report_content for details)
+#'
 get_report_contents <- function(content_files, inputs, content_settings) {
   if (content_settings$rep_type %in% c("inst", "sect")) {
     return(
@@ -1994,7 +1954,6 @@ get_report_contents <- function(content_files, inputs, content_settings) {
         content_files$sections,
         content_files$exposure_classes,
         inputs,
-        content_settings$report_version,
         content_settings$report_scenario_selection,
         content_settings$is_rtf,
         content_settings$exec_summary_layout,
@@ -2015,12 +1974,14 @@ get_report_contents <- function(content_files, inputs, content_settings) {
 #'
 #' @param postprocess_settings a list with:
 #' - file_format (either "rtf" or "html")
-#' - report_version, which is then translated to relevant postprocessing options at lower level
+#' - output_file (path to the file)
+#' - dev (flag, TRUE for developer version of the tool, passed to RTF only)
+#'
 postprocess <- function(postprocess_settings) {
   if (postprocess_settings$file_format == "rtf") {
-    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$report_version, postprocess_settings$dev)
+    rtf_postprocess(postprocess_settings$output_file, postprocess_settings$dev)
   } else {
-    html_postprocess(postprocess_settings$output_file, postprocess_settings$report_version)
+    html_postprocess(postprocess_settings$output_file)
   }
 }
 
@@ -2031,7 +1992,7 @@ postprocess <- function(postprocess_settings) {
 #' @param toc_label a string to label the table of contents (or NULL for no label)
 #' @return NULL. The HTML file given as argument filename is updated as file without ToC,
 #' which is saved as a separate HTML in the same directory as filename (with the name appended with "_toc")
-
+#'
 separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of contents") {
   if (is.null(file_contents)) {
     file_conn <- file(filename)
@@ -2062,10 +2023,12 @@ separate_toc <- function(filename, file_contents = NULL, toc_label = "Table of c
 
 #' Parse the yaml file, replace the selected piece and save (overwrite)
 #'
+#' Note: the function currently works for literal style (i.e. header ends with pipe symbol | after the colon)
+#'
 #' @param yaml_file_location location of YAML file to update.
 #' @param section_subsection vector of strings - recursively go down the YAML structure to find the desired location.
 #' @param new_text new content.
-
+#'
 replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_text) {
   # Read yaml file first
   file_conn <- file(yaml_file_location)
@@ -2095,7 +2058,6 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
   if (subsection_location$end < length(yaml_file)) {
     yaml_file_updated <- c(yaml_file_updated, yaml_file[(subsection_location$end + 1):length(yaml_file)])
   }
-  browser()
   # Overwrite the previous file
   file_conn <- file(paste0(yaml_file_location))
   writeLines(yaml_file_updated, file_conn)
@@ -2114,12 +2076,19 @@ replace_yaml_subsection <- function(yaml_file_location, section_subsection, new_
 #'   start (first line of section found, excluding the name),
 #'   end (last line of section found)
 #'   indentation (indentation applied within the section)
-
+#'
 find_yaml_section <- function(string, start, end, indentation, section_name) {
   header_rows_1 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "[[:space:]]"), string[start:end])
   header_rows_2 <- grep(paste0("^", indentation, "[[:graph:]]+", ":", "$"), string[start:end])
   header_rows <- sort(c(header_rows_1, header_rows_2))
-  headers <- gsub(paste0(indentation, "(([[:graph:]]|[[:blank:]])+):([[:graph:]]|[[:blank:]])*$"), "\\1", string[header_rows + start - 1])
+  headers <- gsub(
+    paste0(
+      indentation,
+      "(([[:graph:]]|[[:blank:]])+):([[:graph:]]|[[:blank:]])*$"
+    ),
+    "\\1",
+    string[header_rows + start - 1]
+  )
   index <- which(headers == section_name)
   if (length(index) == 0) {
     stop(
@@ -2177,4 +2146,17 @@ alternative_sleep <- function(time) {
     # some time consuming operation, but preferably not much memory consuming
     rnorm(1)
   }
+}
+
+#' Helper function that transforms descriptive (factor) to numeric materiality
+#'
+#' @param materiality Descriptive materiality, factor with following levels:
+#'   - 1: "N/A"
+#'   - 2: "Low"
+#'   - 3: "Medium"
+#'   - 4: "High"
+#' @return Integer corresponding to the percentage threshold (0, 1, 5, 10 respectively)
+#'
+materiality_num <- function(materiality){
+  (as.integer(materiality) - 1)^2 + (as.integer(materiality) > 2)
 }

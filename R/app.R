@@ -14,21 +14,16 @@ run_shiny_app <- function(secrets_file = "secret.yml", ...) {
   shinyApp(ui = ui(), server = server, ...)
 }
 
+#' Read the yaml file containing app settings
+#'
+#' @param secrets_file Path to the file (by default "secret.yml" in the current directory)
+#'
 load_secrets <- function(secrets_file = "secret.yml") {
   if (file.exists(secrets_file)) {
     secret_pars <- yaml::read_yaml(secrets_file)
     global$dev <- FALSE
     for (i in 1:length(secret_pars)) global[[names(secret_pars)[i]]] <- secret_pars[[i]]
     # simple validation and some default values
-    if (is.null(global$report_version)) {
-      default_version <- global$report_versions[1]
-      global$report_version <- default_version
-      warning(paste0("Report version not found in the settings file, defaulting to ", default_version))
-    } else if (!global$report_version %in% global$report_versions) {
-      default_version <- global$report_versions[1]
-      global$report_version <- default_version
-      warning(paste0("Invalid report version in the settings file, defaulting to ", default_version))
-    }
     if (is.null(global$progress_bar)) {
       warning("Progress bar setting not found. Defaulting to FALSE")
       global$progress_bar <- FALSE
@@ -54,8 +49,11 @@ load_secrets <- function(secrets_file = "secret.yml") {
     global$dev <- TRUE
     global$progress_bar <- FALSE
   }
+  return(invisible(NULL))
 }
 
+#' All one-time operations to set up necessary objects
+#'
 initialise_globals <- function() {
   # ordering the scenarios
   global$scenarios <- global$scenarios[order(sapply(global$scenarios, `[[`, i = "position"))]
@@ -103,12 +101,11 @@ initialise_globals <- function() {
     exposure_classes = global$exposure_classes
   )
 
-  # required for async report production
-  if (global$report_version >= 7) {
-    if(.Platform$OS.type == "windows") {
-      future::plan(future::multisession)
-    } else {
-      future::plan(future::multicore)
-    }
+  # future plan definition required for async report production
+  # forking should work faster and avoid potential export problems, but is not available on windows
+  if (.Platform$OS.type == "windows") {
+    future::plan(future::multisession)
+  } else {
+    future::plan(future::multicore)
   }
 }

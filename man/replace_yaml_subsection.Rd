@@ -14,5 +14,5 @@ replace_yaml_subsection(yaml_file_location, section_subsection, new_text)
 \item{new_text}{new content.}
 }
 \description{
-Parse the yaml file, replace the selected piece and save (overwrite)
+Note: the function currently works for literal style (i.e. header ends with pipe symbol | after the colon)
 }

@@ -10,7 +10,8 @@ postprocess(postprocess_settings)
 \item{postprocess_settings}{a list with:
 \itemize{
 \item file_format (either "rtf" or "html")
-\item report_version, which is then translated to relevant postprocessing options at lower level
+\item output_file (path to the file)
+\item dev (flag, TRUE for developer version of the tool, passed to RTF only)
 }}
 }
 \description{
