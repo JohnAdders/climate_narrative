@@ -7,17 +7,18 @@ exec_description: |
   The Orderly transition risk scenarios could result in a gradual 
   reduction in CO<sub>2</sub> emissions and an increase in the carbon price. 
   The investments in energy efficiency and low carbon technologies are projected to increase 
-  (e.g. annual investment in low carbon increases from ~750 billion USD to between 
-  ~2 trillion USD and ~3 trillion USD by 2030). Global mean temperatures are 
-  projected to increase across the world by 1.6&deg;C to 1.7&deg;C, compared to 
-  pre-industrial levels, by 2050. 
+  (e.g. annual investment in low carbon increases from ~850 billion USD to between 
+  ~2.5 trillion USD and ~3 trillion USD by 2030). Global mean temperatures are 
+  projected to increase across the world by 1.5&deg;C to 1.8&deg;C, compared to 
+  pre-industrial levels, by 2100. 
   
   These scenarios could lead to chronic changes in living conditions affecting 
   health, labour productivity (a decrease in labour productivity due to the reduced 
   capacity of the human body to perform physical labour under hot and humid climate conditions), 
   agriculture, ecosystems, and sea-level rise. It can also further change the frequency and 
   severity of weather events such as heatwaves, droughts, wildfires, cyclones, and flooding. 
-  The total cumulative relative GDP impact is estimated to be between -1.5% and -2.5% by 2050.
+  The total cumulative GDP impact from chronic physical and transition effects relative to a baseline 
+  with no transition or physical risks is estimated to be around -3% by 2050.
 
 description: |
   These Orderly transition risk scenarios assume that effective policy
@@ -26,14 +27,14 @@ description: |
   ![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)
 
   **Source:**
-  [NGFS Climate Scenarios, June 2021](https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf){target="\_blank"}
+  [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
 
   The NGFS have defined two orderly scenarios:
 
   - **Net Zero 2050** limits global warming to 1.5&deg;C through stringent climate
     policies and innovation, reaching global Net Zero CO<sub>2</sub> emissions
-    around 2050. Some jurisdictions such as the US, EU and Japan reach Net Zero
-    for all GHGs.
+    around 2050. Some jurisdictions such as the US, EU, UK, Canada, Australia and
+    Japan reach Net Zero for all GHGs.
 
   - **Below 2&deg;C** gradually increases the stringency of climate policies, giving
     a 67% chance of limiting global warming to below 2&deg;C.
@@ -46,22 +47,58 @@ description: |
   in industry, transport and buildings, deploying bioenergy with carbon capture
   and storage and increasing afforestation and reforestation.
 
-  ![CO2 emissions](CO2_emissions_Orderly.png)
+  ![CO2 emissions](scenarios_orderly_emissions_co2.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   The price of carbon is higher in a Net Zero 2050 scenario compared to a Below
-  2&deg;C scenario, this is due to more rigorous targets of limiting global warming
+  2&deg;C scenario. This is due to more rigorous targets of limiting global warming
   to a maximum of 1.5&deg;C set in the Net Zero 2050 scenario. In both the scenarios
   the gradual but significant rise in emission prices gives rise to transition
   risk.
 
-  ![Carbon price](Carbon_Price_Orderly.png)
+  ![Carbon price](scenarios_orderly_price_carbon.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
+  Government revenues from carbon tax increase in line with the carbon price, until emissions are 
+  reduced to a degree that this offsets carbon price increase. In Orderly transition risk scenarios, 
+  global government carbon tax revenues increase, peaking at ~2.5 trillion USD (inflation adjusted to 
+  2010 baseline) per year around 2025 before sloping back down to ~100 billion USD per year by 2050 in 
+  the Net Zero 2050 scenario. In the Below 2&deg;C scenario, revenues peak at ~1.5 trillion USD  per year 
+  around 2030 and remain at this level up to 2050.
+  
+  ![Carbon tax revenue](scenarios_orderly_revenue.png)
+  
+  **Source:**
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  
+  In many countries, the implementation of carbon prices in the transition scenarios tends to raise 
+  energy costs in the short-term, initially weighing down on prices (as lower demand and financial 
+  market losses hit outputs). Rising carbon prices subsequently feed through to modest increases in 
+  inflation and unemployment before returning to prior trends. In some countries and time periods the 
+  offsetting positive growth effects from carbon revenue recycling leads to a reduction in unemployment. 
+  Long-term interest rates tend to increase in the transition scenarios, reflecting the inflationary 
+  pressure created by carbon prices, as well as the increased investment demand that the transition 
+  spurs on.
+  
+  ![Inflation rate](scenarios_orderly_inflation.png)
+  
+  **Source:**
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.]. Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  
+  ![Unemployment rate](scenarios_orderly_unemployment.png)
+  
+  **Source:**
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.]. Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  
+  ![Interest rate](scenarios_orderly_interest.png)
+  
+  **Source:**
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.]. Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  
   The investments in energy efficiency and low carbon technologies are projected to increase 
   in Orderly transition risk scenarios. These are expected to be higher 
   in a Net Zero 2050 scenario compared to a Below 2&deg;C scenario. Overall, firms 
@@ -70,23 +107,23 @@ description: |
   services in order to adhere to carbon pricing policies. The technologies 
   that result from these investments could also adjust asset valuations of 
   relatively older technology. Annual investment in energy efficiency increases 
-  from ~200 billion USD (inflation adjusted to 2010 baseline) to between ~500 
-  billion USD and ~750 billion USD by 2050, whilst annual investment in low 
-  carbon technologies increases from ~750 billion USD to between ~2.5 trillion USD and ~3 
+  from ~200 billion USD (inflation adjusted to 2010 baseline) to between ~600 
+  billion USD and ~800 billion USD by 2050, whilst annual investment in low 
+  carbon technologies increases from ~850 billion USD to between ~2.5 trillion USD and ~3 
   trillion USD by 2050. 
   
-  ![Energy Efficiency Investment](Investment_Energy_Efficiency_Orderly.png)
+  ![Energy Efficiency Investment](scenarios_orderly_investment_energy_efficiency.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
   
-  ![Low Carbon Investment](Investment_Low_Carbon_Orderly.png)
+  ![Low Carbon Investment](scenarios_orderly_investment_low_carbon.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
   
   Observed climate change has already increased global mean temperatures above
-  1.2&deg;C, compared to pre-industrial levels, and both the global land area and
+  1.1&deg;C, compared to pre-industrial levels, and both the global land area and
   the global population annually exposed to river flood, crop failure, cyclones, 
   wildfire, drought and heatwaves has more than doubled. (See Kaufman, D. et al. (2020)).
 
@@ -94,14 +131,14 @@ description: |
   the atmosphere are unprecedented in at least the last 800,000 years and are
   extremely likely to have been the dominant cause of warming since the mid-20th
   century. In these scenarios global mean temperatures are projected to increase 
-  across the world by 1.6&deg;C to 1.7&deg;C, compared to pre-industrial levels by 2050, 
-  with land warming faster than oceans and high latitudes experiencing higher warming 
-  giving rise to low physical risk.
+  across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels by 
+  2100 (with land warming faster than oceans and high latitudes experiencing 
+  higher warming) giving rise to low physical risk.
 
-  ![Global mean temp rise](Global_mean_temperature_Orderly.png)
+  ![Global mean temp rise](scenarios_orderly_temperature.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer, NGFS Scenario Data IAM outputs v2.2 REMIND-MAgPIE 2.1-4.2 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   These changes could lead to chronic changes in living conditions affecting
   health, labour productivity, agriculture, ecosystems, and sea-level rise. It
@@ -110,41 +147,43 @@ description: |
   in the Net Zero 2050 scenario, we could see the following:
   
   * A decrease in labour productivity due to the reduced capacity of the human 
-  body to perform physical labour under hot and humid climate conditions.
+  body to perform physical labour under hot and humid climate conditions. Although 
+  this will depend on location, and in the UK this decrease may be relatively subdued.
   
-  ![Labour Productivity](Labour_Productivity_Heat_Orderly.png)
+  ![Labour Productivity](scenarios_orderly_labour.png)
 
   **Source:** 
-  [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
+  [Climate Impact Explorer.](https://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
   * The annual economic damages from river floods are projected to increase, 
-  peaking at a ~140% increase over a 1986-2006 reference period around 2050, 
-  and remaining ~120% above the reference period thereafter. Annual economic 
+  peaking at a ~120% increase over a 1986-2006 reference period around 2035, 
+  and falling to ~95% above the reference period by the end of the century. Annual economic 
   damages from cyclones are also projected to increase, but to a lesser extent; 
   ~10% above reference period levels from 2030 onwards.
   
-  ![River Flood Damage](River_Flood_Damage_Orderly.png)
+  ![River Flood Damage](scenarios_orderly_damages_river_floods.png)
 
   **Source:** 
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
-  ![Tropical Cyclone Damage](orderly_cyclone_damage.png)
+  ![Tropical Cyclone Damage](scenarios_orderly_damages_cyclones.png)
 
   **Source:** 
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
-  In these scenarios the total cumulative relative GDP impact is estimated to be 
-  between -1.5% and-2.5% by 2050. World GDP losses from physical risks scale with 
-  the rise in temperatures in the scenarios over time. GDP impacts from transition risk are
-  slightly positive in the Net Zero 2050 scenario as negative impacts on demand
-  from higher carbon prices and energy costs are more than offset by the
-  recycling of carbon tax revenues into government investment and lower
+  In these scenarios the total cumulative GDP impact from chronic physical and 
+  transition effects relative to a baseline with no transition or physical risks is 
+  estimated to be around -3% by 2050. World GDP losses from physical risks vary in 
+  line with different temperatures projected for each scenario. GDP impacts from 
+  transition risk are moderately negative in the Net Zero 2050 scenario as negative 
+  impacts on demand from higher carbon prices and energy costs are only partially 
+  offset by the recycling of carbon revenues into government investment and lower 
   employment taxes.
   
-  ![GDP](GDP_Orderly.png)
+  ![GDP](scenarios_orderly_gdp.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer, NGFS Scenario Data NIGEM v2.0 NiGEM NGFS v1.21 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]. NiGEM NGFS v1.22 for Acute physical, only available for Net Zero 2050, Delayed transition and Current Policies. Business confidence effect has been included in transition effect for Disorderly scenarios.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   Overall, these are relatively optimistic scenarios as both transition and
   physical risks are limited. Any policies that are either introduced or changed
@@ -156,7 +195,7 @@ description: |
   and soil sequestration or growing crops for bioenergy doesn't pose a
   significant challenge in either orderly scenario.
 
-  ![Orderly scenarios](Orderly_Scenarios.png)
+  ![Orderly scenarios](scenarios_orderly_matrix.png)
 
   **Source:**
-  [NGFS Climate Scenarios, June2021](https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf){target="\_blank"}
+  [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}

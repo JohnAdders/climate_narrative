@@ -6,23 +6,24 @@ exec_short: transition
 exec_description: |
   Disorderly transition risk scenarios assume the introduction of effective policy change 
   is delayed or divergent across countries and sectors. In the Delayed transition scenario, 
-  CO<sub>2</sub> emissions do not decrease until 2030, and steep increase in the carbon price is required 
+  CO<sub>2</sub> emissions do not decrease until 2030, and a steep increase in the carbon price is required 
   thereafter to compensate for this inaction.In the Divergent Net Zero scenario the reduction 
   in CO<sub>2</sub> emissions starts to occur earlier and as a result is more gradual, 
   and carbon prices rise at a smoother rate. In Disorderly transition risk scenarios, the investments 
   in energy efficiency and low carbon technologies are projected to increase (e.g. annual investment 
-  in low carbon technologies increases from ~750 billion USD to ~3 trillion USD 
-  by 2050). Global mean temperatures are projected to increase across the world 
-  by 1.6&deg;C to 1.8&deg;C, compared to pre-industrial levels, by 2050.
+  in low carbon technologies increases from ~850 billion USD to between ~2.5 trillion USD and 
+  ~3 trillion USD by 2050). Global mean temperatures are projected to increase across the world 
+  by 1.6&deg;C to 1.8&deg;C, compared to pre-industrial levels, by 2100.
   
   The Disorderly transition risk scenarios could lead to chronic changes 
-  in living conditions affecting health, labour productivity (a decrease in labour 
-  productivity due to the reduced capacity of the human body to perform physical 
-  labour under hot and humid climate conditions), agriculture, ecosystems, and 
-  sea-level rise. It can also further change the frequency and severity of weather 
+  in living conditions affecting health, labour productivity (due to the 
+  reduced capacity of the human body to perform physical labour under hot 
+  and humid climate conditions), agriculture, ecosystems, and sea-level 
+  rise. It can also further change the frequency and severity of weather 
   events such as heatwaves, droughts, wildfires, cyclones, and flooding. 
-  The total cumulative relative GDP impact is estimated to be between -4.2% 
-  and -4.8% by 2050.
+  The total cumulative GDP impact from chronic physical and transition 
+  effects relative to a baseline with no transition or physical risks 
+  is estimated to be between -4.6% and -4.7% by 2050.
 
 description: |
   These Delayed/Divergent transition risk scenarios assume the introduction
@@ -32,17 +33,17 @@ description: |
   ![NGFS scenarios Framework](NGFS_scenarios_Framework_Disorderly.png)
 
   **Source:**
-  [NGFS Climate Scenarios, June 2021](https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf){target="\_blank"}
+  [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
 
   The NGFS have provided two Disorderly scenarios:
 
   - **Divergent Net Zero** reaches Net Zero globally around 2050 but with higher
-    costs in the short-term due to divergent policies being adopted across
-    sectors leading to inefficiencies and a quicker phase out of oil use.
+    costs in the short-term due to divergent policies being introduced across
+    sectors leading to a quicker phase out of oil use.
 
   - **Delayed transition** assumes annual emissions do not decrease until 2030.
-    Strong policies are needed to limit warming to below 2&deg;C by 2050.
-    CO<sub>2</sub> removal is limited.
+    Strong policies are needed to limit warming to below 2&deg;C. Negative emissions
+    are limited.
 
   ### Key assumptions and parameters{.unlisted .unnumbered}
 
@@ -53,10 +54,10 @@ description: |
   In the Divergent Net Zero scenario the reduction in CO<sub>2</sub> emissions
   starts to occur earlier and as a result is more gradual.
 
-  ![CO2 emissions](CO2_emissions_Disorderly.png)
+  ![CO2 emissions](scenarios_disorderly_emissions_co2.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   In the Delayed transition scenario, late policy reaction enables a "fossil
   recovery" out of the economic crisis, which delays the increase of carbon
@@ -66,11 +67,50 @@ description: |
   earlier. In both the scenarios disorderly policy action results in transition
   risk.
 
-  ![Carbon price](Carbon_Price_Disorderly.png)
+  ![Carbon price](scenarios_disorderly_price_carbon.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
+  Government revenues from carbon tax increase in line with the carbon price, until emissions 
+  are reduced to a degree that this offsets carbon price increase. In Disorderly transition 
+  risk scenarios, global government carbon tax revenues increase, peaking at ~4 trillion USD 
+  (inflation adjusted to 2010 baseline) per year around 2025. In the Delayed transition scenario, 
+  revenues peak at ~3 trillion USD  per year around 2035. In both scenarios revenues slope back 
+  down to ~500 billion USD per year by 2050.
+  
+  ![Carbon tax revenue](scenarios_disorderly_revenue.png)
+  
+  **Source:**
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+  In many countries, the implementation of carbon prices in the transition scenarios tends to 
+  raise energy costs in the short-term, initially weighing down on prices (as lower demand 
+  and financial market losses hit outputs). Rising carbon prices subsequently feed through 
+  to modest increases in inflation and unemployment before returning to prior trends. In 
+  some countries and time periods the offsetting positive growth effects from carbon revenue 
+  recycling leads to a reduction in unemployment. Long-term interest rates tend to increase 
+  in the transition scenarios, reflecting the inflationary pressure created by carbon prices, 
+  as well as the increased investment demand that the transition spurs on. In the disorderly 
+  scenarios policy uncertainty leads to a higher investment premium. This last for two years, 
+  with the premium gradually returning to baseline thereafter. This occurs in the period 2021-2022 
+  in the Divergent Net Zero policies scenario and 2030-2031 in the Delayed Transition scenario.
+
+  ![Inflation rate](scenarios_disorderly_inflation.png)
+  
+  **Source:**
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.]. Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  
+  ![Unemployment rate](scenarios_disorderly_unemployment.png)
+  
+  **Source:**
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.]. Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  
+  ![Interest rate](scenarios_disorderly_interest.png)
+  
+  **Source:**
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.]. Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+    
   The investments in energy efficiency and low carbon technologies are projected to increase 
   in Disorderly transition risk scenarios. These are expected to be 
   higher in a Divergent compared to a Delayed scenario. Overall, firms could be 
@@ -79,19 +119,19 @@ description: |
   order to adhere to carbon pricing policies. The technologies that result from 
   these investments could also adjust asset valuations of relatively older 
   technology. Annual investment in energy efficiency increases from around 200 
-  billion USD (inflation adjusted to 2010 baseline) to between 600 billion USD 
-  and 850 billion USD by 2050, whilst annual investment in low carbon increases 
-  from ~750 billion USD to ~3 trillion USD by 2050. 
+  billion USD (inflation adjusted to 2010 baseline) to between ~600 billion USD 
+  and ~900 billion USD by 2050, whilst annual investment in low carbon increases 
+  from ~850 billion USD to between ~2.5 trillion USD and ~3 trillion USD by 2050. 
   
-  ![Energy Efficiency Investment](Investment_Energy_Efficiency_Disorderly.png)
+  ![Energy Efficiency Investment](scenarios_disorderly_investment_energy_efficiency.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
   
-  ![Low Carbon Investment](Investment_Low_Carbon_Disorderly.png)
+  ![Low Carbon Investment](scenarios_disorderly_investment_low_carbon.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
   
   Observed climate change has already increased global mean temperatures above 
   1.2&deg;C, compared to pre-industrial levels, and both the global land area and 
@@ -101,13 +141,13 @@ description: |
   are unprecedented in at least the  last 800,000 years and are extremely likely to have been 
   the dominant cause of warming since the mid-20th century. In these scenarios global mean 
   temperatures are projected to increase across the world by 1.6&deg;C to 1.8&deg;C, above 
-  pre-industrial levels, by 2050 (with land warming faster than oceans and high latitudes 
+  pre-industrial levels, by 2100 (with land warming faster than oceans and high latitudes 
   experiencing higher warming) giving rise to low physical risk.
 
-  ![Global mean temp rise](Global_mean_temperature_Disorderly.png)
+  ![Global mean temp rise](scenarios_disorderly_temperature.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer, NGFS Scenario Data IAM outputs v2.2 REMIND-MAgPIE 2.1-4.2 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
   
   These changes could lead to chronic changes in living conditions affecting
   health, labour productivity, agriculture, ecosystems, and sea-level rise. It
@@ -116,47 +156,48 @@ description: |
   in the delayed transition risk scenario we could see the following:
   
   * A decrease in labour productivity due to the reduced capacity of the human 
-    body to perform physical labour under hot and humid climate conditions.
+    body to perform physical labour under hot and humid climate conditions. Although 
+    this will depend on location, and in the UK this decrease may be relatively subdued.
     
-  ![Labour Productivity](Labour_Productivity_Heat_Disorderly.png)
+  ![Labour Productivity](scenarios_disorderly_labour.png)
 
   **Source:** 
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
   * The annual economic damages from river floods are projected to increase, 
-    peaking at a ~140% over a  1986-2006 reference period around 2035, and 
+    peaking at a ~140% increase over a  1986-2006 reference period around 2035, and 
     remaining around this level thereafter. Annual economic damages from 
     cyclones are also projected to increase, but to a lesser extent; peaking at 
-    ~20% above reference period levels around 2050.
+    ~15% above reference period levels around 2040.
     
-  ![River Flood Damage](River_Flood_Damage_Disorderly.png)
+  ![River Flood Damage](scenarios_disorderly_damages_river_floods.png)
 
   **Source:** 
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
-  ![Tropical Cyclone Damage](disorderly_cyclone_damage.png)
+  ![Tropical Cyclone Damage](scenarios_disorderly_damages_cyclones.png)
 
   **Source:** 
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
-  In these scenarios the total cumulative relative GDP impact is 
-  estimated to be between -4.2% and -4.8% by 2050. World GDP losses from 
-  physical risks scale with the rise in temperatures in the scenarios over 
-  time. World GDP impacts from Disorderly transition risks are negative 
-  as the speed of the transition combines with investment uncertainty and 
-  affects consumption and investment. In these scenarios, there is a large 
-  mix of physical and transition risks in 2050.
+  In these scenarios the total cumulative GDP impact is from chronic physical 
+  and transition effects relative to a baseline with no transition or physical risks 
+  is estimated to be between -4.6% and -4.7% by 2050. World GDP losses from 
+  physical risks vary in line with different temperatures projected for each scenario.
+  World GDP impacts from Disorderly transition risks are negative as the speed of the 
+  transition combines with investment uncertainty and affects consumption and investment. 
+  In these scenarios, there is a large mix of physical and transition risks in 2050.
   
-  ![GDP](GDP_Disorderly.png)
+  ![GDP](scenarios_disorderly_gdp.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer, NGFS Scenario Data NIGEM v2.0 NiGEM NGFS v1.21 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]. NiGEM NGFS v1.22 for Acute physical, only available for Net Zero 2050, Delayed transition and Current Policies. Business confidence effect has been included in transition effect for Disorderly scenarios.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   Overall, the Delayed transition scenario leaves a limited timeframe for countries, 
   companies and the population to adapt to climate change. The Divergent Net Zero 
   scenario will imply a higher cost to reach Net Zero by 2050 due to divergent policies.
 
-  ![Disorderly scenarios](Disorderly_Scenarios.png)
-
+  ![Disorderly scenarios](scenarios_disorderly_matrix.png)
+  
   **Source:**
-  [NGFS Climate Scenarios, June2021](https://www.ngfs.net/sites/default/files/media/2021/08/27/ngfs_climate_scenarios_phase2_june2021.pdf){target="\_blank"}
+  [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
