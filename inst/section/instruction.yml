@@ -129,8 +129,17 @@ description: |
 
   There are a number of uncertainties and limitations associated with the tool; for example: The tool
   is not updated on an ongoing basis. It draws heavily on the NGFS scenarios (updated in September 2022).
-  The results are in turn underpinned by a subset of models, e.g. REMIND, GCAM and MESSAGE, which make particular
-  assumptions about long-term technology pathways that are of course highly uncertain.
+  Criticism of the NGFS scenarios and methodologies has arisen as their limitations have become increasingly 
+  apparent. They are failing to capture key aspects of the real world, including acute physical risk, politics 
+  and policy, unemployment, finance, asset prices, volatility, tipping points, path dependency and complex feedback 
+  loops. As a result, the scenarios inadvertently understate the potential range of outcomes, limiting their 
+  practical usefulness for both policy making and business decisions. 
+  
+  The NGFS scenarios are underpinned by a subset of models, e.g. REMIND, GCAM and MESSAGE, which make particular
+  assumptions about long-term technology pathways that are of course highly uncertain. Such models have also been 
+  criticised for resulting in implausibly smooth adjustment processes and proxy climate policy largely through 
+  carbon pricing. This leads to implausibly low estimates of both the economic damage of climate change and the 
+  potential benefits of action.
 
   This tool may be useful for climate reporting and risk assessments. However, a limitation
   for those seeking to embed climate-related risks and opportunities into their risk management framework
