@@ -19,10 +19,15 @@ passes_captcha <- function(input, session) {
 }
 
 request_captcha <- function(output, session) {
-  if (!is.null(global$captcha_code) && !is.null(global$captcha_secret)) {
-    recaptcha_js(global$captcha_code, "homepage", "responseReceived")
+  if (global$dev == FALSE) {
+    if (!is.null(global$captcha_code) && !is.null(global$captcha_secret)) {
+      recaptcha_js(global$captcha_code, "homepage", "responseReceived")
+    } else {
+      output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
+    }
   } else {
-    output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
+    next_tab <- tab_name_to_number("instruction")
+    updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
   }
 }
 
