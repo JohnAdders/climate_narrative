@@ -105,7 +105,7 @@ initialise_globals <- function() {
 
   # future plan definition required for async report production
   # forking should work faster and avoid potential export problems, but is not available on windows
-  if (Platform$OS.type == "windows") {
+  if (.Platform$OS.type == "windows") {
     if (global$dev) {
       future::plan(future::sequential)
     }
