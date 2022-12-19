@@ -17,17 +17,15 @@ description: |
 
   There are a number of uncertainties and limitations associated with the tool; for example: The tool
   is not updated on an ongoing basis. It draws heavily on the NGFS scenarios (updated in September 2022).
-  Criticism of the NGFS scenarios and methodologies has arisen as their limitations have become increasingly 
-  apparent. They are failing to capture key aspects of the real world, including acute physical risk, politics 
-  and policy, unemployment, finance, asset prices, volatility, tipping points, path dependency and complex feedback 
-  loops. As a result, the scenarios inadvertently understate the potential range of outcomes, limiting their 
-  practical usefulness for both policy making and business decisions. 
-  
-  The NGFS scenarios are underpinned by a subset of models, e.g. REMIND, GCAM and MESSAGE, which make particular
-  assumptions about long-term technology pathways that are of course highly uncertain. Such models have also been 
-  criticised for resulting in implausibly smooth adjustment processes and proxy climate policy largely through 
-  carbon pricing. This leads to implausibly low estimates of both the economic damage of climate change and the 
-  potential benefits of action.
+ 
+  The scenarios are neither a forecast of what is likely to happen nor a description of what should happen, but 
+  an illustration of what could happen (this does include some adverse scenarios, however the global spike in energy prices 
+  in 2022, due in part to the war in Ukraine, was both more adverse and more immediate than any of the scenarios designed ex 
+  ante - the NGFS published a [note](https://www.ngfs.net/sites/default/files/media/2022/09/07/not_too_late_-_confronting_the_growing_odds_of_a_late_and_disorderly_transition.pdf){target=”\_blank”}
+  to demonstrate the relevance of the NGFS scenarios to the current situation). The NGFS scenarios are underpinned by a subset 
+  of models, e.g. REMIND, GCAM and MESSAGE, which make particular assumptions about long-term technology pathways that are 
+  of course highly uncertain. Such models also assume smooth adjustment processes and largely proxy climate policy through 
+  carbon pricing.
 
   This tool may be useful for climate reporting and risk assessments. However, a limitation
   for those seeking to embed climate-related risks and opportunities into their risk management framework
@@ -52,16 +50,6 @@ description: |
   that are strongly or weakly aligned with the objectives of the Paris Agreement and those that are dominated by physical risks.
   This in turn enables financial impairment estimates to be calculated relative to a baseline assessment of what is priced into assets
   at any given point in time.
-  
-  The scenarios are neither a forecast of what is likely to happen nor a description of what should happen, but an illustration of 
-  what could happen. This does include some adverse scenarios, however the ongoing global spike in energy prices, due in part to 
-  the war in Ukraine, is both more adverse and more immediate than any of the scenarios designed ex ante. These relatively recent 
-  events are not reflected in this third iteration of scenarios owing to the lead time required for their completion. The NGFS 
-  published a [note](https://www.ngfs.net/sites/default/files/media/2022/09/07/not_too_late_-_confronting_the_growing_odds_of_a_late_and_disorderly_transition.pdf){target=”\_blank”}
-  to demonstrate the relevance of the NGFS scenarios to the current situation: the revived demand for coal, as energy supply is 
-  put at risk in the absence of sufficient natural gas supply, delays the planned reduction in carbon emissions, significantly 
-  heightening the risk of a disorderly energy transition. Current events do however also present a narrow but unique opportunity to 
-  accelerate the transition, as the increase in the market price of fossil fuels increases the relative attractiveness of renewables.
 
   ### What is next?
 
