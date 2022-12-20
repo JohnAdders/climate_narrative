@@ -57,14 +57,14 @@ transition:
       
       In Disorderly transition risk scenarios, electricity price increases in the short 
       term, peaking around 2035 in the Delayed transition scenario and 2030 in 
-      the Divergent Net Zero scenario. Oil and gas prices increase throughout, 
-      both more than tripling by 2050 in the Delayed transition scenario, and 
-      more than doubling by 2050 in the Divergent Net Zero scenario.
+      the Divergent Net Zero scenario. and remain above 2020 levels at 2050. Oil and gas
+      prices increase throughout, both more than tripling by 2050 in the Delayed transition 
+      scenario, and more than doubling by 2050 in the Divergent Net Zero scenario.
       
-      ![Residential and Commercial Price](Residential_Energy_Price_Disorderly.png)
+      ![Residential and Commercial Price](mortgage_lending_disorderly_price_final_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       **Uncertainty about implementation of transition policies**
 
@@ -140,14 +140,14 @@ transition:
       - Inability to deliver a just transition leading to vulnerable or
         least-able-to-pay customers being disadvantaged
 
-      In Disorderly transition risk scenarios, emissions from residential and commercial 
-      buildings are projected to fall due to increased efficiency from new 
-      legislation (as well as a change in energy mix).
+      In Disorderly transition risk scenarios, buildings become less carbon intense;
+      CO2 emissions due to energy consumption per billion meters squared of floor space 
+      decreases from ~14 megatons to between 0 and ~2 megatons by 2050.
       
-      ![CO2 Emissions Residential vs Commercial](CO2_emissions_Residential_vs_Commercial_Disorderly.png)
+      ![floor space intensity](mortgage_lending_disorderly_floor_space.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       For lenders who have a material exposure to mortgages, they are likely to
       be their largest source of carbon emissions, so there is a heavy reliance
@@ -310,10 +310,14 @@ transition:
       buildings are projected to fall due to increased efficiency from new 
       legislation (as well as a change in energy mix).
       
-      ![CO2 Emissions Residential vs Commercial](CO2_emissions_Residential_vs_Commercial_Orderly.png)
+      In Orderly transition risk scenarios, buildings become less carbon intense; CO2 emissions
+      due to energy consumption per billion meters squared of floor space decreases from ~14 megatons 
+      to between ~1 and ~3 megatons by 2050.
+     
+     ![floor space intensity](mortgage_lending_orderly_floor_space.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       For lenders who have a material exposure to mortgages, they are likely to
       be their largest source of carbon emissions, so there is a heavy reliance
@@ -344,10 +348,11 @@ transition:
       energy bills. This could increase probabilities of default.
       
       In Orderly scenarios, electricity price increases in the short term, 
-      peaking around 2030, whilst oil and gas prices increase throughout, both more 
-      than tripling by 2050.
+      peaking around 2030, and remain above 2020 levels at 2050. Oil and gas prices
+      increase throughout, with gas tripling and oil almost doubling in Net Zero 2050
+      by 2050. In the Below 2°C scenario oil and gas prices double.
       
-      ![Residential and Commercial Price](Residential_Energy_Price_Orderly.png)
+      ![Residential and Commercial Price](mortgage_lending_orderly_price_final_energy.png)
 
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
@@ -422,11 +427,11 @@ physical:
         considered if the property is only insurable due to FloodRe and what
         happens when that ends, along with if flood defences can resolve the
         issue. The number of times a property floods is a key consideration. 
-        In the Current Policies scenario, there is a fifteen-fold increase in 
+        In the Current Policies scenario, there is a five fold increase in 
         the fraction of land annually exposed to river floods by the end of the 
-        century, to ~0.075%.
+        century, to ~0.04%.
         
-      ![River Flood Land Fraction](River_Flood_Land_High_Physical.png)
+      ![River Flood Land Fraction](mortgage_lending_high_physical_river_floods.png)
       
       **Source:** 
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"} 
@@ -511,15 +516,15 @@ physical:
 
       - **Flooding events** which could pose risks to property value and damage
         through coastal, river or surface water flooding. It needs to be
-        considered if the property is only insurable due to FloodRe and what
+       considered if the property is only insurable due to FloodRe and what
         happens when that ends, along with if flood defences can resolve the
         issue. The number of times a property floods is a key consideration. 
-        In the Net Zero 2050 scenario, there is a ten-fold increase in the 
+        In the Net Zero 2050 scenario, there is a over a five-fold increase in the 
         fraction of land annually exposed to river floods by 2035, to ~0.05%. 
         In the Delayed transition scenario, the fraction of land annually 
-        exposed to river floods reaches ~0.06% by the end of the century.
+        exposed to river floods reaches ~0.06% by 2035.
         
-      ![River Flood Land Fraction](mortgage_river_flood_coverage.png)
+      ![River Flood Land Fraction](mortgage_lending_low_physical_river_floods.png)
       
       **Source:** 
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}  
@@ -564,3 +569,4 @@ physical:
 
       - Does the lender have the internal expertise to be able to understand the
         physical risks and set appropriate polices and risk tolerances
+
