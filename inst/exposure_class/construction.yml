@@ -9,21 +9,21 @@ description: |
   classified based on the types of buildings they construct. The construction 
   sector includes companies that are, for example, involved in the following:
 
-  1. The construction of residential and commercial buildings. This also
-     includes remodelling or renovating work for the buildings.
+  - The construction of residential and commercial buildings. This also
+    includes remodelling or renovating work for the buildings.
 
-  1. The construction of distribution lines and related buildings and structures
-     for utilities (i.e. water, sewer, petroleum, gas, power, and communication)
-     or the structures that are integral parts of the utility systems (power
-     plants, sewer lines, oil and gas pipelines, telecommunications
-     transmitting/receiving towers, etc.)
+  - The construction of distribution lines and related buildings and structures
+    for utilities (i.e. water, sewer, petroleum, gas, power, and communication)
+    or the structures that are integral parts of the utility systems (power
+    plants, sewer lines, oil and gas pipelines, telecommunications
+    transmitting/receiving towers, etc.)
 
-  1. The construction of highways (including elevated), streets, roads, airport
-     runways, public sidewalks, bridges, and other heavy and civil engineering
-     constructions.
+  - The construction of highways (including elevated), streets, roads, airport
+    runways, public sidewalks, bridges, and other heavy and civil engineering
+    constructions.
 
-  1. The installation or servicing of equipment that is part of building
-     mechanical systems such as plumbing, heating, electrical wiring, etc.
+  - The installation or servicing of equipment that is part of building
+    mechanical systems such as plumbing, heating, electrical wiring, etc.
 transition:
   high:
     exec_description: |
