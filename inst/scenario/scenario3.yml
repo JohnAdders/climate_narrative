@@ -62,29 +62,29 @@ description: |
   
   ![Carbon tax revenue](scenarios_hothouse_revenue.png)
 
-**Source:**
-[IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  **Source:**
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
  In Hothouse scenarios, the lack of carbon price increase results in less severe deviation of inflation,
-unemployment, and long-term interest rates from the baseline scenario,compared to Orderly and Disorderly
-scenarios.
+ unemployment, and long-term interest rates from the baseline scenario,compared to Orderly and Disorderly
+ scenarios.
 
  ![Inflation rate](scenarios_hothouse_inflation.png)
 
  **Source:**
-[IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+ [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
  ![Unemployment rate](scenarios_hothouse_unemployment.png)
 
  **Source:**
-[IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+ [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
  ![Interest rate](scenarios_hothouse_interest.png)
-
+ 
  **Source:**
-[IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]]((https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+ [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]]((https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
- The investments in energy efficiency and low carbon technologies are projected 
+  The investments in energy efficiency and low carbon technologies are projected 
   to increase in Hot House scenarios. Annual investment in energy efficiency increases 
   from around 200 billion USD (inflation adjusted to 2010 baseline) to between 250 
   billion USD and 400 billion USD by 2050, whilst annual investment in low carbon 
