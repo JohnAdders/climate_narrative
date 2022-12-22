@@ -1,6 +1,6 @@
 name: Savings and Retirement
 test_report_position: 20
-description: |
+description: | 
   The **Savings and Retirement** underwriting class covers products such as
   pensions, investment bonds, with-profits, unit-linked investments and
   annuities, written on an individual or group basis.
@@ -473,5 +473,3 @@ physical:
       considered to be laggards in their reporting and reaction to climate change. 
       This could increase lapse rates, reduce premiums and reduce new business 
       sales.
-
-

@@ -1,7 +1,7 @@
 name: UK sovereign
 test_report_position: 24
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -84,7 +84,7 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure
       to carbon intensive sectors and technologies. Countries with
       carbon-intensive sectors such as oil and gas are consequently some of the
-     most vulnerable to transition risk. 
+      most vulnerable to transition risk. 
       
       The impact of Disorderly transition risk scenarios on fiscal revenues is largely 
       dependent on the efficiency of government spending in trying to mitigate 
@@ -117,12 +117,12 @@ transition:
       levels by 2030. To support this the UK has committed to a fully decarbonised power sector by 2035, and will ban
       fossil fuelled car sales from 2030.
 
-      However, there are some key weaknesses in the UK’s climate policy approach, for example lack of policy around 
+      However, there are some key weaknesses in the UK's climate policy approach, for example lack of policy around 
       increasing energy efficiency in homes.
 
       **GDP growth effect**
 
-      A change in a country’s GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation
       rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According to estimates 
       from the NGFS, disorderly transition could result in significant GDP losses. In these scenarios, world GDP losses
       from chronic physical and transition effects are estimated to be between -4.6 and -4.7% (relative to a baseline 
@@ -214,12 +214,12 @@ transition:
       to 68% below 1990 levels by 2030. To support this the UK has committed to a fully decarbonised power sector 
       by 2035, and will ban fossil fuelled car sales from 2030. 
 
-      However, there are some key weaknesses in the UK’s climate policy approach, for example lack of policy around
+      However, there are some key weaknesses in the UK's climate policy approach, for example lack of policy around
       increasing energy efficiency in homes.  
       
       **GDP growth effect**
 
-      A change in a country’s GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation
       rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According to estimates 
       from the NGFS, the Orderly transition risk scenarios would generally limit GDP losses. The world GDP losses from 
       chronic physical and transition effects are estimated to be around -3% (relative to a baseline with no transition
@@ -243,7 +243,7 @@ transition:
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. According to
+     ratings. It is easier to lose an AAA rating than a C rating. According to
       the study, in a transition risk (RCP 2.6) scenario, the UK would have
       a downgrade of around one notch by 2100, increasing the cost of borrowing for
       the UK government by approximately US$2-3bn.

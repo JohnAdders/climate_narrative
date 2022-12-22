@@ -1,7 +1,7 @@
 name: Italy sovereign
 test_report_position: 31
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -111,7 +111,7 @@ transition:
 
       **GDP growth effect**
 
-      A change in a country’s GDP could have an impact on the level of fiscal revenue it receives.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives.
       Assuming taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal 
       revenue. According to estimates from the NGFS, disorderly transition could result in significant 
       GDP losses. In these scenarios, world GDP losses from chronic physical and transition effects are
@@ -120,7 +120,7 @@ transition:
       with investment uncertainty and affects consumption and investment.
 
       In these scenarios, there is a large mix of physical and transition risks in 2050. Based on the IIASA NGFS
-      Scenario Explorer NiGEM model (REMIND inputs) , the expected impact of a Disorderly scenario on Italy’s GDP,
+      Scenario Explorer NiGEM model (REMIND inputs) , the expected impact of a Disorderly scenario on Italy's GDP,
       from chronic physical and transition effects,  would be significant, ranging from -2.3% to -3.2% (relative 
       to a baseline with no transition or physical risk) by 2050.
 
@@ -197,7 +197,7 @@ transition:
 
       **GDP growth effect**
 
-      A change in a country’s GDP could have an impact on the level of fiscal revenue it
+      A change in a country's GDP could have an impact on the level of fiscal revenue it
       receives. Assuming taxation rates remain unchanged, a decrease in GDP could lead to a
       reduction in fiscal revenue. According to estimates from the NGFS, the Orderly transition 
       risk scenarios would generally limit GDP losses. The world GDP losses from chronic physical 
@@ -208,7 +208,7 @@ transition:
       taxes.
 
       Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of the Orderly
-      Net Zero scenario on Italy’s GDP, from chronic physical and transition effects, would be significant, ranging 
+      Net Zero scenario on Italy's GDP, from chronic physical and transition effects, would be significant, ranging 
       from -1% to -1.1% (relative to a baseline with no transition or physical risk) by 2050.
 
       **Downgrading of credit ratings**
@@ -289,7 +289,7 @@ physical:
       to be between -5.7% and-6% (relative to a baseline with no transition or physical risk) by
       2050. World GDP losses from physical risks vary in line with different temperatures projected 
       for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the 
-      expected impact of a hot house world scenario on Italy’s GDP, from chronic physical and transition
+      expected impact of a hot house world scenario on Italy's GDP, from chronic physical and transition
       effects, would be significant, ranging from -4.2% to -4.3% (relative to a baseline with no transition 
       or physical risk) by 2050.
       
@@ -364,9 +364,9 @@ physical:
       Assuming taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
       According to estimates from the NGFS, an Orderly transition with low physical risk would generally limit
       GDP losses. In an Orderly scenario, world GDP losses from chronic physical and transition effects are estimated
-      to be  around -3% (relative to a baseline with no transition or physical risk) by2050. World GDP losses from physical
+      to be  around -3% (relative to a baseline with no transition or physical risk) by 2050. World GDP losses from physical
       risks vary in line with different temperatures projected for each scenario. Based on the IIASA NGFS Scenario Explorer 
-      NiGEM model (REMIND inputs), the expected impact of an Orderly scenario on Italy’s GDP, from chronic physical and transition 
+      NiGEM model (REMIND inputs), the expected impact of an Orderly scenario on Italy's GDP, from chronic physical and transition 
       effects, would be significant, ranging from -1% to -1.1% (relative to a baseline with no transition or physical risk) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
@@ -384,7 +384,7 @@ physical:
       physical risk (NGFS Orderly) scenario, most developed countries would be
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
-     risks for these top-rated countries, but greater sensitivity of the top
+      risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. 
       
       According to the study, in a low physical risk (RCP 2.6) scenario, Italy would not 
@@ -393,4 +393,3 @@ appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
   **Source:**: 20 Notch Rating Scale
-      

@@ -10,7 +10,7 @@ description: |
   
   Firms in the energy sector very often operate in an extremely risky environment, depending 
   on complex and expensive infrastructure, in many cases sited in hostile locations. 
-transition:
+transition: 
   high:
     exec_description: |
       In Disorderly transition risk scenarios, energy sources change dramatically, 
@@ -41,7 +41,7 @@ transition:
 
     high_materiality: |
       The changes in carbon pricing, energy demand/mix and legislation could
-     potentially result in one or more of the following impacts:
+      potentially result in one or more of the following impacts:
 
       - **Reduced revenues**. As carbon prices increase and consumers switch to 
         low carbon/electrified alternatives for cars, heating etc, demand for 
@@ -333,4 +333,4 @@ references: |
   - [World Water Day --- Which industries consume the most water and why should we care?](https://2030.builders/articles/world-water-day/){target="\_blank"}
 
   - [E.ON's On course for net zero](https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/documents/sustainability/en/tcfd/EON_2021_On_course_for_net_zero.pdf){target="\_blank"}
-  
+ 

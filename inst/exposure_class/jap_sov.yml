@@ -1,7 +1,7 @@
 name: Japan sovereign
 test_report_position: 29
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -103,7 +103,6 @@ transition:
       renewable energy in total electricity generation in Japan has increased from 9% in 
       2010 to 19% in 2020, but still remains below the global average. 
 
-
       ![Share of Renewable Electricity Generation](sov_japan.png)
 
       **Source:**
@@ -132,7 +131,7 @@ transition:
       
       In these scenarios, there is a large mix of physical and transition risks in 2050. Based on the
       IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Disorderly
-      scenario on Japan’s GDP, from chronic physical and transition effects,  would be significant, 
+      scenario on Japan's GDP, from chronic physical and transition effects,  would be significant, 
       ranging from -2.6% to -3.5% (relative to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings effect**
@@ -165,7 +164,7 @@ transition:
       societal change and national energy strategies could lead to significant and
       immediate increases in carbon prices. This could have a strong impact on
       fiscal revenues in countries with a strong level of dependence on fossil
-      fuel energy sources. Industries that are negatively impacted by transition
+     fuel energy sources. Industries that are negatively impacted by transition
       risk, such as mining, oil and gas could have reduced revenues from lower
       fossil fuel demand and increased costs from higher carbon taxes. 
       
@@ -214,11 +213,11 @@ transition:
       
       The Japanese government is finally starting to officially shift, albeit gradually, away from
       developing coal power, both domestically and overseas. The 19% coal-fired power generation 
-      share in 2030 is, even though far from being 1.5°C-consistent, a considerable step forward. 
+      share in 2030 is, even though far from being 1.5&deg;C-consistent, a considerable step forward. 
       
       **GDP growth effect**
 
-      A change in a country’s GDP could have an impact on the level of fiscal revenue it receives. 
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. 
       Assuming taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal 
       revenue. According to estimates from the NGFS, the Orderly transition risk scenarios would generally
       limit GDP losses. The world GDP losses from chronic physical and transition effects are estimated to be 
@@ -228,10 +227,9 @@ transition:
       government investment and lower employment taxes.
 
       Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an Orderly
-      transition risk scenario on Japan’s GDP, from chronic physical and transition effects, would be significant,
+      transition risk scenario on Japan's GDP, from chronic physical and transition effects, would be significant,
       ranging from -0.9% to -1.7% (relative to a baseline with no transition or physical risks) by 2050.
       
-
       **Downgrading of credit ratings**
 
       Climate-related risks are, to some extent, priced in the sovereign bond market. No
@@ -312,7 +310,7 @@ physical:
       are estimated to be between -5.7 and -6% (relative to a baseline with no transition or physical
       risks) by 2050. World GDP losses from physical risks vary in line with different temperatures
       projected for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs),
-      the expected impact of a hot house world scenario on Japan’s GDP, from chronic physical and transition
+      the expected impact of a hot house world scenario on Japan's GDP, from chronic physical and transition
       effects,  would be significant, around -4.8% (relative to a baseline with no transition or physical 
       risks) by 2050.
       
@@ -391,7 +389,7 @@ physical:
       are estimated to be around -3%  (relative to a baseline with no transition or physical 
       risks) by 2050. World GDP losses from physical risks vary in line with different temperatures 
       projected for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs),
-      the expected impact of an Orderly scenario on Japan’s GDP from chronic physical and transition effects, 
+      the expected impact of an Orderly scenario on Japan's GDP from chronic physical and transition effects, 
       would be significant, ranging from -0.9% to -1.7% (relative to a baseline with no transition or 
       physical risks) by 2050.
       

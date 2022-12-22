@@ -1,6 +1,6 @@
 name: Motor Underwriting Class
 test_report_position: 17
-description: |
+description: | 
   The **Motor** underwriting class involves insuring cars, trucks, motorcycles,
   and other road vehicles. Motor insurance typically covers drivers for third
   party damage caused by their road vehicle such as damage to other vehicles or
@@ -61,7 +61,7 @@ transition:
         instead of internal combustion engines.
 
       - **Changing consumer preferences and revenue**. In the
-        Disorderly transition risk scenarios, internal combustion
+       Disorderly transition risk scenarios, internal combustion
         engine vehicle ownership could become significantly more expensive,
         causing many people to give up their vehicles and cancel cover, without
         being able to afford an electric replacement. There is potential for
@@ -121,7 +121,7 @@ transition:
       low-carbon products and services, and electric vehicle charging networks. 
       These innovations could contribute to an overall decrease in CO<sub>2</sub> 
       emissions from road transport. In Disorderly transition risk scenarios, emissions
-      of CO2 per billion passenger kilometres from road passenger transport falls from ~0.07
+      of CO<sub>2</sub> per billion passenger kilometres from road passenger transport falls from ~0.07
       megatons to ~0.01 megatons in the Delayed transition scenario and to ~0.001 megatons in
       the Divergent Net Zero scenario.
       
@@ -230,9 +230,9 @@ transition:
       technology. For example, expansion of affordable low-carbon products and
       services, and electric vehicle charging networks. These innovations could contribute 
       to an overall decrease in CO<sub>2</sub> emissions from road transport. In Orderly transition
-      risk scenarios, emissions of CO2 per billion passenger kilometres from road passenger transport
+      risk scenarios, emissions of CO<sub>2</sub> per billion passenger kilometres from road passenger transport
       falls from ~0.07 megatons to ~0.005 megatons between 2020 and 2050, putting it at a similar carbon 
-      intensity as today’s rail transport.
+      intensity as today's rail transport.
       
       ![CO2 Transport Emissions](motor_uw_orderly_passenger_transport.png)
       
@@ -256,7 +256,7 @@ physical:
       In high physical risk scenarios, climate change is likely to result in
       increased disruption that could have an impact on the motor sector and its
       underwriting class. Chronic effects (such as raised mean temperature) and
-      acute effects due to changes to frequency and severity of weather events
+     acute effects due to changes to frequency and severity of weather events
       (such as floods, droughts, bushfires and extreme heat and cold) could
       impact frequency and size of the claims. This could result in future
       policyholders becoming more expensive to insure.

@@ -1,6 +1,6 @@
 name: Mortgage Lending Exposure
 test_report_position: 21
-description: |
+description: | 
   **Mortgages** are a lending exposure type based upon a legal agreement by
   which a bank, building society or other regulated organisation lends money at
   interest in exchange for taking title of the customer's property, with the
@@ -141,7 +141,7 @@ transition:
         least-able-to-pay customers being disadvantaged
 
       In Disorderly transition risk scenarios, buildings become less carbon intense;
-      CO2 emissions due to energy consumption per billion meters squared of floor space 
+      CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor space 
       decreases from ~14 megatons to between 0 and ~2 megatons by 2050.
       
       ![floor space intensity](mortgage_lending_disorderly_floor_space.png)
@@ -178,7 +178,7 @@ transition:
       - Carbon footprint of products and services impacting consumer and
         employee attraction and retention
 
-      - Reputational damage due to service failures resulting from transitional
+     - Reputational damage due to service failures resulting from transitional
         risk impacting service capacity and/or increased customer activity (for
         example, increased call volumes)
 
@@ -186,7 +186,7 @@ transition:
         requires retrofitting and whether there is the perception that as a
         lender, they should protect the borrower from this risk. This risk is
         further elevated where scenario modelling indicated the potential risk
-        but this was not conveyed to the borrower
+       but this was not conveyed to the borrower
 
       - Reputational risk associated with missing green / Net Zero targets /
         commitments as a result of inadequate government support
@@ -310,7 +310,7 @@ transition:
       buildings are projected to fall due to increased efficiency from new 
       legislation (as well as a change in energy mix).
       
-      In Orderly transition risk scenarios, buildings become less carbon intense; CO2 emissions
+      In Orderly transition risk scenarios, buildings become less carbon intense; CO<sub>2</sub> emissions
       due to energy consumption per billion meters squared of floor space decreases from ~14 megatons 
       to between ~1 and ~3 megatons by 2050.
      
@@ -350,7 +350,7 @@ transition:
       In Orderly scenarios, electricity price increases in the short term, 
       peaking around 2030, and remain above 2020 levels at 2050. Oil and gas prices
       increase throughout, with gas tripling and oil almost doubling in Net Zero 2050
-      by 2050. In the Below 2°C scenario oil and gas prices double.
+      by 2050. In the Below 2&deg;C scenario oil and gas prices double.
       
       ![Residential and Commercial Price](mortgage_lending_orderly_price_final_energy.png)
 
@@ -412,7 +412,7 @@ physical:
       There would be opportunities for those best able to assess these risks,
       and hence willing to lend to segments of the markets that others are not,
       albeit at higher rates to account for the risk.
-    high_materiality: |
+   high_materiality: |
       The following examples illustrate how the mortgage sector could be
       impacted in a low physical risk scenario and potential considerations at
       mortgage origination that firms might not review today:
@@ -516,7 +516,7 @@ physical:
 
       - **Flooding events** which could pose risks to property value and damage
         through coastal, river or surface water flooding. It needs to be
-       considered if the property is only insurable due to FloodRe and what
+        considered if the property is only insurable due to FloodRe and what
         happens when that ends, along with if flood defences can resolve the
         issue. The number of times a property floods is a key consideration. 
         In the Net Zero 2050 scenario, there is a over a five-fold increase in the 
@@ -569,4 +569,3 @@ physical:
 
       - Does the lender have the internal expertise to be able to understand the
         physical risks and set appropriate polices and risk tolerances
-

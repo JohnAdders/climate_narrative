@@ -1,7 +1,7 @@
 name: European sovereign
 test_report_position: 26
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to 
   support government spending. Governments agree to repay the face value of the 
   bond at a specified maturity date and may also pay interest, in the form of coupon 
@@ -97,7 +97,7 @@ transition:
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
       
-      The EU’s emissions have decreased in recent years, with an accelerating trend
+      The EU's emissions have decreased in recent years, with an accelerating trend
       since 2017. In 2021, an additional 26 GW of solar PV and 11 GW of wind capacity was 
       installed. Generation from renewables in absolute terms amounted to 1,030 TWh (Tera-Watt hour), 
       which was a 90 TWh increase from 2020.
@@ -107,8 +107,8 @@ transition:
       consumption resulted in a growth of coal-based electricity generation from 364 TWh (Terawatt-hour) 
       in 2020 to 436 TWh in the second half of 2021. 
       
-      The share of renewables in the EU’s electricity generation reached 39% in 2020. In 2021, the share of 
-      coal in electricity generation increased from 13% to 15%.  Fossil gas covered 18% of EU’s electricity 
+      The share of renewables in the EU's electricity generation reached 39% in 2020. In 2021, the share of 
+      coal in electricity generation increased from 13% to 15%.  Fossil gas covered 18% of EU's electricity 
       generation in 2021.
       
       ![Share of Renewable Electricity Generation](sov_europe.png)
@@ -116,7 +116,7 @@ transition:
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
       
-      In July 2021, the European Commission presented its “Fit for 55” package of policy proposals to achieve a
+      In July 2021, the European Commission presented its "Fit for 55" package of policy proposals to achieve a
       reduction of EU emissions by at least 55% by 2030 compared to 1990 levels. The package also includes proposals 
       for a higher share of renewables in the overall energy mix (40% by 2030) and increased energy efficiency. 
       The REPowerEU plan, put forward in May 2022, proposes to increase the share of renewables in final energy by 2030 
@@ -126,11 +126,11 @@ transition:
       In response to the ongoing energy crisis, the EU and its member states have been signing agreements for scaling up
       fossil gas imports from around the world and have been making new investments in fossil gas infrastructure, especially 
       new liquid natural gas import terminals and gas pipelines. Such investment will only shift energy dependency from Russia 
-      to other countries, and result in carbon lock-in contrary to the EU’s emissions reduction goals.
+      to other countries, and result in carbon lock-in contrary to the EU's emissions reduction goals.
 
       **GDP growth effect**
-     
-      A change in a country’s GDP could have an impact on the level of fiscal revenue it receives. Assuming
+      
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming
       taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According 
       to estimates from the NGFS, Disorderly transition risk scenario could result in significant GDP losses.
       In these scenarios, world GDP losses from chronic physical and transition effects are estimated to be between
@@ -209,16 +209,16 @@ transition:
       (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}). 
       
-      The EU’s emissions have decreased in recent years, with an accelerating trend since 
+      The EU's emissions have decreased in recent years, with an accelerating trend since 
       2017. In 2021, an additional 26 GW of solar PV and 11 GW of wind capacity was installed.
       Generation from renewables in absolute terms amounted to 1,030 TWh (Tera-Watt hour), which
       was a 90 TWh increase from 2020. A large number of EU member states have either had no coal 
       generation in their electricity mix or adopted a coal phase out by 2030. However, high fossil
-     gas prices and an increase in electricity consumption resulted in a growth of coal-based electricity
+      gas prices and an increase in electricity consumption resulted in a growth of coal-based electricity
       generation from 364 TWh (Terawatt-hour) in 2020 to 436 TWh in the second half of 2021. 
 
-      The share of renewables in the EU’s electricity generation reached 39% in 2020. In 2021, the share 
-      of coal in electricity generation increased from 13% to 15%.  Fossil gas covered 18% of EU’s electricity
+      The share of renewables in the EU's electricity generation reached 39% in 2020. In 2021, the share 
+      of coal in electricity generation increased from 13% to 15%.  Fossil gas covered 18% of EU's electricity
       generation in 2021. 
 
       ![Share of Renewable Electricity Generation](sov_europe.png
@@ -226,7 +226,7 @@ transition:
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
       
-      In July 2021, the European Commission presented its “Fit for 55” package of policy proposals to achieve 
+      In July 2021, the European Commission presented its "Fit for 55" package of policy proposals to achieve 
       a reduction of EU emissions by at least 55% by 2030 compared to 1990 levels. The package also includes
       proposals for a higher share of renewables in the overall energy mix (40% by 2030) and increased energy 
       efficiency. The REPowerEU plan, put forward in May 2022, proposes to increase the share of renewables in 
@@ -237,11 +237,11 @@ transition:
       In response to the ongoing energy crisis, the EU and its member states have been signing agreements for scaling 
       up fossil gas imports from around the world and have been making new investments in fossil gas infrastructure,
       especially new liquid natural gas import terminals and gas pipelines. Such investment will only shift energy dependency
-      from Russia to other countries, and result in carbon lock-in contrary to the EU’s emissions reduction goals.
+      from Russia to other countries, and result in carbon lock-in contrary to the EU's emissions reduction goals.
 
       **GDP growth effect**
       
-      A change in a country’s GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation 
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation 
       rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According to estimates from
       the NGFS, the Orderly transition risk scenarios would generally limit GDP losses. The world GDP losses from chronic 
       physical and transition effects are estimated to be around -3% (relative to a baseline with no transition or physical

@@ -3,7 +3,7 @@ position: 3
 transition: no
 physical: high
 exec_short: physical 
-exec_description: |
+exec_description: | 
   In the Hot House World scenarios CO<sub>2</sub> emissions do not decrease 
   and carbon prices do not increase sufficiently to prevent significant 
   temperature rises resulting in high physical risk. In these scenarios 

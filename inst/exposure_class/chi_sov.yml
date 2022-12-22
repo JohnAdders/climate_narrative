@@ -1,7 +1,7 @@
 name: China sovereign
 test_report_position: 32
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -106,14 +106,14 @@ transition:
       by 3.2%, oil consumption by 6.5%, and gas consumption by 8.4%. Cement and steel 
       production rose by 8.4 and 12.6% respectively.
       
-      China’s coal share of power generation was 64% in 2020, making it one of the most
-      coal-reliant power sectors out of the world’s biggest emitters. In 2020–2021, China 
+      China's coal share of power generation was 64% in 2020, making it one of the most
+      coal-reliant power sectors out of the world's biggest emitters. In 2020–2021, China 
       began toning down its outlook on coal, announcing they will strictly control coal 
       consumption until 2025 and start to gradually phase it down thereafter. By the end of 
       2021, however, China had seemingly completely reneged on this strategy to focus on shoring 
       up coal (and other fossil fuels) supply off the back of energy security and shortage concerns.
       
-      China’s growth in renewable energy capacity installations have not slowed, despite parallel increases
+      China's growth in renewable energy capacity installations have not slowed, despite parallel increases
       in fossil fuel capacity.The share of renewables in China's electricity generation mix has been in line with 
       the global average since the 1990s, reaching ~28% in 2020. 
 
@@ -210,13 +210,13 @@ transition:
       However, in the second half of 2020, coal consumption rose by 3.2%, oil consumption by 6.5%, 
       and gas consumption by 8.4%. Cement and steel production rose by 8.4 and 12.6% respectively.
       
-      China’s coal share of power generation was 64% in 2020, making it one of the most coal-reliant 
-      power sectors out of the world’s biggest emitters. In 2020–2021, China began toning down its outlook 
+      China's coal share of power generation was 64% in 2020, making it one of the most coal-reliant 
+      power sectors out of the world's biggest emitters. In 2020–2021, China began toning down its outlook 
       on coal, announcing they will strictly control coal consumption until 2025 and start to gradually phase
       it down thereafter. By the end of 2021, however, China had seemingly completely reneged on this strategy 
       to focus on shoring up coal (and other fossil fuels) supply off the back of energy security and shortage
-      concerns. China’s growth in renewable energy capacity installations have not slowed, despite parallel increases 
-      in fossil fuel capacity. The share of renewables in China’s electricity generation mix has been in line with the
+      concerns. China's growth in renewable energy capacity installations have not slowed, despite parallel increases 
+      in fossil fuel capacity. The share of renewables in China's electricity generation mix has been in line with the
       global average since the 1990s, reaching ~28% in 2020.
 
       ![Share of Renewable Electricity Generation](sov_china.png)
@@ -229,7 +229,7 @@ transition:
      
       **GDP growth effect**
 
-      A change in a country’s GDP could have an impact on the level of fiscal revenue it receives. 
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. 
       Assuming taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal
       revenue. According to estimates from the NGFS, the Orderly transition risk scenarios would generally 
       limit GDP losses. The world GDP losses from chronic physical and transition effects are estimated to
@@ -239,9 +239,8 @@ transition:
       into government investment and lower employment taxes. 
 
       Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an Orderly
-      transition risk scenario on China’s GDP from chronic physical and transition effects would be significant, 
+      transition risk scenario on China's GDP from chronic physical and transition effects would be significant, 
       ranging from -2.3% to -2.7% (relative to a baseline with no transition or physical risks) by 2050.
-
 
       **Downgrading of credit ratings**
 
@@ -278,7 +277,7 @@ physical:
       impacting households, businesses, cities and states. There are also likely
       indirect risks, such as those caused by international migration (e.g.
       increased inequalities, labour right issues, social conflicts), or via
-     biodiversity loss, or to industries' supply chains and international trade.
+      biodiversity loss, or to industries' supply chains and international trade.
 
       The high physical risk scenario could lead to a significant reduction in
       GDP growth. This would have a negative impact on Chinese sovereign bonds.
@@ -323,7 +322,7 @@ physical:
       with no transition or physical risks) by 2050. World GDP losses from physical risks vary 
       in line with different temperatures projected for each scenario. Based on the IIASA NGFS
       Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a hot house world 
-      scenario on China’s GDP from chronic physical and transition effects would be significant, 
+      scenario on China's GDP from chronic physical and transition effects would be significant, 
       ranging from -5.5% to -5.7% (relative to a baseline with no transition or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
@@ -401,7 +400,7 @@ physical:
       are estimated to be around -3% (relative to a baseline with no transition or physical 
       risks) by 2050. World GDP losses from physical risks vary in line with different temperatures
       projected for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs),
-      the expected impact of an Orderly scenario on China’s GDP from chronic physical and transition 
+      the expected impact of an Orderly scenario on China's GDP from chronic physical and transition 
       effects would be significant, ranging from -2.3% to -2.7% (relative to a baseline with no 
       transition or physical risks) by 2050.
       
@@ -418,7 +417,7 @@ physical:
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
       Creditworthiness" working paper from the University of Cambridge, in a low
       physical risk (NGFS Orderly) scenario, most developed countries would be
-      marginally downgraded (1 notch or less). Most downgrades would be among
+     marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
       ratings. It is easier to lose an AAA rating than a C rating. 
@@ -430,4 +429,3 @@ appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
   **Source:**: 20 Notch Rating Scale
-

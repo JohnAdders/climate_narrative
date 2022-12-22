@@ -1,6 +1,6 @@
 name: Unsecured Retail Lending
 test_report_position: 22
-description: |
+description: | 
   Unsecured retail lending refers to finance provided to individuals 
   where the amount borrowed is based upon the affordability of the applicant(s), on 
   a capital repayment basis, and covers three broad product types:
@@ -238,4 +238,3 @@ appendix: |
   - Even in cases where account level data is available, it is not always possible to discern 
     how funds from new lending are being spent. This makes it difficult to assess whether there 
     are any additional first-order climate impacts that should be accounted for.
-

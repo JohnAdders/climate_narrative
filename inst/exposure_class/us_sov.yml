@@ -1,7 +1,7 @@
 name: US sovereign
 test_report_position: 25
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -115,9 +115,9 @@ transition:
       renewables. Generation from wind and solar continued to grow in 2021, by 29% 
       and 12% compared to 2020 respectively.
       
-      In 2018, the US became the world’s largest producer of crude oil. The production
+      In 2018, the US became the world's largest producer of crude oil. The production
       of oil in 2021 remained relatively stable, decreasing only by 1% from 2020 levels.
-      In response to rising prices and energy security concerns due to Russia’s illegal
+      In response to rising prices and energy security concerns due to Russia's illegal
       invasion of Ukraine, President Biden is now encouraging US oil and gas producers to 
       drill and increase production.
 
@@ -131,7 +131,7 @@ transition:
 
       **GDP growth effect**
 
-      A change in a country’s GDP could have an impact on the level of fiscal revenue it
+      A change in a country's GDP could have an impact on the level of fiscal revenue it
       receives. Assuming taxation rates remain unchanged, a decrease in GDP could lead to 
       a reduction in fiscal revenue. According to estimates from the NGFS, disorderly transition 
       could result in significant GDP losses. In these scenarios, world GDP losses from chronic
@@ -215,9 +215,9 @@ transition:
       renewables. Generation from wind and solar continued to grow in 2021, by 29% 
       and 12% compared to 2020 respectively.
       
-      In 2018, the US became the world’s largest producer of crude oil. The production 
+      In 2018, the US became the world's largest producer of crude oil. The production 
       of oil in 2021 remained relatively stable, decreasing only by 1% from 2020 levels.
-      In response to rising prices and energy security concerns due to Russia’s illegal
+      In response to rising prices and energy security concerns due to Russia's illegal
       invasion of Ukraine, President Biden is now encouraging US oil and gas producers
       to drill and increase production.
 
@@ -232,7 +232,7 @@ transition:
 
       **GDP growth effect**
 
-      A change in a country’s GDP could have an impact on the level of fiscal revenue
+      A change in a country's GDP could have an impact on the level of fiscal revenue
       it receives. Assuming taxation rates remain unchanged, a decrease in GDP could lead 
       to a reduction in fiscal revenue. According to estimates from the NGFS, the Orderly 
       transition risk scenarios would generally limit GDP losses. World GDP losses from chronic
