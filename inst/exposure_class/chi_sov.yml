@@ -107,7 +107,7 @@ transition:
       production rose by 8.4 and 12.6% respectively.
       
       China's coal share of power generation was 64% in 2020, making it one of the most
-      coal-reliant power sectors out of the world's biggest emitters. In 2020–2021, China 
+      coal-reliant power sectors out of the world's biggest emitters. In 2020-2021, China 
       began toning down its outlook on coal, announcing they will strictly control coal 
       consumption until 2025 and start to gradually phase it down thereafter. By the end of 
       2021, however, China had seemingly completely reneged on this strategy to focus on shoring 
@@ -132,13 +132,13 @@ transition:
       in GDP could lead to a reduction in fiscal revenue. According to estimates
       from the NGFS, disorderly transition could result in significant GDP
       losses. In these scenarios, world GDP losses from chronic physical and transition effects 
-      are estimated to be between -4.6% and -4.7% (relative to a baseline with no transition or physical risk) 
+      are estimated to be between -4.6% and -4.7% (relative to a baseline with no transition or physical risks) 
       by 2050. World GDP impacts from transition risks are negative as the speed of the transition combines 
       with investment uncertainty and affects consumption and investment.
       
       In these scenarios, there is a large mix of physical and transition risks in 2050. 
       Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Disorderly 
-      scenario on China's GDP, from physical and transition effects, would be significant, ranging from -2.9% to -4.1%
+      scenario on China's GDP, from chronic physical and transition effects, would be significant, ranging from -2.9% to -4.1%
       (relative to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings effect**
@@ -211,7 +211,7 @@ transition:
       and gas consumption by 8.4%. Cement and steel production rose by 8.4 and 12.6% respectively.
       
       China's coal share of power generation was 64% in 2020, making it one of the most coal-reliant 
-      power sectors out of the world's biggest emitters. In 2020–2021, China began toning down its outlook 
+      power sectors out of the world's biggest emitters. In 2020-2021, China began toning down its outlook 
       on coal, announcing they will strictly control coal consumption until 2025 and start to gradually phase
       it down thereafter. By the end of 2021, however, China had seemingly completely reneged on this strategy 
       to focus on shoring up coal (and other fossil fuels) supply off the back of energy security and shortage
@@ -297,7 +297,7 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      across the world by 2.4&deg;C to 3&deg;C compared to pre-industrial levels 
       (with land warming faster than oceans and high latitudes experiencing higher 
       warming). These changes will lead to chronic changes in living conditions 
       affecting health, labour productivity, agriculture, ecosystems, and sea-level 

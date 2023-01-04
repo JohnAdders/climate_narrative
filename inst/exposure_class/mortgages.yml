@@ -57,7 +57,7 @@ transition:
       
       In Disorderly transition risk scenarios, electricity price increases in the short 
       term, peaking around 2035 in the Delayed transition scenario and 2030 in 
-      the Divergent Net Zero scenario. and remain above 2020 levels at 2050. Oil and gas
+      the Divergent Net Zero scenario, and remain above 2020 levels at 2050. Oil and gas
       prices increase throughout, both more than tripling by 2050 in the Delayed transition 
       scenario, and more than doubling by 2050 in the Divergent Net Zero scenario.
       
@@ -519,7 +519,7 @@ physical:
         considered if the property is only insurable due to FloodRe and what
         happens when that ends, along with if flood defences can resolve the
         issue. The number of times a property floods is a key consideration. 
-        In the Net Zero 2050 scenario, there is a over a five-fold increase in the 
+        In the Net Zero 2050 scenario, there is over a five-fold increase in the 
         fraction of land annually exposed to river floods by 2035, to ~0.05%. 
         In the Delayed transition scenario, the fraction of land annually 
         exposed to river floods reaches ~0.06% by 2035.

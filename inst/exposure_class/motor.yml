@@ -16,7 +16,7 @@ transition:
   high:
     exec_description: |
       In Disorderly transition risk scenarios, the motor sector and its associated 
-      underwriting class could be disrupted by the automotive companies' proactively 
+      underwriting class could be disrupted by the automotive companies proactively 
       investing in innovation and new technology and changing customer preferences. 
     always: |
       While motor insurance could continue to play a role in meeting customer
@@ -31,7 +31,7 @@ transition:
       reduced immediately but divergently. Policies and regulatory frameworks
       implemented at regional level rather than international level or evolving
       at a different speed depending on the region, could result in in an
-      un-level playing field for motor sector.
+      un-level playing field for the motor sector.
 
       Both these scenarios are likely to have an impact on the profitability of
       the motor sector and the associated insurance products' pricing, terms and
@@ -140,7 +140,7 @@ transition:
   low:
     exec_description: |
       In Orderly transition risk scenarios, the motor sector and its associated 
-      underwriting class could be disrupted by the automotive companies' 
+      underwriting class could be disrupted by the automotive companies 
       proactively investing in innovation and new technology and changing customer 
       preferences.
     always: |
@@ -150,7 +150,7 @@ transition:
       policy reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050. This would, in turn, lead to an increase 
-      in the carbon price resulting ina smooth tran sition away from 
+      in the carbon price, resulting in a smooth transition away from 
       Internal Combustion Engine vehicles towards electric vehicles (and possibly 
       hydrogen or other zero-carbon fuel types). This is likely to have an 
       impact on replacement and repair costs, and increase costs of claims 
@@ -300,7 +300,7 @@ physical:
       underwriting class. Chronic effects (such as raised mean temperatures) and
       acute effects due to changes to frequency and severity of weather events
       (such as floods, droughts, bushfires and extreme heat and cold) could
-      impact frequency and size of the claims. This could result in future
+      impact frequency and size of claims. This could result in future
       policyholders becoming more expensive to insure.
     high_materiality: |
       Even in low physical risk scenarios, the increases in chronic and acute climate
