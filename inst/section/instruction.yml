@@ -24,18 +24,18 @@ description: |
 
   The NGFS scenarios explore a range of transition and physical risks and are defined as follows:
 
-    - **Orderly transition risk scenarios** assume that effective policy changes are introduced in
-      a timely manner, limiting physical and transition risks.
+    - **Orderly transition risk scenarios** assume that climate policies are introduced early and become 
+      gradually more stringent. Both physical and transition risks are relatively subdued.
       - **Net Zero 2050** limits global warming to 1.5&deg;C through stringent climate policies and innovation, reaching global 
       Net Zero CO2 emissions around 2050. Some jurisdictions such as the US, EU, UK, Canada, Australia and Japan 
-      reach Net Zero for all GHGs.
+      reach Net Zero for all Greenhouse Gases (GHGs).
       - **Below 2&deg;C** gradually increases the stringency of climate policies, giving a 67% chance of limiting
       global warming to below 2&deg;C.
 
-    - **Disorderly transition risk scenarios** assume that the introduction of effective policy
-      change is delayed or divergent, leading to elevated transition risks and limited physical risks.
-      -	**Divergent Net Zero** reaches Net Zero globally around 2050 but with higher costs in the short-term
-      due to divergent policies being adopted across sectors leading to inefficiencies and a quicker phase out of oil use.
+    - **Disorderly transition risk scenarios** explore higher  transition risk due to policies being 
+      delayed or divergent across countries or sectors.
+      -	**Divergent Net Zero** reaches net zero globally around 2050 but with higher costs 
+      due to divergent policies introduced across sectors leading to inefficiencies and a quicker phase out of oil use.
       - **Delayed transition** assumes annual emissions do not decrease until 2030. Strong policies are needed
       to limit warming to below 2&deg;C. Negative emissions are limited.
 
@@ -60,9 +60,9 @@ description: |
   risk analysis exercise to better understand the associated impact and aid decision making. To
   support these exercises, users can find a list of climate risk data providers, tools and products
   [here](climate_narrative/climate-financial-risk-forum-climate-risk-product-providers-latest.xlsx)
-  and in the links on the bottom of each page of the tool. This is a database of climate risk data
-  providers, tools, and products, which has been compiled on a best-efforts basis and is not exhaustive.
-  The database has been created to serve as an illustrative list of current climate risk offerings,
+  and in the links on the bottom of each page of the tool. This database of climate risk data
+  providers, tools, and products has been compiled on a best-efforts basis and is not exhaustive.
+  It has been created to serve as an illustrative list of current climate risk offerings,
   highlighting the variety and scope of what is currently available in the marketplace. Inclusion on
   the list does not indicate use of or endorsement by the CFRF.
 
@@ -88,7 +88,7 @@ description: |
 
   The tool outputs an executive summary and a detailed long form report.
   Based on materiality and the NGFS scenario selected, the tool will output different
-  levels of detail in the reports. Where low or medium materiality are selected, the tool
+  levels of detail in the reports. Where low or medium materiality is selected, the tool
   will output a summary narrative. Where high materiality is selected, the tool will output
   a more detailed narrative.
 
@@ -100,7 +100,8 @@ description: |
   ## Report Structure
 
   On the final report page select the relevant NGFS scenario (i.e. Orderly, Disorderly,
-  or Hot House World) and for Sector Report also pick a sector.
+  or Hot House World) and for the Sector Report also pick a sector (specific sectors can 
+  also be selected in an Institutional Report to filter the report).
 
   The executive summary covers the following:
 
@@ -127,14 +128,14 @@ description: |
 
   ## Limitations
 
-  There are a number of uncertainties and limitations associated with the tool; for example: The tool
+  There are a number of uncertainties and limitations associated with the tool, for example: The tool
   is not updated on an ongoing basis. It draws heavily on the NGFS scenarios (updated in September 2022).
  
   The scenarios are neither a forecast of what is likely to happen nor a description of what should happen, but 
   an illustration of what could happen (this does include some adverse scenarios, however the global spike in energy prices 
   in 2022, due in part to the war in Ukraine, was both more adverse and more immediate than any of the scenarios designed ex 
   ante - the NGFS published a [note](https://www.ngfs.net/sites/default/files/media/2022/09/07/not_too_late_-_confronting_the_growing_odds_of_a_late_and_disorderly_transition.pdf){target=”\_blank”}
-  to demonstrate the relevance of the NGFS scenarios to the current situation). The NGFS scenarios are underpinned by a subset 
+  to demonstrate the relevance of the NGFS scenarios to this situation). The NGFS scenarios are underpinned by a subset 
   of models, e.g. REMIND, GCAM and MESSAGE, which make particular assumptions about long-term technology pathways that are 
   of course highly uncertain. Such models also assume smooth adjustment processes and largely proxy climate policy through 
   carbon pricing.
@@ -150,7 +151,7 @@ description: |
   power and transportation sectors. Whereas in the Net Zero 2050 scenario there are regional differences in carbon price,
   and in the Divergent Net Zero scenario there are sectoral differences in carbon price, as well as between, say EU and US
   and China. Similarly, the tool does not provide a mechanism to test how financial exposures may differ if the
-  solar PV friendly technology pathways of the REMIND model do not come to pass. Relaxing these policy and technology
+  solar friendly technology pathways of the REMIND model do not come to pass. Relaxing these policy and technology
   universality assumptions will naturally generate quite different assessments of the climate exposures of different financial
   securities and assets.
 
@@ -158,13 +159,12 @@ description: |
   technology pathways into climate scenario analyses. See, for example, section 6 of the CFRF 2021 Scenario Analysis
   Guide which discusses one approach based on some work done by Abrdn  (a UK-based global investment company). Such
   approaches create a richer set of scenarios that allow, for example, for climate policy objectives to vary across
-  the major emitting regions and sectors and for some of the 'probability mass' that sits between transition-heavy scenarios
-  that are strongly or weakly aligned with the objectives of the Paris Agreement and those that are dominated by physical risks.
-  This in turn enables financial impairment estimates to be calculated relative to a baseline assessment of what is priced into assets
-  at any given point in time.
+  the major emitting regions and sectors and for the outcomes that sit between transition-heavy scenarios
+  and those that are dominated by physical risks. This in turn enables financial impairment estimates to be calculated 
+  relative to a baseline assessment of what is priced into assets at any given point in time.
   
   ### What is next?
 
-  The tool is housed on the Centre for Greening Finance and Investment climate and environmental data and analytics platform.
-  The Climate Financial Risk Forum Scenario Analysis Working Group will update the tool to enhance content, including the reflection of the
-  Phase 3 NGFS scenarios, and release version 1.0 in Q1 2023.
+  The Climate Financial Risk Forum Scenario Analysis Working Group will update the tool periodically to enhance content, including 
+  to reflect future updates to NGFS scenarios.
+  
