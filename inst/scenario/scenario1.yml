@@ -10,7 +10,7 @@ exec_description: |
   (e.g. annual investment in low carbon increases from ~850 billion USD to between 
   ~2.5 trillion USD and ~3 trillion USD by 2030). Global mean temperatures are 
   projected to increase across the world by 1.5&deg;C to 1.8&deg;C, compared to 
-  pre-industrial levels, by 2100. 
+  pre-industrial levels, by 2100 (with similar temperatures being reached as early as 2050). 
   
   These scenarios could lead to chronic changes in living conditions affecting 
   health, labour productivity (a decrease in labour productivity due to the reduced 
@@ -21,8 +21,8 @@ exec_description: |
   with no transition or physical risks is estimated to be around -3% by 2050.
 
 description: |
-  These Orderly transition risk scenarios assume that effective policy
-  changes are introduced in a timely manner.
+  These Orderly transition risk scenarios assume climate policies are introduced early and become 
+  gradually more stringent. Both physical and transition risks are relatively subdued. 
 
   ![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)
 
@@ -79,7 +79,7 @@ description: |
   energy costs in the short-term, initially weighing down on prices (as lower demand and financial 
   market losses hit outputs). Rising carbon prices subsequently feed through to modest increases in 
   inflation and unemployment before returning to prior trends. In some countries and time periods the 
-  offsetting positive growth effects from carbon revenue recycling leads to a reduction in unemployment. 
+  offsetting positive growth effects from carbon revenue recycling lead to a reduction in unemployment. 
   Long-term interest rates tend to increase in the transition scenarios, reflecting the inflationary 
   pressure created by carbon prices, as well as the increased investment demand that the transition 
   spurs on.
@@ -125,15 +125,15 @@ description: |
   Observed climate change has already increased global mean temperatures above
   1.1&deg;C, compared to pre-industrial levels, and both the global land area and
   the global population annually exposed to river flood, crop failure, cyclones, 
-  wildfire, drought and heatwaves has more than doubled. (See Kaufman, D. et al. (2020)).
+  wildfire, drought and heatwaves has more than doubled. (See Lange, S. et al. (2020)).
 
   The increasing concentrations of carbon dioxide, methane and nitrous oxide in
   the atmosphere are unprecedented in at least the last 800,000 years and are
   extremely likely to have been the dominant cause of warming since the mid-20th
   century. In these scenarios global mean temperatures are projected to increase 
   across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels by 
-  2100 (with land warming faster than oceans and high latitudes experiencing 
-  higher warming) giving rise to low physical risk.
+  2100 (with similar temperatures being reached as early as 2050) giving rise to low physical risk
+  (with land warming faster than oceans and high latitudes experiencing higher warming).
 
   ![Global mean temp rise](scenarios_orderly_temperature.png)
 

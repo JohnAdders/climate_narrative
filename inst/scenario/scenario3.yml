@@ -15,7 +15,7 @@ exec_description: |
   physical labour under hot and humid climate conditions), agriculture, ecosystems, and 
   sea-level rise. It can also change the frequency and severity of weather events such
   as heatwaves, droughts, wildfires, cyclones, and flooding. The total cumulative relative 
-  GDP impact is estimated to be between -5.7% and -4.6% by 2050.
+  GDP impact is estimated to be between -5.7% and -6% by 2050.
 description: |
   These scenarios assume that some climate policies are implemented in some
   jurisdictions, but globally efforts are insufficient to halt significant
@@ -47,7 +47,7 @@ description: |
   Carbon price is a measure of overall policy intensity. Emission prices are
   sensitive to the timing of policy implementation. With none or relatively
   small additions to current policy, these scenarios have low carbon prices
-  throughout. Therefore, transition risks ransition risks are much less significant
+  throughout. Therefore, transition risks are much less significant
   in these scenarios.
 
   ![Carbon price](scenarios_hothouse_price_carbon.png)
@@ -109,8 +109,8 @@ description: |
   population annually exposed to river flood, crop failure, cyclones, wildfire, 
   drought and heatwaves. In these scenarios global mean temperatures are 
   projected to increase across the world by 2.4&deg;C to 3&deg;C, compared to pre-industrial 
-  levels, by 2100 (with land warming faster than oceans and high latitudes experiencing 
-  higher warming)giving rise to high physical risk.
+  levels, by 2100, giving rise to high physical risk (with land warming faster than oceans and high
+  latitudes experiencing higher warming).
 
   ![Global mean temp rise](scenarios_hothouse_temperature.png)
 
@@ -147,12 +147,13 @@ description: |
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
   In these scenarios the total cumulative GDP impact from chronic physical and transition effects relative
-  to a baseline with no transition or physical risks is estimated to be just under -6% by 2050. World GDP 
+  to a baseline with no transition or physical risks is estimated to be around -6% by 2050. World GDP 
   losses from physical risks vary in line with different temperatures projected for each scenario. In hothouse
-  world scenarios, the impact on global GDP from physical risks dwarfs that from transition risks. The NGFS 
-  estimate that global GDP impact in the Current Policies scenario will be almost -20% by 2100. 
+  world scenarios, the impact on global GDP is dominated by physical risk. Transition risk in the Current Policies 
+  is so low it does not impact global GDP. The NGFS estimate that global GDP impact in the Current Policies scenario
+  will be almost -20% by 2100. 
   
-  ![GDP](scenarios_hot_house_gdp.png)
+  ![GDP](scenarios_hothouse_gdp.png)
 
   **Source:**
   [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22[REMIND-MAgPIE 3.0-4.4]. NiGEM NGFS v1.22 for Acute physical, only available for Net Zero 2050, Delayed transition and Current Policies. Business confidence effect has been included in transition effect for Disorderly scenarios.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}

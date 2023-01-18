@@ -13,7 +13,8 @@ exec_description: |
   in energy efficiency and low carbon technologies are projected to increase (e.g. annual investment 
   in low carbon technologies increases from ~850 billion USD to between ~2.5 trillion USD and 
   ~3 trillion USD by 2050). Global mean temperatures are projected to increase across the world 
-  by 1.6&deg;C to 1.8&deg;C, compared to pre-industrial levels, by 2100.
+  by 1.6&deg;C to 1.8&deg;C, compared to pre-industrial levels, by 2100 (with similar temperatures
+  being reached as early as 2050).
   
   The Disorderly transition risk scenarios could lead to chronic changes 
   in living conditions affecting health, labour productivity (due to the 
@@ -37,9 +38,9 @@ description: |
 
   The NGFS have provided two Disorderly scenarios:
 
-  - **Divergent Net Zero** reaches Net Zero globally around 2050 but with higher
-    costs in the short-term due to divergent policies being introduced across
-    sectors leading to a quicker phase out of oil use.
+  - **Divergent Net Zero** reaches net zero globally around 2050 but with higher
+    costs due to divergent policies introduced across sectors leading to a quicker 
+    phase out of oil use.
 
   - **Delayed transition** assumes annual emissions do not decrease until 2030.
     Strong policies are needed to limit warming to below 2&deg;C. Negative emissions
@@ -134,15 +135,16 @@ description: |
   [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
   
   Observed climate change has already increased global mean temperatures above 
-  1.2&deg;C, compared to pre-industrial levels, and both the global land area and 
+  1.1&deg;C, compared to pre-industrial levels, and both the global land area and 
   the global population annually exposed to river flood, crop failure, cyclones, wildfire, 
-  drought and heatwaves has already more than doubled (See Kaufman, D. et al. (2020).). 
+  drought and heatwaves has already more than doubled (See Lange, S. et al. (2020)). 
   The increasing concentrations of carbon dioxide, methane and nitrous oxide in the atmosphere 
   are unprecedented in at least the  last 800,000 years and are extremely likely to have been 
   the dominant cause of warming since the mid-20th century. In these scenarios global mean 
   temperatures are projected to increase across the world by 1.6&deg;C to 1.8&deg;C, above 
-  pre-industrial levels, by 2100 (with land warming faster than oceans and high latitudes 
-  experiencing higher warming) giving rise to low physical risk.
+  pre-industrial levels, by 2100 (with similar temperatures being reached as early as 2050)
+  giving rise to low physical risk (with land warming faster than oceans and high latitudes 
+  experiencing higher warming).
 
   ![Global mean temp rise](scenarios_disorderly_temperature.png)
 
@@ -180,7 +182,7 @@ description: |
   **Source:** 
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
-  In these scenarios the total cumulative GDP impact is from chronic physical 
+  In these scenarios the total cumulative GDP impact from chronic physical 
   and transition effects relative to a baseline with no transition or physical risks 
   is estimated to be just under -5% by 2050. World GDP losses from 
   physical risks vary in line with different temperatures projected for each scenario.
