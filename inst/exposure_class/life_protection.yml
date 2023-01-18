@@ -1,7 +1,7 @@
 name: Life Protection
 test_report_position: 15
 description: |
-  The **Life Protection** underwriting class covers term assurance, whole life
+  The **life protection** underwriting class covers term assurance, whole life
   assurance, mortgage protection, income protection and critical illness written
   on either an individual or group basis.
 
@@ -24,13 +24,13 @@ description: |
 transition:
   high:
     exec_description: |
-      Life Protection underwriting exposures could be impacted in the Disorderly 
+      Life protection underwriting exposures could be impacted in the Disorderly 
       transition risk scenarios, as mortality and morbidity could be affected by 
       both a reduction in pollution which could in turn result in a reduction in 
       cancer (especially lung), respiratory diseases, heart attack and stroke as well as 
       potentially a decrease in healthcare spending. 
     always: |
-      Life Protection underwriting exposures could be impacted by the transition
+      Life protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Disorderly
       transition risk scenarios, the Delayed transition driven by a late policy
       action enables a "fossil recovery" out of the economic crisis
@@ -142,12 +142,12 @@ transition:
       pricing of life protection products, although this is likely to be modest.
   low:
     exec_description: |
-      Life Protection underwriting exposures could be impacted in the Orderly 
+      Life protection underwriting exposures could be impacted in the Orderly 
       transition risk scenarios, as mortality and morbidity could decrease due to 
       a reduction in pollution which could in turn result in a reduction in 
       cancer (especially lung), respiratory diseases, heart attack and stroke.
     always: |
-      Life Protection underwriting exposures could be impacted by the transition
+      Life protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Orderly
       transition risk scenarios, immediate policy reaction, societal change,
       national energy strategies, and carbon legislation could lead to an

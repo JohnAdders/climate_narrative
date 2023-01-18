@@ -1,7 +1,7 @@
 name: Commercial Real Estate
 test_report_position: 8
 description: |
-  The Commercial Real Estate sector covers companies that are primarily engaged
+  The commercial real estate sector covers companies that are primarily engaged
   in renting or leasing real estate to others, managing real estate for others,
   selling or buying real estate for others, providing other real estate related
   services, such as appraisal services.
@@ -44,10 +44,10 @@ transition:
       sector. In these scenarios a limited relative reduction in GDP growth will also 
       impact the sector. 
     always: |
-      In Disorderly transition risk scenarios, the demand for Commercial Real
-      Estate sector is likely to increase.
+      In Disorderly transition risk scenarios, the demand for commercial real
+      estate sector is likely to increase.
 
-      While the Commercial Real Estate sector could continue to play a role in
+      While the commercial real estate sector could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
       energy generation in the Delayed transition scenario, driven by late
       policy action enabling a "fossil recovery" out of the economic
@@ -136,8 +136,8 @@ transition:
       in this sector. In these scenarios a limited relative reduction in GDP growth will also 
       impact the sector.
     always: |
-      In Orderly transition risk scenarios, the demand for Commercial Real
-      Estate sector is likely to increase. While the Commercial Real Estate
+      In Orderly transition risk scenarios, the demand for commercial real
+      estate sector is likely to increase. While the commercial real estate
       sector could continue to play a role in meeting customer demand for the
       coming years, the changing patterns in energy generation in these 
       scenarios, driven by immediate policy reaction, societal change, national 

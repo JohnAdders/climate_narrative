@@ -11,7 +11,7 @@ description: |
   amount borrowed is based upon the affordability of the applicants, either on a
   capital repayment or interest only basis (it is worth noting that for buy to
   let mortgages the rental income is used to define loan amount). The main types
-  are mortgage lending in the residential sector are:
+  of mortgage lending in the residential sector are:
 
   - Standard owner occupier
 
@@ -33,7 +33,7 @@ transition:
       foreseeable future. The quality of residential stock could be the key
       challenge on the mortgage lending sector.
 
-      In Disorderly transitional risk scenarios, the changes in energy prices
+      In Disorderly transition risk scenarios, the changes in energy prices
       are material as they impact every property and are applied throughout the
       period. These have the ability to account for the greatest proportion of
       losses, after the macroeconomic impact has been forecast.
@@ -47,19 +47,19 @@ transition:
       **Abrupt and steep phase in of carbon/ emissions prices**
 
       Increasing energy prices, due to the Government carbon taxes or elevated
-      energy costs, impacts both homeowners' and renters' ability to repay debt
+      energy costs, impact both homeowners' and renters' ability to repay debt
       over an extended period of time. The potentially enduring nature of this
       shock (as opposed to the one-off costs associated with, say, retrofitting),
-      and the broader impact (i.e. it affects nearly all to some extent) leads
+      and the broader impact (i.e. it affects nearly all to some extent) lead
       to a greater effect than that experienced as a result of retrofitting. The
       reduced ability to pay, as a result of more income being spent on energy
       bills, could increase probabilities of default.
       
       In Disorderly transition risk scenarios, electricity price increases in the short 
       term, peaking around 2035 in the Delayed transition scenario and 2030 in 
-      the Divergent Net Zero scenario, and remain above 2020 levels at 2050. Oil and gas
-      prices increase throughout, both more than tripling by 2050 in the Delayed transition 
-      scenario, and more than doubling by 2050 in the Divergent Net Zero scenario.
+      the Divergent Net Zero scenario, and remains above 2020 levels at 2050. Oil and gas
+      prices increase throughout, broadly doubling by 2050 with gas almost tripling
+      in the Divergent Net Zero scenario.
       
       ![Residential and Commercial Price](mortgage_lending_disorderly_price_final_energy.png)
 
@@ -77,7 +77,7 @@ transition:
       value wise by not meeting regulation or unskilled contractors attempting
       to retrofit which actually damages the property.
 
-      **EPC**
+      **Energy Performance Certificate (EPC)**
 
       Given that all mortgage lending is linked to properties, any legislation
       that impacts them or requires change can have an impact on the market and
@@ -95,7 +95,7 @@ transition:
 
       - Portfolio average of EPC Band C by 2030
 
-      - All property Net Zero by 2050
+      - All property net zero by 2050
 
       The introduction of the above legislation generates one or more of the
       below financial risks, especially if lenders are targeted with improving
@@ -142,7 +142,7 @@ transition:
 
       In Disorderly transition risk scenarios, buildings become less carbon intense;
       CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor space 
-      decreases from ~14 megatons to between 0 and ~2 megatons by 2050.
+      decrease from ~14 megatons to between 0 and ~2 megatons by 2050.
       
       ![floor space intensity](mortgage_lending_disorderly_floor_space.png)
 
@@ -237,12 +237,12 @@ transition:
       transitional legislation is implemented.
 
       Transition risk has the ability to generate significant losses, mainly due
-      to the cost of retrofitting (if not Government funded), properties that
+      to the cost of retrofitting (if not Government funded) properties that
       are unable to meet the minimum Efficiency Performance Certificate (EPC)
       standard and hence are classified as unmarketable (and unmortgageable),
       and rising energy costs across the next 30 years.
     high_materiality: |
-      **EPC**
+      **Efficiency Performance Certificate (EPC)**
 
       Given that all mortgage lending is linked to properties, any legislation
       that impacts them or requires change can have an impact on the market and
@@ -260,7 +260,7 @@ transition:
 
       - Portfolio average of EPC Band C by 2030
 
-      - All property Net Zero by 2050
+      - All property net zero by 2050
 
       The introduction of the above legislation generates one or more of the
       below financial risks which need to be considered, especially if lenders
@@ -308,9 +308,7 @@ transition:
 
       In Orderly transition risk scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from new 
-      legislation (as well as a change in energy mix).
-      
-      In Orderly transition risk scenarios, buildings become less carbon intense; CO<sub>2</sub> emissions
+      legislation (as well as a change in energy mix). CO<sub>2</sub> emissions
       due to energy consumption per billion meters squared of floor space decreases from ~14 megatons 
       to between ~1 and ~3 megatons by 2050.
      
@@ -348,7 +346,7 @@ transition:
       energy bills. This could increase probabilities of default.
       
       In Orderly scenarios, electricity price increases in the short term, 
-      peaking around 2030, and remain above 2020 levels at 2050. Oil and gas prices
+      peaking around 2030, and remains above 2020 levels at 2050. Oil and gas prices
       increase throughout, with gas tripling and oil almost doubling in Net Zero 2050
       by 2050. In the Below 2&deg;C scenario oil and gas prices double.
       

@@ -1,7 +1,7 @@
 name: Aviation Underwriting Class
 test_report_position: 12
 description: |
-  The **Aviation** underwriting class involves insuring companies engaging in
+  The **aviation** underwriting class involves insuring companies engaging in
   economic activity relating to aircrafts. This includes designing,
   manufacturing, supplying, maintaining and operating both manned and unmanned
   aircrafts or parts. It also includes activities related to aircraft supporting
@@ -22,7 +22,7 @@ transition:
       profitability of this sector and therefore on the associated insurance products 
       pricing, terms and conditions, and coverage.
     always: |
-      Aviation sector could continue to play a role in meeting customer demand
+      The aviation sector could continue to play a role in meeting customer demand
       for the coming years The changing patterns in energy generation in the
       Delayed transition scenario, driven by late policy action enabling a
       "fossil recovery" out of the economic crisis brought about by

@@ -1,7 +1,7 @@
 name: Manufacturing
 test_report_position: 3
 description: |
-  The **Manufacturing** sector involves the transformation of (mainly) raw
+  The **manufacturing** sector involves the transformation of (mainly) raw
   materials or substances into new products by way of mechanical, physical, or
   chemical processes. Manufactured products derived from the assembly of
   component parts also comprise the manufacturing sector - unless otherwise
@@ -93,8 +93,8 @@ transition:
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
-      are increasingly supporting the transition to a low carbon economy. The
-      extent to which is heavily influenced by various characteristics such as
+      are increasingly supporting the transition to a low carbon economy. This
+      is heavily influenced by various characteristics such as
       the political will within a given jurisdiction, the availability of
       climate finance or whether there is an economic rationale to consider
       abatement. An example of this includes the integration of sustainable
@@ -156,7 +156,7 @@ transition:
 
       - High risk of stranded assets.
 
-      Manufacturing industries that adopt a Disorderly pathway to Net Zero
+      Manufacturing industries that adopt a Disorderly pathway to net zero
       emissions under Disorderly transition risk scenarios may
       significantly **lose market value**. It is expected that those industries
       could face stranded assets as uncertainty about climate policies and
@@ -193,8 +193,8 @@ transition:
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
-      are increasingly supporting the transition to a low carbon economy. The
-      extent to which is heavily influenced by various characteristics such as
+      are increasingly supporting the transition to a low carbon economy. This is
+      heavily influenced by various characteristics such as
       the political will within a given jurisdiction, the availability of
       climate finance or whether there is an economic rationale to consider
       abatement. An example of this includes the integration of sustainable

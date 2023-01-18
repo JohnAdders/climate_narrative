@@ -1,7 +1,7 @@
 name: Construction
 test_report_position: 4
 description: |
-  The **Construction** sector includes establishments primarily responsible for
+  The **construction** sector includes establishments primarily responsible for
   the construction of buildings. The work performed may include new work,
   additions, alterations, or maintenance and repairs. The onsite assembly of
   pre-cut, panelised, and prefabricated buildings and construction of temporary
@@ -53,8 +53,8 @@ transition:
       emitting carbon, primarily through electricity use, fuel usage for
       vehicles and plant, and from the production of materials, such as steel
       and cement. As per Global Alliance for Buildings and Construction (Global
-      ABC) report, in 2020, the Buildings and Construction sector accounted for
-      36% of global energy consumption.
+      ABC) report, in 2021, the Buildings and Construction sector accounted for
+      37% of global energy consumption.
     high_materiality: |
       The changes in carbon pricing, societal preference, energy prices and
       energy mix could potentially result in one or more of the following

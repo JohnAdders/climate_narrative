@@ -1,7 +1,7 @@
 name: Consumer Products
 test_report_position: 9
 description: |
-  The **Consumer Products** sector consists of establishments engaged in retail
+  The **consumer products** sector consists of establishments engaged in retail
   trade; selling commodities for personal or household consumption and rendering
   services incidental to the sale of the goods. Characteristics of retail trade
   establishments generally, but not exclusively, include:
@@ -59,7 +59,7 @@ transition:
       to lower carbon intensive supplies, reducing the carbon intensity of their 
       physical stores or sales platforms, and using clean energy sources.
     always: |
-      As the consumer products sector sits between the Manufacturing sector and
+      As the consumer products sector sits between the manufacturing sector and
       end-consumers, it is subject to the considerations of both the products it
       purchases (or receives) as suppliers react to a top-down policy
       environment that results in a rapid reduction of emissions, as well as the

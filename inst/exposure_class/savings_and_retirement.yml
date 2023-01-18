@@ -1,7 +1,7 @@
 name: Savings and Retirement
 test_report_position: 20
 description: | 
-  The **Savings and Retirement** underwriting class covers products such as
+  The **savings and retirement** underwriting class covers products such as
   pensions, investment bonds, with-profits, unit-linked investments and
   annuities, written on an individual or group basis.
   
@@ -18,7 +18,7 @@ description: |
 transition:
   high:
     exec_description: |
-      Savings and Retirement underwriting exposures could be impacted in 
+      Savings and retirement underwriting exposures could be impacted in 
       Disorderly transition risk scenarios, as the moderate to severe 
       reduction in GDP could reduce real household income. The reduction in 
       CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
@@ -147,7 +147,7 @@ transition:
 
   low:
     exec_description: |
-      Savings and Retirement underwriting exposures could be impacted in the 
+      Savings and retirement underwriting exposures could be impacted in the 
       Orderly transition risk scenarios, as the limited reduction in GDP 
       could reduce real household income. The immediate and smooth reduction 
       in CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
