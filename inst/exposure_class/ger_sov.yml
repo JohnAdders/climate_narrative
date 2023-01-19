@@ -1,7 +1,7 @@
 name: Germany sovereign
 test_report_position: 30
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -99,40 +99,50 @@ transition:
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      Germany's electricity mix is still heavily dependent on fossil fuels. While coal 
-      generation has halved since 2015, it has declined at a much slower rate (-51%) than 
-      in other countries such as the UK (-93%) or Italy (-65%). Natural gas has more 
-      than doubled its share, and total fossil generation has fallen by only 31%. Around two 
-      thirds of electricity generation emissions in 2020 came from lignite and hard coal-fired power 
-      plants, and 16% of the country's total emissions still came from power and heat generation from 
-      coal-fired power plants. 
-      
-      In 2020, emissions from Germany's energy supply sector stood at 221 MtCO2e, a reduction of 
-      14.5% compared to the previous year. Emissions from electricity generation in 2020 fell 
-      by 16% compared to 2019. Compared to 1990, emissions from electricity generation fell by almost 
-      half. The share of renewables in Germany's electricity generation mix has been growing steadily
-      since the 1990s, and reached ~35% in 2018, exceeding global and EU averages.
+      Germany's electricity mix is still heavily dependent on fossil fuels. While 
+      coal generation has halved since 2015, but its share within the electricity mix 
+      rose to 29% in 2021 (23% in 2020). Natural gas makes up 16% of Germany's electrical
+      mix. Around two thirds of Germany's electricity generation emissions in 2021 came from
+      lignite and hard coal-fired power plants.
 
-      ![Share of Renewable Electricity Generation](Germany_sov.png)
+      There has been a significant rise in emissions in 2021, total emissions from Germany's energy
+      supply sector stood at 247 MtCO2e, an increase  of 12.4% or 27 MtCO2e compared to the previous 
+      year. Emissions from electricity generation rose by 14% in 2021. This is due to an increase in
+      coal use and a decreased use of natural gas in the second half of the year due to rise of gas prices. 
+
+      The share of renewables in Germany's electricity generation mix has been growing steadily since the
+      1990s, and reached ~44% in 2020, exceeding global and EU averages.
+
+      ![Share of Renewable Electricity Generation](sov_germany.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
+      The new German government, in power since December 2021, plans to significantly accelerate domestic 
+      climate policy implementation, aiming to meet their domestic emissions target of a 65% reduction below 1990 
+      levels in 2030. The new government intends to phase out coal by 2030 by supporting renewables and making coal 
+      power obsolete.
+
+      Measures of the German government to cope with the illegal Russian invasion in Ukraine and related energy security
+      issues are partially positive with new plans to expand renewables, but also partially counterproductive to climate policy 
+      (e.g. fast expansion of liquid natural gas import infrastructure).
+
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, disorderly transition could result in significant GDP
-      losses. In these scenarios, world GDP losses from both physical and transition risk 
-      are estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from transition 
-      risks are negative as the speed of the transition combines with investment uncertainty 
-      and affects consumption and investment.  
-      
-      In these scenarios, there is a large mix of physical and transition risks in 2050. 
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
-      scenario on Germany's GDP compared to 2015 would be significant, ranging from -3.7% to -4.5% by 2050.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it
+      receives. Assuming taxation rates remain unchanged, a decrease in GDP could lead to a 
+      reduction in fiscal revenue. According to estimates from the NGFS, disorderly transition
+      could result in significant GDP losses. In these scenarios, world GDP losses from chronic
+      physical and transition effects are estimated to be between -4.6% and -4.7% (relative to a
+      baseline with no transition or physical risks) by 2050. World GDP impacts from transition risks
+      are negative as the speed of the transition combines with investment uncertainty and affects 
+      consumption and investment.
 
+      In these scenarios, there is a large mix of physical and transition risks in 2050. Based on the 
+      IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Disorderly scenario
+      on Germany's GDP, from chronic physical and transition effects, would be significant, ranging from -3%
+      to -3.5% (relative to a baseline with no transition or physical risks) by 2050.
+      
       **Downgrading of credit ratings effect**
 
       Climate-related risks are, to some extent, priced in the sovereign bond market. No
@@ -179,8 +189,8 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure
       to carbon intensive sectors and technologies. Based on the IIASA NGFS
       Climate Scenarios, REMIND model by 2050, in Orderly transition risk
-      scenarios, fossil fuels represent only ~27% of global energy demand
-      compared to ~83% in 2020. Countries with carbon-intensive sectors such as
+      scenarios, fossil fuels represent only ~25% to ~ 40% of global energy demand
+      compared to ~85% in 2020. Countries with carbon-intensive sectors such as
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
@@ -196,40 +206,48 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      Germany's electricity mix is still heavily dependent on fossil fuels. While coal 
-      generation has halved since 2015, it has declined at a much slower rate (-51%) than in 
-      other countries such as the UK (-93%) or Italy (-65%). Natural gas has more than doubled 
-      its share, and total fossil generation has fallen by only 31%. Around two thirds of electricity 
-      generation emissions in 2020 came from lignite and hard coal-fired power plants, and 
-      16% of the country's total emissions still came from power and heat generation from 
-      coal-fired power plants. 
-      
-      In 2020, emissions from Germany's energy supply sector stood at 221 MtCO2e, a reduction of 
-      14.5% compared to the previous year. Emissions from electricity generation in 2020 fell 
-      by 16% compared to 2019. Compared to 1990, emissions from electricity generation fell by almost 
-      half. The share of renewables in Germany's electricity generation mix has been growing steadily 
-      since the 1990s, and reached ~35% in 2018, exceeding global and EU averages.
+      Germany's electricity mix is still heavily dependent on fossil fuels. While 
+      coal generation has halved since 2015, its share within the electricity mix 
+      rose to 29% in 2021 (from 23% in 2020). Natural gas makes up 16% of Germany's
+      electrical mix. Around two thirds of Germany's electricity generation emissions
+      in 2021 came from lignite and hard coal-fired power plants.  
 
-      ![Share of Renewable Electricity Generation](Germany_sov.png)
+      There has been a significant rise in emissions in 2021, total emissions from Germany's
+      energy supply sector stood at 247 MtCO2e, an increase  of 12.4% or 27 MtCO2e compared to
+      the previous year. Emissions from electricity generation rose by 14% in 2021. This is due 
+      to an increase in coal use and a decreased use of natural gas in the second half of the year
+      due to rise of gas prices. 
+
+      The share of renewables in Germany's electricity generation mix has been growing steadily since
+      the 1990s, and reached ~44% in 2020, exceeding global and EU averages.
+
+      ![Share of Renewable Electricity Generation](sov_germany.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
+      The new German government, in power since December 2021, plans to significantly accelerate domestic 
+      climate policy implementation, aiming to meet their domestic emissions target of a 65% reduction below 
+      1990 levels in 2030. The new government intends to phase out coal by 2030 by supporting renewables and 
+      making coal power obsolete.
+
+      Measures of the German government to cope with the illegal Russian invasion in Ukraine and related energy
+      security issues are partially positive with new plans to expand renewables, but also partially counterproductive 
+      to climate policy (e.g. fast expansion of liquid natural gas import infrastructure).
+
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, the Orderly transition risk scenarios would generally
-      limit GDP losses. The world GDP losses are estimated to be between -1.5%
-      and -2.5% by 2050. World GDP impacts from transition risk are slightly positive
-      in the Net Zero 2050 scenario as negative impacts on demand from higher
-      carbon tax prices and energy costs are more than offset by the recycling of
-      carbon revenues into government investment and lower employment taxes.
-      
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
-      Orderly Net Zero scenario on Germany's GDP compared to 2015 would be non-significant, 
-      ranging from -0.2% to -0.7% by 2050.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation rates 
+      remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According to estimates from the NGFS,
+      the Orderly transition risk scenarios would generally limit GDP losses. The world GDP losses, from chronic physical and 
+      transition effects, are estimated to be around -3% (relative to a baseline with no transition or physical risks) by 2050.
+      World GDP impacts from transition risk are moderately negative in the Net Zero 2050 scenario as negative impacts on demand
+      from higher carbon prices and energy costs are only partially offset by the recycling of carbon revenues into government
+      investment and lower employment taxes.
+
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of the Orderly Net Zero scenario
+      on Germany's GDP, from chronic physical and transition effects,  would be significant, ranging from -1.7% to -2.2% (relative to 
+      a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings**
 
@@ -286,7 +304,7 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      across the world by 2.4&deg;C to 3&deg;C compared to pre-industrial levels 
       (with land warming faster than oceans and high latitudes experiencing higher 
       warming). These changes will lead to chronic changes in living conditions 
       affecting health, labour productivity, agriculture, ecosystems, and sea-level 
@@ -301,17 +319,17 @@ physical:
       expected to reshape the global economy by reducing average global incomes
       by roughly 23% by 2100, relative to scenarios without climate change.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, a hot house world scenario with high
-      physical risk could result in significant GDP losses. In a hot house world
-      scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
-      2050\. World GDP losses from physical risks scale with the rise in
-      temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a hot house world scenario on Germany's 
-      GDP compared to 2015 would be significant, ranging from -1.5% to -1.7% by 2050.
+      This declining productivity would affect GDP and government income, as tax revenues 
+      are dependent on economic output. Adaptation costs would cause further strain to fiscal
+      expenditures. Assuming taxation rates remain unchanged, a decrease in GDP could lead to
+      a reduction in fiscal revenue. According to estimates from the NGFS, a hot house world 
+      scenario with high physical risk could result in significant GDP losses. In a hot house
+      world scenario, world GDP losses from chronic physical and transition effects are estimated
+      to be between -5.7% and-6% (relative to a baseline with no transition or physical risk) by 2050.
+      World GDP losses from physical risks vary in line with different temperatures projected for each
+      scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact 
+      of a hot house world scenario on Germany's GDP, from chronic physical and transition effects,  would 
+      be significant, around -2.8% (relative to a baseline with no transition or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of 
@@ -371,26 +389,24 @@ physical:
       **GDP growth effect**
 
       In a low physical risk scenario, global mean temperatures could increase
-      across the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels,
-      with land warming faster than oceans and high latitudes experiencing
-      higher warming giving rise to low physical risk. These changes could lead
+      across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels
+      (with land warming faster than oceans and high latitudes experiencing
+      higher warming). These changes could lead
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
       heatwaves, droughts, wildfires, cyclones, and flooding.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, an Orderly transition with low
-      physical risk would generally limit GDP losses. In an Orderly scenario,
-      world GDP losses from both physical and transition risk are estimated to
-      be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
-      scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly
-      Net Zero scenario on Germany's GDP compared to 2015, would be non-significant, 
-      ranging from -0.2% to -0.7% by 2050.
+      This declining productivity would affect GDP and government income, as tax revenues are
+      dependent on economic output. Adaptation costs would cause further strain to fiscal expenditures. 
+      Assuming taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal 
+      revenue. According to estimates from the NGFS, an Orderly transition with low physical risk would
+      generally limit GDP losses. In an Orderly scenario, world GDP losses from chronic physical and transition 
+      effects are estimated to around -3%  (relative to a baseline with no transition or physical risks) by 2050. 
+      World GDP losses from physical risks vary in line with different temperatures projected for each scenario. 
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an Orderly 
+      scenario on Germany's GDP, from chronic physical and transition effects , would be significant, ranging from 
+      -1.7% to -2.2% (relative to a baseline with no transition or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of economic 
@@ -417,4 +433,3 @@ appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
   **Source:**: 20 Notch Rating Scale
-      

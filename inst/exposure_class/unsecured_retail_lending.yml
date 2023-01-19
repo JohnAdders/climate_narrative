@@ -1,6 +1,6 @@
 name: Unsecured Retail Lending
 test_report_position: 22
-description: |
+description: | 
   Unsecured retail lending refers to finance provided to individuals 
   where the amount borrowed is based upon the affordability of the applicant(s), on 
   a capital repayment basis, and covers three broad product types:
@@ -40,13 +40,14 @@ transition:
         
         In Disorderly transition risk scenarios, electricity price increases in the short term, 
         peaking around 2035 in the Delayed transition scenario and 2030 in the Divergent Net Zero 
-        scenario. Oil and gas prices increase throughout, both more than tripling by 2050 in the 
-        Delayed transition scenario, and more than doubling by 2050 in the Divergent Net Zero scenario.
+        scenario,and remains above 2020 levels at 2050. Oil and gas prices increase throughout, both doubling
+        by 2050 in the Delayed transition scenario. Gas prices reach an almost four-fold increase by 2035 
+        in the Divergent Net Zero scenario.
         
-        ![Residential and Commercial Price](Residential_Energy_Price_Disorderly.png)
+        ![Residential and Commercial Price](unsecured_retail_lending_disorderly_price_final_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       - Retrofitting costs could also put a strain on affordability and generate significant 
         losses (if not mitigated by government subsidy) as consumers are required to spend 
@@ -96,14 +97,14 @@ transition:
         and, over time, will likely result in an increase in defaults. 
         
         In Orderly transition risk scenarios, electricity price increases in the short term, 
-        peaking around 2030, whilst oil and gas prices increase throughout, both more than 
-        tripling by 2050 in the Net Zero 2050 scenario, and more than doubling by 2050 in the 
-        Below 2&deg;C scenario.
+        peaking around 2030, and remain above 2020 levels at 2050. Oil and gas prices increase 
+        throughout, with gas prices tripling by 2050 in the Net Zero 2050 scenario, and with both 
+        gas and oil doubling by 2050 in the Below 2&deg;C scenario.
         
-      ![Residential and Commercial Price](Residential_Energy_Price_Orderly.png)
+      ![Residential and Commercial Price](unsecured_retail_lending_orderly_price_final_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       - Retrofitting costs could also put a strain on affordability and generate significant 
         losses (if not mitigated by government subsidy) as consumers are required to spend 

@@ -1,14 +1,14 @@
 name: Mining
 test_report_position: 10
 description: |
-  In the present document, it is admitted that companies in the **Mining** 
+  In the present document, it is admitted that companies in the **mining** 
   sector (except Oil and Gas) primarily engage in mining, mine site development, 
   and beneficiating (i.e. preparing - crushing, screening, washing, sizing, 
   concentrating, and flotation) metallic minerals and non-metallic minerals, 
   including coal. The term "mining" is used in the broad sense to include ore 
   extraction, quarrying, and beneficiating, customarily done at the mine site.
 
-  The Mining sector includes companies that have complete responsibility for
+  The mining sector includes companies that have complete responsibility for
   operating mines and quarries (except oil and gas wells) and those that operate
   mines and quarries (except oil and gas wells) for others on a contract or fee
   basis. Also included are companies engaged in providing support activities
@@ -26,13 +26,13 @@ transition:
       such as coal mining, however this contraction in demand could be offset by 
       the need to increase mining of other minerals vital to clean energy technologies.
     always: |
-      By 2050, in Disorderly transition risk scenarios, coal represents 0.47%
-      (in the Delayed Transition scenario) or 0.63% (in the Divergent Net Zero
-      scenario) of global energy demand, compared to 29% in 2020.
+      By 2050, in Disorderly transition risk scenarios, coal represents 1%
+      (in the Delayed Transition scenario) or 0.6% (in the Divergent Net Zero
+      scenario) of global energy demand, compared to 30% in 2020.
       Carbon-intensive sectors such as coal mining are consequently some of the
       most vulnerable to transition.
 
-      Coal Mining is a special case among its sectoral peers, the changing
+      Coal mining is a special case among its sectoral peers, the changing
       patterns in energy consumption, driven by societal change, national energy
       strategies, and carbon legislation, are likely to have a significant and
       long-term impact on demand for coal, or even lead to its total abandon,
@@ -65,19 +65,19 @@ transition:
       Disorderly transition risk scenarios, demand of coal falls rapidly (after 2030 in 
       both scenarios) and is replaced mostly by renewable energy sources.
 
-      ![Primary Energy](Primary_Energy_Disorderly_Mining.png)
+      ![Primary Energy](mining_disorderly_energy_mix.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      Primary energy prices (i.e. the spot price at the global market) could
+      Coal primary energy prices (i.e. the spot price at the global market) could
       also decrease compared to 2020 levels (more significantly in the Divergent
       scenario compared to the Delayed scenario).
 
-      ![Coal Price](Primary_Energy_Price_Coal_Disorderly_Mining.png)
+      ![Coal Price](mining_disorderly_price_coal.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4. model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       By 2050, the contraction in coal demand, in Disorderly transition risk
       scenarios, could be offset by the need to increase mining of other raw
@@ -103,12 +103,12 @@ transition:
       such as coal mining, however, this contraction in demand could be offset by the 
       need to increase mining of other minerals vital to clean energy technologies.
     always: |
-      By 2050, in Orderly transition scenarios coal represents 0.86% (in the
-      Below 2&deg;C scenario) or 0.65% (in the Net Zero 2050 scenario) of global
-      energy demand, compared to 29% in 2020. Carbon-intensive sectors such as
+      By 2050, in Orderly transition scenarios coal represents 1.4% (in the
+      Below 2&deg;C scenario) or 0.6% (in the Net Zero 2050 scenario) of global
+      energy demand, compared to 30% in 2020. Carbon-intensive sectors such as
       coal mining are consequently some of the most vulnerable to transition.
 
-      Coal Mining is a special case among its sectoral peers, the changing
+      Coal mining is a special case among its sectoral peers, the changing
       patterns in energy consumption, driven by societal change, national energy
       strategies, and carbon legislation, are likely to have a significant and
       long-term impact on demand for coal, or even lead to its total abandon,
@@ -140,18 +140,18 @@ transition:
       risk scenarios, demand for coal falls and is replaced mostly by renewable energy 
       sources.
 
-      ![Primary Energy](Primary_Energy_Orderly_Mining.png)
+      ![Primary Energy](mining_orderly_energy_mix.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      In these scenarios, the primary energy prices (i.e. the spot price at the 
+      In these scenarios, coal primary energy prices (i.e. the spot price at the 
       global market) could also decrease compared to 2020 levels.
 
-      ![Coal Price](Primary_Energy_Price_Coal_Orderly_Mining.png)
+      ![Coal Price](mining_ordelry_price_coal.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       By 2050, the contraction in coal demand, in Orderly transition risk
       scenarios, could be offset by the need to increase mining of other raw
@@ -160,7 +160,7 @@ transition:
       lithium (used for batteries), platinum, palladium and other catalyst
       materials (used for hydrogen fuel cells and carbon capture), and rare
       earths (used for wind-turbine magnets), could all see a large increase in
-      demand. More energy-efficient processing and widespread recycling, which
+      demand. However, more energy-efficient processing and widespread recycling 
       are likely to put pressure on virgin-ore markets. Bauxite, copper, and
       iron ore could see growth from new decarbonization technologies at least
       partly offset by increased recycling rates. Although these critical

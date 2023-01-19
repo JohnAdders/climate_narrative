@@ -1,7 +1,7 @@
 name: Marine Underwriting Class
 test_report_position: 13
 description: |
-  The **Marine** underwriting class is one of the oldest classes of insurance
+  The **marine** underwriting class is one of the oldest classes of insurance
   business. It involves insuring companies engaging in economic activity
   relating to the oceans, rivers, and the Great Lakes. This includes traditional
   maritime activities such as designing, constructing, manufacturing, supplying,
@@ -57,15 +57,14 @@ transition:
         In Disorderly transition risk scenarios, the price per gigajoule 
         of liquid final energy (liquid fuels from all energy sources; incl. oil 
         products, synthetic fossil fuels from gas and coal, biofuels) for use in 
-        transportation at least triples by the end of the century, increasing 
-        from ~20 USD (inflation adjusted to 2010 baseline) to ~65 USD in the 
-        Delayed transition scenario, and to ~95 USD in the Divergent Net Zero 
-        scenario.
+        transportation increases from ~30 USD (inflation adjusted to 2010 baseline) 
+        to ~50 USD in the Delayed transition scenario, and to ~55 USD in the Divergent 
+        Net Zero scenario, by 2050.
         
-        ![Transportation Liquid Price](Transportation_Liquids_Price_Disorderly.png)
+        ![Transportation Liquid Price](marine_disorderly_price_liquids.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
 
       - Firms could have to keep up with the diverse or rapidly changing
         regulations across jurisdictions in which they operate, leading to
@@ -116,19 +115,19 @@ transition:
         As use of oil declines, electricity becomes the dominant source of final 
         energy by the end of the century.
         
-        ![Transportation Final Energy](Transportation_Final_Energy_Disorderly.png)
+        ![Transportation Final Energy](marine_disorderly_final_energy.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       In Disorderly transition risk scenarios, these innovations 
       could contribute to an overall decrease in CO<sub>2</sub> emissions 
       in the transportation sector.
       
-      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Disorderly.png)
+      ![Transportation CO2 Emissions](marine_disorderly_emissions.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. GCAM 5.3+.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The Disorderly transition risk scenarios also present opportunities 
       for the marine sector. Proactively investing in the above innovations could 
@@ -178,13 +177,13 @@ transition:
         In Orderly transition risk scenarios, the price per gigajoule of 
         liquid final energy (liquid fuels from all energy sources; incl. oil 
         products, synthetic fossil fuels from gas and coal, biofuels) for use 
-        in transportation at least doubles by 2050, increasing from around 20 
-        USD (inflation adjusted to 2010 baseline) to between 40 USD and 55 USD.
+        in transportation increases from around 30 USD (inflation adjusted to 
+        2010 baseline) to between ~40 USD and ~50 USD by 2050.
         
-        ![Transportation Liquid Price](Transportation_Liquids_Price_Orderly.png)
+        ![Transportation Liquid Price](marine_orderly_price_liquids.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
 
       - International cooperation could spur changes in maritime law leading to
         **increasing compliance requirements**. These changes may require firms
@@ -234,19 +233,19 @@ transition:
         As the use of oil gradually declines, electricity becomes the dominant 
         source of final energy by the end of the century.
         
-        ![Transportation Final Energy](Transportation_Final_Energy_Orderly.png)
+        ![Transportation Final Energy](marine_orderly_final_energy.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       In Orderly transition risk scenarios, these innovations could 
       contribute to an overall decrease in CO<sub>2</sub> emissions in the 
       transportation sector.
       
-      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Orderly.png)
+      ![Transportation CO2 Emissions](marine_orderly_emissions.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. GCAM 5.3+.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The Orderly transition risk scenarios also present opportunities 
       for the marine sector. Proactively investing in the above innovations 
@@ -288,8 +287,8 @@ physical:
       either uninsurable or unaffordable.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The high physical risk scenarios could therefore also lead to a
+      scenarios and these vary in line with different temperatures projected for 
+      each scenario. The high physical risk scenarios could therefore also lead to a
       significant GDP impact which could negatively impact marine sector demand.
     high_materiality: |
       The following examples illustrate how the marine sector and underwriting

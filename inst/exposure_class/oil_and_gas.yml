@@ -36,7 +36,7 @@ transition:
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in a
       Disorderly transition risk scenario, fossil fuels represent only
-      ~23% of global energy demand compared to ~83% in 2020. Carbon-intensive
+      ~25% to ~35% of global energy demand compared to ~85% in 2020. Carbon-intensive
       sectors such as oil and gas are consequently some of the most vulnerable
       to the transition. In a delayed transition scenario, the policy delays
       lead to a "fossil recovery" out of the economic crisis brought
@@ -70,7 +70,7 @@ transition:
 
       - **Readjusted capital expenditures** focusing on new investments required
         to pivot business model towards low-carbon fuels, renewable biofuels
-        and/or CCUS
+        and/or Carbon Capture, Usage and Storage (CCUS)
 
       - **Rapidly falling asset values** of oil and gas reserves and
         infrastructure required for extraction, based on re-adjusted
@@ -80,31 +80,31 @@ transition:
       is likely to be significantly impacted. Driven by increased
       electrification, total electricity capacity and generation jumps markedly,
       and the underlying sources change dramatically. Solar is the dominant
-      technology representing around half of electricity generation capacity by
-      2050, completely displacing coal (before 2030) and gas (between 2025 and
-      2030).
+      technology representing over half of electricity generation capacity by
+      2050, completely displacing coal and gas (both before 2025).
 
-      ![Electricity Capacity](Electricity_Capacity_Disorderly.png)
+      ![Electricity Capacity](oil_gas_disorderly_electricity_capacity.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database. Electricity capacity in the delayed transition scenario.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       Demand for oil and gas decreases rapidly as the share of renewables in the
-      electricity generation mix increases to almost 70% by 2050.
+      electricity generation mix increases.
 
-      ![Primary Energy Oil and Gas](Primary_Energy_Disorderly_Oil_and_Gas.png)
-
-      **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
-      Primary energy prices (i.e. the spot price at the global market) remain
-      depressed throughout the scenario horizon, while secondary energy prices
-      (i.e. paid by large scale consumers) rise in line with the carbon price.
-
-      ![Oil and Gas price](Oil_and_Gas_Disorderly_Price.png)
+      ![Primary Energy Oil and Gas](oil_gas_disorderly_primary_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      Primary energy prices (i.e. the spot price at the global market) rise above 
+      2020 levels along with secondary energy prices (i.e. paid by large scale consumers) 
+      , with the increased operating costs from paying a price on carbon emissions partially 
+      passed to downstream consumers
+
+      ![Oil and Gas price](oil_gas_disorderly_energy_price.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       Under Disorderly transition risk scenarios, belated awareness by
       financial market participants of the scale and speed of the transition
@@ -124,8 +124,8 @@ transition:
       which could affect profitability of individual companies and the sector overall. 
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in
-      Orderly transition risk scenarios, fossil fuels represent only ~27%
-      of global energy demand compared to ~83% in 2020. Carbon-intensive sectors
+      Orderly transition risk scenarios, fossil fuels represent only ~25% to ~40%
+      of global energy demand compared to ~85% in 2020. Carbon-intensive sectors
       such as oil and gas are consequently some of the most vulnerable to
       transition.
 
@@ -156,46 +156,47 @@ transition:
 
       - **Readjusted capital expenditures** including new investments required
         to pivot business model towards low-carbon fuels, renewable biofuels
-        and/or CCUS
+        and/or Carbon Capture, Usage and Storage (CCUS).
 
       - **Falling asset values** of oil and gas reserves and infrastructure
         required for extraction based on re-adjusted expectations of much lower
         demand of fossil fuels in the future
 
-      Driven by increased electrification, capital investments into fossil fuel
-      extraction and supply could significantly lag investment into green
-      electricity and storage.
+      In Orderly transition risk scenarios, capital investment into fossil fuel
+      extraction and supply could be significantly lower than investment into renewable
+      electricity and storage. There is still some legacy capital investment in fossil fuel 
+      extraction to maintain the infrastructure while phasing down the overall capacity.
 
-      ![Cumulative Energy Investment](Cumulative_Energy_Investment_Oil_and_Gas.png)
+      ![Cumulative Energy Investment](oil_gas_energy_investment.png)
 
-      **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+       **Source:**
+       [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
 
       Overall, demand for oil and gas decreases steadily as the share of
-      renewables in the electricity generation mix increases. This is driven by
-      the fact that the demand for oil more generally becoming smaller due to
-      renewable energy generation, the share of electric vehicles on the roads
+      renewables in the electricity generation mix increases. The share of electric vehicles on the roads
       could also steadily increase and a large share of the remaining
-      conventional vehicles could use biofuels instead of petrol or diesel.
+      conventional vehicles could use biofuels instead of petrol or diesel, further contributing to a decrease 
+      in demand for the oil and gas sector. In Orderly transition risk scenarios, consumption of oil and gas 
+      combined falls from ~300 exajoules per year to between ~120 and ~200 exajoules per year by 2050.
 
-      ![Primary Energy Oil and Gas](Primary_Energy_Orderly_Oil_and_Gas.png)
-
-      **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
-      Primary energy prices (i.e. the spot price at the global market) remain
-      above 2020 levels but secondary energy prices (i.e. paid by large scale
-      consumers) rise as the increased operating costs from paying a price on
-      carbon emissions is partially passed to downstream consumers.
-
-      ![Oil and Gas price](Oil_and_Gas_Orderly_Price.png)
+      ![Primary Energy Oil and Gas](oil_gas_orderly_primary_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      Primary energy prices (i.e. the spot price at the global market) rise
+      above 2020 levels along with secondary energy prices (i.e. paid by large scale
+      consumers), with the increased operating costs from paying a price on
+      carbon emissions partially passed to downstream consumers.
+
+      ![Oil and Gas price](oil_gas_orderly_energy_price.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050,
       renewables and biomass would cover ~70% of global primary energy needs
-      (compared to ~20% in 2020), driving stranding of fossil fuel assets.
+      (compared to ~15% in 2020), driving stranding of fossil fuel assets.
       Because the oil and gas sector is so diverse, there is no single solution,
       but rather a range of strategies based on the circumstances of each
       company that could need to be deployed in Orderly transition risk
@@ -204,16 +205,16 @@ transition:
       company providing renewable power generation or investing in carbon
       capture and storage (CCS) technologies.
 
-      ![Primary Energy Mix](Primary_Energy_Mix_Oil_and_Gas.png)
+      ![Primary Energy Mix](oil_gas_orderly_energy_mix.png)
 
-      **Source:**
-      [IIASA NGFS Climate Scenarios Database. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+       **Source:**
+       [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.
 physical:
   high:
     exec_description: |
       Oil and gas is one of the sectors that are highly exposed to physical risk 
       scenarios due to the increase in weather variation. These scenarios could also 
-      lead to a significant GDP impact which could negatively impact demand for this 
+      lead to a significant GDP impact which could negatively affect demand for this 
       sector.
     always: |
       The oil and gas sector is highly exposed to the physical impacts of
@@ -227,9 +228,9 @@ physical:
       impact the profitability for these companies.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The high physical risk scenarios could therefore also lead to a
-      significant GDP impact which could negatively impact demand for oil and
+      scenarios and these vary in line with different temperatures projected for
+      each scenario. The high physical risk scenarios could therefore also lead to a
+      significant GDP impact which could negatively affect demand for oil and
       gas.
     high_materiality: |
       The following examples illustrate how the oil and gas sector could be

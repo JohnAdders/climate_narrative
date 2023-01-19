@@ -1,6 +1,6 @@
 name: Mortgage Lending Exposure
 test_report_position: 21
-description: |
+description: | 
   **Mortgages** are a lending exposure type based upon a legal agreement by
   which a bank, building society or other regulated organisation lends money at
   interest in exchange for taking title of the customer's property, with the
@@ -11,7 +11,7 @@ description: |
   amount borrowed is based upon the affordability of the applicants, either on a
   capital repayment or interest only basis (it is worth noting that for buy to
   let mortgages the rental income is used to define loan amount). The main types
-  are mortgage lending in the residential sector are:
+  of mortgage lending in the residential sector are:
 
   - Standard owner occupier
 
@@ -33,7 +33,7 @@ transition:
       foreseeable future. The quality of residential stock could be the key
       challenge on the mortgage lending sector.
 
-      In Disorderly transitional risk scenarios, the changes in energy prices
+      In Disorderly transition risk scenarios, the changes in energy prices
       are material as they impact every property and are applied throughout the
       period. These have the ability to account for the greatest proportion of
       losses, after the macroeconomic impact has been forecast.
@@ -47,24 +47,24 @@ transition:
       **Abrupt and steep phase in of carbon/ emissions prices**
 
       Increasing energy prices, due to the Government carbon taxes or elevated
-      energy costs, impacts both homeowners' and renters' ability to repay debt
+      energy costs, impact both homeowners' and renters' ability to repay debt
       over an extended period of time. The potentially enduring nature of this
       shock (as opposed to the one-off costs associated with, say, retrofitting),
-      and the broader impact (i.e. it affects nearly all to some extent) leads
+      and the broader impact (i.e. it affects nearly all to some extent) lead
       to a greater effect than that experienced as a result of retrofitting. The
       reduced ability to pay, as a result of more income being spent on energy
       bills, could increase probabilities of default.
       
       In Disorderly transition risk scenarios, electricity price increases in the short 
       term, peaking around 2035 in the Delayed transition scenario and 2030 in 
-      the Divergent Net Zero scenario. Oil and gas prices increase throughout, 
-      both more than tripling by 2050 in the Delayed transition scenario, and 
-      more than doubling by 2050 in the Divergent Net Zero scenario.
+      the Divergent Net Zero scenario, and remains above 2020 levels at 2050. Oil and gas
+      prices increase throughout, broadly doubling by 2050 with gas almost tripling
+      in the Divergent Net Zero scenario.
       
-      ![Residential and Commercial Price](Residential_Energy_Price_Disorderly.png)
+      ![Residential and Commercial Price](mortgage_lending_disorderly_price_final_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       **Uncertainty about implementation of transition policies**
 
@@ -77,7 +77,7 @@ transition:
       value wise by not meeting regulation or unskilled contractors attempting
       to retrofit which actually damages the property.
 
-      **EPC**
+      **Efficiency Performance Certificate (EPC)**
 
       Given that all mortgage lending is linked to properties, any legislation
       that impacts them or requires change can have an impact on the market and
@@ -95,7 +95,7 @@ transition:
 
       - Portfolio average of EPC Band C by 2030
 
-      - All property Net Zero by 2050
+      - All property net zero by 2050
 
       The introduction of the above legislation generates one or more of the
       below financial risks, especially if lenders are targeted with improving
@@ -140,14 +140,14 @@ transition:
       - Inability to deliver a just transition leading to vulnerable or
         least-able-to-pay customers being disadvantaged
 
-      In Disorderly transition risk scenarios, emissions from residential and commercial 
-      buildings are projected to fall due to increased efficiency from new 
-      legislation (as well as a change in energy mix).
+      In Disorderly transition risk scenarios, buildings become less carbon intense;
+      CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor space 
+      decrease from ~14 megatons to between 0 and ~2 megatons by 2050.
       
-      ![CO2 Emissions Residential vs Commercial](CO2_emissions_Residential_vs_Commercial_Disorderly.png)
+      ![floor space intensity](mortgage_lending_disorderly_floor_space.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       For lenders who have a material exposure to mortgages, they are likely to
       be their largest source of carbon emissions, so there is a heavy reliance
@@ -186,7 +186,7 @@ transition:
         requires retrofitting and whether there is the perception that as a
         lender, they should protect the borrower from this risk. This risk is
         further elevated where scenario modelling indicated the potential risk
-        but this was not conveyed to the borrower
+       but this was not conveyed to the borrower
 
       - Reputational risk associated with missing green / Net Zero targets /
         commitments as a result of inadequate government support
@@ -237,12 +237,12 @@ transition:
       transitional legislation is implemented.
 
       Transition risk has the ability to generate significant losses, mainly due
-      to the cost of retrofitting (if not Government funded), properties that
+      to the cost of retrofitting (if not Government funded) properties that
       are unable to meet the minimum Efficiency Performance Certificate (EPC)
       standard and hence are classified as unmarketable (and unmortgageable),
       and rising energy costs across the next 30 years.
     high_materiality: |
-      **EPC**
+      **Efficiency Performance Certificate (EPC)**
 
       Given that all mortgage lending is linked to properties, any legislation
       that impacts them or requires change can have an impact on the market and
@@ -260,7 +260,7 @@ transition:
 
       - Portfolio average of EPC Band C by 2030
 
-      - All property Net Zero by 2050
+      - All property net zero by 2050
 
       The introduction of the above legislation generates one or more of the
       below financial risks which need to be considered, especially if lenders
@@ -308,12 +308,14 @@ transition:
 
       In Orderly transition risk scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from new 
-      legislation (as well as a change in energy mix).
-      
-      ![CO2 Emissions Residential vs Commercial](CO2_emissions_Residential_vs_Commercial_Orderly.png)
+      legislation (as well as a change in energy mix). CO<sub>2</sub> emissions
+      due to energy consumption per billion meters squared of floor space decrease from ~14 megatons 
+      to between ~1 and ~3 megatons by 2050.
+     
+      ![floor space intensity](mortgage_lending_orderly_floor_space.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       For lenders who have a material exposure to mortgages, they are likely to
       be their largest source of carbon emissions, so there is a heavy reliance
@@ -344,10 +346,11 @@ transition:
       energy bills. This could increase probabilities of default.
       
       In Orderly scenarios, electricity price increases in the short term, 
-      peaking around 2030, whilst oil and gas prices increase throughout, both more 
-      than tripling by 2050.
+      peaking around 2030, and remains above 2020 levels at 2050. Oil and gas prices
+      increase throughout, with gas tripling and oil almost doubling in Net Zero 2050
+      by 2050. In the Below 2&deg;C scenario oil and gas prices double.
       
-      ![Residential and Commercial Price](Residential_Energy_Price_Orderly.png)
+      ![Residential and Commercial Price](mortgage_lending_orderly_price_final_energy.png)
 
       **Source:**
       [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
@@ -422,11 +425,11 @@ physical:
         considered if the property is only insurable due to FloodRe and what
         happens when that ends, along with if flood defences can resolve the
         issue. The number of times a property floods is a key consideration. 
-        In the Current Policies scenario, there is a fifteen-fold increase in 
+        In the Current Policies scenario, there is a five fold increase in 
         the fraction of land annually exposed to river floods by the end of the 
-        century, to ~0.075%.
+        century, to ~0.04%.
         
-      ![River Flood Land Fraction](River_Flood_Land_High_Physical.png)
+      ![River Flood Land Fraction](mortgage_lending_high_physical_river_floods.png)
       
       **Source:** 
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"} 
@@ -514,12 +517,12 @@ physical:
         considered if the property is only insurable due to FloodRe and what
         happens when that ends, along with if flood defences can resolve the
         issue. The number of times a property floods is a key consideration. 
-        In the Net Zero 2050 scenario, there is a ten-fold increase in the 
+        In the Net Zero 2050 scenario, there is over a five-fold increase in the 
         fraction of land annually exposed to river floods by 2035, to ~0.05%. 
         In the Delayed transition scenario, the fraction of land annually 
-        exposed to river floods reaches ~0.06% by the end of the century.
+        exposed to river floods reaches ~0.06% by 2035.
         
-      ![River Flood Land Fraction](mortgage_river_flood_coverage.png)
+      ![River Flood Land Fraction](mortgage_lending_low_physical_river_floods.png)
       
       **Source:** 
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}  

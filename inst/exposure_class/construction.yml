@@ -1,7 +1,7 @@
 name: Construction
 test_report_position: 4
 description: |
-  The **Construction** sector includes establishments primarily responsible for
+  The **construction** sector includes establishments primarily responsible for
   the construction of buildings. The work performed may include new work,
   additions, alterations, or maintenance and repairs. The onsite assembly of
   pre-cut, panelised, and prefabricated buildings and construction of temporary
@@ -9,21 +9,21 @@ description: |
   classified based on the types of buildings they construct. The construction 
   sector includes companies that are, for example, involved in the following:
 
-  1. The construction of residential and commercial buildings. This also
-     includes remodelling or renovating work for the buildings.
+  - The construction of residential and commercial buildings. This also
+    includes remodelling or renovating work for the buildings.
 
-  1. The construction of distribution lines and related buildings and structures
-     for utilities (i.e. water, sewer, petroleum, gas, power, and communication)
-     or the structures that are integral parts of the utility systems (power
-     plants, sewer lines, oil and gas pipelines, telecommunications
-     transmitting/receiving towers, etc.)
+  - The construction of distribution lines and related buildings and structures
+    for utilities (i.e. water, sewer, petroleum, gas, power, and communication)
+    or the structures that are integral parts of the utility systems (power
+    plants, sewer lines, oil and gas pipelines, telecommunications
+    transmitting/receiving towers, etc.)
 
-  1. The construction of highways (including elevated), streets, roads, airport
-     runways, public sidewalks, bridges, and other heavy and civil engineering
-     constructions.
+  - The construction of highways (including elevated), streets, roads, airport
+    runways, public sidewalks, bridges, and other heavy and civil engineering
+    constructions.
 
-  1. The installation or servicing of equipment that is part of building
-     mechanical systems such as plumbing, heating, electrical wiring, etc.
+  - The installation or servicing of equipment that is part of building
+    mechanical systems such as plumbing, heating, electrical wiring, etc.
 transition:
   high:
     exec_description: |
@@ -53,8 +53,8 @@ transition:
       emitting carbon, primarily through electricity use, fuel usage for
       vehicles and plant, and from the production of materials, such as steel
       and cement. As per Global Alliance for Buildings and Construction (Global
-      ABC) report, in 2020, the Buildings and Construction sector accounted for
-      36% of global energy consumption.
+      ABC) report, in 2021, the Buildings and Construction sector accounted for
+      37% of global energy consumption.
     high_materiality: |
       The changes in carbon pricing, societal preference, energy prices and
       energy mix could potentially result in one or more of the following
@@ -86,16 +86,28 @@ transition:
 
       In Disorderly transition risk scenarios, the construction sector
       is likely to be impacted by rapid decarbonization in building materials
-      and its own operations. Likely reduction in the production of cement due
-      to higher carbon tax amid increasing global demand could drive the price
-      of cement more than 500% higher by 2050 in the Divergent Net Zero scenario
-      and over 400% higher by 2050 in the Delayed transition scenario, leading
+      such as cement, chemicals and steel, as well as in its own operations. 
+      A large portion of cement industry CO2 emissions arise as a by-product 
+      of a chemical conversion process and thus cannot be reduced through a 
+      change in fuel mix or efficiency. A sharper focus would be required for 
+      the cement industry to instead improve its clinker-to-cement ratio and 
+      deploy carbon storage technologies. Due to this limited capacity to 
+      improve CO2 intensity, among building materials, cement could incur 
+      the most impact in the face of an increasing carbon price. 
+      
+      ![Emissions Mix](construction_disorderly_materials_emissions.png)
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. GCAM 5.3+.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      For example,due to higher carbon tax amid increasing global demand, the price
+      of cement could increase by more than 500% by 2050 in the Divergent Net Zero scenario
+      and over 700% higher by 2050 in the Delayed transition scenario, leading
       to increased material cost for the construction industry.
 
-      ![Cement Price](Cement_Price_Disorderly_Consruction.png)
+      ![Cement Price](construction_disorderly_cement_price.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. MESSAGEix-GLOBIOM 1.1-M-R12.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The construction sector is also likely to be impacted by rapid
       decarbonization in energy mix. Increased carbon tax cost and new
@@ -103,14 +115,13 @@ transition:
       construction industry in the short-to-medium term.
 
       The construction sector is also likely to be impacted by rapid decarbonization
-      in transport. Within road freight vehicles, the portion of electric
-      vehicles could increase between 30% and 75% by 2050 in Disorderly
-      transition risk scenarios.
+      in transport. The portion of electric energy used in freight transport could 
+      increase to between 16% and 26% by 2050 in Disorderly transition risk scenarios.
 
-      ![Freight Vehicles](Electric_Freight_Vehicles_Disorderly_Construction.png)
+      ![Freight Vehicles](construction_disorderly_elec_freight.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The profitability of the construction sector, in the Disorderly
       transition risk scenarios, could also depend on the relevant companies
@@ -118,7 +129,7 @@ transition:
       that energy efficiency improvements are made in the design and construction, 
       as well as in the operations of buildings. It is estimated that the total 
       GHG emissions from building material is largely concentrated in just 10 commonly used
-      items: Cement, Steel, Limestone, Structural clay, Aluminium, etc.
+      items: cement, steel, limestone, structural clay, aluminium, etc.
       Decarbonising steel and concrete production currently represent a
       significant challenge. The alternative is to substitute such materials,
       where possible, for lower-carbon intensity products, and increase
@@ -178,48 +189,57 @@ transition:
         with poor energy efficiency.
 
       The construction sector is likely to be impacted by steady decarbonization
-      in building materials and its own operations. Among building materials,
-      cement could incur the most impact due to its limited capacity to improve
-      CO<sub>2</sub> intensity and increasing carbon price. A sharper focus
-      would be required for the cement industry to improve its clinker-to-cement
-      ratio and deploy carbon storage technologies.
+      in building materials such as cement, chemicals and steel, as well as in its 
+      own operations. 
+      
+      ![Energy consumption emissions](construction_orderly_energy_emissions.png)
+      
+      **Source:**
+       [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
+      
+      Although emissions from energy consumption in the cement industry reduce greatly 
+      by 2050, a large portion of cement industry CO<sub>2</sub> emissions arise as a by-product 
+      of a chemical conversion process and thus cannot be reduced through a change in 
+      fuel mix or efficiency. A sharper focus would be required for the cement industry 
+      to instead improve its clinker-to-cement ratio and deploy carbon storage technologies.
+      Due to this limited capacity to improve CO<sub>2</sub> intensity, among building materials
+      cement could incur the most impact in the face of an increasing carbon price.
 
-      ![Emissions Mix](Emissions_Mix_Construction.png)
+      ![Emissions Mix](construction_orderly_material_emissions.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. GCAM 5.3+.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      Likely reduction in the production of cement due to higher carbon tax amid
-      increasing global demand could drive the price of cement more than 350%
-      higher by 2050 in the Net Zero 2050 scenario and over 250% higher by 2050
+      For example, due to higher carbon tax amid increasing global demand, the price of cement could
+      increase by more than 500% by 2050 in the Net Zero 2050 scenario and by almost 300% by 2050
       in the Below 2&deg;C scenario, leading to increased material cost for the
       construction industry.
 
-      ![Cement Price](Cement_Price_Orderly_Consruction.png)
+      ![Cement Price](construction_orderly_cement_price.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. MESSAGEix-GLOBIOM 1.1-M-R12.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The construction sector is also likely to be impacted by steady
       decarbonization in energy mix. By 2050, renewables and biomass would cover
-      68% of global primary energy needs. The increased carbon tax cost and new
+      ~70% of global primary energy needs. The increased carbon tax cost and new
       investment for renewables could increase the electricity cost for the
       construction industry in the short-to-medium term. 
 
-      ![Primary Energy](Primary_Energy_Mix_Oil_and_Gas.png)
+      ![Primary Energy](construction_orderly_energy_mix.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
-
+      [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}. Direct equivalent accounting method used, which is predominant in publications on long-term transition pathways.
+       
       The construction sector is also likely to be impacted by steady
-      decarbonization in transport. Within road freight vehicles, the portion of
-      electric vehicles could increase by between 20% and 30% by 2050 in Orderly
+      decarbonization in transport. The portion of electric energy used in freight 
+      transport could increase by between ~16% and ~20% by 2050 in Orderly
       transition scenarios.
 
-      ![Freight Vehicles](Electric_Freight_Vehicles_Orderly_Construction.png)
+      ![Freight Vehicles](construction_orderly_elec_freight.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The profitability of the construction sector, in Orderly transition
       risk scenarios, could depend on the relevant companies proactively
@@ -227,7 +247,7 @@ transition:
       efficiency improvements are made in the design and construction, as well 
       as in the operations of buildings. It is estimated that the total GHG 
       emissions from building material is largely concentrated in just 10 commonly 
-      used items: Cement, Steel, Limestone, Structural clay, Aluminium, etc. 
+      used items: cement, steel, limestone, structural clay, aluminium, etc. 
       Decarbonising steel and concrete production currently represent a significant 
       challenge. The alternative is to substitute such materials, where possible, for
       lower-carbon intensity products, and increase recycling.
@@ -250,8 +270,8 @@ physical:
       process, which may decrease profitability for the construction industry.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The high physical risk scenarios could therefore also lead to a
+      scenarios and these vary in line with different temperatures projected for each 
+      scenario. The high physical risk scenarios could therefore also lead to a
       significant GDP impact which could negatively impact demand for
       construction.
     high_materiality: |
@@ -273,7 +293,7 @@ physical:
         temperatures, as well as mean daily minimum and maximum air 
         temperatures, are projected to increase significantly.
         
-      ![Air Temperature](Air_Temp_High_Physical.png)
+      ![Air Temperature](construction_highp_temp.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
@@ -287,7 +307,7 @@ physical:
         getting damaged. In the current policies scenario, precipitation is 
         expected to increase significantly.
         
-      ![Precipitation](Precipitation_High_Physical.png)
+      ![Precipitation](construction_highp_precipitation.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
@@ -337,7 +357,7 @@ physical:
         maximum air temperatures, are projected to increase more in the Delayed 
         scenario.
         
-      ![Air Temperature](Air_Temp_Low_Physical.png)
+      ![Air Temperature](construction_lowp_temp.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
@@ -350,9 +370,8 @@ physical:
         project sites with infrastructure collapsing and exposed materials
         getting damaged, in particular in the Delayed scenario as highlighted 
         in the below graph. In both the Net Zero 2050 and Delayed transition 
-        scenarios, precipitation is projected to increase at an accelerating 
-        rate and peak by 2050 before falling. From 2060 onwards, in the Delayed 
-        transition scenario, precipitation will decrease. 
+        scenarios, precipitation is projected to increase, peaking around 2040 at 
+        ~1% to ~3% above a 1986-2006 reference period before falling slightly after 2060.
         
       ![Precipitation](construction_precipitation.png)
       

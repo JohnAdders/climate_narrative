@@ -1,7 +1,7 @@
 name: Utilities
 test_report_position: 6
 description: |
-  The **Utilities** sector comprises companies that provide basic amenities
+  The **utilities** sector comprises companies that provide basic amenities
   such as water, sewage services, electricity, and gas. The sector includes
   companies that:
 
@@ -60,6 +60,15 @@ transition:
       be amplified, either because of policy divergences across sectors, or because 
       delayed decarbonisation requires greater decarbonisation later on.
       
+      In Disorderly transition risk scenarios electricity use more than doubles by 
+      2050, from ~75 exajoules to between ~185 and ~190 exajoules.
+      
+      ![Final energy electricity](utilities_disorderly_energy_elec.png)
+
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      
       Comparing energy usage and mix patterns between the Net Zero 2050 and Divergent 
       Net Zero, and then the Below 2&deg;C and Delayed Transition scenarios, we 
       generally see similarly large shifts towards solar and wind generation, 
@@ -75,21 +84,21 @@ transition:
       derived from an energy systems model that makes relatively favourable assumptions 
       about how the relative price of solar PV and, to a lesser extent, wind technologies 
       evolve relative to fossil fuels and nuclear energy. As a result, solar and wind become 
-      the dominant technologies, with solar representing around half of electricity 
-      generation capacity by 2050, completely displacing coal (before 2030) and gas 
-      (between 2025 and 2030). These models also envision only a modest role for carbon, 
+      the dominant technologies, with solar representing over half of electricity 
+      generation capacity by 2050, completely displacing coal (before 2025) and gas 
+      (before 2025). These models also envision only a modest role for carbon, 
       capture and storage technologies to keep fossil fuel usage viable over the longer 
       term.
 
-      ![Secondary Energy](Secondary_Energy_Electricity_Disorderly_Utilities.png)
+      ![Secondary Energy](utilities_disorderly_elec_sources.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      ![Electricity Capacity](Electricity_Capacity_Disorderly.png)
+      ![Electricity Capacity](utilities_disorderly_elec_capacity.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       Testing these assumptions using different models therefore remains wise. 
       And the same goes for allowing for policy variation across different regions, 
@@ -154,7 +163,15 @@ transition:
       - **Increased revenue** for electric utilities as the global energy system becomes more 
         electrified, with revenue gains strongest for firms with zero and low carbon intensive 
         production processes.
-      
+        
+        In Orderly transition risk scenarios, electricity use more than doubles by 2050, from 
+        ~75 exajoules to ~195 exajoules.
+        
+        ![Final Energy Electricity](utilities_orderly_energy_elec.png)
+        
+        **Source:**
+        [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
       - **Reduced revenue** for carbon intensive utilities as consumers switch
         to low carbon/electrified alternatives for heating and become more
         energy autonomous.
@@ -175,12 +192,12 @@ transition:
       adequate transition plans, whilst opportunities exist for utilities drawing 
       most heavily on zero and low carbon activities. Capital investments into 
       fossil intensive electricity would significantly lag investment into 
-      green electricity and storage.
+      renewable electricity and storage.
 
-      ![Cumulative Energy Investment](Cumulative_Energy_Investment_Oil_and_Gas.png)
+      ![Cumulative Energy Investment](utilities_orderly_energy_investment.png)
 
-      **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      ***Source:**
+      [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
 
       Nevertheless, in orderly transition scenarios, one has to be careful about also 
       expecting valuation uplifts in firms that act as 'pure plays' on an accelerated 
@@ -191,20 +208,20 @@ transition:
       
       Focusing on electricity generation capacity, solar and wind see the 
       largest absolute and relative increases in both the Net Zero 2050 and 
-      Below 2&deg;C scenarios. Non-biomass renewables are then the third best 
-      performer. In contrast the outlook for natural gas and especially coal 
+      Below 2&deg;C scenarios. Hydro is then the third best performer. 
+      In contrast the outlook for natural gas and especially coal 
       is much poorer, though there may be a more important role for natural 
       gas as a transition fuel, especially in the Below 2&deg;C scenario.
 
-      ![Secondary Energy](Secondary_Energy_Electricity_Orderly_Utilities.png)
+      ![Secondary Energy](utilities_disorderly_elec_sources.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      ![Electricity Capacity](Electricity_Capacity_Orderly.png)
+      ![Electricity Capacity](utilities_disorderly_elec_capacity.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       Users also have to be aware that the results in this tool are derived 
       from one particular energy-systems model, which makes particular 
@@ -272,12 +289,16 @@ physical:
       **Chronic Impacts**:
       
       - **Higher average temperatures** could reduce demand for energy used for
-        heating, particularly natural gas demand. Performance of combined-cycle
-        power stations could decrease with an increase in temperature. Water supply could 
-        also be strained in some regions, with drier summers (along with a limited capacity 
+        heating, particularly natural gas demand. 
+        
+      - **Performance of combined-cycle power stations could decrease** with an increase in 
+        temperature. Increases in water temperature will decrease cooling efficiency and ability 
+        to meet local regulatory discharge temperature standards.
+        
+      - **Water supply could also be strained** in some regions, with drier summers (along with a limited capacity 
         to store an increase in winter rainfall) affecting water availability, and an increased 
         demand for water in a more arid climate. Higher temperatures could also result in increased 
-        requency and duration of algal blooms, increasing treatment costs for water utilities.
+        frequency and duration of algal blooms, increasing treatment costs for water utilities.
         
       - **Higher average sea levels** could render the existing locations of 
         some utilities unviable, particularly those that are in low-lying coastal 
@@ -345,9 +366,13 @@ physical:
       **Chronic Impacts**:
 
       - **Higher average temperatures** could reduce demand for energy used for
-        heating, particularly natural gas demand. Performance of combined-cycle
-        power stations could decrease with an increase in temperature. Water supply 
-        could also be strained in some regions, with drier summers (along with a 
+        heating, particularly natural gas demand. 
+        
+      - **Performance of combined-cycle power stations could decrease** with an increase
+        in temperature. Increases in water temperature will decrease cooling efficiency 
+        and ability to meet local regulatory discharge temperature standards.
+     
+      - **Water supply could also be strained** in some regions, with drier summers (along with a 
         limited capacity to store an increase in winter rainfall) affecting water 
         availability, and an increased demand for water in a more arid climate. Higher 
         temperatures could also result in increased frequency and duration of algal 

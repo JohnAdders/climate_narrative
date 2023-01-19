@@ -1,14 +1,13 @@
 name: Casualty Underwriting Class
 test_report_position: 18
-description: |
-  The **Casualty** underwriting class covers legal liabilities from a number
+description: | 
+  The **casualty** underwriting class covers legal liabilities from a number
   of causes and lines of business including Product Liability, Public Liability, 
-  Directors & Officers, Employers' Liability and others. Liability risks are 
-  those that could arise for insurance firms from parties who have suffered loss 
-  and damage from climate change, and then seek to recover losses from others 
-  who they believe may have been responsible. Where such claims are successful, 
-  those parties against whom the claims are made may seek to pass on some or 
-  all of the cost to insurance firms under third-party liability contracts 
+  Directors & Officers, Employers' Liability and others. Liability risks could arise
+  for insurance firms from parties who have suffered loss and damage from climate change,
+  and then seek to recover losses from others who they believe may have been responsible. 
+  Where such claims are successful, those parties against whom the claims are made may seek
+  to pass on some or all of the cost to insurance firms under third-party liability contracts 
   such as professional indemnity or directors' and officers' insurance. 
   (Prudential Regulation Authority, 2015).
 transition:
@@ -78,10 +77,10 @@ transition:
       transition scenario which could be considered as a starting point for the 
       impacts on demand and costs for companies that fail to adapt to the transition.
       
-      ![Policy Cost](Policy_Cost_Disorderly.png)
+      ![Policy Cost](casualty_uw_disorderly_policy_cost.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       The sudden shift to a low-carbon economy could lead to wide-ranging
       changes in the nature and mix of businesses and can cause established
@@ -146,10 +145,10 @@ transition:
       transition scenario which could be considered as a starting point for the 
       impacts on demand and costs for companies that fail to adapt to the transition.
       
-      ![Policy Cost](Policy_Cost_Orderly.png)
+      ![Policy Cost](casualty_uw_orderly_policy_cost.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 physical:
   high:
     exec_description: |
@@ -199,16 +198,15 @@ physical:
       For material exposures to employer's liability and public liability,
       exposures that include significant amounts of outdoor activity (or more
       exposures in geographies that are already much hotter) are more likely to
-      be affected by a high physical risk scenario.
+      be affected by a high physical risk scenario. Weather events increase across the 
+      economy. Specific events that could lead to insured losses could increase more rapidly, 
+      for example, while productivity gradually reduces due to heat stress, heat stress
+      injuries leading to litigation against employers will occur in the most extreme heat 
+      events if employers haven't taken adequate action to protect employees. Similarly, 
+      exposure to wildfire damage increases in general but specific exposures could be more vulnerable.
+      (however in the UK this increase may be relatively subdued).
       
-      Weather events increase across the economy. Specific events that could lead 
-      to insured losses could increase more rapidly, for example, while productivity 
-      gradually reduces due to heat stress, heat stress injuries leading to litigation 
-      against employers will occur in the most extreme heat events if employers haven't 
-      taken adequate action to protect employees. Similarly, exposure to wildfire 
-      damage increases in general but specific exposures could be more vulnerable.
-      
-      ![Wildfire and Labour](Wildfires_and_Heat_Stress_High_Physical.png)
+      ![Wildfire and Labour](casualty_uw_high_physical_labour_wildfires.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
@@ -275,10 +273,10 @@ physical:
       gradually reduces due to heat stress, heat stress injuries leading to 
       litigation against employers will occur in the most extreme heat events if 
       employers haven't taken adequate action to protect employees. Similarly, 
-      exposure to wildfire damage increases in general but specific exposures 
-      could be more vulnerable.
+      exposure to wildfire damage could increase in general but specific exposures 
+      could be more vulnerable. (however in the UK this increase may be relatively subdued).
       
-      ![Wildfire and Labour](Wildfires_and_Heat_Stress_Low_Physical.png)
+      ![Wildfire and Labour](casualty_uw_low_physical_labour_wildfires.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}

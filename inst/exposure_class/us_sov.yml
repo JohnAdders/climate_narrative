@@ -1,7 +1,7 @@
 name: US sovereign
 test_report_position: 25
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -82,11 +82,11 @@ transition:
       models to the US. Climate-related expenditures are expected to range from
       $9 to $28 billion annually (in today's dollars), and revenue losses vary
       between $56 billion and $111 billion.
-      [(The risks from climate change to sovereign debt in Europe | Bruegel)](http://bruegel.org/reader/The-risks-from-climate-change-to-sovereign-debt-in-Europe#how-exposed-are-european-sovereigns-to-climate-risk){target="\_blank"}.
+      [(The risks from climate change to sovereign debt in Europe | Bruegel).](http://bruegel.org/reader/The-risks-from-climate-change-to-sovereign-debt-in-Europe#how-exposed-are-european-sovereigns-to-climate-risk){target="\_blank"}.
       
       The Disorderly transition risk scenarios could also lead to a reduction in
-      GDP growth. Based on the IIASA NGFS Scenario Explorer v2.0, the impact of
-      the Divergent Net Zero scenario on the US GDP would be about twice as much
+      GDP growth. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), 
+      the impact of the Divergent Net Zero scenario on the US GDP would be about twice as much
       as the one on the UK by 2050.
 
     high_materiality: |
@@ -109,29 +109,40 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
+      Total GHG emissions in the US in 2021 were 15% below 2005 levels. This 
+      trend was primarily driven due to the power sector, driven by a shift from 
+      coal to lower or non-emitting sources of generation, such as natural gas and 
+      renewables. Generation from wind and solar continued to grow in 2021, by 29% 
+      and 12% compared to 2020 respectively.
+      
+      In 2018, the US became the world's largest producer of crude oil. The production
+      of oil in 2021 remained relatively stable, decreasing only by 1% from 2020 levels.
+      In response to rising prices and energy security concerns due to Russia's illegal
+      invasion of Ukraine, President Biden is now encouraging US oil and gas producers to 
+      drill and increase production.
+
       The US is significantly more dependent on fossil fuel sectors and
       consequently has a lower share of renewable energy compared to the UK or
       its European counterparts.
 
-      ![Share of Renewable Electricity Generation](US_sov.png)
+      ![Share of Renewable Electricity Generation](sov_usa.png)
 
       **Source:** [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, disorderly transition could result in
-      significant GDP losses. In these scenarios, world GDP losses from both
-      physical and transition risk are estimated to be between -4.2% and -4.8%
-      by 2050. World GDP impacts from transition risks are negative as the speed
-      of the transition combines with investment uncertainty and affects
-      consumption and investment. In these scenarios, there is a large mix of
-      physical and transition risks in 2050. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a Disorderly scenario on US GDP
-      compared to 2012 would be significant, ranging from -4.6% to -4.7% by
-      2050\.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it
+      receives. Assuming taxation rates remain unchanged, a decrease in GDP could lead to 
+      a reduction in fiscal revenue. According to estimates from the NGFS, disorderly transition 
+      could result in significant GDP losses. In these scenarios, world GDP losses from chronic
+      physical and transition effects are estimated to be between -4.6% and -4.7% (relative to a 
+      baseline with no transition or physical risks) by 2050. World GDP impacts from transition
+      risks are negative as the speed of the transition combines with investment uncertainty and
+      affects consumption and investment. In these scenarios, there is a large mix of physical and 
+      transition risks in 2050. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs),
+      the expected impact of a Disorderly scenario on US GDP, from chronic physical and transition
+      effects,  would be significant, ranging from -3.9% to -4% (relative to a baseline with no transition 
+      or physical risks) by 2050.
 
       **Downgrading of credit ratings effect**
 
@@ -173,19 +184,16 @@ transition:
       expected to range from $9 to $28 billion annually (in today's dollars), and revenue
       losses vary between $56 billion and $111 billion.
       [(The risks from climate change to sovereign debt in Europe | Bruegel)](http://bruegel.org/reader/The-risks-from-climate-change-to-sovereign-debt-in-Europe#how-exposed-are-european-sovereigns-to-climate-risk){target="\_blank"}.
-      These scenarios could also lead to a reduction in GDP growth. Based on the
-      IIASA NGFS Scenario Explorer v2.0, the impact of the Net Zero 2050
-      scenario on US GDP would be significantly higher than its impact on UK GDP
-      by 2050.
-
+      These scenarios could also lead to a reduction in GDP growth. This would have a 
+      limited, neutral impact on US sovereign bonds. 
     high_materiality: |
       **Carbon tax effect**
 
       Transition risks for sovereigns are largely associated with the exposure
       to carbon intensive sectors and technologies. Based on the IIASA NGFS
       Climate Scenarios, REMIND model by 2050, in Orderly transition risk
-      scenarios, fossil fuels represent only ~27% of global energy demand
-      compared to ~83% in 2020. Countries with carbon-intensive sectors such as
+      scenarios, fossil fuels represent only ~25% to ~40% of global energy demand
+      compared to ~85% in 2020. Countries with carbon-intensive sectors such as
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
@@ -201,31 +209,48 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
+      Total GHG emissions in the US in 2021 were 15% below 2005 levels. This 
+      trend was primarily driven due to the power sector, driven by a shift from 
+      coal to lower or non-emitting sources of generation, such as natural gas and 
+      renewables. Generation from wind and solar continued to grow in 2021, by 29% 
+      and 12% compared to 2020 respectively.
+      
+      In 2018, the US became the world's largest producer of crude oil. The production 
+      of oil in 2021 remained relatively stable, decreasing only by 1% from 2020 levels.
+      In response to rising prices and energy security concerns due to Russia's illegal
+      invasion of Ukraine, President Biden is now encouraging US oil and gas producers
+      to drill and increase production.
+
       The US is significantly more dependent on fossil fuel sectors and
-      consequently has a lower share of renewable energy compared to the UK or
+      consequently has a lower share of renewable energy compared to the world or
       its European counterparts.
 
-      ![Share of Renewable Electricity Generation](US_sov.png)
+      ![Share of Renewable Electricity Generation](sov_usa.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
+      
+      In August 2022, US President Biden signed into law the Inflation Reduction Act (IRA),
+      setting the country's emissions on a trajectory towards meeting its climate commitment 
+      to cut GHG emissions in half by 2030, compared to 2005 levels. The CAT estimates that 
+      implementation of IRA will decrease US emissions will to 26-42% below 2005 levels, 
+      thus more action is required to meet their climate commitment. 
 
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, the Orderly transition risk scenarios would generally limit GDP
-      losses. World GDP losses from both physical and transition risk are
-      estimated to be between -1.5% and -2.5% by 2050. GDP impacts from
-      transition risk are slightly positive in the Net Zero 2050 scenario as
-      negative impacts on demand from higher carbon prices and energy costs are
-      more than offset by the recycling of carbon tax revenues into government
-      investment and lower employment taxes.
+      A change in a country's GDP could have an impact on the level of fiscal revenue
+      it receives. Assuming taxation rates remain unchanged, a decrease in GDP could lead 
+      to a reduction in fiscal revenue. According to estimates from the NGFS, the Orderly 
+      transition risk scenarios would generally limit GDP losses. World GDP losses from chronic
+      physical and transition effects are estimated to be around -3% (relative to a baseline with 
+      no transition or physical risks) by 2050. GDP impacts from transition risk are moderately 
+      negative in the Net Zero 2050 scenario as negative impacts on demand from higher carbon prices 
+      and energy costs are only partially offset by the recycling of carbon revenues into government
+      investment and lower employment taxes. 
 
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the
-      Orderly Net Zero scenario on US GDP compared to 2012 would be significant,
-      ranging from -2.6% to -3.2% by 2050.
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of the
+      Orderly Net Zero scenario on US GDP, from chronic physical and transition effects, would be significant, 
+      ranging from -1.8% to -2.3% (relative to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings**
 
@@ -282,7 +307,7 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      across the world by 2.4&deg;C to 3&deg;C compared to pre-industrial levels 
       (with land warming faster than oceans and high latitudes experiencing higher 
       warming). These changes will lead to chronic changes in living conditions 
       affecting health, labour productivity, agriculture, ecosystems, and sea-level 
@@ -297,18 +322,17 @@ physical:
       expected to reshape the global economy by reducing average global incomes
       by roughly 23% by 2100, relative to scenarios without climate change.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, a hot house world scenario with high
-      physical risk could result in significant GDP losses. In a hot house world
-      scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
-      2050\. World GDP losses from physical risks scale with the rise in
-      temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a hot house world scenario on US GDP
-      compared to 2012 would be significant, ranging from -1.99% to -3.97% by
-      2050\.
+      This declining productivity would affect GDP and government income, as tax revenues
+      are dependent on economic output. Adaptation costs would cause further strain to fiscal 
+      expenditures. Assuming taxation rates remain unchanged, a decrease in GDP could lead to
+      a reduction in fiscal revenue. According to estimates from the NGFS, a hot house world
+      scenario with high physical risk could result in significant GDP losses. In a hot house 
+      world scenario, world GDP losses from chronic physical and transition effects are estimated 
+      to be between -5.7% and -6% (relative to a baseline with no transition or physical risks) by 2050.
+      World GDP losses from physical risks vary in line with different temperatures projected for each scenario. 
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a hot house
+      world scenario on US GDP, from chronic physical and transition effects,  would be significant, ranging 
+      from -5.1% to -5.6% (relative to a baseline with no transition or physical risks) by 2050.
 
       Small and least diversified economies with lower resilience and adaptive
       capacity could count among the most vulnerable countries. For example, in
@@ -376,26 +400,26 @@ physical:
       **GDP growth effect**
 
       In a low physical risk scenario, global mean temperatures could increase
-      across the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels,
-      with land warming faster than oceans and high latitudes experiencing
-      higher warming giving rise to low physical risk. These changes could lead
+      across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels
+      (with land warming faster than oceans and high latitudes experiencing
+      higher warming). These changes could lead
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
       heatwaves, droughts, wildfires, cyclones, and flooding.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, an Orderly transition with low
-      physical risk would generally limit GDP losses. In an Orderly scenario,
-      world GDP losses from both physical and transition risk are estimated to
-      be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
-      scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly
-      net zero scenario on US GDP compared to 2012, would be significant,
-      ranging from -2.6% to -3.2% by 2050.
+      This declining productivity would affect GDP and government income, as tax 
+      revenues are dependent on economic output. Adaptation costs would cause further
+      strain to fiscal expenditures. Assuming taxation rates remain unchanged, a decrease 
+      in GDP could lead to a reduction in fiscal revenue. According to estimates from the
+      NGFS, an Orderly transition with low physical risk would generally limit GDP losses. 
+      In an Orderly scenario, world GDP losses from chronic physical and transition effects 
+      are estimated to be around -3% (relative to a baseline with no transition or physical 
+      risks) by 2050. World GDP losses from physical risks vary in line with different temperatures
+      projected for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs),
+      the expected impact of an Orderly scenario on US GDP, from chronic physical and transition effects,
+      would be significant, ranging from -1.8% to -2.3% (relative to a baseline with no transition or
+      physical risks) by 2050.
 
       Small and least diversified economies with lower resilience and adaptive
       capacity could count among the most vulnerable countries. For example, in

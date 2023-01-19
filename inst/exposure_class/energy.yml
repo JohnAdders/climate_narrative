@@ -1,7 +1,7 @@
 name: Energy Underwriting Class
 test_report_position: 14
 description: |
-  The **Energy** underwriting class involves insuring companies engaging in 
+  The **energy** underwriting class involves insuring companies engaging in 
   economic activity related to the supply of energy, including those in oil, gas, 
   coal, nuclear and renewable industries. Where relevant, this includes insuring upstream 
   energy operations, such as exploration and extraction, as well as downstream operations 
@@ -10,7 +10,7 @@ description: |
   
   Firms in the energy sector very often operate in an extremely risky environment, depending 
   on complex and expensive infrastructure, in many cases sited in hostile locations. 
-transition:
+transition: 
   high:
     exec_description: |
       In Disorderly transition risk scenarios, energy sources change dramatically, 
@@ -47,13 +47,13 @@ transition:
         low carbon/electrified alternatives for cars, heating etc, demand for 
         fossil fuels decreases, with knock on effects for cover of carbon intensive 
         energy industries. In Disorderly transition risk scenarios the demand for coal, 
-        oil and gas falls, from over 450 exajoules (EJ) a year to ~100 EJ a year, 
+        oil and gas falls, from over 450 exajoules (EJ) a year to between ~100 and 200 EJ a year, 
         with coal demand almost completely phased out between 2035 and 2040.
 
-      ![Primary Energy](Primary_Energy_Disorderly_Mining.png)
+      ![Primary Energy](energy_uw_disorderly_primary_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database.REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       - **Changes in underwriting rules** regarding excluded or stranded asset types, 
         including fossil fuel activities and assets. These risks have already prompted a 
@@ -82,7 +82,7 @@ transition:
       actions. For example: 
       
       - Developing a clear net-zero underwriting strategy based on industry standards 
-        such as a [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
+        such as the [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
       
       - Ensuring underwriting rules and policies are aligned to corporate and industry 
         wide Net Zero objectives.
@@ -120,10 +120,10 @@ transition:
         falls, from over 450 exajoules (EJ) a year to between 100 and 200 EJ a year, with coal 
         demand almost completely phased out between 2035 and 2045.
 
-      ![Primary Energy](Primary_Energy_Orderly_Mining.png)
+      ![Primary Energy](energy_uw_orderly_primary_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       - **Changes in underwriting rules** regarding excluded or stranded asset types, 
         including fossil fuel activities and assets.  These risks have already prompted a 
@@ -152,7 +152,7 @@ transition:
       actions. For example: 
       
       - Developing a clear net-zero underwriting strategy based on industry standards 
-        such as a [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
+        such as the [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
       
       - Ensuring underwriting rules and policies are aligned to corporate and industry 
         wide Net Zero objectives.
@@ -185,7 +185,7 @@ physical:
       or unaffordable.
       
       Adverse impacts on world GDP from physical risks are assumed in the scenarios 
-      and these scale with the rise in temperatures in the scenarios over time. The 
+      and these vary in line with different temperatures projected for each scenario. The 
       high physical risk scenarios could therefore also lead to a significant GDP 
       impact which could negatively impact demand for the energy sector and its associated 
       underwriting class.
@@ -213,6 +213,9 @@ physical:
       
       - **Thawing permafrost** could lead to areas of pipeline subsidence, causing damage 
         and associated increased maintenance costs.
+        
+      - **Changes in water temperature** may impact hydropower and thermal power generation
+          due to reduced streamflow and less access to cooling water.         
 
       **Acute Impacts**
       
@@ -288,6 +291,9 @@ physical:
       
       - **Thawing permafrost** could lead to areas of pipeline subsidence, causing damage 
         and associated increased maintenance costs.
+        
+      - **Changes in water temperature** may impact hydropower and thermal power generation
+          due to reduced streamflow and less access to cooling water.
 
       **Acute Impacts**
       
@@ -327,3 +333,4 @@ references: |
   - [World Water Day --- Which industries consume the most water and why should we care?](https://2030.builders/articles/world-water-day/){target="\_blank"}
 
   - [E.ON's On course for net zero](https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/documents/sustainability/en/tcfd/EON_2021_On_course_for_net_zero.pdf){target="\_blank"}
+ 

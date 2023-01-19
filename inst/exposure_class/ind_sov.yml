@@ -99,24 +99,36 @@ transition:
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
       
-      India's installed capacity of renewables has increased to 98.8 GW in July 2021, up from 
-      39 GW in 2015 (CEA, 2021a). This includes 41 GW of solar and 39 GW of wind energy, 
-      with net capacity additions of 12.4 GW of solar and 3.2 GW of onshore wind between 
-      2019 and 2021. Solar and wind have become the lowest-cost electricity sources in 
-      India, even without a subsidy. However, coal-based power generation 
-      has still been increasing, at an annual average rate of 6% since 2015.
+      India has been reducing their share of global coal power development; however, 
+      India still remains the second largest coal pipeline globally and has over 200 GW 
+      of coal-fired capacity in operation (a share of 11% of global capacity). There is 
+      a significant risk that India's coal infrastructure will become stranded assets, 
+      especially when considering that two thirds of India's coal-fired power plants 
+      were built in the last 10 years.
       
-      The share of renewables in India's electricity generation mix has been stagnant since 
-      around 2007, at between 15% and 18%, and is falling further behind the increasing world average. 
+      India's installed capacity of renewables stands at over 118 GW as at September 2022,  
+      double their 2016 capacity (Central Elecetricity Authority of India, 2022). 
+      This includes 58 GW of solar and 41 GW of wind energy, with net capacity additions of 12.4 GW 
+      of solar and 3.2 GW of onshore wind between 2019 and 2021. Solar and wind have become the 
+      lowest-cost electricity sources in India, even without a subsidy.
+      
+      The share of renewables in India's electricity generation mix has been increasing since 2015, 
+      and was just over 20% in 2020, but still remains below the world average. 
 
-      ![Share of Renewable Electricity Generation](India_sov.png)
+      ![Share of Renewable Electricity Generation](sovereigns_india.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
-
-      Based on current coal expansion plans, India's coal capacity would increase from 
-      current levels of over 200 GW to almost 266 GW by 2029-2030, with 35 GW expected 
-      to come online in the next five years: an increase of 17.5% in coal capacity.
+      
+      India's Draft National Electricity Plan 2022 highlights that India is planning to add 333GW 
+      of solar and 134GW of wind capacity by 2031-32, which would result in an increase of 6 and 3 
+      times 2021-22 capacity levels, respectively.
+      
+      India's policy direction towards achieving a phase down of coal is still unclear. On the one hand
+      India is considering a proposal to halt construction of new coal-based power units, on the other 
+      hand the government is continuing its support for coal in various forms. The government is also 
+      planning to increase the share of fossil gas in the primary energy mix and is approving the 
+      development of new gas infrastructure.
       
       An accelerated transition away from coal towards renewable energy in line with the 
       Paris Agreement would come with large benefits for sustainable development, with 
@@ -130,14 +142,16 @@ transition:
       revenue it receives. Assuming taxation rates remain unchanged, a decrease
       in GDP could lead to a reduction in fiscal revenue. According to estimates
       from the NGFS, disorderly transition could result in significant GDP
-      losses. In these scenarios, world GDP losses from both physical and transition 
-      risk are estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from 
-      transition risks are negative as the speed of the transition combines with investment 
-      uncertainty and affects consumption and investment.  
+      losses. In these scenarios, world GDP losses from chronic physical and transition 
+      effects are estimated to be between -4.6% and -4.7% (relative to a baseline with no 
+      transition or physical risks) by 2050. World GDP impacts from transition risks are 
+      negative as the speed of the transition combines with investment uncertainty and 
+      affects consumption and investment.  
       
       In these scenarios, there is a large mix of physical and transition risks in 2050. 
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
-      scenario on India's GDP compared to 2011 would be significant, ranging from -9.6% to -11.4% by 2050.
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Disorderly 
+      scenario on India's GDP, from chronic physical and transition effects, would be significant, ranging from -4.9% 
+      to -6.6% (relative to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings effect**
 
@@ -185,8 +199,8 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure
       to carbon intensive sectors and technologies. Based on the IIASA NGFS
       Climate Scenarios, REMIND model by 2050, in Orderly transition risk
-      scenarios, fossil fuels represent only ~27% of global energy demand
-      compared to ~83% in 2020. Countries with carbon-intensive sectors such as
+      scenarios, fossil fuels represent only ~25% to ~40% of global energy demand
+      compared to ~85% in 2020. Countries with carbon-intensive sectors such as
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
@@ -202,24 +216,36 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
       
-      India's installed capacity of renewables has increased to 98.8 GW in July 2021, up from 
-      39 GW in 2015 (CEA, 2021a). This includes 41 GW of solar and 39 GW of wind energy, 
-      with net capacity additions of 12.4 GW of solar and 3.2 GW of onshore wind between 
-      2019 and 2021. Solar and wind have become the lowest-cost electricity sources in 
-      India, even without a subsidy. However, coal-based power generation has still been increasing, 
-      at an annual average rate of 6% since 2015.
+      India has been reducing their share of global coal power development; however, 
+      India still remains the second largest coal pipeline globally and has over 200 GW 
+      of coal-fired capacity in operation (a share of 11% of global capacity). There is 
+      a significant risk that India's coal infrastructure will become stranded assets, 
+      especially when considering that two thirds of India's coal-fired power plants 
+      were built in the last 10 years.
       
-      The share of renewables in India's electricity generation mix has been stagnant since around 2007, 
-      at between 15% and 18%, and is falling further behind the increasing world average. 
+      India's installed capacity of renewables stands at over 118 GW as at September 2022,  
+      double their 2016 capacity (Central Elecetricity Authority of India, 2022). 
+      This includes 58 GW of solar and 41 GW of wind energy, with net capacity additions of 12.4 GW 
+      of solar and 3.2 GW of onshore wind between 2019 and 2021. Solar and wind have become the 
+      lowest-cost electricity sources in India, even without a subsidy.
+      
+      The share of renewables in India's electricity generation mix has been increasing since 2015, 
+      and was just over 20% in 2020, but still remains below the world average. 
 
-      ![Share of Renewable Electricity Generation](India_sov.png)
+      ![Share of Renewable Electricity Generation](sovereigns_india.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
-
-      Based on current coal expansion plans, India's coal capacity would increase from 
-      current levels of over 200 GW to almost 266 GW by 2029-2030, with 35 GW expected 
-      to come online in the next five years: an increase of 17.5% in coal capacity.
+      
+      India's Draft National Electricity Plan 2022 highlights that India is planning to add 333GW 
+      of solar and 134GW of wind capacity by 2031-32, which would result in an increase of 6 and 3 
+      times 2021-22 capacity levels, respectively.
+      
+      India's policy direction towards achieving a phase down of coal is still unclear. On the one hand
+      India is considering a proposal to halt construction of new coal-based power units, on the other 
+      hand the government is continuing its support for coal in various forms. The government is also 
+      planning to increase the share of fossil gas in the primary energy mix and is approving the 
+      development of new gas infrastructure.
       
       An accelerated transition away from coal towards renewable energy in line with the 
       Paris Agreement would come with large benefits for sustainable development, with 
@@ -232,16 +258,18 @@ transition:
       A change in a country's GDP could have an impact on the level of fiscal
       revenue it receives. Assuming taxation rates remain unchanged, a decrease
       in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, the Orderly transition risk scenarios would generally
-      limit GDP losses. The world GDP losses are estimated to be between -1.5%
-      and -2.5% by 2050. World GDP impacts from transition risk are slightly positive
-      in the Net Zero 2050 scenario as negative impacts on demand from higher
-      carbon tax prices and energy costs are more than offset by the recycling of
-      carbon revenues into government investment and lower employment taxes.
+      from the NGFS, an Orderly transition risk scenario would generally
+      limit GDP losses. The world GDP losses from chronic physical and transition effects 
+      are estimated to be around -3% (relative to a baseline with no transition or physical risks) 
+      by 2050. World GDP impacts from transition risk are moderately negative in the Net Zero 2050
+      scenario as negative impacts on demand from higher carbon prices and energy costs are only 
+      partially offset by the recycling of carbon revenues into government investment and lower 
+      employment taxes.
       
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
-      Orderly Net Zero scenario on India's GDP compared to 2011 would be significant, 
-      ranging from -5.4% to -5.5% by 2050.
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an 
+      Orderly transition risk scenario on India's GDP, from chronic physical and transition effects, would 
+      be significant, ranging from -3.2% to -3.8% (relative to a baseline with no transition or physical risks) 
+      by 2050.
 
       **Downgrading of credit ratings**
 
@@ -298,7 +326,7 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      across the world by 2.4&deg;C to 3&deg;C compared to pre-industrial levels 
       (with land warming faster than oceans and high latitudes experiencing higher 
       warming). These changes will lead to chronic changes in living conditions 
       affecting health, labour productivity, agriculture, ecosystems, and sea-level 
@@ -319,11 +347,14 @@ physical:
       unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
       According to estimates from the NGFS, a hot house world scenario with high
       physical risk could result in significant GDP losses. In a hot house world
-      scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
-      2050\. World GDP losses from physical risks scale with the rise in
-      temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a hot house world scenario on India's 
-      GDP compared to 2011 would be significant, ranging from -4.7% to -9.7% by 2050.
+      scenario, world GDP losses from chronic physical and transition effects are 
+      estimated to be between -5.7% and-6% (relative to a baseline with no transition 
+      or physical risks) by 2050. World GDP losses from physical risks vary in line with different
+      temperatures projected for each scenario.  Based on the IIASA NGFS Scenario
+      Explorer NiGEM model (REMIND inputs), the expected impact of a hot house world 
+      scenario on India's GDP, from chronic physical and transition effects, would 
+      be significant, ranging from -9.1% to -9.9% (relative to a baseline with no transition
+      or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of 
@@ -383,9 +414,9 @@ physical:
       **GDP growth effect**
 
       In a low physical risk scenario, global mean temperatures could increase
-      across the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels,
-      with land warming faster than oceans and high latitudes experiencing
-      higher warming giving rise to low physical risk. These changes could lead
+      across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels
+      (with land warming faster than oceans and high latitudes experiencing
+      higher warming). These changes could lead
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
@@ -397,12 +428,13 @@ physical:
       unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
       According to estimates from the NGFS, an Orderly transition with low
       physical risk would generally limit GDP losses. In an Orderly scenario,
-      world GDP losses from both physical and transition risk are estimated to
-      be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
-      scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly 
-      Net Zero scenario on India's GDP compared to 2011, would be significant, 
-      ranging from -5.4% to -5.5% by 2050.
+      world GDP losses from chronic physical and transition effects are estimated to
+      be around -3% (relative to a baseline with no transition or physical risks) 
+      by 2050. World GDP losses from physical risks vary in line with different temperatures 
+      projected for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model
+      (REMIND inputs), the expected impact of an Orderly scenario on India's GDP, from chronic
+      physical and transition effects, would be significant, ranging from -3.2% to -3.8% 
+      (relative to a baseline with no transition or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of economic 

@@ -1,7 +1,7 @@
 name: Italy sovereign
 test_report_position: 31
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -99,30 +99,30 @@ transition:
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      In 2018, the share of renewables in the Italian power sector increased to ~40%, 
+      In 2020, the share of renewables in the Italian power sector increased to ~42%, 
       (over 4% above the 2017 levels), exceeding the share of electricity from fossil 
       fuels. The share of renewables in Italy's electricity generation mix exceed global 
       and EU averages.
 
-      ![Share of Renewable Electricity Generation](Italy_sov.png)
+      ![Share of Renewable Electricity Generation](sov_italy.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, disorderly transition could result in significant GDP
-      losses. In these scenarios, world GDP losses from both physical and transition 
-      risk are estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from 
-      transition risks are negative as the speed of the transition combines with investment 
-      uncertainty and affects consumption and investment. 
-      
-      In these scenarios, there is a large mix of physical and transition risks in 2050. 
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
-      scenario on Italy's GDP compared to 2015 would be significant, ranging from -3.2% to -3.5% by 2050.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives.
+      Assuming taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal 
+      revenue. According to estimates from the NGFS, disorderly transition could result in significant 
+      GDP losses. In these scenarios, world GDP losses from chronic physical and transition effects are
+      estimated to be between -4.6% and -4.7% (relative to a baseline with no transition or physical risk)
+      by 2050. World GDP impacts from transition risks are negative as the speed of the transition combines 
+      with investment uncertainty and affects consumption and investment.
+
+      In these scenarios, there is a large mix of physical and transition risks in 2050. Based on the IIASA NGFS
+      Scenario Explorer NiGEM model (REMIND inputs) , the expected impact of a Disorderly scenario on Italy's GDP,
+      from chronic physical and transition effects,  would be significant, ranging from -2.3% to -3.2% (relative 
+      to a baseline with no transition or physical risk) by 2050.
 
       **Downgrading of credit ratings effect**
 
@@ -168,8 +168,8 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure
       to carbon intensive sectors and technologies. Based on the IIASA NGFS
       Climate Scenarios, REMIND model by 2050, in Orderly transition risk
-      scenarios, fossil fuels represent only ~27% of global energy demand
-      compared to ~83% in 2020. Countries with carbon-intensive sectors such as
+      scenarios, fossil fuels represent only ~25% to ~40% of global energy demand
+      compared to ~85% in 2020. Countries with carbon-intensive sectors such as
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
@@ -185,31 +185,31 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      In 2018, the share of renewables in the Italian power sector increased to ~40%, 
+      In 2020, the share of renewables in the Italian power sector increased to ~42%, 
       (over 4% above the 2017 levels), exceeding the share of electricity from fossil 
       fuels. The share of renewables in Italy's electricity generation mix exceed global
       and EU averages.
 
-      ![Share of Renewable Electricity Generation](Italy_sov.png)
+      ![Share of Renewable Electricity Generation](sov_italy.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, the Orderly transition risk scenarios would generally
-      limit GDP losses. The world GDP losses are estimated to be between -1.5%
-      and -2.5% by 2050. World GDP impacts from transition risk are slightly positive
-      in the Net Zero 2050 scenario as negative impacts on demand from higher
-      carbon tax prices and energy costs are more than offset by the recycling of
-      carbon revenues into government investment and lower employment taxes.
-      
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
-      Orderly Net Zero scenario on Italy's GDP compared to 2015 would be significant, 
-      ranging from +0.6% to +3.6% by 2050.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it
+      receives. Assuming taxation rates remain unchanged, a decrease in GDP could lead to a
+      reduction in fiscal revenue. According to estimates from the NGFS, the Orderly transition 
+      risk scenarios would generally limit GDP losses. The world GDP losses from chronic physical 
+      and transition effects are estimated to be around -3% (relative to a baseline with no transition 
+      or physical risks)  by 2050. World GDP impacts from transition risk are moderately negative in the
+      Net Zero 2050 scenario as negative impacts on demand from higher carbon prices and energy costs are 
+      only partially offset by the recycling of carbon revenues into government investment and lower employment
+      taxes.
+
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of the Orderly
+      Net Zero scenario on Italy's GDP, from chronic physical and transition effects, would be significant, ranging 
+      from -1% to -1.1% (relative to a baseline with no transition or physical risk) by 2050.
 
       **Downgrading of credit ratings**
 
@@ -265,7 +265,7 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      across the world by 2.4&deg;C to 3&deg;C compared to pre-industrial levels 
       (with land warming faster than oceans and high latitudes experiencing higher 
       warming). These changes will lead to chronic changes in living conditions 
       affecting health, labour productivity, agriculture, ecosystems, and sea-level 
@@ -280,17 +280,18 @@ physical:
       expected to reshape the global economy by reducing average global incomes
       by roughly 23% by 2100, relative to scenarios without climate change.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, a hot house world scenario with high
-      physical risk could result in significant GDP losses. In a hot house world
-      scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
-      2050\. World GDP losses from physical risks scale with the rise in
-      temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a hot house world scenario on Italy's 
-      GDP compared to 2015 would be significant, ranging from -2% to -3.3% by 2050.
+      This declining productivity would affect GDP and government income, as tax revenues
+      are dependent on economic output. Adaptation costs would cause further strain to fiscal
+      expenditures. Assuming taxation rates remain unchanged, a decrease in GDP could lead to 
+      a reduction in fiscal revenue. According to estimates from the NGFS, a hot house world 
+      scenario with high physical risk could result in significant GDP losses. In a hot house
+      world scenario, world GDP losses from chronic physical and transition effects are estimated
+      to be between -5.7% and-6% (relative to a baseline with no transition or physical risk) by
+      2050. World GDP losses from physical risks vary in line with different temperatures projected 
+      for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the 
+      expected impact of a hot house world scenario on Italy's GDP, from chronic physical and transition
+      effects, would be significant, ranging from -4.2% to -4.3% (relative to a baseline with no transition 
+      or physical risk) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of 
@@ -350,26 +351,23 @@ physical:
       **GDP growth effect**
 
       In a low physical risk scenario, global mean temperatures could increase
-      across the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels,
-      with land warming faster than oceans and high latitudes experiencing
-      higher warming giving rise to low physical risk. These changes could lead
+      across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels
+      (with land warming faster than oceans and high latitudes experiencing
+      higher warming). These changes could lead
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
       heatwaves, droughts, wildfires, cyclones, and flooding.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, an Orderly transition with low
-      physical risk would generally limit GDP losses. In an Orderly scenario,
-      world GDP losses from both physical and transition risk are estimated to
-      be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
-      scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly 
-      Net Zero scenario on Italy's GDP compared to 2015, would be significant, 
-      ranging from +0.6% to +3.6% by 2050.
+      This declining productivity would affect GDP and government income, as tax revenues are 
+      dependent on economic output. Adaptation costs would cause further strain to fiscal expenditures.
+      Assuming taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
+      According to estimates from the NGFS, an Orderly transition with low physical risk would generally limit
+      GDP losses. In an Orderly scenario, world GDP losses from chronic physical and transition effects are estimated
+      to be  around -3% (relative to a baseline with no transition or physical risk) by 2050. World GDP losses from physical
+      risks vary in line with different temperatures projected for each scenario. Based on the IIASA NGFS Scenario Explorer 
+      NiGEM model (REMIND inputs), the expected impact of an Orderly scenario on Italy's GDP, from chronic physical and transition 
+      effects, would be significant, ranging from -1% to -1.1% (relative to a baseline with no transition or physical risk) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of economic 
@@ -395,4 +393,3 @@ appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
   **Source:**: 20 Notch Rating Scale
-      

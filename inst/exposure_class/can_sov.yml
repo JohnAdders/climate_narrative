@@ -99,20 +99,26 @@ transition:
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      Electricity generation is responsible for around 8% of Canada's emissions; however, 
-      it is projected to contribute the most to emission reductions by 2030 under current 
-      policies, due in large part to the phasing out of coal. The share of the country's 
-      emissions from electricity generation has been falling since 2015 as Canada shifts away from coal. 
+      Electricity generation is responsible for around 8% of Canada's emissions, with this share
+      falling since 2015; however, electricity generation is projected to contribute the most to 
+      emission reductions by 2030 under current policies, due in large part to the phasing out of coal.  
       Canada adopted performance standards on natural gas-fired power plants in December 2018. It is anticipated 
       that many of the coal-fired power stations affected by the country's 2030 phase-out, or 
       that are expected to shut down before that date, will be replaced with new natural gas 
-      plants or coal-to-gas conversions. Canada has a higher share of renewable energy compared to other countries 
-      (between 55% and 65% since 1990).
+      plants or coal-to-gas conversions. Canada has a higher share of renewable energy compared to 
+      other countries (around 60% since 1990, and rising as high as 68% in 2020).
 
-      ![Share of Renewable Electricity Generation](Canada_sov.png)
+      ![Share of Renewable Electricity Generation](sovereigns_canada.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
+
+      Canada has announced a number of new policies and continues to make progress on implementing prior announced 
+      measures; however, both its current policies and those planned fall short of its updated NDC target (cut emissions 
+      by at least 40-45% below 2005 levels by 2030) and are not 1.5&deg;C compatible. The 2021 Canadian federal budget, 
+      released in April 2021, contained policy measures and funding announcements. While promising, these measures 
+      would only lead to an emissions level in 2030 of 492 MtCO<sub>2</sub>e (excl. LULUCF contributions), 25 MtCO<sub>2</sub>e 
+      short of the top end of the country's NDC target and about 150 MtCO<sub>2</sub>e short of a 1.5&deg;C compatible level.
 
       **GDP growth effect**
 
@@ -120,15 +126,16 @@ transition:
       revenue it receives. Assuming taxation rates remain unchanged, a decrease
       in GDP could lead to a reduction in fiscal revenue. According to estimates
       from the NGFS, disorderly transition could result in significant GDP
-      losses. In these scenarios, world GDP losses from both physical and transition 
-      risk are estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from 
-      transition risks are negative as the speed of the transition combines with investment 
-      uncertainty and affects consumption and investment.  
+      losses. In these scenarios, world GDP losses from chronic physical and transition 
+      effects are estimated to be between -4.6% and -4.7% (relative to a baseline with no 
+      transition or physical risks) by 2050. World GDP impacts from transition risks are 
+      negative as the speed of the transition combines with investment uncertainty and affects 
+      consumption and investment.  
       
       In these scenarios, there is a large mix of physical and transition risks in 2050. 
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
-      scenario on the Canadian GDP compared to 2012 would be significant, ranging from 
-      -3% to -3.2% by 2050.
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Disorderly 
+      scenario on the Canadian GDP, from chronic physical and transition effects, would be significant, ranging from 
+      -3.9% to -5.5% (relative to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings effect**
 
@@ -176,8 +183,8 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure
       to carbon intensive sectors and technologies. Based on the IIASA NGFS
       Climate Scenarios, REMIND model by 2050, in Orderly transition risk
-      scenarios, fossil fuels represent only ~27% of global energy demand
-      compared to ~83% in 2020. Countries with carbon-intensive sectors such as
+      scenarios, fossil fuels represent only ~25% to ~40% of global energy demand
+      compared to ~85% in 2020. Countries with carbon-intensive sectors such as
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
@@ -193,36 +200,43 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      Electricity generation is responsible for around 8% of Canada's emissions; however, 
-      it is projected to contribute the most to emission reductions by 2030 under current 
-      policies, due in large part to the phasing out of coal. The share of the country's 
-      emissions from electricity generation has been falling since 2015 as Canada shifts away from coal. 
+      Electricity generation is responsible for around 8% of Canada's emissions, with this share
+      falling since 2015; however, electricity generation is projected to contribute the most to 
+      emission reductions by 2030 under current policies, due in large part to the phasing out of coal.  
       Canada adopted performance standards on natural gas-fired power plants in December 2018. It is anticipated 
       that many of the coal-fired power stations affected by the country's 2030 phase-out, or 
       that are expected to shut down before that date, will be replaced with new natural gas 
       plants or coal-to-gas conversions. In general, Canada has a higher share of renewable energy compared to 
-      other countries (between 55% and 65% since 1990).
+      other countries (around 60% since 1990, and rising as high as 68% in 2020).
 
-      ![Share of Renewable Electricity Generation](Canada_sov.png)
+      ![Share of Renewable Electricity Generation](sovereigns_canada.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
+      Canada has announced a number of new policies and continues to make progress on implementing prior announced 
+      measures; however, both its current policies and those planned fall short of its updated NDC target (cut emissions 
+      by at least 40-45% below 2005 levels by 2030) and are not 1.5&deg;C compatible. The 2021 Canadian federal budget, 
+      released in April 2021, contained policy measures and funding announcements. While promising, these measures 
+      would only lead to an emissions level in 2030 of 492 MtCO<sub>2</sub>e (excl. LULUCF contributions), 25 MtCO<sub>2</sub>e 
+      short of the top end of the country's NDC target and about 150 MtCO<sub>2</sub>e short of a 1.5&deg;C compatible level.
+      
       **GDP growth effect**
 
       A change in a country's GDP could have an impact on the level of fiscal
       revenue it receives. Assuming taxation rates remain unchanged, a decrease
       in GDP could lead to a reduction in fiscal revenue. According to estimates
       from the NGFS, the Orderly transition risk scenarios would generally
-      limit GDP losses. The world GDP losses are estimated to be between -1.5%
-      and -2.5% by 2050. World GDP impacts from transition risk are slightly positive
-      in the Net Zero 2050 scenario as negative impacts on demand from higher
-      carbon tax prices and energy costs are more than offset by the recycling of
-      carbon revenues into government investment and lower employment taxes.
+      limit GDP losses. The world GDP losses from chronic physical and transition effects
+      are estimated to be around -3% (relative to a baseline with no transition or physical risks)
+      by 2050. World GDP impacts from transition risk are moderately negative in the Net Zero 
+      2050 scenario as negative impacts on demand from higher carbon prices and energy 
+      costs are only partially offset by the recycling of carbon revenues into government 
+      investment and lower employment taxes.
       
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
-      Orderly Net Zero scenario on the Canadian GDP compared to 2012 
-      ranges from +0.3% to +1.6% by 2050.
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an 
+      Orderly transition risk scenario on the Canadian GDP, from chronic physical and transition effects,  
+      ranges from -2.2% to -3% (relative to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings**
 
@@ -280,7 +294,7 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      across the world by 2.4&deg;C to 3&deg;C compared to pre-industrial levels 
       (with land warming faster than oceans and high latitudes experiencing higher 
       warming). These changes will lead to chronic changes in living conditions 
       affecting health, labour productivity, agriculture, ecosystems, and sea-level 
@@ -301,11 +315,13 @@ physical:
       unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
       According to estimates from the NGFS, a hot house world scenario with high
       physical risk could result in significant GDP losses. In a hot house world
-      scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
-      2050\. World GDP losses from physical risks scale with the rise in
-      temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a hot house world scenario on Canada's GDP 
-      compared to 2012 would be significant, ranging from -1% to -1.2% by 2050.
+      scenario, world GDP losses from chronic physical and transition effects are 
+      estimated to be between -5.7% and -6% (relative to a baseline with no transition 
+      or physical risks) by 2050. World GDP losses from physical risks vary in line with 
+      different temperatures projected for each scenario. Based on the IIASA NGFS Scenario
+      Explorer NiGEM model (REMIND inputs), the expected impact of a hot house world scenario on Canada's GDP,
+      from chronic physical and transition effects, would be significant, ranging from -2.8% to -3.4% 
+      (relative to a baseline with no transition or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of 
@@ -365,9 +381,9 @@ physical:
       **GDP growth effect**
 
       In a low physical risk scenario, global mean temperatures could increase
-      across the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels,
-      with land warming faster than oceans and high latitudes experiencing
-      higher warming giving rise to low physical risk. These changes could lead
+      across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels
+      (with land warming faster than oceans and high latitudes experiencing
+      higher warming). These changes could lead
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
@@ -379,12 +395,13 @@ physical:
       unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
       According to estimates from the NGFS, an Orderly transition with low
       physical risk would generally limit GDP losses. In an Orderly scenario,
-      world GDP losses from both physical and transition risk are estimated to
-      be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
-      scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly  
-      Net Zero scenario on Canadian GDP compared to 2012, would be non-significant, 
-      ranging from +0.3% to +1.6% by 2050.
+      world GDP losses from chronic physical and transition effects are estimated to
+      be around -3% (relative to a baseline with no transition or physical risks) by 2050. 
+      World GDP losses from physical risks vary in line with different temperatures projected 
+      for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), 
+      the expected impact of an Orderly scenario on Canadian GDP, from chronic physical and
+      transition effects, would be significant, ranging from -2.2% to -3% (relative to a baseline 
+      with no transition or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of economic 

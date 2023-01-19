@@ -1,7 +1,7 @@
 name: UK sovereign
 test_report_position: 24
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -98,39 +98,40 @@ transition:
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
       The UK electricity sector has been rapidly decarbonising in recent years,
-      with a sharp drop in coal-based electricity production, which in 2020
-      amounted to just 1.7% of total generation. Generation from low carbon
-      sources reached 59% in 2020 (up from 54.6% in 2019), despite a drop in
-      nuclear generation, thanks to record output from renewables. With coal now
-      close to being eliminated from the UK power sector, natural gas, which
-      accounted for 36.5% of generation in 2020, could consequently need to be
-      scaled down considerably over the next decade for the UK to meet its
-      emission reduction targets. In 2020, the share of renewable energy in
-      total electricity generation rose steeply from 37% in 2019 to almost 43%,
-      with renewables producing more electricity than coal and gas generation
-      combined for the first time ever. Wind generation, fuelled by new offshore
-      capacity, increased its share of total generation by 4.4% to 24.2%.
+      as policy has supported renewables deployment and driven coal out of the electricity mix.
+      Power sector emissions fell by 63% between 2011 - 2021. Coal provided only 2% of electricity 
+      generation in 2021, down from 40% a decade ago. The share of biomass in the electricity generation
+      mix has also been increasing, bioelectricity provided 13% of generation in 2021, up from
+      3% a decade earlier. 
+      
+      In 2020 the total share of renewable energy in total electricity generation rose to 43%,
+      up from 38% in 2019, well above the global average.
 
-      ![Share of Renewable Electricity Generation](UK_sov.png)
+      ![Share of Renewable Electricity Generation](sov_uk.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
+      
+      In 2019, the UK committed to reach net zero greenhouse gas emissions by 2050. Since then, it has increased 
+      the ambition of its 2030 NDC to align with this long-term target, aiming to reduce emissions to 68% below 1990 
+      levels by 2030. To support this the UK has committed to a fully decarbonised power sector by 2035, and will ban
+      fossil fuelled car sales from 2030.
+
+      However, there are some key weaknesses in the UK's climate policy approach, for example lack of policy around 
+      increasing energy efficiency in homes.
 
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, disorderly transition could result in significant GDP
-      losses. In these scenarios, world GDP losses from both physical and
-      transition risk are estimated to be between -4.2% and -4.8% by 2050. World
-      GDP impacts from transition risk are negative as the speed of the
-      transition combines with investment uncertainty and affects consumption
-      and investment.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation
+      rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According to estimates 
+      from the NGFS, disorderly transition could result in significant GDP losses. In these scenarios, world GDP losses
+      from chronic physical and transition effects are estimated to be between -4.6 and -4.7% (relative to a baseline 
+      with no transition or physical risks) by 2050. World GDP impacts from transition risk are negative as the speed 
+      of the transition combines with investment uncertainty and affects consumption and investment.
 
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a
-      Disorderly scenario on UK GDP compared to 2018, would be significant,
-      ranging from -2.2% to -2.4% by 2050.
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Disorderly scenario
+      on UK GDP, from chronic physical and transition effects, would be significant, ranging from -1.9% to -2% (relative 
+      to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings effect**
 
@@ -176,8 +177,8 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure
       to carbon intensive sectors and technologies. Based on the IIASA NGFS
       Climate Scenarios, REMIND model by 2050, in Orderly transition risk
-      scenarios, fossil fuels represent only ~27% of global energy demand
-      compared to ~83% in 2020. Countries with carbon-intensive sectors such as
+      scenarios, fossil fuels represent only ~25% to ~40% of global energy demand
+      compared to ~85% in 2020. Countries with carbon-intensive sectors such as
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
@@ -193,40 +194,42 @@ transition:
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      The UK electricity sector has been rapidly decarbonising in recent years,
-      with a sharp drop in coal-based electricity production, which in 2020
-      amounted to just 1.7% of total generation. Generation from low carbon
-      sources reached 59% in 2020, despite a drop in nuclear generation, thanks
-      to record output from renewables. With coal now close to being eliminated
-      from the UK power sector, natural gas, which accounted for 36.5% of
-      generation in 2020, could consequently need to be scaled down considerably
-      over the next decade for the UK to meet its emission reduction targets. In
-      2020, the share of renewable energy in total electricity generation rose
-      steeply from 37% in 2019 to almost 43%, with renewables producing more
-      electricity than coal and gas generation combined for the first time ever.
-      Wind generation, fuelled by new offshore capacity, increased its share of
-      total generation by 4.4% to 24.2%.
+      The UK electricity sector has been rapidly decarbonising in recent years, as policy has
+      supported renewables deployment and driven coal out of the electricity mix. Power sector
+      emissions fell by 63% between 2011 - 2021. Coal provided only 2% of electricity generation
+      in 2021, down from 40% a decade ago. The share of biomass in the electricity generation mix
+      has also been increasing, bioelectricity provided 13% of generation in 2021, up from 3% a
+      decade earlier.
+      
+      In 2020 the total share of renewable energy in total electricity generation rose to 43%,
+      up from 38% in 2019, well above the global average. 
 
-      ![Share of Renewable Electricity Generation](UK_sov.png)
+      ![Share of Renewable Electricity Generation](sov_uk.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
+      In 2019, the UK committed to reach net zero greenhouse gas emissions by 2050. Since then, it has
+      increased the ambition of its 2030 NDC to align with this long-term target, aiming to reduce emissions 
+      to 68% below 1990 levels by 2030. To support this the UK has committed to a fully decarbonised power sector 
+      by 2035, and will ban fossil fuelled car sales from 2030. 
+
+      However, there are some key weaknesses in the UK's climate policy approach, for example lack of policy around
+      increasing energy efficiency in homes.  
+      
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, the Orderly transition risk scenarios would generally
-      limit GDP losses. The world GDP losses are estimated to be between -1.5%
-      and -2.5% by 2050. World GDP impacts from transition risk are slightly positive
-      in the Net Zero 2050 scenario as negative impacts on demand from higher
-      carbon prices and energy costs are more than offset by the recycling of
-      carbon tax revenues into government investment and lower employment taxes.
-      
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the
-      Orderly Net Zero scenario on UK GDP compared to 2018 would be
-      non-significant, ranging from -0.24% to -0.48% by 2050.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation
+      rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According to estimates 
+      from the NGFS, the Orderly transition risk scenarios would generally limit GDP losses. The world GDP losses from 
+      chronic physical and transition effects are estimated to be around -3% (relative to a baseline with no transition
+      or physical risks) by 2050. World GDP impacts from transition risk are moderately negative in the Net Zero 2050
+      scenario as negative impacts on demand from higher carbon prices and energy costs are only partially offset by
+      the recycling of carbon revenues into government investment and lower employment taxes.
+     
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an Orderly scenario 
+      on UK GDP, from chronic physical and transition effects,  would be significant, ranging from -1% to -1.1% (relative
+      to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings**
 
@@ -283,7 +286,7 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      across the world by 2.4&deg;C to 3&deg;C compared to pre-industrial levels 
       (with land warming faster than oceans and high latitudes experiencing higher 
       warming). These changes will lead to chronic changes in living conditions 
       affecting health, labour productivity, agriculture, ecosystems, and sea-level 
@@ -298,18 +301,18 @@ physical:
       expected to reshape the global economy by reducing average global incomes
       by roughly 23% by 2100, relative to scenarios without climate change.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, a hot house world scenario with high
-      physical risk could result in significant GDP losses. In a hot house world
-      scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
-      2050\. World GDP losses from physical risks scale with the rise in
-      temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a hot house world scenario on UK GDP
-      compared to 2018 would be significant, ranging from -1.35% to -1.75% by
-      2050\.
+      This declining productivity would affect GDP and government income, as tax revenues 
+      are dependent on economic output. Adaptation costs would cause further strain to fiscal 
+      expenditures. Assuming taxation rates remain unchanged, a decrease in GDP could lead to 
+      a reduction in fiscal revenue. According to estimates from the NGFS, a hot house world 
+      scenario with high physical risk could result in significant GDP losses. In a hot house 
+      world scenario, world GDP losses from chronic physical and transition effects are estimated 
+      to be between --5.7% and -6% (relative to a baseline with no transition or physical risks)
+      by 2050. World GDP losses from physical risks vary in line with different temperatures projected
+      for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), 
+      the expected impact of a hot house world scenario on UK GDP, from chronic physical and transition
+      effects,  would be significant, ranging from -2.2% to -2.3% (relative to a baseline with no transition 
+      or physical risks) by 2050.
 
       **Downgrading of credit ratings effect**
 
@@ -364,26 +367,25 @@ physical:
       **GDP growth effect**
 
       In a low physical risk scenario, global mean temperatures could increase
-      across the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels,
-      with land warming faster than oceans and high latitudes experiencing
-      higher warming giving rise to low physical risk. These changes could lead
+      across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels
+      (with land warming faster than oceans and high latitudes experiencing
+      higher warming). These changes could lead
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
       heatwaves, droughts, wildfires, cyclones, and flooding.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, an Orderly transition with low
-      physical risk would generally limit GDP losses. In an Orderly scenario,
-      world GDP losses from both physical and transition risk are estimated to
-      be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
-      scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
-      Net Zero scenario on UK GDP compared to 2018 would be non-significant,
-      ranging from -0.24% to -0.48% by 2050.
+      This declining productivity would affect GDP and government income, as tax revenues 
+      are dependent on economic output. Adaptation costs would cause further strain to fiscal
+      expenditures. Assuming taxation rates remain unchanged, a decrease in GDP could lead to a
+      reduction in fiscal revenue. According to estimates from the NGFS, an Orderly transition
+      with low physical risk would generally limit GDP losses. In an Orderly scenario, world GDP 
+      losses from chronic physical and transition effects are estimated to be around -3% (relative
+      to a baseline with no transition or physical risks) by 2050. World GDP losses from physical 
+      risks vary in line with different temperatures projected for each scenario. Based on the IIASA
+      NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an Orderly scenario
+      on UK GDP, from chronic physical and transition effects,  would be significant, ranging from 
+      -1% to -1.12% (relative to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings**
 
@@ -406,4 +408,3 @@ appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
   **Source:**: 20 Notch Rating Scale
-      

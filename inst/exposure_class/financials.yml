@@ -1,7 +1,7 @@
 name: Financial Services
 test_report_position: 7
 description: |
-  The **Financial Services** sector covers a broad range of business that
+  The **financial services** sector covers a broad range of business that
   provide a variety of economic services, such as investing, managing and
   lending money, insurance and capital and debt markets. Central banking, also
   part of this sector, is outside the scope of this tool. More formally, the
@@ -71,10 +71,10 @@ transition:
       buildings are projected to fall due to increased efficiency from tightened 
       standards (as well as a change in energy mix).
       
-      ![CO2 Emissions Residential and Commercial](CO2_emissions_Residential_and_Commercial_Disorderly.png)
+      ![CO2 Emissions Residential and Commercial](financials_disorderly_buildings_emissions.png)
       
       **Source:**
-      [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       * **Rapid technological change**, such as the development of electric vehicles 
       or renewable energy technology, affecting the value of financial assets in the 
@@ -163,10 +163,10 @@ transition:
       buildings are projected to fall due to increased efficiency from tightened 
       standards (as well as a change in energy mix).
       
-      ![CO2 Emissions Residential and Commercial](CO2_emissions_Residential_and_Commercial_Orderly.png)
+      ![CO2 Emissions Residential and Commercial](financials_orderly_buildings_emissions.png)
       
       **Source:**
-      [IIASA NGFS Scenario Explorer.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       * **Rapid technological change**, such as the development of electric vehicles 
       or renewable energy technology, affecting the value of financial assets in the 
@@ -191,7 +191,7 @@ transition:
 
       Financial firms investing in climate solutions, for example, renewable
       energy, green hydrogen, battery electric vehicles, and carbon capture and
-      storage (technologies and markets set to grow in an Orderly transition
+      storage (technologies and markets set to grow in an Orderly transition risk
       scenario) or investing in companies with ambitious commitments to reduce
       their carbon emissions across the value chain in line with the Paris
       Agreement should be less exposed to transition risk than financial firms
@@ -208,7 +208,7 @@ transition:
       and which products and companies to invest in. In addition, they can be instrumental 
       in the way they engage with and lobby policymakers. They can engage with the 
       political process, individually or collectively, and can even influence the 
-      'rules of the game'. Therefore, they  need to identity whether their 
+      'rules of the game'. Therefore, they  need to identify whether their 
       portfolios have exposures to these types of industries and engage with these
       counterparties to aid their transition to a low carbon economy or, where
       this is not possible (e.g. when the portfolio must be adjusted quickly),

@@ -1,7 +1,7 @@
 name: Savings and Retirement
 test_report_position: 20
-description: |
-  The **Savings and Retirement** underwriting class covers products such as
+description: | 
+  The **savings and retirement** underwriting class covers products such as
   pensions, investment bonds, with-profits, unit-linked investments and
   annuities, written on an individual or group basis.
   
@@ -18,7 +18,7 @@ description: |
 transition:
   high:
     exec_description: |
-      Savings and Retirement underwriting exposures could be impacted in 
+      Savings and retirement underwriting exposures could be impacted in 
       Disorderly transition risk scenarios, as the moderate to severe 
       reduction in GDP could reduce real household income. The reduction in 
       CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
@@ -80,7 +80,17 @@ transition:
       greenhouse gases (such as CO<sub>2</sub> and CH<sub>4</sub>) that lead to 
       warming but do not directly impact health, and the production of pollutants 
       (such as particulate matter and oxides of nitrogen) that are more directly 
-      harmful to health.
+      harmful to health. In the Disorderly transition risk scenarios, emissions of
+      hazardous pollutants, for example black carbon, volatile organic compounds,
+      and oxides of nitrogen, are projected to decrease. Emission trajectories for
+      oxides of nitrogen (NOx) can be seen here, but other hazardous pollutants in 
+      the NGFS could equally be referenced as a guide as these have broadly similar 
+      trajectories.
+      
+      ![NOx emissions](savings_and_retirement_disorderly_emissions_nox.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       Whilst it may be the case that reductions in greenhouse gas emissions are 
       typically correlated with reductions in harmful pollutants, this is not 
@@ -137,7 +147,7 @@ transition:
 
   low:
     exec_description: |
-      Savings and Retirement underwriting exposures could be impacted in the 
+      Savings and retirement underwriting exposures could be impacted in the 
       Orderly transition risk scenarios, as the limited reduction in GDP 
       could reduce real household income. The immediate and smooth reduction 
       in CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
@@ -163,9 +173,15 @@ transition:
       and thus reduce policyholder longevity.
 
     high_materiality: |
-      Under the Orderly transition risk scenarios, changes in diet (e.g. 
-      reduction in calorie intake or shift to plant-based diets) may result in 
-      lower levels of obesity, diabetes and cardiovascular disease, and may also 
+      In Orderly transition risk scenarios, the impact on the savings and retirement underwriting
+      class could depend on GDP as well as other effects. For example:
+      
+      **Diet effect**
+      
+      Under the Orderly transition risk scenarios consumers may seek to reduce their carbon footprint
+      through changes in diet, for example away from carbon intensive processes such as livestock raising
+      (e.g. through reduction in calorie intake or shift to plant-based diets). This 
+      may result in lower levels of obesity, diabetes and cardiovascular disease, and may also 
       improve mortality rates, but may also result in malnutrition which would have 
       a negative impact on health.
 
@@ -188,8 +204,17 @@ transition:
       However, it is important to differentiate between the production of greenhouse 
       gases (such as CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not 
       directly impact health, and the production of pollutants (such as particulate 
-      matter and oxides of nitrogen) that are more directly harmful to health. 
+      matter and oxides of nitrogen) that are more directly harmful to health. In Orderly
+      transition risk scenarios, emissions of hazardous pollutants, for example black carbon,
+      volatile organic compounds, and oxides of nitrogen, are projected to decrease. Emission
+      trajectories for oxides of nitrogen (NOx) can be seen here, but other hazardous pollutants 
+      in the NGFS could equally be referenced as a guide as these have broadly similar trajectories.
 
+      ![NOx emissions](savings_and_retirement_orderly_emissions_nox.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
       Whilst it may be the case that reductions in greenhouse gas emissions are 
       typically correlated with reductions in harmful pollutants, this is not necessarily 
       the case. For example:
@@ -449,5 +474,3 @@ physical:
       considered to be laggards in their reporting and reaction to climate change. 
       This could increase lapse rates, reduce premiums and reduce new business 
       sales.
-
-

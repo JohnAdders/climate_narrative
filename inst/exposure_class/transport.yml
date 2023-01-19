@@ -1,7 +1,7 @@
 name: Transport
 test_report_position: 11
 description: |
-  The **Transport** sector includes companies primarily engaged in providing 
+  The **transport** sector includes companies primarily engaged in providing 
   services to move people or goods, as well as transportation infrastructure. 
   The transport sector consists of subsectors for each mode of transport; air, 
   rail, water, road, and pipeline, as well as a subsector for establishments 
@@ -22,8 +22,8 @@ transition:
     exec_description: |
       In Disorderly transition risk scenarios, the transport sector could 
       face increasing operating costs through carbon taxation, falling 
-      asset values as older and less efficient infrastructure becomes increasingly obsolete
-      , and lower demand as consumers become more 
+      asset values as older and less efficient infrastructure becomes increasingly obsolete,
+      and lower demand as consumers become more 
       conscious of the environmental impacts of services they use. This is likely 
       to have an impact on the profitability of this sector.
     always: |
@@ -56,17 +56,27 @@ transition:
         a rising price in the form a carbon tax or cap & trade clearing price, 
         especially for firms reliant on fossil-based fuels. 
         
+        In Disorderly transition risk scenarios, by 2050, as carbon price increases, 
+        carbon tax paid from transport emissions peaks at ~$1.8 trillion (inflation adjusted 
+        to 2010 baseline) per year around 2030 in the Divergent Net Zero scenario, and decreases 
+        thereafter as improvements are made to transport emissions intensities. Carbon tax paid 
+        from transport emissions reaches ~$1.3 trillion by 2050 in the Delayed transition scenario.
+        
+        ![Transport Carbon Tax Revenue](transport_disorderly_revenue.png)
+        
+        **Source:**
+        [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+        
         In Disorderly transition risk scenarios, the price per gigajoule of liquid 
         final energy (liquid fuels from all energy sources; incl. oil products, 
         synthetic fossil fuels from gas and coal, biofuels) for use in transportation 
-        at least triples by the end of the century, increasing from ~20 USD (inflation 
-        adjusted to 2010 baseline) to ~65 USD in the Delayed transition scenario, and 
-        to ~95 USD in the Divergent Net Zero scenario.
+        increases from ~28 USD (inflation adjusted to 2010 baseline) to ~48 USD in the Delayed transition scenario, and 
+        to ~53 USD in the Divergent Net Zero scenario.
         
-      ![Transportation Liquid Price](Transportation_Liquids_Price_Disorderly.png)
+      ![Transportation Liquid Price](transport_disorderly_price_liquids.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - **Change in regulations covering energy efficiency standards could lead
         to increasing compliance requirements.** These changes may require firms 
@@ -98,6 +108,21 @@ transition:
         (high speed) rail, provided rail operators have the infrastructure in place to serve 
         the same destinations. 
         
+        In Disorderly transition risk scenarios, there is a varied rate of decarbonisation 
+        between different modes of transport. Between 2020 and 2050, emissions of CO<sub>2</sub> per 
+        billion passenger kilometres from road passenger transport falls from ~0.07 megatons 
+        to ~0.01 megatons in the Delayed transition scenario and to ~0.002 megatons in the 
+        Divergent Net Zero scenario. Emissions of CO<sub>2</sub> per billion passenger kilometres from 
+        aviation passenger transport falls to a lesser extent, from ~0.07 megatons to ~0.05 
+        megatons in the Delayed transition scenario and to ~0.02 megatons in the Divergent 
+        Net Zero scenario. Rail emissions are relatively low compared to other modes of transport, 
+        and remain that way throughout both scenarios.
+        
+        ![Transport mode intensity](transport_disorderly_intensity.png)
+        
+        **Source:**
+        [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+                
         Slowed GDP growth could further impact demand for transport through its effect 
         on individuals' disposable income. 
         
@@ -118,10 +143,10 @@ transition:
           As use of oil declines, electricity becomes the dominant source of final energy 
           by the end of the century.
 
-      ![Transportation Final Energy](Transportation_Final_Energy_Disorderly.png)
+      ![Transportation Final Energy](transport_disorderly_final_energy.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - Energy efficient modifications to vehicles (e.g. Silverstream air 
         lubrication in watercraft) and supporting infrastructure (e.g. more 
@@ -133,10 +158,10 @@ transition:
       In Disorderly transition risk scenarios, these innovations could contribute 
       to an overall decrease in CO<sub>2</sub> emissions in the transportation sector.
       
-      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Disorderly.png)
+      ![Transportation CO2 Emissions](transport_disorderly_emissions.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. GCAM 5.3+](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The Disorderly transition risk scenarios also present opportunities 
       for the transport sector. Proactively investing in the above innovations 
@@ -174,16 +199,24 @@ transition:
         face a rising price in the form a carbon tax or cap & trade clearing price, 
         especially for firms reliant on fossil-based fuels. 
         
-        In Orderly transition risk scenarios, the price per gigajoule of 
-        liquid final energy (liquid fuels from all energy sources; incl. oil products, 
-        synthetic fossil fuels from gas and coal, biofuels) for use in transportation 
-        at least doubles by 2050, increasing from around 20 USD (inflation adjusted 
-        to 2010 baseline) to between 40 USD and 55 USD.
+        In Orderly transition risk scenarios, by 2050, as carbon price increases, carbon 
+        tax paid from transport emissions reaches ~$1 trillion (inflation adjusted to 2010 baseline) 
+        per year in the Net Zero 2050 scenario, and ~$450 billion per year in the Below 2°C scenario. 
         
-      ![Transportation Liquid Price](Transportation_Liquids_Price_Orderly.png)
+        ![Transport Carbon Tax Revenue](transport_orderly_revenue.png)
+        
+        **Source:**
+        [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+        
+        In these scenarios, the price per gigajoule of liquid final energy (liquid fuels 
+        from all energy sources; incl. oil products, synthetic fossil fuels from gas and coal, 
+        biofuels) for use in transportation increases from ~30 USD (inflation adjusted to 2010 
+        baseline) to between ~40 USD and ~50 USD by 2050.
+        
+      ![Transportation Liquid Price](transport_orderly_price_liquids.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - **Change in regulations covering energy efficiency standards could lead
         to increasing compliance requirements.** These changes may require firms
@@ -214,6 +247,18 @@ transition:
         demand for airlines, whilst increasing demand for lower carbon alternatives such 
         as (high speed) rail, provided rail operators have the infrastructure in place 
         to serve the same destinations. 
+        
+      In Orderly transition risk scenarios, there is a varied rate of decarbonisation between 
+      different modes of transport. Emissions of CO<sub>2</sub> per billion passenger kilometres from road 
+      passenger transport falls from ~0.07 megatons to ~0.005 megatons between 2020 and 2050. 
+      Emissions of CO<sub>2</sub> per billion passenger kilometres from aviation passenger transport falls 
+      to a lesser extent from ~0.07 megatons to ~0.04 megatons between 2020 and 2050. Rail emissions 
+      are relatively low compared to other modes of transport, and remain that way throughout both scenarios.
+      
+      ![Transport mode intensity](transport_orderly_intensity.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       There is also significant dependence of other sectors on the transport 
       sector as it plays a key role in other firms' supply chains. This magnifies the importance 
@@ -230,10 +275,10 @@ transition:
         could change dramatically. As the use of oil gradually declines, electricity 
         could become the dominant source of final energy by the end of the century.
       
-      ![Transportation Final Energy](Transportation_Final_Energy_Orderly.png)
+      ![Transportation Final Energy](transport_orderly_final_energy.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - Energy efficient modifications to vehicles (e.g. Silverstream air 
         lubrication in watercraft) and supporting infrastructure (e.g. more 
@@ -245,10 +290,10 @@ transition:
       In Orderly transition risk scenarios, these innovations could contribute 
       to an overall decrease in CO<sub>2</sub> emissions in the transportation sector.
 
-      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Orderly.png)
+      ![Transportation CO2 Emissions](transport_orderly_emissions.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. GCAM 5.3+.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       These scenarios also present opportunities for 
       the transport sector. Proactively investing in the above innovations could 
@@ -276,8 +321,8 @@ physical:
       sector which could impact the profitability for these companies.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The high physical risk scenarios could therefore also lead to a
+      scenarios and these vary in line with different temperatures projected for each scenario.
+      The high physical risk scenarios could therefore also lead to a
       significant GDP impact which could negatively impact demand for transport
     high_materiality: |
       The following examples illustrate how the transport sector could be

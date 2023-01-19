@@ -1,7 +1,7 @@
 name: Telecommunications
 test_report_position: 5
 description: |
-  The **Telecommunication** (telecom) sector is comprised of companies that
+  The **telecommunication** (telecom) sector is comprised of companies that
   provide telecommunications and services related to that activity (e.g.
   telephony, including Voice over Internet Protocol (VoIP); cable and satellite
   television distribution services; Internet access; telecommunications
@@ -64,16 +64,14 @@ transition:
 
       Increased carbon tax cost and new investment for renewables could increase 
       the electricity cost for the telecoms sector in the short-to-medium term, 
-      peaking at around 2030 in the Divergent Net Zero scenario at ~28 USD (inflation 
+      peaking at around 2030 in the Divergent Net Zero scenario at ~26 USD (inflation 
       adjusted to 2010 baseline) per gigajoule. In the Delayed transition scenario 
-      prices peak around 2035 at ~33 USD per gigajoule. However electricity prices 
-      are projected to fall back towards 2020 levels by 2050 in the Disorderly 
-      transition risk scenarios. 
+      prices peak around 2035 at ~27 USD per gigajoule.
       
-      ![Electricity Price](Electricity_Price_Disorderly.png)
+      ![Electricity Price](telecoms_disorderly_elec_price.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The profitability of the telecom sector, in Disorderly 
       transition risk scenarios, could also depend on the relevant companies
@@ -157,15 +155,14 @@ transition:
 
       Increased carbon tax cost and new investment for renewables could increase 
       the electricity cost for the telecoms sector in the short-to-medium term, 
-      peaking at around 2030 at ~24 USD (inflation adjusted to 2010 baseline) per 
-      gigajoule in the Below 2&deg;C scenario and ~33 USD per gigajoule in the Net Zero 
-      2050 scenario. However costs are projected to fall back to 2020 levels by 2050 
-      in Orderly transition risk scenarios. 
+      peaking at around 2030 at ~22 USD (inflation adjusted to 2010 baseline) per 
+      gigajoule in the Below 2&deg;C scenario and ~27 USD per gigajoule in the Net Zero 
+      2050 scenario.
       
-      ![Electricity Price](Electricity_Price_Orderly.png)
+      ![Electricity Price](telecoms_orderly_elec_price.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The profitability of the telecoms sector, in the Orderly transition
       risk scenarios, could depend on the relevant companies proactively

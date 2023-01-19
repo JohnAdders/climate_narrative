@@ -1,7 +1,7 @@
 name: Health Underwriting Class
 test_report_position: 16
 description: |
-  The **Health** underwriting class covers personal, corporate and small to
+  The **health** underwriting class covers personal, corporate and small to
   medium enterprise domestic health insurance predominantly in the UK market.
   Under the Solvency II definition of insurance lines of business these are
   reported under Medical Expense and Assistance.
@@ -52,10 +52,10 @@ transition:
       the NGFS could equally be referenced as a guide as these have broadly 
       similar trajectories. 
       
-      ![NOx Emissions](Emissions_NOx_Disorderly.png)
+      ![NOx Emissions](health_uw_disorderly_nox.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
 
       Whilst it may be the case that advances in one are correlated with
       advancements in the other (for example if diesel cars are replaced with
@@ -94,7 +94,7 @@ transition:
 
       The Disorderly transition risk scenarios could lead to a fall in GDP
       growth, A slower GDP growth would potentially constrain the growth in
-      spending on NHS, public health, social care, medical research etc. this
+      spending on NHS, public health, social care, medical research etc. This
       would have negative impacts on health underwriting exposure and could
       result in challenges to the ongoing affordability of health insurance
       products, which, given their discretionary nature within the UK, may
@@ -103,6 +103,18 @@ transition:
       impacted by transition risks, who may look to reduce costs. This may
       result in changes to product design and the nature of cover provided to
       try to mitigate these impacts.
+      
+      **Carbon Tax**
+      
+      Similarly, government revenue received as carbon tax could impact the ability
+      of governments to spend more on factors that can impact the nation's health and 
+      thus indirectly levels of claims. In Disorderly transition risk scenarios, global 
+      government carbon tax revenues increase in the short to medium term. The specific 
+      scenario would depend on how government and society chose to allocate revenue. However,
+      higher revenue would give a bigger pot to potentially support higher spending on the NHS,
+      public health, social care, medical research etc. and so it is reasonable to assume the funding
+      for these areas would be greater "on average" if government revenue is greater (without having to 
+      specifically predict how spending is allocated by any future government).
 
       **Other effects**
 
@@ -140,7 +152,7 @@ transition:
       terms and conditions and coverage.
     high_materiality: |
       In Orderly transition risk scenarios, the impact on the health sector and
-      its associated underwriting class could depend on the pollution and GDP
+      its associated underwriting class could depend on pollution as well as other
       effects. For example:
 
       **Pollution effect**
@@ -159,10 +171,10 @@ transition:
       in the NGFS could equally be referenced as a guide as these have broadly 
       similar trajectories. 
       
-      ![NOx Emissions](Emissions_NOx_Orderly.png)
+      ![NOx Emissions](health_uw_orderly_nox.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       Whilst it may be the case that advances in one are correlated with
       advancements in the other (for example if diesel cars are replaced with
@@ -191,7 +203,18 @@ transition:
       gas-fired power stations, biomass plants such as wood pellet fired
       facilities, for their many positives, produce significantly more
       particulates than gas-fired power stations (Hajat et al., 2014).
+      
+      **Carbon Tax**
 
+      In Orderly transition risk scenarios, global government carbon tax revenues 
+      increase (at least in the short to medium term). Government revenue impacts the
+      ability of governments to spend more on factors that can impact the nation's health
+      and thus indirectly levels of claims. The specific scenario would depend on how government 
+      and society chose to allocate revenue. However, higher revenue would give a bigger pot to potentially 
+      support higher spending on the NHS, public health, social care, medical research etc. and so it is 
+      reasonable to assume the funding for these areas would be greater "on average" if government revenue
+      is greater (without having to specifically predict how spending is allocated by any future government).
+      
       **Other effects**
 
       In addition, the health care sector is a significant global carbon
@@ -233,8 +256,8 @@ physical:
       proposition for those looking to secure access to treatment.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The high physical risk scenarios could therefore also lead to a
+      scenarios and these vary in line with different temperatures projected 
+      for each scenario. The high physical risk scenarios could therefore also lead to a
       significant GDP impact which could negatively impact population health.
     high_materiality: |
       **GDP growth effect**
@@ -353,8 +376,8 @@ physical:
       proposition for those looking to secure access to treatment.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The low physical risk scenarios could therefore also lead to a
+      scenarios and these vary in line with different temperatures projected
+      for each scenario. The low physical risk scenarios could therefore also lead to a
       significant GDP impact which could negatively impact population health.
     high_materiality: |
       **GDP growth effect**
@@ -452,3 +475,4 @@ physical:
 
 references: |
   - [NAICS Code 62](https://www.naics.com/six-digit-naics/?code=62){target="\_blank"}
+

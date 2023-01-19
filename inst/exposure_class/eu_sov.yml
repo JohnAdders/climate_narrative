@@ -1,7 +1,7 @@
 name: European sovereign
 test_report_position: 26
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to 
   support government spending. Governments agree to repay the face value of the 
   bond at a specified maturity date and may also pay interest, in the form of coupon 
@@ -97,32 +97,49 @@ transition:
       which would, in turn, impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
       
-      The EU's emissions have reduced by over 34% between 1990 and 2020. In 2020, 
-      the share of renewables in the EU27 power sector increased to 39% (almost 4% 
-      above 2019 levels), and exceeding the share of electricity from fossil fuels. On 
-      average, 15% of electricity in the EU in 2020 came from wind energy, exceeding 
-      the share of coal in Q4 of 2020. In 2020, electricity generation from coal 
-      decreased by 22% and its share in electricity generation fell to 13% (4% below 
-      the 2019 level).
+      The EU's emissions have decreased in recent years, with an accelerating trend
+      since 2017. In 2021, an additional 26 GW of solar PV and 11 GW of wind capacity was 
+      installed. Generation from renewables in absolute terms amounted to 1,030 TWh (Tera-Watt hour), 
+      which was a 90 TWh increase from 2020.
       
-      ![Share of Renewable Electricity Generation](EU_sov.png)
+      A large number of EU member states have either had no coal generation in their electricity mix 
+      or adopted a coal phase out by 2030. However, high fossil gas prices and an increase in electricity 
+      consumption resulted in a growth of coal-based electricity generation from 364 TWh (Terawatt-hour) 
+      in 2020 to 436 TWh in the second half of 2021. 
+      
+      The share of renewables in the EU's electricity generation reached 39% in 2020. In 2021, the share of 
+      coal in electricity generation increased from 13% to 15%.  Fossil gas covered 18% of EU's electricity 
+      generation in 2021.
+      
+      ![Share of Renewable Electricity Generation](sov_europe.png)
       
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
       
+      In July 2021, the European Commission presented its "Fit for 55" package of policy proposals to achieve a
+      reduction of EU emissions by at least 55% by 2030 compared to 1990 levels. The package also includes proposals 
+      for a higher share of renewables in the overall energy mix (40% by 2030) and increased energy efficiency. 
+      The REPowerEU plan, put forward in May 2022, proposes to increase the share of renewables in final energy by 2030 
+      from 40% to 45%. Policies implemented to date would only result in emissions reductions between 36-47%. This difference
+      is the result of national policies lagging behind policies adopted at the EU level.
+
+      In response to the ongoing energy crisis, the EU and its member states have been signing agreements for scaling up
+      fossil gas imports from around the world and have been making new investments in fossil gas infrastructure, especially 
+      new liquid natural gas import terminals and gas pipelines. Such investment will only shift energy dependency from Russia 
+      to other countries, and result in carbon lock-in contrary to the EU's emissions reduction goals.
+
       **GDP growth effect**
       
-      A change in a country's GDP could have an impact on the level of fiscal revenue 
-      it receives. Assuming taxation rates remain unchanged, a decrease in GDP could 
-      lead to a reduction in fiscal revenue. According to estimates from the NGFS, 
-      Disorderly transition risk scenario could result in significant GDP losses. In 
-      these scenarios, world GDP losses are estimated to be between -4.2% and -4.8% 
-      by 2050. World GDP impacts from transition risk are negative as the speed of 
-      the transition combines with investment uncertainty and affects consumption 
-      and investment. In these scenarios, there is a large mix of physical and 
-      transition risks in 2050. Based on the IIASA NGFS Scenario Explorer v2.0, 
-      the expected impact of a Disorderly scenario on EU GDP compared to 2015 would 
-      be significant, ranging from -3.77% to -3.84% by 2050.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming
+      taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According 
+      to estimates from the NGFS, Disorderly transition risk scenario could result in significant GDP losses.
+      In these scenarios, world GDP losses from chronic physical and transition effects are estimated to be between
+      -4.6% and -4.7% (relative to a baseline with no transition or physical risks) by 2050. World GDP impacts from 
+      transition risk are negative as the speed of the transition combines with investment uncertainty and affects 
+      consumption and investment. In these scenarios, there is a large mix of physical and transition risks in 2050. 
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Disorderly scenario
+      on EU GDP, from chronic physical and transition effects,  would be significant, ranging from -2.9% to -3.4% (relative 
+      to a baseline with no transition or physical risks) by 2050.
       
       **Downgrading of credit ratings effect**
       
@@ -176,8 +193,8 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure 
       to carbon intensive sectors and technologies. Based on the IIASA NGFS 
       Climate Scenarios, REMIND model by 2050, in Orderly 
-      scenarios, fossil fuels represent only ~27% of global energy demand compared 
-      to ~83% in 2020. Countries with carbon-intensive sectors such as oil and gas 
+      scenarios, fossil fuels represent only ~25% to ~40% of global energy demand compared 
+      to ~85% in 2020. Countries with carbon-intensive sectors such as oil and gas 
       are consequently some of the most vulnerable to transition risk. 
       
       The impact of Orderly transition risk scenarios on fiscal revenues 
@@ -192,34 +209,49 @@ transition:
       (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}). 
       
-      The EU's emissions have reduced by over 34% between 1990 and 2020. In 2020, 
-      the share of renewables in the EU27 power sector increased to 39%, (almost 4% 
-      above the 2019 levels), exceeding the share of electricity from fossil fuels. 
-      On average, 15% of electricity in the EU in 2020 came from wind energy, exceeding 
-      the share of coal in Q4 of 2020. In 2020, electricity generation from coal 
-      decreased by 22% and its share in electricity generation fell to 13%, (4% below 
-      the 2019 level).
-      
-      ![Share of Renewable Electricity Generation](EU_sov.png)
+      The EU's emissions have decreased in recent years, with an accelerating trend since 
+      2017. In 2021, an additional 26 GW of solar PV and 11 GW of wind capacity was installed.
+      Generation from renewables in absolute terms amounted to 1,030 TWh (Tera-Watt hour), which
+      was a 90 TWh increase from 2020. A large number of EU member states have either had no coal 
+      generation in their electricity mix or adopted a coal phase out by 2030. However, high fossil
+      gas prices and an increase in electricity consumption resulted in a growth of coal-based electricity
+      generation from 364 TWh (Terawatt-hour) in 2020 to 436 TWh in the second half of 2021. 
+
+      The share of renewables in the EU's electricity generation reached 39% in 2020. In 2021, the share 
+      of coal in electricity generation increased from 13% to 15%.  Fossil gas covered 18% of EU's electricity
+      generation in 2021. 
+
+      ![Share of Renewable Electricity Generation](sov_europe.png)
       
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
       
+      In July 2021, the European Commission presented its "Fit for 55" package of policy proposals to achieve 
+      a reduction of EU emissions by at least 55% by 2030 compared to 1990 levels. The package also includes
+      proposals for a higher share of renewables in the overall energy mix (40% by 2030) and increased energy 
+      efficiency. The REPowerEU plan, put forward in May 2022, proposes to increase the share of renewables in 
+      final energy by 2030 from 40% to 45%. Policies implemented to date would only result in emissions reductions 
+      between 36-47%. This difference is the result of national policies lagging behind policies adopted at the EU 
+      level.
+
+      In response to the ongoing energy crisis, the EU and its member states have been signing agreements for scaling 
+      up fossil gas imports from around the world and have been making new investments in fossil gas infrastructure,
+      especially new liquid natural gas import terminals and gas pipelines. Such investment will only shift energy dependency
+      from Russia to other countries, and result in carbon lock-in contrary to the EU's emissions reduction goals.
+
       **GDP growth effect**
       
-      A change in a country's GDP could have an impact on the level of fiscal 
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease 
-      in GDP could lead to a reduction in fiscal revenue. According to estimates 
-      from the NGFS, the Orderly transition risk scenarios would generally 
-      limit GDP losses. The world GDP losses are estimated to be between -1.5% 
-      and -2.5% by 2050. GDP impacts from transition risk are slightly positive 
-      in the Net Zero 2050 scenario as negative impacts on demand from higher carbon 
-      prices and energy costs are more than offset by the recycling of carbon 
-      revenues into government investment and lower employment taxes. 
-      
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly Net 
-      Zero scenario on EU GDP compared to 2015 would be non-significant, ranging 
-      from -0.4% to +0.8% by 2050.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation 
+      rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According to estimates from
+      the NGFS, the Orderly transition risk scenarios would generally limit GDP losses. The world GDP losses from chronic 
+      physical and transition effects are estimated to be around -3% (relative to a baseline with no transition or physical
+      risks) by 2050. GDP impacts from transition risk are moderately negative in the Net Zero 2050 scenario as negative
+      impacts on demand from higher carbon prices and energy costs are only partially offset by the recycling of carbon
+      revenues into government investment and lower employment taxes.
+
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs) , the expected impact of an Orderly transition
+      risk scenario on EU GDP, from chronic physical and transition effects,  would be significant, ranging from -1.6% to 
+      -1.7% (relative to a baseline with no transition or physical risks) by 2050.
       
       **Downgrading of credit ratings**
       
@@ -275,7 +307,7 @@ physical:
       **GDP growth effect**
       
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      across the world by 2.4&deg;C to 3&deg;C compared to pre-industrial levels 
       (with land warming faster than oceans and high latitudes experiencing higher 
       warming). These changes will lead to chronic changes in living conditions 
       affecting health, labour productivity, agriculture, ecosystems, and sea-level 
@@ -290,17 +322,17 @@ physical:
       expected to reshape the global economy by reducing average global incomes by 
       roughly 23% by 2100, relative to scenarios without climate change. 
       
-      This declining productivity would affect GDP and government income, as tax 
-      revenues are dependent on economic output. Adaptation costs would cause 
-      further strain to fiscal expenditures. Assuming taxation rates remain 
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. 
-      According to estimates from the NGFS, a hot house world scenario with high 
-      physical risk could result in significant GDP losses. In a hot house world 
-      scenario, the GDP losses are estimated to be between -2.8% and-4.8% by 2050. 
-      World GDP losses from physical risks scale with the rise in temperatures in 
-      the scenarios over time. Based on the IIASA NGFS Scenario Explorer v2.0, the 
-      expected impact of a hot house world scenario on EU GDP compared to 2015 would be 
-      significant, ranging from -1.9% to -2.34% by 2050.
+      This declining productivity would affect GDP and government income, as tax revenues 
+      are dependent on economic output. Adaptation costs would cause further strain to fiscal 
+      expenditures. Assuming taxation rates remain unchanged, a decrease in GDP could lead to a 
+      reduction in fiscal revenue. According to estimates from the NGFS, a hot house world scenario
+      with high physical risk could result in significant GDP losses. In a hot house world scenario,
+      world GDP losses from chronic physical and transition effects are estimated to be between -5.7% and-6% 
+      (relative to a baseline with no transition or physical risks) by 2050. World GDP losses from physical
+      risks vary in line with different temperatures projected for each scenario. Based on the IIASA NGFS 
+      Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a hot house world scenario on EU GDP,
+      from chronic physical and transition effects,  would be significant, ranging from -3.3% to -3.4% (relative
+      to a baseline with no transition or physical risks) by 2050.
       
       **Downgrading of credit ratings effect**
       
@@ -352,28 +384,26 @@ physical:
       **GDP growth effect**
       
       In a low physical risk scenario, global mean temperatures could increase 
-      across the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels, 
-      with land warming faster than oceans and high latitudes experiencing higher 
-      warming giving rise to low physical risk. These changes could lead to 
+      across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels 
+      (with land warming faster than oceans and high latitudes experiencing higher 
+      warming). These changes could lead to 
       chronic changes in living conditions affecting health, labour productivity, 
       agriculture, ecosystems, and sea-level rise. It can also further change 
       the frequency and severity of weather events such as heatwaves, droughts, 
       wildfires, cyclones, and flooding. 
       
-      This declining productivity would affect GDP and government income, as 
-      tax revenues are dependent on economic output. Adaptation costs would 
-      cause further strain to fiscal expenditures. Assuming taxation rates remain 
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. 
-      According to estimates from the NGFS, an Orderly transition with low 
-      physical risk would generally limit GDP losses. In an Orderly scenario, 
-      world GDP losses from both physical and transition risk are estimated to 
-      be between -1.5% and -2.5% by 2050. World GDP losses from physical risks 
-      scale with the rise in temperatures in the scenarios over time. 
-      
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact 
-      of the Orderly Net Zero scenario on EU GDP compared to 2015 would be 
-      non-significant, ranging from -0.4% to +0.8% by 2050.
-      
+      This declining productivity would affect GDP and government income, as tax revenues are dependent 
+      on economic output. Adaptation costs would cause further strain to fiscal expenditures. Assuming
+      taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. 
+      According to estimates from the NGFS, an Orderly transition with low physical risk would generally 
+      limit GDP losses. In an Orderly scenario, world GDP losses from chronic physical and transition effects
+      are estimated to be around -3% (relative to a baseline with no transition or physical risks) by 2050.
+      World GDP losses from physical risks vary in line with different temperatures projected for each scenario.
+
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an Orderly 
+      scenario on EU GDP, from chronic physical and transition effects,  would be significant, ranging from 
+      -1.6% to -1.7% (relative to a baseline with no transition or physical risks) by 2050.
+
       **Downgrading of credit ratings**
       
       Climate-related risks are, to some extent, priced in the sovereign bond market. No 
@@ -397,4 +427,3 @@ appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
   **Source:**: 20 Notch Rating Scale
-      

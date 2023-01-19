@@ -1,7 +1,7 @@
 name: Aviation Underwriting Class
 test_report_position: 12
 description: |
-  The **Aviation** underwriting class involves insuring companies engaging in
+  The **aviation** underwriting class involves insuring companies engaging in
   economic activity relating to aircrafts. This includes designing,
   manufacturing, supplying, maintaining and operating both manned and unmanned
   aircrafts or parts. It also includes activities related to aircraft supporting
@@ -22,7 +22,7 @@ transition:
       profitability of this sector and therefore on the associated insurance products 
       pricing, terms and conditions, and coverage.
     always: |
-      Aviation sector could continue to play a role in meeting customer demand
+      The aviation sector could continue to play a role in meeting customer demand
       for the coming years The changing patterns in energy generation in the
       Delayed transition scenario, driven by late policy action enabling a
       "fossil recovery" out of the economic crisis brought about by
@@ -53,20 +53,20 @@ transition:
         In Disorderly transition risk scenarios, the price per gigajoule 
         of liquid final energy (liquid fuels from all energy sources; incl. oil 
         products, synthetic fossil fuels from gas and coal, biofuels) for use in 
-        transportation at least triples by the end of the century, increasing from 
-        ~20 USD (inflation adjusted to 2010 baseline) to ~65 USD in the Delayed 
-        transition scenario, and to ~95 USD in the Divergent Net Zero scenario.
+        transportation increases from ~30 USD (inflation adjusted to 2010 baseline) 
+        to ~50 USD in the Delayed transition scenario, and to ~55 USD in the Divergent 
+        Net Zero scenario, by 2050.
         
-      ![Transportation Liquid Price](Transportation_Liquids_Price_Disorderly.png)
+      ![Transportation Liquid Price](aviation_disorderly_price_liquids.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4. model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - **Change in regulations covering energy efficiency standards would lead
         to increasing compliance requirements.** Governments may conclude it
         impossible to decarbonise flying in line with national targets and so
         limit demand by raising the cost of air travel and limiting airport
-        capacity and could lead to changes in the level and type of insurance
+        capacity, which could lead to changes in the level and type of insurance
         coverage required.
 
       - **Asset valuations of aviation companies could be re-priced** based on
@@ -96,10 +96,10 @@ transition:
       change dramatically. As use of oil declines, electricity becomes the dominant 
       source of final energy by the end of the century.
       
-      ![Transportation Final Energy](Transportation_Final_Energy_Disorderly.png)
+      ![Transportation Final Energy](aviation_disorderly_final_energy.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4. model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - Energy efficient aircraft and infrastructure (e.g. more efficient
         lighting and heating in hangars and airports)
@@ -107,14 +107,17 @@ transition:
       - Intelligent routing and smart technologies which support
         climate-optimized flying
 
-      In Disorderly transition risk scenarios, these innovations 
-      could contribute to an overall decrease in CO<sub>2</sub> emissions in 
-      the transportation sector.
+      These innovations could contribute to an overall decrease in CO<sub>2</sub> emissions in 
+      the aviation sector, however aviation will likely remain a more carbon intensive mode of 
+      transport compared to alternatives such as road or rail.  In Disorderly transition risk 
+      scenarios, emissions of CO<sub>2</sub> per billion passenger kilometres from aviation passenger 
+      transport falls from ~0.07 megatons to ~0.05 megatons in the Delayed transition scenario 
+      and to ~0.02 megatons in the Divergent Net Zero scenario.
       
-      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Disorderly.png)
+      ![Transportation CO2 Emissions](aviation_disorderly_intensity.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4. model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The Disorderly transition risk scenarios also present opportunities 
       for the aviation sector. Proactively investing in the above innovations 
@@ -132,7 +135,7 @@ transition:
       profitability of this sector and therefore on the associated insurance products 
       pricing, terms and conditions, and coverage.
     always: |
-      Aviation sector could continue to play a role in meeting customer demand
+      The aviation sector could continue to play a role in meeting customer demand
       for the coming years. The changing patterns in energy generation in
       Orderly transition risk scenarios, driven by immediate policy
       reaction, societal change, national energy strategies, and carbon
@@ -160,13 +163,13 @@ transition:
         In Orderly transition risk scenarios, the price per gigajoule of 
         liquid final energy (liquid fuels from all energy sources; incl. oil products, 
         synthetic fossil fuels from gas and coal, biofuels) for use in transportation 
-        at least doubles by 2050, increasing from around 20 USD (inflation adjusted 
-        to 2010 baseline) to between 40 USD and 55 USD.
+        increases from around 28 USD (inflation adjusted to 2010 baseline) to between 
+        ~40 USD and ~50 USD by 2050.
         
-      ![Transportation Liquid Price](Transportation_Liquids_Price_Orderly.png)
+      ![Transportation Liquid Price](aviation_orderly_price_liquids.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - **Change in regulations covering energy efficiency standards would lead
         to increasing compliance requirements.** These changes may require firms
@@ -180,7 +183,7 @@ transition:
         earlier than originally planned, resulting in an impairment of their
         residual value.
 
-      - **Changing consumer preferences**, these could lead to changes in
+      - **Changing consumer preferences** could lead to changes in
         revenue due to lower customer numbers as a result of change in
         environmental expectations that could impact this underwriting class.
         'Flight shame' could also increase along with a modal shift to (high
@@ -195,17 +198,17 @@ transition:
 
       - Alternative fuel sources (e.g. airlines could invest in Sustainable
         Aviation Fuels (SAF) in the short term whilst more complex solutions
-        such as hydrogen and electric aircraft are developed)
+        such as hydrogen and electric aircraft are developed).
      
       In Orderly transition risk scenarios, sources of final energy used
       in the transport sector change dramatically. As the use of oil gradually 
       declines, electricity becomes the dominant source of final energy by the 
       end of the century.
       
-      ![Transportation Final Energy](Transportation_Final_Energy_Orderly.png)
+      ![Transportation Final Energy](aviation_orderly_final_energy.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - Energy efficient aircraft and infrastructure (e.g. more efficient
         lighting and heating in hangars and airports)
@@ -213,13 +216,17 @@ transition:
       - Intelligent routing and smart technologies which support
         climate-optimized flying
         
-      In Orderly transition risk scenarios, these innovations could contribute 
-      to an overall decrease in CO<sub>2</sub> emissions in the transportation sector.
+      These innovations could contribute to an overall decrease in CO<sub>2</sub> 
+      emissions in the aviation sector, however aviation will likely remain a more 
+      carbon intensive mode of transport compared to alternatives such as road or rail. 
+      In Orderly transition risk scenarios, emissions of CO<sub>2</sub> per billion passenger 
+      kilometres from aviation passenger transport falls from ~0.07 megatons to ~0.04 megatons
+      between 2020 and 2050.
 
-      ![Transportation CO2 Emissions](CO2_emissions_Transportation_Orderly.png)
+      ![Transport mode intensity](aviation_orderly_intensity.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The Orderly transition risk scenarios also present opportunities for 
       the aviation sector. Proactively investing in the above innovations could 
@@ -236,7 +243,7 @@ physical:
       to have an impact on the profitability of this sector and therefore on the 
       associated insurance products pricing, terms and conditions, and coverage. 
     always: |
-      The aviation sector and its associated underwriting class are also exposed
+      The aviation sector and its associated underwriting class are exposed
       to physical risk. Chronic effects (e.g. raised sea-level and mean
       temperatures) and acute effects due to changes to frequency and severity
       of weather events such as heatwaves, wildfires, cyclones, and
@@ -254,9 +261,9 @@ physical:
       becoming either uninsurable or unaffordable.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The high physical risk scenarios could therefore also lead to a
-      significant GDP impact which could negatively impact demand for aviation
+      scenarios and these vary in line with different temperatures projected 
+      for each scenario. The high physical risk scenarios could therefore also lead 
+      to a significant GDP impact which could negatively impact demand for aviation
       products and services with knock-on impacts for sector's insurance needs.
     high_materiality: |
       The following examples illustrate how the aviation sector could be
@@ -273,10 +280,10 @@ physical:
 
       - **Flooding** can damage infrastructure and grounded aircraft. In the 
         Current Policies scenario, river flood depth is projected to increase 
-        at an accelerating rate and by 2050 it is as much as 2.5 times higher 
-        compared to 1986-2006.
+        at an accelerating rate and by 2050 it is 120% higher compared to a
+        1986-2006 reference period.
       
-      ![River Flood Depth](River_Flood_Depth_High_Physical.png)
+      ![River Flood Depth](aviation_highp_flood_depth.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
@@ -289,12 +296,14 @@ physical:
       skiing resorts) or destinations impacted by sea level inundation.
       
       Significantly slowed GDP growth could further impact demand for aviation
-      through its effect on individuals' disposable income. There are a number of 
-      mitigating actions these companies can take against the high physical risks 
-      mentioned above to build resiliency into their operations against extreme weather 
-      events. For example, investing in more resilient solutions e.g. continuously 
-      review flight plans to ensure optimal routings, standby engineers to reduce 
-      technical fault repair time, and increase flood-mitigating construction standards.
+      through its effect on individuals' disposable income. 
+      
+      There are a number of mitigating actions these companies can take against the 
+      high physical risks mentioned above to build resiliency into their operations 
+      against extreme weather events. For example, investing in more resilient solutions
+      e.g. continuously review flight plans to ensure optimal routings, standby engineers 
+      to reduce technical fault repair time, and increase flood-mitigating construction 
+      standards.
   low:
     exec_description: |
       n/a
@@ -331,10 +340,10 @@ physical:
 
       - **Flooding** can damage infrastructure and grounded aircraft. In both the 
         Net Zero 2050 and Delayed transition scenarios, river flood depth is projected 
-        to increase at an accelerating rate and by 2050 it is as much as 2.5 times 
-        higher compared to 1986-2006.
+        to increase at an accelerating rate and by 2050 it is between 90% and 120% higher        
+        compared to a 1986-2006 reference period.
       
-      ![River Flood Depth](aviation_river_flood_depth.png)
+      ![River Flood Depth](aviation_lowp_flood_depth.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}

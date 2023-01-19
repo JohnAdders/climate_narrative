@@ -1,7 +1,7 @@
 name: Property Underwriting Class
 test_report_position: 19
-description: |
-  The **Property** underwriting class covers a very wide range of asset types
+description: | 
+  The **property** underwriting class covers a very wide range of asset types
   and coverages, with risk transfers flowing from the policyholders, through to
   insurers, reinsurers and retrocessional reinsurers, and with both simple (e.g.
   direct) and complex risk sharing arrangements between multiple parties, for
@@ -22,7 +22,7 @@ transition:
       There is likely to be an increasing pressure on insurers to decline cover for 
       high GHG emitting industrial or commercial activities.
     always: |
-      While the Property underwriting class could continue to play a role in
+      While the property underwriting class could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
       energy generation, in the Delayed transition scenario, driven by late
       policy action enabling a "fossil recovery" out of the economic
@@ -106,8 +106,7 @@ transition:
       mitigating actions. For example:
 
       - Developing a clear net-zero underwriting strategy based on industry
-        standards such as a Net Zero Insurance Alliance
-        (https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
+        standards such as the [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
 
       - Applying a range of scenarios reflecting the most likely range of
         socio-economic, legislative technological and consumer futures within
@@ -153,7 +152,7 @@ transition:
       There is likely to be an increasing pressure on insurers to decline cover for 
       high GHG emitting industrial or commercial activities.
     always: |
-      While the Property underwriting class could continue to play a role in
+      While the property underwriting class could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
       energy generation in an Orderly transition risk scenario, driven by
       immediate policy reaction, societal change, national energy strategies,
@@ -234,8 +233,7 @@ transition:
       mitigating actions. For example:
 
       - Developing a clear net-zero underwriting strategy based on industry
-        standards such as a Net Zero Insurance Alliance
-        (https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
+        standards such as the [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
 
       - Applying a range of scenarios reflecting the most likely range of
         socio-economic, legislative technological and consumer futures within

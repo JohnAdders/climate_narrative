@@ -1,7 +1,7 @@
 name: Consumer Products
 test_report_position: 9
 description: |
-  The **Consumer Products** sector consists of establishments engaged in retail
+  The **consumer products** sector consists of establishments engaged in retail
   trade; selling commodities for personal or household consumption and rendering
   services incidental to the sale of the goods. Characteristics of retail trade
   establishments generally, but not exclusively, include:
@@ -59,7 +59,7 @@ transition:
       to lower carbon intensive supplies, reducing the carbon intensity of their 
       physical stores or sales platforms, and using clean energy sources.
     always: |
-      As the consumer products sector sits between the Manufacturing sector and
+      As the consumer products sector sits between the manufacturing sector and
       end-consumers, it is subject to the considerations of both the products it
       purchases (or receives) as suppliers react to a top-down policy
       environment that results in a rapid reduction of emissions, as well as the
@@ -145,10 +145,19 @@ transition:
       arises through retailers being sandwiched between a combination of shift
       in end-consumer preferences from the buy side and a similar shift on the
       sell side as manufacturers and suppliers react to a top-down policy
-      environment that results in a rapid reduction of emissions. This could
-      lead to sudden limited-to-zero supply of carbon intensive goods could mean
-      retailers that specialise in such markets in a monoline, or concentrated
-      strategy may find their business models no longer viable (for example,
+      environment that results in a rapid reduction of emissions. For example, 
+      in these scenarios, on the supply side, emissions due to energy consumption 
+      from industry (incl. manufacturing) fall from ~8,400 megatons of CO<sub>2</sub>
+      per year to between 600 and 1,600 megatons of CO<sub>2</sub> per year.
+      
+      ![Industry Emissions](consumer_products_disorderly_industry_emissions.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      This could lead to a sudden limited-to-zero supply of carbon intensive goods, 
+      which could mean retailers that specialise in such markets in a monoline, or 
+      concentrated strategy may find their business models no longer viable (for example,
       fossil fuel suppliers such as petrol stations, and coal and oil
       merchants). On the demand side, a change in consumer sentiment is already
       reflected in a 2020 collaborative retail customer survey led by Globe
@@ -255,11 +264,18 @@ transition:
       similar shift on the sell side as manufacturers and suppliers react to a
       top-down policy environment that results in an immediate and smooth
       reduction of emissions. For example, in these scenarios, on the supply 
-      side, Manufacturing Sector's CO<sub>2</sub> emissions are expected to 
-      reduce between 76% and 98% by 2050 from 2020 levels. On the demands side, 
-      a change in consumer sentiment is already reflected in a 2020 collaborative 
-      retail customer survey led by Globe Scan, 74% of 27 000 polled indicated 
-      that they wanted to significantly reduce their impact on the environment 
+      side, emissions due to energy consumption from industry (incl. manufacturing) 
+      fall from ~8,400 megatons of CO<sub>2</sub> per year to between 100 and 1,600 megatons 
+      of CO<sub>2</sub> per year by 2050.
+      
+      ![Industry Emissions](consumer_products_orderly_industry_emissions.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+
+      On the demands side, a change in consumer sentiment is already reflected in 
+      a 2020 collaborative retail customer survey led by Globe Scan, 74% of 27 000 polled 
+      indicated that they wanted to significantly reduce their impact on the environment 
       and nature.
 
       By its very nature, the Consumer Sector is diverse and nuanced, with
@@ -299,8 +315,8 @@ physical:
       retailers based in these locations.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The high physical risk scenarios could therefore also lead to a
+      scenarios and these vary in line with different temperatures projected for each 
+      scenario. The high physical risk scenarios could therefore also lead to a
       significant GDP impact which could negatively impact demand for consumer
       products.
 
@@ -420,8 +436,8 @@ physical:
       weather events can pose problems for manufacturers exposed to such
       geographies, leading to supply chain issues, and direct impacts for
       retailers based in these locations. Adverse impacts on world GDP from
-      physical risks are assumed in the scenarios and these scale with the rise
-      in temperatures in the scenarios over time. The low physical risk
+      physical risks are assumed in the scenarios and these vary in line with 
+      different temperatures projected for each scenario. The low physical risk
       scenarios could therefore also lead to a significant GDP impact which
       could negatively impact demand for consumer products.
     high_materiality: |

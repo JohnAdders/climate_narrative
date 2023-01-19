@@ -1,7 +1,7 @@
 name: Manufacturing
 test_report_position: 3
 description: |
-  The **Manufacturing** sector involves the transformation of (mainly) raw
+  The **manufacturing** sector involves the transformation of (mainly) raw
   materials or substances into new products by way of mechanical, physical, or
   chemical processes. Manufactured products derived from the assembly of
   component parts also comprise the manufacturing sector - unless otherwise
@@ -11,9 +11,9 @@ description: |
   manufacturing activities to occur in a domestic setting.
 
   Although the boundaries between the manufacturing sector and others are not
-  always obvious (Hence, the inclusion of miscellaneous manufacturing as the
-  twelfth sub-sector). The North American Industrial Code (NAIC) system breaks
-  down the manufacturing factor into the following sub-sectors:
+  always obvious (hence, the inclusion of miscellaneous manufacturing as a
+  sub-sector). The North American Industrial Code (NAIC) system breaks down 
+  the manufacturing sector into the following sub-sectors:
   
   - Pharmaceutical and Medicine Manufacturing
   
@@ -93,8 +93,8 @@ transition:
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
-      are increasingly supporting the transition to a low carbon economy. The
-      extent to which is heavily influenced by various characteristics such as
+      are increasingly supporting the transition to a low carbon economy. This
+      is heavily influenced by various characteristics such as
       the political will within a given jurisdiction, the availability of
       climate finance or whether there is an economic rationale to consider
       abatement. An example of this includes the integration of sustainable
@@ -122,13 +122,13 @@ transition:
         manufacturing. 
         
       - In Disorderly transition risk scenarios, CCS utilisation is projected 
-        to increase dramatically, with between ~5000 and ~6000 Megatons of CO<sub>2</sub> 
+        to increase dramatically, with between ~5500 and ~6500 megatons of CO<sub>2</sub> 
         being stored annually by 2050.
         
-        ![Carbon Sequestration](Carbon_Sequestration_CCS_Disorderly.png)
+        ![Carbon Sequestration](manufac_disorderly_ccs.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       - **Increased demand for skilled labour** to support the research,
         development, and implementation of climate mitigation strategies.
@@ -156,7 +156,7 @@ transition:
 
       - High risk of stranded assets.
 
-      Manufacturing industries that adopt a Disorderly pathway to Net Zero
+      Manufacturing industries that adopt a Disorderly pathway to net zero
       emissions under Disorderly transition risk scenarios may
       significantly **lose market value**. It is expected that those industries
       could face stranded assets as uncertainty about climate policies and
@@ -193,8 +193,8 @@ transition:
     always: |
       Whilst a sizeable proportion of manufacturing activity continues to
       reinforce economic dependence on fossil fuels, some areas of manufacturing
-      are increasingly supporting the transition to a low carbon economy. The
-      extent to which is heavily influenced by various characteristics such as
+      are increasingly supporting the transition to a low carbon economy. This is
+      heavily influenced by various characteristics such as
       the political will within a given jurisdiction, the availability of
       climate finance or whether there is an economic rationale to consider
       abatement. An example of this includes the integration of sustainable
@@ -222,14 +222,14 @@ transition:
         manufacturing.
         
         In Orderly scenarios, CCS utilisation is projected to increase 
-        dramatically, with ~5000 Megatons of CO<sub>2</sub> being stored annually by 
-        2050 in the Below 2&deg;C scenario, and ~8500 Megatons in the Net Zero 
+        dramatically, with ~5500 megatons of CO<sub>2</sub> being stored annually by 
+        2050 in the Below 2&deg;C scenario, and ~8000 megatons in the Net Zero 
         2050 scenario. 
         
-        ![Carbon Sequestration](Carbon_Sequestration_CCS_Orderly.png)
+        ![Carbon Sequestration](manufac_orderly_ccs.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       - **Increased demand for skilled labour** to support the research,
         development, and implementation of climate mitigation strategies.
@@ -247,7 +247,7 @@ transition:
       utilisation. A strong policy environment that supports manufacturers'
       decarbonisation efforts could result in an immediate and smooth reduction
       of emissions. For example, in Orderly transition risk scenarios,
-      CO<sub>2</sub> emissions are expected to reduce between 76% and 98% by
+      CO<sub>2</sub> emissions are expected to reduce between 76% and 94% by
       2050 from 2020 levels based on CCS utilisation, fuel-switching, and
       improvements to resource and energy efficiency.
 

@@ -1,7 +1,7 @@
 name: Commercial Real Estate
 test_report_position: 8
 description: |
-  The Commercial Real Estate sector covers companies that are primarily engaged
+  The commercial real estate sector covers companies that are primarily engaged
   in renting or leasing real estate to others, managing real estate for others,
   selling or buying real estate for others, providing other real estate related
   services, such as appraisal services.
@@ -44,10 +44,10 @@ transition:
       sector. In these scenarios a limited relative reduction in GDP growth will also 
       impact the sector. 
     always: |
-      In Disorderly transition risk scenarios, the demand for Commercial Real
-      Estate sector is likely to increase.
+      In Disorderly transition risk scenarios, the demand for commercial real
+      estate sector is likely to increase.
 
-      While the Commercial Real Estate sector could continue to play a role in
+      While the commercial real estate sector could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
       energy generation in the Delayed transition scenario, driven by late
       policy action enabling a "fossil recovery" out of the economic
@@ -90,6 +90,25 @@ transition:
       - **Increased revenues** from retrofits and conversions to low carbon /
         energy efficient buildings.
 
+      In Disorderly transition risk scenarios, buildings become less carbon intense;
+      CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor space 
+      decreases from ~14 megatons to between 0 and ~2 megatons by 2050.
+      
+      ![Floor space intensity](real_estate_disorderly_floor_space_intensity.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      In Disorderly transition risk scenarios, as carbon price increases, carbon tax paid from buildings'
+      emissions peaks at ~$640 billion (inflation adjusted to 2010 baseline) around 2025 in the Divergent 
+      Net Zero scenario, and at ~$360 billion around 2035 in the Delayed transition scenario. Carbon tax 
+      paid begins to decrease thereafter as improvements are made to buildings' emissions intensities.
+      
+      ![Residential and Commercail Government Revenue](real_estate_disorderly_revenue.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
       The materiality of the exposures is very granular dependent upon the
       attributes of the property and the vibrancy of both the local and global
       economies. Where local economies are particularly exposed to revenues
@@ -117,8 +136,8 @@ transition:
       in this sector. In these scenarios a limited relative reduction in GDP growth will also 
       impact the sector.
     always: |
-      In Orderly transition risk scenarios, the demand for Commercial Real
-      Estate sector is likely to increase. While the Commercial Real Estate
+      In Orderly transition risk scenarios, the demand for commercial real
+      estate sector is likely to increase. While the commercial real estate
       sector could continue to play a role in meeting customer demand for the
       coming years, the changing patterns in energy generation in these 
       scenarios, driven by immediate policy reaction, societal change, national 
@@ -154,7 +173,28 @@ transition:
 
       - **Increased revenues** from retrofits and conversions to low carbon /
         energy efficient buildings.
+      
+      In Orderly transition risk scenarios, buildings become less carbon intense; 
+      CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor 
+      space decreases from ~14 megatons to between ~1 and ~3 megatons by 2050.
+      
+      ![Floor space intensity](real_estate_orderly_floor_space_intensity.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
+      In Orderly transition risk scenarios, as carbon price increases, carbon tax paid from 
+      buildings' emissions peaks at ~$370 billion (inflation adjusted to 2010 baseline) around 
+      2035 in the Net Zero 2050 scenario, and at ~$190 billion around 2040 in the Below 2&deg;C 
+      scenario. Carbon tax paid begins to decrease thereafter as improvements are made to buildings' 
+      emissions intensities.
+      
+      ![Residential and Commercial Government Revenue](real_estate_orderly_revenue.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
+      
       The materiality of the exposures is very granular dependent upon the
       attributes of the property and the vibrancy of both the local and global
       economies. Where local economies are particularly exposed to revenues
@@ -203,34 +243,34 @@ physical:
       Property values themselves may be impacted by the occurrence, or risk of
       occurrence, of climate-related events. This can manifest itself as:
 
-      1. Property prices decline after climate events: historically the drop has
-         generally been modest and short-lived in locations where there is
-         strong awareness of, and experience with, extreme weather-related
-         events (particularly flooding and exposure to hurricanes/cyclones), but
-         there is a small body of recent evidence that certain events can lead
-         to a long-lasting decline in prices or liquidity in geographies that
-         have heretofore been relatively unexposed to extreme weather or climate
-         events, or where intensity and frequency have appreciably increased.
+      - Property prices decline after climate events: historically the drop has
+        generally been modest and short-lived in locations where there is
+        strong awareness of, and experience with, extreme weather-related
+        events (particularly flooding and exposure to hurricanes/cyclones), but
+        there is a small body of recent evidence that certain events can lead
+        to a long-lasting decline in prices or liquidity in geographies that
+        have heretofore been relatively unexposed to extreme weather or climate
+        events, or where intensity and frequency have appreciably increased.
 
-      1. Trading volumes or time on market may provide early signals of how
-         markets are reacting to climate events and risks through lower
-         liquidity that could ultimately feed into prices.
+      - Trading volumes or time on market may provide early signals of how
+        markets are reacting to climate events and risks through lower
+        liquidity that could ultimately feed into prices.
 
-      1. Commercial owners/investors in some geographies are placing a higher
-         risk premium on all properties in metro areas affected by climate
-         events, regardless of whether their individual properties have been
-         directly affected.
+      - Commercial owners/investors in some geographies are placing a higher
+        risk premium on all properties in metro areas affected by climate
+        events, regardless of whether their individual properties have been
+        directly affected.
 
-      1. For areas affected by wildfires, floods and storms, significant
-         short-term value drops may, in part at least, be offset by amenity
-         value. Further, the very limited number of commercial studies points to
-         greater persistence of urban agglomeration benefits offsetting
-         perceived climatic risks.
+      - For areas affected by wildfires, floods and storms, significant
+        short-term value drops may, in part at least, be offset by amenity
+        value. Further, the very limited number of commercial studies points to
+        greater persistence of urban agglomeration benefits offsetting
+        perceived climatic risks.
 
-      1. Access to information on risks and on mitigation measures is a
-         contributing factor in value assessment and pricing. The evidence
-         suggests that better information leads to greater awareness, belief
-         acceptance and integration of climate impacts on prices achieved.
+      - Access to information on risks and on mitigation measures is a
+        contributing factor in value assessment and pricing. The evidence
+        suggests that better information leads to greater awareness, belief
+        acceptance and integration of climate impacts on prices achieved.
 
       Consideration should be made on whether changes to climatic patterns occur - 
       for instance we are already experiencing the slowing down of jet streams that 
@@ -264,34 +304,34 @@ physical:
       Property values themselves may be impacted by the occurrence, or risk of
       occurrence, of climate-related events. This can manifest itself as:
 
-      1. Property prices decline after climate events: historically the drop has
-         generally been modest and short-lived in locations where there is
-         strong awareness of, and experience with, extreme weather-related
-         events (particularly flooding and exposure to hurricanes/cyclones), but
-         there is a small body of recent evidence that certain events can lead
-         to a long-lasting decline in prices or liquidity in geographies that
-         have heretofore been relatively unexposed to extreme weather or climate
-         events, or where intensity and frequency have appreciably increased.
+      - Property prices decline after climate events: historically the drop has
+        generally been modest and short-lived in locations where there is
+        strong awareness of, and experience with, extreme weather-related
+        events (particularly flooding and exposure to hurricanes/cyclones), but
+        there is a small body of recent evidence that certain events can lead
+        to a long-lasting decline in prices or liquidity in geographies that
+        have heretofore been relatively unexposed to extreme weather or climate
+        events, or where intensity and frequency have appreciably increased.
 
-      1. Trading volumes or time on market may provide early signals of how
-         markets are reacting to climate events and risks through lower
-         liquidity that could ultimately feed into prices.
+      - Trading volumes or time on market may provide early signals of how
+        markets are reacting to climate events and risks through lower
+        liquidity that could ultimately feed into prices.
 
-      1. Commercial owners/investors in some geographies are placing a higher
-         risk premium on all properties in metro areas affected by climate
-         events, regardless of whether their individual properties have been
-         directly affected.
+      - Commercial owners/investors in some geographies are placing a higher
+        risk premium on all properties in metro areas affected by climate
+        events, regardless of whether their individual properties have been
+        directly affected.
 
-      1. For areas affected by wildfires, floods and storms, significant
-         short-term value drops may, in part at least, be offset by amenity
-         value. Further, the very limited number of commercial studies points to
-         greater persistence of urban agglomeration benefits offsetting
-         perceived climatic risks.
+      - For areas affected by wildfires, floods and storms, significant
+        short-term value drops may, in part at least, be offset by amenity
+        value. Further, the very limited number of commercial studies points to
+        greater persistence of urban agglomeration benefits offsetting
+        perceived climatic risks.
 
-      1. Access to information on risks and on mitigation measures is a
-         contributing factor in value assessment and pricing. The evidence
-         suggests that better information leads to greater awareness, belief
-         acceptance and integration of climate impacts on prices achieved.
+      - Access to information on risks and on mitigation measures is a
+        contributing factor in value assessment and pricing. The evidence
+        suggests that better information leads to greater awareness, belief
+        acceptance and integration of climate impacts on prices achieved.
 
       Consideration should be made on whether changes to climatic patterns occur - 
       for instance we are already experiencing the slowing down of jet streams that 
