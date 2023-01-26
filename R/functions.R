@@ -827,7 +827,7 @@ heartbeat_footer <- function() {
     tag(
       "footer",
       list(
-        p("Copyright 2022 The Climate Financial Risk Forum"),
+        p("Copyright 2023 The Climate Financial Risk Forum"),
         p(
           a(href = "https://github.com/JohnAdders/climate_narrative", "Source Code", target = "_blank"),
           " | ",
