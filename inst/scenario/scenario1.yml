@@ -61,7 +61,7 @@ description: |
   ![Carbon price](scenarios_orderly_price_carbon.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} Carbon prices are weighted global averages.
 
   Government revenues from carbon tax increase in line with the carbon price, until emissions are 
   reduced to a degree that this offsets carbon price increase. In Orderly transition risk scenarios, 
@@ -87,17 +87,17 @@ description: |
   ![Inflation rate](scenarios_orderly_inflation.png)
   
   **Source:**
-  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.]. Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.].](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.
   
   ![Unemployment rate](scenarios_orderly_unemployment.png)
   
   **Source:**
-  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.]. Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.].](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.
   
   ![Interest rate](scenarios_orderly_interest.png)
   
   **Source:**
-  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.]. Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.].](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.
   
   The investments in energy efficiency and low carbon technologies are projected to increase 
   in Orderly transition risk scenarios. These are expected to be higher 
@@ -186,7 +186,7 @@ description: |
   ![GDP](scenarios_orderly_gdp.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]. NiGEM NGFS v1.22 for Acute physical, only available for Net Zero 2050, Delayed transition and Current Policies. Business confidence effect has been included in transition effect for Disorderly scenarios.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4].](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} NiGEM NGFS v1.22 for Acute physical, only available for Net Zero 2050, Delayed transition and Current Policies. Business confidence effect has been included in transition effect for Disorderly scenarios.
 
   Overall, these are relatively optimistic scenarios as both transition and
   physical risks are limited. Any policies that are either introduced or changed
