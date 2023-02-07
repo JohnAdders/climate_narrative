@@ -988,7 +988,8 @@ format_images <- function(filename, image_settings) {
         markdown[i] <- paste0(markdown[i], "{ width=", target_width_after_max, target_width_unit, " }")
       }
     } else {
-      warning(paste0("Image file ", image_name, " does not exist"))
+      
+      warning(paste0("Image file ", image_name, " does not exist ", i, " ", filename))
     }
   }
   writeLines(markdown, file_conn)
