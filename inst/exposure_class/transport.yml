@@ -62,11 +62,11 @@ transition:
         thereafter as improvements are made to transport emissions intensities. Carbon tax paid 
         from transport emissions reaches ~$1.3 trillion by 2050 in the Delayed transition scenario.
         
-        ![Transport Carbon Tax Revenue](transport_disorderly_revenue.png)
+      ![Transport Carbon Tax Revenue](transport_disorderly_revenue.png)
         
-        **Source:**
-        [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
-        
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      
         In Disorderly transition risk scenarios, the price per gigajoule of liquid 
         final energy (liquid fuels from all energy sources; incl. oil products, 
         synthetic fossil fuels from gas and coal, biofuels) for use in transportation 
@@ -118,10 +118,10 @@ transition:
         Net Zero scenario. Rail emissions are relatively low compared to other modes of transport, 
         and remain that way throughout both scenarios.
         
-        ![Transport mode intensity](transport_disorderly_intensity.png)
+      ![Transport mode intensity](transport_disorderly_intensity.png)
         
-        **Source:**
-        [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
                 
         Slowed GDP growth could further impact demand for transport through its effect 
         on individuals' disposable income. 
@@ -203,10 +203,10 @@ transition:
         tax paid from transport emissions reaches ~$1 trillion (inflation adjusted to 2010 baseline) 
         per year in the Net Zero 2050 scenario, and ~$450 billion per year in the Below 2&deg;C scenario. 
         
-        ![Transport Carbon Tax Revenue](transport_orderly_revenue.png)
+      ![Transport Carbon Tax Revenue](transport_orderly_revenue.png)
         
-        **Source:**
-        [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
         
         In these scenarios, the price per gigajoule of liquid final energy (liquid fuels 
         from all energy sources; incl. oil products, synthetic fossil fuels from gas and coal, 
