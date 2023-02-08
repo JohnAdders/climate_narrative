@@ -61,7 +61,7 @@ transition:
         to ~50 USD in the Delayed transition scenario, and to ~55 USD in the Divergent 
         Net Zero scenario, by 2050.
         
-        ![Transportation Liquid Price](marine_disorderly_price_liquids.png)
+      ![Transportation Liquid Price](marine_disorderly_price_liquids.png)
       
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
@@ -115,7 +115,7 @@ transition:
         As use of oil declines, electricity becomes the dominant source of final 
         energy by the end of the century.
         
-        ![Transportation Final Energy](marine_disorderly_final_energy.png)
+      ![Transportation Final Energy](marine_disorderly_final_energy.png)
       
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
@@ -233,7 +233,7 @@ transition:
         As the use of oil gradually declines, electricity becomes the dominant 
         source of final energy by the end of the century.
         
-        ![Transportation Final Energy](marine_orderly_final_energy.png)
+      ![Transportation Final Energy](marine_orderly_final_energy.png)
       
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
