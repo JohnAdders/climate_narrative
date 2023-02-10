@@ -167,10 +167,10 @@ transition:
         In Orderly transition risk scenarios, electricity use more than doubles by 2050, from 
         ~75 exajoules to ~195 exajoules.
         
-        ![Final Energy Electricity](utilities_orderly_energy_elec.png)
+      ![Final Energy Electricity](utilities_energy_elec.png)
         
-        **Source:**
-        [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       - **Reduced revenue** for carbon intensive utilities as consumers switch
         to low carbon/electrified alternatives for heating and become more
@@ -196,7 +196,7 @@ transition:
 
       ![Cumulative Energy Investment](utilities_orderly_energy_investment.png)
 
-      ***Source:**
+      **Source:**
       [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
 
       Nevertheless, in orderly transition scenarios, one has to be careful about also 

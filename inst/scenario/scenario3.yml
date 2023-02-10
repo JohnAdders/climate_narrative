@@ -42,7 +42,7 @@ description: |
   ![CO2 emissions](scenarios_hothouse_emissions_co2.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   Carbon price is a measure of overall policy intensity. Emission prices are
   sensitive to the timing of policy implementation. With none or relatively
@@ -53,7 +53,7 @@ description: |
   ![Carbon price](scenarios_hothouse_price_carbon.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4. Carbon prices are weighted global averages.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} Carbon prices are weighted global averages.
   
   Government revenues from carbon tax are affected by carbon price and emissions. Revenues are relatively
   low in the Current Policies scenarios given the low carbon price. The Nationally Determined Contributions
@@ -63,7 +63,7 @@ description: |
   ![Carbon tax revenue](scenarios_hothouse_revenue.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   In Hothouse scenarios, the lack of carbon price increase results in less severe deviation of inflation,
   unemployment, and long-term interest rates from the baseline scenario,compared to Orderly and Disorderly
@@ -82,7 +82,7 @@ description: |
   ![Interest rate](scenarios_hothouse_interest.png)
  
   **Source:**
-  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]]((https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   The investments in energy efficiency and low carbon technologies are projected 
   to increase in Hot House scenarios. Annual investment in energy efficiency increases 
@@ -156,7 +156,7 @@ description: |
   ![GDP](scenarios_hothouse_gdp.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22[REMIND-MAgPIE 3.0-4.4]. NiGEM NGFS v1.22 for Acute physical, only available for Net Zero 2050, Delayed transition and Current Policies. Business confidence effect has been included in transition effect for Disorderly scenarios.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22[REMIND-MAgPIE 3.0-4.4].](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} NiGEM NGFS v1.22 for Acute physical, only available for Net Zero 2050, Delayed transition and Current Policies. Business confidence effect has been included in transition effect for Disorderly scenarios.
 
   Overall, these scenarios result in high physical risk including irreversible
   impacts like sea-level rise. Transition risks are much less significant in these
