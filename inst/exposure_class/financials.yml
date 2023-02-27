@@ -7,11 +7,11 @@ description: |
   part of this sector, is outside the scope of this tool. More formally, the
   Credit Intermediation and Related Activities subsector covers business that:
 
-  - lend funds, which might be raised from depositors, credit market borrowing
+  - lends funds, which might be raised from depositors, credit market borrowing
     or by borrowing from other financial intermediaries. This covers firms like
     banks and building societies.
 
-  - facilitate the lending of funds or issuance of credit by engaging in such
+  - facilitates the lending of funds or issuance of credit by engaging in such
     activities as mortgage and loan brokerage, clearinghouse and reserve
     services, and check cashing services.
 
@@ -21,7 +21,7 @@ description: |
   - underwriting securities issues and/or making markets for securities and
     commodities
 
-  - acting as agents (i.e., brokers) between buyers and sellers of securities
+  - acting as agents or brokers between buyers and sellers of securities
     and commodities
 
   - providing securities and commodity exchange services; and
@@ -65,7 +65,7 @@ transition:
       The changes in policy, carbon pricing, energy demand/mix and energy 
       prices could impact financial firms. For example:
       
-      * Tightening energy efficiency standards for domestic and commercial 
+      * **Tightening energy efficiency standards** for domestic and commercial 
       buildings could impact the risk in banks' buy-to-let lending portfolios. 
       In Disorderly transition risk scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from tightened 
@@ -85,7 +85,7 @@ transition:
 
       Material exposures for financial firms in Disorderly transition
       risk scenarios could tend to occur where there are concentrations of
-      lending, insurance underwriting, asset management and/or trading to
+      lending, insurance underwriting, asset management and/or trading to:
 
       (i) industries or companies that are carbon intensive (e.g. Transport,
       Buildings Materials, Industrials),
@@ -122,8 +122,8 @@ transition:
       communicate progress in this area through disclosing their financed emissions. 
       Although it has been estimated that the finance sector funds emissions in an 
       amount that is more than 700 times greater than its own emissions, currently 
-      only one quarter of financial firms disclose their financed emissions (
-      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf).
+      only one quarter of financial firms disclose their financed emissions
+      (for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf).
       
       Asset managers must also consider reputational transition risks and 
       avoid 'leakage' by ensuring their repriced carbon intensive assets are 
@@ -157,7 +157,7 @@ transition:
       Changes in policy, carbon pricing, energy demand/mix and energy 
       prices could impact financial firms. For example:
       
-      * Tightening energy efficiency standards for domestic and commercial 
+      * **Tightening energy efficiency standards** for domestic and commercial 
       buildings could impact the risk in banks' buy-to-let lending portfolios. 
       In Orderly transition risk scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from tightened 
@@ -179,8 +179,8 @@ transition:
       scenarios could tend to occur where there are concentrations of lending,
       insurance underwriting, asset management and/or trading to
 
-      (i) industries or companies that are carbon intensive, but which haven't
-      yet started the transition to lower their carbon output,
+      (i) industries or companies that are carbon intensive, but which have not
+      started the transition to lower their carbon output yet,
 
       (ii) industries where it is hard to pass cost increases onto customers,
       and
@@ -220,8 +220,8 @@ transition:
       communicate progress in this area through disclosing their financed emissions. 
       Although it has been estimated that the finance sector funds emissions in an 
       amount that is more than 700 times greater than its own emissions, currently 
-      only one quarter of financial firms disclose their financed emissions (
-      for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf).
+      only one quarter of financial firms disclose their financed emissions
+      (for further detail see: [From the Grand to the Granular: Translating Just Transition Ambitions into Investor Action)](https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2021/07/From-the-Grand-to-the-Granular_translating-just-transition-ambitions-into-investor-action.pdf).
       
       Asset managers must also consider reputational transition risks and avoid 
       'leakage' by ensuring their repriced carbon intensive assets are retired or 
@@ -242,7 +242,7 @@ physical:
       to ensure the safety of their staff and more general business continuity concerns. 
       However, because their own inherent operations only require a relatively small amount 
       of tangible (physical) capital, the main climate-related physical risks for most financial 
-      firms are from their counterparties (that is, firms they lend to invest in and/or insure 
+      firms are from their counterparties (that is, firms they lend to, invest in and/or insure 
       such as corporates and households) and/or the assets they manage. Therefore, to determine 
       the nature of physical risks for financial firms, it is necessary to examine the 
       industries/sectors of their underlying exposures.
@@ -287,7 +287,7 @@ physical:
       that are held as collateral against loans, thereby increasing loss given 
       default if the customer is not able to repay the loan. Increasing frequency, 
       severity or volatility of extreme weather events could also increase claims for 
-      non-life insurance companies', meaning that premiums could need to be increased 
+      non-life insurance companies, meaning that premiums could need to be increased 
       to maintain margins. The insurance market already devotes much resource to acute 
       impacts e.g. flood modelling and flood mapping, as a key weather peril. Different 
       insurance entities could have different areas of focus, depending on the size, 
@@ -318,7 +318,7 @@ physical:
       to ensure the safety of their staff and more general business continuity concerns. 
       However, because their own inherent operations only require a relatively small amount 
       of tangible (physical) capital, the main climate-related physical risks for most financial 
-      firms are from their counterparties (that is, firms they lend to invest in and/or insure 
+      firms are from their counterparties (that is, firms they lend to, invest in and/or insure 
       such as corporates and households) and/or the assets they manage. Therefore, to determine 
       the nature of physical risks for financial firms, it is necessary to examine the industries/sectors 
       of their underlying exposures.
@@ -363,7 +363,7 @@ physical:
       that are held as collateral against loans, thereby increasing loss given default
       if the customer is not able to repay the loan. Increasing frequency, severity 
       or volatility of extreme weather events could also increase claims for non-life 
-      insurance companies', meaning that premiums could need to be increased to 
+      insurance companies, meaning that premiums could need to be increased to 
       maintain margins. The insurance market already devotes much resource to acute 
       impacts e.g. flood modelling and flood mapping, as a key weather peril. Different 
       insurance entities could have different areas of focus, depending on the size, 
@@ -376,7 +376,7 @@ physical:
       and balance sheets. 
       
       Financial firms could need to identity whether their portfolio has exposures 
-      to these physical risks. To determine the nature of physical risks requires information 
+      to these physical risks. Determining the nature of physical risks requires information 
       on the geographic location of assets. Assessing the risks to these assets requires insights 
       on the vulnerability (for example, how reliant is the asset on climate sensitive supplies?), 
       the likelihood of a 'damage event' (e.g. flooding or heat-related failures), and the exposure 

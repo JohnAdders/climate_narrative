@@ -53,7 +53,7 @@ transition:
         the most carbon-intensive areas, which would be most impacted. This could give
         a more accurate picture of how the Disorderly transition risk scenarios impact
         the business. 
-        In the Disorderly transition risk scenarios there is a shift from
+        In the Disorderly transition risk scenarios, there is a shift from
         internal combustion engine vehicles towards electric vehicles (and
         possibly hydrogen or other zero-carbon fuel types). This has impacts on
         replacement and repair costs, increasing costs of claims in the short
@@ -66,9 +66,9 @@ transition:
         causing many people to give up their vehicles and cancel cover, without
         being able to afford an electric replacement. There is potential for
         models of car ownership changing as transition to low a carbon economy
-        could encourage more active travel (walking and cycling) and use of
+        could encourage more active travel (e.g., walking and cycling) and use of
         public transport which could lead to a rise in shared-ownership vehicles
-        (such as zip car) and fewer personal cars. This could mean that the
+        (e.g., zip car) and fewer personal cars. This could mean that the
         insurance model shifts from issuing policies to individuals and more to
         a fleet or business-to-business model, with manufacturers providing the
         insurance to companies as part of a wider package of services with the
@@ -94,7 +94,7 @@ transition:
         charging cables and chargers owned by the vehicle owner.
 
       In Disorderly transition risk scenarios, Primary energy prices 
-      (i.e. the spot price at the global market) rise above 2020 levels,
+      (i.e. the spot price at the global market) could rise above 2020 levels,
       along with secondary energy prices (i.e. paid by large scale consumers)
       as the increased operating costs from paying a price on carbon emissions 
       is partially passed to downstream consumers.
@@ -105,7 +105,7 @@ transition:
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The motor underwriting class is likely to be impacted by steady 
-      decarbonization in transport. Within both freight and passenger transport, 
+      decarbonisation in transport. Within both freight and passenger transport, 
       the portion of electric vehicles could increase in Disorderly 
       transition risk scenarios.
       
@@ -175,7 +175,7 @@ transition:
         booths or waste disposal. Firms should consider detailed analysis of their
         claims supply chain to identify the most carbon-intensive areas, which would be most 
         impacted. This could give a more accurate picture of how the Orderly transition risk
-        scenarios impact the business. In the Orderly transition risk scenarios
+        scenarios impact this business. In the Orderly transition risk scenarios,
         there is a smooth transition away from Internal Combustion Engine (ICE)
         vehicles towards electric vehicles (and possibly hydrogen or other
         zero-carbon fuel types). This has impacts on claims, replacement
@@ -185,9 +185,9 @@ transition:
 
       - **Changing consumer preferences and revenue**. There is potential for
         models of car ownership changing as transition to a low carbon economy
-        could encourage more active travel (walking and cycling) and use of
+        could encourage more active travel (e.g., walking and cycling) and use of
         public transport which could lead to a rise in shared-ownership vehicles
-        (such as zip car) and fewer personal cars. This could mean that the
+        (e.g., zip car) and fewer personal cars. This could mean that the
         insurance model shifts from issuing policies to individuals and more to
         a fleet or business-to-business model, with manufacturers providing the
         insurance to companies as part of a wider package of services with the
@@ -204,7 +204,7 @@ transition:
         on the road may also be associated with cover expanding to include
         charging cables and chargers owned by the vehicle owner.
 
-      Primary energy prices (i.e. the spot price at the global market) rise 
+      Primary energy prices (i.e. the spot price at the global market) could rise 
       above 2020 levels along with secondary energy prices (i.e. paid by large scale 
       consumers) as the increased operating costs from paying a price on 
       carbon emissions is partially passed to downstream consumers.
@@ -215,7 +215,7 @@ transition:
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4  model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The motor underwriting class is likely to be impacted by steady 
-      decarbonization in transport. Within both freight and passenger transport, 
+      decarbonisation in transport. Within both freight and passenger transport, 
       the portion of electric energy could increase in Orderly 
       transition scenarios.
       
@@ -285,8 +285,8 @@ physical:
       delays and increasing costs of repairs. Increasing likelihood of car and
       part manufacturers being directly impacted by weather events themselves
       creating large delays. More general disruption from flooding and storms
-      add to delays. The impact of physical effects could vary by location; in
-      the UK, milder winters may reduce the number of claims related to ice.
+      add to delays. The impact of physical effects could vary by location. For example,
+      in the UK, milder winters may reduce the number of claims related to ice.
       Significantly slowed GDP growth could further impact demand for vehicles
       and their associated insurance products through its effect on individuals'
       disposable income resulting in a reduction in growth of number of vehicle
@@ -319,7 +319,7 @@ physical:
         infrastructure and vehicles. More frequent and intense events could lead
         to a larger than anticipated total claims cost.
 
-      The impact of physical effects could vary by location; in the UK, milder
+      The impact of physical effects could vary by location. For example, in the UK, milder
       winters may reduce the number of claims related to ice. 
 references: |
   - [Driverless vehicles and the future of motor insurance - Zurich, February 2020](https://www.zurich.co.uk/news-and-insight/driverless-vehicles-and-the-future-of-motor-insurance){target="\_blank"}

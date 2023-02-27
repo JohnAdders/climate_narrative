@@ -27,8 +27,8 @@ exec_description: |
   is estimated to be between -4.6% and -4.7% by 2050.
 
 description: |
-  These Delayed/Divergent transition risk scenarios assume the introduction
-  of effective policy change is Delayed or Divergent across countries and
+  Disorderly transition risk scenarios assume the introduction
+  of effective policy change is delayed or divergent across countries and
   sectors.
 
   ![NGFS scenarios Framework](NGFS_scenarios_Framework_Disorderly.png)
@@ -60,11 +60,10 @@ description: |
   **Source:**
   [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-  In the Delayed transition scenario, late policy reaction enables a "fossil
-  recovery" out of the economic crisis, which delays the increase of carbon
+  In the Delayed transition scenario, late policy reaction delays the increase of carbon
   prices until 2030, compared to the Divergent Net Zero scenario where carbon
-  prices rise at a smoother rate because while there are varied policies
-  implemented across countries and sectors these measures have been put in place
+  prices rise at a smoother rate because, while there are varied policies
+  implemented across countries and sectors, these measures have been put in place
   earlier. In both the scenarios disorderly policy action results in transition
   risk.
 
@@ -186,8 +185,8 @@ description: |
   and transition effects relative to a baseline with no transition or physical risks 
   is estimated to be just under -5% by 2050. World GDP losses from 
   physical risks vary in line with different temperatures projected for each scenario.
-  World GDP impacts from Disorderly transition risks are negative as the speed of the 
-  transition combines with investment uncertainty and affects consumption and investment. 
+  GDP impacts from transition risks are negative in Disordelry transition risk scenarios as the 
+  speed of the transition combines with investment uncertainty and affects consumption and investment. 
   In these scenarios, there is a large mix of physical and transition risks in 2050. Even 
   in the Delayed transition risk scenario, physical risks have a larger impact on global 
   GDP than transition risks. The NGFS estimate that global GDP impact in the Delayed transition 
