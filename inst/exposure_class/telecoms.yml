@@ -89,7 +89,7 @@ transition:
       - develop on site energy generation and sustainable energy sourcing
         (offsite PPAs);
 
-      - use natural resources more efficiently
+      - use natural resources more efficiently;
 
       - use Internet of Things (IoT) and artificial intelligence (AI)
         technologies to better forecast network energy demands and measure
@@ -202,7 +202,7 @@ transition:
       - develop technology to foster, or directly work on, solutions that
         minimise need for travel (e.g. BT's Remote Diagnostic Station).
 
-      These actions could also lead to positive gains in commercial reputation
+      These actions could lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
       proactively shop at businesses with an incorporated green strategy.
 physical:
@@ -224,7 +224,7 @@ physical:
       companies and could therefore result in an increase in the operational
       costs (as operations become largely reactive to remediate issues), impact
       employment and potentially lead to a significant decline in revenue due to
-      an inability to operate and meet customer demands. These are likely to have an 
+      an inability to operate and meet customer demands. Weather variations are likely to have an 
       impact on this sector, affecting profitability and consumer preferences.
     high_materiality: |
       The following examples illustrate how the telecom sector could be impacted
@@ -249,13 +249,13 @@ physical:
         underground facilities. For example, Vodafone had disruptions to their
         services after one of their data centres flooded.
 
-      - Loss of power to the network if the national grid is impacted by weather
-        causes operational disruption.
+      - Loss of power to the network if the national grid is impacted by weather,
+        causing operational disruption.
 
       - **Extreme temperatures** causing overheating of equipment in base
         stations or street cabinets.
 
-      There are several mitigating actions these companies can take against the
+      There are several mitigating actions telecom companies can take against the
       high physical risks mentioned above to build resiliency into the network
       against extreme weather events. For example, investing in more resilient
       solutions e.g. develop sustained requirement for heating/ cooling
@@ -278,8 +278,8 @@ physical:
       therefore result in an increase in the operational costs (as operations
       become largely reactive to remediate issues), impact employment and
       potentially lead to a significant decline in revenue due to an inability
-      to operate and meet customer demands. These are likely to have an impact on 
-      this sector, affecting profitability and consumer preferences.
+      to operate and meet customer demands. Weather variations are likely to have an 
+      impact on this sector, affecting profitability and consumer preferences.
     high_materiality: |
       The following examples illustrate how the telecom sector could be impacted
       in a low physical risk scenario:
@@ -303,13 +303,13 @@ physical:
         underground facilities. For example, Vodafone had disruptions to their
         services after one of their data centres flooded.
 
-      - Loss of power to the network if the national grid is impacted by weather
-        causes operational disruption.
+      - Loss of power to the network if the national grid is impacted by weather,
+        causing operational disruption.
 
       - **Extreme temperatures** causing overheating of equipment in base
         stations or street cabinets.
 
-      There are several mitigating actions these companies can take against the
+      There are several mitigating actions telecom companies can take against the
       low physical risks mentioned above to build resiliency into the network
       against extreme weather events. For example, investing in more resilient
       solutions e.g. develop sustained requirement for heating/cooling
