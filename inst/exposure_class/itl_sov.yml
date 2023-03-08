@@ -138,8 +138,8 @@ transition:
       risks for these top-rated countries, but greater sensitivity of the top
       ratings as it is easier to downgrade from an AAA rating than a C rating. 
       
-      According to the study, in a transition risk (RCP 2.6) scenario, Italy would not have a climate 
-      induced sovereign downgrade.
+      According to the study, in a transition risk (RCP 2.6) scenario, Italy would not have a climate-induced 
+      sovereign downgrade.
   low:
     exec_description: |
       In Orderly transition risk scenarios, immediate policy reaction, 
@@ -391,7 +391,7 @@ physical:
       ratings as it is easier to downgrade from an AAA rating than a C rating. 
       
       According to the study, in a low physical risk (RCP 2.6) scenario, Italy would not 
-      have a climate induced sovereign downgrade.
+      have a climate-induced sovereign downgrade.
 appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
