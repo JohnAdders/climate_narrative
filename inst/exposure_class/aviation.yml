@@ -76,7 +76,7 @@ transition:
         earlier than originally planned, resulting in an impairment of their
         residual value.
 
-      - **Changing consumer preferences**, these could lead to changes in
+      - **Changing consumer preferences** could lead to changes in
         revenue due to lower customers numbers as a result of change in
         environmental expectations that could impact this underwriting class.
         'Flight shame' could also increase along with a modal shift to (high
@@ -88,13 +88,16 @@ transition:
       risk scenarios, could also depend on the relevant companies proactively
       investing in innovation and new technology. For example:
 
-      - Alternative fuel sources (e.g. airlines could invest in Sustainable
+      - Alternative fuel sources. Airlines could invest in Sustainable
         Aviation Fuels (SAF) in the short term whilst more complex solutions
-        such as hydrogen and electric aircraft are developed).
+        such as hydrogen and electric aircraft are developed.
         
       In these scenarios, sources of final energy used in the transport sector 
       change dramatically. As use of oil declines, electricity becomes the dominant 
-      source of final energy by the end of the century.
+      source of final energy by the end of the century. By 2100, use of oil in transport 
+      falls from ~120 exajoules (EJ) per year to between ~10 EJ and ~40 EJ per year, whereas 
+      use of electricity in transport increases from ~0 EJ per year to between ~50 EJ and 
+      ~60 EJ per year.
       
       ![Transportation Final Energy](aviation_disorderly_final_energy.png)
       
@@ -102,10 +105,10 @@ transition:
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4. model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - Energy efficient aircraft and infrastructure (e.g. more efficient
-        lighting and heating in hangars and airports)
+        lighting and heating in hangars and airports).
 
       - Intelligent routing and smart technologies which support
-        climate-optimized flying
+        climate-optimized flying.
 
       These innovations could contribute to an overall decrease in CO<sub>2</sub> emissions in 
       the aviation sector, however aviation will likely remain a more carbon intensive mode of 
@@ -176,7 +179,7 @@ transition:
         to adapt their service, potentially reducing sales and could lead to
         changes in the level and type of insurance coverage required.
 
-      - **Asset valuations of aviation companies could be re-priced based** on
+      - **Asset valuations of aviation companies could be re-priced** based on
         the re-adjusted expectations of the use of low-carbon products and
         energy efficient technologies in the future. Higher fuel costs impose a
         risk that older and less efficient aircraft could have to be retired
@@ -196,14 +199,16 @@ transition:
       on the relevant companies proactively investing in innovation and new
       technology. For example:
 
-      - Alternative fuel sources (e.g. airlines could invest in Sustainable
+      - Alternative fuel sources. Airlines could invest in Sustainable
         Aviation Fuels (SAF) in the short term whilst more complex solutions
-        such as hydrogen and electric aircraft are developed).
+        such as hydrogen and electric aircraft are developed.
      
       In Orderly transition risk scenarios, sources of final energy used
       in the transport sector change dramatically. As the use of oil gradually 
       declines, electricity becomes the dominant source of final energy by the 
-      end of the century.
+      end of the century. By 2100, use of oil in transport falls from ~120 exajoules 
+      (EJ) per year to between ~20 EJ and ~40 EJ per year, whereas use of electricity 
+      in transport increases from ~0 EJ per year to ~60 EJ per year.
       
       ![Transportation Final Energy](aviation_orderly_final_energy.png)
       
@@ -211,13 +216,13 @@ transition:
       [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
 
       - Energy efficient aircraft and infrastructure (e.g. more efficient
-        lighting and heating in hangars and airports)
+        lighting and heating in hangars and airports).
 
       - Intelligent routing and smart technologies which support
-        climate-optimized flying
+        climate-optimized flying.
         
       These innovations could contribute to an overall decrease in CO<sub>2</sub> 
-      emissions in the aviation sector, however aviation will likely remain a more 
+      emissions in this sector, however aviation will likely remain a more 
       carbon intensive mode of transport compared to alternatives such as road or rail. 
       In Orderly transition risk scenarios, emissions of CO<sub>2</sub> per billion passenger 
       kilometres from aviation passenger transport falls from ~0.07 megatons to ~0.04 megatons
@@ -298,10 +303,10 @@ physical:
       Significantly slowed GDP growth could further impact demand for aviation
       through its effect on individuals' disposable income. 
       
-      There are a number of mitigating actions these companies can take against the 
-      high physical risks mentioned above to build resiliency into their operations 
-      against extreme weather events. For example, investing in more resilient solutions
-      e.g. continuously review flight plans to ensure optimal routings, standby engineers 
+      There are a number of mitigating actions these companies can take against 
+      high physical risks to build resiliency into their operations against extreme weather 
+      events. For example, investing in more resilient solutions e.g. continuously 
+      review flight plans to ensure optimal routings, standby engineers 
       to reduce technical fault repair time, and increase flood-mitigating construction 
       standards.
   low:

@@ -20,8 +20,8 @@ transition:
     always: |
       The changing patterns in energy generation in Disorderly transition scenarios, 
       driven by late policy action enabling a "fossil recovery" out of the economic 
-      crisis brought about by COVID-19, results in CO<sub>2</sub> emissions increasing until 2030 
-      before rapidly decreasing after 2030 to compensate for the inaction beforehand. 
+      crisis brought about by COVID-19, result in CO<sub>2</sub> emissions increasing until 2030 
+      before rapidly decreasing thereafter to compensate for the inaction beforehand. 
       The Divergent Net Zero scenario involves an immediate but divergent CO<sub>2</sub> emissions 
       reduction. Both these scenarios are likely to have an impact on the profitability 
       of this sector and therefore on the associated insurance products' pricing, terms 
@@ -44,11 +44,13 @@ transition:
       potentially result in one or more of the following impacts:
 
       - **Reduced revenues**. As carbon prices increase and consumers switch to 
-        low carbon/electrified alternatives for cars, heating etc, demand for 
+        low carbon/electrified alternatives for cars, heating etc., demand for 
         fossil fuels decreases, with knock on effects for cover of carbon intensive 
-        energy industries. In Disorderly transition risk scenarios the demand for coal, 
-        oil and gas falls, from over 450 exajoules (EJ) a year to between ~100 and 200 EJ a year, 
-        with coal demand almost completely phased out between 2035 and 2040.
+        energy industries. 
+        
+      In Disorderly transition risk scenarios the demand for coal, 
+      oil and gas falls, from over 450 exajoules (EJ) a year to between ~100 and 200 EJ a year, 
+      with coal demand almost completely phased out between 2035 and 2040.
 
       ![Primary Energy](energy_uw_disorderly_primary_energy.png)
 
@@ -60,11 +62,11 @@ transition:
         number of insurers to stop insuring coal.
         
       - **Increased regulatory oversight and sanctions.** Non-compliant insurers may face 
-        increased regulatory oversight and sanctions. There is also potential legal or 
+        increased regulatory oversight and sanctions. There are also potential legal or 
         other liability risks, and associated reputational risks, due to inadequate transition 
         strategies. 
         
-      - **Inability to secure reinsurance coverage** (either availability of capital, or 
+      - **Inability to secure reinsurance coverage** (either limited availability of reinsurers' capital or 
         exclusions) for insured risks which are not in line with industry Net Zero commitments.
       
       - **Opportunities for new products or lines of business** from new risk transfer 
@@ -74,8 +76,8 @@ transition:
       - **Changing consumer behaviour**. Although widespread electrification is likely to increase 
         demand for electricity in these scenarios, there may be a shift in the supply business as 
         households, municipalities, and companies produce their own green energy and become more 
-        energy autonomous. Firms may want to consider the potential change in energy insurance 
-        products that results.
+        energy autonomous. Firms may want to consider the potential resulting change in energy insurance 
+        products.
       
       The profitability of the energy underwriting class could also depend on the 
       relevant companies proactively addressing transition risks through mitigating 
@@ -87,7 +89,7 @@ transition:
       - Ensuring underwriting rules and policies are aligned to corporate and industry 
         wide Net Zero objectives.
       
-      - Encouraging policy holder's approaches to risk mitigation and transition strategies 
+      - Encouraging policyholder's behaviour supporting risk mitigation and transition strategies 
         through increased knowledge transfer and remediation advisories, as well as new 
         product development, for example to support a low carbon transition to agreed timescales 
         for high GHG emitting assets and activities.
@@ -105,7 +107,7 @@ transition:
       and coverage, and could generate fast-changing requirements and opportunities.
       
       Demand for carbon intensive energy forms, such as fossil fuels, 
-      could decline, posing a risk to firms without adequate transition plans, 
+      could decline, posing a risk to firms without adequate transition plans 
       and result in an associated decline in demand for insurance covering these energy forms. 
       Demand for renewables and sustainable energy forms, such as solar, wind, hydro and 
       biomass, could increase, presenting an opportunity for these types of energy insurers.
@@ -114,11 +116,13 @@ transition:
       potentially result in one or more of the following impacts:
 
       - **Reduced revenues**. As carbon prices increase and consumers switch to 
-        low carbon/electrified alternatives for cars, heating etc, demand for 
+        low carbon/electrified alternatives for cars, heating etc., demand for 
         fossil fuels decreases, with knock on effects for cover of carbon intensive 
-        energy industries. In Orderly scenarios the demand for coal, oil and gas 
-        falls, from over 450 exajoules (EJ) a year to between 100 and 200 EJ a year, with coal 
-        demand almost completely phased out between 2035 and 2045.
+        energy industries. 
+        
+      In Orderly transition risk scenarios the demand for coal, oil and gas 
+      falls, from over 450 exajoules (EJ) a year to between 100 and 200 EJ a year, with coal 
+      demand almost completely phased out between 2035 and 2045.
 
       ![Primary Energy](energy_uw_orderly_primary_energy.png)
 
@@ -130,12 +134,12 @@ transition:
         number of insurers to stop insuring coal.
         
       - **Increased regulatory oversight and sanctions.** Non-compliant insurers may face 
-        increased regulatory oversight and sanctions. There is also potential legal or 
+        increased regulatory oversight and sanctions. There are also potential legal or 
         other liability risks, and associated reputational risks, due to inadequate transition 
         strategies.
         
-      - **Inability to secure reinsurance coverage** (either availability of capital, or 
-        exclusions) for insured risks which are not in line with industry Net Zero commitments.
+      - **Inability to secure reinsurance coverage** (either limited availability of reinsurers' capital, 
+        or exclusions) for insured risks which are not in line with industry Net Zero commitments.
       
       - **Opportunities for new products or lines of business** from new risk transfer 
         requirements for the renewable energy industry (comprehensive products are required 
@@ -144,8 +148,8 @@ transition:
       - **Changing consumer behaviour**. Although widespread electrification is likely to increase 
         demand for electricity in these scenarios, there may be a shift in the supply business as 
         households, municipalities, and companies produce their own green energy and become more 
-        energy autonomous. Firms may want to consider the potential change in energy insurance 
-        products that results.
+        energy autonomous. Firms may want to consider the potential resulting change in energy insurance 
+        products.
       
       The profitability of the energy underwriting class could also depend on the 
       relevant companies proactively addressing transition risks through mitigating 
@@ -157,7 +161,7 @@ transition:
       - Ensuring underwriting rules and policies are aligned to corporate and industry 
         wide Net Zero objectives.
       
-      - Encouraging policy holder's approaches to risk mitigation and transition strategies 
+      - Encouraging policyholder's behaviour supporting risk mitigation and transition strategies 
         through increased knowledge transfer and remediation advisories, as well as new 
         product development, for example to support Orderly transition to agreed timescales 
         for high GHG emitting assets and activities.
@@ -178,8 +182,8 @@ physical:
       Whilst the energy sector is used to responding to and managing changing 
       weather conditions, in the high physical risk scenario, climate change and 
       global warming could increase weather variations. This could lead to significant 
-      disruption within the energy sector which could impact the profitability of these 
-      companies and therefore impact the energy underwriting class. The physical effects 
+      disruption within the energy sector which could impact the profitability of the 
+      companies in this sector and therefore impact the energy underwriting class. The physical effects 
       of climate change could result in increased claims and increased premiums, 
       potentially resulting in some energy underwriting risks becoming either uninsurable 
       or unaffordable.
@@ -187,7 +191,7 @@ physical:
       Adverse impacts on world GDP from physical risks are assumed in the scenarios 
       and these vary in line with different temperatures projected for each scenario. The 
       high physical risk scenarios could therefore also lead to a significant GDP 
-      impact which could negatively impact demand for the energy sector and its associated 
+      impact which could negatively affect demand for the energy sector and its associated 
       underwriting class.
     high_materiality: |
       The following examples illustrate how the energy sector and underwriting class 
@@ -229,19 +233,19 @@ physical:
       rigs are located in warm offshore areas (business from Gulf of Mexico offshore risks 
       accounts for approximately [25%](https://www.cii.co.uk/media/4043851/ch12_energy.pdf){target="\_blank"}
       of annual global energy premiums) where they are particularly vulnerable to storm damage. 
-      Renewable energy infrastructure is also often prone to the elements by necessity (e.g. 
+      Renewable energy infrastructure is also often prone to the elements by necessity (e.g.
       solar farms are most effective in hot and dry environments which are also susceptible 
       to wildfires; wind turbines are most effective in high wind areas susceptible to storms).
       
       Uncertainty surrounding the future changes in frequency and intensity of weather events 
-      could lead to increased technical rates and premiums, and potentially unaffordability 
+      could lead to increased technical rates and premiums and potentially unaffordability 
       of insurance. At the same time, there is also an increased risk of reinsurance failure 
       due to underestimation of potential losses, particularly aggregate loss from multiple 
       occurring extremes.
       
       There are many actions that companies can take to adapt to climate change and reduce 
       the physical risks mentioned above. These include investing in more resilient 
-      infrastructure (e.g. to build resilience to cyclones upstream energy firms could 
+      infrastructure (e.g. to build resilience to cyclones, upstream energy firms could 
       improve drainage systems on offshore rigs; downstream firms could develop underground 
       power line networks) as well as more robust design and construction standards. To 
       reduce the impact of rising sea levels, the position of new facilities should consider 
@@ -255,14 +259,14 @@ physical:
       The energy sector and its associated underwriting class are exposed to 
       physical risk. Chronic effects (e.g. raised sea-levels and mean temperatures) 
       and acute effects due to changes to frequency and severity of weather events 
-      such as heatwaves, wildfires, cyclones, and flooding could damage infrastructure 
+      such as heatwaves, wildfires, cyclones and flooding could damage infrastructure 
       and cause widespread disruptions with negative effects on costs and earnings. 
       
       Whilst the energy sector is used to responding to and managing changing 
       weather conditions, in the low physical risk scenario, climate change and 
       global warming could increase weather variations. This could lead to increasing 
-      disruption within the energy sector which could impact the profitability of these 
-      companies and therefore impact the energy underwriting class. The physical effects 
+      disruption within the energy sector which could impact the profitability of the 
+      companies in this sector and therefore impact the energy underwriting class. The physical effects 
       of climate change could result in increased claims and increased premiums, 
       potentially resulting in some energy underwriting risks becoming either uninsurable 
       or unaffordable.
@@ -283,7 +287,7 @@ physical:
         particularly natural gas demand.
       
       - **Water stress/long-term drought** could lead to competition between energy 
-        companies for water resources, and potentially result in increased environmental 
+        companies for water resources and potentially result in increased environmental 
         regulation focusing on protecting water supply and quality. This could add costs 
         for water-intensive energy industries, such as fossil fuel and nuclear, which use 
         large quantities of water in their cooling processes. Renewables typically use 
@@ -307,7 +311,7 @@ physical:
       rigs are located in warm offshore areas (business from Gulf of Mexico offshore risks 
       accounts for approximately [25%](https://www.cii.co.uk/media/4043851/ch12_energy.pdf){target="\_blank"}
       of annual global energy premiums) where they are particularly vulnerable to storm damage. 
-      Renewable energy infrastructure is also often prone to the elements by necessity (e.g. 
+      Renewable energy infrastructure is also often prone to the elements by necessity (e.g.
       solar farms are most effective in hot and dry environments which are also susceptible 
       to wildfires; wind turbines are most effective in high wind areas susceptible to storms).
       
@@ -319,7 +323,7 @@ physical:
       
       There are many actions that companies can take to adapt to climate change and reduce 
       the physical risks mentioned above. These include investing in more resilient 
-      infrastructure (e.g. to build resilience to cyclones upstream energy firms could 
+      infrastructure (e.g. to build resilience to cyclones, upstream energy firms could 
       improve drainage systems on offshore rigs; downstream firms could develop underground 
       power line networks) as well as more robust design and construction standards. To 
       reduce the impact of rising sea levels, the position of new facilities should consider 

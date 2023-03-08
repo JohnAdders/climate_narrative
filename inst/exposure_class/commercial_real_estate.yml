@@ -1,9 +1,9 @@
-name: Commercial Real Estate
+name: Commercial Real Estate Sector
 test_report_position: 8
 description: |
   The commercial real estate sector covers companies that are primarily engaged
   in renting or leasing real estate to others, managing real estate for others,
-  selling or buying real estate for others, providing other real estate related
+  selling or buying real estate for others, and providing other real estate related
   services, such as appraisal services.
 
   This sector includes equity Real Estate Investment Trusts (REITs) that are
@@ -15,11 +15,11 @@ description: |
     homes:
 
     - Firms acting as lessors of buildings that are used as residences or
-      dwellings are owner lessors and establishments renting real estate and
+      dwellings, including owner lessors and establishments renting real estate and
       then acting as lessors in subleasing it to others.
 
     - Firms acting as lessors of buildings that are not used as residences or
-      dwellings including owner-lessors of non-residential buildings, establishments 
+      dwellings, including owner-lessors of non-residential buildings, establishments 
       renting real estate and then acting as lessors in subleasing it to others, and 
       establishments providing full-service office space, whether on a lease or 
       service contract basis.
@@ -51,8 +51,8 @@ transition:
       meeting customer demand for the coming years, the changing patterns in
       energy generation in the Delayed transition scenario, driven by late
       policy action enabling a "fossil recovery" out of the economic
-      crisis brought about by COVID-19, results in CO<sub>2</sub> emissions
-      increasing until 2030 before rapidly decreasing after 2030 as carbon
+      crisis brought about by COVID-19, result in CO<sub>2</sub> emissions
+      increasing until 2030 before rapidly decreasing thereafter as carbon
       prices are increased to compensate for the inaction beforehand. In the
       Divergent scenario there is a more immediate but divergent reduction in
       CO<sub>2</sub> emissions. Both these scenarios are likely to have a
@@ -78,11 +78,11 @@ transition:
 
       - **Decreased revenues from, and stranding of, assets** that fail to meet
         customer criteria and/or government regulations on energy efficiency,
-        use and HVAC technologies.
+        use and HVAC (heating, ventilation and air conditioning) technologies.
 
       - **Changes or disruption to revenues** due to changing customer base from
         transition exposure (can reduce or increase revenues depending upon net
-        exposure)
+        exposure).
 
       - **Increase in repair, refurbishment and operating costs** due to
         government regulations, taxation and meeting customer criteria.
@@ -92,7 +92,7 @@ transition:
 
       In Disorderly transition risk scenarios, buildings become less carbon intense;
       CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor space 
-      decreases from ~14 megatons to between 0 and ~2 megatons by 2050.
+      decrease from ~14 megatons to between 0 and ~2 megatons by 2050.
       
       ![Floor space intensity](real_estate_disorderly_floor_space_intensity.png)
       
@@ -141,7 +141,7 @@ transition:
       sector could continue to play a role in meeting customer demand for the
       coming years, the changing patterns in energy generation in these 
       scenarios, driven by immediate policy reaction, societal change, national 
-      energy strategies, and carbon legislation, could lead to an immediate and smooth 
+      energy strategies and carbon legislation, could lead to an immediate and smooth 
       reduction in CO<sub>2</sub> emissions by 2050.
 
       The increase in the carbon price as well as a change to the demand in the
@@ -154,19 +154,19 @@ transition:
       Real Estate sector.
     high_materiality: |
       The changes in carbon pricing, societal preference, energy prices and
-      energy mix could potentially the commercial real estate sector as a result
-      in one or more of the following impacts:
+      energy mix could potentially result in one or more of the following impacts
+      on the commercial real estate sector:
 
       - **Increased revenues** for "low carbon/green" buildings meeting demand
         as companies have to decarbonise their own operations.
 
       - **Decreased revenues** of assets that fail to meet customer criteria
-        and/or government regulations on energy efficiency, use and HVAC
-        technologies.
+        and/or government regulations on energy efficiency, use and HVAC (heating, 
+        ventilation and air conditioning) technologies.
 
       - **Changes or disruption to revenues** due to changing customer base from
         transition exposure (can reduce or increase revenues depending upon net
-        exposure)
+        exposure).
 
       - **Increase in repair and refurbishment costs** to meet government
         regulations, taxation and customer criteria.
@@ -176,7 +176,7 @@ transition:
       
       In Orderly transition risk scenarios, buildings become less carbon intense; 
       CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor 
-      space decreases from ~14 megatons to between ~1 and ~3 megatons by 2050.
+      space decrease from ~14 megatons to between ~1 and ~3 megatons by 2050.
       
       ![Floor space intensity](real_estate_orderly_floor_space_intensity.png)
       
@@ -234,10 +234,10 @@ physical:
       severity of weather events such as heatwaves, droughts, wildfires, 
       cyclones and flooding. 
       
-      Floods, storms and extreme temperatures damage buildings, with the former 
+      Floods, storms and extreme temperatures damage buildings, with flood damage 
       particularly acute for assets on flood plains or located in low-lying coastal 
       areas. In addition to direct damage, extreme temperatures can materially impact 
-      the revenues of assets that are not adapted to these changes as this could 
+      the revenues of assets that are not adapted to these changes and this could 
       potentially affect the productivity of assets and labour. 
     high_materiality: |
       Property values themselves may be impacted by the occurrence, or risk of
@@ -257,7 +257,7 @@ physical:
         liquidity that could ultimately feed into prices.
 
       - Commercial owners/investors in some geographies are placing a higher
-        risk premium on all properties in metro areas affected by climate
+        risk premium on all properties in metropolitan areas affected by climate
         events, regardless of whether their individual properties have been
         directly affected.
 
@@ -276,7 +276,7 @@ physical:
       for instance we are already experiencing the slowing down of jet streams that 
       lead to previously short-lived extreme events now prolonging (e.g. the polar 
       freeze in Texas in 2021 or flooding in western Europe). This could also extend 
-      to previously regions of stable weather / climatic systems experiencing new 
+      to regions of previously stable weather / climatic systems experiencing new 
       extreme weather events. Valuation practices, which are largely driven by lagging 
       indicators, suffer from a paucity of climate risk-related evidence and available 
       data. For further detail see:
@@ -293,11 +293,11 @@ physical:
       frequency and severity of weather events such as heatwaves, droughts,
       wildfires, cyclones and flooding.
 
-      Floods, storms and extreme temperatures damage buildings, with the former
+      Floods, storms and extreme temperatures damage buildings, with flood damage
       particularly acute for assets on flood plains or located in low-lying
       coastal areas. In addition to direct damage, extreme temperatures can
       materially impact the revenues of assets that are not adapted to these
-      changes as this could potentially affect the productivity of assets and
+      changes and this could potentially affect the productivity of assets and
       labour.
 
     high_materiality: |
@@ -318,7 +318,7 @@ physical:
         liquidity that could ultimately feed into prices.
 
       - Commercial owners/investors in some geographies are placing a higher
-        risk premium on all properties in metro areas affected by climate
+        risk premium on all properties in metropolitan areas affected by climate
         events, regardless of whether their individual properties have been
         directly affected.
 
@@ -337,7 +337,7 @@ physical:
       for instance we are already experiencing the slowing down of jet streams that 
       lead to previously short-lived extreme events now prolonging (e.g. the polar 
       freeze in Texas in 2021 or flooding in western Europe). This could also extend 
-      to previously regions of stable weather/climatic systems experiencing new 
+      to regions of previously stable weather/climatic systems experiencing new 
       extreme weather events. Valuation practices, which are largely driven by lagging 
       indicators, suffer from a paucity of climate risk-related evidence and available 
       data. For further detail see:

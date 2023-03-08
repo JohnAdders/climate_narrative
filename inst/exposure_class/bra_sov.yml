@@ -38,7 +38,7 @@ description: |
     established in the US, where these bonds are known as municipal bonds. Other
     developed markets also issue provincial/local government bonds.
 
-  In this paper we refer to a '20-notch' sovereign bond rating scale translated from
+  In this report we refer to a '20-notch' sovereign bond rating scale translated from
   S&P's alphabetical standardized rating scale (see Appendix), which is used to outline 
   changes to sovereign bond ratings, as is common in surrounding literature. 
   Impacts of climate change on sovereign bond ratings are discussed in reference 
@@ -61,7 +61,7 @@ transition:
       In the Delayed transition risk scenario, late policy action enables a
       "fossil recovery" out of the economic crisis brought about by COVID-19.
       CO<sub>2</sub> emissions increase until 2030 before policies drive a
-      sharp decrease after 2030 to compensate for the inaction beforehand. This
+      sharp decrease after 2030 to compensate for the previous inaction. This
       results in smaller increases in carbon taxes compared to Orderly
       transition risk scenarios until 2030, but significantly higher carbon taxes
       thereafter as countries attempt to make up lost ground. In the Divergent
@@ -76,7 +76,7 @@ transition:
 
       On the other hand, government spending (through subsidies and investment)
       could encourage consumer spending and investment in the use of renewables,
-      energy efficiency, energy storage, etc, leading to increases in fiscal
+      energy efficiency, energy storage, etc., leading to increases in fiscal
       revenues. The Disorderly transition risk scenarios could also lead to a reduction in
       GDP growth. This would have a negative impact on Brazilian sovereign bonds.
 
@@ -89,24 +89,24 @@ transition:
       most vulnerable to transition risk. 
       
       The impact of Disorderly transition risk scenarios on fiscal revenues is largely 
-      dependent on the efficiency of government spending in trying to mitigate 
+      dependent on the efficiency of government spending in mitigating 
       these risks. While the use of taxes to incentivize more environmentally 
       friendly production, transportation and consumption patterns can help economies 
       transition to a net-zero scenario, a poorly managed transition policy could 
       lead to shocks in economic activity. Depending on the respective country's 
-      size of fossil fuel or renewable energy sectors, green policies, such as 
-      carbon taxes would impact, positively or negatively, firms' profitability, 
-      which would, in turn, impact fiscal revenues (for more detail see
+      size of fossil fuel or renewable energy sectors, green policies such as 
+      carbon taxes would impact, positively or negatively, firms' profitability 
+      which would in turn impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
       In the energy sector, a clear cause for concern is Brazil's energy infrastructure
       planning, which unnecessarily continues to incorporate fossil fuels. Current energy 
-      infrastructure planning see an expanded role for fossil gas and oil, with the production
+      infrastructure planning sees an expanded role for fossil gas and oil, with the production
       of both types of fossil fuel set to increase in the coming decade. Developments in the 
       LULUCF (Land Use Land-Use Change and Forestry) sector (including deforestation over increasing
       productivity in already available, but currently under-utilised, land) also reflects a worsening 
       of national climate policy implementation and ambition. Market trends for renewable power generation 
-      are heading in the right direction, with a steady increase in wind and solar capacity, but much of Brazil's
+      are heading in the right direction with a steady increase in wind and solar capacity, but much of Brazil's
       considerable potential for renewable power generation still remains untapped.
 
       Brazil is also in the midst of an energy crisis, driven by drought that lowered hydropower reservoir levels in
@@ -114,7 +114,7 @@ transition:
       In response to the crisis, the government has raised electricity prices and ramped up fossil fuel power generation. 
       
       The share of renewables in Brazil's electricity generation mix has been markedly higher than the global average since the 
-      1990s, due to a large hydro capacity. Despite a downwards trend since 1995, Brazil's share of renewables in electricity 
+      1990s due to a large hydro capacity. Despite a downwards trend since 1995 Brazil's share of renewables in electricity 
       generation was ~84% in 2020, over three times higher than the global average.
 
       ![Share of Renewable Electricity Generation](sov_brazil.png)
@@ -128,10 +128,10 @@ transition:
       original NDC. 
 
       Brazil is expected to reach their latest NDC 2025 target of reducing greenhouse gas emissions in 2025 by 37%. However,
-      they are not on track to meet their latest NDC 2030 target of reducing emissions by 50%, below 2005. 
+      they are not on track to meet their latest NDC 2030 target of reducing emissions by 50% below 2005 levels. 
 
-      According to Brazil's 10 year energy plan, by 2031, renewables are expected to make up 48% of primary energy and 84% 
-      of electricity generation, with roughly a doubling of large-scale wind and solar generation as well as a significant 
+      According to Brazil's 10 year energy plan renewables are expected to make up 48% of primary energy and 84% 
+      of electricity generation by 2031, with roughly a doubling of large-scale wind and solar generation as well as significant 
       growth in distributed solar and biomass power generation. 
  
       **GDP growth effect**
@@ -146,12 +146,12 @@ transition:
 
       In these scenarios, there is a large mix of physical and transition risks in 2050. Based on the IIASA
       NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Disorderly scenario on Brazil's
-      GDP, from chronic physical and transition effects, would be significant, ranging from -4% to -5% (relative 
+      GDP from chronic physical and transition effects would be significant, ranging from -4% to -5% (relative 
       to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings effect**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends could have
       implications for ratings in coming decades. According to the 2021 "Rising
@@ -161,10 +161,10 @@ transition:
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. 
+      ratings as it is easier to downgrade from an AAA rating than a C rating. 
       
-      According to the study, in a transition risk (RCP 2.6) scenario, Brazil would not have a climate 
-      induced sovereign downgrade.
+      According to the study, in a transition risk (RCP 2.6) scenario, Brazil would not have a climate-induced 
+      sovereign downgrade.
 
   low:
     exec_description: |
@@ -184,7 +184,7 @@ transition:
       
       On the other hand, government spending (through subsidies and investment) 
       could encourage consumer spending and investment in the use of renewables, 
-      energy efficiency, energy storage, etc, leading to increases in fiscal revenues. 
+      energy efficiency, energy storage, etc., leading to increases in fiscal revenues. 
       These scenarios could also lead to a limited relative reduction in GDP growth. 
       This would have a limited, neutral impact on Brazilian sovereign bonds.
 
@@ -200,24 +200,24 @@ transition:
       risk.
 
       The impact from the Orderly transition risk scenarios on fiscal revenues
-      is largely dependent on the efficiency of government spending in trying to
-      mitigate these risks. While the use of taxes to incentivize more
+      is largely dependent on the efficiency of government spending in
+      mitigating these risks. While the use of taxes to incentivize more
       environmentally friendly production, transportation and consumption
       patterns can help economies transition to a net-zero scenario, a poorly
       managed transition policy could lead to shocks in economic activity.
       Depending on the respective country's size of fossil fuel or renewable
-      energy sectors, green policies, such as carbon taxes would impact,
-      positively or negatively, firms' profitability, which would, in turn,
+      energy sectors, green policies such as carbon taxes would impact,
+      positively or negatively, firms' profitability which would in turn
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
       In the energy sector, a clear cause for concern is Brazil's energy infrastructure planning, 
       which unnecessarily continues to incorporate fossil fuels. Current energy infrastructure planning 
-      see an expanded role for fossil gas and oil, with the production of both types of fossil fuel set
+      sees an expanded role for fossil gas and oil, with the production of both types of fossil fuel set
       to increase in the coming decade. Developments in the LULUCF (Land Use Land-Use Change and Forestry) 
       sector (including deforestation over increasing productivity in already available, but currently
       under-utilised, land) also reflects a worsening of national climate policy implementation and ambition.
-      Market trends for renewable power generation are heading in the right direction, with a steady increase
+      Market trends for renewable power generation are heading in the right direction with a steady increase
       in wind and solar capacity, but much of Brazil's considerable potential for renewable power generation 
       still remains untapped.
 
@@ -227,7 +227,7 @@ transition:
       power generation.
       
       The share of renewables in Brazil's electricity generation mix has been markedly higher than the global average
-      since the 1990s, due to a large hydro capacity. Despite a downwards trend since 1995, Brazil's share of
+      since the 1990s due to a large hydro capacity. Despite a downwards trend since 1995, Brazil's share of
       renewables in electricity generation was ~84% in 2020, over three times higher than the global average.
 
       ![Share of Renewable Electricity Generation](sov_brazil.png)
@@ -242,11 +242,11 @@ transition:
 
       Brazil is expected to reach their latest NDC 2025 target of reducing greenhouse gas emissions 
       in 2025 by 37%. However, they are not on track to meet their latest NDC 2030 target of reducing 
-      emissions by 50%, below 2005. 
+      emissions by 50% below 2005 levels. 
 
-      According to Brazil's 10 year energy plan, by 2031, renewables are expected to make up 48% of primary
-      energy and 84% of electricity generation, with roughly a doubling of large-scale wind and solar 
-      generation as well as a significant growth in distributed solar and biomass power generation. 
+      According to Brazil's 10-year energy plan, renewables are expected to make up 48% of primary
+      energy and 84% of electricity generation by 2031, with roughly a doubling of large-scale wind and solar 
+      generation as well as significant growth in distributed solar and biomass power generation. 
 
       **GDP growth effect**
 
@@ -260,12 +260,12 @@ transition:
       into government investment and lower employment taxes.
 
       Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an Orderly
-      transition risk scenario on Brazil's GDP, from chronic physical and transition effects, would be significant,
+      transition risk scenario on Brazil's GDP from chronic physical and transition effects would be significant,
       ranging from -3.4% to -4% (relative to a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends could have
       implications for ratings in coming decades. According to the 2021 "Rising
@@ -275,10 +275,10 @@ transition:
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. 
+      ratings as it is easier to downgrade from an AAA rating than a C rating. 
       
       According to the study, in a transition risk (RCP 2.6) scenario, Brazil would not 
-      have a climate induced sovereign downgrade. 
+      have a climate-induced sovereign downgrade. 
 physical:
   high:
     exec_description: |
@@ -294,7 +294,7 @@ physical:
       insurance premiums. This would result in a material negative impact on GDP
       globally by 2100 and hit governments' finances. Extreme weather events
       such as wildfires, floods, and heat waves could become more prevalent,
-      impacting households, businesses, cities and states. There are also likely
+      impacting households, businesses, cities, and states. There are also likely
       indirect risks, such as those caused by international migration (e.g.
       increased inequalities, labour right issues, social conflicts), or via
       biodiversity loss, or to industries' supply chains and international trade.
@@ -335,12 +335,12 @@ physical:
       This declining productivity would affect GDP and government income, as tax revenues are
       dependent on economic output. Adaptation costs would cause further strain to fiscal expenditures.
       Assuming taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal
-      revenue. According to estimates from the NGFS, a hot house world scenario with high physical risk
-      could result in significant GDP losses. In a hot house world scenario, world  GDP losses from chronic
+      revenue. According to estimates from the NGFS, a Hot house world scenario with high physical risk
+      could result in significant GDP losses. In a Hot house world scenario, world  GDP losses from chronic
       physical and transition effects are estimated to be between -5.7 and -6% (relative to a baseline with
       no transition or physical risks) by 2050. World GDP losses from physical risks vary in line with different
       temperatures projected for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), 
-      the expected impact of a hot house world scenario on Brazil's GDP, from chronic physical and transition effects,
+      the expected impact of a Hot house world scenario on Brazil's GDP from chronic physical and transition effects
       would be significant, ranging from -6.1% to -6.8% (relative to a baseline with no transition or physical risks)
       by 2050.
       
@@ -351,7 +351,7 @@ physical:
 
       **Downgrading of credit ratings effect**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends will have
       implications for ratings in coming decades. According to the 2021 "Rising
@@ -361,7 +361,7 @@ physical:
       significantly downgraded, with an average downgrade exceeding two notches by
       2100. Most downgrades would be among top-rated countries. This does not
       necessarily reflect increased climate-related risks for these top-rated countries,
-      but greater sensitivity of the top ratings. It is easier to lose an AAA
+      but greater sensitivity of the top ratings as it is easier to downgrade from an AAA
       rating than a C rating. 
       
       According to the study, in a high physical risk (RCP 8.5) scenario, Brazil would have a 
@@ -379,7 +379,7 @@ physical:
       insurance premiums. This could result in a negative impact on GDP globally
       by 2100 and hit governments' finances. Extreme weather events such as wildfires, 
       floods, and heat waves could become more prevalent, impacting households, 
-      businesses, cities and states. There are also likely indirect risks, such as 
+      businesses, cities, and states. There are also likely indirect risks, such as 
       those caused by international migration (e.g. increased inequalities, labour 
       right issues, social conflicts), or via biodiversity loss, or to industries' 
       supply chains and international trade. 
@@ -413,14 +413,16 @@ physical:
       This declining productivity would affect GDP and government income, as tax revenues 
       are dependent on economic output. Adaptation costs would cause further strain to fiscal
       expenditures. Assuming taxation rates remain unchanged, a decrease in GDP could lead to 
-      a reduction in fiscal revenue. According to estimates from the NGFS, an Orderly transition
-      with low physical risk would generally limit GDP losses. In an Orderly scenario, world GDP 
-      losses from chronic physical and transition effects are estimated to be around -3% (relative
+      a reduction in fiscal revenue. According to estimates from the NGFS, Orderly or Disorderly transitions
+      with low physical risk would generally limit GDP losses. In Orderly or Disorderly scenarios, world GDP 
+      losses from chronic physical and transition effects are estimated to be around -3% or -5% respectively (relative
       to a baseline with no transition or physical risks) by 2050. World GDP losses from physical 
-      risks vary in line with different temperatures projected for each scenario. Based on the IIASA 
-      NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an Orderly scenario 
-      on Brazil's GDP, from chronic physical and transition effects, would be significant, ranging from 
-      -3.4% to -4 % (relative to a baseline with no transition or physical risks) by 2050.
+      risks vary in line with different temperatures projected for each scenario. 
+      
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of 
+      Orderly or Disorderly scenarios on Brazil's GDP from chronic physical and transition effects would be significant, 
+      ranging from -3.4% to -4% for an Orderly scenario and -4% to -5% for a Disorderly scenario (relative to a 
+      baseline with no transition or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of economic 
@@ -428,20 +430,20 @@ physical:
 
       **Downgrading of credit ratings**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends will have
       implications for ratings in coming decades. According to the 2021 "Rising
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
       Creditworthiness" working paper from the University of Cambridge, in a low
-      physical risk (NGFS Orderly) scenario, most developed countries would be
+      physical risk (NGFS Orderly or Disorderly) scenario, most developed countries would be
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. 
+      ratings as it is easier to downgrade from an AAA rating than a C rating. 
       
       According to the study, in a low physical risk (RCP 2.6) scenario, Brazil would not 
-      have a climate induced sovereign downgrade.
+      have a climate-induced sovereign downgrade.
 appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 

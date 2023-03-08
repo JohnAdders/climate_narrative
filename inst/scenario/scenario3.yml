@@ -17,7 +17,7 @@ exec_description: |
   as heatwaves, droughts, wildfires, cyclones, and flooding. The total cumulative relative 
   GDP impact is estimated to be between -5.7% and -6% by 2050.
 description: |
-  These scenarios assume that some climate policies are implemented in some
+  Hot house world scenarios assume that some climate policies are implemented in some
   jurisdictions, but globally efforts are insufficient to halt significant
   global warming leading to high physical risk.
 
@@ -26,7 +26,7 @@ description: |
    **Source:**
   [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
 
-  The NGFS have provided two hot house world scenarios:
+  The NGFS have provided two Hot house world scenarios:
 
   - **Nationally Determined Contributions (NDCs)** includes all pledged targets
     even if not yet backed up by implemented effective policies.
@@ -37,7 +37,7 @@ description: |
   ### Key physical assumptions and parameters
   
   In these scenarios CO<sub>2</sub> emissions do not decrease sufficiently to
-  prevent significant temperature rises resulting in high physical risk.
+  prevent significant temperature rises, resulting in high physical risk.
 
   ![CO2 emissions](scenarios_hothouse_emissions_co2.png)
 
@@ -58,15 +58,15 @@ description: |
   Government revenues from carbon tax are affected by carbon price and emissions. Revenues are relatively
   low in the Current Policies scenarios given the low carbon price. The Nationally Determined Contributions
   scenario assumes a slightly higher carbon price, resulting in a modest increase in revenues due to relatively
-  high emissions(compared to Orderly and Disorderly scenarios).
+  high emissions (compared to Orderly and Disorderly scenarios).
   
   ![Carbon tax revenue](scenarios_hothouse_revenue.png)
 
   **Source:**
   [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-  In Hothouse scenarios, the lack of carbon price increase results in less severe deviation of inflation,
-  unemployment, and long-term interest rates from the baseline scenario,compared to Orderly and Disorderly
+  In Hot house scenarios, the lack of carbon price increase results in less severe deviation of inflation,
+  unemployment, and long-term interest rates from the baseline scenario, compared to Orderly and Disorderly
   scenarios.
 
   ![Inflation rate](scenarios_hothouse_inflation.png)
@@ -85,7 +85,7 @@ description: |
   [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4]](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
   The investments in energy efficiency and low carbon technologies are projected 
-  to increase in Hot House scenarios. Annual investment in energy efficiency increases 
+  to increase slightly in Hot house scenarios. Annual investment in energy efficiency increases 
   from around 200 billion USD (inflation adjusted to 2010 baseline) to between 250 
   billion USD and 400 billion USD by 2050, whilst annual investment in low carbon 
   increases from ~850 billion USD to between ~1.5 trillion USD and ~2 trillion USD by 
@@ -94,7 +94,7 @@ description: |
   ![Energy Efficiency Investment](scenarios_hothouse_investment_energy_efficiency.png)
 
   **Source:**
-  [IIASA NGFS Scenario Explorer.REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+  [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
   
   ![Low Carbon Investment](scenarios_hothouse_investment_low_carbon.png)
 
@@ -148,10 +148,10 @@ description: |
   
   In these scenarios the total cumulative GDP impact from chronic physical and transition effects relative
   to a baseline with no transition or physical risks is estimated to be around -6% by 2050. World GDP 
-  losses from physical risks vary in line with different temperatures projected for each scenario. In hothouse
+  losses from physical risks vary in line with different temperatures projected for each scenario. In Hoth ouse
   world scenarios, the impact on global GDP is dominated by physical risk. Transition risk in the Current Policies 
-  is so low it does not impact global GDP. The NGFS estimate that global GDP impact in the Current Policies scenario
-  will be almost -20% by 2100. 
+  scenario is so low it does not impact global GDP. The NGFS estimate that global GDP impact in the Current Policies 
+  scenario will be almost -20% by 2100. 
   
   ![GDP](scenarios_hothouse_gdp.png)
 
@@ -163,7 +163,7 @@ description: |
   scenarios as only policies that are already implemented or pledged are in
   place.
 
-  ![Hothouse scenarios](scenarios_hothouse_matrix.png)
+  ![Hothouse scenarios](hothouse_matrix.png)
 
   **Source:**
   [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
