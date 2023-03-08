@@ -1,9 +1,9 @@
-name: Savings and Retirement
+name: Savings and Retirement Underwriting Class
 test_report_position: 20
 description: | 
   The **savings and retirement** underwriting class covers products such as
-  pensions, investment bonds, with-profits, unit-linked investments and
-  annuities, written on an individual or group basis.
+  pensions, annuities and investment bonds, written on with-profits, unit-linked 
+  and an individual or group basis.
   
   Customers may buy products to save towards financial goals, e.g. retirement 
   through regular contributions or ad hoc lump sums. These monies are then 
@@ -26,8 +26,8 @@ transition:
     always: |
       Disorderly transition risk scenarios, driven by late policy 
       action to enable a "fossil recovery" out of the COVID-19 economic crisis, 
-      would result in CO<sub>2</sub> emissions increasing until 2030 before 
-      rapidly decreasing after 2030 as carbon prices are increased to compensate 
+      would result in CO<sub>2</sub> emissions increasing until 2030 and 
+      rapidly decreasing thereafter as carbon prices are increased to compensate 
       for the early inaction. In the Divergent Net Zero scenario CO<sub>2</sub> 
       emissions start to be reduced immediately but divergently, ultimately leading 
       to a significant reduction in CO<sub>2</sub> emissions by 2050. These reduced 
@@ -38,7 +38,7 @@ transition:
       reduced morbidity, i.e. as a result of increased policy terms higher rates of 
       saving and fewer lapses.
       
-      These scenarios could result in a moderate to severe reduction in GDP growth 
+      The Disorderly transition risk scenarios could result in a moderate to severe reduction in GDP growth 
       over the period of the transition, stabilising thereafter. This would lead to 
       reduced household incomes and could result in policyholder pessimism regarding 
       longer-term economic outcomes, leading to lower savings rates, increased lapses, 
@@ -66,7 +66,7 @@ transition:
       In Disorderly transition risk scenarios, transition costs are likely to be high and 
       concentrated in a short time. This may be expected to increase expenses. 
       The moderate to severe reduction in GDP growth would increase the risk of 
-      guarantees biting on legacy policies. This would in turn impact the impacted 
+      guarantees biting on legacy policies. This would in turn impact the affected 
       companies' bottom line and would likely result in more stringent capital 
       requirements as this risk emerges. Companies could face operational risk from 
       model error if past experience ceases to be a reliable predictor for future 
@@ -162,7 +162,7 @@ transition:
       longer-term economic outlook is unaffected, new business sales should not be 
       negatively impacted and the impact on saving rates and lapses should be limited.
       
-      Under these scenarios, an immediate and smooth reduction in CO<sub>2</sub> 
+      Under Orderly transition risk scenarios, an immediate and smooth reduction in CO<sub>2</sub> 
       emissions would be expected by 2050. This could lead to increased policyholder 
       longevity if pollutants also reduce over this period, resulting in annuities being 
       paid out for longer durations than currently expected, negatively impacting profit 
@@ -170,7 +170,7 @@ transition:
       to savings and retirement products becoming more profitable from longer durations in 
       force and fewer lapses. Offsetting these impacts, on the other hand, would be the 
       expected reduction in household incomes, which could negatively impact health outcomes 
-      and thus reduce policyholder longevity.
+      and thus increase policyholder mortality.
 
     high_materiality: |
       In Orderly transition risk scenarios, the impact on the savings and retirement underwriting
@@ -195,14 +195,14 @@ transition:
       
       Transition costs are likely to be low and spread out over a moderate time period. 
       This may be expected to increase expenses, in particular from the regulatory 
-      interventions necessary under an orderly scenario.
+      interventions necessary under an Orderly transition risk scenario.
 
       **Pollution effect**
 
       It seems reasonable to assume that a reduction in greenhouse gas emissions 
       could be associated with cleaner air and therefore positive health outcomes. 
       However, it is important to differentiate between the production of greenhouse 
-      gases (such as CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not 
+      gases (such as CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but does not 
       directly impact health, and the production of pollutants (such as particulate 
       matter and oxides of nitrogen) that are more directly harmful to health. In Orderly
       transition risk scenarios, emissions of hazardous pollutants, for example black carbon,
@@ -250,8 +250,8 @@ transition:
       
       Even without price adjustments, the level of new business sales may be impacted if 
       customer optimism is low regarding future economic outlook. That is, preferring to 
-      spend today rather than save for an uncertain future. The likelihood of this appears 
-      low, however, under an orderly scenario.
+      spend today rather than save for an uncertain future. However, the likelihood of this appears 
+      low, under an Orderly transition risk scenario.
       
       Customers may prefer to buy or switch to sustainable investment products, decreasing 
       inflows for those organisations who do not have such products in their range and 
@@ -339,7 +339,7 @@ physical:
         differ by location. Furthermore, research indicates a link between high
         temperatures and high temperature changes with increased cardiovascular
         risk, e.g. heart attacks which could potentially lead to lower savings
-        rates and increased lapses for savings products and shorter payment
+        rates and increased lapses for savings products but also shorter payment
         periods for annuity providers.
 
       **Impact on pricing or product design**
@@ -362,7 +362,7 @@ physical:
       Savings could therefore be expected to be accessed sooner, increasing lapse 
       rates and asset outflows within impacted regions. Inflows could also be 
       correspondingly lower as savings rates reduce, due to higher morbidity 
-      affecting policyholders' capacity to earn and save income. Any increase in 
+      affecting policyholders' capacity to earn and save income. An increase in 
       lapse rates could drive up per policy expenses (as a fixed cost base is 
       spread out over fewer policies). Severe physical risk impacts to company 
       infrastructure (e.g. data centres and offices) could drive up unit costs. 
@@ -412,7 +412,7 @@ physical:
       and gas).
       
       The moderate to severe reduction in GDP growth would increase the risk of 
-      guarantees biting on legacy policies. This would in turn impact the impacted 
+      guarantees biting on legacy policies. This would in turn impact the affected 
       companies' bottom line and would likely result in more stringent capital 
       requirements as this risk emerges.
 

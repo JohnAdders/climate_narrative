@@ -21,7 +21,7 @@ exec_description: |
   with no transition or physical risks is estimated to be around -3% by 2050.
 
 description: |
-  These Orderly transition risk scenarios assume climate policies are introduced early and become 
+  Orderly transition risk scenarios assume climate policies are introduced early and become 
   gradually more stringent. Both physical and transition risks are relatively subdued. 
 
   ![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)
@@ -32,7 +32,7 @@ description: |
   The NGFS have defined two orderly scenarios:
 
   - **Net Zero 2050** limits global warming to 1.5&deg;C through stringent climate
-    policies and innovation, reaching global Net Zero CO<sub>2</sub> emissions
+    policies and innovation, reaching global net zero CO<sub>2</sub> emissions
     around 2050. Some jurisdictions such as the US, EU, UK, Canada, Australia and
     Japan reach Net Zero for all GHGs.
 
@@ -171,7 +171,7 @@ description: |
   **Source:** 
   [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
   
-  In these scenarios the total cumulative GDP impact from chronic physical and 
+  In these scenarios, the total cumulative GDP impact from chronic physical and 
   transition effects relative to a baseline with no transition or physical risks is 
   estimated to be around -3% by 2050. World GDP losses from physical risks vary in 
   line with different temperatures projected for each scenario. GDP impacts from 
@@ -193,12 +193,12 @@ description: |
   are assumed to take place efficiently with little variation between countries
   and sectors. Similarly, the development and deployment of alternative
   technologies are expected to take place without significant difficulty. For
-  example, the availability of Carbon dioxide removal technologies which
-  involves removing carbon from the atmosphere through increasing forest cover
-  and soil sequestration or growing crops for bioenergy doesn't pose a
+  example, the availability of carbon dioxide removal technologies (which
+  involve removing carbon from the atmosphere, for example through increasing forest cover
+  and soil sequestration or growing crops for bioenergy) doesn't pose a
   significant challenge in either orderly scenario.
 
-  ![Orderly scenarios](scenarios_orderly_matrix.png)
+  ![Orderly scenarios](orderly_matrix.png)
 
   **Source:**
   [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}

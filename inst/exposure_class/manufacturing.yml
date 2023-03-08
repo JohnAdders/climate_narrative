@@ -1,4 +1,4 @@
-name: Manufacturing
+name: Manufacturing Sector
 test_report_position: 3
 description: |
   The **manufacturing** sector involves the transformation of (mainly) raw
@@ -6,46 +6,46 @@ description: |
   chemical processes. Manufactured products derived from the assembly of
   component parts also comprise the manufacturing sector - unless otherwise
   specified. Manufacturing establishments are typically referred to as mills,
-  factories or plants and tend to use power-driven machinery or handling
-  equipment in the manufacturing process, however it is not unusual for some
+  factories or plants, and tend to use power-driven machinery or handling
+  equipment in the manufacturing process; however it is not unusual for some
   manufacturing activities to occur in a domestic setting.
 
   Although the boundaries between the manufacturing sector and others are not
   always obvious (hence, the inclusion of miscellaneous manufacturing as a
-  sub-sector). The North American Industrial Code (NAIC) system breaks down 
+  sub-sector), the North American Industrial Code (NAIC) system breaks down 
   the manufacturing sector into the following sub-sectors:
   
-  - Pharmaceutical and Medicine Manufacturing
+  - Pharmaceutical and medicine manufacturing
   
-  - Paint, Coating, and Adhesive Manufacturing
+  - Paint, coating, and adhesive manufacturing
   
-  - Soap, Cleaning Compound, and Toilet Preparation Manufacturing
+  - Soap, cleaning compound, and toilet preparation manufacturing
   
-  - Other Chemical Product and Preparation Manufacturing
+  - Other chemical product and preparation manufacturing
   
-  - Plastics Product Manufacturing
+  - Plastics product manufacturing
   
-  - Rubber Product Manufacturing
+  - Rubber product manufacturing
   
-  - Glass and Glass Product Manufacturing
+  - Glass and glass product manufacturing
   
-  - Clay Product and Refractory Manufacturing
+  - Clay product and refractory manufacturing
   
-  - Cement and Concrete Product Manufacturing
+  - Cement and concrete product manufacturing
   
-  - Lime and Gypsum Product Manufacturing
+  - Lime and gypsum product manufacturing
   
-  - Other Nonmetallic Mineral Product Manufacturing
+  - Other non-metallic mineral product manufacturing
   
-  - Iron and Steel Mills and Ferroalloy Manufacturing
+  - Iron and steel mills and ferroalloy manufacturing
   
-  - Steel Product Manufacturing from Purchased Steel
+  - Steel product manufacturing from purchased steel
   
-  - Alumina and Aluminum Production and Processing
+  - Alumina and aluminum production and processing
   
-  - Nonferrous Metal (except Aluminum) Production and Processing
+  - Nonferrous metal (except aluminum) production and processing
   
-  - Agriculture, Construction, and Mining Machinery Manufacturing
+  - Agriculture, construction, and mining machinery manufacturing
 
   - Food manufacturing
 
@@ -59,7 +59,7 @@ description: |
 
   - Petroleum and coal products manufacturing
   
-  - Pharmaceutical and Medicine Manufacturing (including Medical Equipment and Supplies Manufacturing)
+  - Pharmaceutical and Medicine Manufacturing (including medical equipment and supplies manufacturing)
 
   - Chemical manufacturing (including plastics and rubber products
     manufacturing)
@@ -72,17 +72,17 @@ description: |
   - Computer and electronic product manufacturing (including electrical
     equipment, appliance, and component manufacturing)
 
-  - Transportation equipment manufacturing (including Motor, Railroad Rolling Stock, Aerospace Product, Ship and Boat manufacturing)
+  - Transportation equipment manufacturing (including motor, railroad rolling stock, aerospace product, ship and boat manufacturing)
 
   - Furniture and related product manufacturing.
 
   - Miscellaneous manufacturing.
   
-  - Engine, Turbine, and Power Transmission Equipment Manufacturing
+  - Engine, turbine, and power transmission equipment manufacturing
   
-  - Technology, electric and electronics manufacturing (including Ventilation, Heating, Air-Conditioning, 
-    Household Appliance, Commercial Refrigeration, Computer and Peripheral Equipment, Communications Equipment, 
-    Audio and Video Equipment, etc)
+  - Technology, electric and electronics manufacturing (including ventilation, heating, air-conditioning, 
+    household appliance, commercial refrigeration, computer and peripheral equipment, communications equipment, 
+    audio and video equipment, etc.)
 transition:
   high:
     exec_description: |
@@ -105,8 +105,8 @@ transition:
       Disorderly transition risk scenario:
 
       - **Increased costs** from paying a price on carbon intensive exports (see
-        EU's proposed Carbon Border Adjusted Mechanism) and rising
-        energy costs.
+        EU's proposed [Carbon Border Adjusted Mechanism](https://taxation-customs.ec.europa.eu/green-taxation-0/carbon-border-adjustment-mechanism_en){target="\_blank"}) 
+        and rising energy costs.
 
       - **Reduced revenue** due to decline in demand for consumer discretionary
         manufacturing products as abatement costs are likely passed onto the
@@ -118,7 +118,7 @@ transition:
         required for transport equipment manufacturing.
 
       - **Increased revenue** for industries that can support the global
-        transition to Net Zero such as carbon capture storage (CCS)
+        transition to Net Zero such as carbon capture and storage (CCS)
         manufacturing. 
         
       - In Disorderly transition risk scenarios, CCS utilisation is projected 
@@ -141,7 +141,7 @@ transition:
       In Disorderly transition risk scenarios, the manufacturing
       sector could achieve long-term carbon neutrality through new manufacturing
       processes supported by clean energy sources, a circular economy which
-      increases materials efficiency and widespread carbon capture storage (CCS)
+      increases materials efficiency and widespread carbon capture and storage (CCS)
       utilisation.
 
       In these scenarios, the manufacturing sector is forced to significantly increase 
@@ -205,8 +205,8 @@ transition:
       in an Orderly transition risk scenario:
 
       - **Increased costs** from paying a price on carbon intensive exports (see
-        EU's proposed Carbon Border Adjusted Mechanism) and rising
-        energy costs.
+        EU's proposed [Carbon Border Adjusted Mechanism](https://taxation-customs.ec.europa.eu/green-taxation-0/carbon-border-adjustment-mechanism_en){target="\_blank"})  
+        and rising energy costs.
 
       - **Reduced revenue** due to decline in demand for consumer discretionary
         manufacturing products as abatement costs are likely passed onto the
@@ -218,7 +218,7 @@ transition:
         required for transport equipment manufacturing.
 
       - **Increased revenue** for industries that can support the global
-        transition to Net Zero such as carbon capture storage (CCS)
+        transition to Net Zero such as carbon capture and storage (CCS)
         manufacturing.
         
         In Orderly scenarios, CCS utilisation is projected to increase 
@@ -243,7 +243,7 @@ transition:
       gradually increase which will force polluters in the manufacturing sector 
       towards efforts to achieve long-term carbon neutrality, such as 
       clean energy sources, a circular economy which increases
-      materials efficiency and widespread carbon capture storage (CCS)
+      materials efficiency and widespread carbon capture and storage (CCS)
       utilisation. A strong policy environment that supports manufacturers'
       decarbonisation efforts could result in an immediate and smooth reduction
       of emissions. For example, in Orderly transition risk scenarios,
@@ -283,7 +283,7 @@ physical:
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
       and dependence on global supply chains, such that disruptions in one
-      region can quickly result in world-wide shortages (In 2011, excessive
+      region can quickly result in world-wide shortages (in 2011, excessive
       flooding in Thailand resulted in a reduction in global industrial output
       by 2.5 percent and damages cost the world's top three non-life insurance
       companies $5.3 billion in claims, which is greater than the cost of
@@ -356,7 +356,7 @@ physical:
         heavily critical suppliers to exercise more control over key decisions.
 
       - **Visibility**, a company could seek to fully understand the
-        vulnerabilities, location, and operations and of its first and second
+        vulnerabilities, location, and operations of its first and second
         tier suppliers and adopt strategies to reduce their risk accordingly
         such as increasing inventory stocks to mitigate acute stresses.
 
@@ -373,7 +373,7 @@ physical:
       At present, some manufacturing activities remain vulnerable to the
       physical impacts of climate change due to their reliance on raw materials
       and dependence on global supply chains, such that disruptions in one
-      region can quickly result in world-wide shortages (In 2011, excessive
+      region can quickly result in world-wide shortages (in 2011, excessive
       flooding in Thailand resulted in a reduction in global industrial output
       by 2.5 percent and damages cost the world's top three non-life insurance
       companies $5.3 billion in claims, which is greater than the cost of
@@ -410,7 +410,7 @@ physical:
         result in additional costs for water using industries.
 
       - The **expansion of tropical pests and diseases** into temperate zones
-        could, influence the regional availability of raw materials and increase
+        could influence the regional availability of raw materials and increase
         the volatility of commodity markets. For example, it is thought a lack
         of genetic variation amongst rubber trees means rubber production is
         highly susceptible to disease which could significantly affect the
@@ -442,7 +442,7 @@ physical:
         heavily critical suppliers to exercise more control over key decisions.
 
       - **Visibility**, a company could seek to fully understand the
-        vulnerabilities, location, and operations and of its first and second
+        vulnerabilities, location, and operations of its first and second
         tier suppliers and adopt strategies to reduce their risk accordingly
         such as increasing inventory stocks to mitigate acute stresses.
 

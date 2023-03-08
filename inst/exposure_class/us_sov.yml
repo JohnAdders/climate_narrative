@@ -38,7 +38,7 @@ description: |
     established in the US, where these bonds are known as municipal bonds. Other
     developed markets also issue provincial/local government bonds.
 
-  In this paper we refer to a '20-notch' sovereign bond rating scale translated from
+  In this report we refer to a '20-notch' sovereign bond rating scale translated from
   S&P's alphabetical standardized rating scale (see Appendix), which is used to outline 
   changes to sovereign bond ratings, as is common in surrounding literature. 
   Impacts of climate change on sovereign bond ratings are discussed in reference 
@@ -63,7 +63,7 @@ transition:
       decrease after 2030 to compensate for the inaction beforehand. This
       results in smaller increases in carbon taxes compared to an Orderly
       transition scenario until 2030, but significantly higher carbon taxes than
-      Orderly scenarios after 2030 as countries attempt to make up lost ground.
+      Orderly scenarios thereafter as countries attempt to make up lost ground.
       In the Divergent Net Zero scenario the reduction in CO<sub>2</sub>
       emissions starts to occur earlier and as a result is more gradual.
 
@@ -74,10 +74,10 @@ transition:
       demand and increased costs from significantly higher carbon taxes. On the other 
       hand, government spending (through subsidies and investment) could encourage 
       consumer spending and investment in the use of renewables, energy efficiency, 
-      energy storage, etc, leading to increases in fiscal revenues.
+      energy storage, etc., leading to increases in fiscal revenues.
 
       Scenario analysis of the effects of climate-related risks on the US federal budget
-      up to the end of this century have assessed lost revenue for the federal
+      up to the end of this century has assessed lost revenue for the federal
       government, by transposing projections from global integrated assessment
       models to the US. Climate-related expenditures are expected to range from
       $9 to $28 billion annually (in today's dollars), and revenue losses vary
@@ -110,10 +110,10 @@ transition:
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
       Total GHG emissions in the US in 2021 were 15% below 2005 levels. This 
-      trend was primarily driven due to the power sector, driven by a shift from 
+      trend was primarily driven by the power sector, due to a shift from 
       coal to lower or non-emitting sources of generation, such as natural gas and 
       renewables. Generation from wind and solar continued to grow in 2021, by 29% 
-      and 12% compared to 2020 respectively.
+      and 12% respectively compared to 2020.
       
       In 2018, the US became the world's largest producer of crude oil. The production
       of oil in 2021 remained relatively stable, decreasing only by 1% from 2020 levels.
@@ -122,7 +122,7 @@ transition:
       drill and increase production.
 
       The US is significantly more dependent on fossil fuel sectors and
-      consequently has a lower share of renewable energy compared to the UK or
+      consequently has a lower share of renewable energy compared to global averages or
       its European counterparts.
 
       ![Share of Renewable Electricity Generation](sov_usa.png)
@@ -146,7 +146,7 @@ transition:
 
       **Downgrading of credit ratings effect**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends could have
       implications for ratings in coming decades. According to the 2021 "Rising
@@ -156,7 +156,7 @@ transition:
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. According to
+      ratings as it is easier to downgrade from an AAA rating than a C rating. According to
       the study, in a transition risk (RCP 2.6) scenario, the US would have a downgrade below one notch 
       by 2100, increasing the cost of borrowing for the US government by
       approximately US$7.35-11.03bn.
@@ -169,7 +169,7 @@ transition:
       fuel energy sources.
     always: |
       In Orderly transition risk scenarios, immediate policy reaction,
-      societal change and national energy strategies lead to significant and
+      societal change, and national energy strategies lead to significant and
       immediate increases in carbon prices. This could have a strong impact on
       fiscal revenues in countries with a strong level of dependence on fossil
       fuel energy sources. Industries that are negatively impacted by transition
@@ -177,8 +177,8 @@ transition:
       fossil fuel demand and increased costs from higher carbon taxes. On the other hand, 
       government spending (through subsidies and investment) could encourage consumer 
       spending and investment in the use of renewables, energy efficiency, energy storage, 
-      etc, leading to increases in fiscal revenues. The scenario analysis of the effects of 
-      climate-related risks on the US federal budget up to the end of this century have 
+      etc., leading to increases in fiscal revenues. The scenario analysis of the effects of 
+      climate-related risks on the US federal budget up to the end of this century has 
       assessed lost revenue for the federal government, by transposing projections from 
       global integrated assessment models to the US. Climate-related expenditures are 
       expected to range from $9 to $28 billion annually (in today's dollars), and revenue
@@ -204,16 +204,16 @@ transition:
       patterns can help economies transition to a net-zero scenario, a poorly
       managed transition policy could lead to shocks in economic activity.
       Depending on the respective country's size of fossil fuel or renewable
-      energy sectors, green policies, such as carbon taxes would impact,
-      positively or negatively, firms' profitability, which would, in turn,
+      energy sectors, green policies such as carbon taxes would impact,
+      positively or negatively, firms' profitability which would in turn
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
       Total GHG emissions in the US in 2021 were 15% below 2005 levels. This 
-      trend was primarily driven due to the power sector, driven by a shift from 
+      trend was primarily driven by the power sector, due to a shift from 
       coal to lower or non-emitting sources of generation, such as natural gas and 
       renewables. Generation from wind and solar continued to grow in 2021, by 29% 
-      and 12% compared to 2020 respectively.
+      and 12% respectively compared to 2020.
       
       In 2018, the US became the world's largest producer of crude oil. The production 
       of oil in 2021 remained relatively stable, decreasing only by 1% from 2020 levels.
@@ -222,7 +222,7 @@ transition:
       to drill and increase production.
 
       The US is significantly more dependent on fossil fuel sectors and
-      consequently has a lower share of renewable energy compared to the world or
+      consequently has a lower share of renewable energy compared to global averages or
       its European counterparts.
 
       ![Share of Renewable Electricity Generation](sov_usa.png)
@@ -233,7 +233,7 @@ transition:
       In August 2022, US President Biden signed into law the Inflation Reduction Act (IRA),
       setting the country's emissions on a trajectory towards meeting its climate commitment 
       to cut GHG emissions in half by 2030, compared to 2005 levels. The CAT estimates that 
-      implementation of IRA will decrease US emissions will to 26-42% below 2005 levels, 
+      implementation of IRA will decrease US emissions to 26-42% below 2005 levels, 
       thus more action is required to meet their climate commitment. 
 
       **GDP growth effect**
@@ -254,7 +254,7 @@ transition:
 
       **Downgrading of credit ratings**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends could have
       implications for ratings in coming decades. According to the 2021 "Rising
@@ -264,7 +264,7 @@ transition:
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating.
+      ratings as it is easier to downgrade from an AAA rating than a C rating.
 
       According to the study, in a transition risk (RCP 2.6) scenario,
       the US would have a downgrade below one notch by 2100, increasing the cost
@@ -284,7 +284,7 @@ physical:
       insurance premiums. This would result in a material negative impact on GDP
       globally by 2100 and hit governments' finances. Extreme weather events
       such as wildfires, floods, and heat waves could become more prevalent,
-      impacting households, businesses, cities and states. There are also likely
+      impacting households, businesses, cities, and states. There are also likely
       indirect risks, such as those caused by international migration (e.g.
       increased inequalities, labour right issues, social conflicts), or via
       biodiversity loss, or to industries' supply chains and international trade.
@@ -325,13 +325,13 @@ physical:
       This declining productivity would affect GDP and government income, as tax revenues
       are dependent on economic output. Adaptation costs would cause further strain to fiscal 
       expenditures. Assuming taxation rates remain unchanged, a decrease in GDP could lead to
-      a reduction in fiscal revenue. According to estimates from the NGFS, a hot house world
-      scenario with high physical risk could result in significant GDP losses. In a hot house 
+      a reduction in fiscal revenue. According to estimates from the NGFS, a Hot house world
+      scenario with high physical risk could result in significant GDP losses. In a Hot house 
       world scenario, world GDP losses from chronic physical and transition effects are estimated 
       to be between -5.7% and -6% (relative to a baseline with no transition or physical risks) by 2050.
       World GDP losses from physical risks vary in line with different temperatures projected for each scenario. 
-      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a hot house
-      world scenario on US GDP, from chronic physical and transition effects,  would be significant, ranging 
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Hot house
+      world scenario on US GDP from chronic physical and transition effects would be significant, ranging 
       from -5.1% to -5.6% (relative to a baseline with no transition or physical risks) by 2050.
 
       Small and least diversified economies with lower resilience and adaptive
@@ -349,7 +349,7 @@ physical:
 
       **Downgrading of credit ratings effect**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends will have
       implications for ratings in coming decades. According to the 2021 "Rising
@@ -359,7 +359,7 @@ physical:
       significantly downgraded, with an average downgrade exceeding two notches by
       2100. Most downgrades would be among top-rated countries. This does not
       necessarily reflect increased climate-related risks for these top-rated countries,
-      but greater sensitivity of the top ratings. It is easier to lose an AAA
+      but greater sensitivity of the top ratings as it is easier to downgrade from an AAA
       rating than a C rating. According to the study, in a high physical risk
       scenario, the US would have a downgrade close to five notches by 2100,
       increasing the cost of borrowing for the US government by approximately
@@ -377,7 +377,7 @@ physical:
       by 2100 and hit governments' finances.
 
       Extreme weather events such as wildfires, floods, and heat waves could become
-      more prevalent, impacting households, businesses, cities and states. There
+      more prevalent, impacting households, businesses, cities, and states. There
       are also likely indirect risks, such as those caused by international
       migration (e.g. increased inequalities, labour right issues, social
       conflicts), or via biodiversity loss, or to industries' supply chains and
@@ -412,13 +412,16 @@ physical:
       revenues are dependent on economic output. Adaptation costs would cause further
       strain to fiscal expenditures. Assuming taxation rates remain unchanged, a decrease 
       in GDP could lead to a reduction in fiscal revenue. According to estimates from the
-      NGFS, an Orderly transition with low physical risk would generally limit GDP losses. 
-      In an Orderly scenario, world GDP losses from chronic physical and transition effects 
-      are estimated to be around -3% (relative to a baseline with no transition or physical 
+      NGFS, Orderly or Disorderly transitions with low physical risk would generally limit GDP losses. 
+      In Orderly or Disorderly scenarios, world GDP losses from chronic physical and transition effects 
+      are estimated to be around -3% or -5% respectively (relative to a baseline with no transition or physical 
       risks) by 2050. World GDP losses from physical risks vary in line with different temperatures
-      projected for each scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs),
-      the expected impact of an Orderly scenario on US GDP, from chronic physical and transition effects,
-      would be significant, ranging from -1.8% to -2.3% (relative to a baseline with no transition or
+      projected for each scenario.
+
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs),
+      the expected impact of Orderly or Disorderly scenarios on US GDP from chronic physical 
+      and transition effects would be significant, ranging from -1.8% to -2.3% in an Orderly 
+      scenario and -3.9% to -4% in a Disorderly scenario (relative to a baseline with no transition or
       physical risks) by 2050.
 
       Small and least diversified economies with lower resilience and adaptive
@@ -436,7 +439,7 @@ physical:
 
       **Downgrading of credit ratings**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends will have
       implications for ratings in coming decades. According to the 2021 "Rising
@@ -446,7 +449,7 @@ physical:
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. According to
+      ratings as it is easier to downgrade from an AAA rating than a C rating. According to
       the study, in a low physical risk (RCP 2.6) scenario, the US would have a
       downgrade below one notch by 2100, increasing the cost of borrowing for
       the US government by approximately US$7.35-11.03bn.

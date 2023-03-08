@@ -1,4 +1,4 @@
-name: Consumer Products
+name: Consumer Products Sector
 test_report_position: 9
 description: |
   The **consumer products** sector consists of establishments engaged in retail
@@ -43,11 +43,6 @@ description: |
   classified in Wholesale Trade, even if a higher proportion of their sales is
   made to the general public.
 
-  Additionally, buying of goods for resale to the consumer is a characteristic
-  of retail trade establishments that distinguishes them from agricultural and
-  extractive industries, e.g. farmers who sell only their own produce from the
-  point of production are not classified as Retail Trade.
-
   Warehouses may be considered as part of the retail establishment where they
   act as an auxiliary to the core business of the customer facing retail stores.
 
@@ -79,7 +74,7 @@ transition:
       energy generation in the Delayed transition scenario, driven by late
       policy action enabling a "fossil recovery" out of the economic
       crisis brought about by COVID-19, results in CO<sub>2</sub> emissions
-      increasing until 2030 before rapidly decreasing after 2030 as carbon
+      increasing until 2030 before rapidly decreasing therefter, as carbon
       prices are increased to compensate for the inaction beforehand. In the
       Divergent scenario there is a more immediate but divergent reduction in
       CO<sub>2</sub> emissions. Both these scenarios are likely to have a
@@ -91,7 +86,7 @@ transition:
       crystallise:
 
       - **Increased fixed costs** due to higher product purchase costs resulting
-        from decarbonisation in the supply chain, especially on imports (c.f. EU
+        from decarbonisation in the supply chain, especially on imports (cf. EU
         Carbon Border Adjusted Mechanism), or from commercial real estate
         financing costs being higher on less energy efficient properties as
         lenders seek to green their portfolios in line with zero-carbon lending
@@ -108,7 +103,7 @@ transition:
       - **Disposal costs/capital write-downs** can be incurred as stranded less
         energy efficient infrastructure needs to be replaced, such as the
         distribution fleets, lighting, air conditioning and heating systems
-        above. Such one-off impacts would be hard to mitigate, again costs could
+        mentioned above. Such one-off impacts would be hard to mitigate, again costs could
         be passed through to the ultimate consumer.
 
       - **Higher variable costs**: resulting from more expensive environmentally
@@ -117,12 +112,12 @@ transition:
         environmentally friendly consumer preferences), new advertising of new product lines, 
         and higher energy tariffs resulting from higher carbon prices on fossil fuels and/or a 
         switch to potentially more expensive renewable energy supplies. Such costs could be managed 
-        by slow phasing-in of these initiatives, or by passing the costs through.
+        by slow phasing-in of these initiatives or by passing the costs through.
 
       - **Lower revenues**: if retailers fail to adapt to consumer-side demand
         for lower carbon intensive products (for example, the recent increased
         demand for vegan foods in the UK) then this may result in erosion of
-        their climate conscious customer base. By implementing the previous
+        their climate conscious customer base. By implementing the previously mentioned
         climate impact reducing measures ahead of competitors, this could become
         an opportunity.
 
@@ -142,7 +137,7 @@ transition:
       longer-term carbon reduction initiatives by shifting to lower carbon
       intensive supplies, reducing the carbon intensity of their physical stores
       or sales platforms, and using clean energy sources. The drive for change
-      arises through retailers being sandwiched between a combination of shift
+      arises through retailers being sandwiched between a shift
       in end-consumer preferences from the buy side and a similar shift on the
       sell side as manufacturers and suppliers react to a top-down policy
       environment that results in a rapid reduction of emissions. For example, 
@@ -156,7 +151,7 @@ transition:
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       This could lead to a sudden limited-to-zero supply of carbon intensive goods, 
-      which could mean retailers that specialise in such markets in a monoline, or 
+      which could mean retailers that specialise in such markets in a monoline or 
       concentrated strategy may find their business models no longer viable (for example,
       fossil fuel suppliers such as petrol stations, and coal and oil
       merchants). On the demand side, a change in consumer sentiment is already
@@ -208,7 +203,7 @@ transition:
       crystallise:
 
       - **Increased fixed costs** due to higher product purchase costs resulting
-        from decarbonisation in the supply chain, especially on imports (c.f. EU
+        from decarbonisation in the supply chain, especially on imports (cf. EU
         Carbon Border Adjusted Mechanism), or from commercial real estate
         financing costs being higher on less energy efficient properties as
         lenders seek to green their portfolios in line with zero-carbon lending
@@ -260,7 +255,7 @@ transition:
       lower carbon intensive supplies, reducing the carbon intensity of their
       physical stores or sales platforms, and using clean energy sources. The
       drive for change arises through retailers being sandwiched between a
-      combination of shift in end-consumer preferences from the buy side and a
+      shift in end-consumer preferences from the buy side and a
       similar shift on the sell side as manufacturers and suppliers react to a
       top-down policy environment that results in an immediate and smooth
       reduction of emissions. For example, in these scenarios, on the supply 
@@ -307,7 +302,7 @@ physical:
       disruption to supply chains and own operations which could impact the
       profitability for these companies.
 
-      In a high physical risk scenario, small perturbations in climate can lead
+      In a high physical risk scenario, perturbations in climate can lead
       to significant disruption in crop yields and corresponding disruption to
       food supply chains. Even in a 1.5&deg;C warming scenario, flash flooding and
       extreme weather events can pose problems for manufacturers exposed to such
@@ -317,7 +312,7 @@ physical:
       Adverse impacts on world GDP from physical risks are assumed in the
       scenarios and these vary in line with different temperatures projected for each 
       scenario. The high physical risk scenarios could therefore also lead to a
-      significant GDP impact which could negatively impact demand for consumer
+      significant GDP impact which could negatively affect demand for consumer
       products.
 
     high_materiality: |
@@ -326,7 +321,7 @@ physical:
 
       - **Distribution**: disruption to transport infrastructure caused by
         weather events or flooding, leading to inability to fulfil customer
-        orders and deliveries, or move stock from warehouses to outlets
+        orders and deliveries or move stock from warehouses to outlets
 
       - **Store closures**: occurring through direct impacts such as flooding,
         or through staff inability to get to the location due to transport
@@ -343,7 +338,7 @@ physical:
         inhabitation is impacted (for example, water level rises in the Somerset
         Levels and the Fens)
 
-      - **Increased costs**: driven by adaptation to new climatic conditions,
+      - **Increased costs**: driven by adaptation to new climatic conditions
         and increased insurance costs (or risk of being uninsurable).
 
       These hazards could each lead to reductions in revenue and to direct
@@ -351,7 +346,7 @@ physical:
       that help consumers mitigate against weather events and flooding
       (sandbags, barriers), or assist adaptation to new weather norms (such as
       rainwear) or extended seasonal product periods (beachwear). The following
-      examples help to map the potential impacts above and illustrate how the
+      examples help to map the potential impacts mentioned above and illustrate how the
       Consumer Products sector could be impacted in a high physical risk
       scenario:
 
@@ -364,7 +359,7 @@ physical:
         Katrina in April 2000, where population levels of New Orleans were at
         50% six years after the flood and remained 20% lower 15 years later.
 
-      - **Higher average temperatures**. Even small perturbations in climate can
+      - **Higher average temperatures**. Perturbations in climate can
         lead to significant disruption in crop yields and corresponding
         disruption to food supply chains.
 
@@ -377,13 +372,13 @@ physical:
         consumers being unable to access shopping locations and due to internet
         outages, and insurance ineligibility. Store closures could also result
         from direct damage to the store, inability of staff to get to the
-        location due to transport disruption, or power outages.
+        location due to transport disruption or power outages.
 
       - **Flooding events** could also lead to the same disruption as cyclones
         and storms. Flash flooding can pose problems for manufacturers exposed
-        to such geographies, leading to supply chain issues, and direct impacts
+        to such geographies, leading to supply chain issues and direct impacts
         for retailers based in these locations. For example, severe flooding in
-        Thailand in 2011 lead to severe supply chain disruption.
+        Thailand in 2011 led to severe supply chain disruption.
 
       ![Impact of 2011 Thai Floods](Thai_Flooding_Consumer_Products.png)
       
@@ -435,11 +430,12 @@ physical:
       chains. Even in a 1.5&deg;C warming scenario, flash flooding and extreme
       weather events can pose problems for manufacturers exposed to such
       geographies, leading to supply chain issues, and direct impacts for
-      retailers based in these locations. Adverse impacts on world GDP from
-      physical risks are assumed in the scenarios and these vary in line with 
-      different temperatures projected for each scenario. The low physical risk
-      scenarios could therefore also lead to a significant GDP impact which
-      could negatively impact demand for consumer products.
+      retailers based in these locations. 
+      
+      Adverse impacts on world GDP from physical risks are assumed in the scenarios 
+      and these vary in line with different temperatures projected for each scenario. 
+      The low physical risk scenarios could therefore also lead to a significant GDP 
+      impact which could negatively impact demand for consumer products.
     high_materiality: |
       Consideration should be given to the following hazards when considering
       physical risk for retailers:
@@ -463,7 +459,7 @@ physical:
         inhabitation is impacted (for example, water level rises in the Somerset
         Levels and the Fens).
 
-      - **Increased costs**: driven by adaptation to new climatic conditions,
+      - **Increased costs**: driven by adaptation to new climatic conditions
         and increased insurance costs (or risk of being uninsurable).
 
       These hazards could each lead to reductions in revenue and to direct
@@ -481,7 +477,7 @@ physical:
         distribution networks, store location choices, consumer geographical
         migration and insurance issues. This was seen following Hurricane
         Katrina in April 2000, where population levels of New Orleans were at
-        50% six years after the flood and remained only 20% lower 15 years
+        50% six years after the flood and remained 20% lower 15 years
         later.
 
       - **Higher average temperatures**. Even small perturbations in climate can
@@ -503,7 +499,7 @@ physical:
         and storms. Flash flooding can pose problems for manufacturers exposed
         to such geographies, leading to supply chain issues, and direct impacts
         for retailers based in these locations. For example, severe flooding in
-        Thailand in 2011 lead to severe supply chain disruption.
+        Thailand in 2011 led to severe supply chain disruption.
 
       ![Impact of 2011 Thai Floods](Thai_Flooding_Consumer_Products.png)
       

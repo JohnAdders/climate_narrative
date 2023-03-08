@@ -9,13 +9,13 @@ description: |
 
   Mortgages are normally lent to individuals (sometimes companies) and the
   amount borrowed is based upon the affordability of the applicants, either on a
-  capital repayment or interest only basis (it is worth noting that for buy to
-  let mortgages the rental income is used to define loan amount). The main types
+  capital repayment or interest only basis (it is worth noting that for buy-to-let 
+  mortgages the rental income is used to define loan amount). The main types
   of mortgage lending in the residential sector are:
 
   - Standard owner occupier
 
-  - Buy to let
+  - Buy-to-let
 
   - Later life or equity release
 transition:
@@ -38,13 +38,13 @@ transition:
       period. These have the ability to account for the greatest proportion of
       losses, after the macroeconomic impact has been forecast.
 
-      Transition risk also has the ability to generate significant losses due to
+      Transition risk could generate significant losses due to
       the cost of retrofitting (if not Government funded) and through properties
       that are unable to meet the minimum Efficiency Performance Certificate
-      (EPC) standard and hence are classified as unmarketable (and
+      (EPC) standard, and hence are classified as unmarketable (and
       unmortgageable).
     high_materiality: |
-      **Abrupt and steep phase in of carbon/ emissions prices**
+      **Abrupt and steep phase in of carbon/emissions prices**
 
       Increasing energy prices, due to the Government carbon taxes or elevated
       energy costs, impact both homeowners' and renters' ability to repay debt
@@ -75,7 +75,7 @@ transition:
       of capacity within the supply chain and the training of skilled persons to
       carry out the work. The output of that is more properties being impacted
       value wise by not meeting regulation or unskilled contractors attempting
-      to retrofit which actually damages the property.
+      to retrofit which damages the property.
 
       **Efficiency Performance Certificate (EPC)**
 
@@ -87,30 +87,30 @@ transition:
 
       Currently proposed legislation is:
 
-      - EPC C for private rented property by 2025 (new tenancies)
+      - EPC C for private rented property by 2025 (new tenancies).
 
-      - EPC C for private rented property by 2028 (existing tenancies)
+      - EPC C for private rented property by 2028 (existing tenancies).
 
-      - EPC C for residential property by 2035
+      - EPC C for residential property by 2035.
 
-      - Portfolio average of EPC Band C by 2030
+      - Portfolio average of EPC Band C by 2030.
 
-      - All property net zero by 2050
+      - All property net zero by 2050.
 
       The introduction of the above legislation generates one or more of the
       below financial risks, especially if lenders are targeted with improving
       the energy performance of their book on an annual basis:
 
-      - The impact on the value of the property if it can't be retrofitted
+      - The impact on the value of the property if it can't be retrofitted.
 
       - Cost of improving the property to EPC standard required (c70% of
-        properties could need to be retrofitted to achieve EPC C)
+        properties could need to be retrofitted to achieve EPC C).
 
       - Increased impairments and arrears: increased voids in tenancy/landlord
-        fines
+        fines.
 
-      - Landlords exiting the buy to let market in certain locations where the
-        rental yield doesn't justify the cost of retrofitting
+      - Landlords exiting the buy-to-let market in certain locations where the
+        rental yield doesn't justify the cost of retrofitting.
 
       - Mortgage customers who cannot afford to retrofit their property may become 
         mortgage prisoners - unable to re-mortgage or sell, as lenders avoid offering 
@@ -118,27 +118,27 @@ transition:
         could fall.
         
       - Potential impact on securitisation/covered bond and BoE collateral,
-        minimum EPC or increased haircut for below EPC C properties
+        minimum EPC or increased haircut for below EPC C properties.
 
       - Increasing competition for EPC A/B properties and the impact this has on
-        mortgage pricing
+        mortgage pricing.
 
       - Potential liability and conduct risk from green propositions sold and
-        incorrectly provided / assumed advice
+        incorrectly provided/assumed advice.
 
       - Risk from underperformance of third parties recommended by the lender to
-        support retrofitting activity
+        support retrofitting activity.
 
-      - Contagion from third-party suppliers due to their carbon footprint
+      - Contagion from third-party suppliers due to their carbon footprint.
 
       - Changes in consumer expectations relating to prioritisation of green
-        strategic objectives
+        strategic objectives.
 
       - Carbon footprint of products and services impacting consumer and
-        employee attraction and retention
+        employee attraction and retention.
 
       - Inability to deliver a just transition leading to vulnerable or
-        least-able-to-pay customers being disadvantaged
+        least-able-to-pay customers being disadvantaged.
 
       In Disorderly transition risk scenarios, buildings become less carbon intense;
       CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor space 
@@ -176,20 +176,20 @@ transition:
       consider:
 
       - Carbon footprint of products and services impacting consumer and
-        employee attraction and retention
+        employee attraction and retention.
 
       - Reputational damage due to service failures resulting from transitional
         risk impacting service capacity and/or increased customer activity (for
-        example, increased call volumes)
+        example, increased call volumes).
 
       - Reputational risk impact of lending on a property which subsequently
         requires retrofitting and whether there is the perception that as a
         lender, they should protect the borrower from this risk. This risk is
-        further elevated where scenario modelling indicated the potential risk
-       but this was not conveyed to the borrower
+        further elevated where scenario modelling indicated the potential risk,
+        but this was not conveyed to the borrower.
 
-      - Reputational risk associated with missing green / Net Zero targets /
-        commitments as a result of inadequate government support
+      - Reputational risk associated with missing green commitments/Net Zero targets
+        as a result of inadequate government support.
 
       **Opportunities**
 
@@ -200,7 +200,7 @@ transition:
         provision of retrofitting and physical risk reducing solutions, such as
         further advances or mortgage drawdown products linked directly to
         improvements in EPC ratings, interest rollup products to fund
-        retrofitting and / or asset finance to support retrofitting such as
+        retrofitting and/or asset finance to support retrofitting such as
         solar panels.
 
       - Customer engagement: support the consumer in improving their
@@ -210,14 +210,14 @@ transition:
         physical risk rating of the property.
 
       - Products aimed at supporting the transition of the Housing Association
-        sector (e.g., Sustainable Linked Loans)
+        sector (e.g., Sustainable Linked Loans).
         
       In Disorderly transition risk scenarios, lenders with exposures to mortgage books 
       should also look to assess the strategic risk caused by the emissions of 
       their mortgage lending. This could be driven from targets and commitments 
       previously set or imposed by regulators. Lenders could use the Partnership 
-      Carbon Accounting Financials (PCAF), as recommended by the Taskforce Climate 
-      Financial Disclosure, to model the emissions across their mortgage portfolio. 
+      for Carbon Accounting Financials (PCAF), as recommended by the Task Force on Climate-related 
+      Financial Disclosure (TCFD), to model the emissions across their mortgage portfolio. 
       Lenders could also assess their ability to decarbonise their lending 
       portfolio in line with the sector's decarbonisation pathway. This analysis 
       begins the feedback loop of climate scenario analysis into future strategy.  
@@ -233,13 +233,13 @@ transition:
       market is a strategic cornerstone to continue to support the UK economy,
       with it being expected that demand could outstrip supply for the
       foreseeable future. The quality of residential stock could be the key
-      challenge for the mortgage lending sector over the next 15 years, as
+      challenge for the mortgage lending sector over the next 15 years as
       transitional legislation is implemented.
 
-      Transition risk has the ability to generate significant losses, mainly due
-      to the cost of retrofitting (if not Government funded) properties that
+      Transition risk could generate significant losses due
+      to the cost of retrofitting (if not Government funded) and through properties properties that
       are unable to meet the minimum Efficiency Performance Certificate (EPC)
-      standard and hence are classified as unmarketable (and unmortgageable),
+      standard, and hence are classified as unmarketable (and unmortgageable),
       and rising energy costs across the next 30 years.
     high_materiality: |
       **Efficiency Performance Certificate (EPC)**
@@ -252,31 +252,31 @@ transition:
 
       Currently proposed legislation is:
 
-      - EPC C for private rented property by 2025 (new tenancies)
+      - EPC C for private rented property by 2025 (new tenancies).
 
-      - EPC C for private rented property by 2028 (existing tenancies)
+      - EPC C for private rented property by 2028 (existing tenancies).
 
-      - EPC C for residential property by 2035
+      - EPC C for residential property by 2035.
 
-      - Portfolio average of EPC Band C by 2030
+      - Portfolio average of EPC Band C by 2030.
 
-      - All property net zero by 2050
+      - All property net zero by 2050.
 
       The introduction of the above legislation generates one or more of the
       below financial risks which need to be considered, especially if lenders
       are targeted with improving the energy performance of their book on an
       annual basis:
 
-      - The impact on the value of the property if it can't be retrofitted
+      - The impact on the value of the property if it can't be retrofitted.
 
       - Cost of improving the property to EPC standard required (c70% of
-        properties could need to be retrofitted to achieve EPC C)
+        properties could need to be retrofitted to achieve EPC C).
 
       - Increased impairments and arrears: increased voids in tenancy/landlord
-        fines
+        fines.
 
-      - Landlords exiting the buy to let market in certain locations where the
-        rental yield doesn't justify the cost of retrofitting
+      - Landlords exiting the buy-to-let market in certain locations where the
+        rental yield doesn't justify the cost of retrofitting.
 
       - Mortgage customers who cannot afford to retrofit their property may become  
         mortgage prisoners - unable to re-mortgage or sell, as lenders avoid offering 
@@ -284,27 +284,27 @@ transition:
         could fall.
 
       - Potential impact on securitisation/covered bond and BoE collateral,
-        minimum EPC or increased haircut for below EPC C properties
+        minimum EPC or increased haircut for below EPC C properties.
 
       - Increasing competition for EPC A/B properties and the impact this has on
-        mortgage pricing
+        mortgage pricing.
 
       - Potential liability and conduct risk from green propositions sold and
-        incorrectly provided / assumed advice
+        incorrectly provided/assumed advice.
 
       - Risk from underperformance of third parties recommended by the lender to
-        support retrofitting activity
+        support retrofitting activity.
 
-      - Contagion from third-party suppliers due to their carbon footprint
+      - Contagion from third-party suppliers due to their carbon footprint.
 
       - Changes in consumer expectations relating to prioritisation of green
-        strategic objectives
+        strategic objectives.
 
       - Carbon footprint of products and services impacting consumer and
-        employee attraction and retention
+        employee attraction and retention.
 
       - Inability to deliver a just transition leading to vulnerable or
-        least-able-to-pay customers being disadvantaged
+        least-able-to-pay customers being disadvantaged.
 
       In Orderly transition risk scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from new 
@@ -338,7 +338,7 @@ transition:
       and machine learning algorithms, and the characteristics of a property
       that does not have an EPC, to estimate its EPC rating and other factors.
       
-      **Gradual phase in of carbon/ emissions prices**
+      **Gradual phase in of carbon/emissions prices**
       
       Increasing energy prices, due to the Government carbon taxes or elevated 
       energy costs, impacts both homeowners' and renters' ability to repay debt 
@@ -348,7 +348,7 @@ transition:
       In Orderly scenarios, electricity price increases in the short term, 
       peaking around 2030, and remains above 2020 levels at 2050. Oil and gas prices
       increase throughout, with gas tripling and oil almost doubling in Net Zero 2050
-      by 2050. In the Below 2&deg;C scenario oil and gas prices double.
+      by 2050. In the Below 2&deg;C scenario, oil and gas prices double.
       
       ![Residential and Commercial Price](mortgage_lending_orderly_price_final_energy.png)
 
@@ -364,7 +364,7 @@ transition:
         provision of retrofitting and physical risk reducing solutions, such as
         further advances or mortgage drawdown products linked directly to
         improvements in EPC ratings, interest rollup products to fund
-        retrofitting and / or asset finance to support retrofitting such as
+        retrofitting and/or asset finance to support retrofitting such as
         solar panels.
 
       - Customer engagement: support the consumer in improving their
@@ -374,13 +374,13 @@ transition:
         physical risk rating of the property.
 
       - Products aimed at supporting the transition of the Housing Association
-        sector (e.g., Sustainable Linked Loans)
+        sector (e.g. Sustainable Linked Loans).
         
       In Orderly scenarios, lenders with exposures to mortgage books should 
       also look to assess the strategic risk caused by the emissions of their mortgage 
       lending. This could be driven from targets and commitments previously set or 
-      imposed by regulators. Lenders could use the Partnership Carbon Accounting 
-      financials (PCAF), as recommended by the Taskforce Climate Financial Disclosure, 
+      imposed by regulators. Lenders could use the Partnership for Carbon Accounting 
+      Financials (PCAF), as recommended by the Task Force on Climate-relatedf Financial Disclosure (TCFD), 
       to model the emissions across their mortgage portfolio. Lenders could also 
       assess their ability to decarbonise their lending portfolio in line with the 
       sector's decarbonisation pathway. This analysis begins the feedback loop of 
@@ -398,7 +398,7 @@ physical:
       cyclones and flooding.
 
       The mortgage market doesn't have the experience of responding to and
-      managing changing weather conditions (as this is often covered by if a
+      managing changing weather conditions (as this is often covered by insurers if a
       property is insurable), in the high physical risk scenario, climate change
       and global warming could increase weather variations.
 
@@ -412,7 +412,7 @@ physical:
       albeit at higher rates to account for the risk.
     high_materiality: |
       The following examples illustrate how the mortgage sector could be
-      impacted in a low physical risk scenario and potential considerations at
+      impacted in a high physical risk scenario and potential considerations at
       mortgage origination that firms might not review today:
 
       - **Cyclones or storms** should be considered when reviewing
@@ -425,7 +425,7 @@ physical:
         considered if the property is only insurable due to FloodRe and what
         happens when that ends, along with if flood defences can resolve the
         issue. The number of times a property floods is a key consideration. 
-        In the Current Policies scenario, there is a five fold increase in 
+        In the Current Policies scenario, there is a fivefold increase in 
         the fraction of land annually exposed to river floods by the end of the 
         century, to ~0.04%.
         
@@ -444,35 +444,35 @@ physical:
         having fallen into the sea or there is a severe haircut due to cash only
         purchasers.
 
-      When reviewing the above physical risks the following issues should be
+      When reviewing the above physical risks, the following issues should be
       considered:
 
-      - Asset value of the property
+      - Asset value of the property.
 
       - Increased impairments and arrears: increased voids in tenancy/insurance
-        premiums/cost of repair if insurance is unavailable
+        premiums/cost of repair if insurance is unavailable.
 
       - Mortgage customers whose properties are highly exposed to physical risk may 
         become mortgage prisoners - unable to re-mortgage or sell, as lenders avoid 
         offering mortgages on highly exposed properties and their property value falls.
 
-      - Increasing competition for lower-risk properties
+      - Increasing competition for lower-risk properties.
 
       - Reputational risk impact of lending on a property which subsequently
         requires retrofitting/flooded/subsided/eroded and whether there is the
         perception that as a lender, they should protect the borrower from this
-        risk
+        risk.
 
       - The potential conduct risk where scenario modelling indicated the
-        potential risk but this was not conveyed to the borrower and what
-        products/services/advice should be given
+        potential risk, but this was not conveyed to the borrower and what
+        products, services, or advice should be given.
 
       - External factors such as FloodRe which if they change during the
         mortgage term could have a significant impact on the value of the
-        property
+        property.
 
       - Does the lender have the internal expertise to be able to understand the
-        physical risks and set appropriate polices and risk tolerances
+        physical risks and set appropriate polices and risk tolerances.
 
       - In high-risk scenarios additional flooding combined with FloodRe ending
         means these properties become uninsurable, as insurers refuse to take on
@@ -491,7 +491,7 @@ physical:
       cyclones and flooding.
 
       The mortgage market doesn't have the experience of responding to and
-      managing changing weather conditions (as this is often covered by if a
+      managing changing weather conditions (as this is often covered by insurers if a
       property is insurable), in the low physical risk scenario, climate change
       and global warming could increase weather variations.
 
@@ -530,7 +530,7 @@ physical:
 
       - **Subsidence** is currently an issue that is covered by insurance but if
         it becomes more prevalent it could impact property values due to the
-        cost of remediation. The age, construction and location of the property
+        cost of remediation. The age, construction, and location of the property
         needs to be considered when reviewing risks.
 
       - **Coastal Erosion** is a significant issue as without the correct
@@ -538,32 +538,32 @@ physical:
         having fallen into the sea or there is a severe haircut due to cash only
         purchasers.
 
-      When reviewing the above physical risks the following issues should be
+      When reviewing the above physical risks, the following issues should be
       considered:
 
-      - Asset value of the property
+      - Asset value of the property.
 
       - Increased impairments and arrears: increased voids in tenancy/insurance
-        premiums/cost of repair if insurance is unavailable
+        premiums/cost of repair if insurance is unavailable.
 
       - Mortgage customers whose properties are highly exposed to physical risk may 
         become mortgage prisoners - unable to re-mortgage or sell, as lenders avoid 
         offering mortgages on highly exposed properties and their property value falls.
 
-      - Increasing competition for lower-risk properties
+      - Increasing competition for lower-risk properties.
 
       - Reputational risk impact of lending on a property which subsequently
         requires retrofitting/flooded/subsided/eroded and whether there is the
         perception that as a lender, they should protect the borrower from this
-        risk
+        risk.
 
       - The potential conduct risk where scenario modelling indicated the
-        potential risk but this was not conveyed to the borrower and what
-        products/services/advice should be given
+        potential risk, but this was not conveyed to the borrower and what
+        products, services, or advice should be given
 
       - External factors such as FloodRe which if they change during the
         mortgage term could have a significant impact on the value of the
-        property
+        property.
 
       - Does the lender have the internal expertise to be able to understand the
-        physical risks and set appropriate polices and risk tolerances
+        physical risks and set appropriate polices and risk tolerances.
