@@ -10,8 +10,8 @@ jobs:
   R-CMD-check:
 
 strategy:
-      fail-fast: false
-      matrix:
+    fail-fast: false
+    matrix:
         config:
           - {os: windows-latest, r: 'release'}
           - {os: ubuntu-latest,   r: 'devel', http-user-agent: 'release'}
