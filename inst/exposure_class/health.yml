@@ -45,7 +45,7 @@ transition:
       CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, with the production of pollutants (such as
       particulate matter and oxides of nitrogen) that are more directly harmful
-      to health. In the Disorderly transition risk scenarios, emissions of hazardous 
+      to health. In the Disorderly transition scenarios, emissions of hazardous 
       pollutants, for example black carbon, volatile organic compounds, and oxides 
       of nitrogen, are projected to decrease. Emission trajectories for oxides 
       of nitrogen (NOx) can be seen here, but other hazardous pollutants in 
@@ -73,7 +73,7 @@ transition:
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
         but without global buy-in, then this could also reduce the correlation.
 
-      In Disorderly transition risk scenarios, there is potential for fewer
+      In Disorderly transition scenarios, there is potential for fewer
       deaths and a positive outcome for health relating to air pollution. The
       reduction in pollution could result in a reduction of cancers (especially
       lung) and respiratory diseases (e.g. asthma, respiratory allergic disease,
@@ -92,7 +92,7 @@ transition:
       of claims. The specific scenario would depend on how government and
       society chose to allocate any GDP growth.
 
-      The Disorderly transition risk scenarios could lead to a fall in GDP
+      The Disorderly transition scenarios could lead to a fall in GDP
       growth. A slower GDP growth would potentially constrain the growth in
       spending on NHS, public health, social care, medical research etc. This
       would have negative impacts on health underwriting exposure and could
@@ -108,7 +108,7 @@ transition:
       
       Similarly, government revenue received as carbon tax could impact the ability
       of governments to spend more on factors that can impact the nation's health and 
-      thus indirectly levels of claims. In Disorderly transition risk scenarios, global 
+      thus indirectly levels of claims. In Disorderly transition scenarios, global 
       government carbon tax revenues increase in the short to medium term. The specific 
       scenario would depend on how government and society chose to allocate revenue. However,
       higher revenue would give a bigger pot to potentially support higher spending on the NHS,
@@ -151,7 +151,7 @@ transition:
       spending. These scenarios are likely to have an impact on health insurance products' pricing, 
       terms and conditions and coverage.
     high_materiality: |
-      In Orderly transition risk scenarios, the impact on the health sector and
+      In Orderly transition scenarios, the impact on the health sector and
       its associated underwriting class could depend on pollution as well as other
       effects. For example:
 
@@ -164,7 +164,7 @@ transition:
       CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, with the production of pollutants (such as
       particulate matter and oxides of nitrogen) that are more directly harmful
-      to health. In Orderly transition risk scenarios, emissions of 
+      to health. In Orderly transition scenarios, emissions of 
       hazardous pollutants, for example black carbon, volatile organic compounds, 
       and oxides of nitrogen, are projected to decrease. Emission trajectories 
       for oxides of nitrogen (NOx) can be seen here, but other hazardous pollutants 
@@ -192,7 +192,7 @@ transition:
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
         but without global buy-in, then this could also reduce the correlation.
 
-      In an Orderly transition risk scenario, there is potential for fewer
+      In an Orderly transition scenario, there is potential for fewer
       deaths and a positive outcome for health relating to air pollution. The
       reduction in pollution could result in a reduction of cancers (especially
       lung), respiratory diseases (e.g. asthma, respiratory allergic disease,
@@ -206,7 +206,7 @@ transition:
       
       **Carbon Tax**
 
-      In Orderly transition risk scenarios, global government carbon tax revenues 
+      In Orderly transition scenarios, global government carbon tax revenues 
       increase (at least in the short to medium term). Government revenue impacts the
       ability of governments to spend more on factors that can impact the nation's health
       and thus indirectly levels of claims. The specific scenario would depend on how government 

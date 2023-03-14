@@ -51,14 +51,14 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, delayed or divergent policy 
+      In Disorderly transition scenarios, delayed or divergent policy 
       reaction, societal change and national energy strategies could lead to 
       significant increases in carbon prices. This could have an impact on 
       sovereign bonds in particular in countries with a strong level of dependence 
       on fossil fuel energy sources.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, immediate policy reaction, 
+      In Orderly transition scenarios, immediate policy reaction, 
       societal change and national energy strategies could lead to significant 
       increases in carbon prices. This could have an impact on sovereign bonds 
       in particular in countries with a strong level of dependence on fossil 

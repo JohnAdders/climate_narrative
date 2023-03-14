@@ -12,7 +12,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the failure to consider, mitigate or adapt 
+      In Disorderly transition scenarios, the failure to consider, mitigate or adapt 
       to climate change-related risk factors (if insured parties have not sufficiently 
       accounted for climate change risk factors in their acts, omissions or decision-making) 
       could become the subject of shareholder actions against corporations and their directors 
@@ -47,7 +47,7 @@ transition:
       and in the years afterwards (as stakeholders continue to take legal action
       against Directors).
     high_materiality: |
-      In Disorderly transition risk scenarios, immediate policy
+      In Disorderly transition scenarios, immediate policy
       reaction, societal change, national energy strategies, carbon and other
       legislation could drive a fraught transition to a low carbon economy. The
       changing patterns in energy generation in the Delayed transition scenario,
@@ -88,7 +88,7 @@ transition:
       retention is strained.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the failure to consider, mitigate or adapt 
+      In Orderly transition scenarios, the failure to consider, mitigate or adapt 
       to climate change-related risk factors (if insured parties have not sufficiently 
       accounted for climate change risk factors in their acts, omissions or decision-making) 
       could become the subject of shareholder actions against corporations and their directors 
@@ -125,7 +125,7 @@ transition:
       for new companies to fill the gaps. 
 
     high_materiality: |
-      In Orderly transition risk scenarios, additional risks for Casualty
+      In Orderly transition scenarios, additional risks for Casualty
       insurance are fairly low as immediate policy reaction, societal change,
       national energy strategies, and carbon legislation could lead to a smooth
       transition to a low carbon economy and an immediate and smooth reduction

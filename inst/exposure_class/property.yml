@@ -16,7 +16,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the increase in carbon price 
+      In Disorderly transition scenarios, the increase in carbon price 
       along with a change to the demand in the quality of real estate are likely 
       to influence insurance products' pricing, terms and conditions and coverage. 
       There is likely to be an increasing pressure on insurers to decline cover for 
@@ -146,7 +146,7 @@ transition:
       acceptance, or in the setting of corporate risk appetite and capital.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the increase in carbon price 
+      In Orderly transition scenarios, the increase in carbon price 
       along with a change to the demand in the quality of real estate are likely 
       to influence insurance products' pricing, terms and conditions and coverage. 
       There is likely to be an increasing pressure on insurers to decline cover for 
@@ -154,7 +154,7 @@ transition:
     always: |
       While the property underwriting class could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
-      energy generation in an Orderly transition risk scenario, driven by
+      energy generation in an Orderly transition scenario, driven by
       immediate policy reaction, societal change, national energy strategies,
       and carbon legislation, could lead to an immediate but smooth reduction in
       CO<sub>2</sub> emissions by 2050. The increase in carbon price along with

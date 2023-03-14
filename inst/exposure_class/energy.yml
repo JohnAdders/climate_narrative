@@ -13,7 +13,7 @@ description: |
 transition: 
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, energy sources change dramatically, 
+      In Disorderly transition scenarios, energy sources change dramatically, 
       resulting in demand for insurance covering oil, gas and coal operations 
       decreasing, with rising pressure on insurers to decline cover. Demand for 
       insurance covering renewable energy is likely to increase.
@@ -48,7 +48,7 @@ transition:
         fossil fuels decreases, with knock on effects for cover of carbon intensive 
         energy industries. 
         
-      In Disorderly transition risk scenarios the demand for coal, 
+      In Disorderly transition scenarios the demand for coal, 
       oil and gas falls, from over 450 exajoules (EJ) a year to between ~100 and 200 EJ a year, 
       with coal demand almost completely phased out between 2035 and 2040.
 
@@ -95,7 +95,7 @@ transition:
         for high GHG emitting assets and activities.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, energy sources change dramatically, 
+      In Orderly transition scenarios, energy sources change dramatically, 
       resulting in demand for insurance covering oil, gas and coal operations 
       decreasing, with rising pressure on insurers to decline cover. Demand for 
       insurance covering renewable energy is likely to increase.
@@ -120,7 +120,7 @@ transition:
         fossil fuels decreases, with knock on effects for cover of carbon intensive 
         energy industries. 
         
-      In Orderly transition risk scenarios the demand for coal, oil and gas 
+      In Orderly transition scenarios the demand for coal, oil and gas 
       falls, from over 450 exajoules (EJ) a year to between 100 and 200 EJ a year, with coal 
       demand almost completely phased out between 2035 and 2045.
 

@@ -87,7 +87,7 @@ transition:
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
         but without global buy-in, then this could also reduce the correlation.
 
-      In the Disorderly transition risk scenarios, there is potential
+      In the Disorderly transition scenarios, there is potential
       for fewer deaths and a positive outcome for health relating to air
       pollution, the reduction of pollution could result into a reduction of
       cancers (especially lung), respiratory diseases (e.g. asthma,
@@ -107,7 +107,7 @@ transition:
       of mortality and morbidity claims. The specific scenario would depend on
       how government and society chose to allocate any GDP growth.
 
-      The Disorderly transition risk scenarios could lead to a
+      The Disorderly transition scenarios could lead to a
       moderate to severe fall in GDP growth. A slower GDP growth would
       potentially constrain the growth in spending on NHS, public health, social
       care, medical research etc. Assuming that greater funding is correlated to
@@ -125,7 +125,7 @@ transition:
       
       **Carbon Tax**
       
-      In Disorderly transition risk scenarios, global government carbon tax revenues 
+      In Disorderly transition scenarios, global government carbon tax revenues 
       increase in the short to medium term. Government revenue impacts the ability of 
       governments to spend more on factors that can impact the nation's health and thus 
       indirectly levels of mortality and morbidity claims. The specific scenario would
@@ -138,7 +138,7 @@ transition:
       **Impact on pricing or product design**
 
       To the extent that there is an impact on mortality, the
-      Disorderly transition risk scenarios could have an impact on the
+      Disorderly transition scenarios could have an impact on the
       pricing of life protection products, although this is likely to be modest.
   low:
     exec_description: |
@@ -158,7 +158,7 @@ transition:
       which could in turn result into a reduction in cancer (especially lung),
       respiratory diseases, heart attack and stroke.
 
-      The Orderly transition risk scenarios could also lead to a limited
+      The Orderly transition scenarios could also lead to a limited
       fall in GDP, which could result in changes in the rate of growth in
       healthcare spending, which could impact mortality and morbidity.
     high_materiality: |
@@ -189,7 +189,7 @@ transition:
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
         but without global buy-in, then this could also reduce the correlation.
 
-      In Orderly transition risk scenarios, there is potential for
+      In Orderly transition scenarios, there is potential for
       fewer deaths and a positive outcome for health relating to air pollution.
       The reduction in pollution could result in a reduction of cancers
       (especially lung), respiratory diseases (e.g. asthma, respiratory
@@ -215,7 +215,7 @@ transition:
 
       **Carbon Tax**
       
-      In Orderly transition risk scenarios, global government carbon tax revenues
+      In Orderly transition scenarios, global government carbon tax revenues
       increase (at least in the short to medium term). Government revenue impacts the
       ability of governments to spend more on factors that can impact the nation's health
       and thus indirectly levels of mortality and morbidity claims. The specific scenario

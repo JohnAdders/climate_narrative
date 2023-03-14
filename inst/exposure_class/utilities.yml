@@ -29,12 +29,12 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the utility sector may 
+      In Disorderly transition scenarios, the utility sector may 
       benefit from increased revenue as the global energy system becomes more 
       electrified, but faces a rising carbon price which could increase production 
       costs for carbon intensive utilities without adequate transition plans.
     always: |
-      The Disorderly transition risk scenarios are primarily characterised by their 
+      The Disorderly transition scenarios are primarily characterised by their 
       more disruptive effects on the utility sector. This can be seen most 
       clearly when comparing the Below 2&deg;C scenario and the Delayed Transition 
       scenario. The two scenarios converge on similar long-term climate cumulative 
@@ -49,18 +49,18 @@ transition:
       a lot longer to emerge. The Divergent Net Zero scenario, on the other hand, 
       results in immediate but more divergent CO<sub>2</sub> emissions reductions 
       across emitting sectors.  There would be considerable dispersion of impacts 
-      across firms in the Disorderly transition risk scenarios, depending on the 
+      across firms in the Disorderly transition scenarios, depending on the 
       carbon intensity of their production processes.
 
     high_materiality: |
       Changes in carbon pricing, electricity demand, the energy mix, and energy 
       prices are likely to dominate financial impacts, through the same revenue 
-      and cost channels. However, in Disorderly transition risk scenarios, for a 
+      and cost channels. However, in Disorderly transition scenarios, for a 
       given long-term emissions and temperature objective, effects will likely 
       be amplified, either because of policy divergences across sectors, or because 
       delayed decarbonisation requires greater decarbonisation later on.
       
-      In Disorderly transition risk scenarios electricity usage more than doubles by 
+      In Disorderly transition scenarios electricity usage more than doubles by 
       2050, from ~75 exajoules to between ~185 and ~190 exajoules.
       
       ![Final energy electricity](utilities_disorderly_energy_elec.png)
@@ -80,7 +80,7 @@ transition:
       gradual technological change. And it also has the potential to be much more 
       damaging for the margins of more fossil fuel intensive utilities.
       
-      As with the Orderly transition risk scenarios, the Disorderly transition risk scenarios are all 
+      As with the Orderly transition scenarios, the Disorderly transition scenarios are all 
       derived from an energy systems model that makes relatively favourable assumptions 
       about how the relative price of solar PV and, to a lesser extent, wind technologies 
       evolve relative to fossil fuels and nuclear energy. As a result, solar and wind become 
@@ -105,7 +105,7 @@ transition:
       particularly in scenarios that fall short of achieving Net Zero emissions 
       by 2050.
       
-      When thinking about the effects of the Disorderly transition risk scenarios 
+      When thinking about the effects of the Disorderly transition scenarios 
       on the valuation of utility companies, it is important to first consider what 
       is already priced in. The greater the transition that is priced in, the lesser 
       the valuation uplift one can expect from renewable-heavy utilities and the smaller 
@@ -115,7 +115,7 @@ transition:
       these scenarios.
       
       Companies considering how to transition in ways consistent with Oisorderly 
-      transition risk scenario pathways, and investors looking to encourage such transitions, 
+      transition scenario pathways, and investors looking to encourage such transitions, 
       also need to account for the sector's diversity. Different strategies 
       will be appropriate for different firms to maintain revenues and minimise 
       the long-term financial impact. 
@@ -127,7 +127,7 @@ transition:
 
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the utility sector may benefit 
+      In Orderly transition scenarios, the utility sector may benefit 
       from increased revenue as the global energy system becomes more electrified 
       but faces a rising carbon price which could increase production costs for 
       carbon intensive utilities without adequate transition plans.
@@ -140,7 +140,7 @@ transition:
       like transportation and parts of industry, as possible.
       
       The supporting pillars for the types of accelerated transitions envisaged 
-      in the Orderly transition risk scenarios would involve radical changes in climate policy, 
+      in the Orderly transition scenarios would involve radical changes in climate policy, 
       via significant increases in carbon prices, as well as much more stringent 
       regulatory 'command and control' policies. While the average electric utility company 
       could perform well under these scenarios, thanks largely to the demand 
@@ -164,7 +164,7 @@ transition:
         electrified, with revenue gains strongest for firms with zero and low carbon intensive 
         production processes.
         
-      In Orderly transition risk scenarios, electricity usage more than doubles by 2050, from 
+      In Orderly transition scenarios, electricity usage more than doubles by 2050, from 
       ~75 exajoules to ~195 exajoules.
         
       ![Final Energy Electricity](utilities_energy_elec.png)
@@ -199,7 +199,7 @@ transition:
       **Source:**
       [NGFS Climate Scenarios, September 2022](https://www.ngfs.net/sites/default/files/medias/documents/ngfs_climate_scenarios_for_central_banks_and_supervisors_.pdf.pdf){target="\_blank"}
 
-      Nevertheless, in Orderly transition risk scenarios, one has to be careful about also 
+      Nevertheless, in Orderly transition scenarios, one has to be careful about also 
       expecting valuation uplifts in firms that act as 'pure plays' on an accelerated 
       energy transition, like Renewable Electricity Companies. That is because valuations 
       for that subset of firms are already high and arguably pricing in more aggressive 
@@ -226,7 +226,7 @@ transition:
       Users should note that the results in this tool are derived 
       from one particular energy-systems model, which makes specific 
       assumptions about how the relative costs of different technologies are 
-      likely to evolve over the longer-term. Even in Orderly transition risk scenarios, 
+      likely to evolve over the longer-term. Even in Orderly transition scenarios, 
       the zero and low carbon 'winners' cannot be predicted with certainty. 
       The relative cost reductions and growth rates of solar and wind technologies, 
       government nuclear investment plans, and the viability of biomass, hydrogen 
@@ -242,7 +242,7 @@ transition:
       It should also be noted that this tool assumes that under a given scenario, 
       the required policies to achieve the necessary emissions trajectory are 
       applied evenly across all major emitting jurisdictions. While this is a 
-      fair assumption under the Orderly transition risk scenario (because it cannot take place 
+      fair assumption under the Orderly transition scenario (because it cannot take place 
       without coordinated global action), in the slower Below 2&deg;C scenario, 
       different regional policy choice combinations are possible.
       
@@ -252,7 +252,7 @@ transition:
       and region/sector averages.
       
       Companies considering how to transition in ways consistent with Orderly 
-      transition risk scenario pathways, and investors looking to encourage such transitions, 
+      transition scenario pathways, and investors looking to encourage such transitions, 
       also need to account for the sector's diversity. Different strategies will 
       be appropriate for different firms to maintain revenues and minimise the 
       long-term financial impact. Examples include expanding renewable energy 
@@ -331,7 +331,7 @@ physical:
       It is also important to keep in mind that the high physical risk 
       scenarios are also scenarios in which there is only an extremely slow energy 
       transition, and therefore the transitional risk effects on valuations will generally reverse 
-      compared with the Orderly and Disorderly transition risk scenarios.
+      compared with the Orderly and Disorderly transition scenarios.
       
       For example, low-carbon intensive utilities could face valuation 
       impairments compared to current market prices rather than uplifts, while high-carbon 
@@ -347,7 +347,7 @@ physical:
       n/a
     always: |
       Low physical risk scenarios capture all of the Orderly and Disorderly 
-      transition risk scenarios that keep long-term temperature increases below 
+      transition scenarios that keep long-term temperature increases below 
       2&deg;C.
       
       The physical effects of climate change on utilities can be decomposed into 

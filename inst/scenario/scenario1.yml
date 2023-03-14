@@ -4,7 +4,7 @@ transition: low
 physical: low
 exec_short: transition
 exec_description: |
-  The Orderly transition risk scenarios could result in a gradual 
+  The Orderly transition scenarios could result in a gradual 
   reduction in CO<sub>2</sub> emissions and an increase in the carbon price. 
   The investments in energy efficiency and low carbon technologies are projected to increase 
   (e.g. annual investment in low carbon increases from ~850 billion USD to between 
@@ -21,7 +21,7 @@ exec_description: |
   with no transition or physical risks is estimated to be around -3% by 2050.
 
 description: |
-  Orderly transition risk scenarios assume climate policies are introduced early and become 
+  Orderly transition scenarios assume climate policies are introduced early and become 
   gradually more stringent. Both physical and transition risks are relatively subdued. 
 
   ![NGFS scenarios Framework](NGFS_scenarios_Framework_Orderly.png)
@@ -64,7 +64,7 @@ description: |
   [IIASA NGFS Scenario Explorer. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} Carbon prices are weighted global averages.
 
   Government revenues from carbon tax increase in line with the carbon price, until emissions are 
-  reduced to a degree that this offsets carbon price increase. In Orderly transition risk scenarios, 
+  reduced to a degree that this offsets carbon price increase. In Orderly transition scenarios, 
   global government carbon tax revenues increase, peaking at ~2.5 trillion USD (inflation adjusted to 
   2010 baseline) per year around 2025 before sloping back down to ~100 billion USD per year by 2050 in 
   the Net Zero 2050 scenario. In the Below 2&deg;C scenario, revenues peak at ~1.5 trillion USD  per year 
@@ -100,7 +100,7 @@ description: |
   [IIASA NGFS Scenario Explorer. NiGEM NGFS v1.22 [REMIND-MAgPIE 3.0-4.4.].](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} Combined = Chronic physical and Transition effects. UK specific. Relative to baseline with no transition or physical risks.
   
   The investments in energy efficiency and low carbon technologies are projected to increase 
-  in Orderly transition risk scenarios. These are expected to be higher 
+  in Orderly transition scenarios. These are expected to be higher 
   in a Net Zero 2050 scenario compared to a Below 2&deg;C scenario. Overall, firms 
   could be required to readjust their capital expenditure in line with these 
   trends; developing more efficient and less carbon intensive products and 
@@ -178,7 +178,7 @@ description: |
   transition risk are moderately negative in the Net Zero 2050 scenario as negative 
   impacts on demand from higher carbon prices and energy costs are only partially 
   offset by the recycling of carbon revenues into government investment and lower 
-  employment taxes. In the orderly transition risk scenarios, physical risks have a 
+  employment taxes. In the Orderly transition scenarios, physical risks have a 
   larger impact on global GDP than transition risk, even as early as 2030. The NGFS 
   estimate that global GDP impact in the Net Zero 2050 scenario will be around -3% by 
   2100.

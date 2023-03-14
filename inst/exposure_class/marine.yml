@@ -18,7 +18,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the marine sector could 
+      In Disorderly transition scenarios, the marine sector could 
       be impacted by an increase in carbon price through fuel cost, falling 
       asset values as older inefficient vessels becomes increasingly obsolete, 
       and lower demand as consumers become more conscious of the environmental 
@@ -41,7 +41,7 @@ transition:
       These scenarios could also lead to a limited reduction in GDP growth. This 
       could result in changes in the rate of growth in demand for the marine sector.
     high_materiality: |
-      In Disorderly transition risk scenarios, the impact on the
+      In Disorderly transition scenarios, the impact on the
       marine underwriting class could depend on the increases in carbon and
       energy prices and how reliant the marine company's revenue mix is on
       low-carbon electricity and bunker fuel and how it compares to the sector
@@ -54,7 +54,7 @@ transition:
         cap and trade clearing price, particularly for shipping firms using
         fossil-based bunker fuel.
         
-        In Disorderly transition risk scenarios, the price per gigajoule 
+        In Disorderly transition scenarios, the price per gigajoule 
         of liquid final energy (liquid fuels from all energy sources; incl. oil 
         products, synthetic fossil fuels from gas and coal, biofuels) for use in 
         transportation increases from ~30 USD (inflation adjusted to 2010 baseline) 
@@ -97,7 +97,7 @@ transition:
       could decrease demand for the marine sector.
 
       The profitability of the marine sector and its associated underwriting
-      class in the Disorderly transition risk scenarios could also
+      class in the Disorderly transition scenarios could also
       depend on the relevant companies proactively investing in innovation and
       new technology. For example:
 
@@ -110,7 +110,7 @@ transition:
         activities to optimise voyage speeds
 
       - Alternatives to fossil-based bunker fuels (e.g. biodiesel, methanol,
-        lignin, and Ammonia). In Disorderly transition risk scenarios, 
+        lignin, and Ammonia). In Disorderly transition scenarios, 
         sources of final energy used in the transport sector change dramatically. 
         As use of oil declines, electricity becomes the dominant source of final 
         energy by the end of the century.
@@ -120,7 +120,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      In Disorderly transition risk scenarios, these innovations 
+      In Disorderly transition scenarios, these innovations 
       could contribute to an overall decrease in CO<sub>2</sub> emissions 
       in the transportation sector.
       
@@ -129,7 +129,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. GCAM 5.3+.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      The Disorderly transition risk scenarios also present opportunities 
+      The Disorderly transition scenarios also present opportunities 
       for the marine sector. Proactively investing in the above innovations could 
       lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
@@ -140,7 +140,7 @@ transition:
       in alignment with their green strategy.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the marine sector could be 
+      In Orderly transition scenarios, the marine sector could be 
       impacted by an increase in carbon price through fuel cost, falling asset 
       values as older inefficient vessels becomes increasingly obsolete, and 
       lower demand as consumers become more conscious of the environmental 
@@ -158,11 +158,11 @@ transition:
 
       These are likely to have an impact on the profitability of this sector and
       therefore on the associated insurance products' pricing, terms and
-      conditions and coverage. The Orderly transition risk scenarios could
+      conditions and coverage. The Orderly transition scenarios could
       also lead to a limited relative reduction in GDP growth. This could result
       in changes in the rate of growth in demand for the marine sector.
     high_materiality: |
-      In the Orderly transition risk scenarios, the impact on the marine
+      In the Orderly transition scenarios, the impact on the marine
       sector and the underwriting class could depend on how reliant the marine
       company's revenue mix is on low-carbon electricity and bunker fuel and how
       it compares to the sector average. For example:
@@ -174,7 +174,7 @@ transition:
         carbon tax or cap and trade clearing price, particularly for shipping
         firms using fossil-based bunker fuel. 
         
-        In Orderly transition risk scenarios, the price per gigajoule of 
+        In Orderly transition scenarios, the price per gigajoule of 
         liquid final energy (liquid fuels from all energy sources; incl. oil 
         products, synthetic fossil fuels from gas and coal, biofuels) for use 
         in transportation increases from around 30 USD (inflation adjusted to 
@@ -215,7 +215,7 @@ transition:
       could decrease demand for the marine sector.
 
       The profitability of the marine sector and its associated underwriting
-      class in the Orderly transition risk scenarios could also depend
+      class in the Orderly transition scenarios could also depend
       on the relevant companies proactively investing in innovation and new
       technology. For example:
 
@@ -228,7 +228,7 @@ transition:
         activities to optimise voyage speeds
 
       - Alternatives to fossil-based bunker fuels (e.g. biodiesel, methanol,
-        lignin, and Ammonia). In Orderly transition risk scenarios, 
+        lignin, and Ammonia). In Orderly transition scenarios, 
         sources of final energy used in the transport sector change dramatically. 
         As the use of oil gradually declines, electricity becomes the dominant 
         source of final energy by the end of the century.
@@ -238,7 +238,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      In Orderly transition risk scenarios, these innovations could 
+      In Orderly transition scenarios, these innovations could 
       contribute to an overall decrease in CO<sub>2</sub> emissions in the 
       transportation sector.
       
@@ -247,7 +247,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. GCAM 5.3+.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      The Orderly transition risk scenarios also present opportunities 
+      The Orderly transition scenarios also present opportunities 
       for the marine sector. Proactively investing in the above innovations 
       could lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could

@@ -21,7 +21,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, lenders who have a material 
+      In Disorderly transition scenarios, lenders who have a material 
       exposure to mortgages are likely to be impacted mainly due to the cost 
       of retrofitting (if not Government funded) properties that are unable to 
       meet the minimum Efficiency Performance Certificate (EPC) standard and 
@@ -33,7 +33,7 @@ transition:
       foreseeable future. The quality of residential stock could be the key
       challenge on the mortgage lending sector.
 
-      In Disorderly transition risk scenarios, the changes in energy prices
+      In Disorderly transition scenarios, the changes in energy prices
       are material as they impact every property and are applied throughout the
       period. These have the ability to account for the greatest proportion of
       losses, after the macroeconomic impact has been forecast.
@@ -55,7 +55,7 @@ transition:
       reduced ability to pay, as a result of more income being spent on energy
       bills, could increase probabilities of default.
       
-      In Disorderly transition risk scenarios, electricity price increases in the short 
+      In Disorderly transition scenarios, electricity price increases in the short 
       term, peaking around 2035 in the Delayed transition scenario and 2030 in 
       the Divergent Net Zero scenario, and remains above 2020 levels at 2050. Oil and gas
       prices increase throughout, broadly doubling by 2050 with gas almost tripling
@@ -140,7 +140,7 @@ transition:
       - Inability to deliver a just transition leading to vulnerable or
         least-able-to-pay customers being disadvantaged.
 
-      In Disorderly transition risk scenarios, buildings become less carbon intense;
+      In Disorderly transition scenarios, buildings become less carbon intense;
       CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor space 
       decrease from ~14 megatons to between 0 and ~2 megatons by 2050.
       
@@ -212,7 +212,7 @@ transition:
       - Products aimed at supporting the transition of the Housing Association
         sector (e.g., Sustainable Linked Loans).
         
-      In Disorderly transition risk scenarios, lenders with exposures to mortgage books 
+      In Disorderly transition scenarios, lenders with exposures to mortgage books 
       should also look to assess the strategic risk caused by the emissions of 
       their mortgage lending. This could be driven from targets and commitments 
       previously set or imposed by regulators. Lenders could use the Partnership 
@@ -223,7 +223,7 @@ transition:
       begins the feedback loop of climate scenario analysis into future strategy.  
   low:
     exec_description: |
-      In Orderly transition risk scenarios, lenders who have a material 
+      In Orderly transition scenarios, lenders who have a material 
       exposure to mortgages are likely to be impacted mainly due to the cost 
       of retrofitting (if not Government funded) properties that are unable to 
       meet the minimum Efficiency Performance Certificate (EPC) standard and 
@@ -306,7 +306,7 @@ transition:
       - Inability to deliver a just transition leading to vulnerable or
         least-able-to-pay customers being disadvantaged.
 
-      In Orderly transition risk scenarios, emissions from residential and commercial 
+      In Orderly transition scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from new 
       legislation (as well as a change in energy mix). CO<sub>2</sub> emissions
       due to energy consumption per billion meters squared of floor space decrease from ~14 megatons 
