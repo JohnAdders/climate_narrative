@@ -92,12 +92,12 @@ transition:
         Aviation Fuels (SAF) in the short term whilst more complex solutions
         such as hydrogen and electric aircraft are developed.
         
-      In these scenarios, sources of final energy used in the transport sector 
-      change dramatically. As use of oil declines, electricity becomes the dominant 
-      source of final energy by the end of the century. By 2100, use of oil in transport 
-      falls from ~120 exajoules (EJ) per year to between ~10 EJ and ~40 EJ per year, whereas 
-      use of electricity in transport increases from ~0 EJ per year to between ~50 EJ and 
-      ~60 EJ per year.
+        In these scenarios, sources of final energy used in the transport sector 
+        change dramatically. As use of oil declines, electricity becomes the dominant 
+        source of final energy by the end of the century. By 2100, use of oil in transport 
+        falls from ~120 exajoules (EJ) per year to between ~10 EJ and ~40 EJ per year, whereas 
+        use of electricity in transport increases from ~0 EJ per year to between ~50 EJ and 
+        ~60 EJ per year.
       
       ![Transportation Final Energy](aviation_disorderly_final_energy.png)
       
@@ -203,12 +203,12 @@ transition:
         Aviation Fuels (SAF) in the short term whilst more complex solutions
         such as hydrogen and electric aircraft are developed.
      
-      In Orderly transition scenarios, sources of final energy used
-      in the transport sector change dramatically. As the use of oil gradually 
-      declines, electricity becomes the dominant source of final energy by the 
-      end of the century. By 2100, use of oil in transport falls from ~120 exajoules 
-      (EJ) per year to between ~20 EJ and ~40 EJ per year, whereas use of electricity 
-      in transport increases from ~0 EJ per year to ~60 EJ per year.
+        In Orderly transition scenarios, sources of final energy used
+        in the transport sector change dramatically. As the use of oil gradually 
+        declines, electricity becomes the dominant source of final energy by the 
+        end of the century. By 2100, use of oil in transport falls from ~120 exajoules 
+        (EJ) per year to between ~20 EJ and ~40 EJ per year, whereas use of electricity 
+        in transport increases from ~0 EJ per year to ~60 EJ per year.
       
       ![Transportation Final Energy](aviation_orderly_final_energy.png)
       
