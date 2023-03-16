@@ -39,7 +39,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the agriculture sector can 
+      In Disorderly transition scenarios, the agriculture sector can 
       benefit from expanding markets but faces greater risks of stranded assets, 
       geographic growth constraints, and rising production costs in the face of 
       new emissions costs, land use restrictions, and necessary productivity 
@@ -90,7 +90,7 @@ transition:
       restrictions, and necessary productivity improvements.
 
       The sector has very high GHG emissions as farm and livestock productions
-      and activities are emission intensive. In Disorderly transition risk scenarios,
+      and activities are emission intensive. In Disorderly transition scenarios,
       although the agriculture sector's GHG emissions are projected to fall, it is to 
       a lesser extent than other sectors, making Agriculture, Forestry and Other Land Use 
       (AFOLU) the largest GHG emitting sector by 2050.
@@ -100,7 +100,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      The total demand could continue to increase in the Disorderly transition risk scenarios, 
+      The total demand could continue to increase in the Disorderly transition scenarios, 
       however growth in demand for food production is limited.
 
       ![Total Agriculture Demand](agriculture_disorderly_demand.png)
@@ -151,7 +151,7 @@ transition:
       see their net value and profitability rise under transitions.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the agriculture sector can benefit 
+      In Orderly transition scenarios, the agriculture sector can benefit 
       from expanding markets but face greater risks of stranded assets, geographic 
       growth constraints, and rising production costs in the face of new emissions 
       costs, land use restrictions, and necessary productivity improvements.
@@ -162,7 +162,7 @@ transition:
       climate related transition risks through public policies, consumer demand
       shifts and technological evolutions.
 
-      By 2050, the Orderly transition risk scenarios driven by societal
+      By 2050, the Orderly transition scenarios driven by societal
       change, national energy strategies, and carbon legislation, are likely to
       have a significant impact on the agriculture sector. Agricultural value
       chains face material climate transition risk exposure due to their
@@ -198,7 +198,7 @@ transition:
       restrictions, and necessary productivity improvements.
 
       The sector has very high GHG emissions as farm and livestock productions
-      and activities are emissions intensive. In Orderly transition risk scenarios,
+      and activities are emissions intensive. In Orderly transition scenarios,
       although the agriculture sector's GHG emissions are projected to fall, it is to
       a lesser extent than other sectors, making Agriculture, Forestry and Other Land
       Use (AFOLU) the largest GHG emitting sector by 2050.

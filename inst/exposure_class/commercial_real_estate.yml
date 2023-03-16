@@ -38,13 +38,13 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the commercial real estate sector 
+      In Disorderly transition scenarios, the commercial real estate sector 
       could be impacted by an increase in carbon price and through the cost of complying with 
       "low carbon/green" building criteria which in turn could affect the profitability in this 
       sector. In these scenarios a limited relative reduction in GDP growth will also 
       impact the sector. 
     always: |
-      In Disorderly transition risk scenarios, the demand for commercial real
+      In Disorderly transition scenarios, the demand for commercial real
       estate sector is likely to increase.
 
       While the commercial real estate sector could continue to play a role in
@@ -66,7 +66,7 @@ transition:
       and/or prepare for these changes will be a key consideration in the size 
       of risk and opportunity for individual assets and for portfolios.
 
-      The Disorderly transition risk scenarios could also lead to a relative
+      The Disorderly transition scenarios could also lead to a relative
       reduction in GDP growth. This could partially offset growth in demand for
       the Commercial Real Estate sector.
 
@@ -90,7 +90,7 @@ transition:
       - **Increased revenues** from retrofits and conversions to low carbon /
         energy efficient buildings.
 
-      In Disorderly transition risk scenarios, buildings become less carbon intense;
+      In Disorderly transition scenarios, buildings become less carbon intense;
       CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor space 
       decrease from ~14 megatons to between 0 and ~2 megatons by 2050.
       
@@ -99,7 +99,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      In Disorderly transition risk scenarios, as carbon price increases, carbon tax paid from buildings'
+      In Disorderly transition scenarios, as carbon price increases, carbon tax paid from buildings'
       emissions peaks at ~$640 billion (inflation adjusted to 2010 baseline) around 2025 in the Divergent 
       Net Zero scenario, and at ~$360 billion around 2035 in the Delayed transition scenario. Carbon tax 
       paid begins to decrease thereafter as improvements are made to buildings' emissions intensities.
@@ -130,13 +130,13 @@ transition:
 
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the commercial real estate sector 
+      In Orderly transition scenarios, the commercial real estate sector 
       could be impacted by an increase in carbon price and through the cost of complying 
       with "low carbon/green" building criteria which in turn could affect the profitability 
       in this sector. In these scenarios a limited relative reduction in GDP growth will also 
       impact the sector.
     always: |
-      In Orderly transition risk scenarios, the demand for commercial real
+      In Orderly transition scenarios, the demand for commercial real
       estate sector is likely to increase. While the commercial real estate
       sector could continue to play a role in meeting customer demand for the
       coming years, the changing patterns in energy generation in these 
@@ -174,7 +174,7 @@ transition:
       - **Increased revenues** from retrofits and conversions to low carbon /
         energy efficient buildings.
       
-      In Orderly transition risk scenarios, buildings become less carbon intense; 
+      In Orderly transition scenarios, buildings become less carbon intense; 
       CO<sub>2</sub> emissions due to energy consumption per billion meters squared of floor 
       space decrease from ~14 megatons to between ~1 and ~3 megatons by 2050.
       
@@ -183,7 +183,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      In Orderly transition risk scenarios, as carbon price increases, carbon tax paid from 
+      In Orderly transition scenarios, as carbon price increases, carbon tax paid from 
       buildings' emissions peaks at ~$370 billion (inflation adjusted to 2010 baseline) around 
       2035 in the Net Zero 2050 scenario, and at ~$190 billion around 2040 in the Below 2&deg;C 
       scenario. Carbon tax paid begins to decrease thereafter as improvements are made to buildings' 

@@ -52,7 +52,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, delayed or divergent policy reaction, 
+      In Disorderly transition scenarios, delayed or divergent policy reaction, 
       societal change and national energy strategies could lead to significant increases 
       in carbon prices. This could have an impact on sovereign bonds in particular in 
       countries with a strong level of dependence on fossil fuel energy sources.
@@ -84,7 +84,7 @@ transition:
       between $56 billion and $111 billion.
       [(The risks from climate change to sovereign debt in Europe | Bruegel).](https://euagenda.eu/upload/publications/pc-2021-16-070721-1.pdf){target="\_blank"}.
       
-      The Disorderly transition risk scenarios could also lead to a reduction in
+      The Disorderly transition scenarios could also lead to a reduction in
       GDP growth. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), 
       the impact of the Divergent Net Zero scenario on the US GDP would be about twice as much
       as the one on the UK by 2050.
@@ -97,7 +97,7 @@ transition:
       carbon-intensive sectors such as oil and gas are consequently some of the
       most vulnerable to transition risk.
 
-      The impact of Disorderly transition risk scenarios on fiscal revenues is
+      The impact of Disorderly transition scenarios on fiscal revenues is
       largely dependent on the efficiency of government spending in trying to
       mitigate these risks. While the use of taxes to incentivize more
       environmentally friendly production, transportation and consumption
@@ -152,7 +152,7 @@ transition:
       implications for ratings in coming decades. According to the 2021 "Rising
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
       Creditworthiness" working paper from the University of Cambridge, in
-      Disorderly transition risk scenarios, most developed countries would be
+      Disorderly transition scenarios, most developed countries would be
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
@@ -162,13 +162,13 @@ transition:
       approximately US$7.35-11.03bn.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, immediate policy reaction, 
+      In Orderly transition scenarios, immediate policy reaction, 
       societal change and national energy strategies could lead to significant 
       increases in carbon prices. This could have an impact on sovereign bonds 
       in particular in countries with a strong level of dependence on fossil 
       fuel energy sources.
     always: |
-      In Orderly transition risk scenarios, immediate policy reaction,
+      In Orderly transition scenarios, immediate policy reaction,
       societal change, and national energy strategies lead to significant and
       immediate increases in carbon prices. This could have a strong impact on
       fiscal revenues in countries with a strong level of dependence on fossil
@@ -197,7 +197,7 @@ transition:
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
-      The impact of Orderly transition risk scenarios on fiscal revenues is
+      The impact of Orderly transition scenarios on fiscal revenues is
       largely dependent on the efficiency of government spending in trying to
       mitigate these risks. While the use of taxes to incentivize more
       environmentally friendly production, transportation and consumption

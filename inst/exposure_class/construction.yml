@@ -27,12 +27,12 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the construction sector could 
+      In Disorderly transition scenarios, the construction sector could 
       face rising operating costs as carbon pricing policies increase building material 
       and energy prices, as well as falling asset values as current infrastructure 
       becomes increasingly obsolete. 
     always: |
-      In Disorderly transition risk scenarios, the demand for
+      In Disorderly transition scenarios, the demand for
       construction is likely to increase. The construction sector was
       responsible for 13% of global GDP in 2020, and this share is expected to
       increase as the global population continues to rise. However, the Disorderly
@@ -84,7 +84,7 @@ transition:
         assets such as outdated machinery and material transportation vehicles
         with poor energy efficiency.
 
-      In Disorderly transition risk scenarios, the construction sector
+      In Disorderly transition scenarios, the construction sector
       is likely to be impacted by rapid decarbonization in building materials
       such as cement, chemicals and steel, as well as in its own operations.
       
@@ -123,7 +123,7 @@ transition:
 
       The construction sector is also likely to be impacted by rapid decarbonization
       in transport. The portion of electric energy used in freight transport could 
-      increase to between 16% and 26% by 2050 in Disorderly transition risk scenarios.
+      increase to between 16% and 26% by 2050 in Disorderly transition scenarios.
 
       ![Freight Vehicles](construction_disorderly_elec_freight.png)
 
@@ -143,12 +143,12 @@ transition:
       recycling.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the construction sector could 
+      In Orderly transition scenarios, the construction sector could 
       face rising operating costs as carbon pricing policies increase building 
       material and energy prices, as well as falling asset values as current 
       infrastructure becomes increasingly obsolete. 
     always: |
-      In Orderly transition risk scenarios, the demand for construction is
+      In Orderly transition scenarios, the demand for construction is
       likely to increase. The construction sector was responsible for 13% of
       global GDP in 2020, and this share is expected to increase as the global
       population continues to rise. However, the Orderly transition risk
@@ -157,7 +157,7 @@ transition:
 
       While the construction sector could continue to play a role in meeting
       customer demand for the coming years, the changing patterns in energy
-      generation in Orderly transition risk scenarios, driven by immediate
+      generation in Orderly transition scenarios, driven by immediate
       policy reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions and increase in the carbon price. These

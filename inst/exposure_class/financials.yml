@@ -36,7 +36,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the change to carbon and 
+      In Disorderly transition scenarios, the change to carbon and 
       energy prices, regulations, consumer behaviour etc. could impact financial 
       firms. However, the extent will depend on their business model, regions 
       in which they operate as well as the industries/sectors that they provide 
@@ -67,7 +67,7 @@ transition:
       
       * **Tightening energy efficiency standards** for domestic and commercial 
       buildings could impact the risk in banks' buy-to-let lending portfolios. 
-      In Disorderly transition risk scenarios, emissions from residential and commercial 
+      In Disorderly transition scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from tightened 
       standards (as well as a change in energy mix).
       
@@ -130,7 +130,7 @@ transition:
       retired or modified, rather than sold on and used elsewhere.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the change to carbon and energy 
+      In Orderly transition scenarios, the change to carbon and energy 
       prices, regulations, consumer behaviour etc. could impact financial firms. 
       However, the extent will depend on their business model, regions in which they 
       operate as well as the industries/sectors that they provide financial services to
@@ -159,7 +159,7 @@ transition:
       
       * **Tightening energy efficiency standards** for domestic and commercial 
       buildings could impact the risk in banks' buy-to-let lending portfolios. 
-      In Orderly transition risk scenarios, emissions from residential and commercial 
+      In Orderly transition scenarios, emissions from residential and commercial 
       buildings are projected to fall due to increased efficiency from tightened 
       standards (as well as a change in energy mix).
       

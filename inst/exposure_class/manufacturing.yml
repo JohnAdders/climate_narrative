@@ -86,7 +86,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, manufacturers could 
+      In Disorderly transition scenarios, manufacturers could 
       benefit from new revenue streams, but face rising operating costs due 
       to carbon pricing policies and falling asset values as current infrastructure 
       becomes increasingly obsolete. 
@@ -102,7 +102,7 @@ transition:
       consumer.
     high_materiality: |
       The following examples illustrate how the manufacturing sector could be impacted in a
-      Disorderly transition risk scenario:
+      Disorderly transition scenario:
 
       - **Increased costs** from paying a price on carbon intensive exports (see
         EU's proposed [Carbon Border Adjusted Mechanism](https://taxation-customs.ec.europa.eu/green-taxation-0/carbon-border-adjustment-mechanism_en){target="\_blank"}) 
@@ -121,7 +121,7 @@ transition:
         transition to Net Zero such as carbon capture and storage (CCS)
         manufacturing. 
         
-      - In Disorderly transition risk scenarios, CCS utilisation is projected 
+      - In Disorderly transition scenarios, CCS utilisation is projected 
         to increase dramatically, with between ~5500 and ~6500 megatons of CO<sub>2</sub> 
         being stored annually by 2050.
         
@@ -138,7 +138,7 @@ transition:
         integration of renewable energy sources in largescale manufacturing
         establishments.
 
-      In Disorderly transition risk scenarios, the manufacturing
+      In Disorderly transition scenarios, the manufacturing
       sector could achieve long-term carbon neutrality through new manufacturing
       processes supported by clean energy sources, a circular economy which
       increases materials efficiency and widespread carbon capture and storage (CCS)
@@ -157,7 +157,7 @@ transition:
       - High risk of stranded assets.
 
       Manufacturing industries that adopt a Disorderly pathway to net zero
-      emissions under Disorderly transition risk scenarios may
+      emissions under Disorderly transition scenarios may
       significantly **lose market value**. It is expected that those industries
       could face stranded assets as uncertainty about climate policies and
       unanticipated breakthroughs in renewable technologies collide with
@@ -186,7 +186,7 @@ transition:
       - Support the transition of large technical systems through long-term investment cycles. 
   low:
     exec_description: |
-      In Orderly transition risk scenarios, manufacturers could benefit 
+      In Orderly transition scenarios, manufacturers could benefit 
       from new revenue streams, but face rising operating costs due to carbon 
       pricing policies and falling asset values as current infrastructure 
       becomes increasingly obsolete. 
@@ -202,7 +202,7 @@ transition:
       consumer.
     high_materiality: |
       The following examples illustrate how the manufacturing sector could be impacted 
-      in an Orderly transition risk scenario:
+      in an Orderly transition scenario:
 
       - **Increased costs** from paying a price on carbon intensive exports (see
         EU's proposed [Carbon Border Adjusted Mechanism](https://taxation-customs.ec.europa.eu/green-taxation-0/carbon-border-adjustment-mechanism_en){target="\_blank"})  
@@ -239,14 +239,14 @@ transition:
         integration of renewable energy sources in largescale manufacturing
         establishments.
 
-      In Orderly transition risk scenarios, carbon pricing mechanisms will 
+      In Orderly transition scenarios, carbon pricing mechanisms will 
       gradually increase which will force polluters in the manufacturing sector 
       towards efforts to achieve long-term carbon neutrality, such as 
       clean energy sources, a circular economy which increases
       materials efficiency and widespread carbon capture and storage (CCS)
       utilisation. A strong policy environment that supports manufacturers'
       decarbonisation efforts could result in an immediate and smooth reduction
-      of emissions. For example, in Orderly transition risk scenarios,
+      of emissions. For example, in Orderly transition scenarios,
       CO<sub>2</sub> emissions are expected to reduce between 76% and 94% by
       2050 from 2020 levels based on CCS utilisation, fuel-switching, and
       improvements to resource and energy efficiency.

@@ -20,7 +20,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the transport sector could 
+      In Disorderly transition scenarios, the transport sector could 
       face increasing operating costs through carbon taxation, falling 
       asset values as older and less efficient infrastructure becomes increasingly obsolete,
       and lower demand as consumers become more 
@@ -43,12 +43,12 @@ transition:
       Firms may also face a change in consumer preferences, with changing environmental 
       expectations potentially decreasing demand. 
       
-      The Disorderly transition risk scenarios could also lead to a limited relative 
+      The Disorderly transition scenarios could also lead to a limited relative 
       reduction in GDP growth. This could result in changes in the rate of growth 
       in demand for both passenger and goods transport.
 
     high_materiality: |
-      In Disorderly transition risk scenarios, there are several potential 
+      In Disorderly transition scenarios, there are several potential 
       impacts on the transport sector. For example: 
 
       - **Increased operating costs.** The sharp rise in carbon and energy prices is 
@@ -56,7 +56,7 @@ transition:
         a rising price in the form a carbon tax or cap and trade clearing price, 
         especially for firms reliant on fossil-based fuels. 
         
-        In Disorderly transition risk scenarios, by 2050, as carbon price increases, 
+        In Disorderly transition scenarios, by 2050, as carbon price increases, 
         carbon tax paid from transport emissions peaks at ~$1.8 trillion (inflation adjusted 
         to 2010 baseline) per year around 2030 in the Divergent Net Zero scenario and decreases 
         thereafter as improvements are made to transport emissions intensities. Carbon tax paid 
@@ -67,7 +67,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}  
       
-        In Disorderly transition risk scenarios, the price per gigajoule of liquid 
+        In Disorderly transition scenarios, the price per gigajoule of liquid 
         final energy (liquid fuels from all energy sources; incl. oil products, 
         synthetic fossil fuels from gas and coal, biofuels) for use in transportation 
         increases from ~28 USD (inflation adjusted to 2010 baseline) to ~48 USD in the Delayed transition scenario, and 
@@ -108,7 +108,7 @@ transition:
         (high speed) rail, provided rail operators have the infrastructure in place to serve 
         the same destinations. 
         
-        In Disorderly transition risk scenarios, there is a varied rate of decarbonisation 
+        In Disorderly transition scenarios, there is a varied rate of decarbonisation 
         between different modes of transport. Between 2020 and 2050, emissions of CO<sub>2</sub> per 
         billion passenger kilometres from road passenger transport falls from ~0.07 megatons 
         to ~0.01 megatons in the Delayed transition scenario and to ~0.002 megatons in the 
@@ -134,7 +134,7 @@ transition:
         may prefer local alternative goods which rely less on transportation. This could 
         decrease demand for the transport sector. 
         
-        In Disorderly transition risk scenarios, the profitability of the transport sector 
+        In Disorderly transition scenarios, the profitability of the transport sector 
         could also depend on the relevant companies proactively investing in innovation and 
         new technology. For example:
         
@@ -155,7 +155,7 @@ transition:
       - Intelligent routing and smart technologies which optimize routes and speeds 
         to minimise emissions.
         
-      In Disorderly transition risk scenarios, these innovations could contribute 
+      In Disorderly transition scenarios, these innovations could contribute 
       to an overall decrease in CO<sub>2</sub> emissions in the transportation sector.
       
       ![Transportation CO2 Emissions](transport_disorderly_emissions.png)
@@ -163,14 +163,14 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. GCAM 5.3+](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
-      The Disorderly transition risk scenarios also present opportunities 
+      The Disorderly transition scenarios also present opportunities 
       for the transport sector. Proactively investing in the above innovations 
       could lead to positive gains in commercial reputation
       and therefore magnify demand and overall revenue as consumers could
       proactively seek out businesses with an incorporated green strategy.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the transport sector could face 
+      In Orderly transition scenarios, the transport sector could face 
       increasing operating costs through carbon taxation, falling asset values 
       as older and less efficient infrastructure becomes increasingly obsolete
       , and lower demand as consumers become more conscious 
@@ -191,7 +191,7 @@ transition:
       a change in consumer preference, with changing environmental expectations potentially 
       decreasing demand. 
     high_materiality: |
-      In Orderly transition risk scenarios, there are several potential impacts 
+      In Orderly transition scenarios, there are several potential impacts 
       on the transport sector. For example:
 
       - **Increased operating costs**. The rise in carbon and energy prices could 
@@ -199,7 +199,7 @@ transition:
         face a rising price in the form a carbon tax or cap and trade clearing price, 
         especially for firms reliant on fossil-based fuels. 
         
-      In Orderly transition risk scenarios, by 2050, as carbon price increases, carbon 
+      In Orderly transition scenarios, by 2050, as carbon price increases, carbon 
       tax paid from transport emissions reaches ~$1 trillion (inflation adjusted to 2010 baseline) 
       per year in the Net Zero 2050 scenario, and ~$450 billion per year in the Below 2&deg;C scenario. 
         
@@ -248,7 +248,7 @@ transition:
         as (high speed) rail, provided rail operators have the infrastructure in place 
         to serve the same destinations. 
         
-      In Orderly transition risk scenarios, there is a varied rate of decarbonisation between 
+      In Orderly transition scenarios, there is a varied rate of decarbonisation between 
       different modes of transport. Emissions of CO<sub>2</sub> per billion passenger kilometres from road 
       passenger transport falls from ~0.07 megatons to ~0.005 megatons between 2020 and 2050. 
       Emissions of CO<sub>2</sub> per billion passenger kilometres from aviation passenger transport falls 
@@ -267,7 +267,7 @@ transition:
       of the transport sector, consumers may prefer local alternative goods which rely less 
       on transportation. This could decrease demand for the transport sector. 
       
-      In Orderly transition risk scenarios, the profitability of the transport sector could 
+      In Orderly transition scenarios, the profitability of the transport sector could 
       also depend on the relevant companies proactively investing in innovation and new 
       technology. For example: 
 
@@ -287,7 +287,7 @@ transition:
       - Intelligent routing and smart technologies which optimize routes and speeds 
         to minimise emissions.
         
-      In Orderly transition risk scenarios, these innovations could contribute 
+      In Orderly transition scenarios, these innovations could contribute 
       to an overall decrease in CO<sub>2</sub> emissions in the transportation sector.
 
       ![Transportation CO2 Emissions](transport_orderly_emissions.png)

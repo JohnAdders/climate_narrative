@@ -31,11 +31,11 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, demand for oil and gas decreases, 
+      In Disorderly transition scenarios, demand for oil and gas decreases, 
       which could affect profitability of individual companies and the sector overall. 
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in a
-      Disorderly transition risk scenario, fossil fuels represent only
+      Disorderly transition scenario, fossil fuels represent only
       ~25% to ~35% of global energy demand compared to ~85% in 2020. Carbon-intensive
       sectors such as oil and gas are consequently some of the most vulnerable
       to the transition. In a delayed transition scenario, the policy delays
@@ -51,7 +51,7 @@ transition:
       carbon legislation, are likely to have a significant and long-term impact
       on demand for oil and gas, affecting profitability in both scenarios.
 
-      The Disorderly transition risk scenarios could also lead to a
+      The Disorderly transition scenarios could also lead to a
       reduction in GDP growth. This could result in changes in the rate of
       growth in demand for the oil and gas sector.
     high_materiality: |
@@ -76,7 +76,7 @@ transition:
         infrastructure required for extraction, based on re-adjusted
         expectations of much lower demand for fossil fuels in future
 
-      In Disorderly transition risk scenarios, the oil and gas sector
+      In Disorderly transition scenarios, the oil and gas sector
       is likely to be significantly impacted. Driven by increased
       electrification, total electricity capacity and generation jumps markedly,
       and the underlying sources change dramatically. Solar is the dominant
@@ -106,7 +106,7 @@ transition:
       **Source:**
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      Under Disorderly transition risk scenarios, belated awareness by
+      Under Disorderly transition scenarios, belated awareness by
       financial market participants of the scale and speed of the transition
       required may cause fossil fuel assets to undergo a fire-sale by investors,
       at the moment when they fully understand the real risk involved in holding
@@ -120,11 +120,11 @@ transition:
       generation or investing in carbon capture and storage (CCS) technologies.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, demand for oil and gas decreases, 
+      In Orderly transition scenarios, demand for oil and gas decreases, 
       which could affect profitability of individual companies and the sector overall. 
     always: |
       Based on the IIASA NGFS Climate Scenarios, REMIND model, by 2050, in
-      Orderly transition risk scenarios, fossil fuels represent only ~25% to ~40%
+      Orderly transition scenarios, fossil fuels represent only ~25% to ~40%
       of global energy demand compared to ~85% in 2020. Carbon-intensive sectors
       such as oil and gas are consequently some of the most vulnerable to
       transition.
@@ -162,7 +162,7 @@ transition:
         required for extraction based on re-adjusted expectations of much lower
         demand of fossil fuels in the future
 
-      In Orderly transition risk scenarios, capital investment into fossil fuel
+      In Orderly transition scenarios, capital investment into fossil fuel
       extraction and supply could be significantly lower than investment into renewable
       electricity and storage. There is still some legacy capital investment in fossil fuel 
       extraction to maintain the infrastructure while phasing down the overall capacity.
@@ -176,7 +176,7 @@ transition:
       renewables in the electricity generation mix increases. The share of electric vehicles on the roads
       could also steadily increase and a large share of the remaining
       conventional vehicles could use biofuels instead of petrol or diesel, further contributing to a decrease 
-      in demand for the oil and gas sector. In Orderly transition risk scenarios, consumption of oil and gas 
+      in demand for the oil and gas sector. In Orderly transition scenarios, consumption of oil and gas 
       combined falls from ~300 exajoules per year to between ~120 and ~200 exajoules per year by 2050.
 
       ![Primary Energy Oil and Gas](oil_gas_orderly_primary_energy.png)
@@ -348,15 +348,7 @@ physical:
 references: |
   - [Importance of Climate-Related Risks for Actuaries - International Actuarial Association, 15 June 2020](https://www.actuaries.org/IAA/Documents/CMTE_EXEC/Meetings/2020_23_07/CRTF_ImportanceOfClimateRelatedRisksforActuaries_15July2020_clean.pdf){target="\_blank"}
 
-  - [The impact of Climate Change on mortality and retirement incomes in Australia - Actuaries Institute, September 2019](https://actuaries.asn.au/Library/Opinion/2019/TheDialogue10ClimateWEBLres.pdf){target="\_blank"}
-
   - [Aviva Climate-related Financial Disclosure - Aviva plc, 2020](https://www.aviva.com/sustainability/reporting/climate-related-financial-disclosure/){target="\_blank"}
-
-  - [Aviva Adviser: Life Insurance+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/life-insurance-plus/){target="\_blank"}
-
-  - [Aviva Adviser: Critical illness+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/critical-illness-plus/){target="\_blank"}
-
-  - [Aviva Adviser: Income Protection+ Documents - Aviva (avivab2b.co.uk)](https://connect.avivab2b.co.uk/adviser/resources/document-library/income-protection-plus/){target="\_blank"}
 
   - [Case Studies of Environmental Risk Analysis Methodologies - NGFS, September 2020](https://www.ngfs.net/sites/default/files/medias/documents/case_studies_of_environmental_risk_analysis_methodologies.pdf){target="\_blank"}
 

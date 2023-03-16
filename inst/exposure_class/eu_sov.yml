@@ -49,7 +49,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, delayed or divergent policy reaction, 
+      In Disorderly transition scenarios, delayed or divergent policy reaction, 
       societal change and national energy strategies could lead to significant 
       increases in carbon prices. This could have an impact on sovereign bonds in 
       particular in countries with a strong level of dependence on fossil fuel energy sources.
@@ -75,7 +75,7 @@ transition:
       On the other hand, government spending (through subsidies and investment) 
       could encourage consumer spending and investment in the use of renewables, 
       energy efficiency, energy storage, etc., leading to increases in fiscal revenues. 
-      The Disorderly transition risk scenarios could also lead to a reduction in GDP 
+      The Disorderly transition scenarios could also lead to a reduction in GDP 
       growth. This would have a negative impact on EU sovereign bonds.
 
     high_materiality: |
@@ -86,7 +86,7 @@ transition:
       sectors such as oil and gas are consequently some of the most vulnerable to 
       transition risk. 
 
-      The impact from Disorderly transition risk scenarios on fiscal 
+      The impact from Disorderly transition scenarios on fiscal 
       revenues are largely dependent on the efficiency of government spending in 
       mitigating these risks. While the use of taxes to incentivize more 
       environmentally friendly production, transportation and consumption patterns 
@@ -132,7 +132,7 @@ transition:
       
       A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming
       taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According 
-      to estimates from the NGFS, the Disorderly transition risk scenario could result in significant GDP losses.
+      to estimates from the NGFS, the Disorderly transition scenario could result in significant GDP losses.
       In these scenarios, world GDP losses from chronic physical and transition effects are estimated to be between
       -4.6% and -4.7% (relative to a baseline with no transition or physical risks) by 2050. World GDP impacts from 
       transition risk are negative as the speed of the transition combines with investment uncertainty and affects 
@@ -149,7 +149,7 @@ transition:
       could have implications for ratings in coming decades. According to 
       the 2021 "Rising Temperatures, Falling Ratings: The Effect of Climate 
       Change on Sovereign Creditworthiness" working paper from the University of 
-      Cambridge, in Disorderly transition risk scenarios, most EU countries 
+      Cambridge, in Disorderly transition scenarios, most EU countries 
       would be marginally downgraded (1 notch or less). Most downgrades would 
       be among top-rated countries. This does not necessarily reflect increased 
       climate-related risks for these top-rated countries, but greater sensitivity 
@@ -162,12 +162,12 @@ transition:
       government by approximately US$1.35-2.02bn.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, immediate policy reaction, societal 
+      In Orderly transition scenarios, immediate policy reaction, societal 
       change and national energy strategies could lead to significant increases in 
       carbon prices. This could have an impact on sovereign bonds in particular in 
       countries with a strong level of dependence on fossil fuel energy sources.
     always: |
-      In Orderly transition risk scenarios, immediate policy reaction, 
+      In Orderly transition scenarios, immediate policy reaction, 
       societal change and national energy strategies leads to significant and 
       immediate increases in carbon prices. This could have a strong impact 
       on fiscal revenues in countries with a strong level of dependence on 
@@ -197,7 +197,7 @@ transition:
       to ~85% in 2020. Countries with carbon-intensive sectors such as oil and gas 
       are consequently some of the most vulnerable to transition risk. 
       
-      The impact of Orderly transition risk scenarios on fiscal revenues 
+      The impact of Orderly transition scenarios on fiscal revenues 
       is largely dependent on the efficiency of government spending in 
       mitigating these risks. While the use of taxes to incentivize more 
       environmentally friendly production, transportation and consumption patterns 
@@ -243,7 +243,7 @@ transition:
       
       A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation 
       rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According to estimates from
-      the NGFS, the Orderly transition risk scenarios would generally limit GDP losses. The world GDP losses from chronic 
+      the NGFS, the Orderly transition scenarios would generally limit GDP losses. The world GDP losses from chronic 
       physical and transition effects are estimated to be around -3% (relative to a baseline with no transition or physical
       risks) by 2050. GDP impacts from transition risk are moderately negative in the Net Zero 2050 scenario as negative
       impacts on demand from higher carbon prices and energy costs are only partially offset by the recycling of carbon

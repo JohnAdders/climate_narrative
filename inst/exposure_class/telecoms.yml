@@ -28,7 +28,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the telecoms sector 
+      In Disorderly transition scenarios, the telecoms sector 
       could face rising operating costs as carbon pricing policies increase 
       energy prices, as well as falling asset values as current infrastructure 
       becomes increasingly obsolete.
@@ -40,7 +40,7 @@ transition:
       long term impact on this sector, affecting profitability and consumer
       preferences.
     high_materiality: |
-      In Disorderly transition risk scenarios, the impacts could
+      In Disorderly transition scenarios, the impacts could
       depend on how reliant the company's production/revenue mix is on low
       carbon electricity, the client's 'temperature alignment' score and how
       this compares to the sector average. For example:
@@ -74,7 +74,7 @@ transition:
       [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       The profitability of the telecom sector, in Disorderly 
-      transition risk scenarios, could also depend on the relevant companies
+      transition scenarios, could also depend on the relevant companies
       proactively investing in innovation and new technology and their ability
       to mitigate transition risks. For example:
 
@@ -116,21 +116,21 @@ transition:
       proactively shop at businesses with an incorporated green strategy.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the telecoms sector could 
+      In Orderly transition scenarios, the telecoms sector could 
       face rising operating costs as carbon pricing policies increase energy 
       prices, as well as falling asset values as current infrastructure becomes 
       increasingly obsolete.
     always: |
       While the telecom sector could continue to play a role in meeting customer
       demand for the coming years, the changing patterns in energy generation,
-      in Orderly transition risk scenarios, driven by immediate policy
+      in Orderly transition scenarios, driven by immediate policy
       reaction, societal change, national energy strategies, and carbon
       legislation, could lead to an immediate and smooth reduction in
       CO<sub>2</sub> emissions by 2050 and increase in the carbon price. These
       are likely to have an impact on this sector, affecting profitability and
       consumer preferences.
     high_materiality: |
-      In the Orderly transition risk scenarios, the increases in carbon
+      In the Orderly transition scenarios, the increases in carbon
       and energy prices could potentially result in financial impacts; the
       extent could depend on how reliant the company's production /revenue mix
       is on low-carbon electricity, the company's transition plans and how they
