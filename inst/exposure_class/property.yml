@@ -1,7 +1,7 @@
 name: Property Underwriting Class
 test_report_position: 19
-description: |
-  The **Property** underwriting class covers a very wide range of asset types
+description: | 
+  The **property** underwriting class covers a very wide range of asset types
   and coverages, with risk transfers flowing from the policyholders, through to
   insurers, reinsurers and retrocessional reinsurers, and with both simple (e.g.
   direct) and complex risk sharing arrangements between multiple parties, for
@@ -16,13 +16,13 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the increase in carbon price 
+      In Disorderly transition scenarios, the increase in carbon price 
       along with a change to the demand in the quality of real estate are likely 
       to influence insurance products' pricing, terms and conditions and coverage. 
       There is likely to be an increasing pressure on insurers to decline cover for 
       high GHG emitting industrial or commercial activities.
     always: |
-      While the Property underwriting class could continue to play a role in
+      While the property underwriting class could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
       energy generation, in the Delayed transition scenario, driven by late
       policy action enabling a "fossil recovery" out of the economic
@@ -106,8 +106,7 @@ transition:
       mitigating actions. For example:
 
       - Developing a clear net-zero underwriting strategy based on industry
-        standards such as a Net Zero Insurance Alliance
-        (https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
+        standards such as the [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
 
       - Applying a range of scenarios reflecting the most likely range of
         socio-economic, legislative technological and consumer futures within
@@ -118,7 +117,7 @@ transition:
       - Ensuring underwriting rules and policies are aligned to corporate and
         industry wide Net Zero objectives.
 
-      - Encouraging policy holder's approaches to risk mitigation and transition
+      - Encouraging policyholder's approaches to risk mitigation and transition
         strategies through increased knowledge transfer and remediation
         advisories, as well as new product development, for example to support
         Orderly transition to agreed timescales for high GHG emitting assets and
@@ -147,15 +146,15 @@ transition:
       acceptance, or in the setting of corporate risk appetite and capital.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the increase in carbon price 
+      In Orderly transition scenarios, the increase in carbon price 
       along with a change to the demand in the quality of real estate are likely 
       to influence insurance products' pricing, terms and conditions and coverage. 
       There is likely to be an increasing pressure on insurers to decline cover for 
       high GHG emitting industrial or commercial activities.
     always: |
-      While the Property underwriting class could continue to play a role in
+      While the property underwriting class could continue to play a role in
       meeting customer demand for the coming years, the changing patterns in
-      energy generation in an Orderly transition risk scenario, driven by
+      energy generation in an Orderly transition scenario, driven by
       immediate policy reaction, societal change, national energy strategies,
       and carbon legislation, could lead to an immediate but smooth reduction in
       CO<sub>2</sub> emissions by 2050. The increase in carbon price along with
@@ -234,8 +233,7 @@ transition:
       mitigating actions. For example:
 
       - Developing a clear net-zero underwriting strategy based on industry
-        standards such as a Net Zero Insurance Alliance
-        (https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
+        standards such as the [Net Zero Insurance Alliance](https://www.unepfi.org/net-zero-insurance/){target="\_blank"}.
 
       - Applying a range of scenarios reflecting the most likely range of
         socio-economic, legislative technological and consumer futures within
@@ -283,9 +281,9 @@ physical:
       changes in the distribution of exposures and in the types of assets being insured.
     always: |
       While the non-life property insurance market is generally highly exposed
-      to physical risks, and in particular from those related to weather
-      extremes the actual materiality of an insurer's portfolio and the policies
-      it writes could however vary significantly, by geography, asset class and
+      to physical risks and in particular from those related to weather
+      extremes, the actual materiality of an insurer's portfolio and the policies
+      it writes could however vary significantly by geography, asset class and
       risk mitigation strategies in place. As most traditional property
       insurance policies could be short term, for one year, this has limited the
       level of concern applied to changing physical risks from climate change.
@@ -295,7 +293,7 @@ physical:
       sector is already experiencing.
 
       This means that any insurance underwriting strategy could need to assess
-      existing, and future, physical risk, not only due to the potential for
+      existing and future physical risk, not only due to the potential for
       future changes in the physical drivers of climate related hazards (e.g.,
       flood intensity, frequency and extents), but also due to changes in the
       distribution of exposures due to changing underwriting plans, and changes
@@ -303,7 +301,7 @@ physical:
 
     high_materiality: |
       The relative materiality of physical risks to insurers and hence the
-      impact on underwriting strategies, could vary over time, and at varying
+      impact on underwriting strategies could vary over time and at varying
       rates. The interdependency which exists between hazard, exposure and
       vulnerability elements of insured property assets could also influence the
       level of materiality experienced across a portfolio, and this could also
@@ -428,8 +426,8 @@ physical:
     always: |
       While the non-life property insurance market is generally highly exposed
       to physical risks, and in particular from those related to weather
-      extremes the actual materiality of an insurer's portfolio and the policies
-      it writes could however vary significantly, by geography, asset class and
+      extremes, the actual materiality of an insurer's portfolio and the policies
+      it writes could however vary significantly by geography, asset class and
       risk mitigation strategies in place. As most traditional property
       insurance policies could be short term, for one year, this has limited the
       level of concern applied to changing physical risks from climate change.
@@ -439,17 +437,17 @@ physical:
       sector is already experiencing.
 
       This means that any insurance underwriting strategy could need to assess
-      existing, and future, physical risk, not only due to the potential for
+      existing and future physical risk, not only due to the potential for
       future changes in the physical drivers of climate related hazards (e.g.,
       flood intensity, frequency and extents), but also due to changes in the
-      distribution of exposures due to changing underwriting plans, and changes
+      distribution of exposures due to changing underwriting plans and changes
       in the types of assets being insured.
     high_materiality: |
       The relative materiality of physical risks to insurers and hence the
-      impact on underwriting strategies, could vary over time, and at varying
+      impact on underwriting strategies could vary over time, and at varying
       rates. The interdependency which exists between hazard, exposure and
       vulnerability elements of insured property assets could also influence the
-      level of materiality experienced across a portfolio, and this could also
+      level of materiality experienced across a portfolio and this could also
       vary over time.
 
       In particular the following physical risk considerations are likely to be
@@ -500,8 +498,8 @@ physical:
       also through market standards which can themselves be influenced by
       physical risk considerations.
 
-      Underwriting decisions on price, through either experience based pricing,
-      or actuarial / model based, require considerable understanding of the
+      Underwriting decisions on price, through either experience or 
+      actuarial / model based pricing, require considerable understanding of the
       potential range of losses which could impact both individual assets and
       policy holders, but equally the aggregate risk which the insurer is
       exposed to across all policies and lines of business which it provides.
@@ -509,7 +507,7 @@ physical:
       The increased uncertainties, which underly the assessment of changing
       physical risks, mean that utilising frequency and severity distribution
       methods for pricing and portfolio assessment could be less effective as a
-      means to effectively account for future losses within premiums. The lack
+      way to effectively account for future losses within premiums. The lack
       of consistent modelling approaches for both present day and future
       physical risk, particularly in emerging economies and markets,
       means that there could be a lower level of confidence placed on estimates
@@ -532,7 +530,7 @@ physical:
         strategy, infrastructure roadmaps and projects.
 
       - Incorporating a forward-looking element into risk modelling and pricing
-        tools
+        tools.
 
       - Developing a range of realistic scenarios which reflect a range of
         potential future impacts on physical risk at various short, medium and

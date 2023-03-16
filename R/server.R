@@ -9,41 +9,14 @@
 #' @export
 #'
 server <- function(input, output, session) {
+  # initialisation
   heartbeat(input, output, session)
-  session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
-  session$userData$captcha_validated <- FALSE
-  session$userData$temp_md_full <- tempfile(fileext = ".md")
-  session$userData$temp_md_scenario <- tempfile(fileext = ".md")
-  session$userData$temp_md_scenario_and_commons <- tempfile(fileext = ".md")
-  session$userData$temp_html <- tempfile(fileext = ".html")
-  session$userData$temp_rtf <- tempfile(fileext = ".rtf")
-  session$userData$temp_md_dev <- tempfile(fileext = ".md")
-  session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
-  session$userData$temp_md_dev_2 <- tempfile(fileext = ".md")
-  session$userData$temp_rtf_dev_2 <- tempfile(fileext = ".rtf")
+  prepare_user_data(session)
   if (global$progress_bar) {
-    # progress bar code
     progress <- Progress$new(session, min = 0, max = 1, style = "old")
-    observeEvent(input$wizard, {
-      which_tab <- which(input$wizard == sapply(global$tabs, function(tab) tab$id))
-      tab_type <- global$tabs[[which_tab]]$type
-      tab_number <- global$tabs[[which_tab]]$tab_number
-      if (!is.null(tab_type)) {
-        matching_type <- sapply(
-          global$tabs,
-          function(tab) sum(c(is.null(tab$type), tab$type == tab_type))
-        )
-        den <- sum(matching_type)
-        num <- sum(matching_type[1:tab_number]) - 1
-        progress$set(value = num / den, message = "Questionnaire progress")
-      } else {
-        den <- length(global$tabs) - 1
-        num <- tab_number - 1
-        progress$set(value = num / den, message = "Questionnaire progress")
-      }
-    })
   }
-  # the reactive variables
+
+  # the reactive variables and observers
   all_inputs <- reactive({
     x <- reactiveValuesToList(input)
     out <- data.frame(
@@ -70,7 +43,7 @@ server <- function(input, output, session) {
       }
     }
     out$materiality <- factor(out$values, levels = c("N/A", "Low", "Medium", "High"), ordered = T)
-    out$materiality_num <- (as.integer(out$materiality) - 1)^2 + (as.integer(out$materiality) > 2)
+    out$materiality_num <- materiality_num(out$materiality)
     out$exposure_group <- sapply(out$item, function(class) {
       group_or_null <- global$exposure_classes[[class]]$group
       if (is.null(group_or_null)) {
@@ -82,7 +55,10 @@ server <- function(input, output, session) {
     out <- out[!is.na(out$type), ]
     return(out)
   })
+
   allow_report <- reactive({
+    # only if this is TRUE it is possible to go to report page
+    # currently requires at least one non-empty input
     return(
       any(
         input$rep_type == "sect",
@@ -130,10 +106,10 @@ server <- function(input, output, session) {
     }
   })
 
-  # update the available sectors
   observeEvent(
     input$wizard == paste0("page_", tab_name_to_number("report")),
     {
+      # update the available sectors
       req(input$wizard, input$rep_type)
       if (input$rep_type == "inst") {
         selection_type_filter <- input$inst_type
@@ -184,17 +160,18 @@ server <- function(input, output, session) {
     report_message()
   })
 
+  # HTML report production
   observeEvent(
     list(
       input$wizard == paste0("page_", tab_name_to_number("report")),
-      input$report_scenario_selection, input$report_sector_selection, report_message()
+      input$report_scenario_selection,
+      input$report_sector_selection,
+      report_message()
     ),
     {
       if (report_message() != "") {
         output$html_report <- renderUI("")
-        if (global$report_version >= 6) {
-          output$html_report_nav <- renderUI("")
-        }
+        output$html_report_nav <- renderUI("")
       } else {
         temp_html <- session$userData$temp_html
         showModal(
@@ -204,32 +181,49 @@ server <- function(input, output, session) {
             footer = NULL
           )
         )
-        if (global$report_version >= 5) {
-          settings <- get_report_settings(global$content_files, temp_html, session$userData$temp_md_scenario, "html", global$report_version, global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
-          if (global$report_version >= 7) {
-            produce_report(all_inputs(), settings, TRUE) %...>% {
-              removeModal()
-              result <- includeHTML(temp_html)
-              output$html_report <- renderUI(result)
-              output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
-            }
-          } else {
-            produce_report(all_inputs(), settings)
-            removeModal()
-            result <- includeHTML(temp_html)
-            output$html_report <- renderUI(result)
-            if (global$report_version >= 6) {
-              output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
-            }
-          }
-        } else {
-          stop("Error. Report version < 5 removed")
+        settings <- get_report_settings(
+          global$content_files, temp_html,
+          session$userData$temp_md_scenario,
+          "html",
+          global$dev,
+          input$rep_type,
+          input$inst_type,
+          input$report_sector_selection,
+          input$report_scenario_selection
+        )
+        produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
+          removeModal()
+          result <- includeHTML(temp_html)
+          output$html_report <- renderUI(result)
+          output$html_report_nav <- renderUI(includeHTML(paste0(substr(temp_html, 1, nchar(temp_html) - 5), "_toc.html")))
         }
       }
     }
   )
 
-  # download button inspired by: https://shiny.rstudio.com/articles/generating-reports.html
+  if (global$progress_bar) {
+    # progress bar update
+    observeEvent(input$wizard, {
+      which_tab <- which(input$wizard == sapply(global$tabs, function(tab) tab$id))
+      tab_type <- global$tabs[[which_tab]]$type
+      tab_number <- global$tabs[[which_tab]]$tab_number
+      if (!is.null(tab_type)) {
+        matching_type <- sapply(
+          global$tabs,
+          function(tab) sum(c(is.null(tab$type), tab$type == tab_type))
+        )
+        den <- sum(matching_type)
+        num <- sum(matching_type[1:tab_number]) - 1
+        progress$set(value = num / den, message = "Questionnaire progress")
+      } else {
+        den <- length(global$tabs) - 1
+        num <- tab_number - 1
+        progress$set(value = num / den, message = "Questionnaire progress")
+      }
+    })
+  }
+
+  # download buttons inspired by: https://shiny.rstudio.com/articles/generating-reports.html
   output$report <- downloadHandler(
     filename = "Climate Report.rtf",
     content = function(file, res_path = ifelse(system.file("www", package = "climate.narrative") == "", "inst/www", system.file("www", package = "climate.narrative"))) {
@@ -240,20 +234,20 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf, session$userData$temp_md_scenario_and_commons, "rtf", global$report_version, global$dev, input$rep_type, input$inst_type, input$report_sector_selection, input$report_scenario_selection)
-        if (global$report_version >= 7) {
-          produce_report(all_inputs(), settings, TRUE) %...>% {
-            removeModal()
-            file.copy(session$userData$temp_rtf, file)
-          }
-        } else {
-          produce_report(all_inputs(), settings)
-          removeModal()
-          file.copy(session$userData$temp_rtf, file)
-        }
-      } else { # old code below
-        stop("Error. Report version < 5 removed")
+      settings <- get_report_settings(
+        global$content_files,
+        session$userData$temp_rtf,
+        session$userData$temp_md_scenario_and_commons,
+        "rtf",
+        global$dev,
+        input$rep_type,
+        input$inst_type,
+        input$report_sector_selection,
+        input$report_scenario_selection
+      )
+      produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
+        removeModal()
+        file.copy(session$userData$temp_rtf, file)
       }
     }
   )
@@ -268,20 +262,19 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev, session$userData$temp_md_dev, "rtf", global$report_version, global$dev, "inst", "", "", "")
-        if (global$report_version >= 7) {
-          produce_report(all_inputs(), settings, TRUE) %...>% {
-            removeModal()
-            file.copy(session$userData$temp_rtf_dev, file)
-          }
-        } else {
-          produce_report(all_inputs(), settings)
-          removeModal()
-          file.copy(session$userData$temp_rtf_dev, file)
-        }
-      } else {
-        stop("Error. Report version < 5 removed")
+      settings <- get_report_settings(
+        global$content_files,
+        session$userData$temp_rtf_dev,
+        session$userData$temp_md_dev,
+        "rtf", global$dev,
+        "inst",
+        "",
+        "",
+        ""
+      )
+      produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
+        removeModal()
+        file.copy(session$userData$temp_rtf_dev, file)
       }
     }
   )
@@ -296,36 +289,56 @@ server <- function(input, output, session) {
           footer = NULL
         )
       )
-      if (global$report_version >= 5) {
-        settings <- get_report_settings(global$content_files, session$userData$temp_rtf_dev_2, session$userData$temp_md_dev_2, "rtf", global$report_version, global$dev, "test", "", "", "")
-        if (global$report_version >= 7) {
-          produce_report(all_inputs(), settings, TRUE) %...>% {
-            removeModal()
-            file.copy(session$userData$temp_rtf_dev_2, file)
-          }
-        } else {
-          produce_report(NULL, settings)
-          removeModal()
-          file.copy(session$userData$temp_rtf_dev_2, file)
-        }
-      } else {
-        stop("Error. Report version < 5 removed")
+      settings <- get_report_settings(
+        global$content_files,
+        session$userData$temp_rtf_dev_2,
+        session$userData$temp_md_dev_2,
+        "rtf",
+        global$dev,
+        "test",
+        "",
+        "",
+        ""
+      )
+      produce_report(all_inputs(), settings, TRUE, global$report_sleep) %...>% {
+        removeModal()
+        file.copy(session$userData$temp_rtf_dev_2, file)
       }
     }
   )
 
-  # finally, tab-specific server function collation
+  # finally, tab-specific contents:
+  # - switching function
   switch_page <- function(i) {
     i <- as.integer(i)
     updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
   }
-
+  # - server function collation
   for (tab in global$tabs) {
     tab$server(input, output, session, switch_page)
   }
 
-  # saving previous/next tab to session in order to make them dynamic (and not interfering with other sessions via global)
+  # - saving previous/next tab to session in order to make them dynamic (and not interfering with other sessions via global)
   session$userData$prev_tabs <- lapply(global$tabs, function(x) sum(x$initial_previous_tab))
   session$userData$next_tabs <- lapply(global$tabs, function(x) sum(x$initial_next_tab))
   names(session$userData$prev_tabs) <- names(session$userData$next_tabs) <- sapply(global$tabs, function(x) x$tab_name)
+}
+
+#' Helper function creating necessary data in session$userData
+#'
+#' @param session Shiny session.
+#' @importFrom uuid UUIDgenerate
+#'
+prepare_user_data <- function(session) {
+  session$userData$verification_code <- substring(uuid::UUIDgenerate(), 1, 6)
+  session$userData$captcha_validated <- FALSE
+  session$userData$temp_md_scenario <- tempfile(fileext = ".md")
+  session$userData$temp_md_scenario_and_commons <- tempfile(fileext = ".md")
+  session$userData$temp_html <- tempfile(fileext = ".html")
+  session$userData$temp_rtf <- tempfile(fileext = ".rtf")
+  session$userData$temp_md_dev <- tempfile(fileext = ".md")
+  session$userData$temp_rtf_dev <- tempfile(fileext = ".rtf")
+  session$userData$temp_md_dev_2 <- tempfile(fileext = ".md")
+  session$userData$temp_rtf_dev_2 <- tempfile(fileext = ".rtf")
+  return(invisible(NULL))
 }

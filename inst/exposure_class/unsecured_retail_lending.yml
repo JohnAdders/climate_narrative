@@ -1,6 +1,6 @@
 name: Unsecured Retail Lending
 test_report_position: 22
-description: |
+description: | 
   Unsecured retail lending refers to finance provided to individuals 
   where the amount borrowed is based upon the affordability of the applicant(s), on 
   a capital repayment basis, and covers three broad product types:
@@ -14,11 +14,11 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, unsecured retail lenders are likely to 
+      In Disorderly transition scenarios, unsecured retail lenders are likely to 
       be impacted by a potential decline in affordability as customers' cost of living increases 
       due to, for example, rising energy costs and retrofitting costs.
     always: |
-      In Disorderly transition risk scenarios, where the economy could experience a sharp 
+      In Disorderly transition scenarios, where the economy could experience a sharp 
       shock, typical drivers of unsecured losses, for example unemployment, are likely 
       to worsen, generating significant losses for unsecured retail lending.
       
@@ -26,27 +26,28 @@ transition:
       energy costs, as well as changes to minimum Efficiency Performance Certificate (EPC) standards, 
       which could create retrofitting costs for property owners, affecting customers' ability to 
       repay balances. This could impact affordability and generate losses for unsecured retail lending. 
-      The Disorderly transition risk scenarios could also lead to a moderate to severe reduction in GDP 
+      The Disorderly transition scenarios could also lead to a moderate to severe reduction in GDP 
       growth that could result in a significant increase of unsecured losses.
 
     high_materiality: |
       The following examples show how the Unsecured retail lending exposure could be impacted 
-      in a Disorderly transition risk scenario:
+      in a Disorderly transition scenario:
       
       - Rising energy costs are likely to put a significant strain on affordability, 
         which poses a risk to customers' ability to repay balances. Customers may resort to 
         increasing utilisation on their Credit Cards and PCA which increases indebtedness on 
         the book and, over time, will likely result in an increase in defaults. 
         
-        In Disorderly transition risk scenarios, electricity price increases in the short term, 
+        In Disorderly transition scenarios, electricity price increases in the short term, 
         peaking around 2035 in the Delayed transition scenario and 2030 in the Divergent Net Zero 
-        scenario. Oil and gas prices increase throughout, both more than tripling by 2050 in the 
-        Delayed transition scenario, and more than doubling by 2050 in the Divergent Net Zero scenario.
+        scenario, and remains above 2020 levels at 2050. Oil and gas prices increase throughout, both doubling
+        by 2050 in the Delayed transition scenario. Gas prices reach an almost four-fold increase by 2035 
+        in the Divergent Net Zero scenario.
         
-        ![Residential and Commercial Price](Residential_Energy_Price_Disorderly.png)
+      ![Residential and Commercial Price](unsecured_retail_lending_disorderly_price_final_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       - Retrofitting costs could also put a strain on affordability and generate significant 
         losses (if not mitigated by government subsidy) as consumers are required to spend 
@@ -57,7 +58,7 @@ transition:
         products, but from a risk perspective this is likely to have a short-term shock effect, 
         particularly for highly indebted customers that would not ordinarily meet minimum lending 
         criteria to receive further credit.
-      - Macro-economic effects. The Disorderly transition risk scenarios could also lead to a moderate 
+      - Macro-economic effects. The Disorderly transition scenarios could also lead to a moderate 
         to severe reduction in GDP growth which could result in a significant increase of unsecured losses 
         (due to, for example, increased unemployment). However, this may be somewhat mitigated by the bank 
         base rate outlook in these scenarios which can ease the strain on affordability.
@@ -76,34 +77,34 @@ transition:
       challenged as well. 
   low:
     exec_description: |
-      In Orderly transition risk scenarios, unsecured retail lenders are likely to be 
+      In Orderly transition scenarios, unsecured retail lenders are likely to be 
       impacted mainly due to a decline in affordability as customers' cost of living 
       increases due to, for example, rising energy costs and retrofitting costs.
     always: |
-      In Orderly transition risk scenarios, changing patterns in energy 
+      In Orderly transition scenarios, changing patterns in energy 
       generation may increase energy costs, and changes to minimum Efficiency Performance 
       Certificate (EPC) standards could create retrofitting costs for property owners, 
       affecting customers' ability to repay balances. This could impact affordability 
-      and generate losses for unsecured retail lending. The Orderly transition risk scenarios 
+      and generate losses for unsecured retail lending. The Orderly transition scenarios 
       could also lead to a limited fall in GDP growth which could result in further losses for unsecured lending.  
     high_materiality: |
       The following examples show how the unsecured retail lending exposure could be 
-      impacted in an Orderly transition risk scenario:
+      impacted in an Orderly transition scenario:
       
       - Rising energy costs are likely to put a strain on affordability which poses a 
         risk to customers' ability to repay balances. Customers may resort to increasing 
         utilisation on their Credit Cards and PCA which increases indebtedness on the book 
         and, over time, will likely result in an increase in defaults. 
         
-        In Orderly transition risk scenarios, electricity price increases in the short term, 
-        peaking around 2030, whilst oil and gas prices increase throughout, both more than 
-        tripling by 2050 in the Net Zero 2050 scenario, and more than doubling by 2050 in the 
-        Below 2&deg;C scenario.
+        In Orderly transition scenarios, electricity price increases in the short term, 
+        peaking around 2030, and remain above 2020 levels at 2050. Oil and gas prices increase 
+        throughout, with gas prices tripling by 2050 in the Net Zero 2050 scenario, and with both 
+        gas and oil doubling by 2050 in the Below 2&deg;C scenario.
         
-      ![Residential and Commercial Price](Residential_Energy_Price_Orderly.png)
+      ![Residential and Commercial Price](unsecured_retail_lending_orderly_price_final_energy.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       - Retrofitting costs could also put a strain on affordability and generate significant 
         losses (if not mitigated by government subsidy) as consumers are required to spend 
@@ -114,7 +115,7 @@ transition:
         products, but from a risk perspective this is likely to have a short-term shock effect, 
         particularly for highly indebted customers that would not ordinarily meet minimum lending 
         criteria to receive further credit.
-      - Macro-economic effects, the Orderly transition risk scenarios could lead to a limited fall 
+      - Macro-economic effects, the Orderly transition scenarios could lead to a limited fall 
         in GDP,  which could result in an increase unsecured loss (due to, for example, increased 
         unemployment). However, this may be somewhat mitigated by the bank base rate outlook in these 
         scenarios which can ease the strain on affordability.

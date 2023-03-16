@@ -1,9 +1,9 @@
-name: Savings and Retirement
+name: Savings and Retirement Underwriting Class
 test_report_position: 20
-description: |
-  The **Savings and Retirement** underwriting class covers products such as
-  pensions, investment bonds, with-profits, unit-linked investments and
-  annuities, written on an individual or group basis.
+description: | 
+  The **savings and retirement** underwriting class covers products such as
+  pensions, annuities and investment bonds, written on with-profits, unit-linked 
+  and an individual or group basis.
   
   Customers may buy products to save towards financial goals, e.g. retirement 
   through regular contributions or ad hoc lump sums. These monies are then 
@@ -18,16 +18,16 @@ description: |
 transition:
   high:
     exec_description: |
-      Savings and Retirement underwriting exposures could be impacted in 
-      Disorderly transition risk scenarios, as the moderate to severe 
+      Savings and retirement underwriting exposures could be impacted in 
+      Disorderly transition scenarios, as the moderate to severe 
       reduction in GDP could reduce real household income. The reduction in 
       CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
       in morbidity.
     always: |
-      Disorderly transition risk scenarios, driven by late policy 
+      Disorderly transition scenarios, driven by late policy 
       action to enable a "fossil recovery" out of the COVID-19 economic crisis, 
-      would result in CO<sub>2</sub> emissions increasing until 2030 before 
-      rapidly decreasing after 2030 as carbon prices are increased to compensate 
+      would result in CO<sub>2</sub> emissions increasing until 2030 and 
+      rapidly decreasing thereafter as carbon prices are increased to compensate 
       for the early inaction. In the Divergent Net Zero scenario CO<sub>2</sub> 
       emissions start to be reduced immediately but divergently, ultimately leading 
       to a significant reduction in CO<sub>2</sub> emissions by 2050. These reduced 
@@ -38,7 +38,7 @@ transition:
       reduced morbidity, i.e. as a result of increased policy terms higher rates of 
       saving and fewer lapses.
       
-      These scenarios could result in a moderate to severe reduction in GDP growth 
+      The Disorderly transition scenarios could result in a moderate to severe reduction in GDP growth 
       over the period of the transition, stabilising thereafter. This would lead to 
       reduced household incomes and could result in policyholder pessimism regarding 
       longer-term economic outcomes, leading to lower savings rates, increased lapses, 
@@ -47,7 +47,7 @@ transition:
     high_materiality: |
       **GDP growth effect**
 
-      Under Disorderly transition risk scenarios, a moderate to severe 
+      Under Disorderly transition scenarios, a moderate to severe 
       reduction in GDP growth is likely with associated repercussions on the levels 
       of health and social care spending. Slower GDP growth would potentially 
       constrain the growth in spending on NHS, public health, social care, 
@@ -63,10 +63,10 @@ transition:
       concentrated in sectors with greater exposure to transition risks (e.g. oil 
       and gas). 
       
-      In Disorderly transition risk scenarios, transition costs are likely to be high and 
+      In Disorderly transition scenarios, transition costs are likely to be high and 
       concentrated in a short time. This may be expected to increase expenses. 
       The moderate to severe reduction in GDP growth would increase the risk of 
-      guarantees biting on legacy policies. This would in turn impact the impacted 
+      guarantees biting on legacy policies. This would in turn impact the affected 
       companies' bottom line and would likely result in more stringent capital 
       requirements as this risk emerges. Companies could face operational risk from 
       model error if past experience ceases to be a reliable predictor for future 
@@ -80,7 +80,17 @@ transition:
       greenhouse gases (such as CO<sub>2</sub> and CH<sub>4</sub>) that lead to 
       warming but do not directly impact health, and the production of pollutants 
       (such as particulate matter and oxides of nitrogen) that are more directly 
-      harmful to health.
+      harmful to health. In the Disorderly transition scenarios, emissions of
+      hazardous pollutants, for example black carbon, volatile organic compounds,
+      and oxides of nitrogen, are projected to decrease. Emission trajectories for
+      oxides of nitrogen (NOx) can be seen here, but other hazardous pollutants in 
+      the NGFS could equally be referenced as a guide as these have broadly similar 
+      trajectories.
+      
+      ![NOx emissions](savings_and_retirement_disorderly_emissions_nox.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
       
       Whilst it may be the case that reductions in greenhouse gas emissions are 
       typically correlated with reductions in harmful pollutants, this is not 
@@ -93,7 +103,7 @@ transition:
       - If we increase biomass burning, this may reduce the greenhouse effect
         but actually contribute to local particulate pollution.
 
-      However, under Disorderly transition risk scenarios, there is 
+      However, under Disorderly transition scenarios, there is 
       certainly potential for improved health outcomes due to reduced air 
       pollution and therefore fewer deaths. For example, reduced pollution 
       could result in a reduction of cancers (especially lung) and respiratory 
@@ -110,7 +120,7 @@ transition:
 
       **Impact on pricing or product design**
 
-      Under Disorderly transition risk scenarios, the impact on pricing and product design 
+      Under Disorderly transition scenarios, the impact on pricing and product design 
       is likely to be modest. Though price adjustments may be necessary due to 
       expected impacts on mortality (as described above), as well as reduced market 
       sentiment and increased credit risk (due to impact on GDP growth 
@@ -137,13 +147,13 @@ transition:
 
   low:
     exec_description: |
-      Savings and Retirement underwriting exposures could be impacted in the 
-      Orderly transition risk scenarios, as the limited reduction in GDP 
+      Savings and retirement underwriting exposures could be impacted in the 
+      Orderly transition scenarios, as the limited reduction in GDP 
       could reduce real household income. The immediate and smooth reduction 
       in CO<sub>2</sub> emissions could also lead to an increase in longevity and reduction 
       in morbidity.
     always: |
-      The Orderly transition risk scenario could lead to a limited relative 
+      The Orderly transition scenarios could lead to a limited relative 
       reduction in GDP growth. However, any negative impacts on GDP are likely to 
       be smaller than in other scenarios. A reduction in GDP growth could result in 
       reduced real household income. In turn this may lead to lower savings rates 
@@ -152,7 +162,7 @@ transition:
       longer-term economic outlook is unaffected, new business sales should not be 
       negatively impacted and the impact on saving rates and lapses should be limited.
       
-      Under these scenarios, an immediate and smooth reduction in CO<sub>2</sub> 
+      Under Orderly transition scenarios, an immediate and smooth reduction in CO<sub>2</sub> 
       emissions would be expected by 2050. This could lead to increased policyholder 
       longevity if pollutants also reduce over this period, resulting in annuities being 
       paid out for longer durations than currently expected, negatively impacting profit 
@@ -160,12 +170,18 @@ transition:
       to savings and retirement products becoming more profitable from longer durations in 
       force and fewer lapses. Offsetting these impacts, on the other hand, would be the 
       expected reduction in household incomes, which could negatively impact health outcomes 
-      and thus reduce policyholder longevity.
+      and thus increase policyholder mortality.
 
     high_materiality: |
-      Under the Orderly transition risk scenarios, changes in diet (e.g. 
-      reduction in calorie intake or shift to plant-based diets) may result in 
-      lower levels of obesity, diabetes and cardiovascular disease, and may also 
+      In Orderly transition scenarios, the impact on the savings and retirement underwriting
+      class could depend on GDP as well as other effects. For example:
+      
+      **Diet effect**
+      
+      Under the Orderly transition scenarios consumers may seek to reduce their carbon footprint
+      through changes in diet, for example away from carbon intensive processes such as livestock raising
+      (e.g. through reduction in calorie intake or shift to plant-based diets). This 
+      may result in lower levels of obesity, diabetes and cardiovascular disease, and may also 
       improve mortality rates, but may also result in malnutrition which would have 
       a negative impact on health.
 
@@ -179,17 +195,26 @@ transition:
       
       Transition costs are likely to be low and spread out over a moderate time period. 
       This may be expected to increase expenses, in particular from the regulatory 
-      interventions necessary under an orderly scenario.
+      interventions necessary under an Orderly transition scenario.
 
       **Pollution effect**
 
       It seems reasonable to assume that a reduction in greenhouse gas emissions 
       could be associated with cleaner air and therefore positive health outcomes. 
       However, it is important to differentiate between the production of greenhouse 
-      gases (such as CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not 
+      gases (such as CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but does not 
       directly impact health, and the production of pollutants (such as particulate 
-      matter and oxides of nitrogen) that are more directly harmful to health. 
+      matter and oxides of nitrogen) that are more directly harmful to health. In Orderly
+      transition risk scenarios, emissions of hazardous pollutants, for example black carbon,
+      volatile organic compounds, and oxides of nitrogen, are projected to decrease. Emission
+      trajectories for oxides of nitrogen (NOx) can be seen here, but other hazardous pollutants 
+      in the NGFS could equally be referenced as a guide as these have broadly similar trajectories.
 
+      ![NOx emissions](savings_and_retirement_orderly_emissions_nox.png)
+      
+      **Source:**
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      
       Whilst it may be the case that reductions in greenhouse gas emissions are 
       typically correlated with reductions in harmful pollutants, this is not necessarily 
       the case. For example:
@@ -201,7 +226,7 @@ transition:
       - If we increase biomass burning this may reduce the greenhouse effect but
         actually contribute to local particulate pollution.
 
-      However, under the Orderly transition risk scenarios, there is certainly 
+      However, under the Orderly transition scenarios, there is certainly 
       potential for improved health outcomes due to reduced air pollution and therefore 
       fewer deaths. For example, reduced pollution could result in a reduction of 
       cancers (especially lung) and respiratory diseases (e.g. asthma, respiratory 
@@ -225,8 +250,8 @@ transition:
       
       Even without price adjustments, the level of new business sales may be impacted if 
       customer optimism is low regarding future economic outlook. That is, preferring to 
-      spend today rather than save for an uncertain future. The likelihood of this appears 
-      low, however, under an orderly scenario.
+      spend today rather than save for an uncertain future. However, the likelihood of this appears 
+      low, under an Orderly transition scenario.
       
       Customers may prefer to buy or switch to sustainable investment products, decreasing 
       inflows for those organisations who do not have such products in their range and 
@@ -314,7 +339,7 @@ physical:
         differ by location. Furthermore, research indicates a link between high
         temperatures and high temperature changes with increased cardiovascular
         risk, e.g. heart attacks which could potentially lead to lower savings
-        rates and increased lapses for savings products and shorter payment
+        rates and increased lapses for savings products but also shorter payment
         periods for annuity providers.
 
       **Impact on pricing or product design**
@@ -337,7 +362,7 @@ physical:
       Savings could therefore be expected to be accessed sooner, increasing lapse 
       rates and asset outflows within impacted regions. Inflows could also be 
       correspondingly lower as savings rates reduce, due to higher morbidity 
-      affecting policyholders' capacity to earn and save income. Any increase in 
+      affecting policyholders' capacity to earn and save income. An increase in 
       lapse rates could drive up per policy expenses (as a fixed cost base is 
       spread out over fewer policies). Severe physical risk impacts to company 
       infrastructure (e.g. data centres and offices) could drive up unit costs. 
@@ -387,7 +412,7 @@ physical:
       and gas).
       
       The moderate to severe reduction in GDP growth would increase the risk of 
-      guarantees biting on legacy policies. This would in turn impact the impacted 
+      guarantees biting on legacy policies. This would in turn impact the affected 
       companies' bottom line and would likely result in more stringent capital 
       requirements as this risk emerges.
 
@@ -449,5 +474,3 @@ physical:
       considered to be laggards in their reporting and reaction to climate change. 
       This could increase lapse rates, reduce premiums and reduce new business 
       sales.
-
-

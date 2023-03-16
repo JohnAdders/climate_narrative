@@ -18,7 +18,7 @@ delete_empty_rows_and_columns(
 \item{ignore_cols}{indices of columns which should be ignored for emptiness check}
 }
 \value{
-input object without rows and columns where all entries are empty (i.e. NA or "")
+input object without rows and columns where all entries are empty (i.e. NA or ""). NULL when the input is all empty
 }
 \description{
 Helper function - the name is self-explanatory

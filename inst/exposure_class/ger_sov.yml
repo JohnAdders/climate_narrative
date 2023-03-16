@@ -1,7 +1,7 @@
 name: Germany sovereign
 test_report_position: 30
 group: sovereigns
-description: |
+description: | 
   Sovereign (or government) bonds are debt securities issued by governments to
   support government spending. Governments agree to repay the face value of the
   bond at a specified maturity date and may also pay interest, in the form of
@@ -38,7 +38,7 @@ description: |
     established in the US, where these bonds are known as municipal bonds. Other
     developed markets also issue provincial/local government bonds.
 
-  In this paper we refer to a '20-notch' sovereign bond rating scale translated from
+  In this report we refer to a '20-notch' sovereign bond rating scale translated from
   S&P's alphabetical standardized rating scale (see Appendix), which is used to outline 
   changes to sovereign bond ratings, as is common in surrounding literature. 
   Impacts of climate change on sovereign bond ratings are discussed in reference 
@@ -52,7 +52,7 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, delayed or divergent policy 
+      In Disorderly transition scenarios, delayed or divergent policy 
       reaction, societal change and national energy strategies could lead to 
       significant increases in carbon prices. This could have an impact on 
       sovereign bonds in particular in countries with a strong level of dependence 
@@ -61,7 +61,7 @@ transition:
       In the Delayed transition risk scenario, late policy action enables a
       "fossil recovery" out of the economic crisis brought about by COVID-19.
       CO<sub>2</sub> emissions increase until 2030 before policies drive a
-      sharp decrease after 2030 to compensate for the inaction beforehand. This
+      sharp decrease after 2030 to compensate for the previous inaction. This
       results in smaller increases in carbon taxes compared to Orderly
       transition risk scenarios until 2030, but significantly higher carbon taxes
       thereafter as countries attempt to make up lost ground. In the Divergent
@@ -76,8 +76,8 @@ transition:
 
       On the other hand, government spending (through subsidies and investment)
       could encourage consumer spending and investment in the use of renewables,
-      energy efficiency, energy storage, etc, leading to increases in fiscal
-      revenues. The Disorderly transition risk scenarios could also lead to a reduction in
+      energy efficiency, energy storage, etc., leading to increases in fiscal
+      revenues. The Disorderly transition scenarios could also lead to a reduction in
       GDP growth. This would have a negative impact on German sovereign bonds.
 
     high_materiality: |
@@ -88,64 +88,74 @@ transition:
       carbon-intensive sectors such as oil and gas are consequently some of the
       most vulnerable to transition risk. 
       
-      The impact of Disorderly transition risk scenarios on fiscal revenues is largely 
-      dependent on the efficiency of government spending in trying to mitigate 
+      The impact of Disorderly transition scenarios on fiscal revenues is largely 
+      dependent on the efficiency of government spending in mitigating 
       these risks. While the use of taxes to incentivize more environmentally 
       friendly production, transportation and consumption patterns can help economies 
       transition to a net-zero scenario, a poorly managed transition policy could 
       lead to shocks in economic activity. Depending on the respective country's 
-      size of fossil fuel or renewable energy sectors, green policies, such as 
-      carbon taxes would impact, positively or negatively, firms' profitability, 
-      which would, in turn, impact fiscal revenues (for more detail see
+      size of fossil fuel or renewable energy sectors, green policies such as 
+      carbon taxes would impact, positively or negatively, firms' profitability 
+      which would in turn impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      Germany's electricity mix is still heavily dependent on fossil fuels. While coal 
-      generation has halved since 2015, it has declined at a much slower rate (-51%) than 
-      in other countries such as the UK (-93%) or Italy (-65%). Natural gas has more 
-      than doubled its share, and total fossil generation has fallen by only 31%. Around two 
-      thirds of electricity generation emissions in 2020 came from lignite and hard coal-fired power 
-      plants, and 16% of the country's total emissions still came from power and heat generation from 
-      coal-fired power plants. 
-      
-      In 2020, emissions from Germany's energy supply sector stood at 221 MtCO2e, a reduction of 
-      14.5% compared to the previous year. Emissions from electricity generation in 2020 fell 
-      by 16% compared to 2019. Compared to 1990, emissions from electricity generation fell by almost 
-      half. The share of renewables in Germany's electricity generation mix has been growing steadily
-      since the 1990s, and reached ~35% in 2018, exceeding global and EU averages.
+      Germany's electricity mix is still heavily dependent on fossil fuels. While 
+      coal generation has halved since 2015, but its share within the electricity mix 
+      rose to 29% in 2021 (23% in 2020). Natural gas makes up 16% of Germany's electrical
+      mix. Around two thirds of Germany's electricity generation emissions in 2021 came from
+      lignite and hard coal-fired power plants.
 
-      ![Share of Renewable Electricity Generation](Germany_sov.png)
+      There has been a significant rise in emissions in 2021, total emissions from Germany's energy
+      supply sector stood at 247 MtCO2e, an increase  of 12.4% or 27 MtCO2e compared to the previous 
+      year. Emissions from electricity generation rose by 14% in 2021. This is due to an increase in
+      coal use and a decreased use of natural gas in the second half of the year due to rise of gas prices. 
+
+      The share of renewables in Germany's electricity generation mix has been growing steadily since the
+      1990s, and reached ~44% in 2020, exceeding global and EU averages.
+
+      ![Share of Renewable Electricity Generation](sov_germany.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
+      The new German government, in power since December 2021, plans to significantly accelerate domestic 
+      climate policy implementation, aiming to meet their domestic emissions target of a 65% reduction below 1990 
+      levels in 2030. The new government intends to phase out coal by 2030 by supporting renewables and making coal 
+      power obsolete.
+
+      Measures of the German government to cope with the illegal Russian invasion in Ukraine and related energy security
+      issues are partially positive with new plans to expand renewables, but also partially counterproductive to climate policy 
+      (e.g. fast expansion of liquid natural gas import infrastructure).
+
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, disorderly transition could result in significant GDP
-      losses. In these scenarios, world GDP losses from both physical and transition risk 
-      are estimated to be between -4.2% and -4.8% by 2050. World GDP impacts from transition 
-      risks are negative as the speed of the transition combines with investment uncertainty 
-      and affects consumption and investment.  
-      
-      In these scenarios, there is a large mix of physical and transition risks in 2050. 
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of a Disorderly 
-      scenario on Germany's GDP compared to 2015 would be significant, ranging from -3.7% to -4.5% by 2050.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it
+      receives. Assuming taxation rates remain unchanged, a decrease in GDP could lead to a 
+      reduction in fiscal revenue. According to estimates from the NGFS, the Disorderly transition
+      risk scenario could result in significant GDP losses. In these scenarios, world GDP losses from chronic
+      physical and transition effects are estimated to be between -4.6% and -4.7% (relative to a
+      baseline with no transition or physical risks) by 2050. World GDP impacts from transition risks
+      are negative as the speed of the transition combines with investment uncertainty and affects 
+      consumption and investment.
 
+      In these scenarios, there is a large mix of physical and transition risks in 2050. Based on the 
+      IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of a Disorderly scenario
+      on Germany's GDP, from chronic physical and transition effects, would be significant, ranging from -3%
+      to -3.5% (relative to a baseline with no transition or physical risks) by 2050.
+      
       **Downgrading of credit ratings effect**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends could have
       implications for ratings in coming decades. According to the 2021 "Rising
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
       Creditworthiness" working paper from the University of Cambridge, in
-      Disorderly transition risk scenarios, most developed countries would be
+      Disorderly transition scenarios, most developed countries would be
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. 
+      ratings as it is easier to downgrade from an AAA rating than a C rating. 
       
       According to the study, in a transition risk (RCP 2.6) scenario, Germany would have a downgrade below 
       one notch by 2100, increasing the cost of borrowing for the German government by 
@@ -153,13 +163,13 @@ transition:
 
   low:
     exec_description: |
-      In Orderly transition risk scenarios, immediate policy reaction, 
+      In Orderly transition scenarios, immediate policy reaction, 
       societal change and national energy strategies could lead to significant 
       increases in carbon prices. This could have an impact on sovereign bonds 
       in particular in countries with a strong level of dependence on fossil 
       fuel energy sources.
     always: |
-      In Orderly transition risk scenarios, immediate policy reaction,
+      In Orderly transition scenarios, immediate policy reaction,
       societal change and national energy strategies could lead to significant and
       immediate increases in carbon prices. This could have a strong impact on
       fiscal revenues in countries with a strong level of dependence on fossil
@@ -169,7 +179,7 @@ transition:
       
       On the other hand, government spending (through subsidies and investment) 
       could encourage consumer spending and investment in the use of renewables, 
-      energy efficiency, energy storage, etc, leading to increases in fiscal revenues. 
+      energy efficiency, energy storage, etc., leading to increases in fiscal revenues. 
       These scenarios could also lead to a limited relative reduction in GDP growth. 
       This would have a limited, neutral impact on German sovereign bonds.
 
@@ -179,71 +189,79 @@ transition:
       Transition risks for sovereigns are largely associated with the exposure
       to carbon intensive sectors and technologies. Based on the IIASA NGFS
       Climate Scenarios, REMIND model by 2050, in Orderly transition risk
-      scenarios, fossil fuels represent only ~27% of global energy demand
-      compared to ~83% in 2020. Countries with carbon-intensive sectors such as
+      scenarios, fossil fuels represent only ~25% to ~ 40% of global energy demand
+      compared to ~85% in 2020. Countries with carbon-intensive sectors such as
       oil and gas are consequently some of the most vulnerable to transition
       risk.
 
-      The impact from the Orderly transition risk scenarios on fiscal revenues
-      is largely dependent on the efficiency of government spending in trying to
-      mitigate these risks. While the use of taxes to incentivize more
+      The impact from the Orderly transition scenarios on fiscal revenues
+      is largely dependent on the efficiency of government spending in 
+      mitigating these risks. While the use of taxes to incentivize more
       environmentally friendly production, transportation and consumption
       patterns can help economies transition to a net-zero scenario, a poorly
       managed transition policy could lead to shocks in economic activity.
       Depending on the respective country's size of fossil fuel or renewable
-      energy sectors, green policies, such as carbon taxes would impact,
-      positively or negatively, firms' profitability, which would, in turn,
+      energy sectors, green policies such as carbon taxes would impact,
+      positively or negatively, firms' profitability which would in turn
       impact fiscal revenues (for more detail see
       [How could climate change impact sovereign risk](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}).
 
-      Germany's electricity mix is still heavily dependent on fossil fuels. While coal 
-      generation has halved since 2015, it has declined at a much slower rate (-51%) than in 
-      other countries such as the UK (-93%) or Italy (-65%). Natural gas has more than doubled 
-      its share, and total fossil generation has fallen by only 31%. Around two thirds of electricity 
-      generation emissions in 2020 came from lignite and hard coal-fired power plants, and 
-      16% of the country's total emissions still came from power and heat generation from 
-      coal-fired power plants. 
-      
-      In 2020, emissions from Germany's energy supply sector stood at 221 MtCO2e, a reduction of 
-      14.5% compared to the previous year. Emissions from electricity generation in 2020 fell 
-      by 16% compared to 2019. Compared to 1990, emissions from electricity generation fell by almost 
-      half. The share of renewables in Germany's electricity generation mix has been growing steadily 
-      since the 1990s, and reached ~35% in 2018, exceeding global and EU averages.
+      Germany's electricity mix is still heavily dependent on fossil fuels. While 
+      coal generation has halved since 2015, its share within the electricity mix 
+      rose to 29% in 2021 (from 23% in 2020). Natural gas makes up 16% of Germany's
+      electrical mix. Around two thirds of Germany's electricity generation emissions
+      in 2021 came from lignite and hard coal-fired power plants.  
 
-      ![Share of Renewable Electricity Generation](Germany_sov.png)
+      There has been a significant rise in emissions in 2021, total emissions from Germany's
+      energy supply sector stood at 247 MtCO2e, an increase  of 12.4% or 27 MtCO2e compared to
+      the previous year. Emissions from electricity generation rose by 14% in 2021. This is due 
+      to an increase in coal use and a decreased use of natural gas in the second half of the year
+      due to rise of gas prices. 
+
+      The share of renewables in Germany's electricity generation mix has been growing steadily since
+      the 1990s, and reached ~44% in 2020, exceeding global and EU averages.
+
+      ![Share of Renewable Electricity Generation](sov_germany.png)
 
       **Source:**
       [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
 
+      The new German government, in power since December 2021, plans to significantly accelerate domestic 
+      climate policy implementation, aiming to meet their domestic emissions target of a 65% reduction below 
+      1990 levels in 2030. The new government intends to phase out coal by 2030 by supporting renewables and 
+      making coal power obsolete.
+
+      Measures of the German government to cope with the illegal Russian invasion in Ukraine and related energy
+      security issues are partially positive with new plans to expand renewables, but also partially counterproductive 
+      to climate policy (e.g. fast expansion of liquid natural gas import infrastructure).
+
       **GDP growth effect**
 
-      A change in a country's GDP could have an impact on the level of fiscal
-      revenue it receives. Assuming taxation rates remain unchanged, a decrease
-      in GDP could lead to a reduction in fiscal revenue. According to estimates
-      from the NGFS, the Orderly transition risk scenarios would generally
-      limit GDP losses. The world GDP losses are estimated to be between -1.5%
-      and -2.5% by 2050. World GDP impacts from transition risk are slightly positive
-      in the Net Zero 2050 scenario as negative impacts on demand from higher
-      carbon tax prices and energy costs are more than offset by the recycling of
-      carbon revenues into government investment and lower employment taxes.
-      
-      Based on the IIASA NGFS Scenario Explorer v2.0, the expected impact of the 
-      Orderly Net Zero scenario on Germany's GDP compared to 2015 would be non-significant, 
-      ranging from -0.2% to -0.7% by 2050.
+      A change in a country's GDP could have an impact on the level of fiscal revenue it receives. Assuming taxation rates 
+      remain unchanged, a decrease in GDP could lead to a reduction in fiscal revenue. According to estimates from the NGFS,
+      the Orderly transition scenarios would generally limit GDP losses. The world GDP losses, from chronic physical and 
+      transition effects, are estimated to be around -3% (relative to a baseline with no transition or physical risks) by 2050.
+      World GDP impacts from transition risk are moderately negative in the Net Zero 2050 scenario as negative impacts on demand
+      from higher carbon prices and energy costs are only partially offset by the recycling of carbon revenues into government
+      investment and lower employment taxes.
+
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of the Orderly Net Zero scenario
+      on Germany's GDP from chronic physical and transition effects would be significant, ranging from -1.7% to -2.2% (relative to 
+      a baseline with no transition or physical risks) by 2050.
 
       **Downgrading of credit ratings**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends could have
       implications for ratings in coming decades. According to the 2021 "Rising
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
       Creditworthiness" working paper from the University of Cambridge, in 
-      Orderly transition risk scenarios, most developed countries would be
+      Orderly transition scenarios, most developed countries would be
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. 
+      ratings as it is easier to downgrade from an AAA rating than a C rating. 
       
       According to the study, in a transition risk (RCP 2.6) scenario, Germany would 
       have a downgrade below one notch by 2100, increasing the cost of borrowing for 
@@ -263,7 +281,7 @@ physical:
       insurance premiums. This would result in a material negative impact on GDP
       globally by 2100 and hit governments' finances. Extreme weather events
       such as wildfires, floods, and heat waves could become more prevalent,
-      impacting households, businesses, cities and states. There are also likely
+      impacting households, businesses, cities, and states. There are also likely
       indirect risks, such as those caused by international migration (e.g.
       increased inequalities, labour right issues, social conflicts), or via
       biodiversity loss, or to industries' supply chains and international trade.
@@ -286,7 +304,7 @@ physical:
       **GDP growth effect**
 
       In a high physical risk scenario, global mean temperatures could increase
-      across the world by 2.5&deg;C to 3&deg;C compared to pre-industrial levels 
+      across the world by 2.4&deg;C to 3&deg;C compared to pre-industrial levels 
       (with land warming faster than oceans and high latitudes experiencing higher 
       warming). These changes will lead to chronic changes in living conditions 
       affecting health, labour productivity, agriculture, ecosystems, and sea-level 
@@ -301,17 +319,17 @@ physical:
       expected to reshape the global economy by reducing average global incomes
       by roughly 23% by 2100, relative to scenarios without climate change.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, a hot house world scenario with high
-      physical risk could result in significant GDP losses. In a hot house world
-      scenario, the GDP losses are estimated to be between -2.8% and-4.8% by
-      2050\. World GDP losses from physical risks scale with the rise in
-      temperatures in the scenarios over time. Based on the IIASA NGFS Scenario
-      Explorer v2.0, the expected impact of a hot house world scenario on Germany's 
-      GDP compared to 2015 would be significant, ranging from -1.5% to -1.7% by 2050.
+      This declining productivity would affect GDP and government income, as tax revenues 
+      are dependent on economic output. Adaptation costs would cause further strain to fiscal
+      expenditures. Assuming taxation rates remain unchanged, a decrease in GDP could lead to
+      a reduction in fiscal revenue. According to estimates from the NGFS, a Hot house world 
+      scenario with high physical risk could result in significant GDP losses. In a Hot house
+      world scenario, world GDP losses from chronic physical and transition effects are estimated
+      to be between -5.7% and-6% (relative to a baseline with no transition or physical risk) by 2050.
+      World GDP losses from physical risks vary in line with different temperatures projected for each
+      scenario. Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact 
+      of a Hot house world scenario on Germany's GDP from chronic physical and transition effects would 
+      be significant, around -2.8% (relative to a baseline with no transition or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of 
@@ -320,7 +338,7 @@ physical:
 
       **Downgrading of credit ratings effect**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends will have
       implications for ratings in coming decades. According to the 2021 "Rising
@@ -330,7 +348,7 @@ physical:
       significantly downgraded, with an average downgrade exceeding two notches by
       2100. Most downgrades would be among top-rated countries. This does not
       necessarily reflect increased climate-related risks for these top-rated countries,
-      but greater sensitivity of the top ratings. It is easier to lose an AAA
+      but greater sensitivity of the top ratings as is easier to downgrade from an AAA
       rating than a C rating. 
       
       According to the study, in a high physical risk (RCP 8.5) scenario, Germany would have a 
@@ -348,7 +366,7 @@ physical:
       insurance premiums. This could result in a negative impact on GDP globally
       by 2100 and hit governments' finances. Extreme weather events such as wildfires, 
       floods, and heat waves could become more prevalent, impacting households, 
-      businesses, cities and states. There are also likely indirect risks, such as 
+      businesses, cities, and states. There are also likely indirect risks, such as 
       those caused by international migration (e.g. increased inequalities, labour 
       right issues, social conflicts), or via biodiversity loss, or to industries' 
       supply chains and international trade. 
@@ -371,26 +389,26 @@ physical:
       **GDP growth effect**
 
       In a low physical risk scenario, global mean temperatures could increase
-      across the world by 1.5&deg;C to 1.7&deg;C, compared to pre-industrial levels,
-      with land warming faster than oceans and high latitudes experiencing
-      higher warming giving rise to low physical risk. These changes could lead
+      across the world by 1.5&deg;C to 1.8&deg;C, compared to pre-industrial levels
+      (with land warming faster than oceans and high latitudes experiencing
+      higher warming). These changes could lead
       to chronic changes in living conditions affecting health, labour
       productivity, agriculture, ecosystems, and sea-level rise. It can also
       further change the frequency and severity of weather events such as
       heatwaves, droughts, wildfires, cyclones, and flooding.
 
-      This declining productivity would affect GDP and government income, as tax
-      revenues are dependent on economic output. Adaptation costs would cause
-      further strain to fiscal expenditures. Assuming taxation rates remain
-      unchanged, a decrease in GDP could lead to a reduction in fiscal revenue.
-      According to estimates from the NGFS, an Orderly transition with low
-      physical risk would generally limit GDP losses. In an Orderly scenario,
-      world GDP losses from both physical and transition risk are estimated to
-      be between -1.5% and -2.5% by 2050. World GDP losses from physical risks
-      scale with the rise in temperatures in the scenarios over time. Based on
-      the IIASA NGFS Scenario Explorer v2.0, the expected impact of the Orderly
-      Net Zero scenario on Germany's GDP compared to 2015, would be non-significant, 
-      ranging from -0.2% to -0.7% by 2050.
+      This declining productivity would affect GDP and government income, as tax revenues are
+      dependent on economic output. Adaptation costs would cause further strain to fiscal expenditures. 
+      Assuming taxation rates remain unchanged, a decrease in GDP could lead to a reduction in fiscal 
+      revenue. According to estimates from the NGFS, Orderly or Disorderly transitions with low physical risk would
+      generally limit GDP losses. In Orderly or Disorderly scenarios, world GDP losses from chronic physical and transition 
+      effects are estimated at around -3% or 5% repsectively (relative to a baseline with no transition or physical risks) by 2050. 
+      World GDP losses from physical risks vary in line with different temperatures projected for each scenario. 
+      
+      Based on the IIASA NGFS Scenario Explorer NiGEM model (REMIND inputs), the expected impact of an Orderly 
+      scenario on Germany's GDP from chronic physical and transition effects would be significant, ranging from 
+      -1.7% to -2.2% in an Orderly scenario and around -3% to -3.5% in a Disorderly scenario (relative to a baseline 
+      with no transition or physical risks) by 2050.
       
       Opportunities could arise from mitigation actions, including climate resilience 
       investments (e.g. to cope with flooding risks that would propel the growth of economic 
@@ -398,17 +416,17 @@ physical:
 
       **Downgrading of credit ratings**
 
-      Climate-related risks are, to some extent, priced in the sovereign bond market. No
+      Climate-related risks are, to some extent, priced into the sovereign bond market. No
       sovereign has yet been downgraded because of the climate-related risks it faces,
       although rating agencies anticipate that climate trends will have
       implications for ratings in coming decades. According to the 2021 "Rising
       Temperatures, Falling Ratings: The Effect of Climate Change on Sovereign
       Creditworthiness" working paper from the University of Cambridge, in a low
-      physical risk (NGFS Orderly) scenario, most developed countries would be
+      physical risk (NGFS Orderly or Disorderly) scenario, most developed countries would be
       marginally downgraded (1 notch or less). Most downgrades would be among
       top-rated countries. This does not necessarily reflect increased climate-related
       risks for these top-rated countries, but greater sensitivity of the top
-      ratings. It is easier to lose an AAA rating than a C rating. 
+      ratings as it is easier to downgrade from an AAA rating than a C rating. 
       
       According to the study, in a low physical risk (RCP 2.6) scenario, Germany would 
       have a downgrade below one notch by 2100, increasing the cost of borrowing for the 
@@ -417,20 +435,3 @@ appendix: |
   ![20 Notch Rating Scale](Sovereign_Rating_Scale.png)
 
   **Source:**: 20 Notch Rating Scale
-      
-references: |
-  - [The risks from climate change to sovereign debt in Europe - Bruegel, September 2021](http://bruegel.org/reader/The-risks-from-climate-change-to-sovereign-debt-in-Europe#how-exposed-are-european-sovereigns-to-climate-risk){target="\_blank"}
-
-  - [How could climate change impact sovereign risk - FTSE Russell, November 2019](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}
-
-  - [Rising Climate Falling Ratings Working Paper: The Effect of Climate Change on Sovereign Creditworthiness - Bennett Institute, March 2021](https://www.bennettinstitute.cam.ac.uk/media/uploads/files/Rising_Climate_Falling_Ratings_Working_Paper.pdf){target="\_blank"}
-
-  - [Helping countries and cities counter the risks of a changing climate - Notre Dame Global Adaptation Initiative](https://gain.nd.edu/){target="\_blank"}
-
-  - [Climate Action Tracker](https://climateactiontracker.org/){target="\_blank"}
-
-  - [Global non-linear effect of temperature on economic production - Semantic Scholar, November 2015](https://www.semanticscholar.org/paper/Global-non-linear-effect-of-temperature-on-economic-Burke-Hsiang/e6d91e300701bf9cb952a6ba0766252c42664127){target="\_blank"}
-
-  - [Migration as adaptation - Nature, October 2011](https://www.nature.com/articles/478477a){target="\_blank"}
-
-  - [Climate change-induced migration and violent conflict - ScienceDirect, July 2007](https://www.sciencedirect.com/science/article/abs/pii/S0962629807000601){target="\_blank"}

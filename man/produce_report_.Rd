@@ -4,12 +4,14 @@
 \alias{produce_report_}
 \title{Function where actual report production takes place}
 \usage{
-produce_report_(all_inputs, settings)
+produce_report_(all_inputs, settings, sleep)
 }
 \arguments{
 \item{all_inputs}{Table of user inputs}
 
 \item{settings}{list of lists containing all necessary settings}
+
+\item{sleep}{number of seconds to sleep during report production. Useful for checking async functionality}
 }
 \value{
 NULL, report produced to file

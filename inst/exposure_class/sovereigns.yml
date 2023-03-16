@@ -51,14 +51,14 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, delayed or divergent policy 
+      In Disorderly transition scenarios, delayed or divergent policy 
       reaction, societal change and national energy strategies could lead to 
       significant increases in carbon prices. This could have an impact on 
       sovereign bonds in particular in countries with a strong level of dependence 
       on fossil fuel energy sources.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, immediate policy reaction, 
+      In Orderly transition scenarios, immediate policy reaction, 
       societal change and national energy strategies could lead to significant 
       increases in carbon prices. This could have an impact on sovereign bonds 
       in particular in countries with a strong level of dependence on fossil 
@@ -81,7 +81,7 @@ appendix: |
   **Source**: 20 Notch Rating Scale
       
 references: |
-  - [The risks from climate change to sovereign debt in Europe - Bruegel, September 2021](http://bruegel.org/reader/The-risks-from-climate-change-to-sovereign-debt-in-Europe#how-exposed-are-european-sovereigns-to-climate-risk){target="\_blank"}
+  - [The risks from climate change to sovereign debt in Europe - Bruegel, September 2021](https://euagenda.eu/upload/publications/pc-2021-16-070721-1.pdf){target="\_blank"}
 
   - [How could climate change impact sovereign risk - FTSE Russell, November 2019](https://content.ftserussell.com/sites/default/files/research/How%20could%20climate%20change%20impact%20sovereign%20risk%20FINAL.pdf){target="\_blank"}
 

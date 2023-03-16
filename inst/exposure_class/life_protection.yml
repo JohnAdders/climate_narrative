@@ -1,7 +1,7 @@
-name: Life Protection
+name: Life Protection Underwriting Class
 test_report_position: 15
 description: |
-  The **Life Protection** underwriting class covers term assurance, whole life
+  The **life protection** underwriting class covers term assurance, whole life
   assurance, mortgage protection, income protection and critical illness written
   on either an individual or group basis.
 
@@ -24,22 +24,22 @@ description: |
 transition:
   high:
     exec_description: |
-      Life Protection underwriting exposures could be impacted in the Disorderly 
+      Life protection underwriting exposures could be impacted in the Disorderly 
       transition risk scenarios, as mortality and morbidity could be affected by 
       both a reduction in pollution which could in turn result in a reduction in 
       cancer (especially lung), respiratory diseases, heart attack and stroke as well as 
       potentially a decrease in healthcare spending. 
     always: |
-      Life Protection underwriting exposures could be impacted by the transition
+      Life protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Disorderly
       transition risk scenarios, the Delayed transition driven by a late policy
       action enables a "fossil recovery" out of the economic crisis
       brought about by COVID-19, results in CO<sub>2</sub> emissions increasing
       until 2030 and a decrease in CO<sub>2</sub> emissions after 2030 to
       compensate for the inaction beforehand. The Divergent scenario results in
-      an immediate by divergent reduction in CO<sub>2</sub> emissions. This
+      an immediate but divergent reduction in CO<sub>2</sub> emissions. This
       could lead to a significant reduction in CO<sub>2</sub> emissions by 2050,
-      probably associated with a drive towards cleaner air (due to for example,
+      which would likely be associated with a drive towards cleaner air (due to for example,
       an increase in electric vehicles replacing vehicles with internal
       combustion engines). This would cause a reduction in pollution which could
       in turn result into a reduction in cancer (especially lung), respiratory
@@ -57,19 +57,19 @@ transition:
       to differentiate between the production of greenhouse gases (such as
       CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, and the production of pollutants (such as
-      particulate matter and oxides of nitrogen (NOx)) that are more directly harmful
+      particulate matter and oxides of nitrogen (NO<sub>X</sub>)) that are more directly harmful
       to health.
       
       In these scenarios, emissions of hazardous pollutants, for example 
       black carbon, volatile organic compounds, and oxides of nitrogen, 
-      are projected to decrease. Emission trajectories for oxides of nitrogen 
-      (NOx) can be seen here, but other hazardous pollutants in the NGFS could 
+      are projected to decrease. Emission trajectories for NO<sub>X</sub> 
+      can be seen here, but other hazardous pollutants in the NGFS could 
       equally be referenced as a guide as these have broadly similar trajectories. 
       
-      ![NOx Emissions](Emissions_NOx_Disorderly.png)
+      ![NOx Emissions](life_protection_disorderly_emissions_nox.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"} 
 
       Whilst it may be the case that advances in one are correlated with
       advancements in the other (for example if diesel cars are replaced with
@@ -81,18 +81,18 @@ transition:
         fossil fuels to generate the electricity, then this could address the
         particulates but not the greenhouse effect.
 
-      - If we increase biomass burning this may reduce greenhouse effect but
-        actually contribute to local particulate pollution.
+      - If we increase biomass burning this may reduce greenhouse effect, but
+        contribute to local particulate pollution at the same time.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
         but without global buy-in, then this could also reduce the correlation.
 
-      In the Disorderly transition risk scenarios, there is potential
+      In the Disorderly transition scenarios, there is potential
       for fewer deaths and a positive outcome for health relating to air
       pollution, the reduction of pollution could result into a reduction of
-      cancers (especially lung) and respiratory diseases (e.g. asthma,
-      respiratory allergic disease, chronic obstructive pulmonary disease and
-      respiratory tract infections, but also cardiovascular disease ), although
+      cancers (especially lung), respiratory diseases (e.g. asthma,
+      respiratory allergic disease, chronic obstructive pulmonary disease,
+      respiratory tract infections), and cardiovascular disease; although
       we note that this is very much dependent on the fuel mix generating
       electrical power for the grid. For example, whilst waste-to-energy plants
       have similar particulate outputs to gas-fired power stations, biomass
@@ -107,7 +107,7 @@ transition:
       of mortality and morbidity claims. The specific scenario would depend on
       how government and society chose to allocate any GDP growth.
 
-      The Disorderly transition risk scenarios could lead to a
+      The Disorderly transition scenarios could lead to a
       moderate to severe fall in GDP growth. A slower GDP growth would
       potentially constrain the growth in spending on NHS, public health, social
       care, medical research etc. Assuming that greater funding is correlated to
@@ -122,32 +122,44 @@ transition:
       illness would be more sensitive to trajectories in cancer diagnosis
       techniques), it may be more appropriate to view this at the "overall"
       level rather than spuriously defining specific GDP allocation scenarios.
-
+      
+      **Carbon Tax**
+      
+      In Disorderly transition scenarios, global government carbon tax revenues 
+      increase in the short to medium term. Government revenue impacts the ability of 
+      governments to spend more on factors that can impact the nation's health and thus 
+      indirectly levels of mortality and morbidity claims. The specific scenario would
+      depend on how government and society chose to allocate revenue. However, higher revenue 
+      would give a bigger pot to potentially support higher spending on the NHS, public health,
+      social care, medical research etc. and so it is reasonable to assume the funding for these 
+      areas would be greater "on average" if government revenue is greater (without having to specifically
+      predict how spending is allocated by any future government).
+      
       **Impact on pricing or product design**
 
       To the extent that there is an impact on mortality, the
-      Disorderly transition risk scenarios could have an impact on the
+      Disorderly transition scenarios could have an impact on the
       pricing of life protection products, although this is likely to be modest.
   low:
     exec_description: |
-      Life Protection underwriting exposures could be impacted in the Orderly 
+      Life protection underwriting exposures could be impacted in the Orderly 
       transition risk scenarios, as mortality and morbidity could decrease due to 
       a reduction in pollution which could in turn result in a reduction in 
       cancer (especially lung), respiratory diseases, heart attack and stroke.
     always: |
-      Life Protection underwriting exposures could be impacted by the transition
+      Life protection underwriting exposures could be impacted by the transition
       effects related to changes in pollution levels. In Orderly
       transition risk scenarios, immediate policy reaction, societal change,
       national energy strategies, and carbon legislation could lead to an
-      immediate and smooth reduction in CO<sub>2</sub> emissions by 2050, and
-      this would probably be associated with a drive towards cleaner air (due to
+      immediate and smooth reduction in CO<sub>2</sub> emissions by 2050, which
+      would likely be associated with a drive towards cleaner air (due to
       for example, an increase in electric vehicles replacing vehicles with
       internal combustion engines). This would cause a reduction in pollution
       which could in turn result into a reduction in cancer (especially lung),
       respiratory diseases, heart attack and stroke.
 
-      The Orderly transition risk scenarios could also lead to a limited
-      fall in GDP. This could result in changes in the rate of growth in
+      The Orderly transition scenarios could also lead to a limited
+      fall in GDP, which could result in changes in the rate of growth in
       healthcare spending, which could impact mortality and morbidity.
     high_materiality: |
       **Pollution effect**
@@ -158,7 +170,7 @@ transition:
       to differentiate between the production of greenhouse gases (such as
       CO<sub>2</sub> and CH<sub>4</sub>) that lead to warming but do not
       directly impact health, and the production of pollutants (such as
-      particulate matter and oxides of nitrogen) that are more directly harmful
+      particulate matter and oxides of nitrogen(NO<sub>X</sub>)) that are more directly harmful
       to health.
 
       Whilst it may be the case that advances in one are correlated with
@@ -171,18 +183,18 @@ transition:
         fossil fuels to generate the electricity, then this could address the
         particulates but not the greenhouse effect.
 
-      - If we increase biomass burning this may reduce greenhouse effect but
-        actually contribute to local particulate pollution.
+      - If we increase biomass burning this may reduce greenhouse effect, but
+        contribute to local particulate pollution at the same time.
 
       - If pollution and greenhouse gases are reduced locally (e.g. in the UK)
         but without global buy-in, then this could also reduce the correlation.
 
-      In Orderly transition risk scenarios, there is potential for
+      In Orderly transition scenarios, there is potential for
       fewer deaths and a positive outcome for health relating to air pollution.
       The reduction in pollution could result in a reduction of cancers
-      (especially lung) and respiratory diseases (e.g. asthma, respiratory
-      allergic disease, chronic obstructive pulmonary disease and respiratory
-      tract infections), but also cardiovascular disease, although we note that
+      (especially lung), respiratory diseases (e.g. asthma, respiratory
+      allergic disease, chronic obstructive pulmonary disease, respiratory
+      tract infections), and cardiovascular disease; although we note that
       this is very much dependent on the fuel mix generating electrical power
       for the grid. For example, whilst waste-to-energy plants have similar
       particulate outputs to gas-fired power stations, biomass plants such as
@@ -192,15 +204,27 @@ transition:
       
       In these scenarios, emissions of hazardous pollutants, for example black 
       carbon, volatile organic compounds, and oxides of nitrogen, are projected 
-      to decrease. Emission trajectories for oxides of nitrogen (NOx) can be 
+      to decrease. Emission trajectories for NO<sub>X</sub> can be 
       seen here, but other hazardous pollutants in the NGFS could equally be 
       referenced as a guide as these have broadly similar trajectories.
 
-      ![NOx Emissions](Emissions_NOx_Orderly.png)
+      ![NOx Emissions](life_protection_orderly_emissions_nox.png)
       
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
+      **Carbon Tax**
+      
+      In Orderly transition scenarios, global government carbon tax revenues
+      increase (at least in the short to medium term). Government revenue impacts the
+      ability of governments to spend more on factors that can impact the nation's health
+      and thus indirectly levels of mortality and morbidity claims. The specific scenario
+      would depend on how government and society chose to allocate revenue. However, higher 
+      revenue would give a bigger pot to potentially support higher spending on the NHS, public health,
+      social care, medical research etc. and so it is reasonable to assume the funding for these areas 
+      would be greater "on average" if government revenue is greater (without having to specifically predict 
+      how spending is allocated by any future government).
+      
       **Impact on pricing or product design**
 
       To the extent that there is an impact on mortality, the Orderly
@@ -220,14 +244,14 @@ physical:
       underwriting class. Chronic gradual impacts (such as higher average
       temperatures and rises in the spread of vector-borne diseases) and acute
       effects due to changes in the frequency and severity of weather events
-      (such as floods, droughts, bushfires and extreme heat and cold) could
+      (such as floods, droughts, bushfires, and extreme heat and cold) could
       impact mortality and morbidity risks, although this is dependent on
       location and may not be as material in the UK. This could result in future
       prospective policyholders becoming more expensive to insure.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The high physical risk scenario could therefore also lead to a
+      scenarios and these vary in line with different temperatures projected for
+      each scenario. The high physical risk scenario could therefore also lead to a
       significant GDP impact which could negatively impact mortality and
       morbidity.
     high_materiality: |
@@ -280,13 +304,13 @@ physical:
         geographic location so any increased prevalence may also differ by
         location. Furthermore, research indicates a link between high
         temperatures and high temperature changes with increased cardiovascular
-        risk, e.g. heart attacks which could lead to higher critical illness
+        risk, e.g. heart attacks, which could lead to higher critical illness
         claims or income protection claims.
 
       In the Current Policies scenario, mean air temperatures, as well as mean 
       daily minimum and maximum air temperatures, are projected to increase.
       
-      ![Air Temperature](Air_Temp_High_Physical.png)
+      ![Air Temperature](life_protection_high_physical_climate.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}
@@ -311,17 +335,17 @@ physical:
       In the low physical risk scenario, climate change is likely to result in
       increased disruption that could have an impact on life protection
       underwriting class. Chronic gradual impacts (such as higher average global
-      temperatures and potentially rises in the spread of vector-borne diseases)
+      temperatures and potential rises in the spread of vector-borne diseases)
       and acute effects due to changes in the frequency and severity of weather
-      events (such as floods, droughts, bushfires and extreme heat and cold)
+      events (such as floods, droughts, bushfires, and extreme heat and cold)
       could impact mortality and morbidity risks, although this is dependent on
       location and may not be as material in the UK. This could result in future
       policyholders becoming more expensive to insure.
 
       Adverse impacts on world GDP from physical risks are assumed in the
-      scenarios and these scale with the rise in temperatures in the scenarios
-      over time. The low physical risk scenario could therefore also lead to a
-      GDP impact which could negatively impact mortality and morbidity.
+      scenarios and these vary in line with different temperatures projected 
+      for each scenario. The low physical risk scenario could therefore also 
+      lead to a GDP impact which could negatively impact mortality and morbidity.
     high_materiality: |
       **GDP growth effect**
 
@@ -330,7 +354,7 @@ physical:
       of mortality and morbidity claims. The specific scenario would depend on
       how government and society chose to allocate any GDP growth. However,
       higher GDP would give a bigger pot to potentially support higher spending
-      on the NHS, public health, social care, medical research etc. and so it is
+      on the NHS, public health, social care, medical research etc., and so it is
       reasonable to assume the funding for these areas would be greater "on
       average" if GDP is greater (without having to specifically predict how
       spending is allocated by any future government). Similarly, a lower GDP
@@ -372,14 +396,14 @@ physical:
         geographic location so any increased prevalence may also differ by
         location. Furthermore, research indicates a link between high
         temperatures and high temperature changes with increased cardiovascular
-        risk, e.g. heart attacks which could potentially lead to higher critical
+        risk, e.g. heart attacks, which could potentially lead to higher critical
         illness claims or income protection claims.
         
         In the Net Zero 2050 and Delayed transition scenarios, mean air temperatures, 
         as well as mean daily minimum and maximum air temperatures, are projected 
         to increase.
         
-      ![Air Temperature](Air_Temp_Low_Physical.png)
+      ![Air Temperature](life_protection_low_physical_climate.png)
       
       **Source:**
       [Climate Impact Explorer.](http://climate-impact-explorer.climateanalytics.org/){target="\_blank"}

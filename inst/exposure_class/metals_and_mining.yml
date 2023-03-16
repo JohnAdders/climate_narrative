@@ -1,14 +1,14 @@
-name: Mining
+name: Mining Sector
 test_report_position: 10
 description: |
-  In the present document, it is admitted that companies in the **Mining** 
+  In the present document, it is admitted that companies in the **mining** 
   sector (except Oil and Gas) primarily engage in mining, mine site development, 
   and beneficiating (i.e. preparing - crushing, screening, washing, sizing, 
-  concentrating, and flotation) metallic minerals and non-metallic minerals, 
+  concentrating and flotation) metallic minerals and non-metallic minerals, 
   including coal. The term "mining" is used in the broad sense to include ore 
-  extraction, quarrying, and beneficiating, customarily done at the mine site.
+  extraction, quarrying and beneficiating customarily done at the mine site.
 
-  The Mining sector includes companies that have complete responsibility for
+  The mining sector includes companies that have complete responsibility for
   operating mines and quarries (except oil and gas wells) and those that operate
   mines and quarries (except oil and gas wells) for others on a contract or fee
   basis. Also included are companies engaged in providing support activities
@@ -21,23 +21,23 @@ description: |
 transition:
   high:
     exec_description: |
-      In Disorderly transition risk scenarios, the changing patterns in 
+      In Disorderly transition scenarios, the changing patterns in 
       energy consumption will have a negative impact on carbon-intensive sectors 
       such as coal mining, however this contraction in demand could be offset by 
       the need to increase mining of other minerals vital to clean energy technologies.
     always: |
-      By 2050, in Disorderly transition risk scenarios, coal represents 0.47%
-      (in the Delayed Transition scenario) or 0.63% (in the Divergent Net Zero
-      scenario) of global energy demand, compared to 29% in 2020.
+      By 2050, in Disorderly transition scenarios, coal represents 1%
+      (in the Delayed Transition scenario) or 0.6% (in the Divergent Net Zero
+      scenario) of global energy demand, compared to 30% in 2020.
       Carbon-intensive sectors such as coal mining are consequently some of the
       most vulnerable to transition.
 
-      Coal Mining is a special case among its sectoral peers, the changing
+      Coal mining is a special case among its sectoral peers, the changing
       patterns in energy consumption, driven by societal change, national energy
       strategies, and carbon legislation, are likely to have a significant and
       long-term impact on demand for coal, or even lead to its total abandon,
       with no need for new coal mines or extensions of existing ones. The mining
-      of minerals needed for clean energy transitions (e.g. copper, lithium and
+      of minerals needed for clean energy transitions (e.g. copper, lithium, and
       nickel) could increases very rapidly, and mining expertise is likely to be
       highly valued in this context.
     high_materiality: |
@@ -51,7 +51,7 @@ transition:
         widely used in the renewable energy and electric vehicles segments.
 
       - **Increased costs** from paying a price on carbon emissions via tax or
-        cap & trade clearing price as well as increase in mine site costs
+        cap and trade clearing price as well as increase in mine site costs
         (labour, fuel, electricity cost at mine and mill). The increase in
         carbon price could lead to increases in operational costs. For example,
         gold mines in South Africa have the highest GHG intensity per unit of
@@ -60,30 +60,30 @@ transition:
         5% increase in operating costs, whilst South Africa could face a near
         25% increase.
 
-      In Disorderly transition risk scenarios, the mining sector is 
+      In Disorderly transition scenarios, the mining sector is 
       likely to be impacted. Overall, in terms of primary energy demand in the 
-      Disorderly transition risk scenarios, demand of coal falls rapidly (after 2030 in 
+      Disorderly transition scenarios, demand of coal falls rapidly (after 2030 in 
       both scenarios) and is replaced mostly by renewable energy sources.
 
-      ![Primary Energy](Primary_Energy_Disorderly_Mining.png)
+      ![Primary Energy](mining_disorderly_energy_mix.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      Primary energy prices (i.e. the spot price at the global market) could
+      Coal primary energy prices (i.e. the spot price at the global market) could
       also decrease compared to 2020 levels (more significantly in the Divergent
       scenario compared to the Delayed scenario).
 
-      ![Coal Price](Primary_Energy_Price_Coal_Disorderly_Mining.png)
+      ![Coal Price](mining_disorderly_price_coal.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4. model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      By 2050, the contraction in coal demand, in Disorderly transition risk
+      By 2050, the contraction in coal demand in Disorderly transition risk
       scenarios, could be offset by the need to increase mining of other raw
       minerals, including those vital to many clean energy technologies. Global
       demand for these critical minerals could rise rapidly. For example,
-      lithium (used for batteries), platinum, palladium and other catalyst
+      lithium (used for batteries), platinum, palladium, and other catalyst
       materials (used for hydrogen fuel cells and carbon capture), and rare
       earths (used for wind-turbine magnets), could all see a large increase in
       demand. More energy-efficient processing and widespread recycling, which
@@ -98,22 +98,22 @@ transition:
       which could be challenging from an operating perspective.
   low:
     exec_description: |
-      In Orderly transition risk scenarios, the changing patterns in energy 
+      In Orderly transition scenarios, the changing patterns in energy 
       consumption will have a significant negative impact on carbon-intensive sectors 
       such as coal mining, however, this contraction in demand could be offset by the 
       need to increase mining of other minerals vital to clean energy technologies.
     always: |
-      By 2050, in Orderly transition scenarios coal represents 0.86% (in the
-      Below 2&deg;C scenario) or 0.65% (in the Net Zero 2050 scenario) of global
-      energy demand, compared to 29% in 2020. Carbon-intensive sectors such as
+      By 2050, in Orderly transition scenarios coal represents 1.4% (in the
+      Below 2&deg;C scenario) or 0.6% (in the Net Zero 2050 scenario) of global
+      energy demand, compared to 30% in 2020. Carbon-intensive sectors such as
       coal mining are consequently some of the most vulnerable to transition.
 
-      Coal Mining is a special case among its sectoral peers, the changing
+      Coal mining is a special case among its sectoral peers, the changing
       patterns in energy consumption, driven by societal change, national energy
       strategies, and carbon legislation, are likely to have a significant and
       long-term impact on demand for coal, or even lead to its total abandon,
       with no need for new coal mines or extensions of existing ones. However, the mining
-      of minerals needed for clean energy transitions (e.g. copper, lithium and
+      of minerals needed for clean energy transitions (e.g. copper, lithium, and
       nickel) could increases very rapidly, and mining expertise is likely to be
       highly valued in this context.
     high_materiality: |
@@ -127,7 +127,7 @@ transition:
         widely used in the renewable energy and electric vehicles segments.
 
       - **Increased costs** from paying a price on carbon emissions via tax or
-        cap & trade clearing price as well as increase in mine site costs
+        cap and trade clearing price as well as increase in mine site costs
         (labour, fuel, electricity cost at mine and mill). The increase in
         carbon price could lead to increases in operational costs. For example,
         gold mines in South Africa have the highest GHG intensity per unit of
@@ -140,27 +140,27 @@ transition:
       risk scenarios, demand for coal falls and is replaced mostly by renewable energy 
       sources.
 
-      ![Primary Energy](Primary_Energy_Orderly_Mining.png)
+      ![Primary Energy](mining_orderly_energy_mix.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
-      In these scenarios, the primary energy prices (i.e. the spot price at the 
+      In these scenarios, coal primary energy prices (i.e. the spot price at the 
       global market) could also decrease compared to 2020 levels.
 
-      ![Coal Price](Primary_Energy_Price_Coal_Orderly_Mining.png)
+      ![Coal Price](mining_ordelry_price_coal.png)
 
       **Source:**
-      [IIASA NGFS Climate Scenarios Database.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
+      [IIASA NGFS Climate Scenarios Database. REMIND-MAgPIE 3.0-4.4 model.](https://data.ece.iiasa.ac.at/ngfs/#/downloads){target="\_blank"}
 
       By 2050, the contraction in coal demand, in Orderly transition risk
       scenarios, could be offset by the need to increase mining of other raw
       minerals, including those vital to many clean energy technologies. Global
       demand for these critical minerals could rise rapidly. For example,
-      lithium (used for batteries), platinum, palladium and other catalyst
+      lithium (used for batteries), platinum, palladium, and other catalyst
       materials (used for hydrogen fuel cells and carbon capture), and rare
       earths (used for wind-turbine magnets), could all see a large increase in
-      demand. More energy-efficient processing and widespread recycling, which
+      demand. However, more energy-efficient processing and widespread recycling 
       are likely to put pressure on virgin-ore markets. Bauxite, copper, and
       iron ore could see growth from new decarbonization technologies at least
       partly offset by increased recycling rates. Although these critical
@@ -180,7 +180,7 @@ physical:
       The mining sector is highly exposed to the physical impacts of climate
       change including both the chronic effects (e.g. raised sea-levels) and
       acute effects due to changes in the frequency and severity of weather
-      events such as heatwaves, droughts, wildfires, cyclones and flooding. 
+      events such as heatwaves, droughts, wildfires, cyclones, and flooding. 
       Extreme weather events could also impact the national and global
       supply of chemicals and other materials needed for a mining site's
       process, plants, and mine equipment and impact the ability to ship
@@ -195,7 +195,9 @@ physical:
       The following examples illustrate how the mining sector could be impacted
       in a high physical risk scenario:
 
-      **Chronic Impacts**: **Water Stress** is the key physical risk faced by 
+      **Chronic Impacts**: 
+      
+      **Water Stress** is the key physical risk faced by 
       the sector; the issue could lead to greater competition between mining 
       companies as they fight for scarce water resources. It could also likely 
       lead to an expectation of increased environmental regulation focusing on 
@@ -211,12 +213,16 @@ physical:
       in percentage terms, could be critical to a mine's operations or license to 
       operate.
 
-      ![Water Stress](Water_Stress_Mining.png)
+      ![Water Stress](mining_one.png)
 
+      ![Water Stress 2](mining_two.png)
+      
       **Source:**
       [McKinsey & Company, Climate risk and decarbonization: What every mining CEO needs to know, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know){target="\_blank"}
 
-      **Acute Impacts**: **Flooding** from extreme rains can also cause operational 
+      **Acute Impacts**: 
+      
+      **Flooding** from extreme rains can also cause operational 
       disruptions, including mine closure, washed-out roads, and unsafe water 
       levels in tailing dams. At one open-pit coal mine, McKinsey observed 10% 
       annual production losses from wet weather. Flooding affects iron ore and 
@@ -244,7 +250,7 @@ physical:
       The mining sector is highly exposed to the physical impacts of climate
       change including both the chronic effects and acute effects due to changes
       in the frequency and severity of weather events such as heatwaves,
-      droughts, wildfires, cyclones and flooding. Extreme weather
+      droughts, wildfires, cyclones, and flooding. Extreme weather
       events could also impact the national and global supply of chemicals and
       other materials needed for a mining site's process, plants, and mine
       equipment and impact the ability to ship concentrate to international
@@ -258,7 +264,9 @@ physical:
       The following examples illustrate how the mining sector could be impacted
       in a low physical risk scenario:
 
-      **Chronic Impacts**: **Water stress** is the key physical risk faced by the 
+      **Chronic Impacts**: 
+      
+      **Water stress** is the key physical risk faced by the 
       sector; the issue could lead to greater competition between mining companies 
       as they fight for scarce water resources. It could also likely lead to an 
       expectation of increased environmental regulation focusing on protecting water 
@@ -273,12 +281,16 @@ physical:
       process, such changes, while seemingly minor in percentage terms, could 
       be critical to a mine's operations or license to operate.
 
-      ![Water Stress](Water_Stress_Mining.png)
+      ![Water Stress](mining_one.png)
+
+      ![Water Stress 2](mining_two.png)
 
       **Source:**
       [McKinsey & Company, Climate risk and decarbonization: What every mining CEO needs to know, January 2020](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-decarbonization-what-every-mining-ceo-needs-to-know){target="\_blank"}
 
-      **Acute Impacts**: **Flooding** from extreme rains can also cause operational 
+      **Acute Impacts**: 
+      
+      **Flooding** from extreme rains can also cause operational 
       disruptions, including mine closure, washed-out roads, and unsafe water 
       levels in tailing dams. At one open-pit coal mine, McKinsey observed 10% 
       annual production losses from wet weather. Flooding affects iron ore and 

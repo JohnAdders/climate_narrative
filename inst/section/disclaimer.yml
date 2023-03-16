@@ -5,16 +5,14 @@ description: |
   This tool represents output from the cross-industry
   Scenario Analysis Working Group of the Prudential Regulation Authority and Financial
   Conduct Authority's Climate Financial Risk Forum (CFRF). It is currently under development.
-  During 2022, the CFRF Scenario Analysis Working Group will
-  continue to collect feedback from users on this beta version of the tool up to Q3 2022
-  and will update the tool to enhance content and reflect the latest Network for Greening
-  the Financial System (NGFS) scenarios in Q1 2023.
+  The CFRF Scenario Analysis Working Group will update the tool periodically to enhance content,
+  including to reflect future updates to NGFS scenarios.
 
   The PRA and FCA have convened and facilitated CFRF discussions but do not accept
   liability for the views expressed in this guide which do not necessarily represent
   the view of the regulators and in any case do not constitute regulatory guidance.
 
-  The tool references data from the NGFS scenarios which were updated in June 2021.
+  The tool references data from the NGFS scenarios which were updated in September 2022.
   However, the tool has not been endorsed by the NGFS. Users who wish to learn more
   about the NGFS scenarios are directed to the NGFS scenario portal.
   
@@ -33,4 +31,4 @@ description: |
   liable for any claim, damages or other liability, whether in an action of contract,
   tort or otherwise arising from, out of or in connection with the report.
 
-  **Copyright 2022 The Climate Financial Risk Forum**
+  **Copyright 2023 The Climate Financial Risk Forum**

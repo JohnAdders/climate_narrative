@@ -19,10 +19,15 @@ passes_captcha <- function(input, session) {
 }
 
 request_captcha <- function(output, session) {
-  if (!is.null(global$captcha_code) && !is.null(global$captcha_secret)) {
-    recaptcha_js(global$captcha_code, "homepage", "responseReceived")
+  if (global$dev == FALSE) {
+    if (!is.null(global$captcha_code) && !is.null(global$captcha_secret)) {
+      recaptcha_js(global$captcha_code, "homepage", "responseReceived")
+    } else {
+      output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
+    }
   } else {
-    output$code_send_result <- renderText("Captcha configuration missing, can't proceed")
+    next_tab <- tab_name_to_number("instruction")
+    updateTabsetPanel(inputId = "wizard", selected = paste0("page_", next_tab))
   }
 }
 
@@ -50,7 +55,6 @@ render_dynamic_auth_ui <- function(output, session) {
           inputId = "button_check_code",
           label = "Validate the code"
         ),
-        tippy::tippy_this("button_check_code", "Click to proceed (if the code is correct)"),
         textOutput("code_verification_result")
       )
     })
@@ -66,7 +70,6 @@ render_dynamic_auth_ui <- function(output, session) {
           inputId = "button_check_code",
           label = "Next"
         ),
-        tippy::tippy_this("button_check_code", "Click to proceed"),
         textOutput("code_verification_result")
       )
     })
@@ -102,8 +105,8 @@ tab_auth_server <- function(input, output, session) {
           warning("Captcha verification failed")
           output$code_verification_result <- renderText(
             paste0(
-              "Your activity looks suspicious to the bot detection software.
-              If you insist you are a human, please try again, use different browser/device,",
+              "Your activity looks suspicious to the bot detection software. ",
+              "If you insist you are a human, please try again, use different browser/device,",
               "or contact support (the link below)"
             )
           )

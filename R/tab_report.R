@@ -32,19 +32,11 @@ tab_report_ui <- function() {
   )
   if (global$dev) {
     button_3 <- actionButton("update_yamls", "Update the report text files")
-    dropdown_3 <- selectInput(
-      "version_selection",
-      "Select the report version",
-      global$report_versions,
-      global$report_version,
-      selectize = FALSE
-    )
     dropdown_part <- div(
       class = "not_too_wide_3col",
       fluidRow(
         column(4, dropdown_1),
-        column(4, dropdown_2),
-        column(4, dropdown_3)
+        column(4, dropdown_2)
       ),
       fluidRow(
         column(4, button_1_conditional),
@@ -66,59 +58,41 @@ tab_report_ui <- function() {
     )
   }
 
-  if (global$report_version >= 6) {
-    if (global$dev) {
-      button_part <- column(8, button_1_unconditional, button_2, button_3)
-    } else {
-      button_part <- column(8, button_1_unconditional, button_2)
-    }
-    head_part <- tags$header(
-      fluidRow(
-        column(4, img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50, class = "inline2")),
-        button_part
-      )
-    )
-    head_part <- tagAppendAttributes(head_part, class = "report_head")
-    main_part <- sidebarLayout(
-      tagAppendAttributes(
-        sidebarPanel(
-          dropdown_1,
-          hr(),
-          dropdown_2,
-          hr(),
-          uiOutput("html_report_nav")
-        ),
-        class = "h100"
-      ),
-      mainPanel(
-        textOutput("html_report_message"),
-        uiOutput("html_report"),
-        heartbeat_footer()
-      )
-    )
-    main_part <- tagAppendAttributes(main_part, class = "report_main")
-    out <- div(
-      class = "report_page",
-      head_part,
-      main_part
-    )
+  if (global$dev) {
+    button_part <- column(8, button_1_unconditional, button_2, button_3)
   } else {
-    main_part <- div(
-      class = "bottomlayer",
-      list(
-        textOutput("html_report_message"),
-        uiOutput("html_report")
-      )
-    )
-    head <- tags$header(
-      img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50),
-      dropdown_part
-    )
-    out <- list(
-      head,
-      main_part
-    )
+    button_part <- column(8, button_1_unconditional, button_2)
   }
+  head_part <- tags$header(
+    fluidRow(
+      column(4, img(src = "climate_narrative/cfrf_logo.png", alt = "CFRF logo", height = 50, class = "inline2")),
+      button_part
+    )
+  )
+  head_part <- tagAppendAttributes(head_part, class = "report_head")
+  main_part <- sidebarLayout(
+    tagAppendAttributes(
+      sidebarPanel(
+        dropdown_1,
+        hr(),
+        dropdown_2,
+        hr(),
+        uiOutput("html_report_nav")
+      ),
+      class = "h100"
+    ),
+    mainPanel(
+      textOutput("html_report_message"),
+      uiOutput("html_report"),
+      heartbeat_footer()
+    )
+  )
+  main_part <- tagAppendAttributes(main_part, class = "report_main")
+  out <- div(
+    class = "report_page",
+    head_part,
+    main_part
+  )
 }
 
 tab_report_server <- function(input, output, session) {
@@ -160,12 +134,6 @@ tab_report_server <- function(input, output, session) {
     {
       updateSelectInput(session, "report_scenario_selection", selected = "")
       updateSelectInput(session, "report_sector_selection", selected = "")
-    }
-  )
-  observeEvent(
-    input$version_selection,
-    {
-      global$report_version <- input$version_selection
     }
   )
   observeEvent(

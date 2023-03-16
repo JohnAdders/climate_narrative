@@ -30,13 +30,16 @@ Imports:
     shinyjs,
     shinythemes,
     stringi,
-    tippy,
+    stringr,
     uuid,
     yaml,
     png,
     markdown,
     promises,
-    future
+    future,
+    shinymarkdown (>= 0.0.0.9000)
 Suggests:
     testthat,
     styler
+Remotes:  
+    jdtrat/shinymarkdown
