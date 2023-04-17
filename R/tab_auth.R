@@ -8,7 +8,6 @@ passes_captcha <- function(input, session) {
     " | hostname ",
     result$hostname
   )
-  browser()
   return(
     any(
       sapply(as.list(global$ip_whitelist), function(x) startsWith(result$hostname, x)),
