@@ -1,15 +1,14 @@
 passes_captcha <- function(input, session) {
   result <- recaptcha_server(global$captcha_secret, input$responseReceived)
-  cat(
-    file = stderr(),
+  message(
     "Captcha attempt. Details: success ",
     result$success,
     " | score ",
     result$score,
     " | hostname ",
-    result$hostname,
-    "\n"
+    result$hostname
   )
+  browser()
   return(
     any(
       sapply(as.list(global$ip_whitelist), function(x) startsWith(result$hostname, x)),
