@@ -29,7 +29,7 @@ load_secrets <- function(secrets_file = "secret.yml") {
       global$progress_bar <- FALSE
     }
     if (is.null(global$captcha_threshold)) {
-      warning("Captcha threshold setting not found. Defaulting to 0,5")
+      warning("Captcha threshold setting not found. Defaulting to 0.5")
       global$captcha_threshold <- 0.5
     }
     if (is.null(global$enable_editor)) {
