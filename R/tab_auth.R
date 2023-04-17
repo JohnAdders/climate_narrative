@@ -6,7 +6,11 @@ passes_captcha <- function(input, session) {
     " | score ",
     result$score,
     " | hostname ",
-    result$hostname
+    result$hostname,
+    " | ",
+    session$request$HTTP_X_FORWARDED_FOR,
+    " | ",
+    session$request$REMOTE_ADDR
   )
   return(
     any(
